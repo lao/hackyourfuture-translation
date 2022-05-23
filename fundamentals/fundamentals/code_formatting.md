@@ -1,258 +1,258 @@
-# Code Formatting
+# Formatação de código
 
-When you write your JavaScript code you need to take into account two types of consumer:
+Ao escrever seu código JavaScript, você precisa levar em consideração dois tipos de consumidor:
 
-1. Human readers (you yourself, your co-workers, classmates, you yourself in a year's time from now, etc.).
-2. The JavaScript engine.
+1. Leitores humanos (você mesmo, seus colegas de trabalho, colegas, você mesmo daqui a um ano, etc.).
+2. O mecanismo JavaScript.
 
-Starting with the latter, the JavaScript engine does not care about code formatting at all and is perfectly happy to work with one-letter variable names. 'Minification' is a process that is sometimes used to reduce the size of JavaScript files hosted on a web server so that they take less time to transfer over a network to a web browser. The code below show some 'minified' code.
+Começando com o último, o mecanismo JavaScript não se preocupa com a formatação do código e fica perfeitamente feliz em trabalhar com nomes de variáveis de uma letra. A 'minificação' é um processo que às vezes é usado para reduzir o tamanho dos arquivos JavaScript hospedados em um servidor da Web para que eles demorem menos tempo para serem transferidos por uma rede para um navegador da Web. O código abaixo mostra algum código 'minificado'.
 
-```js
+``` js
 const o=[6,3,10,1].reduce((o,c)=>(o.push(c*c),o),[]);console.log(o);
 ```
 
-Clearly, the above code is incomprehensible to humans. The original code is shown below, nicely formatted for the benefit of human readers.
+Claramente, o código acima é incompreensível para humanos. O código original é mostrado abaixo, bem formatado para benefício dos leitores humanos.
 
-```js
+``` js
 const arr = [6, 3, 10, 1];
-const squares = arr.reduce((acc, elem) => {
+const quadrados = arr.reduce((acc, elem) => {
   acc.push(elem * elem);
-  return acc;
+  retorno acc;
 }, []);
-console.log(squares); // -> [36, 9, 100, 1]
+console.log(quadrados); // -> [36, 9, 100, 1]
 ```
 
-In comparison with the minified code, the original code makes use of new lines and indentation to show structure and uses meaningful variable names, solely for the benefit of the human reader.
+Em comparação com o código minificado, o código original faz uso de novas linhas e recuo para mostrar a estrutura e usa nomes de variáveis significativos, exclusivamente para o benefício do leitor humano.
 
-Over time, a standard way of formatting JavaScript code has emerged (actually this standard is fairly common across all languages that are derived from the C-language, including JavaScript but also C++, Java and C#).
+Com o tempo, surgiu uma maneira padrão de formatar código JavaScript (na verdade, esse padrão é bastante comum em todas as linguagens derivadas da linguagem C, incluindo JavaScript, mas também C++, Java e C#).
 
-In the next sections we will discuss the most important code formatting conventions for JavaScript. At the end of this document you will find some code that is formatted according to these rules.
+Nas próximas seções, discutiremos as convenções de formatação de código mais importantes para JavaScript. No final deste documento você encontrará algum código que está formatado de acordo com essas regras.
 
-## Blank lines
+## Linhas em branco
 
-Use a single blank line to separate blocks of related code. This is similar to separating paragraphs with a blank line in written text.
+Use uma única linha em branco para separar blocos de código relacionado. Isso é semelhante a separar parágrafos com uma linha em branco em um texto escrito.
 
-## Curly braces
+## Chaves
 
-Curly braces are used to start and end code blocks, often as part of an `if`, `switch`, `while` or `for` statement. The opening curly brace should be placed at the end of a line. The closing curly brace should be aligned with the beginning of the line that started the code block.
+Chaves são usadas para iniciar e terminar blocos de código, geralmente como parte de uma instrução `if`, `switch`, `while` ou `for`. A chave de abertura deve ser colocada no final de uma linha. A chave de fechamento deve estar alinhada com o início da linha que iniciou o bloco de código.
 
-```js
-if (condition) {
+``` js
+se (condição) {
   // ...
-} else {
+} senão {
   // ...
 }
 ```
 
-## Indentation
+## Recuo
 
-Code blocks inside curly braces should be indented by 2 or 4 spaces (choose one or the other, and then stick to it). In case of nested code blocks, for each level of nesting the amount of indentation should be incremented by the standard amount (2 or 4):
+Blocos de código dentro de chaves devem ser indentados por 2 ou 4 espaços (escolha um ou outro e, em seguida, mantenha-o). No caso de blocos de código aninhados, para cada nível de aninhamento, a quantidade de recuo deve ser incrementada pela quantidade padrão (2 ou 4):
 
-```js
-function myFunction() {
-  if (condition) {
+``` js
+função minhaFunção() {
+  se (condição) {
     // ...
-  } else {
+  } senão {
     // ...
   }
 }
 ```
 
-## Spacing
+## Espaçamento
 
-- Add a space after keywords, e.g. `if (`, `for (`
-- Add a space after a `,` `;` (in a `for` loop) and `:` (e.g. object keys)
-- Add a space before and after operators, e.g. `a + b`
+- Adicione um espaço após as palavras-chave, por exemplo `if (`, `for (`
+- Adicione um espaço após um `,` `;` (em um loop `for`) e `:` (por exemplo, chaves de objeto)
+- Adicione um espaço antes e depois dos operadores, por exemplo `a + b`
 
-## Use VSCode for well-formatted JavaScript
+## Use VSCode para JavaScript bem formatado
 
-Rather than continuing and specifying every little detail on how to format JavaScript code in a standard format, we can call in the help of VSCode.
+Em vez de continuar e especificar cada pequeno detalhe sobre como formatar o código JavaScript em um formato padrão, podemos chamar a ajuda do VSCode.
 
-VSCode comes with a built-in code formatter for JavaScript. To format the current document in a standard fashion, press the following key combination:
+O VSCode vem com um formatador de código integrado para JavaScript. Para formatar o documento atual de maneira padrão, pressione a seguinte combinação de teclas:
 
-|           | Windows | Mac   | Linux |
+| | Janelas | Mac | Linux |
 | --------- | ------- | ----- | ----- |
-| **Format Document** (make it pretty) | Shift‑Alt‑F | ⇧⌥F| Ctrl‑Shift‑I |
+| **Formatar Documento** (tornar bonito) | Shift-Alt-F | ⇧⌥F| Ctrl-Shift-I |
 
-Just make it a habit to bring this three-finger salute just before saving your document or whenever it becomes messy and you're good to go!
+Apenas crie o hábito de fazer esta saudação de três dedos antes de salvar seu documento ou sempre que ficar confuso e você estiver pronto para ir!
 
-> There are a number of user settings that you can apply in VSCode to enable auto-formatting as you type (or paste). See [VSCode Tips](../VSCodeTips/README.md#customise-vscode-settings) for further details.
+> Existem várias configurações de usuário que você pode aplicar no VSCode para habilitar a formatação automática conforme você digita (ou cola). Consulte [Dicas do VSCode](../VSCodeTips/README.md#customise-vscode-settings) para obter mais detalhes.
 >
 
 ## ESLint
 
-[ESLint](https://eslint.org/) is a tool that can check your JavaScript code for common errors and bad practices. See [VSCode Tips](../VSCodeTips/README.md#installation-instructions) on how to set it up.
+[ESLint](https://eslint.org/) é uma ferramenta que pode verificar seu código JavaScript em busca de erros comuns e práticas inadequadas. Veja [Dicas do VSCode](../VSCodeTips/README.md#installation-instructions) sobre como configurá-lo.
 
-ESLint is configured via user-definable rules that specify what to check. These rules must be defined in a file called `.eslintrc.json` placed in the root folder of your project repository. For the lectures and homework of the three HYF JavaScript modules it is recommended that you create an `.eslintrc.json` file and copy and paste the content shown below into that file.
+O ESLint é configurado por meio de regras definidas pelo usuário que especificam o que verificar. Essas regras devem ser definidas em um arquivo chamado `.eslintrc.json` colocado na pasta raiz do repositório do seu projeto. Para as palestras e trabalhos de casa dos três módulos HYF JavaScript, é recomendado que você crie um arquivo `.eslintrc.json` e copie e cole o conteúdo mostrado abaixo nesse arquivo.
 
-More information about ESLint Rules [here](https://eslint.org/docs/rules/).
+Mais informações sobre as regras do ESLint [aqui](https://eslint.org/docs/rules/).
 
-Make sure that you correct any errors and warnings that ESLint produces before considering your JavaScript code done!
+Certifique-se de corrigir quaisquer erros e avisos que o ESLint produz antes de considerar seu código JavaScript pronto!
 
-```json
+``` json
 {
   "env": {
-    "browser": true,
-    "commonjs": true,
-    "es6": true,
-    "node": true
+    "navegador": verdadeiro,
+    "commonjs": verdadeiro,
+    "es6": verdadeiro,
+    "nó": verdadeiro
   },
   "parserOptions": {
-    "ecmaVersion": 2017,
+    "ecmaVersão": 2017,
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": verdadeiro
     },
-    "sourceType": "module"
+    "sourceType": "módulo"
   },
-  "extends": [
-    "eslint:recommended"
+  "estende": [
+    "eslint:recomendado"
   ],
-  "rules": {
-    "no-const-assign": "warn",
-    "no-this-before-super": "warn",
-    "no-undef": "warn",
-    "no-unreachable": "warn",
-    "no-unused-vars": "warn",
-    "constructor-super": "warn",
-    "valid-typeof": "warn",
-    "no-var": "warn",
-    "prefer-const": "warn",
-    "no-multiple-empty-lines": "warn",
-    "eol-last": [
-      "error",
-      "always"
+  "as regras": {
+    "no-const-assign": "avisar",
+    "não-este-antes-super": "avisar",
+    "no-undef": "aviso",
+    "no-inalcançável": "avisar",
+    "no-unused-vars": "aviso",
+    "construtor-super": "avisar",
+    "valid-typeof": "aviso",
+    "no-var": "aviso",
+    "prefer-const": "avisar",
+    "no-multiple-empty-lines": "aviso",
+    "eol-último": [
+      "erro",
+      "sempre"
     ],
-    "no-console": "off",
-    "camelcase": "warn",
+    "sem console": "desligado",
+    "camelcase": "aviso",
     "eqeqeq": [
-      "error",
-      "always",
+      "erro",
+      "sempre",
       {
-        "null": "ignore"
+        "null": "ignorar"
       }
     ],
     "semi": [
-      "warn",
-      "always"
+      "avisar",
+      "sempre"
     ]
   }
 }
 ```
 
 
-## Example of well-formatted code
+## Exemplo de código bem formatado
 
-(With the help of the VSCode formatter and ESLint.)
+(Com a ajuda do formatador VSCode e ESLint.)
 
-```js
-'use strict';
+``` js
+'usar estrito';
 
-const board = [
+placa const = [
   ['T', 'T', '.', 'F'],
   ['T', '.', '.', '.'],
   ['.', '.', '.', '.'],
   ['R', '.', '.', 'W']
 ];
 
-const robot = {
+const robô = {
   x: 0,
   y: 0,
-  dir: 'up',
+  dir: 'para cima',
 };
 
-let flagReached = false;
-let moves = 0;
+let flagAlcançado = false;
+deixe movimentos = 0;
 
-board.reverse();
+tabuleiro.reverso();
 
-const trailIndicators = {
-  left: '←',
-  right: '→',
-  up: '↑',
-  down: '↓'
+const trilhaIndicators = {
+  esquerda: '←',
+  à direita: '→',
+  para cima: '↑',
+  para baixo: '↓'
 };
 
-function render() {
-  console.log('\n ' + moves + ':');
+função render() {
+  console.log('\n ' + movimentos + ':');
   for (let row = board.length - 1; row >= 0; row--) {
-    const cells = board[row];
-    let line = '';
-    for (let col = 0; col < cells.length; col++) {
-      line += ' ' + cells[col] + ' ';
+    const células = quadro[linha];
+    deixe linha = '';
+    for (let col = 0; col < células.comprimento; col++) {
+      linha += ' ' + células[col] + ' ';
     }
-    console.log(line);
+    console.log(linha);
   }
-  if (flagReached) {
-    console.log('\nHurray! Flag reached in ' + moves + ' steps!');
+  if (flagAlcançado) {
+    console.log('\nHurray! Flag alcançado em ' + movimentos + ' passos!');
   }
 }
 
-function move() {
-  let x = robot.x;
-  let y = robot.y;
+função mover() {
+  deixe x = robô.x;
+  deixe y = robô.y;
 
   switch (robot.dir) {
-    case 'up':
+    caso 'up':
       y = y < board.length - 1 ? y + 1 : y;
-      break;
-    case 'down':
-      y = y > 0 ? y - 1 : y;
-      break;
-    case 'left':
-      x = x > 0 ? x - 1 : x;
-      break;
-    case 'right':
-      x = x < board[y].length - 1 ? x + 1 : x;
-      break;
+      pausa;
+    caso 'para baixo':
+      y = y > 0? y - 1 : y;
+      pausa;
+    caso 'esquerda':
+      x = x > 0? x - 1 : x;
+      pausa;
+    caso 'certo':
+      x = x < placa[y].comprimento - 1 ? x + 1 : x;
+      pausa;
   }
 
   const cellContents = board[y][x];
 
   if (cellContents === '.' || cellContents === 'F') {
     board[robot.y][robot.x] = trailIndicators[robot.dir];
-    robot.x = x;
-    robot.y = y;
-    board[y][x] = 'R';
+    robô.x = x;
+    robô.y = y;
+    placa[y][x] = 'R';
     if (cellContents === 'F') {
-      flagReached = true;
+      flagAlcançado = true;
     }
   }
 
-  moves += 1;
+  movimentos += 1;
   render();
 }
 
 function turn(turnDirection) {
   if (turnDirection !== 'left' && turnDirection !== 'right') {
-    console.log('ignoring invalid turn', turnDirection);
+    console.log('ignorando curva inválida', turnDirection);
   }
   switch (robot.dir) {
-    case 'up':
-      robot.dir = turnDirection === 'left' ? 'left' : 'right';
-      break;
-    case 'down':
-      robot.dir = turnDirection === 'left' ? 'right' : 'left';
-      break;
-    case 'left':
-      robot.dir = turnDirection === 'left' ? 'down' : 'up';
-      break;
-    case 'right':
-      robot.dir = turnDirection === 'left' ? 'up' : 'down';
-      break;
+    caso 'up':
+      robot.dir = turnDirection === 'esquerda' ? 'esquerda direita';
+      pausa;
+    caso 'para baixo':
+      robot.dir = turnDirection === 'esquerda' ? 'direita esquerda';
+      pausa;
+    caso 'esquerda':
+      robot.dir = turnDirection === 'esquerda' ? 'baixo cima';
+      pausa;
+    caso 'certo':
+      robot.dir = turnDirection === 'esquerda' ? 'cima baixo';
+      pausa;
   }
 }
 
 render();
 
-// start of robot game instructions
-move();
-turn('right');
-move();
-move();
-move();
-turn('left');
-move();
-move();
-// end of robot game instructions
+//início das instruções do jogo do robô
+jogada();
+Vire à direita');
+jogada();
+jogada();
+jogada();
+Vire à esquerda');
+jogada();
+jogada();
+// fim das instruções do jogo do robô
 ```
 

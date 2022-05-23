@@ -1,37 +1,37 @@
-### JavaScript review
+### Revisão de JavaScript
 
-You'll need to know the following before starting the Node class (remember Node is just JavaScript in a different environment - and you KNOW JS already - right?!?!)
+Você precisará saber o seguinte antes de iniciar a classe Node (lembre-se que o Node é apenas JavaScript em um ambiente diferente - e você já CONHECE JS - certo?!?!)
 
 ```
-From Jason:
+De Jasão:
 jason [9:11 AM]
-@timirkaria the most important topics will be sync/async and ajax. That and basic syntax (named and anonymous functions, callbacks, scope) should be sufficient!
+@timirkaria os tópicos mais importantes serão sync/async e ajax. Isso e a sintaxe básica (funções nomeadas e anônimas, retornos de chamada, escopo) devem ser suficientes!
 ```
 
 ### AJAX
-Stands for *A*synchronous *J*avascript *A*nd *X*ml (think of XML as the old JSON) but now it's AJA*J* but that doesn't sound as good.
+Significa *A*synchronous *J*avascript *A*nd *X*ml (pense em XML como o antigo JSON), mas agora é AJA*J*, mas isso não soa tão bem.
 
-So here's an example of a SYNCHRONOUS request (it waits for the request to come back before continuing)
+Então aqui está um exemplo de uma solicitação SYNCHRONOUS (ela espera a solicitação voltar antes de continuar)
 
-Code from: `https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests#Example_HTTP_synchronous_request`
+Código de: `https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests#Example_HTTP_synchronous_request`
 
-```js
+``` js
 const SECRET_MESSAGE_URL = 'https://gist.githubusercontent.com/tkaria/08325583e7411f7de6b80871780fd917/raw/61dae2869ae5013652bbeba1da2487097d8869b1/SecretMessage.txt'
-const request = new XMLHttpRequest(SECRET_MESSAGE_URL);
-request.open('GET', SECRET_MESSAGE_URL, false);  // `false` makes the request synchronous
+solicitação const = new XMLHttpRequest(SECRET_MESSAGE_URL);
+request.open('GET', SECRET_MESSAGE_URL, false); // `false` torna a solicitação síncrona
 request.send(null);
 
 if (request.status === 200) {
   console.log(request.responseText);
-  console.log('Received the response');
+  console.log('Recebi a resposta');
 }
-console.log('Made the request')
+console.log('Feito o pedido')
 
 ```
 
-And here's an example of an ASYNCHRONOUS version of the same request as above. Look carefully at the output.
+E aqui está um exemplo de uma versão ASYNCHRONOUS da mesma solicitação acima. Observe atentamente a saída.
 
-```js
+``` js
 const SECRET_MESSAGE_URL = 'https://gist.githubusercontent.com/tkaria/08325583e7411f7de6b80871780fd917/raw/61dae2869ae5013652bbeba1da2487097d8869b1/SecretMessage.txt'
 const xhr = new XMLHttpRequest();
 xhr.open("GET", SECRET_MESSAGE_URL, true);
@@ -39,8 +39,8 @@ xhr.onload = function (e) {
   if (xhr.readyState === 4) {
     if (xhr.status === 200) {
       console.log(xhr.responseText);
-      console.log('Received the response');
-    } else {
+      console.log('Recebi a resposta');
+    } senão {
       console.error(xhr.statusText);
     }
   }
@@ -49,213 +49,213 @@ xhr.onerror = function (e) {
   console.error(xhr.statusText);
 };
 xhr.send(null);
-console.log('Made the request');
+console.log('Feito o pedido');
 ```
 
-### What's happening here?
-As always - read the docs first...
+### O que está acontecendo aqui?
+Como sempre - leia os documentos primeiro...
 `https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest`
 
-Create a new request and open it (lines 2 and 3)
-Tell the request object what function to call when when the contents of the request are loaded. Inside the ANONYMOUS function which takes a parameter `e` we check the response code from the request (this is just HTTP stuff - nothing special). If the response code is good (200) then we print what we got.
+Crie uma nova solicitação e abra-a (linhas 2 e 3)
+Diga ao objeto de solicitação qual função chamar quando o conteúdo da solicitação for carregado. Dentro da função ANONYMOUS, que recebe um parâmetro `e`, verificamos o código de resposta da solicitação (isso é apenas material HTTP - nada de especial). Se o código de resposta for bom (200), imprimimos o que obtivemos.
 
-More interesting is the order of the print statements. In the first example we saw the message `Received the response` **BEFORE** we saw the `Made the request` message because the program waited to get the response and print it before continuing to run.
+Mais interessante é a ordem das declarações de impressão. No primeiro exemplo vimos a mensagem `Received the response` **ANTES** vimos a mensagem `Made the request` porque o programa esperou obter a resposta e imprimi-la antes de continuar a execução.
 
-In this case we see the `Made the request` message before we see the response because the program keeps running while waiting for the response. When the response is finally received it is printed before writing the `Received the response` to the console.
+Neste caso, vemos a mensagem `Made the request` antes de vermos a resposta porque o programa continua rodando enquanto espera pela resposta. Quando a resposta é finalmente recebida, ela é impressa antes de escrever o `Received the response` no console.
 
-Note that we used an anonymous function here - it has no name. There's nothing special about an anonymous function. We could equally use a named function in the above example:
+Observe que usamos uma função anônima aqui - ela não tem nome. Não há nada de especial em uma função anônima. Poderíamos igualmente usar uma função nomeada no exemplo acima:
 
-```js
+``` js
 const SECRET_MESSAGE_URL = 'https://gist.githubusercontent.com/tkaria/08325583e7411f7de6b80871780fd917/raw/61dae2869ae5013652bbeba1da2487097d8869b1/SecretMessage.txt'
 
 const xhr = new XMLHttpRequest();
-function NOT_ANONYMOUS_ON_LOAD_FUNCTION(parameter) {
+function NOT_ANONYMOUS_ON_LOAD_FUNCTION(parâmetro) {
    if (xhr.readyState === 4) {
     if (xhr.status === 200) {
       console.log(xhr.responseText);
-      console.log('Received the response');
-    } else {
+      console.log('Recebi a resposta');
+    } senão {
       console.error(xhr.statusText);
     }
   }
 }
 xhr.open("GET", SECRET_MESSAGE_URL, true);
-xhr.onload = NOT_ANONYMOUS_ON_LOAD_FUNCTION; // Note: we are not CALLING the function - there are no ()
-// We'll leave the error function the way it is and you can change it to a named function
+xhr.onload = NOT_ANONYMOUS_ON_LOAD_FUNCTION; // Nota: não estamos chamando a função - não há ()
+// Vamos deixar a função de erro do jeito que está e você pode alterá-la para uma função nomeada
 xhr.onerror = function (e) {
   console.error(xhr.statusText);
 };
 xhr.send(null);
-console.log('Made the request');
+console.log('Feito o pedido');
 
 ```
 
-### The big idea:
+### A grande ideia:
 
-#### Sync / Async
-Make requests without waiting for the response and just get "notified" when the response happens. That's the asynchronous part - don't wait for it and stop everything else just let me know when it happens. How can the computer let you know? You tell it what to do when the async function is ready (has something to say - success or failure)
+#### Sincronização / Assíncrona
+Faça solicitações sem esperar a resposta e apenas seja "notificado" quando a resposta acontecer. Essa é a parte assíncrona - não espere por isso e pare todo o resto, apenas me avise quando isso acontecer. Como o computador pode informá-lo? Você diz o que fazer quando a função assíncrona estiver pronta (tem algo a dizer - sucesso ou falha)
 
-#### Named and anonymous functions
-Some functions have names and some don't. Sometimes you just want to use a function to pass it to another function so you don't need to name it. It never needs to be called outside of the function that you're passing it to so it doesn't need a name.
-The simplest asynchronous function that you will see all over the place is called `setTimeout` (right now you should be reaching for a new tab and typing `MDN setTimeout` into Google). Be patient when running the below - it takes 3 seconds...
+#### Funções nomeadas e anônimas
+Algumas funções têm nomes e outras não. Às vezes, você só quer usar uma função para passá-la para outra função, para não precisar nomeá-la. Ele nunca precisa ser chamado fora da função para a qual você o está passando, portanto, não precisa de um nome.
+A função assíncrona mais simples que você verá em todo lugar é chamada `setTimeout` (agora você deve estar acessando uma nova guia e digitando `MDN setTimeout` no Google). Seja paciente ao executar o abaixo - leva 3 segundos ...
 
-For example (using a named function):
-```js
-function timeoutFunction() {
-  console.log('Starting timeoutFunction');
-  console.log('Ending timeoutFunction');
+Por exemplo (usando uma função nomeada):
+``` js
+função timeoutFunction() {
+  console.log('Iniciando timeoutFunction');
+  console.log('Finalizando timeoutFunction');
 }
 setTimeout(timeoutFunction, 3000);
-console.log('After timeoutFunction');
+console.log('Após timeoutFunction');
 ```
 
-For example (using an anonymous function):
-```js
-setTimeout(function() {
-    console.log('Starting timeoutFunction');
-    console.log('Ending timeoutFunction');
-  } , 3000);
-console.log('After timeoutFunction');
+Por exemplo (usando uma função anônima):
+``` js
+setTimeout(function(){
+    console.log('Iniciando timeoutFunction');
+    console.log('Finalizando timeoutFunction');
+  }, 3000);
+console.log('Após timeoutFunction');
 ```
 
-For example (using an anonymous fat arrow function):
-```js
-setTimeout(() => { console.log('Starting timeoutFunction');
-    console.log('Ending timeoutFunction');
-  } , 3000);
-console.log('After timeoutFunction');
+Por exemplo (usando uma função de seta gorda anônima):
+``` js
+setTimeout(() => { console.log('Iniciando timeoutFunction');
+    console.log('Finalizando timeoutFunction');
+  }, 3000);
+console.log('Após timeoutFunction');
 ```
 
-#### Callbacks
-What to do when the result of an async request is returned. Remember that requests can succeed as well as fail. Plan for (AND TEST) both.
+#### Chamadas de retorno
+O que fazer quando o resultado de uma solicitação assíncrona é retornado. Lembre-se de que as solicitações podem ser bem-sucedidas e também falhar. Planeje (E TESTE) ambos.
 
-#### Scope
-I think we covered this pretty well with our discussion of closures in the last class but let me know if you need more.
+#### Alcance
+Acho que abordamos isso muito bem com nossa discussão sobre fechamentos na última aula, mas me avise se precisar de mais.
 
-## Recap
-Read this - you may not understand it all but please read it before you read anything else about closures. The reason is that this is source material - this is the primary documentation. It is written very technically and in a bit of a boring way but there's a reason (as we talked about in class). The reason is to be clear so the language is precise and technical. It's OK if you don't get it now but just read it and it will stay in the back of your head.
+## Recapitulação
+Leia isto - você pode não entender tudo, mas por favor leia antes de ler qualquer outra coisa sobre fechamentos. A razão é que este é o material de origem - esta é a documentação primária. Está escrito de forma muito técnica e um pouco chata, mas há uma razão (como falamos em aula). O motivo é ser claro para que a linguagem seja precisa e técnica. Tudo bem se você não entender agora, mas apenas leia e ficará na parte de trás da sua cabeça.
 https://developer.mozilla.org/en/docs/Web/JavaScript/Closures
 
-Please TYPE these exercises - do NOT copy and paste.  BEFORE you run them please make a guess in your head about what will happen.
-```js
-function init() {
-  const name = 'Mozilla'; // name is a local variable created by init
-  function displayName() { // displayName() is the inner function, a closure
-    alert(name); // use variable declared in the parent function
+DIGITE estes exercícios - NÃO copie e cole. ANTES de executá-los, por favor, faça um palpite sobre o que vai acontecer.
+``` js
+função init(){
+  const nome = 'Mozilla'; // nome é uma variável local criada pelo init
+  function displayName() { // displayName() é a função interna, uma closure
+    alerta(nome); // usa a variável declarada na função pai
   }
-  displayName();
+  Nome em Exibição();
 }
-init();
+iniciar();
 ```
 
-```js
-function init() {
-  const name = 'Mozilla'; // name is a local variable created by init
-  function displayName() { // displayName() is the inner function, a closure
-    alert(name); // use variable declared in the parent function
+``` js
+função init(){
+  const nome = 'Mozilla'; // nome é uma variável local criada pelo init
+  function displayName() { // displayName() é a função interna, uma closure
+    alerta(nome); // usa a variável declarada na função pai
   }
 }
-displayName();
+Nome em Exibição();
 ```
 
-```js
-const name = 'Hack your future'
-function init() {
-  const name = 'Mozilla'; // name is a local variable created by init
-  function displayName() { // displayName() is the inner function, a closure
-    alert(name); // use variable declared in the parent function
+``` js
+const name = 'Hackear seu futuro'
+função init(){
+  const nome = 'Mozilla'; // nome é uma variável local criada pelo init
+  function displayName() { // displayName() é a função interna, uma closure
+    alerta(nome); // usa a variável declarada na função pai
   }
-  displayName();
+  Nome em Exibição();
 }
-init();
+iniciar();
 ```
 
-```js
-const name = 'Hack your future'
-function init(name) {
-  function displayName(name) { // displayName() is the inner function, a closure
-    alert(name); // use variable declared in the parent function
+``` js
+const name = 'Hackear seu futuro'
+função init(nome) {
+  function displayName(name) { // displayName() é a função interna, uma closure
+    alerta(nome); // usa a variável declarada na função pai
   }
-  displayName(name);
+  displayName(nome);
 }
-init('Hack your future again')
+init('Hackear seu futuro novamente')
 ```
 
-Now read this: http://stackoverflow.com/questions/11488014/asynchronous-process-inside-a-javascript-for-loop
+Agora leia isto: http://stackoverflow.com/questions/11488014/asynchronous-process-inside-a-javascript-for-loop
 
-And try out the examples - please make SURE you understand what is happening. Ask questions if you do not.
+E experimente os exemplos - por favor, certifique-se de entender o que está acontecendo. Faça perguntas se não.
 
-Same instructions as above but now for Arrow functions (remember this is not intended to confuse you - it's just code).
+As mesmas instruções acima, mas agora para as funções de seta (lembre-se que isso não tem a intenção de confundi-lo - é apenas código).
 
-### Arrow functions
+### Funções de seta
 https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions
-Then read this.
+Então leia isso.
 http://stackoverflow.com/questions/22939130/when-should-i-use-arrow-functions-in-ecmascript-6/28135120#28135120
 
-This is a normal function:
-```js
-function sayHello(name) {
-    return 'Hello ' + name;
+Esta é uma função normal:
+``` js
+function dizerOlá(nome) {
+    return 'Olá' + nome;
 }
 ```
 
-Same as above with arrow (fat arrow) notation - shorthand notation. This is easy to mess up. Notice no return.
-```js
-const sayHello2 = (name) => 'Hello ' + name;
-```
-
-Same as above with arrow (fat arrow) notation - shorthand notation.  Better - easier to read - with return.
-```js
-const sayHello2 = (name) => {return 'Hello ' + name;}
-```
-
-Think about this one
+O mesmo que acima com notação de seta (seta gorda) - notação abreviada. Isso é fácil de estragar. Observe nenhum retorno.
 ``` js
-function Person(firstName) {
+const digaOlá2 = (nome) => 'Olá ' + nome;
+```
+
+O mesmo que acima com notação de seta (seta gorda) - notação abreviada. Melhor - mais fácil de ler - com retorno.
+``` js
+const digaOlá2 = (nome) => {return 'Olá' + nome;}
+```
+
+Pense sobre este
+``` js
+function Pessoa(nome) {
     this.firstName = firstName;
 }
 ```
 
-Looks the same but what happens? See if you can figure out why from reading the documentation.
-```js
-const Person = (firstName) => {this.firstName = firstName}
+Parece o mesmo, mas o que acontece? Veja se você consegue descobrir por que lendo a documentação.
+``` js
+const Pessoa = (firstName) => {this.firstName = firstName}
 ```
 
-Closures and async functions
-What's going on here - I would expect 3 alerts with 1,2,3 in them but noooooooooo
-```js
+Fechamentos e funções assíncronas
+O que está acontecendo aqui - eu esperaria 3 alertas com 1,2,3 neles, mas nãooooo
+``` js
 for (var i = 0; i < 3; i++) {
-    setTimeout(function callBackFunction() {
-        alert(i);
+    setTimeout(função callBackFunction() {
+        alerta(i);
     }, 100);
 }
 ```
 
-### Make the above function do what we think it should do.
+### Faça a função acima fazer o que achamos que deveria fazer.
 
-### Return examples
-```js
-Return values
-function f1(x) {
-    this.x = x + 1;
-    return;
+### Exemplos de retorno
+``` js
+Valores de retorno
+função f1(x) {
+    este.x = x + 1;
+    Retorna;
 }
 
-function f2(x) {
+função f2(x) {
     return this.x = x + 1;
 }
 ```
 
-### Static members
+### Membros estáticos
 http://odetocode.com/blogs/scott/archive/2015/02/02/static-members-in-es6.aspx
 
-### Closures examples
+### Exemplos de fechamentos
 https://jsfiddle.net/78dg25ax/?utm_source=website&utm_medium=embed&utm_campaign=78dg25ax
 
-### Why closures are helpful with async code:
+### Por que os closures são úteis com código assíncrono:
 http://stackoverflow.com/questions/13343340/calling-an-asynchronous-function-within-a-for-loop-in-javascript
 
-### Promises
+### Promessas
 http://stackoverflow.com/questions/13343340/calling-an-asynchronous-function-within-a-for-loop-in-javascript
 https://www.youtube.com/watch?v=WBupia9oidU
 

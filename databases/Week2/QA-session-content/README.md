@@ -1,42 +1,42 @@
-This folder contains a small codebase to setup a database with some content.
-The database will contain information about users their projects and tasks.
-Tasks can be assigned to users optionally which make for some nice example queries.
+Esta pasta contém uma pequena base de código para configurar um banco de dados com algum conteúdo.
+O banco de dados conterá informações sobre os usuários, seus projetos e tarefas.
+As tarefas podem ser atribuídas aos usuários opcionalmente, o que resulta em algumas consultas de exemplo interessantes.
 
-Create a database called `db_qa_session` or make changes to the `knexfile.js`
+Crie um banco de dados chamado `db_qa_session` ou faça alterações no `knexfile.js`
 
 ```
-npm install
-npm install -g knex 
-knex migrate:latest
-knex seed:run
+npm instalar
+npm install -g knex
+knex migrar:latest
+semente knex: correr
 ```
 
-Your database should be filled with some demo content :)
+Seu banco de dados deve ser preenchido com algum conteúdo de demonstração :)
 
-These seeds and migrations themselves aren't within scope of this course.
-Its just a convenient way to create the demo database that will have some meaningful content to demonstrate queries.
+Essas sementes e migrações em si não estão no escopo deste curso.
+É apenas uma maneira conveniente de criar o banco de dados de demonstração que terá algum conteúdo significativo para demonstrar consultas.
 
-Some exercise that cover the topics of this week:
+Alguns exercícios que cobrem os tópicos desta semana:
 
-1. List all tasks 
-    1. only show the ones that aren't done yet.
-       `NOW()` can be used for the current dateTime.
-    2. add the first name and last name of the assigned user
-    3. add the project for the task
+1. Liste todas as tarefas
+    1. mostre apenas os que ainda não estão prontos.
+       `NOW()` pode ser usado para o dateTime atual.
+    2. adicione o nome e sobrenome do usuário atribuído
+    3. adicione o projeto para a tarefa
 
-2. List all projects
-    1. reduce the list to the projects that aren't ended
-    2. add a column with the amount of tasks on the project
+2. Liste todos os projetos
+    1. reduza a lista aos projetos que não terminaram
+    2. adicione uma coluna com a quantidade de tarefas no projeto
 
-3. In your frontend you might have a url like `/projects/3` or even prettier `/projects/{CODE}`.
-   Pick a code from a project.
-    1. Fetch all tasks for that project (don't return the project table columns)
+3. Em seu frontend você pode ter uma url como `/projects/3` ou ainda mais bonita `/projects/{CODE}`.
+   Escolha um código de um projeto.
+    1. Busque todas as tarefas desse projeto (não retorne as colunas da tabela do projeto)
 
-4. For an admin page you want to list the users with their projects and their project aliases
+4. Para uma página de administração, você deseja listar os usuários com seus projetos e seus aliases de projetos
 
-5. For analytics, we want to have the amount of tasks done per user per month.
-   1. Create a separate query with average amount of tasks done per month per user.
-      For example returning: Tomas finishes 4 tasks per month on average.
+5. Para análise, queremos ter a quantidade de tarefas feitas por usuário por mês.
+   1. Crie uma consulta separada com a quantidade média de tarefas realizadas por mês por usuário.
+      Por exemplo retornando: Tomas termina 4 tarefas por mês em média.
    
    
      

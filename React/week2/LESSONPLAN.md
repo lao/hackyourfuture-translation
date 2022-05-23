@@ -1,84 +1,84 @@
-# Lesson Plan Week 2
+# Plano de aula Semana 2
 
-The purpose of this class is to teach the student about:
+O objetivo desta aula é ensinar ao aluno sobre:
 
-- How to make `HTTP Requests` within a React component
-- How to test in React
+- Como fazer `Requisições HTTP` dentro de um componente React
+- Como testar no React
 
-## Core concepts
+## Conceitos principais
 
-## 1. Making HTTP requests within a React component
+## 1. Fazendo requisições HTTP dentro de um componente React
 
-### Explanation
+### Explicação
 
-Making HTTP requests is an essential task of the frontend. Within React, we make these requests at specific points: (1) after a user action (like a button click), or (2) at a certain point in the component lifecycle.
+Fazer requisições HTTP é uma tarefa essencial do frontend. No React, fazemos essas solicitações em pontos específicos: (1) após uma ação do usuário (como um clique de botão) ou (2) em um determinado ponto do ciclo de vida do componente.
 
-### Example
+### Exemplo
 
-```jsx
-// 1. After a user action
-const Users = () => {
-  const [users, setUsers] = useState([]);
+``` jsx
+// 1. Após uma ação do usuário
+const Usuários = () => {
+  const [usuários, setUsers] = useState([]);
 
-  const fetchUsers = async () => {
-    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+  const fetchUsers = assíncrono () => {
+    resposta const = await fetch("https://jsonplaceholder.typicode.com/users");
     const users = await response.json();
 
-    setUsers(users);
+    setUsers(usuários);
   };
 
-  return (
+  Retorna (
     <div>
       {
-        // Do something with users...
+        // Faça algo com os usuários...
       }
-      <button onClick={fetchUsers}>Get users!</button>
+      <button onClick={fetchUsers}>Consiga usuários!</button>
     </div>
   );
 };
 ```
 
-Sometimes we also want to make HTTP requests before or after a component has been rendered/updated:
+Às vezes, também queremos fazer solicitações HTTP antes ou depois de um componente ser renderizado/atualizado:
 
-```jsx
-// 2. At a certain point in the component lifecycle
-const Users = () => {
-  const [users, setUsers] = useState([]);
+``` jsx
+// 2. Em um determinado ponto do ciclo de vida do componente
+const Usuários = () => {
+  const [usuários, setUsers] = useState([]);
 
-  const fetchUsers = async () => {
-    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+  const fetchUsers = assíncrono () => {
+    resposta const = await fetch("https://jsonplaceholder.typicode.com/users");
     const users = await response.json();
 
-    setUsers(users);
+    setUsers(usuários);
   };
 
-  useEffect(() => {
-    // Fetches users after component has rendered
-    fetchUsers();
+  useEfeito(() => {
+    // Busca os usuários após o componente ser renderizado
+    buscarUsuarios();
   }, []);
 
-  return (
+  Retorna (
     <div>
       {
-        // Do something with users...
+        // Faça algo com os usuários...
       }
     </div>
   );
 };
 ```
 
-### Exercise
+### Exercício
 
-Ask students to write a component that uses `useEffect` to fetch data and populate state:
+Peça aos alunos para escreverem um componente que use `useEffect` para buscar dados e preencher o estado:
 
-- Use `useEffect` & `useState` hook
-- Wrap the HTTP Request in a function
-- Populate the state
-- Display the `title` property
-- Use the following API endpoint: https://jsonplaceholder.typicode.com/todos/1
+- Use o gancho `useEffect` e `useState`
+- Envolva a solicitação HTTP em uma função
+- povoar o estado
+- Exibe a propriedade `title`
+- Use o seguinte endpoint de API: https://jsonplaceholder.typicode.com/todos/1
 
-After, ask 2 students to explain what they did.
+Depois, peça a 2 alunos que expliquem o que fizeram.
 
-### Essence
+### Essência
 
-We send HTTP requests in React as a consequence of user interaction (like a button click) or when the component is rendered/updated. We do this is a separate function that we execute, either on an event (like `onClick`) or after a component has been rendered/updated (with `useEffect`).
+Enviamos solicitações HTTP no React como consequência da interação do usuário (como um clique de botão) ou quando o componente é renderizado/atualizado. Fazemos isso em uma função separada que executamos, seja em um evento (como `onClick`) ou após um componente ser renderizado/atualizado (com `useEffect`).

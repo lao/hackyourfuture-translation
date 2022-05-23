@@ -1,175 +1,175 @@
-# Reading Material JavaScript2 Week 1
+# Material de leitura JavaScript2 Semana 1
 
 ## Agenda
 
-These are the topics for week 1:
+Estes são os tópicos da semana 1:
 
-1. What is a web browser?
-   - How a browser works
-   - Different browsers work differently
-2. What is the Document-Object Model (DOM)?
-   - JavaScript and the browser
-   - The DOM
-   - The Critical Rendering Path
-   - Traversing the DOM
-3. What is DOM Manipulation?
+1. O que é um navegador da web?
+   - Como funciona um navegador
+   - Diferentes navegadores funcionam de forma diferente
+2. O que é o Document-Object Model (DOM)?
+   - JavaScript e o navegador
+   - O DOM
+   - O Caminho Crítico de Renderização
+   - Percorrendo o DOM
+3. O que é Manipulação DOM?
 
-   - Manipulating elements
-   - Browser events
-   - Event listeners and handlers
+   - Manipulação de elementos
+   - Eventos do navegador
+   - Ouvintes e manipuladores de eventos
 
-## 0. Video Lectures
+## 0. Vídeo-aulas
 
-Your teacher Wilgert has made video lectures for this week's material. You can find them here: [Videos 1 - 10](https://www.youtube.com/playlist?list=PLVYDhqbgYpYU-7_oyPBkUuuis5bL1Dk8n)
+Seu professor Wilgert fez palestras em vídeo para o material desta semana. Você pode encontrá-los aqui: [Vídeos 1 - 10](https://www.youtube.com/playlist?list=PLVYDhqbgYpYU-7_oyPBkUuuis5bL1Dk8n)
 
-<a href="https://www.youtube.com/playlist?list=PLVYDhqbgYpYU-7_oyPBkUuuis5bL1Dk8n" target="_blank"><img src="../assets/wilgert.png" width="600" height="350" alt="HYF Video" /></a>
+<a href="https://www.youtube.com/playlist?list=PLVYDhqbgYpYU-7_oyPBkUuuis5bL1Dk8n" target="_blank"><img src="../assets/wilgert.png" width="600" height= "350" alt="HYF Video" /></a>
 
-## 1. What is a web browser?
+## 1. O que é um navegador da web?
 
-A web browser is software that allows you to access websites.
+Um navegador da web é um software que permite acessar sites.
 
-### How a browser works
+### Como funciona um navegador
 
-In your journey into becoming a web developer it's important to know the tools you'll be using intimately. One such is the browser, which will be used to display your websites. In the following resources you'll learn about the many parts any web browser consists of and what their use is:
+Em sua jornada para se tornar um desenvolvedor web, é importante conhecer intimamente as ferramentas que você usará. Um deles é o navegador, que será usado para exibir seus sites. Nos recursos a seguir, você aprenderá sobre as muitas partes em que consiste qualquer navegador da Web e qual é o seu uso:
 
-- [How a web browser functions](https://www.youtube.com/watch?v=z0HN-fG6oT4)
-- [How do web browsers work?](https://medium.com/@monica1109/how-does-web-browsers-work-c95ad628a509)
+- [Como funciona um navegador da web](https://www.youtube.com/watch?v=z0HN-fG6oT4)
+- [Como funcionam os navegadores da Web?](https://medium.com/@monica1109/how-does-web-browsers-work-c95ad628a509)
 
-### Different browsers work differently
+### Diferentes navegadores funcionam de forma diferente
 
-A website, ultimately is a set of instructions describing how a series of webpages should look. It's up to the browser to render it by reading the code from your HTML/CSS and JavaScript files. There are, however, differences in the code interpretation of the different browsers, thus making the output look differently.
+Um site, em última análise, é um conjunto de instruções que descrevem a aparência de uma série de páginas da web. Cabe ao navegador renderizá-lo lendo o código de seus arquivos HTML/CSS e JavaScript. Existem, no entanto, diferenças na interpretação do código dos diferentes navegadores, fazendo com que a saída pareça diferente.
 
-That's why you should check the way your website looks on different browsers during the development of your website. This is called making it **cross browser compatible**>
+É por isso que você deve verificar a aparência do seu site em diferentes navegadores durante o desenvolvimento do seu site. Isso se chama torná-lo **compatível com vários navegadores**>
 
-You can use the following online tool in order see how your pages look on multiple browsers:
+Você pode usar a seguinte ferramenta online para ver a aparência de suas páginas em vários navegadores:
 
 - [Browsershots](http://browsershots.org)
 
-A good website should look and function the same in any browser.
+Um bom site deve ter a mesma aparência e funcionar em qualquer navegador.
 
-Unfortunately, there is no easy solution for that. You should check the specificities of each browser that fails to display your website correctly and make the necessary adjustments to your code. Such compatibility issues may occur not only in different browsers but because of an old browser version which does not support completely the latest standards.
+Infelizmente, não existe uma solução fácil para isso. Você deve verificar as especificidades de cada navegador que não exibe seu site corretamente e fazer os ajustes necessários em seu código. Esses problemas de compatibilidade podem ocorrer não apenas em navegadores diferentes, mas também devido a uma versão antiga do navegador que não suporta completamente os padrões mais recentes.
 
-This is because browser development doesn't go at the same speed as programming language development. More often than not, the web technologies you're using will have more features you as a developer can make use of than the browser can currently handle. This is important to keep in mind.
+Isso ocorre porque o desenvolvimento do navegador não ocorre na mesma velocidade que o desenvolvimento da linguagem de programação. Na maioria das vezes, as tecnologias da Web que você está usando terão mais recursos que você, como desenvolvedor, pode usar do que o navegador pode lidar atualmente. Isso é importante ter em mente.
 
-When you do your styling, especially, it's important to know if a certain browser (and browser version) is even able to understand it. A helpful tool in identifying this is a website called **caniuse.com**:
+Quando você faz seu estilo, especialmente, é importante saber se um determinado navegador (e versão do navegador) é capaz de entendê-lo. Uma ferramenta útil para identificar isso é um site chamado **caniuse.com**:
 
 - [caniuse](https://caniuse.com/)
-- [Check HTML5/CSS3 Support with CANIUSE.COM](https://www.youtube.com/watch?v=el7McMP8CB8)
+- [Verifique o suporte HTML5/CSS3 com CANIUSE.COM](https://www.youtube.com/watch?v=el7McMP8CB8)
 
-Generally speaking, you want to support as many browsers (and browser versions) with your code as possible.
+De um modo geral, você deseja oferecer suporte ao maior número possível de navegadores (e versões de navegadores) com seu código.
 
-For more research, check out the following resources:
+Para mais pesquisas, confira os seguintes recursos:
 
-- [Dealing with Cross Browser Compatibility](https://www.youtube.com/watch?v=9tEixRJ3GeI)
-- [Understanding The Stacking Context for Cross Browser Compatibility](https://medium.com/@mattcroak718/understanding-the-stacking-context-for-cross-browser-compatibility-2b21db1cf621)
+- [Como lidar com a compatibilidade entre navegadores](https://www.youtube.com/watch?v=9tEixRJ3GeI)
+- [Compreendendo o contexto de empilhamento para compatibilidade entre navegadores](https://medium.com/@mattcroak718/understanding-the-stacking-context-for-cross-browser-compatibility-2b21db1cf621)
 
-## 2. What is the Document-Object Model (DOM)?
+## 2. O que é o Document-Object Model (DOM)?
 
-### JavaScript and the browser
+### JavaScript e o navegador
 
-As we've learned in the previous module, JavaScript is a programming language. It allows you to write logical rules that the computer can execute in order to solve a problem. However, saying that the 'computer' executes it is actually inaccurate. There are two specific softwares that execute JavaScript: **the browser** and **Node.js**. We'll talk about the latter in a different module.
+Como aprendemos no módulo anterior, JavaScript é uma linguagem de programação. Ele permite que você escreva regras lógicas que o computador pode executar para resolver um problema. No entanto, dizer que o 'computador' o executa é realmente impreciso. Existem dois softwares específicos que executam JavaScript: **o navegador** e **Node.js**. Falaremos sobre este último em um módulo diferente.
 
-The browser is software that has been build to understand JavaScript ((and HTML/CSS)). Each different browser (Chrome, Firefox, Safari, etc.) has, behind the scenes, a **JavaScript engine** that works to transform the JavaScript code that you write into code that the computer understands.
+O navegador é um software que foi construído para entender JavaScript ((e HTML/CSS)). Cada navegador diferente (Chrome, Firefox, Safari, etc.) tem, nos bastidores, um **mecanismo JavaScript** que funciona para transformar o código JavaScript que você escreve em um código que o computador entende.
 
-- [How the JavaScript engine works](https://www.youtube.com/watch?v=KM9coMpy5sQ)
+- [Como funciona o mecanismo JavaScript](https://www.youtube.com/watch?v=KM9coMpy5sQ)
 
-Every programming language sits at a certain level of abstraction, relative to the only real language a computer understands: machine code (which is only 0's and 1's). For more information on this, check out the following [video](https://www.youtube.com/watch?v=bUWCD45qniA)
+Toda linguagem de programação está em um certo nível de abstração, em relação à única linguagem real que um computador entende: código de máquina (que é apenas 0's e 1's). Para obter mais informações sobre isso, confira o seguinte [vídeo](https://www.youtube.com/watch?v=bUWCD45qniA)
 
-For our purposes, it's only important to understand that the browser looks at JavaScript and then does what it's instructed to do: add elements, modify text or media files, etc. That's the purpose of JavaScript in the browser: to add interactivity based off of the user's behavior.
+Para nossos propósitos, é importante apenas entender que o navegador analisa o JavaScript e, em seguida, faz o que é instruído a fazer: adicionar elementos, modificar arquivos de texto ou mídia etc. Esse é o objetivo do JavaScript no navegador: adicionar interatividade com base em o comportamento do usuário.
 
-- [JavaScript, the Browser, and the DOM](https://www.youtube.com/watch?v=31ViueuIXGE)
+- [JavaScript, o navegador e o DOM](https://www.youtube.com/watch?v=31ViueuIXGE)
 
-### The DOM
+### O DOM
 
-The Document-Object Model (DOM) is a tree-like representation of the structure of a webpage. The following is a simple example:
+O Document-Object Model (DOM) é uma representação em forma de árvore da estrutura de uma página da web. O seguinte é um exemplo simples:
 
 ![Simple DOM](./../assets/simple-dom.png)
 
-JavaScript is made accessible to the DOM by embedding it into an HTML file. You might've seen the `<script></script>` before; well, this is how the browser becomes aware of JavaScript.
+O JavaScript torna-se acessível ao DOM incorporando-o em um arquivo HTML. Você pode ter visto o `<script></script>` antes; bem, é assim que o navegador toma conhecimento do JavaScript.
 
-- [What exactly is the DOM](https://bitsofco.de/what-exactly-is-the-dom/)
-- [JavaScript and the browser](https://eloquentjavascript.net/13_browser.html)
-- [JavaScript DOM Crash Course - Part 1](https://www.youtube.com/watch?v=0ik6X4DJKCc)
+- [O que exatamente é o DOM](https://bitsofco.de/what-exactly-is-the-dom/)
+- [JavaScript e o navegador](https://eloquentjavascript.net/13_browser.html)
+- [Curso básico de JavaScript DOM - Parte 1](https://www.youtube.com/watch?v=0ik6X4DJKCc)
 
-### The Critical Rendering Path
+### O caminho crítico de renderização
 
-The actual process of transforming HTML, CSS and JavaScript into a user-viewable version of a webpage is called **the Critical Rendering Path**.
+O processo real de transformar HTML, CSS e JavaScript em uma versão visualizável pelo usuário de uma página da Web é chamado de **Caminho de renderização crítica**.
 
-- [Understanding the Critical Rendering Path](https://bitsofco.de/understanding-the-critical-rendering-path/)
+- [Entendendo o caminho crítico de renderização](https://bitsofco.de/understanding-the-critical-rendering-path/)
 
-## 3. What is DOM Manipulation?
+## 3. O que é Manipulação DOM?
 
-**DOM manipulation** refers to the activity of selecting and modifying DOM elements. The main reason why this is done is that **you want to show the user different things depending their activity**, for example if you click on a [hamburger menu icon](https://bit.ly/2Yr4O7Z) and a navigation menu slides in.
+**Manipulação DOM** refere-se à atividade de selecionar e modificar elementos DOM. A principal razão pela qual isso é feito é que **você deseja mostrar ao usuário coisas diferentes dependendo de sua atividade**, por exemplo, se você clicar em um [ícone de menu de hambúrguer](https://bit.ly/2Yr4O7Z) e um menu de navegação desliza.
 
-Finding the right elements is called **traversing the DOM**. Traversing the DOM essential means: using JavaScript to select certain elements within the DOM in order to modify them (change color, size or make them disappear, for example).
+Encontrar os elementos certos é chamado de **percorrer o DOM**. Atravessar o DOM essencial significa: usar JavaScript para selecionar certos elementos dentro do DOM para modificá-los (mudar de cor, tamanho ou fazê-los desaparecer, por exemplo).
 
-### Manipulating elements
+### Manipulando elementos
 
-Look at the following code sample:
+Veja o exemplo de código a seguir:
 
-```js
-const body = document.querySelector('body'); // you can also use 'document.body'
+``` js
+const corpo = document.querySelector('corpo'); // você também pode usar 'document.body'
 const newParagraph = document.createElement('p');
-newParagraph.innerText = 'This paragraph will be added to the body!';
-newParagraph.style.background = 'red';
+newParagraph.innerText = 'Este parágrafo será adicionado ao corpo!';
+newParagraph.style.background = 'vermelho';
 body.appendChild(newParagraph);
 ```
 
-In this example we're executing the following steps:
+Neste exemplo, estamos executando as seguintes etapas:
 
-1. Selecting the body: this is always necessary, as we can only add or remove elements from the body of the document
-2. Creating a new DOM element: a paragraph i.e. a `<p>` element
-3. Injecting content into the newly create paragraph element
-4. Setting the background color for the newly create paragraph element
-5. Adding the  newly create paragraph element element to the body
+1. Selecionando o corpo: isso é sempre necessário, pois só podemos adicionar ou remover elementos do corpo do documento
+2. Criando um novo elemento DOM: um parágrafo, ou seja, um elemento `<p>`
+3. Injetando conteúdo no elemento de parágrafo recém-criado
+4. Definir a cor de fundo para o elemento de parágrafo recém-criado
+5. Adicionando o elemento de elemento de parágrafo recém-criado ao corpo
 
-Test this code out by copying and pasting it in the Developer Console of your browser. After you've pressed the Enter/Return key you will find your new `<p>` at the end of the page!
+Teste este código copiando e colando-o no Developer Console do seu navegador. Depois de pressionar a tecla Enter/Return, você encontrará seu novo `<p>` no final da página!
 
-Learning how to write JavaScript that targets the DOM is an essential part of being a web developer. In the following resources you'll more about how to do that:
+Aprender a escrever JavaScript direcionado ao DOM é uma parte essencial de ser um desenvolvedor web. Nos recursos a seguir, você saberá mais sobre como fazer isso:
 
-- [Traversing the DOM with JavaScript](https://zellwk.com/blog/dom-traversals/)
-- [JavaScript DOM Crash Course - Part 2](https://www.youtube.com/watch?v=mPd2aJXCZ2g)
+- [Percorrendo o DOM com JavaScript](https://zellwk.com/blog/dom-traversals/)
+- [Curso básico de JavaScript DOM - Parte 2](https://www.youtube.com/watch?v=mPd2aJXCZ2g)
 
-### Browser events
+### Eventos do navegador
 
-Browser events (also known as DOM events) are very much like real-life events: they are important things that happen. In real-life this could be getting a job, graduating from school or receiving a birthday gift. In terms of the browser, this is much more small scale: user actions like `clicking`, `scrolling` or `typing` are all considered events.
+Os eventos do navegador (também conhecidos como eventos DOM) são muito parecidos com os eventos da vida real: são coisas importantes que acontecem. Na vida real, isso pode ser conseguir um emprego, se formar na escola ou receber um presente de aniversário. Em termos de navegador, isso é muito mais pequeno: ações do usuário como `clicar`, `rolar` ou `digitar` são todos considerados eventos.
 
-These events are important to know about, because based on those we manipulate the DOM. For example, user clicks on an image and as a result it increases in size.
+Esses eventos são importantes de se conhecer, pois com base neles manipulamos o DOM. Por exemplo, o usuário clica em uma imagem e, como resultado, ela aumenta de tamanho.
 
-Effectively it's cause and effect.
+Efetivamente é causa e efeito.
 
-Check out the following resources to learn more about what events there are, and what you can do to manipulate elements after an event has happened:
+Confira os recursos a seguir para saber mais sobre quais eventos existem e o que você pode fazer para manipular elementos após a ocorrência de um evento:
 
-- [What are browser events?](https://www.youtube.com/watch?v=LeKKU3a4AQo)
-- [Introduction to browser events](https://javascript.info/introduction-browser-events)
-- [JavaScript DOM Crash Course - Part 3](https://www.youtube.com/watch?v=wK2cBMcDTss)
+- [O que são eventos do navegador?](https://www.youtube.com/watch?v=LeKKU3a4AQo)
+- [Introdução aos eventos do navegador](https://javascript.info/introduction-browser-events)
+- [Curso básico de JavaScript DOM - Parte 3](https://www.youtube.com/watch?v=wK2cBMcDTss)
 
-### Event listeners and handlers
+### Ouvintes e manipuladores de eventos
 
-Take a look at this code:
+Dê uma olhada neste código:
 
-```js
-const body = document.querySelector('body');
-body.addEventListener('click', function () {
-  body.style.background = 'black';
+``` js
+const corpo = document.querySelector('corpo');
+body.addEventListener('click', function() {
+  body.style.background = 'preto';
 });
 ```
 
-Test this code out by copying and pasting it in the Developer Console of your browser. After you've pressed the Enter/Return click the website. You should see the whole `<body>` becoming black!
+Teste este código copiando e colando-o no Developer Console do seu navegador. Depois de pressionar Enter/Return, clique no site. Você deve ver todo o `<body>` ficando preto!
 
-This is DOM manipulation in its simplest form. It goes in three essential steps:
+Esta é a manipulação do DOM em sua forma mais simples. Ele segue em três etapas essenciais:
 
-(1) An event happens ("User clicks on the page")
-(2) JavaScript is aware and looks for this specific user action (The browser is listening for the event, in this case a `click` event)
-(3) JavaScript modifies the DOM as a result (A function that makes the body background color black is executed)
+(1) Ocorre um evento ("O usuário clica na página")
+(2) JavaScript está ciente e procura por esta ação específica do usuário (O navegador está escutando o evento, neste caso um evento `click`)
+(3) JavaScript modifica o DOM como resultado (uma função que torna a cor de fundo do corpo preta é executada)
 
-The second step is called **listening for the event**. We do this by using a by the browser predefined function called `addEventListener()`, which we get from the `document` object in the browser. The browser needs to listen to the event in order to know what it should do ("make the body background color black") in case a certain event (`click`) happens to a certain element (`body`).
+A segunda etapa é chamada de **escutando o evento**. Fazemos isso usando uma função predefinida pelo navegador chamada `addEventListener()`, que obtemos do objeto `document` no navegador. O navegador precisa ouvir o evento para saber o que ele deve fazer ("tornar a cor de fundo do corpo preta") caso um determinado evento (`click`) aconteça com um determinado elemento (`body`).
 
-The third and final step is called **handling the event**. The term "handler" effectively means "taking care of" the event; the response to the event. The handler itself is nothing more than a function that executes more JavaScript code in order to manipulate a particular part of the page (either the element that experienced the event or a totally different part of the page).
+A terceira e última etapa é chamada de **tratamento do evento**. O termo "manipulador" significa efetivamente "cuidar" do evento; a resposta ao evento. O manipulador em si nada mais é do que uma função que executa mais código JavaScript para manipular uma parte específica da página (seja o elemento que experimentou o evento ou uma parte totalmente diferente da página).
 
-- [Events in JavaScript](https://www.youtube.com/watch?v=7UstS0hsHgI)
-- [JavaScript Events Tutorial](https://www.youtube.com/watch?v=e57ReoUn6kM)
+- [Eventos em JavaScript](https://www.youtube.com/watch?v=7UstS0hsHgI)
+- [Tutorial de eventos JavaScript](https://www.youtube.com/watch?v=e57ReoUn6kM)
 
-## Finished?
+## Finalizado?
 
-Are you finished with going through the materials? High five! If you feel ready to get practical, click [here](./MAKEME.md).
+Você terminou de passar pelos materiais? Toca aqui! Se você se sentir pronto para ser prático, clique [aqui](./MAKEME.md).

@@ -1,94 +1,94 @@
-# Basic DOM manipulation
+# Manipulação básica do DOM
 
-The Document Object Model (DOM) is a construct through which web browsers make the HTML structure of a web page (= 'document') available to JavaScript files loaded into that page. We can access the DOM through a global object called `document`.
+O Document Object Model (DOM) é uma construção através da qual os navegadores da Web tornam a estrutura HTML de uma página da Web (= 'documento') disponível para arquivos JavaScript carregados nessa página. Podemos acessar o DOM através de um objeto global chamado `document`.
 
-Consider this HTML:
+Considere este HTML:
 
 ```html
-<body>
+<corpo>
   <div id="root"></div>
 </body>
 ```
 
-A common method to access an HTML element through the DOM is by giving it an ID, and then using the `document` method `getElementById()`.
+Um método comum para acessar um elemento HTML através do DOM é fornecer um ID a ele e, em seguida, usar o método `document` `getElementById()`.
 
-```js
+``` js
 const rootDiv = document.getElementById('root');
 ```
 
-Now, we have a *reference* to the HTML element in our JavaScript code. We can, for instance, set the text content through the `innerText` property.
+Agora, temos uma *referência* ao elemento HTML em nosso código JavaScript. Podemos, por exemplo, definir o conteúdo do texto através da propriedade `innerText`.
 
-```js
-rootDiv.innerText = 'Hello, world!';
+``` js
+rootDiv.innerText = 'Olá, mundo!';
 ```
 
-As a result, the HTML structure now looks like this:
+Como resultado, a estrutura HTML agora se parece com isso:
 
 ```html
-<body>
-  <div id="root">Hello, world!</div>
+<corpo>
+  <div id="root">Olá, mundo!</div>
 </body>
 ```
 
-> See the result of what this code changes in this [CodePen](https://codepen.io/remarcmij/pen/VEerRP) and play with it yourself.
+> Veja o resultado do que este código muda neste [CodePen](https://codepen.io/remarcmij/pen/VEerRP) e brinque com ele você mesmo.
 
-_Note that we are not modifying the HTML file (e.g., `index.html`) itself. We are just modifying an in-memory representation of the HTML as was initially loaded through the HTML file._
+_Observe que não estamos modificando o arquivo HTML (por exemplo, `index.html`) em si. Estamos apenas modificando uma representação na memória do HTML como foi inicialmente carregado por meio do arquivo HTML._
 
-We can also create elements:
+Também podemos criar elementos:
 
-```js
-// Create a button element and label it Click Me!
-const myButton = document.createElement('button');
-myButton.innerText = 'Click Me!';
+``` js
+// Cria um elemento de botão e rotula-o Click Me!
+const meuBotão = document.createElement('button');
+myButton.innerText = 'Clique em mim!';
 ```
 
-This creates a button element and sets its label (i.e. `innerText`), but this in itself is not enough. At this point the button is created but not yet added to the DOM: it is still somewhere "hanging up in the air". We need to attach it to some parent element that is already part of the DOM. This is done by calling `appendChild()` on that parent element, passing it a reference to the newly created element.
+Isso cria um elemento de botão e define seu rótulo (ou seja, `innerText`), mas isso por si só não é suficiente. Neste ponto, o botão é criado, mas ainda não adicionado ao DOM: ele ainda está em algum lugar "pendurado no ar". Precisamos anexá-lo a algum elemento pai que já faz parte do DOM. Isso é feito chamando `appendChild()` nesse elemento pai, passando uma referência para o elemento recém-criado.
 
-```js
-rootDiv.appendChild(myButton);
+``` js
+rootDiv.appendChild(meuBotão);
 ```
 
-As a result, the HTML structure now looks like this:
+Como resultado, a estrutura HTML agora se parece com isso:
 
 ```html
-<body>
+<corpo>
   <div id="root">
-    <button>Click Me!</button>
+    <button>Clique em mim!</button>
   </div>
 </body>
 ```
 
-> See the result of what this code changes in this [CodePen](https://codepen.io/remarcmij/pen/bmEaVm) and play with it yourself.
+> Veja o resultado do que este código muda neste [CodePen](https://codepen.io/remarcmij/pen/bmEaVm) e brinque com ele você mesmo.
 
-We can set attributes on elements:
+Podemos definir atributos em elementos:
 
-```js
-myButton.setAttribute('class', 'my-button');
+``` js
+myButton.setAttribute('class', 'meu-botão');
 ```
 
-Resulting HTML:
+HTML resultante:
 
 ```html
-<body>
+<corpo>
   <div id="root">
-    <button class="my-button">Click Me!</button>
+    <button class="my-button">Clique em mim!</button>
   </div>
 </body>
 ```
 
-> See the result of what this code changes in this [CodePen](https://codepen.io/remarcmij/pen/wYMmpP) and play with it yourself.
+> Veja o resultado do que este código muda neste [CodePen](https://codepen.io/remarcmij/pen/wYMmpP) e brinque com ele você mesmo.
 
-We can add event listeners to elements to respond to user interaction. In this example we are adding an event listener to the button that responds to the `click` event. This event is triggered whenever the user clicks on the button. 
+Podemos adicionar ouvintes de eventos a elementos para responder à interação do usuário. Neste exemplo estamos adicionando um ouvinte de evento ao botão que responde ao evento `click`. Este evento é acionado sempre que o usuário clica no botão.
 
-```js
- myButton.addEventListener('click', function () {
+``` js
+ myButton.addEventListener('click', function() {
   const para = document.createElement('p');
-  para.innerText = 'You clicked me!';
+  para.innerText = 'Você clicou em mim!';
   rootDiv.appendChild(para);
 });
 ```
 
-Adding an event listener does not change the HTML structure. However the event listener may cause changes to the DOM (as is illustrated in the above example) when the event is triggered.
+Adicionar um ouvinte de eventos não altera a estrutura HTML. No entanto, o ouvinte de eventos pode causar alterações no DOM (como ilustrado no exemplo acima) quando o evento é acionado.
 
-> See the result of what this code changes in this [CodePen](https://codepen.io/remarcmij/pen/MPKVEP) and play with it yourself.
+> Veja o resultado do que este código muda neste [CodePen](https://codepen.io/remarcmij/pen/MPKVEP) e brinque com ele você mesmo.
 

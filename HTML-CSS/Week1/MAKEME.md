@@ -1,82 +1,82 @@
-# Homework HTML/CSS Week 1
+# Trabalho de casa HTML/CSS Semana 1
 
-## Todo list
+## Lista de afazeres
 
-1. Prep exercises
-2. Command Line Interface
-3. CSS Challenges
-4. Code along
-5. PROJECT: Digital Resume
+1. Exercícios de preparação
+2. Interface de linha de comando
+3. Desafios CSS
+4. Codifique junto
+5. PROJETO: Currículo Digital
 
-### **1. Prep exercises**
+### **1. Exercícios de preparação**
 
-> Prep exercises are exercises that you should work on _before_ the session on Sunday. These are a little more difficult or show an important concept and as such are a great exercise to talk about with your mentor. Have a solution ready by Sunday as you may be asked to show what you did.
+> Exercícios de preparação são exercícios que você deve trabalhar _antes_ da sessão de domingo. Estes são um pouco mais difíceis ou mostram um conceito importante e, como tal, são um ótimo exercício para conversar com seu mentor. Tenha uma solução pronta até domingo, pois pode ser solicitado que você mostre o que fez.
 
-Inside your `HTML-CSS` fork, go to the folder `week1`. Inside of that folder, navigate to `/prep-exercises`. For each exercise, you will find a separate folder. The `README` explains what needs to be done. There will also be some questions at the bottom to think about. Go through them _before_ the session on Sunday as it will be covered then.
+Dentro do seu fork `HTML-CSS`, vá para a pasta `week1`. Dentro dessa pasta, navegue até `/prep-exercises`. Para cada exercício, você encontrará uma pasta separada. O `README` explica o que precisa ser feito. Haverá também algumas perguntas na parte inferior para pensar. Passe por eles _antes_ da sessão no domingo, pois será coberto então.
 
-### **2. Command Line Interface challenge**
+### **2. Desafio da interface de linha de comando**
 
-> Before you start any of the exercises, make sure to create a folder on your desktop that will hold all of your exercise files. Give the folder the name `hyf-html-exercises`. Inside, create a `week1` folder and will hold this week's exercise files inside.
+> Antes de iniciar qualquer um dos exercícios, certifique-se de criar uma pasta em sua área de trabalho que conterá todos os seus arquivos de exercícios. Dê à pasta o nome `hyf-html-exercises`. Dentro, crie uma pasta `week1` e conterá os arquivos de exercícios desta semana dentro.
 
-Using the CLI, create a plain text file (`.txt`) that contains the commands necessary to answer the following questions:
+Usando a CLI, crie um arquivo de texto simples (`.txt`) que contenha os comandos necessários para responder às seguintes perguntas:
 
-1. How do I create a hidden file or folder? How do I display it in the CLI?
-2. How do I create multiple nested directories, like `/c/Users/myusername/these/folders/are/just/for/fun`?
-3. How do I append a message to a file, without a newline character, so the output would be:
+1. Como crio um arquivo ou pasta oculta? Como faço para exibi-lo na CLI?
+2. Como eu crio vários diretórios aninhados, como `/c/Users/myusername/these/folders/are/just/for/fun`?
+3. Como faço para anexar uma mensagem a um arquivo, sem um caractere de nova linha, para que a saída seja:
 
 ```
-first message
-second message
+Primeira Mensagem
+segunda mensagem
 ```
 
-### **3. CSS Challenges**
+### **3. Desafios CSS**
 
-In order to improve you need to practice a lot! In the following challenges you'll work with CSS, starting from the absolute basics to building a page:
+Para melhorar você precisa praticar muito! Nos desafios a seguir, você trabalhará com CSS, começando do básico absoluto até a construção de uma página:
 
-- [CSS Challenges](https://en.wikiversity.org/wiki/Web_Design/CSS_challenges): Do challenge #1 to #6.
+- [Desafios CSS](https://en.wikiversity.org/wiki/Web_Design/CSS_challenges): Faça o desafio nº 1 a nº 6.
 
-### **4. Code along**
+### **4. Código junto**
 
-A big part of learning web development is through learning by example. In the following video you'll learn how to build a simple website, using basic HTML & CSS:
+Uma grande parte do aprendizado de desenvolvimento web é através do aprendizado pelo exemplo. No vídeo a seguir, você aprenderá a construir um site simples, usando HTML e CSS básicos:
 
-- [Simple website](https://www.youtube.com/watch?v=pOwLCTkypUs)
+- [Site simples](https://www.youtube.com/watch?v=pOwLCTkypUs)
 
-### **5. PROJECT: Digital Resume**
+### **5. PROJETO: Currículo Digital**
 
-> Every week ends with a project you have to build on your own. Instead of getting clear-cut instructions, you'll get a list of criteria that your project needs to measure up to.
+> Cada semana termina com um projeto que você deve construir por conta própria. Em vez de obter instruções claras, você receberá uma lista de critérios que seu projeto precisa atender.
 
-In the following assignment you'll make your own Digital Resume. Here are the requirements that need to be fulfilled:
+Na tarefa a seguir você fará seu próprio Currículo Digital. Aqui estão os requisitos que precisam ser cumpridos:
 
-- It needs to be one webpage
-- Your project folder should contain two files: a `.html` and a `.css` file
-- Include the following pieces of information:
-  - Your personal information (Note: _the page will be public on the whole internet_ for our review, so as a privacy-conscious individual, feel free to use fake information here)
-  - A picture of you
-  - A few lines about who you are
-  - Education (list at least 1 education institute)
-  - Work experience (list at least 1 workplace)
+- Precisa ser uma página da web
+- A pasta do seu projeto deve conter dois arquivos: um arquivo `.html` e um arquivo `.css`
+- Inclua as seguintes informações:
+  - Suas informações pessoais (Observação: _a página será pública em toda a Internet_ para nossa análise, portanto, como um indivíduo preocupado com a privacidade, sinta-se à vontade para usar informações falsas aqui)
+  - Uma foto sua
+  - Algumas linhas sobre quem você é
+  - Educação (liste pelo menos 1 instituto de educação)
+  - Experiência profissional (listar pelo menos 1 local de trabalho)
 
-When writing the HTML include the following:
+Ao escrever o HTML inclua o seguinte:
 
-- Different types of headings, like `<h1>` and `<h2>`
-- An unordered list (`<ul>`). Use this to list out your educational background
-- Another unordered list (`<ul>`).
-- An `<img>` tag (for your picture)
-- Some `<p>` tags
+- Diferentes tipos de títulos, como `<h1>` e `<h2>`
+- Uma lista não ordenada (`<ul>`). Use isso para listar sua formação educacional
+- Outra lista não ordenada (`<ul>`).
+- Uma tag `<img>` (para sua foto)
+- Algumas tags `<p>`
 
-When writing the CSS include the following:
+Ao escrever o CSS, inclua o seguinte:
 
-- Some CSS properties, like: `margin`, `padding`, `color`, etc.
-- You are **NOT** allowed to use CSS frameworks (like Bootstrap, MaterializeCSS, etc.)
-- Bonus: look into using [flexbox](https://www.youtube.com/watch?v=fYq5PXgSsbE) or [grid](https://www.youtube.com/watch?v=EFafSYg-PkI)
+- Algumas propriedades CSS, como: `margin`, `padding`, `color`, etc.
+- Você **NÃO** tem permissão para usar estruturas CSS (como Bootstrap, MaterializeCSS, etc.)
+- Bônus: procure usar [flexbox](https://www.youtube.com/watch?v=fYq5PXgSsbE) ou [grid](https://www.youtube.com/watch?v=EFafSYg-PkI)
 
-## SUBMIT YOUR HOMEWORK!
+## ENVIE SUA LIÇÃO DE CASA!
 
-After you've finished your todo list it's time to show us what you got! The homework that needs to be submitted is the following:
+Depois de terminar sua lista de tarefas, é hora de nos mostrar o que você tem! A lição de casa que precisa ser enviada é a seguinte:
 
-1. The CLI challenge
-2. The Digital Resume
+1. O desafio da CLI
+2. O Currículo Digital
 
-Upload both in a repository to GitHub and then upload the link to it on the Trello board: "Feedback Assignments". Go through the [guide](../hand-in-homework-guide.md) to learn how to do this.
+Faça o upload de ambos em um repositório para o GitHub e, em seguida, faça o upload do link para ele no quadro do Trello: "Feedback Assignments". Vá até o [guia](../hand-in-homework-guide.md) para aprender como fazer isso.
 
-_Deadline Tuesday 23.59 CET_
+_Prazo terça-feira 23.59 CET_

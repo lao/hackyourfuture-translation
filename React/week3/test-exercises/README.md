@@ -1,20 +1,20 @@
-# Test exercises
+#Exercícios de teste
 
-In this sample project you will find some component files (files that end in `.js`) with associated test files (files that end in `.test.js`). The test files will have comments to help you out, we have also already described the things you should be testing. It is your job to make sure that all of the tests pass. You will notice that there are components with no associated test files, you only need to do the ones that have a test file associated with it.
+Neste projeto de amostra, você encontrará alguns arquivos de componentes (arquivos que terminam em `.js`) com arquivos de teste associados (arquivos que terminam em `.test.js`). Os arquivos de teste terão comentários para ajudá-lo, também já descrevemos as coisas que você deve testar. É seu trabalho garantir que todos os testes passem. Você notará que existem componentes sem arquivos de teste associados, você só precisa fazer os que possuem um arquivo de teste associado a ele.
 
-These test exercises try to provide you with a couple scenario's that you will encounter in your real world applications that you may be asked to test. We have the following things:
+Esses exercícios de teste tentam fornecer alguns cenários que você encontrará em seus aplicativos do mundo real que podem ser solicitados a testar. Temos as seguintes coisas:
 
-- `1-UserListItem` - A rendering component with data props and no other user interaction
-- `2-UserDetailsForm` - A form component with state changes and a button for user interaction
-- `3-ChuckNorrisJoke` - A simple component that grabs data from an api and renders it on the screen
-- `4-Routing` - A complete router that switches between pages
-- `5-Context` - A component set up to use a context
-- `6-userListState` - A custom hook that can be tested.
+- `1-UserListItem` - Um componente de renderização com adereços de dados e nenhuma outra interação do usuário
+- `2-UserDetailsForm` - Um componente de formulário com mudanças de estado e um botão para interação do usuário
+- `3-ChuckNorrisJoke` - Um componente simples que pega dados de uma API e os renderiza na tela
+- `4-Routing` - Um roteador completo que alterna entre as páginas
+- `5-Context` - Um componente configurado para usar um contexto
+- `6-userListState` - Um gancho personalizado que pode ser testado.
 
-You may edit the components if you wish, but only make changes that help you test it. The functionality of the component should stay the same!
+Você pode editar os componentes se desejar, mas apenas faça alterações que o ajudem a testá-lo. A funcionalidade do componente deve permanecer a mesma!
 
-To set up this folder, please run `npm run install`.
+Para configurar esta pasta, execute `npm run install`.
 
-To run the tests you can run `npm test`.
+Para executar os testes, você pode executar `npm test`.
 
-Note: this kind of test coverage is quite high and will only be necessary if the company you are going to work in deems it necessary. It is more important to have a good grasp of React than be able to do this, but we leave the tests here anyway for you to practice this kind of testing in an isolated way.
+Nota: este tipo de cobertura de teste é bastante elevada e só será necessária se a empresa em que vai trabalhar o considerar necessário. É mais importante ter um bom domínio do React do que ser capaz de fazer isso, mas deixamos os testes aqui mesmo assim para você praticar esse tipo de teste de forma isolada.

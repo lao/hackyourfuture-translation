@@ -1,66 +1,66 @@
-## Individual Presentations
+## Apresentações Individuais
 
-Giving presentations is an essential part of working in teams. But why is this the case? Most likely you've done them in school, and maybe even at some job. In the following we'll discuss several important reasons for **why** it's important to have good presentational skills.
+Fazer apresentações é uma parte essencial do trabalho em equipe. Mas por que é este o caso? Muito provavelmente você já fez isso na escola, e talvez até em algum trabalho. A seguir, discutiremos vários motivos importantes para **por que** é importante ter boas habilidades de apresentação.
 
-1. Communicate ideas or results
+1. Comunique ideias ou resultados
 
-The first reason directly links to the content of the presentation. You want to present ideas or the result of work to members of your team/company. Usually there is no place for discussion innovation, unless at a special meeting or presentation.
+A primeira razão está diretamente ligada ao conteúdo da apresentação. Você deseja apresentar ideias ou o resultado do trabalho para membros de sua equipe/empresa. Normalmente não há lugar para inovação na discussão, a não ser em uma reunião ou apresentação especial.
 
-2. Show confidence
+2. Mostre confiança
 
-A business grows through a series of wise decisions. When you present your ideas with confidence, others will take them more seriously and thus think better of your abilities. This will help the business and you as well.
+Um negócio cresce através de uma série de decisões sábias. Quando você apresenta suas ideias com confiança, os outros as levarão mais a sério e, assim, pensarão melhor em suas habilidades. Isso ajudará o negócio e você também.
 
-3. Gather feedback
+3. Colete comentários
 
-This is important: sure, you're presenting your ideas. But you also want to throw them in the group to see how others look at them. Because maybe you're in some regards incorrect, or need a second opinion.
+Isso é importante: claro, você está apresentando suas ideias. Mas você também quer jogá-los no grupo para ver como os outros olham para eles. Porque talvez você esteja incorreto em alguns aspectos ou precise de uma segunda opinião.
 
-4. Answer questions
+4. Responda às perguntas
 
-This will allow others to more fully grasp what your ideas are about.
+Isso permitirá que outras pessoas compreendam melhor sobre o que são suas ideias.
 
-### Presentation guidelines
+### Diretrizes de apresentação
 
-Here are some guidelines to preparing a quality presentation:
+Aqui estão algumas diretrizes para preparar uma apresentação de qualidade:
 
-1. Prepare slides (Keynote or Powerpoint)
-   - Each slide should contain only a few keywords that help summarise your point
-   - Provide code snippets
-   - Slide style matters (choose soft colors and fonts)
-2. Know the topic by heart. In case it’s helpful you may carry a short note with some keywords to keep your line of thought
-3. Prepare at least 1 code snippet that illustrate the concept you’re talking about
-4. Make enough contact with the audience: proper eye contact and creating interactivity will increase engagement for both the audience and yourself
-5. You have to show your thinking when answering questions (be honest!)
-6. You are not allowed to read from a paper or use Google during the presentation
+1. Preparar slides (Keynote ou Powerpoint)
+   - Cada slide deve conter apenas algumas palavras-chave que ajudem a resumir seu ponto
+   - Fornecer trechos de código
+   - O estilo do slide importa (escolha cores e fontes suaves)
+2. Conheça o tema de cor. Caso seja útil, você pode levar uma nota curta com algumas palavras-chave para manter sua linha de pensamento
+3. Prepare pelo menos um snippet de código que ilustre o conceito sobre o qual você está falando
+4. Faça contato suficiente com o público: o contato visual adequado e a criação de interatividade aumentarão o envolvimento do público e de você
+5. Você tem que mostrar seu pensamento ao responder as perguntas (seja honesto!)
+6. Você não tem permissão para ler um artigo ou usar o Google durante a apresentação
 
-### An Example
+### Um exemplo
 
-The following example has a basic structure:
-1. A clear definition, IN YOUR OWN WORDS. Make it as simple as possible.
-2. Show an example of the concept in code. Either self-created or found in a project.
-3. Be ready for questions!
+O exemplo a seguir tem uma estrutura básica:
+1. Uma definição clara, EM SUAS PRÓPRIAS PALAVRAS. Faça o mais simples possível.
+2. Mostre um exemplo do conceito no código. Ou auto-criado ou encontrado em um projeto.
+3. Esteja pronto para perguntas!
 
-> Example Topic: “Functions”
+> Exemplo de Tópico: “Funções”
 >
-> 1. A function is a reusable block of code designed to perform a certain task. For example, the task of the map() is to loop over an array to make it possible to modify every array element by calling another function on each item. Required to write a function are the “function” keyword and “return” statement.
-> 2. In the following piece of code functions are used to perform the task of transforming the data inside an array from strings to numbers:
+> 1. Uma função é um bloco de código reutilizável projetado para realizar uma determinada tarefa. Por exemplo, a tarefa do map() é fazer um loop sobre um array para tornar possível modificar cada elemento do array chamando outra função em cada item. Para escrever uma função, são necessárias a palavra-chave “function” e a instrução “return”.
+> 2. No trecho de código a seguir, as funções são usadas para realizar a tarefa de transformar os dados dentro de uma matriz de strings para números:
 
-```js
-const letters = [‘a’,’b’,’c’,’d’];
+``` js
+letras const = ['a','b','c','d'];
    function stringsToNumbers(arr) {
-   const numbers = arr.map(letter => arr.indexOf(letter));
-   return numbers;
+   const números = arr.map(letra => arr.indexOf(letra));
+   números de retorno;
    }
-   stringsToNumbers(letters);
+   stringsToNumbers(letras);
 ```
 
-> In the code you can see the definition of the function and the call. This functions takes the “letters” variable, which stores an array of strings, and performs the map function over it to return the index numbers of each ‘letter’.
+> No código você pode ver a definição da função e a chamada. Essa função pega a variável “letters”, que armazena um array de strings, e executa a função map sobre ela para retornar os números de índice de cada “letra”.
 >
-> 3.  Does anybody have any questions?
+> 3. Alguém tem alguma dúvida?
 
-<!-- You've just finished your project: your own full-stack application! However, so far you've only kept it to yourself. Wouldn't it be more fun to share it with others? That's what this document is about: how to present your project.
+<!-- Você acabou de terminar seu projeto: seu próprio aplicativo full-stack! No entanto, até agora você só guardou para si mesmo. Não seria mais divertido compartilhá-lo com os outros? É disso que trata este documento: como apresentar seu projeto.
 
-You'll be presenting your project to the rest of the HackYourFuture community. These consist of people of different levels of understanding. Some will understand all the fancy technologies you've used, while others will only stare blankly at what you've just said. That's not helpful.
+Você apresentará seu projeto para o resto da comunidade HackYourFuture. Estes consistem em pessoas de diferentes níveis de compreensão. Alguns vão entender todas as tecnologias sofisticadas que você usou, enquanto outros vão apenas olhar fixamente para o que você acabou de dizer. Isso não é útil.
 
-Instead, we'll be presenting things differently: **talk about your own experience**. Something we can all relate to is another person's experience. What have you learned about development, yourself and HackYourFuture, during these past 6 weeks?
+Em vez disso, apresentaremos as coisas de forma diferente: **fale sobre sua própria experiência**. Algo com o qual todos podemos nos relacionar é a experiência de outra pessoa. O que você aprendeu sobre desenvolvimento, você mesmo e o HackYourFuture, durante essas últimas 6 semanas?
 
-Example: _During the process I have learned the value of working together. While it's not easy to communicate, I've found it helpful to ask my team members for help whenever I get stuck. That way I don't feel like I have to do all of this stuff myself._ -->
+Exemplo: _Durante o processo aprendi o valor de trabalhar em conjunto. Embora não seja fácil se comunicar, achei útil pedir ajuda aos membros da minha equipe sempre que ficar preso. Dessa forma, não sinto que tenho que fazer tudo isso sozinho._ -->

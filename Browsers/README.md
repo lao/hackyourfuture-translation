@@ -1,67 +1,67 @@
-> If you are following the HackYourFuture curriculum we recommend you to start with module 1: [HTML/CSS/GIT](https://github.com/HackYourFuture/HTML-CSS). To get a complete overview of the HackYourFuture curriculum first, click [here](https://github.com/HackYourFuture/curriculum).
+> Se você estiver seguindo o currículo do HackYourFuture, recomendamos que comece com o módulo 1: [HTML/CSS/GIT](https://github.com/HackYourFuture/HTML-CSS). Para obter uma visão geral completa do currículo HackYourFuture primeiro, clique [aqui](https://github.com/HackYourFuture/curriculum).
 
-> Please help us improve and share your feedback! If you find better tutorials or links, please share them by [opening a pull request](https://github.com/HackYourFuture/Browsers/pulls).
+> Ajude-nos a melhorar e compartilhe seus comentários! Se você encontrar tutoriais ou links melhores, compartilhe-os [abrindo um pull request](https://github.com/HackYourFuture/Browsers/pulls).
 
-# Module #3 - Browsers
+# Módulo #3 - Navegadores
 
-![Browsers](./assets/browsers.png)
+![Navegadores](./assets/browsers.png)
 
-If you were to ask a random person on the street the question "What is a browser?", you'll most likely get a variety of (incorrect) answers. For proof, check [this](https://www.youtube.com/watch?v=o4MwTvtyrUQ) out.
+Se você perguntasse a uma pessoa aleatória na rua a pergunta "O que é um navegador?", provavelmente obteria uma variedade de respostas (incorretas). Para provar, confira [este](https://www.youtube.com/watch?v=o4MwTvtyrUQ).
 
-You might be one of those people right now, but after this module no more. In **Browsers** you'll learn all about how the browsers work and how to use the JavaScript you just learned within the browser.
+Você pode ser uma dessas pessoas agora, mas depois deste módulo não mais. Em **Navegadores**, você aprenderá tudo sobre como os navegadores funcionam e como usar o JavaScript que acabou de aprender no navegador.
 
-## Learning goals
+## Metas de aprendizagem
 
-In order to successfully complete this module you will need to master the following:
+Para concluir com sucesso este módulo, você precisará dominar o seguinte:
 
-- Understand what the `DOM` is
-- Use the basics of `DOM Manipulation`
-- Build a cool quiz website from scratch as a group
-- Learn how to present yourself and your code
+- Entenda o que é o `DOM`
+- Use o básico de `Manipulação DOM`
+- Construa um site de quiz legal do zero como um grupo
+- Aprenda a se apresentar e ao seu código
 
-## How to use this repository
+## Como usar este repositório
 
-### Repository content
+### Conteúdo do repositório
 
-This repository consists of 2 essential parts per week:
+Este repositório é composto por 2 partes essenciais por semana:
 
-1. `README`: this document contains all the required theory you need to understand **while** working on the homework. It contains the list of concepts that you will want to study this week and points you to your study book to read all about them. This is the **first thing** you should start with every week
-2. `MAKEME`: this document contains the instructions for each week's homework. Start with the exercises rather quickly, so that you can ground the concepts you read about earlier.
+1. `README`: este documento contém toda a teoria necessária que você precisa entender **enquanto** trabalha na lição de casa. Ele contém a lista de conceitos que você vai querer estudar esta semana e aponta para o seu livro de estudo para ler tudo sobre eles. Esta é a **primeira coisa** com a qual você deve começar toda semana
+2. `MAKEME`: este documento contém as instruções para o dever de casa de cada semana. Comece com os exercícios rapidamente, para que você possa fundamentar os conceitos sobre os quais leu anteriormente.
 
-### How to study
+### Como estudar
 
-Let's say you are just starting out with the Browsers module. This is what you do...
+Digamos que você esteja começando com o módulo Browsers. Isto é o que você faz...
 
-1. The week always starts on **Wednesday**. First thing you'll do is open the `README.md` for that week. For the first week of `Browsers`, that would be [Week1 Reading](/Week1/README.md)
-2. You spend **Wednesday** and **Thursday** going over the resources and try to get a basic understanding of the concepts. In the meanwhile, you'll also implement any feedback you got on last week's homework (from the JavaScript1 module)
-3. On **Friday** you start with the homework, found in the `MAKEME.md`. For the first week of `Browsers`, that would be [Week1 Homework](/Week1/MAKEME.md)
-4. You spend **Friday** and **Saturday** playing around with the exercises and write down any questions you might have
-5. **DEADLINE 1**: You'll submit any questions you might have before **Saturday 23.59**, in the class channel
-6. On **Sunday** you'll attend class. It'll be of the Q&A format, meaning that there will be no new material. Instead your questions shall be discussed and you can learn from others
-7. You spend **Monday** and **Tuesday** finalizing your homework
-8. **DEADLINE 2**: You submit your homework to the right channels (GitHub) before **Tuesday 23.59**. If you can't make it on time, please communicate it with your mentor
-9. Start the new week by going back to point 1!
+1. A semana sempre começa na **quarta-feira**. A primeira coisa que você vai fazer é abrir o `README.md` dessa semana. Para a primeira semana de `Browsers`, seria [Week1 Reading](/Week1/README.md)
+2. Você passa a **quarta-feira** e a **quinta-feira** examinando os recursos e tentando obter uma compreensão básica dos conceitos. Enquanto isso, você também implementará qualquer feedback que tenha recebido na lição de casa da semana passada (do módulo JavaScript1)
+3. Na **Sexta** você começa com o dever de casa, encontrado no `MAKEME.md`. Para a primeira semana de `Browsers`, isso seria [Week1 Homework](/Week1/MAKEME.md)
+4. Você passa a **sexta-feira** e o **sábado** brincando com os exercícios e anotando quaisquer dúvidas que possa ter
+5. **Prazo 1**: você enviará suas dúvidas até **sábado, 23h59**, no canal da turma
+6. No **Domingo** você vai assistir à aula. Será no formato de perguntas e respostas, o que significa que não haverá material novo. Em vez disso, suas perguntas devem ser discutidas e você pode aprender com os outros
+7. Você passa a **segunda-feira** e a **terça-feira** finalizando sua lição de casa
+8. **Prazo 2**: Você envia sua lição de casa para os canais certos (GitHub) antes de **terça-feira, 23h59**. Se você não puder chegar a tempo, por favor comunique ao seu mentor
+9. Comece a nova semana voltando ao ponto 1!
 
-In summary:
+Resumindo:
 
 ![Weekflow](assets/weekflow.png)
 
-To have a more detailed overview of the guidelines, check your class repository, or ask your mentor/class on Slack!
+Para ter uma visão geral mais detalhada das diretrizes, verifique o repositório de sua turma ou pergunte ao seu mentor/turma no Slack!
 
-## Planning
+## Planejamento
 
-| Week | Topic | Reading Materials | Homework |
+| Semana | Tópico | Materiais de Leitura | Lição de casa |
 | ---- | ----- | ----------------- | -------- |
-| 1.   | Document-Object Model (DOM), DOM manipulation, Presentation Module week 1  | [Reading W1](/Week1/README.md) | [Homework W1](/Week1/MAKEME.md) | 
-| 2.   | Presentation Module week 2, Group project week 1!                          | [Reading W2](/Week2/README.md) | [Homework W2](/Week2/MAKEME.md) |
-| 3.   | Group project week 2                                                       | [Reading W3](/Week3/README.md) | No individual homework |
+| 1. | Modelo de Documento-Objeto (DOM), manipulação de DOM, Módulo de Apresentação semana 1 | [Leitura W1](/Week1/README.md) | [Trabalho de casa W1](/Week1/MAKEME.md) |
+| 2. | Módulo de apresentação semana 2, semana 1 do projeto em grupo! | [Leitura W2](/Week2/README.md) | [Trabalho de casa W2](/Week2/MAKEME.md) |
+| 3. | Projeto de grupo semana 2 | [Leitura W3](/Week3/README.md) | Nenhum dever de casa individual |
 
-## Finished?
+## Finalizado?
 
-Did you finish the module? Good job! You're doing great!
+Você terminou o módulo? Bom trabalho! Você está indo bem!
 
-If you feel ready for the next challenge, click [here](https://www.github.com/HackYourFuture/Using-APIs) to go to Using API's!
+Se você se sentir pronto para o próximo desafio, clique [aqui](https://www.github.com/HackYourFuture/Using-APIs) para acessar Using API's!
 
-_The HackYourFuture curriculum is subject to CC BY copyright. This means you can freely use our materials, but just make sure to give us credit for it :)_
+_O currículo HackYourFuture está sujeito aos direitos autorais CC BY. Isso significa que você pode usar nossos materiais livremente, mas certifique-se de nos dar crédito por isso :)_
 
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https:/ /i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Esta obra está licenciada sob uma <a rel="license" href="http://creativecommons.org /licenses/by/4.0/">Licença Creative Commons Atribuição 4.0 Internacional</a>.

@@ -1,219 +1,219 @@
-# Node.js Week 1 (Lesson Plan)
+# Node.js Semana 1 (Plano de aula)
 
 ## Agenda
 
-The purpose of this class is to introduce to the student:
+O objetivo desta aula é apresentar ao aluno:
 
-- Recap of previous module most relevant concepts
+- Recapitulação dos conceitos mais relevantes do módulo anterior
 
-1. Backend and Node.js basics
-2. Client-server model
-3. Node.js and NPM basics (`npm init`, `npm install`, `package.json`, `require` and `modules.export`)
-4. How to create a basic Express.js server
-5. Serving static files with Express
+1. Noções básicas de back-end e Node.js
+2. Modelo cliente-servidor
+3. Node.js e NPM básico (`npm init`, `npm install`, `package.json`, `require` e `modules.export`)
+4. Como criar um servidor Express.js básico
+5. Servindo arquivos estáticos com o Express
 
-## FIRST HALF (12.05 - 13.30)
+## PRIMEIRA METADE (12.05 - 13.30)
 
-**START RECORDING THE LECTURE (Quicktime or Open Broadcast Software)**
+**COMECE A GRAVAR A AULA (Quicktime ou Open Broadcast Software)**
 
-### 1. Backend and Node.js basics
+### 1. Noções básicas de back-end e Node.js
 
-#### Explanation
+#### Explicação
 
-All web sites consist of a frontend (HTML/CSS and browser JavaScript) and a backend (web server that interacts with the database and sends data to the frontend).
+Todos os web sites consistem em um frontend (HTML/CSS e JavaScript do navegador) e um backend (servidor web que interage com o banco de dados e envia dados para o frontend).
 
-The frontend (through the browser) allows for users to interact with the application. The backend is there to handle incoming and outgoing data traffic.
+O frontend (através do navegador) permite que os usuários interajam com o aplicativo. O back-end está lá para lidar com o tráfego de dados de entrada e saída.
 
-![Server architecture](../assets/Server.png)
+![Arquitetura do servidor](../assets/Server.png)
 
-Node.js is a server-side platform, that allows us to use JavaScript to write backend applications.
+Node.js é uma plataforma do lado do servidor, que nos permite usar JavaScript para escrever aplicativos de back-end.
 
-#### Example
+#### Exemplo
 
-Show students how to use Node.js to execute JavaScript files. Start with the following simple example, but explain how this log will be found inside of the command line instead of
+Mostre aos alunos como usar o Node.js para executar arquivos JavaScript. Comece com o exemplo simples a seguir, mas explique como esse log será encontrado dentro da linha de comando em vez de
 
-```js
-console.log('Hello World!');
+``` js
+console.log('Olá Mundo!');
 ```
 
-#### Exercise
+#### Exercício
 
-In a new JavaScript file write a function that returns true if a day is a weekend and false if it is not.
+Em um novo arquivo JavaScript, escreva uma função que retorne true se um dia for um fim de semana e false se não for.
 
 ```javascript
 function isWeekend(dayOfWeek) {
-  if (dayOfWeek === 'Saturday') return true;
-  if (dayOfWeek === 'Monday') return false;
-  // fill in the rest
+  if (dayOfWeek === 'sábado') return true;
+  if (dayOfWeek === 'Segunda') return false;
+  // preenche o resto
 }
 
-console.log('Tuesday is a ' + (isWeekend('Tuesday') ? 'weekend' : 'week day')); // week day
-console.log('Friday is a ' + (isWeekend('Friday') ? 'weekend' : 'week day')); // week day
-console.log('Sunday is a ' + (isWeekend('Sunday') ? 'weekend' : 'week day')); // weekend
+console.log('Terça-feira é ' + (isWeekend('Terça-feira') ? 'fim de semana' : 'dia da semana')); //dia da semana
+console.log('Sexta é ' + (isWeekend('Sexta') ? 'fim de semana' : 'dia da semana')); //dia da semana
+console.log('Domingo é ' + (isWeekend('Sunday') ? 'weekend' : 'week day')); // final de semana
 ```
 
-Execute the file with `node` in the command line.
+Execute o arquivo com `node` na linha de comando.
 
-#### Essence
+#### Essência
 
-We can use Node.js, from the command line, in order to run JavaScript files to perform calculations (without use of a browser) or that can interact with the operating system.
+Podemos usar o Node.js, a partir da linha de comando, para executar arquivos JavaScript para realizar cálculos (sem uso de navegador) ou que possam interagir com o sistema operacional.
 
-### 2. Client-server model
+### 2. Modelo cliente-servidor
 
-#### Explanation
+#### Explicação
 
-The way a client and server interact with each other, is called the `client-server model`. It says that if a client needs data, it will send a `request` to a server, which will then give the client that data. The server does so by sending a `response` back to the client, which includes the data asked for.
+A maneira como um cliente e um servidor interagem entre si é chamada de `modelo cliente-servidor`. Ele diz que se um cliente precisar de dados, ele enviará um `request` para um servidor, que fornecerá ao cliente esses dados. O servidor faz isso enviando uma `resposta` de volta ao cliente, que inclui os dados solicitados.
 
-`HyperText Transfer Protocol` (HTTP) is the communication guideline for how this should go.
+`HyperText Transfer Protocol` (HTTP) é a diretriz de comunicação de como isso deve acontecer.
 
-`Uniform Resource Locator` (URL) is the address where a a given file (or in more technical terms, `resource`) can be found.
+`Uniform Resource Locator` (URL) é o endereço onde um determinado arquivo (ou em termos mais técnicos, `resource`) pode ser encontrado.
 
-`Port` is the door to which web communication can pass through. A port number is assigned before communication can pass through it.
+`Porta` é a porta pela qual a comunicação web pode passar. Um número de porta é atribuído antes que a comunicação possa passar por ele.
 
-`Content-Type` is a property that has to be included in a request header, to specify to the receiving web server what type of data (e.g. JSON, XML, Binary, etc.) will be send.
+`Content-Type` é uma propriedade que deve ser incluída em um cabeçalho de solicitação, para especificar ao servidor web receptor que tipo de dados (por exemplo, JSON, XML, Binary, etc.) serão enviados.
 
-#### Example
+#### Exemplo
 
-Show the students the requests and responses of the following application, by using the Network tab in the browser:
+Mostre aos alunos as solicitações e respostas do seguinte aplicativo, usando a guia Rede no navegador:
 
 - https://fullstack-exampleapp.herokuapp.com/
 
-#### Exercise
+#### Exercício
 
-Ask different students to identify the following in this screenshot:
+Peça a diferentes alunos para identificar o seguinte nesta captura de tela:
 
-![HTTP request exercise](../assets/request_exercise.png)
+![Exercício de solicitação HTTP](../assets/request_exercise.png)
 
 - URL:
-- PORT:
-- IP address:
-- Content-Type:
+- PORTO:
+- Endereço de IP:
+- Tipo de conteúdo:
 
-#### Essence
+#### Essência
 
-The client-server model describes how each communicates with the other, through `requests` and `responses`. Generally speaking, the client sends `requests` for `GET`ting or `POST`ing data, and the server responds with what the client wanted to have.
+O modelo cliente-servidor descreve como cada um se comunica com o outro, por meio de `requests` e `responses`. De um modo geral, o cliente envia `requests` para `GET`ting ou `POST`ing dados, e o servidor responde com o que o cliente queria ter.
 
-## SECOND HALF (14.00 - 16.00)
+## SEGUNDA METADE (14.00 - 16.00)
 
-### 3. Node Package Manager (NPM)
+### 3. Gerenciador de pacotes de nós (NPM)
 
-#### Explanation
+#### Explicação
 
-The Node Package Manager (NPM) is a collection of functional modules that other developers have written, in order to be reused by other developers in order to more quickly build solutions to IT problems.
+O Node Package Manager (NPM) é uma coleção de módulos funcionais que outros desenvolvedores escreveram, para serem reutilizados por outros desenvolvedores para construir soluções para problemas de TI mais rapidamente.
 
-NPM is accessible in the command line, by using `npm [COMMAND]`. Online you can find a registry of different modules: [NPM](https://www.npmjs.com).
+O NPM é acessível na linha de comando, usando `npm [COMMAND]`. Online você pode encontrar um registro de diferentes módulos: [NPM](https://www.npmjs.com).
 
-#### Example
+#### Exemplo
 
-Explain the purpose of the `require` function, using a local file (see the `build-with-students` folder, step 1)
+Explique o propósito da função `require`, usando um arquivo local (veja a pasta `build-with-students`, passo 1)
 
-Explain the `npm init` command and the purpose of a `package.json` file (see the `build-with-students` folder, step 2)
+Explique o comando `npm init` e o propósito de um arquivo `package.json` (veja a pasta `build-with-students`, passo 2)
 
-Explain `npm install` by installing Express.js inside of that folder. Show the `node_modules` folder and explain its purpose.
+Explique `npm install` instalando Express.js dentro dessa pasta. Mostre a pasta `node_modules` e explique sua finalidade.
 
-#### Exercise
+#### Exercício
 
-Ask students to setup a new Node.js project, with only a `package.json` and empty JavaScript file initialized.
+Peça aos alunos que configurem um novo projeto Node.js, com apenas um arquivo `package.json` e JavaScript vazio inicializado.
 
-Have them install the package [one-liner-joke](https://www.npmjs.com/package/one-liner-joke).
+Peça que instalem o pacote [one-liner-joke](https://www.npmjs.com/package/one-liner-joke).
 
-Then ask them to complete the follow JavaScript code:
+Em seguida, peça-lhes que completem o seguinte código JavaScript:
 
 ```javascript
-// what is missing here?
+// o que está faltando aqui?
 
 console.log(oneLinerJoke.getRandomJoke().body);
 ```
 
-#### Essence
+#### Essência
 
-Developers don't want to rebuild the same thing, therefore we have publicly accessible modules others have made (and that we can make ourselves as well) to be used freely. NPM is the place where those are stored for JavaScript modules.
+Os desenvolvedores não querem reconstruir a mesma coisa, portanto temos módulos acessíveis publicamente que outros fizeram (e que nós mesmos também podemos fazer) para serem usados livremente. O NPM é o local onde eles são armazenados para módulos JavaScript.
 
 ### 4. Express.js
 
-#### Explanation
+#### Explicação
 
-Express.js is the most popular NPM package for easily creating web servers in Node.js. Through the predefined methods we can route data traffic, connect to other web servers, interact with databases and serve client-side applications.
+Express.js é o pacote NPM mais popular para criar facilmente servidores web em Node.js. Através dos métodos predefinidos podemos rotear o tráfego de dados, conectar-se a outros servidores web, interagir com bancos de dados e atender aplicações do lado do cliente.
 
-#### Example (code along)
+#### Exemplo (código junto)
 
-Show them a running Express application.
+Mostre a eles um aplicativo Express em execução.
 
-Use browser Network tab to show request response of the following application:
+Use a guia Rede do navegador para mostrar a resposta da solicitação do seguinte aplicativo:
 
 https://obscure-anchorage-82962.herokuapp.com/
 
-In a new folder:
+Em uma nova pasta:
 
-```shell
+```concha
 > npm init
-> npm install express
+> npm instalar expresso
 ```
 
-Create a JavaScript file called `server.js`, with the following code:
+Crie um arquivo JavaScript chamado `server.js`, com o seguinte código:
 
 ```javascript
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORTA = 3000;
 
-app.get('/', (req, res) => res.send('Hello World!'));
+app.get('/', (req, res) => res.send('Olá Mundo!'));
 
-app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
+app.listen(PORT, () => console.log(`Exemplo de aplicativo escutando na porta ${PORT}!`));
 ```
 
-Start the app using `node server.js`. Check if the app is running by opening the following URL in the browser `localhost:3000`
+Inicie o aplicativo usando `node server.js`. Verifique se o aplicativo está sendo executado abrindo a seguinte URL no navegador `localhost:3000`
 
-#### Exercise
+#### Exercício
 
-Write an Express app that serves the following HTML:
+Escreva um aplicativo Express que veicule o seguinte HTML:
 
 ```html
 <html>
-  <head>
-    <title>Task app</title>
+  <cabeça>
+    <title>Aplicativo de tarefas</title>
   </head>
-  <body>
-    <h1>Things to do</h1>
+  <corpo>
+    <h1>O que fazer</h1>
     <ul>
-      <li>Write homework</li>
-      <li>Buy groceries</li>
-      <li>Prepare dinner</li>
-      <li>Watch movie</li>
+      <li>Escreva o dever de casa</li>
+      <li>Comprar mantimentos</li>
+      <li>Prepare o jantar</li>
+      <li>Assista ao filme</li>
     </ul>
   </body>
 </html>
 ```
 
 
-#### Essence
+#### Essência
 
-Express.js is used to easily create web servers, that allow us (among other reasons) to serve HTML so our browser can read it. The browser sends a request to a specific address, like `/`, and our server (through Express) responds with an HTML file.
+Express.js é usado para criar facilmente servidores web, que nos permitem (entre outras razões) servir HTML para que nosso navegador possa lê-lo. O navegador envia uma solicitação para um endereço específico, como `/`, e nosso servidor (através do Express) responde com um arquivo HTML.
 
-### 5. Serving static files with Express
+### 5. Servindo arquivos estáticos com o Express
 
-#### Explanation
-Motiviation based on previous exercise where HTML code is put in the javascript. Instead of doing this, the HTML can be saved in a file in the project and then send with express when needed.
+#### Explicação
+Motivação baseada no exercício anterior onde o código HTML é colocado no javascript. Ao invés de fazer isso, o HTML pode ser salvo em um arquivo no projeto e então enviado com express quando necessário.
 
-#### Example
-Save the HTML content in a new file in the project e.g. `index.html`. Then modify the javascript code to serve the HTML from the file instead of having it hardcoded.
+#### Exemplo
+Salve o conteúdo HTML em um novo arquivo no projeto, por exemplo. `index.html`. Em seguida, modifique o código javascript para servir o HTML do arquivo em vez de tê-lo codificado.
 ```javascript
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORTA = 3000;
 
 app.get('/', (req, res) => res.sendfile('index.html'));
 
-app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
+app.listen(PORT, () => console.log(`Exemplo de aplicativo escutando na porta ${PORT}!`));
 ```
 
-#### Exercise
-```css
+#### Exercício
+``` css
 li:nth-child(even) {background-color: #CCC}
 ```
-If time left: Save the above css in a file `style.css`.
-Link the stylesheet in the HTML file. Extend the express app to return the sylesheet for route `\style.css`.
+Se sobrar tempo: Salve o CSS acima em um arquivo `style.css`.
+Vincule a folha de estilo no arquivo HTML. Estenda o aplicativo expresso para retornar a folha de estilo da rota `\style.css`.
 
-#### Essence
+#### Essência
 
-By serving content from files our javascript code is kept clean and at the same time UI designers can easily work on the HTML/CSS files without having to navigate code.
+Ao servir conteúdo de arquivos, nosso código javascript é mantido limpo e, ao mesmo tempo, os designers de interface do usuário podem trabalhar facilmente nos arquivos HTML/CSS sem precisar navegar pelo código.

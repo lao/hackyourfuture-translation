@@ -1,19 +1,19 @@
-# Building a counter
+# Construindo um contador
 
-The counter is one of the best way to learn about state management as it is nice and simple and isolates the management of state. Let's create a simple number counter, starting from 0 until infinity!
+O contador é uma das melhores maneiras de aprender sobre gerenciamento de estado, pois é agradável e simples e isola o gerenciamento de estado. Vamos criar um contador de números simples, começando de 0 até infinito!
 
-1. Run `create-react-app` in this folder to create your environment
-2. Create 3 functional components called `<Counter>`, `<Count>` and `<Button>`
-3. Inside `<Counter>` define a state variable called `count` (initialized with value `0`) and state handler called `setCount`
-4. Inside `<Button>` create a `<button>` with the text `Add 1!` and `onClick` attribute
-5. Pass down the `count` state variable to `<Count>`, and the `setCount` to `<Button>`
-6. Inside `<Counter>`, declare a variable called `feedback` above the return statement. Give this variable a ternary operator value: if `count` is higher than 10 it should display the string `"It's higher than 10!"`, else it displays `"Keep counting..."`
-7. Test out if it works by importing `<Counter>` into the top level component, which is `<App>`
+1. Execute `create-react-app` nesta pasta para criar seu ambiente
+2. Crie 3 componentes funcionais chamados `<Counter>`, `<Count>` e `<Button>`
+3. Dentro de `<Counter>`, defina uma variável de estado chamada `count` (inicializada com o valor `0`) e um manipulador de estado chamado `setCount`
+4. Dentro de `<Button>` crie um `<button>` com o texto `Add 1!` e o atributo `onClick`
+5. Passe a variável de estado `count` para `<Count>` e o `setCount` para `<Button>`
+6. Dentro de `<Counter>`, declare uma variável chamada `feedback` acima da instrução return. Dê a esta variável um valor de operador ternário: se `count` for maior que 10, deve exibir a string `"É maior que 10!"`, caso contrário, exibirá `"Continue contando..."`
+7. Teste se funciona importando `<Counter>` para o componente de nível superior, que é `<App>`
 
-## Things to think about
+## Coisas para pensar
 
-Building this little App should be straightforward, now let's get those *brain juices* flowing. Before the session on Sunday have a think about the following:
+Construir este pequeno aplicativo deve ser simples, agora vamos fazer com que esses *sucos cerebrais* fluam. Antes da sessão de domingo, pense no seguinte:
 
-- How would you implement a decrement button that lowers the count by 1? Would you make 2 different <Button> functions or would you add props to the component to handle the change in text?
-- Once you can decrement as well, how would you implement it never going below 0?
-- What would you need to change to also have a button that adds 2 and one that removes 2? Will that create a problem with your logic for never going below 0?
+- Como você implementaria um botão de diminuição que reduz a contagem em 1? Você faria 2 funções <Button> diferentes ou adicionaria props ao componente para lidar com a mudança no texto?
+- Uma vez que você pode decrementar também, como você implementaria nunca abaixo de 0?
+- O que você precisaria mudar para ter também um botão que soma 2 e outro que remove 2? Isso criará um problema com sua lógica para nunca ficar abaixo de 0?

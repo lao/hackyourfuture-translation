@@ -1,202 +1,202 @@
-# VSCode Tips
+# Dicas do VSCode
 
-## Installation
+## Instalação
 
-Download and install the appropriate version of VSCode for your operating system from the [VSCode web site](https://code.visualstudio.com/).
+Baixe e instale a versão apropriada do VSCode para seu sistema operacional no [site do VSCode](https://code.visualstudio.com/).
 
-## Some useful extensions
+## Algumas extensões úteis
 
-VSCode can be extended with _extensions_. There are three that we recommend you install from day 1.
+O VSCode pode ser estendido com _extensions_. Há três que recomendamos que você instale desde o primeiro dia.
 
-1. **Code Spell Checker**. We fully understand that you guys sometimes have difficulty with the correct English spelling when choosing names for variables and functions in your JavaScript programs. That is nothing to be ashamed of, but why not get some help from a handy extension?
+1. **Verificador Ortográfico de Código**. Entendemos perfeitamente que vocês às vezes têm dificuldade com a ortografia correta em inglês ao escolher nomes para variáveis e funções em seus programas JavaScript. Isso não é nada para se envergonhar, mas por que não obter ajuda de uma extensão útil?
 
-2. **ESLint**. This extension can check your JavaScript code for obvious errors, such as undefined variables, unused variables, etc.
+2. **ESLint**. Esta extensão pode verificar seu código JavaScript em busca de erros óbvios, como variáveis indefinidas, variáveis não utilizadas, etc.
 
-3. **Prettier - Code formatter**. Prettier is an code formatter that enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary.
+3. ** Mais bonito - Formatador de código**. Prettier é um formatador de código que impõe um estilo consistente analisando seu código e reimprimindo-o com suas próprias regras que levam em consideração o comprimento máximo da linha, quebrando o código quando necessário.
 
-   > If you have any other code formatter extensions installed, e.g., **Beautify**, be sure to remove them as they may conflict with **Prettier**.
+   > Se você tiver outras extensões de formatador de código instaladas, por exemplo, **Beautify**, certifique-se de removê-las, pois podem entrar em conflito com **Prettier**.
    
-4. **open in browser**. This extension is handy during the HYF JavaScript lessons. It allows you to quickly open an HTML file in the browser directly from VSCode.
+4. **abra no navegador**. Esta extensão é útil durante as lições de JavaScript HYF. Ele permite que você abra rapidamente um arquivo HTML no navegador diretamente do VSCode.
 
-5. **Live Server**. Launch a development local Server with live reload feature for static & dynamic pages.
+5. **Servidor Ativo**. Inicie um servidor local de desenvolvimento com recurso de recarga ao vivo para páginas estáticas e dinâmicas.
 
-### Installation instructions
+### Instruções de instalação
 
-1. Start up VSCode.
+1. Inicie o VSCode.
 
-2. Press the button in the area in the left margin (called the **Activity Bar**), as shown below:
+2. Pressione o botão na área da margem esquerda (chamada **Barra de Atividades**), conforme mostrado abaixo:
 
-   ![Extensions Icon](assets/extensions-icon.png)
+   ![Ícone de extensões](assets/extensions-icon.png)
 
-3. In the input field in the upper left corner, type `code spell checker` as pictured here:
+3. No campo de entrada no canto superior esquerdo, digite `code spell checker` como mostrado aqui:
 
-   ![Spell checker extension](assets/spell-checker.png)
+   ![Extensão do corretor ortográfico](assets/spell-checker.png)
 
-4. Press the green `install` button of **Code Spellchecker**.
+4. Pressione o botão verde `instalar` do **Code Spellchecker**.
 
-5. Install the remaining extensions by repeating steps 3 and 4, by typing the names of the extensions:
+5. Instale as extensões restantes repetindo as etapas 3 e 4, digitando os nomes das extensões:
 
    - ESLint
-   - Prettier - Code formatter
-   - open in browser
-   - Live Server
+   - Mais bonito - Formatador de código
+   - abra no navegador
+   - Servidor ao vivo
 
-6. When the final extension has finished installing you will notice that the green `install` button changes to a blue `reload` button. Press this button to reload VSCode and activate the newly installed extensions.
-7. You now need to install a global Node package to support ESLint. Open a terminal window in VSCode by selecting **View**, **Integrated Terminal** from the menu bar.
-8. A terminal window opens in the lower half of the VSCode window. In this window, type the command below (on Linux and MacOS systems you may need to prefix this command with `sudo`, e.g. `sudo npm ...`):
+6. Quando a extensão final terminar de instalar, você notará que o botão verde `instalar` muda para um botão azul `recarregar`. Pressione este botão para recarregar o VSCode e ativar as extensões recém-instaladas.
+7. Agora você precisa instalar um pacote global do Node para oferecer suporte ao ESLint. Abra uma janela de terminal no VSCode selecionando **View**, **Integrated Terminal** na barra de menus.
+8. Uma janela de terminal é aberta na metade inferior da janela do VSCode. Nesta janela, digite o comando abaixo (em sistemas Linux e MacOS você pode precisar prefixar este comando com `sudo`, por exemplo `sudo npm ...`):
 
    ```
    npm install -g eslint
    ```
 
-## Customise VSCode Settings
+## Personalize as configurações do VSCode
 
-We recommend that you apply a couple of changes to the default settings of VSCode to help you create well-formatted JavaScript code. Follow these steps:
+Recomendamos que você aplique algumas alterações nas configurações padrão do VSCode para ajudá-lo a criar um código JavaScript bem formatado. Siga esses passos:
 
-1. Press the function key F1 and type the following in the text box:
+1. Pressione a tecla de função F1 e digite o seguinte na caixa de texto:
 
     ```
-    open settings
+    abrir configurações
     ```
 
-    A menu will appear with matching menu options:
+    Um menu aparecerá com as opções de menu correspondentes:
 
    ![settings-panel](assets/settings-panel.png)
 
-2. Select **Preferences Open Settings (JSON)** from the list
+2. Selecione **Configurações de abertura de preferências (JSON)** na lista
 
-5. Copy the content shown below and paste it over (i.e. replace) the existing content.
+5. Copie o conteúdo mostrado abaixo e cole-o (ou seja, substitua) o conteúdo existente.
 
-   ```json
-   /// Place your settings in this file to overwrite the default settings
+   ``` json
+   /// Coloque suas configurações neste arquivo para substituir as configurações padrão
    {
      "editor.bracketPairColorization.enabled": true,
      "editor.detectIndentation": false,
-     "editor.formatOnSave": true,
-     "editor.minimap.enabled": false,
+     "editor.formatOnSave": verdadeiro,
+     "editor.minimap.enabled": falso,
      "editor.renderIndentGuides": true,
      "editor.tabSize": 2,
      "editor.codeActionsOnSave": {
-       "source.fixAll": true
+       "source.fixAll": verdadeiro
      },
-     "eslint.autoFixOnSave": true,
+     "eslint.autoFixOnSave": verdadeiro,
      "files.autoSave": "onFocusChange",
-     "prettier.singleQuote": true,
+     "prettier.singleQuote": verdadeiro,
      "prettier.trailingComma": "all"
    }
    ```
 
-6. Close the Settings tabs.
+6. Feche as guias Configurações.
 
-## Configuring the Default Shell (Windows users only)
+## Configurando o Shell Padrão (somente usuários do Windows)
 
-By default, a VSCode installation on Window uses **PowerShell** for the Integrated Terminal. To change this to **Git Bash**, follow these steps:
+Por padrão, uma instalação do VSCode no Windows usa o **PowerShell** para o Terminal Integrado. Para alterar isso para **Git Bash**, siga estas etapas:
 
-1. Press the key combination **Ctrl-Shift-p** to open the VSCode Command Pallette.
-2. Type the words: `select default`
-3. From the drop-down menu, select **Terminal: Select Default Shell**
-4. A new drop-down menu will appear. From this menu, select **Git Bash**.
+1. Pressione a combinação de teclas **Ctrl-Shift-p** para abrir a Paleta de Comandos VSCode.
+2. Digite as palavras: `select default`
+3. No menu suspenso, selecione **Terminal: Select Default Shell**
+4. Um novo menu suspenso aparecerá. Nesse menu, selecione **Git Bash**.
 
-## Using VSCode for your homework
+## Usando o VSCode para sua lição de casa
 
-You’ll get the most out of VSCode if you organise your work in folders, say a folder for each week in the JavaScript module.
+Você obterá o máximo do VSCode se organizar seu trabalho em pastas, digamos, uma pasta para cada semana no módulo JavaScript.
 
-(Later in the course you will be “cloning” Git repositories into local folders as the basis for your homework or projects.)
+(Mais tarde no curso, você estará "clonando" repositórios Git em pastas locais como base para sua lição de casa ou projetos.)
 
-To start work with VSCode in particular folder, start VSCode and open the relevant folder: from the menu, select **File**, **Open Folder**. VSCode will now open this folder to be your "project folder", until you close VSCode or open another folder.
+Para começar a trabalhar com o VSCode em uma pasta específica, inicie o VSCode e abra a pasta relevante: no menu, selecione **File**, **Open Folder**. O VSCode agora abrirá esta pasta para ser sua "pasta do projeto", até que você feche o VSCode ou abra outra pasta.
 
-> Make it a habit in VSCode to always open the **folder** that contains the project you are working on, rather than individual files in that folder.
+> Crie o hábito no VSCode de sempre abrir a **pasta** que contém o projeto em que você está trabalhando, em vez de arquivos individuais nessa pasta.
 
-In the figure below the folder named `JavaScript2` was opened in VSCode. The directory tree for that folder in shown in the **Explorer** panel. The folder name `JAVASCRIPT2` is displayed in uppercase in the title bar of the directory tree panel.
+Na figura abaixo a pasta chamada `JavaScript2` foi aberta no VSCode. A árvore de diretórios dessa pasta é mostrada no painel **Explorer**. O nome da pasta `JAVASCRIPT2` é exibido em letras maiúsculas na barra de título do painel da árvore de diretórios.
 
-![Open folder in VSCode](./assets/open-folder.png)
+![Abrir pasta no VSCode](./assets/open-folder.png)
 
-## Creating your JavaScript file
+## Criando seu arquivo JavaScript
 
-You are now ready to start adding your first JavaScript file.
+Agora você está pronto para começar a adicionar seu primeiro arquivo JavaScript.
 
-1. Open the folder where you will keep your working files, for instance `hyf-javascript1`.
-2. Right-click in an empty space in the `EXPLORER` window and select **New File** from the context menu. You will see the following:
+1. Abra a pasta onde você irá manter seus arquivos de trabalho, por exemplo `hyf-javascript1`.
+2. Clique com o botão direito do mouse em um espaço vazio na janela `EXPLORER` e selecione **New File** no menu de contexto. Você verá o seguinte:
 
-   ![New file](./assets/new-file.png)
+   ![Novo arquivo](./assets/new-file.png)
 
-3. Type a file name in the edit box, e.g. `app.js` and press **Enter**. This will add a file `apps.js` to your working folder and open an editor tab for the newly created file.
+3. Digite um nome de arquivo na caixa de edição, por exemplo. `app.js` e pressione **Enter**. Isso adicionará um arquivo `apps.js` à sua pasta de trabalho e abrirá uma guia do editor para o arquivo recém-criado.
 
-   ![Edit file](./assets/edit-file.png)
+   ![Editar arquivo](./assets/edit-file.png)
 
-5) Start typing your JavaScript code in the new file.
+5) Comece a digitar seu código JavaScript no novo arquivo.
 
-   ![Hello world](./assets/hello-world.png)
+   ![Olá mundo](./assets/hello-world.png)
 
-6) You can also create subfolders in `EXPLORER` panel. Right-click in an empty space in the `EXPLORER` window and select **New Folder** from the context menu, for instance `week1`.
+6) Você também pode criar subpastas no painel `EXPLORER`. Clique com o botão direito em um espaço vazio na janela `EXPLORER` e selecione **New Folder** no menu de contexto, por exemplo `week1`.
 
-   ![New folder](./assets/new-folder.png)
+   ![Nova pasta](./assets/new-folder.png)
 
-7) To create a new file in the subfolder, right-click on the subfolder and type a file name in the input box.
+7) Para criar um novo arquivo na subpasta, clique com o botão direito do mouse na subpasta e digite um nome de arquivo na caixa de entrada.
 
-   ![New file in subfolder](./assets/new-file-in-folder.png)
+   ![Novo arquivo na subpasta](./assets/new-file-in-folder.png)
 
-8) Be on the watch out for coloured wavy underlines in your code. These are warnings from either ESLint or the Spell Checker that something might be wrong. If you see such wavy underlines, hover your mouse pointer over the underlined text and a tooltip will appear that explains what might be wrong.
-9) You can also open the "problem" panel by selecting **View**, **Problems** from the menu to see any problems identified.
-10) Pay attention also to the lower left part of the VSCode window, i.e. the status bar. It gives an indication of the number of errors and warnings issued. In the picture below there are zero errors, 7 warnings (usually from ESLint) and 14 informational messages (usually from the spell checker).
+8) Fique atento aos sublinhados ondulados coloridos em seu código. Esses são avisos do ESLint ou do verificador ortográfico de que algo pode estar errado. Se você vir esses sublinhados ondulados, passe o ponteiro do mouse sobre o texto sublinhado e uma dica de ferramenta aparecerá explicando o que pode estar errado.
+9) Você também pode abrir o painel "problema" selecionando **Visualizar**, **Problemas** no menu para ver os problemas identificados.
+10) Preste atenção também na parte inferior esquerda da janela do VSCode, ou seja, a barra de status. Dá uma indicação do número de erros e avisos emitidos. Na figura abaixo há zero erros, 7 avisos (geralmente do ESLint) e 14 mensagens informativas (geralmente do corretor ortográfico).
 
-    ![Figure 4. Error, warning and message indicators](assets/status-bar.png)
+    ![Figura 4. Indicadores de erro, aviso e mensagem](assets/status-bar.png)
 
-## Some useful short-cut commands
+## Alguns comandos de atalho úteis
 
-In the previous section we frequently referred you to the menu bar to select commands. As you get more proficient with VSCode you may want to inspect these menus a little closer and take note of the short-cut commands listed in their right margin. For example, the short-cut command for **File**, **New** is listed as Ctrl+N (press `Ctrl` and `N` keys simultaneously) on a Windows or Linux PC and ⌘N on a Mac.
+Na seção anterior, frequentemente o referíamos à barra de menus para selecionar comandos. À medida que você se torna mais proficiente com o VSCode, você pode querer inspecionar esses menus um pouco mais de perto e observar os comandos de atalho listados na margem direita. Por exemplo, o comando de atalho para **Arquivo**, **Novo** é listado como Ctrl+N (pressione as teclas `Ctrl` e `N` simultaneamente) em um PC Windows ou Linux e ⌘N em um Mac .
 
-Here are some short-cut commands that you will use many times a day and that we recommend you familiarise yourself with from day 1:
+Aqui estão alguns comandos de atalho que você usará muitas vezes ao dia e com os quais recomendamos que você se familiarize desde o primeiro dia:
 
-| Operation                                                        | Windows     | Mac | Linux        |
-| ---------------------------------------------------------------- | ----------- | --- | ------------ |
-| **Format Document** (make it pretty)                             | Shift‑Alt‑F | ⇧⌥F | Ctrl‑Shift‑I |
-| **Search** (Find)                                                | Ctrl+F      | ⌘F  | Ctrl+F       |
-| **Replace** (Find and replace)                                   | Ctrl+H      | ⌥⌘F | Ctrl+H       |
-| **Rename Symbol** (change all names in file to a different name) | F2          | F2  | F2           |
-| Open an **Integrated Terminal** window in VSCode                 | Ctrl+'      | ⌃\` | Ctrl+'       |
+| Operação | Janelas | Mac | Linux |
+| -------------------------------------------------- -------------- | ----------- | --- | ------------ |
+| **Formatar Documento** (tornar bonito) | Shift-Alt-F | ⇧⌥F | Ctrl-Shift-I |
+| **Pesquisar** (Localizar) | Ctrl+F | ⌘F | Ctrl+F |
+| **Substituir** (Localizar e substituir) | Ctrl+H | ⌥⌘F | Ctrl+H |
+| **Rename Symbol** (altere todos os nomes no arquivo para um nome diferente) | F2 | F2 | F2 |
+| Abra uma janela **Terminal Integrado** no VSCode | Ctrl+' | ⌃\` | Ctrl+' |
 
-- **Format Document**. This command reformats your JavaScript file in a generally accepted standard format, using proper indenting, proper use of spaces, placing of curly braces and more. A neatly formatted document helps you to better understand your own code and your teachers, mentors and fellow students will love your for it too when they review your work.
+- **Formatar Documento**. Este comando reformata seu arquivo JavaScript em um formato padrão geralmente aceito, usando recuo adequado, uso adequado de espaços, colocação de chaves e muito mais. Um documento bem formatado ajuda você a entender melhor seu próprio código e seus professores, mentores e colegas também vão adorar quando revisarem seu trabalho.
 
-  _With VSCode at your finger tips there is no longer any excuse for submitting poorly formatted homework!_
+  _Com o VSCode na ponta dos dedos, não há mais desculpa para enviar trabalhos de casa mal formatados!_
 
-- **Search**. Search for specified text.
-- **Replace**. Replace specified text by some other text.
+- **Procurar**. Procure o texto especificado.
+- **Substituir**. Substitua o texto especificado por algum outro texto.
 
-  In the figure below the **Replace** pop-up window is shown. The **Search** pop-up is similar, but with one input field only.
+  Na figura abaixo, a janela pop-up **Replace** é mostrada. O pop-up **Pesquisar** é semelhante, mas com apenas um campo de entrada.
 
-  ![Figure 5. Search and Replace](assets/search-and-replace.png)
+  ![Figura 5. Pesquisar e substituir](assets/search-and-replace.png)
 
-  - The `Aa` button activates the **Match Case** option.
-  - The `Ab|` button matches **Whole Words Only**.
-  - The `.*` button allow you to search using _regular expressions_, which you may encounter in later modules as an advanced JavaScript programming topic.
-  - The `c-b` button next to the second input field replaces the next occurrence of the matched text.
-  - The `ab-ac` button replaces **all** occurrences of the matched text.
-  - The left and right arrows move the cursor to the previous and next match.
-  - To get rid of the pop-up press `Esc` or press the `x` button.
+  - O botão `Aa` ativa a opção **Match Case**.
+  - O botão `Ab|` corresponde a **Somente palavras inteiras**.
+  - O botão `.*` permite pesquisar usando _expressões regulares_, que você pode encontrar em módulos posteriores como um tópico avançado de programação JavaScript.
+  - O botão `c-b` próximo ao segundo campo de entrada substitui a próxima ocorrência do texto correspondente.
+  - O botão `ab-ac` substitui **todas** as ocorrências do texto correspondente.
+  - As setas esquerda e direita movem o cursor para a partida anterior e seguinte.
+  - Para se livrar do pop-up pressione `Esc` ou pressione o botão `x`.
 
-- **Rename Symbol**. This command renames all occurrences of a JavaScript variable or function name. To do so, move the text cursor to the variable or function name and press F2. A small pop-up window will appear in which you can type a new name. Press Enter to finalise the change or Esc to cancel it.
+- **Renomear símbolo**. Este comando renomeia todas as ocorrências de uma variável JavaScript ou nome de função. Para fazer isso, mova o cursor de texto para o nome da variável ou função e pressione F2. Uma pequena janela pop-up aparecerá na qual você poderá digitar um novo nome. Pressione Enter para finalizar a alteração ou Esc para cancelá-la.
 
-- **Open an Integrated Terminal window**. We already covered this when we mentioned the **View**, **Integrated Terminal** menu command.
+- **Abra uma janela do Terminal Integrado**. Já abordamos isso quando mencionamos o comando de menu **View**, **Integrated Terminal**.
 
-## Running and debugging your code with the VSCode Node debugger
+## Executando e depurando seu código com o depurador VSCode Node
 
-If your JavaScript program is contained in a single file the easiest way to run and examine your code is the start straight in VSCode.
+Se o seu programa JavaScript estiver contido em um único arquivo, a maneira mais fácil de executar e examinar seu código é começar direto no VSCode.
 
-1. Press the F5 function key to start the VSCode debugger.
+1. Pressione a tecla de função F5 para iniciar o depurador VSCode.
 
-2. You will prompted to select an environment. Choose `Node.js` as show below.
+2. Você será solicitado a selecionar um ambiente. Escolha `Node.js` como mostrado abaixo.
 
    ![debug_3](assets/node-debug.png)
 
-This starts your program in the VSCode debugger.
+Isso inicia seu programa no depurador VSCode.
 
-### Placing break points and inspecting variables
+### Colocando pontos de interrupção e inspecionando variáveis
 
-This is covered in class.
+Isso é abordado em aula.
 
-### Further information
+### Outras informações
 
-Please note that VSCode is actively being developed. At present there is a monthly release cycle, so don't be surprised when you are prompted once a month to update to the latest version. We advise you to update when prompted (naturally, not when you are in the middle something that you don't want interrupted).
+Observe que o VSCode está sendo desenvolvido ativamente. No momento, há um ciclo de lançamento mensal, portanto, não se surpreenda quando você for solicitado uma vez por mês a atualizar para a versão mais recente. Aconselhamos que você atualize quando solicitado (naturalmente, não quando estiver no meio de algo que não deseja interromper).
 
-You can find detailed information about VSCode at the [VSCode web site](https://code.visualstudio.com/docs).
+Você pode encontrar informações detalhadas sobre o VSCode no [site do VSCode](https://code.visualstudio.com/docs).

@@ -1,49 +1,49 @@
-# How to setup your first database
+# Como configurar seu primeiro banco de dados
 
-In this document you'll learn how to setup your first database. Most of the commands are done in the command line, so make sure you have yours open before you start.
+Neste documento você aprenderá como configurar seu primeiro banco de dados. A maioria dos comandos é feita na linha de comando, portanto, certifique-se de ter o seu aberto antes de começar.
 
-**Step 1: Logging in with the `root` user**
+**Etapa 1: Fazendo login com o usuário `root`**
 
-To get started with your new MySQL client, we first have to login with the `root` user.
+Para começar com seu novo cliente MySQL, primeiro temos que fazer login com o usuário `root`.
 
-> A root user, also known as a `superuser` is a special user account that has access to all commands and files of any particular software.
+> Um usuário root, também conhecido como `superusuário` é uma conta de usuário especial que tem acesso a todos os comandos e arquivos de qualquer software em particular.
 
-In Windows OS, if you click on the Start menu and type `MySQL Command line Client`, then
-the MySQL Command Line Client gives you a `msql>` prompt after typing in your root password.
-Note that this password is the one you used for the `root user` of the mysql during the installation.
-Linux and MAC users can execute `mysql -uroot -p` and then type your root password.
+No sistema operacional Windows, se você clicar no menu Iniciar e digitar `MySQL Command line Client`, então
+o MySQL Command Line Client fornece um prompt `msql>` após digitar sua senha de root.
+Note que esta senha é aquela que você usou para o `usuário root` do mysql durante a instalação.
+Usuários de Linux e MAC podem executar `mysql -uroot -p` e então digitar sua senha de root.
 
-**Step 2: Creating a `hyfuser` account**
+**Etapa 2: criando uma conta `hyfuser`**
 
-After loggin in with the root user, it's time to create the account we'll be using for this module. Execute the following commands, one after the other:
+Após o login com o usuário root, é hora de criar a conta que usaremos para este módulo. Execute os seguintes comandos, um após o outro:
 
 ```bash
-# Step 1: This command creates a user 'hyfuser' with password 'hyfpassword' for the database server at 'localhost'
+# Passo 1: Este comando cria um usuário 'hyfuser' com senha 'hyfpassword' para o servidor de banco de dados em 'localhost'
 
-mysql> create user 'hyfuser'@'localhost' identified with mysql_native_password by 'hyfpassword';
+mysql> cria usuário 'hyfuser'@'localhost' identificado com mysql_native_password por 'hyfpassword';
 
-# If this does not work try the alternative command:
+# Se isso não funcionar, tente o comando alternativo:
 
-mysql> create user 'hyfuser'@'localhost' identified by 'hyfpassword';
+mysql> cria usuário 'hyfuser'@'localhost' identificado por 'hyfpassword';
 
-# Step 2: This command gives all permissions to user 'hyfuser'. The (*.*) means every table of every database.
+# Passo 2: Este comando dá todas as permissões ao usuário 'hyfuser'. O (*.*) significa cada tabela de cada banco de dados.
 
-mysql> grant all privileges on *.* to 'hyfuser'@'localhost';
+mysql> concede todos os privilégios em *.* para 'hyfuser'@'localhost';
 
-# Step 3: This command flushes all privileges
+# Etapa 3: Este comando libera todos os privilégios
 
-msyql> flush privileges;
+msyql> privilégios de descarga;
 
-# Step 4: This command creates a database named 'userdb'
+# Passo 4: Este comando cria um banco de dados chamado 'userdb'
 
-mysql> create database userdb;
+mysql> criar banco de dados userdb;
 ```
 
-**Step 3: Installing MySQL driver to use with Node.js**
+**Etapa 3: Instalando o driver MySQL para usar com Node.js**
 
-We want to use MySQL with JavaScript and to this end, we use the following [package](https://github.com/mysqljs/mysql).
+Queremos usar MySQL com JavaScript e para isso, usamos o seguinte [pacote](https://github.com/mysqljs/mysql).
 
--   Use `npm install -g mysql` command to install it.
--   Navigate to the `Week1` folder from the VScode terminal and then execute the command `node connection-test.js`
+- Use o comando `npm install -g mysql` para instalá-lo.
+- Navegue até a pasta `Week1` do terminal VScode e execute o comando `node connection-test.js`
 
-The output should be `The solution is: 2`.
+A saída deve ser 'A solução é: 2'.

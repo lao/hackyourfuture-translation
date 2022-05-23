@@ -1,160 +1,160 @@
-# Lesson Plan JavaScript2 Week 1
+# Plano de aula JavaScript2 Semana 1
 
 ## Agenda
 
-The purpose of this class is to introduce to the student:
+O objetivo desta aula é apresentar ao aluno:
 
-- How a webpage is made up of objects (DOM)
-- How JavaScript can be used to manipulate those objects (DOM manipulation)
-- Commonly used browser defined functions and properties
+- Como uma página da web é composta de objetos (DOM)
+- Como o JavaScript pode ser usado para manipular esses objetos (manipulação DOM)
+- Funções e propriedades definidas pelo navegador comumente usadas
 
-## Core concepts
+## Conceitos principais
 
-FIRST HALF (12.00 - 13.30)
+PRIMEIRA METADE (12h00 - 13h30)
 
-> Is this your first lecture for this class?
-> Please introduce yourself briefly:
+> Esta é sua primeira palestra para esta aula?
+> Por favor, apresente-se brevemente:
 >
-> - Job
-> - Education
-> - City
-> - Why you love programming (if you do)
+> - Trabalho
+> - Educação
+> - Cidade
+> - Por que você ama programar (se você ama)
 
-## 1. Document Object Model (DOM)
+## 1. Modelo de Objeto de Documento (DOM)
 
-### Explanation
+### Explicação
 
-The [Document Object Model (DOM)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) is an _object-oriented representation_ of a web page (HTML document). Every HTML element (ex. `h1`, `p` or `img`) is corrected first and then converted into a JavaScript object by the browser, making it possible for us to use JavaScript to change the contents. Using JavaScript code we can access the `DOM` through a global object called `document` or `window.document`.
+O [Document Object Model (DOM)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) é uma _representação orientada a objetos_ de uma página da web (documento HTML). Cada elemento HTML (ex. `h1`, `p` ou `img`) é corrigido primeiro e depois convertido em um objeto JavaScript pelo navegador, tornando possível usar JavaScript para alterar o conteúdo. Usando código JavaScript podemos acessar o `DOM` através de um objeto global chamado `document` ou `window.document`.
 
-### Example
+### Exemplo
 
-> Show the student the following HTML in the browser, and then refer to it in the browser console.
+> Mostre ao aluno o seguinte HTML no navegador e, em seguida, consulte-o no console do navegador.
 
 ```html
-<!DOCTYPE html>
+<!DOCTYPEhtml>
 <html>
-  <head>
-    <title>My title</title>
+  <cabeça>
+    <title>Meu título</title>
   </head>
 
-  <body>
-    <h1>My header</h1>
-    <p>This is a nice paragraph</p>
+  <corpo>
+    <h1>Meu cabeçalho</h1>
+    <p>Este é um bom parágrafo</p>
     <ul>
       <li>Item 1</li>
       <li>Item 2</li>
     </ul>
-    <a href="https://www.w3schools.com/js/pic_htmltree.gif">My link</a>
+    <a href="https://www.w3schools.com/js/pic_htmltree.gif">Meu link</a>
   </body>
 </html>
 ```
 
-![Pictorial Representation of DOM](./../assets/domtree.png)
+![Representação pictórica do DOM](./../assets/domtree.png)
 
-Notice how the DOM is structured in a tree-like manner. It goes from top (highest) to bottom (lowest) level. It's very much like a family tree: the highest level is the great-great-great-grandparent, while the lowest level is the grand-grand-grand-child.
+Observe como o DOM é estruturado de maneira semelhante a uma árvore. Vai do nível superior (mais alto) ao nível inferior (mais baixo). É muito parecido com uma árvore genealógica: o nível mais alto é o tataravô, enquanto o nível mais baixo é o bisneto.
 
-### Exercise
+### Exercício
 
-1. Create an HTML file including the structure of a basic webpage (including `!DOCTYPE`, `html`, `head` and `body`, 1 `h1` and 1 `p`)
-2. Find out how to target the `head`, `body` and `h1` elements using the browser console
-3. Present your solution and how you figured it out (_Teacher chooses two people_)
+1. Crie um arquivo HTML incluindo a estrutura de uma página da web básica (incluindo `!DOCTYPE`, `html`, `head` e `body`, 1 `h1` e 1 `p`)
+2. Descubra como segmentar os elementos `head`, `body` e `h1` usando o console do navegador
+3. Apresente sua solução e como você a descobriu (_Professor escolhe duas pessoas_)
 
-### Essence
+### Essência
 
-**The DOM is created by the browser: it reads your HTML file and transforms the elements into objects. We use JavaScript to select these elements in order to change them.**
+**O DOM é criado pelo navegador: ele lê seu arquivo HTML e transforma os elementos em objetos. Usamos JavaScript para selecionar esses elementos e alterá-los.**
 
-## 2. Commonly used browser defined functions and properties
+## 2. Funções e propriedades definidas pelo navegador comumente usadas
 
-### Explanation
+### Explicação
 
-As developers we can use code others have written. The browser contains predefined functions that we can use in order to get certain things done. For example, we can add/update/remove new HTML elements to the DOM. The browser also offers us properties, so that we can also play with the user's viewing experience. For example, we can modify the browser's width programmatically so we can offer a responsive website.
+Como desenvolvedores, podemos usar o código que outros escreveram. O navegador contém funções predefinidas que podemos usar para fazer certas coisas. Por exemplo, podemos adicionar/atualizar/remover novos elementos HTML ao DOM. O navegador também nos oferece propriedades, para que também possamos brincar com a experiência de visualização do usuário. Por exemplo, podemos modificar a largura do navegador programaticamente para que possamos oferecer um site responsivo.
 
-### Example
+### Exemplo
 
-```js
-// 1. Print the current page
-window.print();
+``` js
+// 1. Imprime a página atual
+janela.print();
 
-// 2. Get the URL from the address bar
-window.location.href;
+// 2. Obtenha o URL da barra de endereço
+janela.local.href;
 
-// 3. Make a XHR request to an external service
+// 3. Faça uma solicitação XHR para um serviço externo
 window.fetch('https://dog.ceo/api/breeds/image/random');
 ```
 
-### Exercise
+### Exercício
 
-Find browser functions or properties to show how we can...
+Encontre funções ou propriedades do navegador para mostrar como podemos...
 
-1. display an alert box?
-2. find out what the browser's name is?
-3. go back one page?
+1. exibir uma caixa de alerta?
+2. descobrir qual é o nome do navegador?
+3. voltar uma página?
 
-### Essence
+### Essência
 
-**We can use by the browser predefined functions and properties to shape the user's experience of our application.**
+**Podemos usar funções e propriedades predefinidas pelo navegador para moldar a experiência do usuário em nosso aplicativo.**
 
-SECOND HALF (14.00 - 16.00)
+SEGUNDA METADE (14.00 - 16.00)
 
-## 3. DOM manipulation
+## 3. Manipulação do DOM
 
-### Explanation
+### Explicação
 
-`DOM manipulation` refers to the act of using JavaScript to select and modify elements within the DOM. We do this in order to provide users interactivity with the page: for example, if a button is clicked the background color changes, or if a menu item is hovered over it becomes bigger.
+`Manipulação DOM` refere-se ao ato de usar JavaScript para selecionar e modificar elementos dentro do DOM. Fazemos isso para fornecer aos usuários interatividade com a página: por exemplo, se um botão for clicado, a cor do plano de fundo mudará ou se um item de menu for passado sobre ele ficará maior.
 
-### Example
+### Exemplo
 
 ```html
-<!DOCTYPE html>
+<!DOCTYPEhtml>
 <html>
-  <head>
-    <title>My title</title>
+  <cabeça>
+    <title>Meu título</title>
   </head>
 
-  <body>
-    <h1>My header</h1>
-    <p>This is a nice paragraph</p>
+  <corpo>
+    <h1>Meu cabeçalho</h1>
+    <p>Este é um bom parágrafo</p>
     <ul>
       <li>Item 1</li>
       <li>Item 2</li>
     </ul>
-    <button>My button</button>
-    <a href="https://www.w3schools.com/js/pic_htmltree.gif">My link</a>
+    <button>Meu botão</button>
+    <a href="https://www.w3schools.com/js/pic_htmltree.gif">Meu link</a>
   </body>
 </html>
 ```
 
-```js
-// 1. Make body background color red
-const body = document.body;
-body.style.background = 'red';
+``` js
+// 1. Torna a cor de fundo do corpo vermelha
+const corpo = documento.corpo;
+body.style.background = 'vermelho';
 
-// 2. Change paragraph content
+// 2. Alterar o conteúdo do parágrafo
 const p = document.querySelector('p');
-p.innerHtml = 'This paragraph has changed!';
+p.innerHtml = 'Este parágrafo foi alterado!';
 
-// 3. Create and add a new element to an existing HTML element
+// 3. Crie e adicione um novo elemento a um elemento HTML existente
 const thirdLi = document.createElement('li');
 const ul = document.querySelector('ul');
-ul.appendChild(thirdLi);
+ul.appendChild(terceiroLi);
 
-// 4. On button click alert the user!
-const button = document.querySelector('button');
+// 4. Ao clicar no botão alerta o usuário!
+botão const = document.querySelector('button');
 button.addEventListener('click', function() {
-  alert('You clicked the button!');
+  alert('Você clicou no botão!');
 });
 ```
 
-### Exercise
+### Exercício
 
-Write JavaScript code that...
+Escreva código JavaScript que...
 
-1. changes the `href` value to `https://www.hackyourfuture.net/`
-2. changes the `button` text to `Make background colored!`
-3. colors the `body` background to your favorite color, when the button is clicked
+1. altera o valor `href` para `https://www.hackyourfuture.net/`
+2. altera o texto do `button` para `Make background colour!`
+3. colore o fundo do `corpo` com sua cor favorita, quando o botão é clicado
 
-Present your solution and how you figured it out (_Teacher chooses two people_)
+Apresente sua solução e como você a descobriu (_Professor escolhe duas pessoas_)
 
-### Essence
+### Essência
 
-**Using JavaScript we can select and modify DOM elements. In this way we can provide the user useful interactions with the webpages they're engaged in.**
+**Usando JavaScript podemos selecionar e modificar elementos DOM. Dessa forma, podemos fornecer ao usuário interações úteis com as páginas da web em que ele está envolvido.**

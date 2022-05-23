@@ -1,21 +1,21 @@
-## Feature Presentations (Group)
+## Apresentações de recursos (grupo)
 
-### Why feature presentations?
+### Por que apresentar apresentações?
 
-When working on software it’s useful to have several teams working on different parts of the same application. This makes the development of the software go faster and reduces the margin of error. But just because one team works on a certain feature doesn’t mean the rest will automatically know about it. This is why we have **feature presentations**: we want to make others aware of what’s been added, how it’s made and what the benefits of it are.
+Ao trabalhar em software, é útil ter várias equipes trabalhando em diferentes partes do mesmo aplicativo. Isso faz com que o desenvolvimento do software seja mais rápido e reduz a margem de erro. Mas só porque uma equipe trabalha em um determinado recurso não significa que o resto saberá automaticamente sobre isso. É por isso que temos **apresentações de recursos**: queremos que outras pessoas saibam o que foi adicionado, como é feito e quais são os benefícios.
 
-### Requirements for the presentation
+### Requisitos para a apresentação
 
-In this presentation you’re going to present the feature you’ve been working on this week. It will be done together with your team members: each person takes ownership of and talks about their part in building the feature. The presentation should be done in the following structure:
+Nesta apresentação, você apresentará o recurso no qual está trabalhando esta semana. Isso será feito em conjunto com os membros de sua equipe: cada pessoa se apropria e fala sobre sua parte na construção do recurso. A apresentação deve ser feita na seguinte estrutura:
 
-1. First **give us the user experience** of the feature. Show what the new feature means for the user. Click, hover and play around with it to show the full capabilities of it.
-2. Secondly, **talk about the code** that makes it work. Each team member describes their role in the realisation of the feature. In this section of the presentation it should be clear to the rest of the class (1) the benefit of the feature, (2) what the approach was, (3) what the role of each team member in the realisation of the feature was, and (4) an explanation of the feature code.
-3. And lastly, the **Q&A**. After the presentation the rest will ask questions about the feature/teamwork.
+1. Primeiro **nos dê a experiência do usuário** do recurso. Mostre o que o novo recurso significa para o usuário. Clique, passe o mouse e brinque com ele para mostrar todos os recursos dele.
+2. Em segundo lugar, **fale sobre o código** que o faz funcionar. Cada membro da equipe descreve seu papel na realização do recurso. Nesta seção da apresentação, deve ficar claro para o resto da turma (1) o benefício do recurso, (2) qual foi a abordagem, (3) qual foi o papel de cada membro da equipe na realização do recurso. e (4) uma explicação do código de recurso.
+3. E por último, as **Perguntas e Respostas**. Após a apresentação, o restante fará perguntas sobre o recurso/trabalho em equipe.
 
-### Tips
+### Pontas
 
-Here are some tips to keep in mind when preparing the presentation:
+Aqui estão algumas dicas para ter em mente ao preparar a apresentação:
 
-- Keep the slides short and to the point. There should be no full sentences, but only keywords that describe the core of the point you’re making.
-- Each team member should “own” a part of the presentation content. Everyone should bring their perspective and describe their role in realising the feature.
-- The presentation can’t last longer than 15 minutes.
+- Mantenha os slides curtos e diretos ao ponto. Não deve haver frases completas, mas apenas palavras-chave que descrevam o núcleo do ponto que você está defendendo.
+- Cada membro da equipe deve “possuir” uma parte do conteúdo da apresentação. Todos devem trazer sua perspectiva e descrever seu papel na realização do recurso.
+- A apresentação não pode durar mais de 15 minutos.

@@ -1,7 +1,7 @@
-# Week 3 tasks
+# Tarefas da semana 3
 
-This week will be very similar to the previous one and you will have the same tasks, so have a look at the tasks [here](../week2/MAKEME.md).
+Esta semana será muito parecida com a anterior e você terá as mesmas tarefas, então dê uma olhada nas tarefas [aqui](../week2/MAKEME.md).
 
-If you are the daily meeting organiser then look at the [week 2 tasks](../week2/MAKEME.md) to see what that entails.
+Se você for o organizador da reunião diária, veja as [tarefas da semana 2](../week2/MAKEME.md) para ver o que isso implica.
 
-If you are in the QA team then look at the [week 2 QA explanation](../week2/MAKEME.md) to see what that entails.
+Se você estiver na equipe de controle de qualidade, consulte a [explicação de controle de qualidade da semana 2](../week2/MAKEME.md) para ver o que isso implica.

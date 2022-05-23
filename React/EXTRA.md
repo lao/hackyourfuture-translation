@@ -1,17 +1,17 @@
-## Must-reads before starting
+## Leituras obrigatórias antes de começar
 
-Before learning React, you need to understand a couple of things first.
+Antes de aprender React, você precisa entender algumas coisas primeiro.
 
-1. React makes use of the latest [JavaScript features](https://www.youtube.com/watch?v=NCwa_xi0Uuc), like [classes](https://medium.com/beginners-guide-to-mobile-web-development/javascript-introduction-to-es6-classes-ecb2db9fe985), [destructuring](https://codeburst.io/es6-destructuring-the-complete-guide-7f842d08b98f) and [higher order functions](https://www.sitepoint.com/higher-order-functions-javascript/).
+1. O React usa os mais recentes [recursos JavaScript](https://www.youtube.com/watch?v=NCwa_xi0Uuc), como [aulas](https://medium.com/beginners-guide-to-mobile -web-development/javascript-introduction-to-es6-classes-ecb2db9fe985), [desestruturando](https://codeburst.io/es6-destructuring-the-complete-guide-7f842d08b98f) e [funções de ordem superior](https ://www.sitepoint.com/higher-order-functions-javascript/).
 
-It's important to become familiar with these concepts, as they will drastically help to differentiate what is React-specific and what is regular JavaScript code. In this way you'll much quicker be able to see what exactly the role of React is.
+É importante se familiarizar com esses conceitos, pois eles ajudarão drasticamente a diferenciar o que é específico do React e o que é código JavaScript regular. Dessa forma, você poderá ver muito mais rapidamente qual é exatamente o papel do React.
 
-2. You need to become familiar with the idea of SPA: [Single Page Application](https://www.youtube.com/watch?v=wlVmmsMD28w). As opposed to MPA ([Multi Page Application](https://medium.com/@goldybenedict/single-page-applications-vs-multiple-page-applications-do-you-really-need-an-spa-cf60825232a3)), a SPA works with a single HTML file that switches in the content it shows the user. This is all for the sake of performance, speed and better user experience.
+2. Você precisa se familiarizar com a ideia de SPA: [Single Page Application](https://www.youtube.com/watch?v=wlVmmsMD28w). Ao contrário do MPA ([Aplicativo de várias páginas](https://medium.com/@goldybenedict/single-page-applications-vs-multiple-page-applications-do-you-really-need-an-spa-cf60825232a3) ), um SPA funciona com um único arquivo HTML que alterna o conteúdo que mostra ao usuário. Tudo isso por uma questão de desempenho, velocidade e melhor experiência do usuário.
 
-React makes use of this SPA structure, bundling all your JavaScript code and injecting that into your singular HTML file. When the browser loads this file React then takes care of what content to show when in an efficient way.
+O React faz uso dessa estrutura SPA, agrupando todo o seu código JavaScript e injetando-o em seu arquivo HTML singular. Quando o navegador carrega esse arquivo, o React cuida de qual conteúdo mostrar quando de maneira eficiente.
 
-3. You should know the difference between [static](https://www.webnots.com/basics-of-a-static-website/) and [dynamic](https://www.webnots.com/basics-of-dynamic-websites/) websites. While the former deals with content that doesn't change, the latter customizes content depending on the user (and their actions).
+3. Você deve saber a diferença entre [estático](https://www.webnots.com/basics-of-a-static-website/) e [dinâmico](https://www.webnots.com/basics- of-dynamic-websites/) websites. Enquanto o primeiro lida com conteúdo que não muda, o segundo personaliza o conteúdo de acordo com o usuário (e suas ações).
 
-There is nothing inherently bad about having static frontends. However, as websites increasingly became more interactive there arose a need to display customized content. Content that is dependent upon the user and user input. This is what React aims to do.
+Não há nada inerentemente ruim em ter frontends estáticos. No entanto, à medida que os sites se tornaram cada vez mais interativos, surgiu a necessidade de exibir conteúdo personalizado. Conteúdo que depende do usuário e da entrada do usuário. É isso que o React pretende fazer.
 
-4. Learn about the how and why of [JavaScript frameworks](https://medium.com/dailyjs/the-deepest-reason-why-modern-javascript-frameworks-exist-933b86ebc445). Whenever building software you can build on top of what others have already done; this is why we use a framework. It not only allows us to structure our application, but also gives us tools on how to achieve certain requirements (like faster loading, and showing customized information to the user)
+4. Saiba como e por que [frameworks JavaScript](https://medium.com/dailyjs/the-deepest-reason-why-modern-javascript-frameworks-exist-933b86ebc445). Sempre que construir software, você pode construir em cima do que outros já fizeram; é por isso que usamos uma estrutura. Ele não apenas nos permite estruturar nossa aplicação, mas também nos fornece ferramentas sobre como atingir determinados requisitos (como carregamento mais rápido e exibição de informações personalizadas para o usuário)

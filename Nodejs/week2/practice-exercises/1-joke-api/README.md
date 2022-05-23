@@ -1,10 +1,10 @@
-# Chuck Norris programs do not accept input
+# Programas Chuck Norris não aceitam entrada
 
-Did you know that there is an API for Chuck Norris jokes? That's incredible, right!?
+Você sabia que existe uma API para piadas de Chuck Norris? Isso é incrível, certo!?
 
-Write a small JavaScript function that calls this API [The Internet Chuck Norris Databases](http://www.icndb.com/api/) and returns a random joke. You'll be using the `node` command to execute the JavaScript file. To `GET` a random joke inside the function, use the API: http://www.icndb.com/api/ (see `node-fetch`). Make use of `async/await` and `try/catch`.
+Escreva uma pequena função JavaScript que chame essa API [The Internet Chuck Norris Databases](http://www.icndb.com/api/) e retorne uma piada aleatória. Você usará o comando `node` para executar o arquivo JavaScript. Para `GET` uma piada aleatória dentro da função, use a API: http://www.icndb.com/api/ (veja `node-fetch`). Faça uso de `async/await` e `try/catch`.
 
-Hints:
+Dicas:
 
-- To install node dependencies you should first initialize npm
-- Print the entire response to the console to see how it is structured.
+- Para instalar dependências de nós, você deve primeiro inicializar o npm
+- Imprima a resposta inteira no console para ver como ela está estruturada.

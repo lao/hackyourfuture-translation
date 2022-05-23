@@ -1,127 +1,127 @@
-# Operators
+# Operadores
 
-## Comparison operators
+## Operadores de comparação
 
->Note the two different uses of the equals sign:  
->A single equals sign (=) is used to assign a value to a variable.  
-A triple equals sign (===) is used to compare two values (see Equality Operators).
+>Observe os dois usos diferentes do sinal de igual:
+>Um único sinal de igual (=) é usado para atribuir um valor a uma variável.
+Um sinal de igual triplo (===) é usado para comparar dois valores (consulte Operadores de igualdade).
 
-### Equality operators
+### Operadores de igualdade
 
-* Equality `==`
-* Inequality `!=`
-* Identity / strict equality `===` (preferred)
-* Non-identity / strict inequality `!==` (preferred)
+* Igualdade `==`
+* Desigualdade `!=`
+* Identidade / igualdade estrita `===` (preferencial)
+* Não identidade / desigualdade estrita `!==` (preferencial)
 
-How does this work in practice?
+Como isso funciona na prática?
 
-```js
-1 == 1 // -> true
-7 == '7' // -> true
-1 != 2  // -> true
-5 === 5  // -> true
-9 === '9'  // -> false
-3 !== 3 // -> false
-3 !== '3' // -> true
+``` js
+1 == 1 // -> verdadeiro
+7 == '7' // -> verdadeiro
+1 != 2 // -> verdadeiro
+5 === 5 // -> verdadeiro
+9 === '9' // -> falso
+3 !== 3 // -> falso
+3 !== '3' // -> verdadeiro
 ```
 
-> why does `7 == '7'` returns true and `9 === '9'` returns false?
+> por que `7 == '7'` retorna verdadeiro e `9 === '9'` retorna falso?
 
-We strongly recommend that you always use the strict form when comparing for equality (`===`) or inequality (`!==`). Use the non-strict forms only when there is a compelling reason to do so (you will be hard pressed to find such a reason).
+É altamente recomendável que você sempre use a forma estrita ao comparar para igualdade (`===`) ou desigualdade (`!==`). Use os formulários não estritos apenas quando houver uma razão convincente para fazê-lo (você terá dificuldade em encontrar tal razão).
 
-### Relational operators
+### Operadores relacionais
 
-* Greater than operator `>`
-* Greater than or equal operator `>=`
-* Less than operator `<`
-* Less than or equal operator `<=`
+* Maior que o operador `>`
+* Operador maior ou igual `>=`
+* Operador menor que `<`
+* Operador menor ou igual `<=`
 
-```js
-4 > 3   // -> true
-3 >= 3  // -> true
-13 < 12 // -> false
-3 <= 4   // -> true
+``` js
+4 > 3 // -> verdadeiro
+3 >= 3 // -> verdadeiro
+13 < 12 // -> falso
+3 <= 4 // -> verdadeiro
 ```
 
-More about [comparison operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators)
+Mais sobre [operadores de comparação](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators)
 
-## Arithmetic operators
+## Operadores aritméticos
 
-* Addition `+`
-* Subtraction `-`
-* Multiplication `*`
-* Division `/`
-* Remainder (sometimes called modulo) `%`
-<br>Returns the remainder left over after you've shared the left number out into a number of integer portions equal to the right number.
+* Adição `+`
+* Subtração `-`
+* Multiplicação `*`
+* Divisão `/`
+* Restante (às vezes chamado de módulo) `%`
+<br>Retorna o restante que sobrou depois que você compartilhou o número da esquerda em um número de partes inteiras iguais ao número da direita.
 
-```js
-8 + 9 // -> 17, adds two numbers together.
-20 - 12 // -> 8, subtracts the right number from the left.
-3 * 4 // -> 12, multiplies two numbers together.
-10 / 5 // -> 2, divides the left number by the right.
-8 % 3 /// -> 2, as three goes into 8 twice, leaving 2 left over.
+``` js
+8 + 9 // -> 17, soma dois números.
+20 - 12 // -> 8, subtrai o número direito do esquerdo.
+3 * 4 // -> 12, multiplica dois números juntos.
+10 / 5 // -> 2, divide o número esquerdo pelo direito.
+8 % 3 /// -> 2, pois três entra em 8 duas vezes, deixando 2 sobrando.
 ```
 
-More about [Arithmetic operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#.25_.28Modulus.29)
+Mais sobre [operadores aritméticos](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#.25_.28Modulus.29)
 
-## Logical operators
+## Operadores lógicos
 
-* AND `&&`
-* OR `||`
+* E `&&`
+* OU `||`
 
-```js
-true && false //-> false
+``` js
+verdadeiro && falso //-> falso
 false && true //-> false
-false || true //-> true
-true || false //-> true
+falso || verdadeiro //-> verdadeiro
+verdadeiro || falso //-> verdadeiro
 ```
 
-Given that x = 6 and y = 3
-```js
-x < 10 && y > 1 // -> true
-x === 5 || y === 5 // -> false
-x !== y // -> true
+Dado que x = 6 e y = 3
+``` js
+x < 10 && y > 1 // -> verdadeiro
+x === 5 || y === 5 // -> falso
+x !== y // -> verdadeiro
 ```
 
-Logical NOT
+NÃO Lógico
 
-* NOT `!`
+* NÃO `!`
 
-```js
-true === !false
-false === !true
+``` js
+verdadeiro === !falso
+falso === !verdadeiro
 ```
 
-More about [logical operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
+Mais sobre [operadores lógicos](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
 
-### typeof operator
+### tipo de operador
 
-To get the type of a value assigned to a variable, use the following code:
+Para obter o tipo de um valor atribuído a uma variável, use o seguinte código:
 
-```js
-let bar = 42; 
-typeof bar    //-> 'number' 
-typeof typeof bar; //->  'string'
+``` js
+deixe barra = 42;
+typeof bar //-> 'number'
+tipo de barra; //-> 'cadeia'
 ```
 
-So the data type of what `typeof` returns is always a string, bar on the other hand is still a number.
+Portanto, o tipo de dados que `typeof` retorna é sempre uma string, bar, por outro lado, ainda é um número.
 
-## Assignment operators
+## Operadores de atribuição
 
-In addition to the simple assignment operator `=` there are also compound assignment operators such as `+=`. The following two assignments are equivalent:
+Além do operador de atribuição simples `=`, existem também operadores de atribuição compostos, como `+=`. As duas atribuições a seguir são equivalentes:
 
-```js
+``` js
 x += 1;
 x = x + 1;
 ```
 
-|Operator|  Example| Same As|
+|Operador| Exemplo| Igual a|
 |:------:|:--------:|:-------:|
-|`=` |  `x = y` |  `x = y`|
-|`+=`|  `x += y` |  `x = x + y`|
-|`-=`|  `x -= y` |  `x = x - y`|
-|`*=`|  `x *= y` |  `x = x * y`|
-|`/=`|  `x /= y` |  `x = x / y`|
-|`%=`|  `x %= y` |  `x = x % y`|
+|`=` | `x = y` | `x = y`|
+|`+=`| `x += y` | `x = x + y`|
+|`-=`| `x -= y` | `x = x - y`|
+|`*=`| `x *= y` | `x = x * y`|
+|`/=`| `x /= y` | `x = x / y`|
+|`%=`| `x %= y` | `x = x %y`|
 
-Also check out [special characters and their names](names_of_special_characters.md)
+Confira também [caracteres especiais e seus nomes](names_of_special_characters.md)

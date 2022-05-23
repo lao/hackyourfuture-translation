@@ -1,49 +1,49 @@
-# How to hand in homework
+# Como entregar o dever de casa
 
-During this module you will hand in your homework in the following order:
+Durante este módulo, você entregará sua lição de casa na seguinte ordem:
 
 1. [GitHub](https://www.github.com/HackYourFuture/HTML-CSS).
 
-You'll first create a personal GitHub repository (a storage place for code) in which you'll upload all the homework files.
+Você primeiro criará um repositório pessoal do GitHub (um local de armazenamento para código) no qual fará upload de todos os arquivos de lição de casa.
 
 2. [Trello](https://trello.com/b/U1gK8Q1c/feedback-assignments).
 
-After you've uploaded your files you'll copy the link to the homework folder in GitHub and paste it in a card on Trello in the board "Feedback Assignments" (in the correct week).
+Depois de enviar seus arquivos, você copiará o link para a pasta de trabalhos de casa no GitHub e colará em um cartão no Trello no quadro "Feedback Assignments" (na semana correta).
 
-In the following guides you'll learn how to do this step-by-step.
+Nos guias a seguir, você aprenderá como fazer isso passo a passo.
 
-## 1. GitHub homework guide
+## 1. Guia de lição de casa do GitHub
 
-At the beginning of the module:
+No início do módulo:
 
-1. Go to Github and [create a new repository](https://github.com/new) called `HYF-Module-HTMLCSSGIT` (select the option: initialize with README)
+1. Vá para o Github e [crie um novo repositório](https://github.com/new) chamado `HYF-Module-HTMLCSSGIT` (selecione a opção: inicialize com README)
 
-Then follow these steps for every week of the HTML/CSS/GIT module:
+Em seguida, siga estas etapas para cada semana do módulo HTML/CSS/GIT:
 
-2. Inside the new repository create a folder with the name of the appropriate week (ex. `week1`)
-3. Upload the the homework files
-4. Before submitting the upload, write a message that says something about what you've done. For week1 the message could be: "wrote cli commands and build digital resume"
-5. Open the files in your folder to check if all of this worked.
-6. Now go to the settings of your repository:
+2. Dentro do novo repositório crie uma pasta com o nome da semana apropriada (ex. `week1`)
+3. Carregue os arquivos de lição de casa
+4. Antes de enviar o upload, escreva uma mensagem que diga algo sobre o que você fez. Para a semana1, a mensagem pode ser: "escreveu comandos cli e construiu currículo digital"
+5. Abra os arquivos em sua pasta para verificar se tudo isso funcionou.
+6. Agora vá para as configurações do seu repositório:
 
-![settings overview](./assets/github_pages1.png)
+![visão geral das configurações](./assets/github_pages1.png)
 
-7. And go to _Github Pages_ select "main" or "master" instead of "none"
+7. E vá para _Github Pages_ selecione "main" ou "master" em vez de "none"
 
-![pages overview](./assets/github_pages2.jpg)
+![visão geral das páginas](./assets/github_pages2.jpg)
 
-8. Now you can view your homework online at: https://_hereyouplaceyourgithubusername_.github.io/HYF-Module-HTMLCSSGIT/week1, this url will also be visible on the settings page:
+8. Agora você pode ver sua lição de casa online em: https://_hereyouplaceyourgithubusername_.github.io/HYF-Module-HTMLCSSGIT/week1, este URL também estará visível na página de configurações:
 
-![pages overview saved](./assets/github_pages3.jpg)
+![visão geral das páginas salva](./assets/github_pages3.jpg)
 
-> Here is an example of how your homework repository should look: https://github.com/mkruijt/HTML-CSS
+> Aqui está um exemplo de como seu repositório de trabalhos de casa deve ficar: https://github.com/mkruijt/HTML-CSS
 
-## 2. Trello homework guide
+## 2. Guia de lição de casa do Trello
 
-Follow these steps to upload the link to your homework:
+Siga estas etapas para fazer upload do link para sua lição de casa:
 
-1. Go to the `Feedback Assignments` board
-2. In the correct week, create a card with your name and week number (like, `Noer Paanakker Week 1 homework`)
-3. Click on the card, and attach the URL of your GitHub repository and/or other links that are relevant. Additionally, add a short description of what you did
+1. Vá para o quadro "Atribuições de feedback"
+2. Na semana correta, crie um cartão com seu nome e o número da semana (como "Trabalho de casa da Semana 1 da Noer Paanakker")
+3. Clique no cartão e anexe a URL do seu repositório GitHub e/ou outros links relevantes. Além disso, adicione uma breve descrição do que você fez
 
-If you have any questions or if something is not entirely clear ¯\\\_(ツ)\_/¯, please ask/comment on Slack!
+Se você tiver alguma dúvida ou se algo não estiver totalmente claro ¯\\\_(ツ)\_/¯, pergunte/comente no Slack!

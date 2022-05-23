@@ -1,23 +1,23 @@
-# Copy to clipboard
+# Copiar para área de transferência
 
-Can you make a hook that takes a user input and copies it to their computer's clipboard?
+Você pode fazer um gancho que pegue uma entrada do usuário e a copie para a área de transferência do computador?
 
-1. Create a new application via `create-react-app`
-2. Add a new component, with a simple text field the user can type in.
-3. Add another component consisting of a button.
-4. Store the user's entry. (Bonus question: How should you store this value? In the component? Context API? App.js?)
-5. It's time to make our hook!
+1. Crie um novo aplicativo via `create-react-app`
+2. Adicione um novo componente, com um campo de texto simples que o usuário pode digitar.
+3. Adicione outro componente que consiste em um botão.
+4. Armazene a entrada do usuário. (Pergunta bônus: como você deve armazenar esse valor? No componente? API de contexto? App.js?)
+5. É hora de fazer nosso anzol!
 
-- Create a `hooks` folder in your project, and inside create a file called `useCopy.js`.
-- Create (and export!) a function called `useCopy` and inside create another function `handleCopy`.
-- Handle copy should take one string as a parameter, copy that parameter to the clipboard.
-- For that, we're going to need the [navigator object](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/clipboard). Look for the method that adds text to the user's clipboard.
-- Return the `handleCopy` function. (For a familiar syntax, you might want to export it like so: `return [handleCopy]`.)
+- Crie uma pasta `hooks` em seu projeto, e dentro crie um arquivo chamado `useCopy.js`.
+- Crie (e exporte!) uma função chamada `useCopy` e dentro dela crie outra função `handleCopy`.
+- Handle copy deve ter uma string como parâmetro, copie esse parâmetro para a área de transferência.
+- Para isso, vamos precisar do [objeto navigator](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/clipboard). Procure o método que adiciona texto à área de transferência do usuário.
+- Retorna a função `handleCopy`. (Para uma sintaxe familiar, você pode querer exportá-la assim: `return [handleCopy]`.)
 
-6. Import `handleCopy` from the `useCopy` function. Based on how you've stored the user input, you will need to call it in different places, but be sure it is triggered by a button click.
-7. Let's see if it works!
+6. Importe `handleCopy` da função `useCopy`. Com base em como você armazenou a entrada do usuário, você precisará chamá-la em lugares diferentes, mas certifique-se de que ela seja acionada por um clique de botão.
+7. Vamos ver se funciona!
 
 Extra:
 
-- Could we make and return something else from this hook? Perhaps something to indicate the user has copied to clipboard?
-- Could we do anything to ensure the data type is valid? What if users are inputting letters into a phone number field?
+- Podemos fazer e devolver algo mais deste gancho? Talvez algo para indicar que o usuário copiou para a área de transferência?
+- Podemos fazer alguma coisa para garantir que o tipo de dados seja válido? E se os usuários estiverem inserindo letras em um campo de número de telefone?

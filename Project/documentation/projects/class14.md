@@ -1,5 +1,5 @@
 ## HackYourFuture (class14)
 
-A complete website revamp! Under the expert guidance of @mkruijt and @M3kH, #class14 rebuild the whole HackYourFuture website. Using a completely new stack, they still managed to produce something beautiful.
+Uma reformulação completa do site! Sob a orientação especializada de @mkruijt e @M3kH, #class14 reconstruiu todo o site do HackYourFuture. Usando uma pilha completamente nova, eles ainda conseguiram produzir algo bonito.
 
-Take a [look](https://old.hackyourfuture.net) at the 2018 website!
+Dê uma [olhar](https://old.hackyourfuture.net) no site de 2018!

@@ -1,719 +1,719 @@
-# Lesson Plan Databases Week 2
+# Bancos de dados do plano de aula Semana 2
 
-The lesson plan is primarily written for teachers so that they can
-use examples and anecdotes from this document in conjunction with the README
-and explain the concepts better in the class.
+O plano de aula é escrito principalmente para os professores, para que eles possam
+use exemplos e anedotas deste documento em conjunto com o README
+e explicar melhor os conceitos na aula.
 
-## Topics
+## Tópicos
 
-0. Async nature of MySQL-Nodejs interaction
-1. Identifiers (Primary key, Foreign key, Composite key)
-2. Relationships (One-to-One, One-to-Many, Many-to-Many)
-3. Joins (inner, left and right) and aliases
-4. More SQL clauses (group by, having, distinct and Aggregate functions)
-5. Indexes
-6. Domain modeling (ERD)
+0. Natureza assíncrona da interação MySQL-Nodejs
+1. Identificadores (chave primária, chave estrangeira, chave composta)
+2. Relacionamentos (um para um, um para muitos, muitos para muitos)
+3. Junções (interna, esquerda e direita) e aliases
+4. Mais cláusulas SQL (agrupar por, ter, funções distintas e agregadas)
+5. Índices
+6. Modelagem de domínio (ERD)
 
-### 0. Async nature of MySQL-Nodejs interaction
+### 0. Natureza assíncrona da interação MySQL-Nodejs
 
-#### Explanation
+#### Explicação
 
-The nature of database queries is asynchronous.
-Some queries can take long time to execute.
-When our JavaScript MySQL client is sending the queries to the MySQL server,
-it may not want to block until the answer is returned.
-However if the JavaScript MySQL client is sending multiple queries such that
-the second query (for example insert) depends on the first query (for example create),
-then it must wait until the execution of the first query is successful.
-To ensure smooth interaction with the MySQL server, promises can be used in conjunction
-with the await() method.
+A natureza das consultas de banco de dados é assíncrona.
+Algumas consultas podem levar muito tempo para serem executadas.
+Quando nosso cliente MySQL JavaScript está enviando as consultas para o servidor MySQL,
+ele pode não querer bloquear até que a resposta seja retornada.
+No entanto, se o cliente MySQL MySQL estiver enviando várias consultas, como
+a segunda consulta (por exemplo, inserir) depende da primeira consulta (por exemplo, criar),
+então deve esperar até que a execução da primeira consulta seja bem sucedida.
+Para garantir uma interação suave com o servidor MySQL, promessas podem ser usadas em conjunto
+com o método await().
 
-#### Example(s)
+#### Exemplos)
 
-Demonstrate with four programs at [this repository](https://github.com/unmeshvrije/database_examples)
-how
+Demonstre com quatro programas em [este repositório](https://github.com/unmeshvrije/database_examples)
+Como as
 
-1. Program `1-db-naive.js` fails because the connection is closed prematurely.
-2. Program `2-db-callback.js` solves the problem but looks ugly because of the callback-hell.
-3. Program `3-db-promise.js` uses the promise chaining to make it better.
-   about building those promises
-4. Program `4-db-await.js` uses promisify() and await() to make it the best.
+1. O programa `1-db-naive.js` falha porque a conexão foi encerrada prematuramente.
+2. O programa `2-db-callback.js` resolve o problema, mas parece feio por causa do callback-hell.
+3. O programa `3-db-promise.js` usa o encadeamento de promessas para torná-lo melhor.
+   sobre construir essas promessas
+4. O programa `4-db-await.js` usa promisify() e await() para torná-lo o melhor.
 
-#### Exercise
+#### Exercício
 
-The program called `async-create-insert.js` can be found in `Week2` folder.
-Add a select query to that program using await and promisify.
+O programa chamado `async-create-insert.js` pode ser encontrado na pasta `Week2`.
+Adicione uma consulta de seleção a esse programa usando await e promisify.
 
-#### Essence
+#### Essência
 
-> async keyword : to create asynchronous function and ensure they return promise without having to worry
+> palavra-chave async : para criar uma função assíncrona e garantir que eles retornem a promessa sem ter que se preocupar
 
-> await : to call a function returning promise without having to call .then() over that promise
+> await : para chamar uma função retornando promessa sem ter que chamar .then() sobre essa promessa
 
-> promisify() : to convert a callback based function to a promise based one.
+> promisify() : para converter uma função baseada em callback em uma função baseada em promessa.
 
-### 1. Identifiers (Primary key, Foreign key, Composite key)
+### 1. Identificadores (chave primária, chave estrangeira, chave composta)
 
-#### Explanation
+#### Explicação
 
-1. A column can be declared as the UNIQUE column. Such a column has UNIQUE values.
-   It can also have NULL values. Thus, two rows can have same NULL value in the column that
-   is declared as UNIQUE (In other words, this is a UNIQUE CONSTRAINT on that column).
-2. A column can be declared as the PRIMARY KEY column. Such a column has UNIQUE values too.
-   They cannot be NULL values. Thus two rows can NEVER have same values in the column
-   that is declared as PRIMARY KEY (In other words, this is a PRIMARY KEY CONSTRAINT on that column).
+1. Uma coluna pode ser declarada como a coluna UNIQUE. Essa coluna tem valores ÚNICOS.
+   Também pode ter valores NULL. Assim, duas linhas podem ter o mesmo valor NULL na coluna que
+   é declarado como UNIQUE (em outras palavras, esta é uma UNIQUE CONSTRAINT naquela coluna).
+2. Uma coluna pode ser declarada como a coluna PRIMARY KEY. Essa coluna também tem valores UNIQUE.
+   Eles não podem ser valores NULL. Assim, duas linhas NUNCA podem ter os mesmos valores na coluna
+   que é declarado como PRIMARY KEY (em outras palavras, esta é uma PRIMARY KEY CONSTRAINT nessa coluna).
 
-> There are more constraints in MySQL. Read more about them [here](https://www.w3resource.com//creating-table-advance/constraint.php).
+> Existem mais restrições no MySQL. Leia mais sobre eles [aqui](https://www.w3resource.com//creating-table-advance/constraint.php).
 
-#### Example
+#### Exemplo
 
-Consider the following commands (# represents comments).
+Considere os seguintes comandos (# representa comentários).
 
 ```sql
-# create table with two columns. one with primary key and one with unique key constraint
+# cria tabela com duas colunas. um com chave primária e outro com restrição de chave exclusiva
 CREATE TABLE pri_uniq_demo(id_pr int PRIMARY KEY, id_un int UNIQUE);
 
-# Note the error that says that the primary key column cannot be NULL
+# Observe o erro que diz que a coluna de chave primária não pode ser NULL
 INSERT INTO pri_uniq_demo VALUES (NULL, NULL);
-#ERROR 1048 (23000): Column 'id_pr' cannot be null
+#ERROR 1048 (23000): a coluna 'id_pr' não pode ser nula
 
-# Note that the UNIQUE key column can be NULL
+# Observe que a coluna de chave UNIQUE pode ser NULL
 INSERT INTO pri_uniq_demo VALUES (1, NULL);
-#Query OK, 1 row affected (0.00 sec)
+#Query OK, 1 linha afetada (0,00 s)
 
-# Normal insertion
+# Inserção normal
 INSERT INTO pri_uniq_demo VALUES (2, 2);
-#Query OK, 1 row affected (0.05 sec)
+#Query OK, 1 linha afetada (0,05 seg)
 
-# Note that you cannot insert 2 in the id_un column because it should be UNIQUE
+# Observe que você não pode inserir 2 na coluna id_un porque deve ser ÚNICO
 INSERT INTO pri_uniq_demo VALUES (3, 2);
-#ERROR 1062 (23000): Duplicate entry '2' for key 'id_un'
+#ERROR 1062 (23000): Entrada duplicada '2' para a chave 'id_un'
 
-# Note that you cannot insert 2 in the id_pr column because it is PRIMARY KEY
+# Observe que você não pode inserir 2 na coluna id_pr porque é PRIMARY KEY
 INSERT INTO pri_uniq_demo VALUES (2, 3);
-#ERROR 1062 (23000): Duplicate entry '2' for key 'PRIMARY'
+#ERROR 1062 (23000): Entrada duplicada '2' para chave 'PRIMARY'
 
 ```
 
-#### Exercise
+#### Exercício
 
 ```
-# Find out type T and Constraint C for each column.
-CREATE TABLE Airline_passengers(ticket_numer T C, passenger_name T C, date_of_birth T C, passport_number T C);
+# Descubra o tipo T e a restrição C para cada coluna.
+CREATE TABLE Airline_passengers(ticket_numer T C, passage_name T C, date_of_birth T C, passaporte_number T C);
 
-Hint: A very young baby may not need a ticket!
+Dica: Um bebê muito pequeno pode não precisar de um ingresso!
 ```
 
-#### Essence
+#### Essência
 
-Primary key is a special case of UNIQUE key. UNIQUE key can be NULL and
-primary key cannot be NULL. A table can have multiple UNIQUE keys but ONLY ONE primary key.
+Chave primária é um caso especial de chave UNIQUE. A chave UNIQUE pode ser NULL e
+chave primária não pode ser NULL. Uma tabela pode ter várias chaves ÚNICAS, mas APENAS UMA chave primária.
 
-### 2.1 Relationships (One-to-One, One-to-Many, Many-to-Many)
+### 2.1 Relacionamentos (um para um, um para muitos, muitos para muitos)
 
-#### Explanation
+#### Explicação
 
-When one entity is related to another, such a relationship has a so called **cardinality**.
-The cardinality determines how many instances of one entity can participate in the relationship
-with how many other instances of the other entity.
+Quando uma entidade está relacionada a outra, tal relacionamento tem a chamada **cardinalidade**.
+A cardinalidade determina quantas instâncias de uma entidade podem participar do relacionamento
+com quantas outras instâncias da outra entidade.
 
-For example, an employee may have only one account in the company.
-Also one account is tied to exactly one employee.
-This relationship employee and account has `1-1` (read as one-to-one) cardinality.
-This means that one instance of Employees (say John Smith) has exactly one account
-(instance with account ID 3409011) in some company X.
+Por exemplo, um funcionário pode ter apenas uma conta na empresa.
+Além disso, uma conta está vinculada a exatamente um funcionário.
+Esse relacionamento funcionário e conta tem cardinalidade "1-1" (leia como um para um).
+Isso significa que uma instância de Employees (digamos John Smith) tem exatamente uma conta
+(instância com ID de conta 3409011) em alguma empresa X.
 
-An employee belongs to exactly one department, however one department may have many employees.
-This relationship between employee and department has `M-1` (read as Many-to-one) cardinality.
-Reversely, the relationshop between department and employee has `1-M` (read as One-to-many) cardinality.
-Note that `1-M` and `M-1` cardinalities are only reverse of each other.
-The following two sentences convey the same information in different words.
+Um funcionário pertence a exatamente um departamento, no entanto, um departamento pode ter muitos funcionários.
+Essa relação entre funcionário e departamento tem cardinalidade `M-1` (leia muitos-para-um).
+Inversamente, o relacionamento entre departamento e funcionário tem cardinalidade `1-M` (leia-se um para muitos).
+Observe que as cardinalidades `1-M` e `M-1` são apenas inversas uma da outra.
+As duas frases a seguir transmitem a mesma informação em palavras diferentes.
 
-1. The Sales department (an instance of Department entity) of company X has three employees.
-2. John Smith, Raj Joshi and Su Li are employees of company X that belong to the Sales Department.
+1. O departamento de vendas (uma instância da entidade Departamento) da empresa X tem três funcionários.
+2. John Smith, Raj Joshi e Su Li são funcionários da empresa X que pertencem ao Departamento de Vendas.
 
-To represent `1-1` or `1-M` relationship in MySQL tables, we need a column in one table
-that `refers` a column in another table. Such a column should be a primary key column of another table
-and is called as a `foreign key`.
-In the Account table, `employee_id` is the column that acts as the foreign key which **refers to the
-employee_id column of the employees table in which it works as the primary key.**
-In the Employees table, `dept_id` is the column that acts as the foreign key which **refers to the
-dept_id column of the departments table in which it works as the primary key.**
+Para representar o relacionamento `1-1` ou `1-M` em tabelas MySQL, precisamos de uma coluna em uma tabela
+que `refere` uma coluna em outra tabela. Essa coluna deve ser uma coluna de chave primária de outra tabela
+e é chamado de `chave estrangeira`.
+Na tabela Account, `employee_id` é a coluna que atua como a chave estrangeira que **refere-se ao
+Coluna employee_id da tabela de funcionários na qual funciona como chave primária.**
+Na tabela Employees, `dept_id` é a coluna que atua como a chave estrangeira que **refere-se ao
+coluna dept_id da tabela de departamentos na qual funciona como chave primária.**
 
-#### Example
+#### Exemplo
 
 ```sql
-# Add the column dept_id to the employees table
- ALTER TABLE employees ADD COLUMN dept_id int;
+# Adicione a coluna dept_id à tabela de funcionários
+ ALTER TABLE funcionários ADD COLUMN dept_id int;
 
-# Add the constraint foreign key
- ALTER TABLE employees ADD CONSTRAINT fk_dept FOREIGN KEY(dept_id) REFERENCES departments(dept_id);
+# Adiciona a chave estrangeira de restrição
+ ALTER TABLE funcionários ADD CONSTRAINT fk_dept FOREIGN KEY(dept_id) REFERENCES departamentos(dept_id);
 
-# Add some sample rows in the departments table
- INSERT INTO departments VALUES (5001, "Sales");
- INSERT INTO departments VALUES (5002, "Development");
- INSERT INTO departments VALUES (5003, "Marketing");
+# Adicione algumas linhas de amostra na tabela de departamentos
+ INSERIR VALORES NOS departamentos (5001, "Vendas");
+ INSERIR VALORES NOS departamentos (5002, "Desenvolvimento");
+ INSERIR VALORES NOS departamentos (5003, "Marketing");
 
-# Try updating the dept_id of an employee with an existing department
- UPDATE employees SET dept_id = 5001 where employee_id = 101;
+# Tente atualizar o dept_id de um funcionário com um departamento existente
+ UPDATE funcionários SET dept_id = 5001 onde funcionário_id = 101;
 
-# Try updating the dept_id of an employee with a department that does not exist
- UPDATE employees SET dept_id = 9999 where employee_id = 101;
+# Tente atualizar o dept_id de um funcionário com um departamento que não existe
+ UPDATE funcionários SET dept_id = 9999 onde funcionário_id = 101;
 
-# Example of 1-1 relationship
-# Creating table Account with the same primary key as the Employees table
-CREATE TABLE Account(
-employee_id int,
-email varchar(50),
-primary key (employee_id),
-CONSTRAINT fk_emp FOREIGN KEY(employee_id) REFERENCES employees(employee_id)
+# Exemplo de relacionamento 1-1
+# Criando a tabela Account com a mesma chave primária da tabela Employees
+CRIAR CONTA DE TABELA(
+funcionário_id int,
+e-mail varchar(50),
+chave primária (employee_id),
+CONSTRAINT fk_emp FOREIGN KEY(employee_id) REFERENCES funcionários(employee_id)
 );
 
 ```
 
-#### Exercise
+#### Exercício
 
-1. Write an INSERT query for the Account table that returns an error.
-2. Write an INSERT query for the Account table that is valid (returns no error).
+1. Escreva uma consulta INSERT para a tabela Account que retorne um erro.
+2. Escreva uma consulta INSERT para a tabela Account que seja válida (não retorna nenhum erro).
 
-#### Essence
+#### Essência
 
-For a relationship with `1-M` cardinality. The primary key of `1` side of the relationship
-becomes the foreign key of the `M` side of the relationship.
-E.g. `Departments-Employees`. The primary key of the Departments table (dept_id)
-becomes the foreign key in the Employees table.
+Para um relacionamento com cardinalidade `1-M`. A chave primária do lado '1' do relacionamento
+torna-se a chave estrangeira do lado 'M' do relacionamento.
+Por exemplo. `Departamentos-Funcionários`. A chave primária da tabela Departamentos (dept_id)
+torna-se a chave estrangeira na tabela Funcionários.
 
-### 2.2 Relationships (M-M and composite keys)
+### 2.2 Relacionamentos (M-M e chaves compostas)
 
-#### Explanation
+#### Explicação
 
-The cardinality of a relationship can also be `M-M` (read as Many-to-many) where
-one instance of an entity participates in many other instances of the other entity
-and vice a versa.
-For example, an employee may work on many projects at a time.
-A project may have many employees working on it.
+A cardinalidade de um relacionamento também pode ser `M-M` (leia-se muitos-para-muitos) onde
+uma instância de uma entidade participa de muitas outras instâncias da outra entidade
+e vice-versa.
+Por exemplo, um funcionário pode trabalhar em muitos projetos ao mesmo tempo.
+Um projeto pode ter muitos funcionários trabalhando nele.
 
-To represent an `M-M` relationship in MySQL, we need a **new relationship table**
-that uses two foreign keys (primary keys from both tables). For such a relationship
-table, primary key is composed of two foreign keys.
-For example, one entry in the employee-project relationship table represents
-**X** is working on **Y** project.
-There can be other rows with the employee **X**,
-There can be other rows with the project **Y**
-Hence none of these columns can act as the primary key alone.
-The primary key must be the combination of two columns. Such a primary
-key is called as the **Composite Key**
+Para representar um relacionamento `M-M` no MySQL, precisamos de uma **nova tabela de relacionamentos**
+que usa duas chaves estrangeiras (chaves primárias de ambas as tabelas). Para tal relacionamento
+tabela, a chave primária é composta por duas chaves estrangeiras.
+Por exemplo, uma entrada na tabela de relacionamento funcionário-projeto representa
+**X** está trabalhando no projeto **Y**.
+Pode haver outras linhas com o funcionário **X**,
+Pode haver outras linhas com o projeto **Y**
+Portanto, nenhuma dessas colunas pode atuar como chave primária sozinha.
+A chave primária deve ser a combinação de duas colunas. Um tal primário
+key é chamada de **Chave composta**
 
-#### Example
+#### Exemplo
 
 ```sql
-# create projects table
-CREATE TABLE projects (proj_id int, proj_name varchar(50), start_date datetime);
+#cria tabela de projetos
+CREATE TABLE projetos (proj_id int, proj_name varchar(50), start_date datetime);
 
-# Insert sample values
-INSERT INTO projects VALUES(9001, "Jazz", "2018-01-01");
-INSERT INTO projects VALUES(9002, "Mellow", "2019-03-01");
-INSERT INTO projects VALUES(9003, "Classical", "2020-01-01");
+# Inserir valores de amostra
+INSERT INTO projetos VALUES(9001, "Jazz", "2018-01-01");
+INSERT INTO projetos VALUES(9002, "Mellow", "2019-03-01");
+INSERT INTO projetos VALUES(9003, "Clássico", "2020-01-01");
 
-# create emp_proj relationship table with composite primary key
-CREATE TABLE emp_proj (
+# cria tabela de relacionamento emp_proj com chave primária composta
+CRIAR TABELA emp_proj (
 emp_id int,
 proj_id int,
-PRIMARY KEY(emp_id, proj_id),
-CONSTRAINT fk_emp FOREIGN KEY(emp_id) REFERENCES employees(employee_id),
-CONSTRAINT fk_pro FOREIGN KEY(proj_id) REFERENCES projects(proj_id)
+CHAVE PRIMÁRIA(emp_id, proj_id),
+CONSTRAINT fk_emp FOREIGN KEY(emp_id) REFERENCES funcionários(employee_id),
+CONSTRAINT fk_pro FOREIGN KEY(proj_id) REFERENCES projetos(proj_id)
 );
 ```
 
-#### Exercise
+#### Exercício
 
-1. Write an INSERT query for the emp_proj table that returns an error.
-2. Write an INSERT query for the emp_proj table that is valid (returns no error).
+1. Escreva uma consulta INSERT para a tabela emp_proj que retorne um erro.
+2. Escreva uma consulta INSERT para a tabela emp_proj que seja válida (não retorna nenhum erro).
 
-#### Essence
+#### Essência
 
-For a `M-M` relationship between two tables, new table must be created which uses a composite primary
-key that consists of foreign keys that reference primary keys of both tables.
+Para um relacionamento 'M-M' entre duas tabelas, uma nova tabela deve ser criada que usa um primário composto
+key que consiste em chaves estrangeiras que fazem referência às chaves primárias de ambas as tabelas.
 
-### 3.1 Joins (comma, inner)
+### 3.1 Junções (vírgula, interna)
 
-#### Explanation
+#### Explicação
 
-When the answer of the query cannot be found from only one table, we must join the two tables.
-If we don't join the table, then such a query must be written using nested subquery.
-For example, consider the following query: **Find out all employees who work in the Sales department.**
-Also assume that the name of the department is obtained from the HTML form as the input.
-thus, you must obtain the `dept_id` from the departments table where the name is **Sales**.
-The following query should give the answer.
-`SELECT dept_id FROM departments where dept_name = Sales;`
-Now, we can use the above query as the nested (sub)query as follows:
-`SELECT employee_name FROM employees WHERE dept_id in (SELECT dept_id FROM departments where dept_name = Sales);`
+Quando a resposta da consulta não puder ser encontrada em apenas uma tabela, devemos unir as duas tabelas.
+Se não unirmos a tabela, essa consulta deve ser escrita usando subconsulta aninhada.
+Por exemplo, considere a seguinte consulta: **Descubra todos os funcionários que trabalham no departamento de vendas.**
+Suponha também que o nome do departamento seja obtido do formulário HTML como entrada.
+assim, você deve obter o `dept_id` da tabela de departamentos onde o nome é **Vendas**.
+A pergunta a seguir deve dar a resposta.
+`SELECT dept_id FROM departamentos onde dept_name = Sales;`
+Agora, podemos usar a consulta acima como a (sub)consulta aninhada da seguinte maneira:
+`SELECT employee_name FROM employees WHERE dept_id in (SELECT dept_id FROM departamentos onde dept_name = Sales);`
 
-Another way of solving this query is to use **joins**.
-The preferred way of joining two tables is to use the **INNER JOIN** clause followed by **ON** followed by
-the condition that generally matches the columns shared by the two tables we are joining.
-Another way is to use a **comma (,) between table names** after FROM and then matching columns in the **WHERE**
-clause.
+Outra maneira de resolver essa consulta é usar **junções**.
+A maneira preferida de unir duas tabelas é usar a cláusula **INNER JOIN** seguida de **ON** seguida de
+a condição que geralmente corresponde às colunas compartilhadas pelas duas tabelas que estamos unindo.
+Outra maneira é usar uma **vírgula (,) entre os nomes das tabelas** depois de FROM e as colunas correspondentes no **WHERE**
+cláusula.
 
-#### Example
+#### Exemplo
 
 ```sql
-#We must join the tables `employees` and `departments` and then choose the relevant rows.
+#Devemos juntar as tabelas `employees` e `departments` e depois escolher as linhas relevantes.
 
-# INNER JOIN
-SELECT employee_name
-FROM employees as E
-INNER JOIN
-departments as D
+# JUNÇÃO INTERNA
+SELECIONAR nome_do_funcionário
+DE funcionários como E
+JUNÇÃO INTERNA
+departamentos como D
 ON E.dept_id = D.dept_id
-WHERE D.dept_name = "Sales";
+WHERE D.dept_name = "Vendas";
 
-# Comma (,) or CROSS join
-SELECT employee_name
-FROM employees as E, departments as D
-where E.dept_id = D.dept_id
-and D.dept_name = "Sales";
+# Vírgula (,) ou junção CROSS
+SELECIONAR nome_do_funcionário
+DE funcionários como E, departamentos como D
+onde E.dept_id = D.dept_id
+e D.dept_name = "Vendas";
 ```
 
-#### Exercise
+#### Exercício
 
-1. Guess the output of the following query.
-   `SELECT count(*) FROM employees, departments, projects;`
+1. Adivinhe a saída da consulta a seguir.
+   `SELECT count(*) FROM funcionários, departamentos, projetos;`
 
-2. Print the sum of salary of all employees that work in "Sales" department and
-   work on "Jazz" project.
+2. Imprima a soma salarial de todos os funcionários que trabalham no departamento de "Vendas" e
+   trabalhar no projeto "Jazz".
 
-#### Essence
+#### Essência
 
-> When we use a comma (,) after the FROM clause of MySQL, it gives you the vector product of two tables.
+> Quando usamos uma vírgula (,) após a cláusula FROM do MySQL, ela fornece o produto vetorial de duas tabelas.
 
-> In MySQL, there is no difference between
-> (1) An INNER JOIN with columns-matching condition after ON and
-> (2) The join using a comma (,) between tables and where clause with condition for columns-matching.
+> No MySQL, não há diferença entre
+> (1) Um INNER JOIN com condição de correspondência de colunas após ON e
+> (2) A junção usando uma vírgula (,) entre tabelas e cláusula where com condição para correspondência de colunas.
 
-### 3.2 Joins (self)
+### 3.2 Junções (auto)
 
-#### Explanation
+#### Explicação
 
-When the answer of the query cannot be easily found with a where clause but the answer(s) can be found
-in the same table, then consider the following case:
+Quando a resposta da consulta não pode ser facilmente encontrada com uma cláusula where, mas a(s) resposta(s) pode(m) ser encontrada(s)
+na mesma tabela, considere o seguinte caso:
 
-1. One column of the table contains values from the other column of the same table (but different rows)
-   E.g. `reports_to` column of Employees table contains values from the `employee_id`.
-2. We want to print rows that share column values from other rows
-   E.g. Say we add a column `city` to Employees table, then
-   we want to print all employees who come from the same city as `John Smith`
+1. Uma coluna da tabela contém valores da outra coluna da mesma tabela (mas linhas diferentes)
+   Por exemplo. A coluna `reports_to` da tabela Employees contém valores do `employee_id`.
+2. Queremos imprimir linhas que compartilham valores de coluna de outras linhas
+   Por exemplo. Digamos que adicionamos uma coluna `city` à tabela Employees, então
+   queremos imprimir todos os funcionários que vêm da mesma cidade que `John Smith`
 
-For both of these cases, a table must be joined to itself (self join).
-for self join, we must use **aliases** so that disambiguation of column names can be achieved.
+Para ambos os casos, uma tabela deve ser unida a si mesma (auto-junção).
+para autojunção, devemos usar **aliases** para que a desambiguação dos nomes das colunas possa ser alcançada.
 
-#### Example
+#### Exemplo
 
 ```sql
-When we want to print employees and their reporting mangagers.
-SELECT E1.employee_name as Employee, E2. employee_name as Manager
-FROM employees as E1
-INNER JOIN
-employees as E2
+Quando queremos imprimir funcionários e seus gerentes de relatórios.
+SELECIONE E1.employee_name como Funcionário, E2. nome_funcionário como gerente
+DE funcionários como E1
+JUNÇÃO INTERNA
+funcionários como E2
 ON E1.reports_to = E2.employee_id
 ```
 
-#### Exercise
+#### Exercício
 
 ```sql
-# Add the city column, update records in the employees table
-ALTER TABLE employees add column city varchar(50);
-UPDATE employees SET city = 'Berlin' where employee_name = 'John';
-UPDATE employees SET city = 'Berlin' where employee_name = 'Friend of John';
-UPDATE employees SET city = 'Berlin' where employee_name = 'Another friend of John';
+# Adicione a coluna da cidade, atualize os registros na tabela de funcionários
+Funcionários ALTER TABLE adicionam a coluna cidade varchar(50);
+UPDATE funcionários SET cidade = 'Berlim' onde funcionário_nome = 'João';
+UPDATE funcionários SET cidade = 'Berlim' onde funcionário_name = 'Amigo de John';
+UPDATE funcionários SET cidade = 'Berlim' onde funcionário_name = 'Outro amigo de John';
 
-SELECT employee_name, city
-FROM employees
-WHERE city = (SELECT city FROM employees WHERE employee_name = 'John');
+SELECT nome_do_funcionário, cidade
+DE funcionários
+WHERE cidade = (SELECT cidade FROM funcionários WHERE funcionário_nome = 'João');
 ```
 
-Re-Write the above query to print names of employees that come from the same city as John using **self join**.
+Reescreva a consulta acima para imprimir os nomes dos funcionários que vêm da mesma cidade que João usando **autoassociação**.
 
-<details><summary>Reveal Query</summary>
+<details><summary>Revelar consulta</summary>
 <p>
 
 ```sql
-SELECT E1.employee_name, E2.city
-FROM employees as E1
-INNER JOIN employees as E2
-ON E1.city = E2.city
-WHERE E2.employee_name = 'John';
+SELECIONE E1.nome_funcionário, E2.cidade
+DE funcionários como E1
+Funcionários da INNER JOIN como E2
+ON E1.cidade = E2.cidade
+WHERE E2.employee_name = 'João';
 ```
 
 </p>
-</details>
+</detalhes>
 
-#### Essence
+#### Essência
 
-For self joins, aliases for tables must be used. Otherwise, column names are ambiguous.
+Para autojunções, devem ser usados aliases para tabelas. Caso contrário, os nomes das colunas são ambíguos.
 
-### 3.3 Joins (LEFT OUTER and RIGHT OUTER)
+### 3.3 Junções (LEFT OUTER e RIGHT OUTER)
 
-#### Explanation
+#### Explicação
 
-When we join two tables based on a common column, some rows do not have a match in the other table.
-In the following statement `FROM A LEFT JOIN B ON A.col = B.col`,
-the table A is the LEFT table and the table B i the RIGHT table.
-In a LEFT JOIN, we print **all rows** from the LEFT table even though they don't have a match in the RIGHT table.
+Quando juntamos duas tabelas com base em uma coluna comum, algumas linhas não têm correspondência na outra tabela.
+Na seguinte instrução `FROM A LEFT JOIN B ON A.col = B.col`,
+a tabela A é a tabela LEFT e a tabela B é a tabela RIGHT.
+Em um LEFT JOIN, imprimimos **todas as linhas** da tabela LEFT mesmo que elas não tenham uma correspondência na tabela RIGHT.
 
-In the following statement `FROM A RIGHT JOIN B ON A.col = B.col`,
-the table A is the LEFT table and the table B i the RIGHT table.
-In a RIGHT JOIN, we print **all rows** from the RIGHT table even though they don't have a match in the LEFT table.
+Na seguinte instrução `FROM A RIGHT JOIN B ON A.col = B.col`,
+a tabela A é a tabela LEFT e a tabela B é a tabela RIGHT.
+Em um RIGHT JOIN, imprimimos **todas as linhas** da tabela RIGHT mesmo que elas não tenham uma correspondência na tabela LEFT.
 
-#### Example
+#### Exemplo
 
-Some employees may not have a department associated with them but they
-are still employed by the company.
-Thus, if we want to print all employees and their department names,
-then a LEFT JOIN (FROM employees to departments) allows us to print **everything** from the LEFT table
-and the matching rows from the other table.
+Alguns funcionários podem não ter um departamento associado a eles, mas
+ainda são empregados da empresa.
+Assim, se quisermos imprimir todos os funcionários e seus nomes de departamentos,
+então um LEFT JOIN (de funcionários para departamentos) nos permite imprimir **tudo** da tabela LEFT
+e as linhas correspondentes da outra tabela.
 
-#### Exercise
+#### Exercício
 
-Use Self left join to print all employees and their managers.
-Note that it should include the employees who don't have mangers too.
+Use a junção à esquerda para imprimir todos os funcionários e seus gerentes.
+Observe que também deve incluir os funcionários que não possuem manjedouras.
 
-<details><summary>Reveal Query</summary>
+<details><summary>Revelar consulta</summary>
 <p>
 
 ```sql
-SELECT E.employee_name as Employee, E2. employee_name as Manager
-FROM employees as E1
-LEFT JOIN
-employees as E2
+SELECIONE E.employee_name como Funcionário, E2. nome_funcionário como gerente
+DE funcionários como E1
+ASSOCIAÇÃO À ESQUERDA
+funcionários como E2
 ON E1.reports_to = E2.employee_id
 ```
 
 </p>
-</details>
+</detalhes>
 
-#### Essence
+#### Essência
 
-- LEFT JOIN : All rows from the LEFT table
-- RIGHT JOIN: All rows from the RIGHT table
+- LEFT JOIN : Todas as linhas da tabela LEFT
+- RIGHT JOIN: Todas as linhas da tabela RIGHT
 
-### 4.1. Aggregate Functions
+### 4.1. Funções agregadas
 
-#### Explanation
+#### Explicação
 
-In database management an aggregate function is a function where the values of multiple rows are grouped
-together as input on certain criteria.
-Some important aggregate functions are
+No gerenciamento de banco de dados, uma função agregada é uma função em que os valores de várias linhas são agrupados
+juntos como entrada em determinados critérios.
+Algumas funções agregadas importantes são
 
-1. SUM
-2. COUNT
-3. MAX
+1. SOMA
+2. CONTAGEM
+3. MÁX.
 4. MIN
-5. AVG
+5. Média
 
-#### Example
+#### Exemplo
 
-We want to return the sum of the salaries of all female employees:
-
-```sql
-SELECT SUM(E.salary) AS Expenses FROM employees as E WHERE gender = 'f';
-```
-
-Or get the number of employees:
+Queremos devolver a soma dos salários de todas as funcionárias:
 
 ```sql
-SELECT COUNT(*) FROM employees;
+SELECT SUM(E.salário) AS Despesas de funcionários como E WHERE gênero = 'f';
 ```
 
-#### Exercise
+Ou obtenha o número de funcionários:
 
-Write SQL queries to get the maximum and average of all employees' salaries.
+```sql
+SELECT COUNT(*) FROM empregados;
+```
 
-#### Essence
+#### Exercício
 
-Using these functions, you can do some data processing on Database level. For example, you can get max or min of the data that exists in database with no need to process them.
+Escreva consultas SQL para obter o máximo e a média dos salários de todos os funcionários.
 
-### 4.2. DISTINCT
+#### Essência
 
-#### Explanation
+Usando essas funções, você pode fazer algum processamento de dados no nível do banco de dados. Por exemplo, você pode obter o máximo ou o mínimo dos dados que existem no banco de dados sem a necessidade de processá-los.
 
-Distinct: this statement is used to return only distinct (different) values. This keyword prevents the duplicate values.
+### 4.2. DISTINTO
 
-#### Example
+#### Explicação
 
-We want to to get the number of the departments that have at least one employee:
+Distinto: esta instrução é usada para retornar apenas valores distintos (diferentes). Esta palavra-chave evita os valores duplicados.
+
+#### Exemplo
+
+Queremos obter o número de departamentos que possuem pelo menos um funcionário:
 
 ```sql
 SELECT COUNT(DISTINCT E.dept_id) AS Working_Departments
-FROM employees as E
+DE funcionários como E
 ```
 
-#### Exercise
+#### Exercício
 
-N/A
+N / D
 
-#### Essence
+#### Essência
 
-Distinct gives unique values.
+Distinto dá valores únicos.
 
-#### 4.3 Group by
+#### 4.3 Agrupar por
 
-#### Explanation
+#### Explicação
 
-Group by: this statement groups rows that have the same value in a certain column and generally
-applies an aggregate function on another column
+Agrupar por: esta instrução agrupa linhas que têm o mesmo valor em uma determinada coluna e geralmente
+aplica uma função agregada em outra coluna
 
-#### Example
+#### Exemplo
 
-We want to get the sum of salary and number of employees grouped by gender:
+Queremos obter a soma do salário e número de funcionários agrupados por gênero:
 
 ```sql
-SELECT gender, count(employee_id), sum(salary)
-FROM employees
-GROUP BY gender;
+SELECT sexo, contagem(employee_id), soma(salário)
+DE funcionários
+Agrupar por gênero;
 ```
 
-#### Exercise
+#### Exercício
 
-Write a query that retrieves all managers with the number of employees that are reporting to them.
+Escreva uma consulta que recupere todos os gerentes com o número de funcionários subordinados a eles.
 
-<details><summary>Reveal Query</summary>
+<details><summary>Revelar consulta</summary>
 <p>
 
 ```sql
-SELECT E2.employee_name , count(E1.employee_name) as Employee_cnt
-FROM employee as E1 LEFT JOIN employee as E2
+SELECT E2.employee_name , count(E1.employee_name) como Employee_cnt
+FROM empregado como E1 LEFT JOIN empregado como E2
 ON E1.reports_to = E2.employee_id
-group by E2.employee_name;
+agrupar por E2.employee_name;
 ```
 
 </p>
-</details>
+</detalhes>
 
-#### Essence
+#### Essência
 
-Group by clause can only print columns that are grouped by or apply aggregate functions on the other columns.
+A cláusula Group by só pode imprimir colunas agrupadas por ou aplicar funções de agregação nas outras colunas.
 
-### 4.4 Having
+### 4.4 Tendo
 
-#### Explanation
+#### Explicação
 
-Having clause was added to SQL because the WHERE keyword could not be used with aggregate functions.
-Using having clause you can have conditional clauses on aggregate funtions.
+A cláusula Tendo foi adicionada ao SQL porque a palavra-chave WHERE não pôde ser usada com funções agregadas.
+Usando a cláusula havendo você pode ter cláusulas condicionais em funções agregadas.
 
-#### Example
+#### Exemplo
 
-Print all departments that are spending more than 5000 in salaries
-(In other words, all departments where the sum of salaries of employees working in them is more than 5000)
+Imprima todos os departamentos que estão gastando mais de 5.000 em salários
+(Em outras palavras, todos os departamentos onde a soma dos salários dos funcionários que trabalham neles é superior a 5000)
 
 ```sql
 
-SELECT dept_name, sum(salary)
-FROM employees as E
-INNER JOIN
-departments as D
+SELECT nome_dept, soma(salário)
+DE funcionários como E
+JUNÇÃO INTERNA
+departamentos como D
 ON E.dept_no = D.dept_no
 GROUP BY dept_name
-HAVING sum(salary) > 5000;
+TENDO soma(salário) > 5000;
 ```
 
-#### Exercise
+#### Exercício
 
-Write a query that retrieves all managers with more than 3 employees reporting to them.
-Hint: In this query use DISTINCT and GROUP BY keywords with HAVING clause.
+Escreva uma consulta que recupere todos os gerentes com mais de 3 funcionários subordinados a eles.
+Dica: Nesta consulta, use as palavras-chave DISTINCT e GROUP BY com a cláusula HAVING.
 
-#### Essence
+#### Essência
 
-Having clause can only filter the rows with columns selected by the GROUP BY clause.
+A cláusula Tendo só pode filtrar as linhas com colunas selecionadas pela cláusula GROUP BY.
 
-### 5. Indexes
+### 5. Índices
 
-#### Explanation
+#### Explicação
 
-Indexes are a type of a look-up table where the database server can quickly look up rows in the database tables.
-Indexes are created when rows are inserted or they are updated when the indexed columns are updated in the database.
-Creating or updating indexes takes computation time and storing indexes takes up data storage space.
-However, when retrieving a specific row from the database, the database can use these stored indexes to find the requested row(s) much faster.
-Therefore, indexes make update or insertion operations more expensive/slow, however they speed-up data retrieval (SELECT/JOIN/WHERE/...) operations.
-Also, they increase the total size of the database, as they are stored together with their corresponding tables.
+Índices são um tipo de tabela de consulta em que o servidor de banco de dados pode pesquisar rapidamente linhas nas tabelas de banco de dados.
+Os índices são criados quando as linhas são inseridas ou são atualizados quando as colunas indexadas são atualizadas no banco de dados.
+Criar ou atualizar índices leva tempo de computação e armazenar índices ocupa espaço de armazenamento de dados.
+No entanto, ao recuperar uma linha específica do banco de dados, o banco de dados pode usar esses índices armazenados para localizar a(s) linha(s) solicitada(s) muito mais rapidamente.
+Portanto, os índices tornam as operações de atualização ou inserção mais caras/lentas, porém aceleram as operações de recuperação de dados (SELECT/JOIN/WHERE/...).
+Além disso, eles aumentam o tamanho total do banco de dados, pois são armazenados junto com suas tabelas correspondentes.
 
-##### Analogy
+##### Analogia
 
-Imagine a (technical) textbook which has the index at the end. This index contains keywords in that book and it tells you on which pages those keyword appear.
-It helps to find pages that contains a word `promise` instead of looking for each page one by one. Note that a keyword may appear on more than one pages.
-In this case, you will see all pages on which this keyword appears. In a JavaScript book, the word `function` may appear on many pages while the word
-`prototype chaining` may appear only once. In the index, you can quickly find on which page these words appear.
+Imagine um livro (técnico) que tenha o índice no final. Este índice contém palavras-chave nesse livro e informa em quais páginas essas palavras-chave aparecem.
+Ajuda a encontrar páginas que contenham a palavra "promessa" em vez de procurar cada página uma por uma. Observe que uma palavra-chave pode aparecer em mais de uma página.
+Nesse caso, você verá todas as páginas nas quais essa palavra-chave aparece. Em um livro JavaScript, a palavra `função` pode aparecer em muitas páginas enquanto a palavra
+`prototype chaining` pode aparecer apenas uma vez. No índice, você pode encontrar rapidamente em qual página essas palavras aparecem.
 
-Here is a [link to a Medium article](https://medium.com/javarevisited/indexes-when-to-use-and-when-to-avoid-them-39c56e5a7329) that describes indexes concisely.
+Aqui está um [link para um artigo do Medium](https://medium.com/javarevisited/indexes-when-to-use-and-when-to-avoid-them-39c56e5a7329) que descreve os índices de forma concisa.
 
-#### Example
+#### Exemplo
 
-First we will create a table with a large number of records.
-The full program can be found in `Week2/generate_big_table.js`, but here is the snippet
+Primeiro vamos criar uma tabela com um grande número de registros.
+O programa completo pode ser encontrado em `Week2/generate_big_table.js`, mas aqui está o trecho
 
 ```
-async function seedDatabase() {
+função assíncrona seedDatabase() {
 
     const CREATE_TABLE = `
-        CREATE TABLE IF NOT EXISTS big
+        CRIE TABELA SE NÃO EXISTE grande
         (
             id_pk INT PRIMARY KEY AUTO_INCREMENT,
-            number   INT
+            número INT
         );`;
 
     execQuery(CREATE_TABLE);
-    let rows = []
-    for (i = 1; i <= 1000000; i++) {
-        rows.push([i]);
+    deixe linhas = []
+    for (i = 1; i <= 1.000.000; i++) {
+        linhas.push([i]);
         if(i%10000 === 0){
             console.log("i="+i);
             await execQuery('INSERT INTO big(number) VALUES ?',[rows]);
-            rows = [];
+            linhas = [];
         }
     }
 }
 ```
 
-The following two queries will show the difference (in execution time) between using the index and not using the index when we retrieve the data.
+As duas consultas a seguir mostrarão a diferença (em tempo de execução) entre usar o índice e não usar o índice quando recuperamos os dados.
 
 ```
 mysql> SELECT * FROM big WHERE id_pk = 1000;
 +-------+--------+
-| id_pk | number |
+| id_pk | número |
 +-------+--------+
-|  1000 |   1000 |
+| 1000 | 1000 |
 +-------+--------+
-1 row in set (0.00 sec)
+1 linha em conjunto (0,00 seg)
 
-mysql> SELECT * FROM big WHERE number = 1000;
+mysql> SELECT * FROM grande WHERE número = 1000;
 +-------+--------+
-| id_pk | number |
+| id_pk | número |
 +-------+--------+
-|  1000 |   1000 |
+| 1000 | 1000 |
 +-------+--------+
-1 row in set (0.19 sec)
+1 linha em conjunto (0,19 seg)
 ```
 
-The first query's result is instant because the `WHERE` clause uses the `id_pk` column which is a primary key.
-Note that for a primary key column, MySQL automatically creates an index. This can be confirmed with the following query
+O resultado da primeira consulta é instantâneo porque a cláusula `WHERE` usa a coluna `id_pk` que é uma chave primária.
+Observe que para uma coluna de chave primária, o MySQL cria automaticamente um índice. Isso pode ser confirmado com a seguinte consulta
 
 ```
-mysql> SHOW indexes from big;
-+-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+
-| Table | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type |
-+-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+
-| big   |          0 | PRIMARY  |            1 | id_pk       | A         |    12769223 |     NULL |   NULL |      | BTREE      |
-+-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+
-1 row in set (0.01 sec)
+mysql> MOSTRA índices de big;
++-------+------------+----------+--------------+-- -------+-----------+-------------+----------+- -------+------+------------+
+| Tabela | Não_único | Nome_chave | Seq_in_index | Column_name | Agrupamento | Cardinalidade | Sub_parte | Embalado | Nulo | Tipo_índice |
++-------+------------+----------+--------------+-- -------+-----------+-------------+----------+- -------+------+------------+
+| grande | 0 | PRINCIPAL | 1 | id_pk | A | 12769223 | NULO | NULO | | BTREE |
++-------+------------+----------+--------------+-- -------+-----------+-------------+----------+- -------+------+------------+
+1 linha em conjunto (0,01 seg)
 ```
 
-The query `SELECT * FROM big WHERE number = 1000` takes longer to run because the column `number` is not indexed. MySQL has to
-go in the `big` table and search row by row to check which row contains the value 1000 in `number` column.
+A consulta `SELECT * FROM big WHERE number = 1000` demora mais para ser executada porque a coluna `number` não está indexada. MySQL tem que
+vá na tabela `big` e pesquise linha por linha para verificar qual linha contém o valor 1000 na coluna `number`.
 
-The `describe` command shows how many rows are accessed to fetch the result of the query.
-Check the `rows` column in the output of the following queries.
+O comando `describe` mostra quantas linhas são acessadas para buscar o resultado da consulta.
+Verifique a coluna `rows` na saída das seguintes consultas.
 
 ```
-mysql> DESCRIBE SELECT * FROM big WHERE number = 1000;
-+----+-------------+-------+------------+------+---------------+------+---------+------+----------+----------+-------------+
-| id | select_type | table | partitions | type | possible_keys | key  | key_len | ref  | rows     | filtered | Extra       |
-+----+-------------+-------+------------+------+---------------+------+---------+------+----------+----------+-------------+
-|  1 | SIMPLE      | big   | NULL       | ALL  | NULL          | NULL | NULL    | NULL | 998568   |    10.00 | Using where |
-+----+-------------+-------+------------+------+---------------+------+---------+------+----------+----------+-------------+
-1 row in set, 1 warning (0.00 sec)
+mysql> DESCRIBE SELECT * FROM big WHERE número = 1000;
++----+-------------+-------+------------+------+-- -------------+------+---------+------+----------+- ---------+-------------+
+| identificação | select_type | mesa | divisórias | tipo | chaves_possíveis | chave | key_len | ref | linhas | filtrado | Extra |
++----+-------------+-------+------------+------+-- -------------+------+---------+------+----------+- ---------+-------------+
+| 1 | SIMPLES | grande | NULO | TODOS | NULO | NULO | NULO | NULO | 998568 | 10h00 | Usando onde |
++----+-------------+-------+------------+------+-- -------------+------+---------+------+----------+- ---------+-------------+
+1 linha em conjunto, 1 aviso (0,00 seg)
 
 mysql> DESCRIBE SELECT * FROM big WHERE id_pk = 1000;
-+----+-------------+-------+------------+-------+---------------+---------+---------+-------+------+----------+-------+
-| id | select_type | table | partitions | type  | possible_keys | key     | key_len | ref   | rows | filtered | Extra |
-+----+-------------+-------+------------+-------+---------------+---------+---------+-------+------+----------+-------+
-|  1 | SIMPLE      | big   | NULL       | const | PRIMARY       | PRIMARY | 4       | const |    1 |   100.00 | NULL  |
-+----+-------------+-------+------------+-------+---------------+---------+---------+-------+------+----------+-------+
++----+-------------+-------+------------+-------+- --------------+---------+---------+-------+------+ ----------+-------+
+| identificação | select_type | mesa | divisórias | tipo | chaves_possíveis | chave | key_len | ref | linhas | filtrado | Extra |
++----+-------------+-------+------------+-------+- --------------+---------+---------+-------+------+ ----------+-------+
+| 1 | SIMPLES | grande | NULO | const | PRINCIPAL | PRINCIPAL | 4 | const | 1 | 100,00 | NULO |
++----+-------------+-------+------------+-------+- --------------+---------+---------+-------+------+ ----------+-------+
 ```
 
-We can now create an index on the `number` column as follows:
+Agora podemos criar um índice na coluna `number` da seguinte forma:
 
 ```
 CREATE INDEX idx_number ON big(number);
 ```
 
-Now we can re-run the select query which will be faster:
+Agora podemos executar novamente a consulta de seleção que será mais rápida:
 
 ```
-mysql> SELECT * FROM big WHERE number = 1000;
+mysql> SELECT * FROM grande WHERE número = 1000;
 +-------+--------+
-| id_pk | number |
+| id_pk | número |
 +-------+--------+
-|  1000 |   1000 |
+| 1000 | 1000 |
 +-------+--------+
-1 row in set (0.00 sec)
+1 linha em conjunto (0,00 seg)
 ```
 
-We have seen that having an index helps in fetching the data faster. However, for updates/inserts, having an index
-is more expensive. After doing an update to the indexed column, MySQL also has to internally update indexes for that column.
+Vimos que ter um índice ajuda a buscar os dados mais rapidamente. No entanto, para atualizações/inserções, ter um índice
+É mais caro. Depois de fazer uma atualização na coluna indexada, o MySQL também precisa atualizar internamente os índices dessa coluna.
 
-Look at the query below:
-
-```
-mysql> UPDATE big SET number = number + 100000;
-Query OK, 1000000 rows affected (14.01 sec)
-Rows matched: 1000000  Changed: 1000000  Warnings: 0
-```
-
-Now, let us remove the index
+Observe a consulta abaixo:
 
 ```
-mysql> DROP INDEX idx_number ON big;
-Query OK, 0 rows affected (1.59 sec)
-Records: 0  Duplicates: 0  Warnings: 0
+mysql> UPDATE grande SET numero = numero + 100000;
+Consulta OK, 1.000.000 linhas afetadas (14,01 s)
+Linhas correspondidas: 1.000.000 Alteradas: 1.000.000 Avisos: 0
 ```
 
-and re-run the update query.
+Agora, vamos remover o índice
 
 ```
-mysql> UPDATE big SET number = number + 100000;
-Query OK, 1000000 rows affected (6.14 sec)
-Rows matched: 1000000  Changed: 1000000  Warnings: 0
+mysql> DROP INDEX número_idx ON grande;
+Consulta OK, 0 linha afetada (1,59 s)
+Registros: 0 Duplicatas: 0 Avisos: 0
 ```
 
-We can see that without the index, update of the number column is much faster (6 seconds as compared to 14).
-
-#### Exercise
-
-Create a composite index using columns (`employee_name and salary`) on the `employees` table and check the query performance of following queries
+e execute novamente a consulta de atualização.
 
 ```
-DESCRIBE SELECT * FROM employees WHERE employee_name = 'John' and salary = 50000
+mysql> UPDATE grande SET numero = numero + 100000;
+Consulta OK, 1.000.000 linhas afetadas (6,14 segundos)
+Linhas correspondidas: 1.000.000 Alteradas: 1.000.000 Avisos: 0
+```
+
+Podemos ver que sem o índice, a atualização da coluna de número é muito mais rápida (6 segundos em comparação com 14).
+
+#### Exercício
+
+Crie um índice composto usando colunas (`nome_employee e salário`) na tabela `employees` e verifique o desempenho das consultas a seguir
+
+```
+DESCRIBE SELECT * FROM employees WHERE employee_name = 'John' e salário = 50000
 DESCRIBE SELECT * FROM employees WHERE employee_name = 'John'
-DESCRIBE SELECT * FROM employees WHERE salary = 50000
+DESCRIBE SELECT * FROM empregados ONDE salário = 50.000
 ```
 
-Make sure to have at least 100 records in the `employees` table including someone named `John` with salary 50000.
+Certifique-se de ter pelo menos 100 registros na tabela `employees`, incluindo alguém chamado `John` com salário 50.000.
 
-#### Essence
+#### Essência
 
-Indexes in databases can be used to increase the performance for finding and retrieving specific rows.
-However, they do also add overhead to the database (especially for updates/inserts), so they should be used with care.
+Índices em bancos de dados podem ser usados para aumentar o desempenho para localizar e recuperar linhas específicas.
+No entanto, eles também adicionam sobrecarga ao banco de dados (especialmente para atualizações/inserções), portanto, devem ser usados com cuidado.
 
-### 6. Domain Modeling
+### 6. Modelagem de Domínio
 
-#### Explanation
+#### Explicação
 
-- Domain modeling is making the models for the domain of the problem or the system.
-- It makes use of the concepts like entities and relations.
-- Entity Relationship Diagrams (ERD) are used widely in domain modeling.
-- In ERD, **entities** are shown by boxes and are abstract things. E.g. John Smith is an instance. Student is the entity. An entity in ERD is converted to a table in MySQL.
-- Entities are connected to each other with a line (**relationships**) with **cardinalities** (1-1, 1-M etc.).
-- Entities have **attributes** shown in the shape of an ellipse. An attribute of the entity is translated to
-  the column of the corresponding table.
+- Modelagem de domínio é fazer os modelos para o domínio do problema ou do sistema.
+- Faz uso dos conceitos como entidades e relações.
+- Diagramas de Entidade-Relacionamento (ERD) são amplamente utilizados na modelagem de domínio.
+- No ERD, **entidades** são mostradas por caixas e são coisas abstratas. Por exemplo. John Smith é um exemplo. O aluno é a entidade. Uma entidade no ERD é convertida em uma tabela no MySQL.
+- As entidades são conectadas entre si por uma linha (**relacionamentos**) com **cardinalidades** (1-1, 1-M etc.).
+- Entidades têm **atributos** mostrados na forma de uma elipse. Um atributo da entidade é traduzido para
+  a coluna da tabela correspondente.
 
-#### Example
+#### Exemplo
 
-Draw the **ERD** for the employees, departments and projects.
+Desenhe o **ERD** para os funcionários, departamentos e projetos.
 
-#### Exercise
+#### Exercício
 
-Draw the **ERD** for the school database. Identify tables, attributes and relationships.
+Desenhe o **ERD** para o banco de dados da escola. Identificar tabelas, atributos e relacionamentos.
 
-#### Essence
+#### Essência
 
-Domain Modeling using ERD diagrams helps the system analysts and database designers to have a concrete view to the system and how to apply it in databases.
+A modelagem de domínio usando diagramas ERD ajuda os analistas de sistema e designers de banco de dados a ter uma visão concreta do sistema e como aplicá-lo em bancos de dados.

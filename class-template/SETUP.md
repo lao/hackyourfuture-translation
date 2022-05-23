@@ -1,8 +1,8 @@
-# Class repositories
-The idea for the class repositories is to give each class a place to hand in their work, mostly their homework but also anything else you need them to hand in. It gives a nice tracker of the progress of the students and allows mentors 1 place to work from without classes overlapping.
+# Repositórios de classe
+A idéia para os repositórios de classe é dar a cada classe um local para entregar seu trabalho, principalmente sua lição de casa, mas também qualquer outra coisa que você precise que eles entreguem. Ele fornece um bom rastreador do progresso dos alunos e permite que os mentores tenham 1 lugar para trabalhe sem sobreposição de classes.
 
-## Setting up a new class repository
-- Create a new *private* repository named `class-NUMBER` using this as template
-- Edit the `README.md` file to fill in the class number (find/replace NUMBER with the number)
-- Create a new issue for the class mentor to add their information and assign them to it, they can then test out the issue template. The issue template can be found in [./templates/add-info-issue.md](./templates/add-info-issue.md)
-- Invite the students to the private repo before JavaScript module starts. Give them the Write role so they can create pull requests
+## Configurando um novo repositório de classes
+- Crie um novo repositório *privado* chamado `class-NUMBER` usando isso como modelo
+- Edite o arquivo `README.md` para preencher o número da turma (encontre/substitua NUMBER pelo número)
+- Crie um novo problema para o mentor da turma adicionar suas informações e atribuí-lo a ele, eles podem testar o modelo de problema. O modelo de problema pode ser encontrado em [./templates/add-info-issue.md](./templates/add-info-issue.md)
+- Convide os alunos para o repositório privado antes do início do módulo JavaScript. Dê a eles a função Write para que eles possam criar pull requests

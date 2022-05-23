@@ -1,156 +1,156 @@
-# Lesson Plan JavaScript2 Week 3
+# Plano de aula JavaScript2 Semana 3
 
 ## Agenda
 
-The purpose of this class is to introduce to the student:
+O objetivo desta aula é apresentar ao aluno:
 
-- The importance of scope (global, functional and block)
-- What hoisting is and the difference between compile time and run time
-- The use and purpose of closures
+- A importância do escopo (global, funcional e bloco)
+- O que é o içamento e a diferença entre o tempo de compilação e o tempo de execução
+- O uso e finalidade dos fechamentos
 
-## Core concepts
+## Conceitos principais
 
-FIRST HALF (12.00 - 13.30)
-## 1. Q&A about last week's concepts & homework
-- synchronous vs. asynchronous
-- callbacks
-- eventloops
-- map, filter, reduce
+PRIMEIRA METADE (12h00 - 13h30)
+## 1. Perguntas e respostas sobre os conceitos e trabalhos de casa da semana passada
+- síncrono vs. assíncrono
+- retornos de chamada
+- loops de eventos
+- mapear, filtrar, reduzir
 
-Note: You can ask students to explain a concept or summerise the last lecture themselves
+Nota: Você pode pedir aos alunos que expliquem um conceito ou resumir a última aula por conta própria
 
-## 2. Scope (global, functional and block)
-### Explanation
-Scopes define the visiblity of declarations of variables and functions.
+## 2. Escopo (global, funcional e bloco)
+### Explicação
+Os escopos definem a visibilidade das declarações de variáveis e funções.
 
-The top level outside all your functions is called the _global scope_. Values defined in the global scope are accessible from everywhere in the code. Whereas, variables defined in local scope can only be accessed and altered inside the scope they were created.
+O nível superior fora de todas as suas funções é chamado de _escopo global_. Os valores definidos no escopo global são acessíveis de qualquer lugar no código. Já as variáveis definidas no escopo local só podem ser acessadas e alteradas dentro do escopo em que foram criadas.
 
-- `var` and `function` declarations are visible with function scope.
-- `let` and `const` declarations are visible with block scope. A block can be seen as a set of statements enclosed in curly brackets({}).
+- Declarações `var` e `function` são visíveis com o escopo da função.
+- Declarações `let` e `const` são visíveis com escopo de bloco. Um bloco pode ser visto como um conjunto de instruções entre chaves ({}).
 
-Global scope:
+Âmbito global:
 
-- Can be a real useful tool or a nightmare.
-- Useful in scenarios where we want to export JS modules, use third party libraries like jQuery etc.
-- Big risk of causing namespace clashes with multiple variables with same name being created in different places.
+- Pode ser uma ferramenta muito útil ou um pesadelo.
+- Útil em cenários onde queremos exportar módulos JS, usar bibliotecas de terceiros como jQuery etc.
+- Grande risco de causar conflitos de namespace com várias variáveis com o mesmo nome sendo criadas em locais diferentes.
 
-Local Scope:
+Escopo Local:
 
-- Think of local scope as any new scope that is created within the global scope.
-- Each function written in JavaScript creates a new local scope.
-- Variables defined within a function aren't available outside it. They are created when a function starts and are _in a way_ destroyed/hidden when a function ends.
+- Pense no escopo local como qualquer novo escopo criado dentro do escopo global.
+- Cada função escrita em JavaScript cria um novo escopo local.
+- Variáveis definidas dentro de uma função não estão disponíveis fora dela. Eles são criados quando uma função inicia e são _de certa forma_ destruídos/ocultos quando uma função termina.
 
 https://github.com/HackYourFuture/fundamentals/blob/master/fundamentals/scope.md
-### Example
-![Scopes](../assets/scopes.png)
+### Exemplo
+![Escopos](../assets/scopes.png)
 
 ```Javascript
-let villan = "Joker";                        // | global scope
+let villan = "Coringa"; // | Âmbito global
                                              // |
-function myFunction() {                      // |  | function scope
-    let hero = "Batman";                     // |  |
-    if (hero === "Batman") {                 // |  |  | block scope
-        let coHero = "Robin";                // |  |  |
-        console.log(hero);                   // |  |  |
-        console.log(coHero);                 // |  |  |
-        console.log(villan);                 // |  |  |
-    }                                        // |  |  |
-    console.log("------")                    // |  |
-    console.log(hero);                       // |  |
-    console.log(coHero);                     // |  |
-    console.log(villan);                     // |  |
-}                                            // |  |
+function minhaFunção() { // | | escopo da função
+    deixe herói = "Batman"; // | |
+    if (hero === "Batman") { // | | | escopo do bloco
+        let coHerói = "Robin"; // | | |
+        console.log(herói); // | | |
+        console.log(coHerói); // | | |
+        console.log(vilão); // | | |
+    } // | | |
+    console.log("------") // | |
+    console.log(herói); // | |
+    console.log(coHerói); // | |
+    console.log(vilão); // | |
+} // | |
                                              // |
-myFunction();                                // |
+minhaFunção(); // |
 ```
 
-And the same link as Explanation 
-### Exercise
-What happens if we use the same variable name in different scopes?
+E o mesmo link da Explicação
+### Exercício
+O que acontece se usarmos o mesmo nome de variável em escopos diferentes?
 
 ```Javascript
-function myFunction() {
-    let hero = "Batman";
-    if (true) {
-        let hero = "The Flash";
-        console.log(hero);
+função minhaFunção() {
+    deixe herói = "Batman";
+    se for verdade) {
+        let hero = "O Flash";
+        console.log(herói);
     }
-    console.log(hero);
+    console.log(herói);
 }
 
-myFunction();
+minhaFunção();
 ```
-Made by Yash: https://github.com/yash-kapila/HYF-JS2-Week3/blob/master/src/scope.js
-### Essence
-Same link as Explanation
+Feito por Yash: https://github.com/yash-kapila/HYF-JS2-Week3/blob/master/src/scope.js
+### Essência
+Mesmo link da explicação
 
-## 3. What hoisting is and the difference between compile time and run time
-### Explanation
-### Example
-### Exercise
-Made by Yash: https://github.com/yash-kapila/HYF-JS2-Week3/blob/master/src/hoisting.js
-### Essence
-Notes:
+## 3. O que é o içamento e a diferença entre o tempo de compilação e o tempo de execução
+### Explicação
+### Exemplo
+### Exercício
+Feito por Yash: https://github.com/yash-kapila/HYF-JS2-Week3/blob/master/src/hoisting.js
+### Essência
+Notas:
 
-- Compile time is when the JavaScript is prepared to be executed in the browser
-- Run time is when the JavaScript is actually executed, line by line
+- O tempo de compilação é quando o JavaScript está preparado para ser executado no navegador
+- O tempo de execução é quando o JavaScript é realmente executado, linha por linha
 
 
-SECOND HALF (14.00 - 16.00)
+SEGUNDA METADE (14.00 - 16.00)
 
-## 4. Closures
-### Explanation
-Credits to Yash:
-A closure is when inner function remembers the environment in which it was created even after the outer function has returned.
+## 4. Fechamentos
+### Explicação
+Créditos a Yash:
+Um encerramento é quando a função interna lembra o ambiente em que foi criada, mesmo após a função externa ter retornado.
 
-One powerful use of closures is to use the outer function as a factory for creating functions that are somehow related.
+Um uso poderoso de closures é usar a função externa como uma fábrica para criar funções que estão de alguma forma relacionadas.
 
-In the code snippet underneath we can see that the `carColor` function has still got access to the outer function's properties like `wheels`, `seats` and `brand` even after the function `manufactureCar` has returned. We can then use the `carColor` as a factory to create multiple cards of the same type but with a different color.
-### Example
+No trecho de código abaixo, podemos ver que a função `carColor` ainda tem acesso às propriedades da função externa como `wheels`, `seats` e `brand` mesmo após a função `manufactureCar` ter retornado. Podemos então usar o `carColor` como uma fábrica para criar vários cartões do mesmo tipo, mas com uma cor diferente.
+### Exemplo
 ```JavaScript
-function manufactureCar() {
-  const wheels = 4;
-  const seats = 5;
-  const brand = 'Some Brand';
+função fabricaCarro() {
+  rodas const = 4;
+  assentos const = 5;
+  const marca = 'Alguma Marca';
 
   return function carColor(color) {
-    return {
-      wheels,
-      seats,
-      brand,
-      color,
+    Retorna {
+      rodas,
+      assentos,
+      marca,
+      cor,
     }
   };
 }
 
-const basicCar = manufactureCar();
+const basicCar = fabricaCar();
 
 const redCar = basicCar('red');
-const blueCar = basicCar('blue');
-const greenCar = basicCar('green');
+const blueCar = basicCar('azul');
+const greenCar = basicCar('verde');
 ```
 
 ``` Javascript
 {
-  'use strict';
+  'usar estrito';
 
   const printName = () => {
-    const message = 'My name is ';
+    const mensagem = 'Meu nome é ';
 
-    const displayName = name => {
+    const displayName = nome => {
       console.log(`${message}${name}`);
     }
 
-    return displayName;
+    retornar displayName;
   };
   
-  const name = printName();
-  name('Yash Kapila');
+  const nome = printName();
+  nome('Yash Kapila');
 }
 ```
 
-### Exercise
+### Exercício
 
-### Essence
+### Essência
 
 

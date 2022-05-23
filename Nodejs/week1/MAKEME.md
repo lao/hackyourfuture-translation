@@ -1,85 +1,85 @@
-# Homework Node.js Week 1
+# Homework Node.js Semana 1
 
-## Todo List
+## Lista de afazeres
 
-1. Crash course
-2. Practice the concepts
-3. Prep exercises
-4. Node.js exercises
-5. PROJECT: HackYourTemperature I
+1. Curso intensivo
+2. Pratique os conceitos
+3. Exercícios de preparação
+4. Exercícios Node.js
+5. PROJETO: HackYourTemperature I
 
-> Before we proceed, let's check to see if we have the latest versions of Node.js and the Node Package Manager (NPM) installed. You can do that by going to the Command Line (CLI) and running `node -v` and `npm -v`. Node.js should be at least **v12** and NPM should be at least **v6**.
+> Antes de prosseguirmos, vamos verificar se temos as versões mais recentes do Node.js e do Node Package Manager (NPM) instalados. Você pode fazer isso indo para a linha de comando (CLI) e executando `node -v` e `npm -v`. O Node.js deve ser pelo menos **v12** e o NPM deve ser pelo menos **v6**.
 
-## **1. Crash course**
+## **1. Rota de colisão**
 
-There is a great crash course available here: https://www.youtube.com/watch?v=2LUdnb-mls0. It introduces a lot of the concepts you will be practicing this week.
+Há um ótimo curso intensivo disponível aqui: https://www.youtube.com/watch?v=2LUdnb-mls0. Ele apresenta muitos dos conceitos que você praticará esta semana.
 
-## **2. Practice the concepts**
+## **2. Pratique os conceitos**
 
-> The problems in the _practice the concepts_ section are designed to get you warmed up for the real exercises below. You do not have to submit your code, but you have to finish all the exercises.
+> Os problemas na seção _praticar os conceitos_ são projetados para aquecê-lo para os exercícios reais abaixo. Você não precisa enviar seu código, mas precisa concluir todos os exercícios.
 
-In this week's interactive exercises, we'll be going back to the command line. We'll be using software from [Nodeschool](https://nodeschool.io/) to do some exercises.
+Nos exercícios interativos desta semana, voltaremos à linha de comando. Usaremos o software da [Nodeschool](https://nodeschool.io/) para fazer alguns exercícios.
 
-Go to your favorite command line interface and run the following command
+Vá para sua interface de linha de comando favorita e execute o seguinte comando
 
-```md
+``` md
 npm install -g learnyounode
 ```
 
-When it's all installed, execute the command:
+Quando estiver tudo instalado, execute o comando:
 
-```md
-learnyounode
+``` md
+aprenderyounode
 ```
 
-And the menu will open up. **Do exercise 1 (HELLO WORLD) until 8 (HTTP COLLECT)**!
+E o menu será aberto. **Faça o exercício 1 (HELLO WORLD) até 8 (HTTP COLLECT)**!
 
-## **3. Prep exercises**
+## **3. Exercícios de preparação**
 
-> Prep exercises are exercises that you should work on _before_ the session on Sunday. These are a little more difficult or show an important concept and as such are a great exercise to talk about with your mentor. Have a solution ready by Sunday as you may be asked to show what you did.
+> Exercícios de preparação são exercícios que você deve trabalhar _antes_ da sessão de domingo. Estes são um pouco mais difíceis ou mostram um conceito importante e, como tal, são um ótimo exercício para conversar com seu mentor. Tenha uma solução pronta até domingo, pois pode ser solicitado que você mostre o que fez.
 
-Inside your `Node.js` fork, go to the folder `week1`. Inside of that folder, navigate to `/prep-exercises`. For each exercise, you will find a separate folder. The `README` explains what needs to be done. There will also be some questions at the bottom to think about. Go through them _before_ the session on Sunday as it will be covered then.
+Dentro do seu fork `Node.js`, vá para a pasta `week1`. Dentro dessa pasta, navegue até `/prep-exercises`. Para cada exercício, você encontrará uma pasta separada. O `README` explica o que precisa ser feito. Haverá também algumas perguntas na parte inferior para pensar. Passe por eles _antes_ da sessão no domingo, pois será coberto então.
 
-## **4. Practice exercises**
+## **4. Pratica exercícios**
 
-Inside of your `Node.js` fork, go to the folder `week1`. Inside of that folder, navigate to `/practice-exercises`. For each exercise, you will find a separate folder. The `README` explains what needs to be done. Go through them to practice concepts that you have learned about!
+Dentro do seu fork `Node.js`, vá para a pasta `week1`. Dentro dessa pasta, navegue até `/practice-exercises`. Para cada exercício, você encontrará uma pasta separada. O `README` explica o que precisa ser feito. Passe por eles para praticar os conceitos que você aprendeu!
 
-## **5. PROJECT: HackYourTemperature I**
+## **5. PROJETO: HackYourTemperature I**
 
-> In this part of the homework you'll be setting up the basis of your project: `HackYourTemperature`. Inside the folder `homework`, create a new folder called `hackyourtemperature`. You'll add to it every week.
+> Nesta parte do dever de casa você estará configurando a base do seu projeto: `HackYourTemperature`. Dentro da pasta `homework`, crie uma nova pasta chamada `hackyourtemperature`. Você vai adicionar a ele toda semana.
 
-In this module you'll be rebuilding an existing application, starting from scratch. The application is called `HackYourTemperature` and you can find it here: [HackYourTemperature](https://hackyourtemperature.herokuapp.com/).
+Neste módulo você estará reconstruindo um aplicativo existente, começando do zero. O aplicativo é chamado `HackYourTemperature` e você pode encontrá-lo aqui: [HackYourTemperature](https://hackyourtemperature.herokuapp.com/).
 
-Each week you'll be building a certain part of it. This week we'll get started with creating a web server, using [Express.js](https://expressjs.com/). Inside of the `hackyourtemperature` folder:
+Cada semana você estará construindo uma certa parte dele. Esta semana, começaremos a criar um servidor web, usando [Express.js](https://expressjs.com/). Dentro da pasta `hackyourtemperature`:
 
-1. Create a JavaScript file called `server.js` (it can be any name but this is more meaningful)
-2. Initialize the Node Package Manager and create a `package.json` file by running `npm init -y`
-3. Install and load in the necessary modules for this project: they are `express` (our web server), `express-handlebars` (our templating engine) and `node-fetch` (a library to handle http requests in node)
-4. As we want to use modernJS `import` statements, add the line `"type": "module"` to the `package.json` file
-5. Set up your web server using Express (creating an Express instance, listen to **port 3000**)
-6. Make a `GET` request to `/` that sends the message `hello from backend to frontend!` to the client
+1. Crie um arquivo JavaScript chamado `server.js` (pode ser qualquer nome, mas é mais significativo)
+2. Inicialize o Node Package Manager e crie um arquivo `package.json` executando `npm init -y`
+3. Instale e carregue os módulos necessários para este projeto: eles são `express` (nosso servidor web), `express-handlebars` (nosso mecanismo de modelagem) e `node-fetch` (uma biblioteca para lidar com solicitações http no nó)
+4. Como queremos usar as instruções `import` do modernJS, adicione a linha `"type": "module"` ao arquivo `package.json`
+5. Configure seu servidor web usando o Express (criando uma instância do Express, ouça **porta 3000**)
+6. Faça uma solicitação `GET` para `/` que envia a mensagem `hello from backend to frontend!` para o cliente
 
-After writing all this code you can verify that it's working by running `node server.js` from the Command Line and checking your browser at `http://localhost:3000`. The page should display the message `hello from backend to frontend!`.
+Depois de escrever todo esse código, você pode verificar se está funcionando executando `node server.js` na linha de comando e verificando seu navegador em `http://localhost:3000`. A página deve exibir a mensagem `hello from backend to frontend!`.
 
-### 4.1 Adding a POST request
+### 4.1 Adicionando uma solicitação POST
 
-In this part we'll add another endpoint, with a `POST` method.
+Nesta parte adicionaremos outro endpoint, com um método `POST`.
 
-1. Create a `POST` route, that has as an endpoint: `/weather`
-2. To make Express aware of what data type the incoming data is (which is JSON). We do that using the `json()` method on the Express object. Using the `use()` function from `app`, pass in the `json()` from `express`.
-3. Inside the callback function of the `POST` route, get access to the `cityName` and put it inside a variable. Hint: use the `body` object from the request to find it.
-4. Send the the form input back as a response to the client
+1. Crie uma rota `POST`, que tenha como endpoint: `/weather`
+2. Para tornar o Express ciente de qual tipo de dados são os dados de entrada (que é JSON). Fazemos isso usando o método `json()` no objeto Express. Usando a função `use()` do `app`, passe o `json()` do `express`.
+3. Dentro da função callback da rota `POST`, acesse o `cityName` e coloque-o dentro de uma variável. Dica: use o objeto `body` da requisição para encontrá-lo.
+4. Envie a entrada do formulário de volta como resposta ao cliente
 
-Test out your work using Postman and make sure that any time you submit something in the form, it returns as a response from the server the exact words you submitted.
+Teste seu trabalho usando o Postman e certifique-se de que sempre que você enviar algo no formulário, ele retorne como resposta do servidor as palavras exatas que você enviou.
 
-If you are tired of constantly restarting your server, google the `nodemon` package to see if that will be useful for you!
+Se você está cansado de reiniciar constantemente seu servidor, pesquise no Google o pacote `nodemon` para ver se isso será útil para você!
 
-## **SUBMIT YOUR HOMEWORK!**
+## ** ENVIE SUA LIÇÃO DE CASA!**
 
-After you've finished your todo list it's time to show us what you got! Have a look at the following [guide](../hand-in-homework-guide.md) to see how it's done.
+Depois de terminar sua lista de tarefas, é hora de nos mostrar o que você tem! Dê uma olhada no seguinte [guia](../hand-in-homework-guide.md) para ver como isso é feito.
 
-The homework that needs to be submitted is the following:
+A lição de casa que precisa ser enviada é a seguinte:
 
-1. Project: HackYourTemperature I
+1. Projeto: HackYourTemperature I
 
-_Deadline Tuesday 23.59 CET_
+_Prazo terça-feira 23.59 CET_

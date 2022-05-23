@@ -1,82 +1,82 @@
-# Lesson Plan Week 2
+# Plano de aula Semana 2
 
 ## Agenda
 
-The purpose of this class is to introduce to the student (1) the basics of using GIT, and (2) the basics of grid-based thinking and using flexbox:
+O objetivo desta aula é apresentar ao aluno (1) os fundamentos do uso do GIT e (2) os fundamentos do pensamento baseado em grade e do uso do flexbox:
 
-- Basic GIT commands
-- Introducing GitHub
-- Setting up an SSH key pair
+- Comandos básicos do GIT
+- Apresentando o GitHub
+- Configurando um par de chaves SSH
 
-- Introducing grid-based thinking
-- The problem Flexbox solves
-- Basic flexbox commands
+- Introdução ao pensamento baseado em grade
+- O problema que o Flexbox resolve
+- Comandos básicos do flexbox
 
-## Core Concepts
+## Conceitos Fundamentais
 
-FIRST HALF (12.00 - 13.30)
+PRIMEIRA METADE (12h00 - 13h30)
 
 ## GIT
 
-### Explanation
-- GIT is software that allows us to keep track of the changes within our files
-- Imagine having written complex code that messed everything up, GIT allow us to return to a previous state where everything was still working
-- It can be used through the command line interface (CLI) or using a graphical user interface (also known as GUI): SourceTree, SmartGit, etc.
+### Explicação
+- GIT é um software que nos permite acompanhar as mudanças em nossos arquivos
+- Imagine ter escrito um código complexo que estragou tudo, o GIT nos permite retornar a um estado anterior onde tudo ainda estava funcionando
+- Pode ser usado através da interface de linha de comando (CLI) ou usando uma interface gráfica de usuário (também conhecida como GUI): SourceTree, SmartGit, etc.
 
-### Example
-### Exercise
+### Exemplo
+### Exercício
 
-_Create a new local repository and tell students to do the same_
+_Crie um novo repositório local e diga aos alunos para fazerem o mesmo_
 
-_Show the hidden file `.git` in the folder_
+_Mostrar o arquivo oculto `.git` na pasta_
 
-- When you want to save your work, you can make a snapshot of your workspace: this is called 'committing your work', which is another way of saying 'saving your work'
+- Quando você quiser salvar seu trabalho, você pode fazer um instantâneo do seu espaço de trabalho: isso é chamado de 'committing your work', que é outra maneira de dizer 'saving your work'
 
-_Create a .txt file through the CLI and commit it to the local repository_
+_Crie um arquivo .txt por meio da CLI e confirme-o no repositório local_
 
-_Delete the file and commit that change_
+_Delete o arquivo e confirme essa alteração_
 
-- GIT allows us to revert our workspace to a previous commit. We can look for the right commit using `git log`, `git checkout` and `git revert`
+- GIT nos permite reverter nosso espaço de trabalho para um commit anterior. Podemos procurar o commit certo usando `git log`, `git checkout` e `git revert`
 
-_Show the student the process of reverting back to the first commit_
+_Mostre ao aluno o processo de reversão para o primeiro commit_
 
-- GitHub is a development platform that allows us to store a copy of our code online (in developer terms: remote)
-- Main benefits are (1) store our code online, (2) let's us easily work together with others in the same repository
+- GitHub é uma plataforma de desenvolvimento que nos permite armazenar uma cópia do nosso código online (em termos de desenvolvedor: remoto)
+- Os principais benefícios são (1) armazenar nosso código online, (2) nos permite trabalhar facilmente em conjunto com outras pessoas no mesmo repositório
 
-_Ask students to create an account if they haven't_
+_Peça aos alunos que criem uma conta se não tiverem_
 
-- In order to securely use GitHub we need to create an SSH key
-- SSH keys allow GitHub to identify us as a safe connection
+- Para usar o GitHub com segurança, precisamos criar uma chave SSH
+- As chaves SSH permitem que o GitHub nos identifique como uma conexão segura
 
-_Create an SSH key through the CLI_
+_Crie uma chave SSH através da CLI_
 
-_Link the SSH key with your GitHub account_
+_Vincule a chave SSH à sua conta do GitHub_
 
-_Show how to clone the HTML-CSS-GIT repo using SSH_
+_Mostrar como clonar o repositório HTML-CSS-GIT usando SSH_
 
-_Ask students to create an SSH key, link it to their account and clone the repo_
+_Peça aos alunos para criarem uma chave SSH, vinculá-la à sua conta e clonar o repositório_
 
-### Essence
-
-
+### Essência
 
 
-SECOND HALF (14.00 - 16.00)
 
-## 2. Grid-based thinking and Flexbox
 
-### Explanation
-- Flexbox allows us to easily align elements on the page
-- It replaces float-based web design
-- It is activated with the `display: flex` CSS property, after you can make use of flex-specific properties
-### Example
-Take a look at the following [CodePen](https://codepen.io/enxaneta/pen/adLPwv) with students
+SEGUNDA METADE (14.00 - 16.00)
 
-Look at the following [website](https://htmlstream.com/preview/unify-v2.6.2/unify-main/home/home-default.html) and dissect it thinking in grids
-### Excercise
-Rebuild the navigation bar, center image and reponsive website layout from this [example](https://github.com/ratracegrad/made-with-flexbox)
+## 2. Pensamento baseado em grade e Flexbox
 
-Play the game! : https://flexboxfroggy.com/
-### Essence
+### Explicação
+- Flexbox nos permite alinhar facilmente elementos na página
+- Substitui o web design baseado em float
+- É ativado com a propriedade CSS `display: flex`, depois que você pode fazer uso de propriedades específicas do flex
+### Exemplo
+Dê uma olhada no seguinte [CodePen](https://codepen.io/enxaneta/pen/adLPwv) com alunos
+
+Veja o seguinte [website](https://htmlstream.com/preview/unify-v2.6.2/unify-main/home/home-default.html) e disseque-o pensando em grades
+### Exercício
+Reconstrua a barra de navegação, a imagem central e o layout do site responsivo a partir deste [exemplo](https://github.com/ratracegrad/made-with-flexbox)
+
+Jogue o jogo! : https://flexboxfroggy.com/
+### Essência
 
 

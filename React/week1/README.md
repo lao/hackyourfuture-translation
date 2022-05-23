@@ -1,42 +1,42 @@
-# Reading Material React Week 1
+# Material de Leitura Reagir Semana 1
 
 ## Agenda
 
-These are the topics for week 1:
+Estes são os tópicos da semana 1:
 
-1. [What is React.js?](https://study.hackyourfuture.net/#/react/README.md)
-   - What React is not
-   - Componentization
-   - HTML in JS: JSX
+1. [O que é React.js?](https://study.hackyourfuture.net/#/react/README.md)
+   - O que React não é
+   - Componentização
+   - HTML em JS: JSX
 2. [State & Props](https://study.hackyourfuture.net/#/react/state-and-props.md)
-3. [Hooks](https://study.hackyourfuture.net/#/react/react-hooks.md)
+3. [ganchos](https://study.hackyourfuture.net/#/react/react-hooks.md)
    - useState
-   - useEffect
-4. [Forms: Controlled vs Uncontrolled](https://study.hackyourfuture.net/#/react/controlled-vs-uncontrolled.md)
-5. [Tools](https://study.hackyourfuture.net/#/react/tools.md)
-   - React dev tools
-   - `create-react-app` command
-   - Static hosting
+   - useEfeito
+4. [Formulários: controlado vs não controlado](https://study.hackyourfuture.net/#/react/controlado-vs-uncontrolado.md)
+5. [Ferramentas](https://study.hackyourfuture.net/#/react/tools.md)
+   - Ferramentas de desenvolvimento React
+   - comando `create-react-app`
+   - Hospedagem estática
 
-## Important note on React
-> In the React world there is a huge shift happening since the introduction of 'hooks' in 2018. Before hooks React was built using both class and function components. Currently it is recommended to use only function components in combination with hooks for all of the code you build from now on. When you are going to do research on your own or when you get into your internship you are going to run into class components however. This will be less and less as time goes on and hopefully we can remove this at some point in the future.
+## Nota importante sobre React
+> No mundo React, há uma grande mudança acontecendo desde a introdução dos 'hooks' em 2018. Antes dos hooks, o React foi construído usando componentes de classe e função. Atualmente, é recomendado usar apenas componentes de função em combinação com ganchos para todo o código que você construir a partir de agora. No entanto, quando você vai fazer pesquisa por conta própria ou quando você entra em seu estágio, você vai se deparar com componentes de classe. Isso será cada vez menos com o passar do tempo e esperamos que possamos remover isso em algum momento no futuro.
 
-> We at HackYourFuture will only be teaching you the recommended way of building applications and have provided a section in the study book to share the most basic details on how to read class components [here](https://study.hackyourfuture.net/#/react/class-vs-function-components.md). If you encounter class components in your research, try to look for a more up to date tutorial, question, or video. If you encounter class components during your internship, then convert it to a function component. The developers will love you :).
+> Nós do HackYourFuture ensinaremos apenas a maneira recomendada de criar aplicativos e fornecemos uma seção no livro de estudo para compartilhar os detalhes mais básicos sobre como ler os componentes da classe [aqui](https://study.hackyourfuture.net/ #/react/class-vs-function-components.md). Se você encontrar componentes de classe em sua pesquisa, tente procurar um tutorial, pergunta ou vídeo mais atualizado. Se você encontrar componentes de classe durante seu estágio, converta-o em um componente de função. Os desenvolvedores vão te amar :).
 
-## Week Goals
+## Metas da semana
 
-This week we will start the wonderful journey of React! Let's start by learning what React is and more importantly what it is not, once you start working with big frameworks like this it becomes hard to identify where the boundary is and we want to make sure you understand where React ends and where JavaScript begins. Have a look at our introduction to React [here](https://study.hackyourfuture.net/#/react/README.md). 
+Essa semana iniciaremos a maravilhosa jornada do React! Vamos começar aprendendo o que é React e, mais importante, o que não é, uma vez que você começa a trabalhar com grandes frameworks como este, fica difícil identificar onde está o limite e queremos ter certeza de que você entende onde o React termina e onde o JavaScript começa. Dê uma olhada em nossa introdução ao React [aqui](https://study.hackyourfuture.net/#/react/README.md).
 
-React is a big framework that introduces a lot of new terminology and ways of thinking to simplify the building of bigger applications. Let's start by learning about State and Props [here](https://study.hackyourfuture.net/#/react/state-and-props.md). Now let's go into the basic hooks that React gives you to build your application [here](https://study.hackyourfuture.net/#/react/react-hooks.md). For now it is best to focus on the `useState` and `useEffect` as they are the ones you will use a lot, but you can already have a look at the others to have them in your mind. The last thing we want you to have a look at is how to work with user input (as websites will always need to respond to user input). For that we are actually going to go into a discussion about controlled vs uncontrolled components. This is a little broader topic, but forms and user input is the best example for this. Have a look [here](https://study.hackyourfuture.net/#/react/controlled-vs-uncontrolled.md) and make sure that you always use the controlled way of writing forms in your applications.
+O React é um grande framework que introduz muitas novas terminologias e maneiras de pensar para simplificar a construção de aplicativos maiores. Vamos começar aprendendo sobre State e Props [aqui](https://study.hackyourfuture.net/#/react/state-and-props.md). Agora vamos aos ganchos básicos que o React oferece para você construir sua aplicação [aqui](https://study.hackyourfuture.net/#/react/react-hooks.md). Por enquanto é melhor focar no `useState` e no `useEffect` pois eles são os que você vai usar muito, mas você já pode dar uma olhada nos outros para tê-los em mente. A última coisa que queremos que você dê uma olhada é como trabalhar com a entrada do usuário (já que os sites sempre precisarão responder à entrada do usuário). Para isso, entraremos em uma discussão sobre componentes controlados versus não controlados. Este é um tópico um pouco mais amplo, mas os formulários e a entrada do usuário são o melhor exemplo para isso. Dê uma olhada [aqui](https://study.hackyourfuture.net/#/react/control-vs-uncontroled.md) e certifique-se de usar sempre a maneira controlada de escrever formulários em seus aplicativos.
 
-Phew, that was a lot, but you now have knowledge of the basic building blocks with which you can already create some very cool applications. But how do you start?
+Ufa, isso foi muito, mas agora você tem conhecimento dos blocos de construção básicos com os quais você já pode criar alguns aplicativos muito legais. Mas como você começa?
 
-Let's look at some [tools](https://study.hackyourfuture.net/#/react/tools.md) that will allow you to start quickly (create-react-app) as well as easily deploy anything you build to the web (static hosting).
+Vejamos algumas [ferramentas](https://study.hackyourfuture.net/#/react/tools.md) que permitirão que você inicie rapidamente (create-react-app) e implemente facilmente qualquer coisa que você criar no web (hospedagem estática).
 
-To bring it all together, you can follow Shriyans in the following video who will use all of this information to build a small application. You can stop the video at 35 minutes, the homework has changed since then.
+Para reunir tudo isso, você pode seguir Shriyans no vídeo a seguir, que usará todas essas informações para criar um pequeno aplicativo. Você pode parar o vídeo em 35 minutos, a lição de casa mudou desde então.
 
-<a href="https://www.youtube.com/watch?v=pOq0vD2qAOU" target="_blank"><img src="../assets/playlist-thumbnail.png" width="600" height="350" alt="HYF Video" /></a>
+<a href="https://www.youtube.com/watch?v=pOq0vD2qAOU" target="_blank"><img src="../assets/playlist-thumbnail.png" width="600" height= "350" alt="HYF Video" /></a>
 
-## Finished?
+## Finalizado?
 
-Are you finished with going through the materials? High five! If you feel ready to get practical, click [here](./MAKEME.md).
+Você terminou de passar pelos materiais? Toca aqui! Se você se sentir pronto para ser prático, clique [aqui](./MAKEME.md).

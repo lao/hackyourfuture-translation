@@ -1,46 +1,46 @@
-# Variables
+# Variáveis
 
-A "variable" is a place where you can store information, such as a string, or a number. A variable has a _name_ (that you choose) and a _value_. New variables in JavaScript are declared using one of three keywords: `let`, `const`, or `var`.
+Uma "variável" é um local onde você pode armazenar informações, como uma string ou um número. Uma variável tem um _name_ (que você escolhe) e um _value_. Novas variáveis em JavaScript são declaradas usando uma das três palavras-chave: `let`, `const` ou `var`.
 
-> Think of variables names like **labels** on boxes, while the value of the variable are the **contents** of the box - you could change the contents of a box and leave the label intact, the contents of the boxes can have different types, the boxes should have good labels (a box of books being labeled pens would be very confusing),
+> Pense em nomes de variáveis como **rótulos** nas caixas, enquanto o valor da variável é o **conteúdo** da caixa - você pode alterar o conteúdo de uma caixa e deixar o rótulo intacto, o conteúdo das caixas podem ter tipos diferentes, as caixas devem ter boas etiquetas (uma caixa de livros com canetas seria muito confusa),
 >
-![Variables are like boxes](./assets/box.png)
-> Photo from [Khan Academy](http://cs-blog.khanacademy.org/2013/09/teaching-variables-analogies-and.html)
+![Variáveis são como caixas](./assets/box.png)
+> Foto da [Khan Academy](http://cs-blog.khanacademy.org/2013/09/teaching-variables-analogies-and.html)
 
 
-## Variable declaration
+## Declaração de variável
 
-Variables are "declared" using the `var`, `let` or `const` keyword. In the following example three variables are declared with the names `x`, `foo` and `bar`.
+As variáveis são "declaradas" usando a palavra-chave `var`, `let` ou `const`. No exemplo a seguir, três variáveis são declaradas com os nomes `x`, `foo` e `bar`.
 
-```js
+``` js
 var x;
-let foo;
-const bar;
+deixe foo;
+barra const;
 ```
 
-Note that the chosen names in this example are meaningless (perhaps with the exception of `x`, for instance as part of a mathematical program). You should make an effort to always choose names that best describe what you intend this variable to hold.
+Observe que os nomes escolhidos neste exemplo não têm sentido (talvez com exceção de `x`, por exemplo, como parte de um programa matemático). Você deve fazer um esforço para sempre escolher nomes que melhor descrevam o que você pretende que essa variável mantenha.
 
 ## var
 
-Prior to JavaScript ES6 the `var` keyword was the only way to declare a variable. ES6 introduced two new keywords, `let` and `const` for declaring variables. They improve on how the older `var` declaration works (this involves the concept of "scope" that you will learn about in the third lecture). In HackYourFuture we encourage you to use the more modern `let` and `const` keywords over `var`, but you will often come across `var` in existing books, software libraries and examples on the Internet, so you should understand `var` too.
+Antes do JavaScript ES6, a palavra-chave `var` era a única maneira de declarar uma variável. O ES6 introduziu duas novas palavras-chave, `let` e `const` para declarar variáveis. Eles melhoram como a antiga declaração `var` funciona (isso envolve o conceito de "escopo" que você aprenderá na terceira aula). No HackYourFuture nós encorajamos você a usar as palavras-chave mais modernas `let` e `const` em vez de `var`, mas muitas vezes você encontrará `var` em livros existentes, bibliotecas de software e exemplos na Internet, então você deve entender `var ` também.
 
-## let and const
-- read about [let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
-- read about [const](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Statements/const)
+## let e const
+- leia sobre [let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
+- leia sobre [const](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Statements/const)
 - [let vs const] (http://wesbos.com/let-vs-const/)
 
-Here, we say: "declare variable x and initialize it with the integer (number) 6".
+Aqui, dizemos: "declare a variável x e inicialize-a com o inteiro (número) 6".
 
-```js
-let foo;  // declare variable `foo`
+``` js
+deixe foo; // declara a variável `foo`
 ```
 
-```js
-let foo = 6; // declare and assign a variable at the same time
+``` js
+deixe fo = 6; // declara e atribui uma variável ao mesmo tempo
 ```
 
-You can also assign a value to an existing variable:
-```js
-foo = 4;  // change variable `foo`
+Você também pode atribuir um valor a uma variável existente:
+``` js
+fo = 4; // muda a variável `foo`
 ```
 

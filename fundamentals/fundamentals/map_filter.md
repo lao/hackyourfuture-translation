@@ -1,88 +1,88 @@
-# forEach, map, filter, reduce
+# forEach, mapear, filtrar, reduzir
 
-The array methods **forEach**, **map**, **filter** and **reduce** are best understood by looking at how they might be implemented if you had to write them yourself in JavaScript. In the next few sections we will present simplified equivalents of the native implementations.
+Os métodos de matriz **forEach**, **map**, **filter** e **reduce** são mais bem compreendidos observando como eles podem ser implementados se você mesmo tiver que escrevê-los em JavaScript. Nas próximas seções apresentaremos equivalentes simplificados das implementações nativas.
 
-Common to these methods is that they all use a **for** loop internally to iterate through the elements of the target array. When working with arrays, many developers prefer these methods rather than using a **for** loop in their code. By virtue of their names they reveal more clearly what is intended than equivalent **for** loops, which must be examined more closely to determine what is going on.
+O comum a esses métodos é que todos eles usam um loop **for** internamente para iterar pelos elementos da matriz de destino. Ao trabalhar com matrizes, muitos desenvolvedores preferem esses métodos em vez de usar um loop **for** em seu código. Em virtude de seus nomes, eles revelam mais claramente o que se pretende que os loops **for** equivalentes, que devem ser examinados mais de perto para determinar o que está acontecendo.
 
 ## Array.forEach()
 
-> [MDN definition](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach): The **forEach()** method executes a provided function once for each array element.
+> [definição de MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach): O método **forEach()** executa uma função fornecida uma vez por cada elemento da matriz.
 
-```js
-const numbers = [1, 2, 3, 4];
-let sum = 0;
+``` js
+const números = [1, 2, 3, 4];
+deixe soma = 0;
 
-numbers.forEach(x => {
-  sum += x;
+números.forEach(x => {
+  soma += x;
 });
 
-console.log(sum); // -> 10
+console.log(soma); // -> 10
 ```
 
-> _See this in action in this [JSBin](https://jsbin.com/quforih/edit?js,console)._
+> _Veja isso em ação neste [JSBin](https://jsbin.com/quforih/edit?js,console)._
 
-### A custom forEach() implementation
+### Uma implementação personalizada de forEach()
 
-```js
+``` js
 function forEach(arr, func) {
-  for (let i = 0; i < arr.length; i++) {
+  for (seja i = 0; i < arr.length; i++) {
     func(arr[i], i, arr);
   }
 }
 
-const numbers = [1, 2, 3, 4];
-let sum = 0;
+const números = [1, 2, 3, 4];
+deixe soma = 0;
 
-forEach(numbers, x => {
-  sum += x;
+forEach(números, x => {
+  soma += x;
 });
 
-console.log(sum); // -> 10
+console.log(soma); // -> 10
 ```
 
-> _See this in action in this [JSBin](https://jsbin.com/bufamuz/edit?js,console)._
+> _Veja isso em ação neste [JSBin](https://jsbin.com/bufamuz/edit?js,console)._
 
-### Calling forEach() as a method on an array
+### Chamando forEach() como um método em um array
 
-To demonstrate how we can use dot notation directly on an array to call our custom `forEach()` function, similar to how the native, built-in `.forEach()` method works, we will add a new method `.myForEach()` to the native `Array` type that in turn calls our `forEach()` function.
+Para demonstrar como podemos usar a notação de ponto diretamente em um array para chamar nossa função `forEach()` personalizada, semelhante a como o método nativo embutido `.forEach()` funciona, adicionaremos um novo método `.myForEach ()` para o tipo nativo `Array` que por sua vez chama nossa função `forEach()`.
 
-> _Note that it is considered a bad practice to modify built-in JavaScript types like is done here. You should not do this in production code. We show it here for demonstration purposes only._
+> _Observe que é considerado uma prática ruim modificar tipos de JavaScript embutidos como é feito aqui. Você não deve fazer isso no código de produção. Mostramos aqui apenas para fins de demonstração._
 
-```js
+``` js
 function forEach(arr, func) {
-  for (let i = 0; i < arr.length; i++) {
+  for (seja i = 0; i < arr.length; i++) {
     func(arr[i], i, arr);
   }
 }
 
 Array.prototype.myForEach = function(func) {
-  forEach(this, func);
+  forEach(isto, func);
 };
 
-const numbers = [1, 2, 3, 4];
-let sum = 0;
+const números = [1, 2, 3, 4];
+deixe soma = 0;
 
-numbers.myForEach(x => {
-  sum += x;
+números.meuParaEach(x => {
+  soma += x;
 });
 
-console.log(sum); // -> 10
+console.log(soma); // -> 10
 ```
 
-> _See this in action in this [JSBin](https://jsbin.com/pehexug/edit?js,console)._
+> _Veja isso em ação neste [JSBin](https://jsbin.com/pehexug/edit?js,console)._
 
-### The callback function
+### A função de retorno de chamada
 
-For illustrative purposes we can add a `console.log` statement to the callback function and see what is passed as the second and third argument:
+Para fins ilustrativos, podemos adicionar uma instrução `console.log` à função de retorno de chamada e ver o que é passado como segundo e terceiro argumentos:
 
-```js
-const numbers = [1, 2, 3, 4];
+``` js
+const números = [1, 2, 3, 4];
 
-numbers.forEach((elem, index, arr) => {
-  console.log('elem: ' + elem + ', index: ' + index + ', arr: ' + arr);
+números.forEach((elem, índice, arr) => {
+  console.log('elem: ' + elem + ', índice: ' + índice + ', arr: ' + arr);
 });
 
-/* output:
+/* saída:
 elem: 1, index: 0, arr: 1,2,3,4
 elem: 2, index: 1, arr: 1,2,3,4
 elem: 3, index: 2, arr: 1,2,3,4
@@ -90,246 +90,246 @@ elem: 4, index: 3, arr: 1,2,3,4
 */
 ```
 
-> _See this in action in this [JSBin](https://jsbin.com/nohipew/edit?js,console)._
+> _Veja isso em ação neste [JSBin](https://jsbin.com/nohipew/edit?js,console)._
 
-The first value is the value of the current element, the second value is the current loop index value and the array value is the array on which `.forEach()` is called.
+O primeiro valor é o valor do elemento atual, o segundo valor é o valor do índice do loop atual e o valor do array é o array no qual `.forEach()` é chamado.
 
-As is common in JavaScript, you do not necessarily have to use all the parameters that are passed to the callback function. In fact, in many cases you will only need the first argument (the current array element).
+Como é comum em JavaScript, você não precisa necessariamente usar todos os parâmetros que são passados para a função de retorno de chamada. Na verdade, em muitos casos, você precisará apenas do primeiro argumento (o elemento atual do array).
 
-Note that the callback functions for **map**, **filter** and **reduce**, as described below, receive the same three arguments, here named `elem`, `index` and `arr`.
+Observe que as funções de retorno de chamada para **map**, **filter** e **reduce**, conforme descrito abaixo, recebem os mesmos três argumentos, aqui denominados `elem`, `index` e `arr`.
 
 ## Array.map()
 
-> [MDN definition](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map): The **map()** method creates a new array with the results of calling a provided function on every element in the calling array.
+> [definição de MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map): O método **map()** cria um novo array com o resultados de chamar uma função fornecida em cada elemento na matriz de chamada.
 
-```js
-const numbers = [1, 2, 3, 4];
-const square = x => x * x;
-const squaredNumbers = numbers.map(square);
+``` js
+const números = [1, 2, 3, 4];
+const quadrado = x => x * x;
+const squaredNumbers = números.map(quadrado);
 
 console.log(squaredNumbers); // -> [ 1, 4, 9, 16 ]
 ```
 
-> _See this in action in this [JSBin](https://jsbin.com/wewewej/edit?js,console)._
+> _Veja isso em ação neste [JSBin](https://jsbin.com/wewewej/edit?js,console)._
 
-### A custom map() implementation
+### Uma implementação de map() personalizada
 
-The **map()** function below initializes a new, empty array to which it pushes _transformed_ elements, one by one, as it iterates through the array argument `arr`, calling the `mapFn` function for each individual element. When the loop has been completed, the new array is returned. Note that the array `arr` itself remains unmodified.
+A função **map()** abaixo inicializa um novo array vazio para o qual ele envia _transformed_ elementos, um por um, enquanto itera através do argumento array `arr`, chamando a função `mapFn` para cada elemento individual. Quando o loop for concluído, a nova matriz será retornada. Observe que a matriz `arr` permanece inalterada.
 
-```js
+``` js
 function map(arr, mapFn) {
-  const result = [];
-  for (let i = 0; i < arr.length; i++) {
+  resultado const = [];
+  for (seja i = 0; i < arr.length; i++) {
     const mappedValue = mapFn(arr[i], i, arr);
-    result.push(mappedValue);
+    resultado.push(mappedValue);
   }
-  return result;
+  retorno resultado;
 }
 
-const numbers = [1, 2, 3, 4];
-const square = x => x * x;
+const números = [1, 2, 3, 4];
+const quadrado = x => x * x;
 const squaredNumbers = map(numbers, square);
 
 console.log(squaredNumbers); // -> [1, 4, 9, 16]
 ```
 
-> _See this in action in this [JSBin](https://jsbin.com/winudul/edit?js,console)._
+> _Veja isso em ação neste [JSBin](https://jsbin.com/winudul/edit?js,console)._
 
-To prevent unintended results it is essential that the function passed as the `mapFn` argument does not modify the original array. In computer science terms, this function should be _pure_, without side effects.
+Para evitar resultados indesejados é essencial que a função passada como argumento `mapFn` não modifique o array original. Em termos de informática, essa função deve ser _pura_, sem efeitos colaterais.
 
-> - Read more: [What is a pure function?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976)
+> - Leia mais: [O que é uma função pura?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976)
 
 ## Array.filter()
 
-> [MDN definition](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter): The **filter()** method creates a new array with all elements that pass the test implemented by the provided function.
+> [definição de MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter): O método **filter()** cria um novo array com todos elementos que passam no teste implementado pela função fornecida.
 
-```js
-const numbers = [1, 2, 3, 4];
-const isEven = x => x % 2 === 0;
-const evenNumbers = numbers.filter(isEven);
+``` js
+const números = [1, 2, 3, 4];
+const éPar = x => x % 2 === 0;
+const evenNumbers = números.filter(isEven);
 
 console.log(evenNumbers); // -> [ 2, 4 ]
 ```
 
-> _See this in action in this [JSBin](https://jsbin.com/zepemuc/edit?js,console)._
+> _Veja isso em ação neste [JSBin](https://jsbin.com/zepemuc/edit?js,console)._
 
-### A custom filter() implementation
+### Uma implementação de filtro () personalizada
 
-This method works in a similar fashion as the `map()` method, but now elements are only pushed to the new array if the predicate function returns `true`. The new array will (potentially) have fewer elements than the original array, but the filtered elements are not changed in any way.
+Este método funciona de forma semelhante ao método `map()`, mas agora os elementos só são enviados para o novo array se a função de predicado retornar `true`. A nova matriz terá (potencialmente) menos elementos que a matriz original, mas os elementos filtrados não serão alterados de forma alguma.
 
-In the example below the predicate function test whether the current element is even by checking whether its value divided by two has a remainder of zero. The result of this comparison (`true` or `false`) is the return value of the predicate and determines whether the current element gets added to the new array or not.
+No exemplo abaixo, a função de predicado testa se o elemento atual é par verificando se seu valor dividido por dois tem um resto igual a zero. O resultado dessa comparação (`true` ou `false`) é o valor de retorno do predicado e determina se o elemento atual é adicionado ao novo array ou não.
 
-```js
-function filter(arr, predicateFn) {
-  const result = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (predicateFn(arr[i], i, arr)) {
-      result.push(arr[i]);
+``` js
+função filtro(arr, predicateFn) {
+  resultado const = [];
+  for (seja i = 0; i < arr.length; i++) {
+    if (predicadoFn(arr[i], i, arr)) {
+      resultado.push(arr[i]);
     }
   }
-  return result;
+  retorno resultado;
 }
 
-const numbers = [1, 2, 3, 4];
-const isEven = x => x % 2 === 0;
+const números = [1, 2, 3, 4];
+const éPar = x => x % 2 === 0;
 const evenNumbers = filter(numbers, isEven);
 
 console.log(evenNumbers); // -> [2, 4]
 ```
 
-> _See this in action in this [JSBin](https://jsbin.com/nugibag/edit?js,console)._
+> _Veja isso em ação neste [JSBin](https://jsbin.com/nugibag/edit?js,console)._
 
-<small>\*A _predicate_ is a function that returns a boolean, **true** or **false**, depending on the supplied arguments.</small>
+<small>\*Um _predicate_ é uma função que retorna um booleano, **true** ou **false**, dependendo dos argumentos fornecidos.</small>
 
 ## Array.reduce()
 
-> [MDN definition](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce): The **reduce()** method executes a **reducer** function (that you provide) on each member of the array resulting in a single output value†.
+> [definição de MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce): O método **reduce()** executa um **reducer* * função (que você fornece) em cada membro da matriz, resultando em um único valor de saída†.
 
-<small>†Although reference is made to a 'single output value', this single value may well be an array or an object, as you will see later in the examples below.</small>
+<small>†Embora seja feita referência a um 'valor de saída único', esse valor único pode muito bem ser uma matriz ou um objeto, como você verá mais adiante nos exemplos abaixo.</small>
 
-```js
-const numbers = [1, 2, 3, 4];
+``` js
+const números = [1, 2, 3, 4];
 
-const sum = (a, b) => a + b;
-const total = numbers.reduce(sum, 0);
+soma const = (a, b) => a + b;
+const total = números.reduce(soma, 0);
 
 console.log(total); // -> 10
 ```
 
-> _See this in action in this [JSBin](https://jsbin.com/sutamiy/edit?js,console)._
+> _Veja isso em ação neste [JSBin](https://jsbin.com/sutamiy/edit?js,console)._
 
-### A custom reduce() implementation
+### Uma implementação customizada de reduce()
 
-```js
-function reduce(arr, reducerFn, initialValue) {
-  let accumulator = initialValue;
-  for (let i = 0; i < arr.length; i++) {
-    accumulator = reducerFn(accumulator, arr[i], i, arr);
+``` js
+function reduce(arr, redutorFn, valorInicial) {
+  let acumulador = valorInicial;
+  for (seja i = 0; i < arr.length; i++) {
+    acumulador = redutorFn(acumulador, arr[i], i, arr);
   }
-  return accumulator;
+  acumulador de retorno;
 }
 
-const numbers = [1, 2, 3, 4];
+const números = [1, 2, 3, 4];
 
-const sum = (a, b) => a + b;
-const total = reduce(numbers, sum, 0);
+soma const = (a, b) => a + b;
+const total = reduz(números, soma, 0);
 
 console.log(total); // -> 10
 ```
 
-> _See this in action in this [JSBin](https://jsbin.com/jofojej/edit?js,console)._
+> _Veja isso em ação neste [JSBin](https://jsbin.com/jofojej/edit?js,console)._
 
-The key to understanding the **reduce()** method is in the line:
+A chave para entender o método **reduce()** está na linha:
 
-```js
-accumulator = reducerFn(accumulator, arr[i], i, arr);
+``` js
+acumulador = redutorFn(acumulador, arr[i], i, arr);
 ```
 
-In the case we don't need the current loop index and the subject array in the reducer function (which is often the case), we can simplify this to:
+No caso de não precisarmos do índice do loop atual e do array de assunto na função redutor (o que geralmente é o caso), podemos simplificar isso para:
 
-```js
-accumulator = reducerFn(accumulator, arr[i]);
+``` js
+acumulador = redutorFn(acumulador, arr[i]);
 ```
 
-From this line we can define the reducer function as a function that takes an accumulator value and the current array element and returns a new accumulator value.
+A partir desta linha, podemos definir a função redutora como uma função que recebe um valor acumulador e o elemento atual do array e retorna um novo valor acumulador.
 
-The **reduce()** method is the most flexible of the map/filter/reduce triplet. In fact, it is possible to rewrite **map()** and **filter** using **reduce()**.
+O método **reduce()** é o mais flexível do tripleto map/filter/reduce. Na verdade, é possível reescrever **map()** e **filter** usando **reduce()**.
 
-### Using reduce() to filter
+### Usando reduce() para filtrar
 
-```js
+``` js
 const arr = [6, 3, 10, 1];
 
 const evenNumbers = arr.reduce((acc, elem) => {
   if (elem % 2 === 0) {
     acc.push(elem);
   }
-  return acc;
+  retorno acc;
 }, []);
 
 console.log(evenNumbers); // -> [6, 10]
 ```
 
-> _See this in action in this [JSBin](https://jsbin.com/pucaruv/edit?js,console)._
+> _Veja isso em ação neste [JSBin](https://jsbin.com/pucaruv/edit?js,console)._
 
-In this example our accumulator is an (initially empty) array. We push elements (in this case integer numbers) in the accumulator only when they are divisible by 2.
+Neste exemplo, nosso acumulador é um array (inicialmente vazio). Empurramos elementos (neste caso, números inteiros) no acumulador somente quando eles são divisíveis por 2.
 
-### Using reduce() to map
+### Usando reduce() para mapear
 
-In this example an array of integer numbers is mapped to an array of their squares.
+Neste exemplo, uma matriz de números inteiros é mapeada para uma matriz de seus quadrados.
 
-```js
+``` js
 const arr = [6, 3, 10, 1];
 
-const squares = arr.reduce((acc, elem) => {
+const quadrados = arr.reduce((acc, elem) => {
   acc.push(elem * elem);
-  return acc;
+  retorno acc;
 }, []);
 
-console.log(squares); // -> [36, 9, 100, 1]
+console.log(quadrados); // -> [36, 9, 100, 1]
 ```
 
-> _See this in action in this [JSBin](https://jsbin.com/gatayet/edit?js,console)._
+> _Veja isso em ação neste [JSBin](https://jsbin.com/gatayet/edit?js,console)._
 
-## Using reduce() to 'group by'
+## Usando reduce() para 'agrupar por'
 
-In this example our accumulator is not an array, but an (initially empty) object. It groups the array elements by gender.
+Neste exemplo, nosso acumulador não é um array, mas um objeto (inicialmente vazio). Ele agrupa os elementos do array por gênero.
 
-```js
+``` js
 const arr = [
-  { gender: 'F', name: 'Joyce' },
-  { gender: 'M', name: 'Jim' },
-  { gender: 'F', name: 'Lucy' },
-  { gender: 'F', name: 'Janet' },
-  { gender: 'M', name: 'Jack' },
-  { gender: 'M', name: 'Ferdinand' },
+  { sexo: 'F', nome: 'Joyce' },
+  { sexo: 'M', nome: 'Jim' },
+  { sexo: 'F', nome: 'Lucy' },
+  { sexo: 'F', nome: 'Janet' },
+  { sexo: 'M', nome: 'Jack' },
+  { gênero: 'M', nome: 'Ferdinand' },
 ];
 
 const groupedNames = arr.reduce((acc, elem) => {
   if (acc[elem.gender]) {
     acc[elem.gender].push(elem);
-  } else {
+  } senão {
     acc[elem.gender] = [elem];
   }
-  return acc;
+  retorno acc;
 }, {});
 
 console.log(groupedNames);
 ```
 
-Result:
+Resultado:
 
-```js
+``` js
 {
   F: [
-    { gender: 'F', name: 'Joyce' },
-    { gender: 'F', name: 'Lucy' },
-    { gender: 'F', name: 'Janet' }
+    { sexo: 'F', nome: 'Joyce' },
+    { sexo: 'F', nome: 'Lucy' },
+    { sexo: 'F', nome: 'Janet' }
   ],
   M: [
-    { gender: 'M', name: 'Jim' },
-    { gender: 'M', name: 'Jack' },
-    { gender: 'M', name: 'Ferdinand' }
+    { sexo: 'M', nome: 'Jim' },
+    { sexo: 'M', nome: 'Jack' },
+    { sexo: 'M', nome: 'Ferdinand' }
   ]
 }
 ```
 
-> _See this in action in this [JSBin](https://jsbin.com/rufubu/edit?js,console)._
+> _Veja isso em ação neste [JSBin](https://jsbin.com/rufubu/edit?js,console)._
 
-### Method chaining
+### Encadeamento de métodos
 
-The methods **map()** and **filter()** each return a new array. This makes it possible to chain these methods and create a 'pipeline' of operations, to be applied in sequence. The **reduce** method can return anything, including an array. If a **reduce** method returns something other than an array it can only be located at the end of an array method chain. The same applied to **forEach()**: it doesn't return anything. Therefore, it can only be placed at the end of a chain.
+Os métodos **map()** e **filter()** retornam um novo array. Isso possibilita encadear esses métodos e criar um 'pipeline' de operações, a serem aplicadas em sequência. O método **reduce** pode retornar qualquer coisa, incluindo um array. Se um método **reduce** retornar algo diferente de um array, ele só pode ser localizado no final de uma cadeia de métodos de array. O mesmo se aplica a **forEach()**: não retorna nada. Portanto, ele só pode ser colocado no final de uma cadeia.
 
-Let's take the last example, but now filtering out only those array elements for which the name starts with a 'J':
+Vamos pegar o último exemplo, mas agora filtrando apenas os elementos da matriz para os quais o nome começa com um 'J':
 
-```js
+``` js
 const arr = [
-  { gender: 'F', name: 'Joyce' },
-  { gender: 'M', name: 'Jim' },
-  { gender: 'F', name: 'Lucy' },
-  { gender: 'F', name: 'Janet' },
-  { gender: 'M', name: 'Jack' },
-  { gender: 'M', name: 'Ferdinand' },
+  { sexo: 'F', nome: 'Joyce' },
+  { sexo: 'M', nome: 'Jim' },
+  { sexo: 'F', nome: 'Lucy' },
+  { sexo: 'F', nome: 'Janet' },
+  { sexo: 'M', nome: 'Jack' },
+  { gênero: 'M', nome: 'Ferdinand' },
 ];
 
 const groupedNames = arr
@@ -337,34 +337,34 @@ const groupedNames = arr
   .reduce((acc, elem) => {
     if (acc[elem.gender]) {
       acc[elem.gender].push(elem);
-    } else {
+    } senão {
       acc[elem.gender] = [elem];
     }
-    return acc;
+    retorno acc;
   }, {});
 
 console.log(groupedNames);
 ```
 
-Result:
+Resultado:
 
 ```
 {
   F: [
-    { gender: 'F', name: 'Joyce' },
-    { gender: 'F', name: 'Janet' }
+    { sexo: 'F', nome: 'Joyce' },
+    { sexo: 'F', nome: 'Janet' }
   ],
   M: [
-    { gender: 'M', name: 'Jim' },
-    { gender: 'M', name: 'Jack' }
+    { sexo: 'M', nome: 'Jim' },
+    { sexo: 'M', nome: 'Jack' }
   ],
 }
 ```
 
-> _See this in action in this [JSBin](https://jsbin.com/yovodag/edit?js,console)._
+> _Veja isso em ação neste [JSBin](https://jsbin.com/yovodag/edit?js,console)._
 
-## In summary
+## Resumindo
 
 ![image](assets/map-filter-reduce-emoji.png)
 
-Credit: http://www.globalnerdy.com/2016/06/23/map-filter-and-reduce-explained-using-emoji/
+Crédito: http://www.globalnerdy.com/2016/06/23/map-filter-and-reduce-explained-using-emoji/

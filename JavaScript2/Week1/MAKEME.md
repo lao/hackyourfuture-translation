@@ -1,168 +1,168 @@
-# Homework JavaScript2 Week 1
+# Homework JavaScript2 Semana 1
 
-## **Todo list**
+## **Lista de afazeres**
 
-1. Practice the concepts
-2. JavaScript exercises
-3. Code along
-4. PROJECT: Random Quote Generator
+1. Pratique os conceitos
+2. Exercícios de JavaScript
+3. Codifique junto
+4. PROJETO: Gerador de Cotações Aleatórias
 
-## **1. Practice the concepts**
+## **1. Pratique os conceitos**
 
-Before we head into the exercises, it might be nice to do some interactive exercises first! In the following resource you'll find some exercises that'll teach you the basics of the interaction between JavaScript and the DOM:
+Antes de começarmos os exercícios, pode ser bom fazer alguns exercícios interativos primeiro! No recurso a seguir, você encontrará alguns exercícios que ensinarão o básico da interação entre JavaScript e DOM:
 
-- [Making webpages interactive](https://www.khanacademy.org/computing/computer-programming/html-css-js)
+- [Tornar as páginas da web interativas](https://www.khanacademy.org/computing/computer-programming/html-css-js)
 
-## **2. JavaScript exercises**
+## **2. Exercícios de JavaScript**
 
-> Inside of your `JavaScript2` fork, find the folder called `Week1`. Inside of that folder, find the folder called `js-exercises`. In this folder you will find five `.js` files (sometimes with a matching `.html` file), one for each exercise where you need to write your code. Please use the correct file for the respective exercise.
+> Dentro do seu fork `JavaScript2`, encontre a pasta chamada `Week1`. Dentro dessa pasta, encontre a pasta chamada `js-exercises`. Nesta pasta você encontrará cinco arquivos `.js` (às vezes com um arquivo `.html` correspondente), um para cada exercício onde você precisa escrever seu código. Por favor, use o arquivo correto para o respectivo exercício.
 
-**Exercise 1: The book list**
+**Exercício 1: A lista de livros**
 
-I'd like to display my three favorite books inside a nice webpage!
+Eu gostaria de exibir meus três livros favoritos dentro de uma boa página da web!
 
-```js
-const books = [
+``` js
+livros const = [
   {
-    title: 'The Design of Everyday Things',
-    author: 'Don Norman',
-    alreadyRead: false
+    título: 'O design das coisas cotidianas',
+    autor: 'Don Norman',
+    já lido: false
   },
   {
-    title: 'The Most Human Human',
-    author: 'Brian Christian',
-    alreadyRead: true
+    título: 'O Humano Mais Humano',
+    autor: 'Brian Christian',
+    já lido: verdade
   },
   {
-    title: 'The Pragmatic Programmer',
-    author: 'Andrew Hunt',
-    alreadyRead: true
+    título: 'O programador pragmático',
+    autor: 'Andrew Hunt',
+    já lido: verdade
   }
 ];
 ```
 
-1. Iterate through the array of books.
-2. For each book, create a `<p>` element with the book title and author and append it to the page.
-3. Use a `<ul>` and `<li>` to display the books.
-4. Add an `<img>` to each book that links to a URL of the book cover.
-5. Change the style of the book depending on whether you have read it (green) or not (red).
+1. Percorra a matriz de livros.
+2. Para cada livro, crie um elemento `<p>` com o título do livro e o autor e anexe-o à página.
+3. Use um `<ul>` e um `<li>` para exibir os livros.
+4. Adicione um `<img>` a cada livro que vincule a um URL da capa do livro.
+5. Mude o estilo do livro dependendo se você o leu (verde) ou não (vermelho).
 
-The end result should look something like this:
+O resultado final deve ser algo assim:
 https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 
-**Exercise 2: About me**
+**Exercício 2: Sobre mim**
 
-Given this HTML:
+Dado este HTML:
 
 ```html
-<!DOCTYPE html>
+<!DOCTYPEhtml>
 <html>
-  <head>
+  <cabeça>
     <meta charset="utf-8" />
-    <title>About Me</title>
+    <title>Sobre mim</title>
   </head>
-  <body>
-    <h1>About Me</h1>
+  <corpo>
+    <h1>Sobre mim</h1>
 
     <ul>
-      <li>Nickname: <span id="nickname"></span></li>
-      <li>Favorite food: <span id="fav-food"></span></li>
-      <li>Hometown: <span id="hometown"></span></li>
+      <li>Apelido: <span id="nickname"></span></li>
+      <li>Comida favorita: <span id="fav-food"></span></li>
+      <li>Cidade natal: <span id="hometown"></span></li>
     </ul>
   </body>
 </html>
 ```
 
-1. Add a script tag to the bottom of the HTML body.
-2. (In the JavaScript) Change the body tag's style so it has a font-family of "Arial, sans-serif".
-3. (In the JavaScript) Replace each of the spans (nickname, fav-food, hometown) with your own information.
-4. Iterate through each li and change the class to "list-item".
-5. (In the HTML head) Add a style tag that sets a rule for .list-item to make the color red.
-6. Create a new img element and set its src attribute to a picture of you. Append that element to the page.
+1. Adicione uma tag de script na parte inferior do corpo HTML.
+2. (No JavaScript) Altere o estilo da tag body para que ela tenha uma família de fontes "Arial, sans-serif".
+3. (No JavaScript) Substitua cada um dos intervalos (apelido, fav-food, cidade natal) por suas próprias informações.
+4. Percorra cada li e altere a classe para "list-item".
+5. (No cabeçalho HTML) Adicione uma tag de estilo que define uma regra para .list-item tornar a cor vermelha.
+6. Crie um novo elemento img e defina seu atributo src para uma foto sua. Anexe esse elemento à página.
 
-**Exercise 3: The logo hijack**
+**Exercício 3: O sequestro do logotipo**
 
-No homepage is safe from the logo bandit! Everytime he sees a Google Logo he replaces it with a logo from HackYourfuture instead: https://www.hackyourfuture.dk/static/logo-dark.svg.
+Nenhuma página inicial está a salvo do bandido do logotipo! Toda vez que ele vê um logotipo do Google, ele o substitui por um logotipo do HackYourfuture: https://www.hackyourfuture.dk/static/logo-dark.svg.
 
-In this exercise you're expected to write a JavaScript function that can be executed in the console of the [Google website](https://www.google.com).
+Neste exercício, você deve escrever uma função JavaScript que possa ser executada no console do [site do Google](https://www.google.com).
 
-1. Find out how to select the element that contains the Google logo, and store it in a variable
-2. Modify the source and sourceset of the logo so that it's replaced by the HackYourFuture logo instead
+1. Descubra como selecionar o elemento que contém o logotipo do Google e armazená-lo em uma variável
+2. Modifique a fonte e o conjunto de fontes do logotipo para que seja substituído pelo logotipo do HackYourFuture
 
-**Exercise 4: What's the time?**
+**Exercício 4: Que horas são?**
 
-Why wear a watch when you can check the time, live in your webpage?
+Por que usar um relógio quando você pode verificar a hora ao vivo em sua página da web?
 
-1. Create a basic HTML file
-2. Include a script tag and link the JavaScript file
-3. Inside the JS file, write a function that adds the current time to the webpage. Make sure it's written in the HH:MM:SS notation (hour, minute, second). Hint: use `setInterval()` to make sure the time stays current
-4. Have the function execute when it's loading in the browser
+1. Crie um arquivo HTML básico
+2. Inclua uma tag de script e vincule o arquivo JavaScript
+3. Dentro do arquivo JS, escreva uma função que inclua a hora atual na página da web. Certifique-se de que está escrito na notação HH:MM:SS (hora, minuto, segundo). Dica: use `setInterval()` para garantir que o tempo permaneça atual
+4. Faça com que a função seja executada quando estiver carregando no navegador
 
-**Exercise 5: The cat walk**
+**Exercício 5: O passeio de gato**
 
-Start with this webpage, which has a single img tag of an animated GIF of a cat walking.
+Comece com esta página da web, que tem uma única tag img de um GIF animado de um gato passeando.
 
 ```html
-<!DOCTYPE html>
+<!DOCTYPEhtml>
 <html>
-  <head>
+  <cabeça>
     <meta charset="utf-8" />
-    <title>Cat Walk</title>
+    <title>Passeio do Gato</title>
   </head>
-  <body>
-    <img style="position:absolute;" src="http://www.anniemation.com/clip_art/images/cat-walk.gif" />
+  <corpo>
+    <img style="posição:absoluto;" src="http://www.anniemation.com/clip_art/images/cat-walk.gif" />
   </body>
 </html>
 ```
 
-1. Create a variable to store a reference to the img.
-2. Change the style of the img to have a "left" of "0px", so that it starts at the left hand of the screens.
-3. Create a function called catWalk() that moves the cat 10 pixels to the right of where it started, by changing the "left" style property.
-4. Call that function every 50 milliseconds. Your cat should now be moving across the screen from left to right. Hurrah!
-5. When the cat reaches the right-hand of the screen, restart them at the left hand side ("0px"). So they should keep walking from left to right across the screen, forever and ever.
-6. When the cat reaches the middle of the screen, replace the img with an image of a cat dancing (use this URL: https://tenor.com/StFI.gif), keep it dancing for 5 seconds, and then replace the img with the original image and have it continue the walk.
+1. Crie uma variável para armazenar uma referência ao img.
+2. Mude o estilo da img para ter uma "esquerda" de "0px", de forma que ela comece à esquerda das telas.
+3. Crie uma função chamada catWalk() que mova o gato 10 pixels para a direita de onde ele começou, alterando a propriedade de estilo "left".
+4. Chame essa função a cada 50 milissegundos. Seu gato agora deve estar se movendo pela tela da esquerda para a direita. Viva!
+5. Quando o gato alcançar o lado direito da tela, reinicie-o do lado esquerdo ("0px"). Então eles devem continuar andando da esquerda para a direita pela tela, para todo o sempre.
+6. Quando o gato chegar ao meio da tela, substitua a img por uma imagem de um gato dançando (use este URL: https://tenor.com/StFI.gif), mantenha-o dançando por 5 segundos e, em seguida, substitua a img com a imagem original e faça com que continue a caminhada.
 
 
-The end result should look and behave similar to [https://dancingcat-sandbox.mxapps.io](https://dancingcat-sandbox.mxapps.io)
+O resultado final deve se parecer e se comportar de maneira semelhante a [https://dancingcat-sandbox.mxapps.io](https://dancingcat-sandbox.mxapps.io)
 
-## **3. Code along**
+## **3. Código junto**
 
-In the following tutorial you'll learn how to make a small web application that allows a user to add new issues to a board. Included is practice with [Bootstrap](https://getbootstrap.com/).
+No tutorial a seguir, você aprenderá como fazer um pequeno aplicativo da Web que permite ao usuário adicionar novos problemas a um quadro. Está incluída a prática com o [Bootstrap](https://getbootstrap.com/).
 
-Enjoy!
+Aproveitar!
 
-- [Build an Issue Tracker](https://www.youtube.com/watch?v=NYq9J-Eur9U)
+- [Crie um rastreador de problemas](https://www.youtube.com/watch?v=NYq9J-Eur9U)
 
-## **4. PROJECT: Random Quote Generator**
+## **4. PROJETO: Gerador de Cotações Aleatórias**
 
-> Every week ends with a project you have to build on your own. Instead of getting clear-cut instructions, you'll get a list of criteria that your project needs to measure up to.
+> Cada semana termina com um projeto que você deve construir por conta própria. Em vez de obter instruções claras, você receberá uma lista de critérios que seu projeto precisa atender.
 
-> Write the project code in the folder `Week1 \ project`.
+> Escreva o código do projeto na pasta `Week1\project`.
 
-In this week's project you'll be making a Random Quote Generator! It includes a text box and a simple button that, when clicked, take a random quote out of a set amount of quotes and show it in the page. Here's how it should look:
+No projeto desta semana você estará fazendo um Gerador de Citações Aleatórias! Ele inclui uma caixa de texto e um botão simples que, quando clicado, tira uma citação aleatória de uma quantidade definida de citações e a mostra na página. Veja como deve ficar:
 
-![Random Quote Generator](../assets/randomquotegenerator.png)
+![Gerador de cotação aleatória](../assets/randomquotegenerator.png)
 
-Here are the requirements:
+Aqui estão os requisitos:
 
-- Include at least 1 JavaScript, CSS and HTML file
-- The design should look similar to the one in the picture above
-- No CSS frameworks allowed
-- Each time the button is clicked it should show a random quote
-- Create a function that fires after the button click
-- Collect 6 of your favorite quotes (quote and author) and store them in the right data structure
+- Incluir pelo menos 1 arquivo JavaScript, CSS e HTML
+- O design deve ser semelhante ao da imagem acima
+- Nenhum framework CSS permitido
+- Cada vez que o botão é clicado, ele deve mostrar uma cotação aleatória
+- Crie uma função que seja acionada após o clique do botão
+- Colete 6 de suas citações favoritas (citação e autor) e armazene-as na estrutura de dados correta
 
-Good luck!
+Boa sorte!
 
-## **SUBMIT YOUR HOMEWORK!**
+## ** ENVIE SUA LIÇÃO DE CASA!**
 
-After you've finished your todo list it's time to show us what you got! Upload all your files to a forked repository (a copy from the original, which in this case is the [JavaScript2](https://www.github.com/HackYourFuture/JavaScript2) repository) using GIT. Then make a pull request to the original.
+Depois de terminar sua lista de tarefas, é hora de nos mostrar o que você tem! Faça upload de todos os seus arquivos para um repositório bifurcado (uma cópia do original, que neste caso é o repositório [JavaScript2](https://www.github.com/HackYourFuture/JavaScript2)) usando o GIT. Em seguida, faça um pull request para o original.
 
-If you need a refresher, take a look at the following [guide](../hand-in-homework-guide.md) to see how it's done.
+Se você precisar de uma atualização, dê uma olhada no seguinte [guia](../hand-in-homework-guide.md) para ver como isso é feito.
 
-The homework that needs to be submitted is the following:
+A lição de casa que precisa ser enviada é a seguinte:
 
-1. JavaScript exercises
-2. Project: Random Quote Generator
+1. Exercícios de JavaScript
+2. Projeto: Gerador de Cotações Aleatórias
 
-_Deadline Saturday 23.59 CET_
+_Prazo sábado 23.59 CET_

@@ -1,54 +1,54 @@
-# Prep exercise - Web Server
+# Exercício de preparação - Servidor Web
 
-In this exercise, you will build a simple web server. It will only serve one HTML file and one JavaScript file. This is enough for a minimal web site.
+Neste exercício, você construirá um servidor web simples. Ele servirá apenas um arquivo HTML e um arquivo JavaScript. Isso é suficiente para um site mínimo.
 
-To help you get started some code is already provided for you. Check the file `server.js` and try to understand what the code does.
+Para ajudá-lo a começar, algum código já foi fornecido para você. Verifique o arquivo `server.js` e tente entender o que o código faz.
 
-Check that the code is working fine by running it and opening the web site in your browser at `http://localhost:3000`. You should see the text `Hello World!`. While working on this exercise and the project, make sure to constantly check that your changes work as expected by running your code and checking the browser.
+Verifique se o código está funcionando bem executando-o e abrindo o site em seu navegador em `http://localhost:3000`. Você deverá ver o texto `Hello World!`. Ao trabalhar neste exercício e no projeto, certifique-se de verificar constantemente se suas alterações funcionam conforme o esperado executando seu código e verificando o navegador.
 
-Your job is to change the code so that it serves HTML instead of just `Hello World!`.
+Seu trabalho é alterar o código para que ele sirva HTML em vez de apenas `Hello World!`.
 
-Using node, read the contents of the file `index.html` then send it as a response. Make sure to set the correct `Content-Type` header.
+Usando node, leia o conteúdo do arquivo `index.html` e envie-o como resposta. Certifique-se de definir o cabeçalho `Content-Type` correto.
 
-Run the code and check that it works by opening a browser at `http://localhost:3000`.
+Execute o código e verifique se ele funciona abrindo um navegador em `http://localhost:3000`.
 
-If you open the Network tab (in the developer tools of your browser) you will notice that the browser tries to load the JavaScript `index.js`, but fails. This is because our server does not **serve** this file yet.
+Se você abrir a aba Rede (nas ferramentas do desenvolvedor do seu navegador) você notará que o navegador tenta carregar o JavaScript `index.js`, mas falha. Isso ocorre porque nosso servidor ainda não **veicula** esse arquivo.
 
-So far the server only serves one thing, the HTML file. In order to serve different things, we somehow have to determine what is being requested. This is where the `request.url` comes in.
+Até agora o servidor serve apenas uma coisa, o arquivo HTML. Para servir coisas diferentes, de alguma forma temos que determinar o que está sendo solicitado. É aqui que entra o `request.url`.
 
-If you open the Network tab you can see that when the browser is requesting the HTML code it is using the url `http://localhost:3000/`. On the other hand, when the browser is requesting the javascript it is using the url `http://localhost:3000/index.js`.
+Se você abrir a aba Rede você pode ver que quando o navegador está solicitando o código HTML ele está usando a url `http://localhost:3000/`. Por outro lado, quando o navegador está solicitando o javascript está usando a url `http://localhost:3000/index.js`.
 
-Let's change our code to send a different response, depending on the request URL.
+Vamos alterar nosso código para enviar uma resposta diferente, dependendo da URL da solicitação.
 
-To do this you need to write 2 conditional if statements.
+Para fazer isso, você precisa escrever 2 instruções if condicionais.
 
-1. If the URL is `/` send the HTML file, same as before
-2. If the URL is `/index.js` send the corresponding JavaScript file after reading it from the file system. Don't forget to set the correct `Content-Type` header.
+1. Se o URL for `/`, envie o arquivo HTML, como antes
+2. Se a URL for `/index.js`, envie o arquivo JavaScript correspondente após lê-lo do sistema de arquivos. Não se esqueça de definir o cabeçalho `Content-Type` correto.
 
-Run the code and check that it works by opening a browser at `http://localhost:3000`. You should see the message _Welcome to Server-land!_.
+Execute o código e verifique se ele funciona abrindo um navegador em `http://localhost:3000`. Você deverá ver a mensagem _Welcome to Server-land!_.
 
-Congratulations, you have created your very own working web server!
+Parabéns, você criou seu próprio servidor web funcional!
 
-> In a nutshell this is how most web sites work. The client requests resources, server sends them, then the client processes the response based on the content type. This processing often leads to new requests and the cycle continues until everything is loaded and ready for the user to interact with.
+> Em poucas palavras, é assim que a maioria dos sites funciona. O cliente solicita recursos, o servidor os envia e, em seguida, o cliente processa a resposta com base no tipo de conteúdo. Esse processamento geralmente leva a novas solicitações e o ciclo continua até que tudo esteja carregado e pronto para o usuário interagir.
 
-Tips:
+Pontas:
 
-- To set a response header [response.setHeader(name, value)](https://nodejs.org/api/http.html#http_response_setheader_name_value)
-- To read a file from the file system [fsPromises.readFile(path[, options])](https://nodejs.org/docs/latest-v14.x/api/fs.html#fs_fspromises_readfile_path_options)
-- Tired of restarting your server!? [nodemon](https://www.npmjs.com/package/nodemon) is here to help.
+- Para definir um cabeçalho de resposta [response.setHeader(name, value)](https://nodejs.org/api/http.html#http_response_setheader_name_value)
+- Para ler um arquivo do sistema de arquivos [fsPromises.readFile(path[, options])](https://nodejs.org/docs/latest-v14.x/api/fs.html#fs_fspromises_readfile_path_options)
+- Cansado de reiniciar seu servidor!? [nodemon](https://www.npmjs.com/package/nodemon) está aqui para ajudar.
 
-_BONUS_  
- Our website is working, but looks stale. Try adding some style to it. The style should be from an external source. Add this to your HTML file.
+_BÔNUS_
+ Nosso site está funcionando, mas parece obsoleto. Tente adicionar algum estilo a ele. O estilo deve ser de uma fonte externa. Adicione isso ao seu arquivo HTML.
 
 ```html
 <link rel="stylesheet" type="text/css" href="style.css" />
 ```
 
-When the server gets a request at `http://localhost:3000/style.css` respond with a CSS file that contains some basic CSS rules e.g. `#content { color: blue }`. Don't forget to specify the `Content-Type` in the header of the request!
+Quando o servidor recebe uma solicitação em `http://localhost:3000/style.css`, responda com um arquivo CSS que contém algumas regras básicas de CSS, por exemplo, `#conteúdo { cor: azul }`. Não se esqueça de especificar o `Content-Type` no cabeçalho da solicitação!
 
-## Things to think about
+## Coisas para pensar
 
-- Why do we have to build a whole server just to serve a webpage?
-- Is this how all webpages are sent to users?
-- Are all webpages served by sending a file back on a request? And could this work for sending files as well (think of sharing an image or a video)?
-- In the world of cloud computing, does that change anything to hosting these webpages?
+- Por que temos que construir um servidor inteiro apenas para servir uma página da web?
+- É assim que todas as páginas da web são enviadas aos usuários?
+- Todas as páginas da Web são atendidas enviando um arquivo de volta em uma solicitação? E isso também funcionaria para enviar arquivos (pense em compartilhar uma imagem ou um vídeo)?
+- No mundo da computação em nuvem, isso muda alguma coisa na hospedagem dessas páginas?

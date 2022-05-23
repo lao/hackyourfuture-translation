@@ -1,275 +1,275 @@
-# Lesson Plan Databases Week 4
+# Bancos de dados do plano de aula Semana 4
 
-The lesson plan is primarily written for teachers so that they can
-use examples and anecdotes from this document in conjunction with the README
-and explain the concepts better in the class.
+O plano de aula é escrito principalmente para os professores, para que eles possam
+use exemplos e anedotas deste documento em conjunto com o README
+e explicar melhor os conceitos na aula.
 
-## Topics
+## Tópicos
 
-1. Embedded vs Normalised data modeling
-2. Advanced MongoDB operations
-3. Pagination
-4. Indexes in MongoDB
-5. Transactions in MongoDB
-6. SQL vs NoSQL databases
+1. Modelagem de dados incorporados vs normalizados
+2. Operações avançadas do MongoDB
+3. Paginação
+4. Índices no MongoDB
+5. Transações no MongoDB
+6. Bancos de dados SQL vs NoSQL
 
-## 1. Embedded vs Normalised data modeling
+## 1. Modelagem de dados incorporada x normalizada
 
-### Explanation
+### Explicação
 
-1. Embedded means that information is stored in a sub-object in a collection
-2. Normalised means that information is stored in different collection but are referencing each other
+1. Embutido significa que as informações são armazenadas em um subobjeto em uma coleção
+2. Normalizado significa que as informações são armazenadas em coleções diferentes, mas fazem referência umas às outras
 
-### Example
+### Exemplo
 
-Let's have a look at a bug logging database.
+Vamos dar uma olhada em um banco de dados de log de bugs.
 
-#### The embedded way
+#### A maneira incorporada
 
-```js
-const bugs = [
+``` js
+const erros = [
   {
     timestamp: new Date(),
-    page: "about",
-    stacktrace: "", // removed for clarity
-    reporter: {
-      email: "rob@thebugcreator.com",
-      name: "Rob",
+    página: "sobre",
+    stacktrace: "", // removido para maior clareza
+    repórter: {
+      e-mail: "rob@thebugcreator.com",
+      nome: "Rob",
     },
   },
 ];
 ```
 
-#### The normalised way
+#### A maneira normalizada
 
-```js
-const accounts = [
+``` js
+contas const = [
   {
     id: ObjectId("507f191e810c19729de86032"),
-    email: "rob@thebugcreator.com",
-    name: "Rob",
+    e-mail: "rob@thebugcreator.com",
+    nome: "Rob",
   },
 ];
 
-const bugs = [
+const erros = [
   {
     timestamp: new Date(),
-    page: "about",
-    stacktrace: "", // removed for clarity
+    página: "sobre",
+    stacktrace: "", // removido para maior clareza
     reporterId: ObjectId("507f191e810c19729de86032"),
   },
 ];
 ```
 
-### Exercise
+### Exercício
 
-Discuss the differences and what the advantages/disadvantages are to each approach. For example:
+Discuta as diferenças e quais são as vantagens/desvantagens de cada abordagem. Por exemplo:
 
-Embedded allows for faster querying.
-Normalized allows for less data duplication.
+Incorporado permite consultas mais rápidas.
+Normalizado permite menos duplicação de dados.
 
-### Essence
+### Essência
 
-There are advantages to both approaches and in the wild you will have to decide which to use every time.
+Existem vantagens em ambas as abordagens e, na natureza, você terá que decidir qual usar sempre.
 
-## 2. Advanced MongoDB operations
+## 2. Operações avançadas do MongoDB
 
-### Explanation
+### Explicação
 
-1. The `sort` command allows you to sort data that you get back from your query.
-2. The `limit` command allows you to limit how many items you get back from your query.
-3. The `aggregate` command allows the combination and calculation of data in one or more collections.
+1. O comando `sort` permite classificar os dados que você recebe de sua consulta.
+2. O comando `limit` permite limitar quantos itens você recebe de volta da sua consulta.
+3. O comando `aggregate` permite a combinação e cálculo de dados em uma ou mais coleções.
 
-### Example
+### Exemplo
 
-Let's assume a log database with the following information:
+Vamos supor um banco de dados de log com as seguintes informações:
 
-```js
-const bugs = [
+``` js
+const erros = [
   {
     timestamp: new Date('2000-06-07T11:24:00'),
-    page: "about",
-    stacktrace: "", // removed for clarity
+    página: "sobre",
+    stacktrace: "", // removido para maior clareza
     reporterId: ObjectId("507f191e810c19729de86032"),
   }, {
     timestamp: new Date('2000-06-06T12:23:00'),
-    page: "about",
-    stacktrace: "", // removed for clarity
+    página: "sobre",
+    stacktrace: "", // removido para maior clareza
     reporterId: ObjectId("507f191e810c19729de86032"),
   }. {
     timestamp: new Date('2000-06-08T12:33:00'),
-    page: "contact",
-    stacktrace: "", // removed for clarity
+    página: "contato",
+    stacktrace: "", // removido para maior clareza
     reporterId: ObjectId("e810507f191de86032c19729"),
   }, {
     timestamp: new Date('2000-06-06T12:34:00'),
-    page: "home",
-    stacktrace: "", // removed for clarity
+    página: "casa",
+    stacktrace: "", // removido para maior clareza
     reporterId: ObjectId("e810507f191de86032c19729"),
   }
 ];
 ```
 
-#### Sort
+#### Ordenar
 
-If we want to sort the find query on the timestamp to find the latest bugs we can run the following query:
+Se quisermos classificar a consulta de localização no carimbo de data e hora para encontrar os bugs mais recentes, podemos executar a seguinte consulta:
 
-```js
-client.db("logging").collection("bugs").find().sort({ timestamp: -1 });
+``` js
+client.db("log").collection("bugs").find().sort({ timestamp: -1 });
 ```
 
-#### Limit
+#### Limite
 
-The above query will give you back all of the bugs which is not great, as such we can use the limit command as follows:
+A consulta acima retornará todos os bugs, o que não é ótimo, portanto, podemos usar o comando limit da seguinte maneira:
 
-```js
-client
-  .db("logging")
+``` js
+cliente
+  .db("registro")
   .collection("bugs")
-  .find()
+  .encontrar()
   .sort({ timestamp: -1 })
   .limit(10);
 ```
 
-This will give only the last 10 bugs, which is more manageable. Note that you can put the `sort` and `limit` commands in any order!
+Isso fornecerá apenas os últimos 10 bugs, o que é mais gerenciável. Note que você pode colocar os comandos `sort` e `limit` em qualquer ordem!
 
-#### Aggregate
+#### Agregado
 
-Let's say we want to have a count of how many bugs appear per page. To do that we can do the following:
+Digamos que queremos ter uma contagem de quantos bugs aparecem por página. Para isso podemos fazer o seguinte:
 
-```js
-client
-  .db("logging")
+``` js
+cliente
+  .db("registro")
   .collection("bugs")
-  .aggregate([
+  .agregar([
     {
-      $group: {
-        _id: "$page",
-        count: { $count: {} },
+      $grupo: {
+        _id: "$página",
+        contagem: { $contagem: {} },
       },
     },
   ]);
 ```
 
-This will give back an object with the page field in the `_id` field and the number of bugs that were logged on that page is in the `count` field!
+Isso devolverá um objeto com o campo page no campo `_id` e o número de bugs que foram registrados nessa página está no campo `count`!
 
-### Exercise
+### Exercício
 
-Think of some other things to sort on or calculate and write the code to do that.
+Pense em algumas outras coisas para classificar ou calcular e escrever o código para fazer isso.
 
-### Essence
+### Essência
 
-MongoDB does a lot for you, the syntax is a little different than known, but the documentation is very detailed so make use of it!
+O MongoDB faz muito por você, a sintaxe é um pouco diferente da conhecida, mas a documentação é bem detalhada então aproveite!
 
-## 3. Pagination
+## 3. Paginação
 
-Using the same bugs collection, let's look at offset and cursor-based pagination using that collection.
+Usando a mesma coleção de bugs, vamos examinar a paginação baseada em deslocamento e cursor usando essa coleção.
 
-### Explanation
+### Explicação
 
-Go to different online shops and look at their results pages to show pagination in action.
+Vá a diferentes lojas online e veja suas páginas de resultados para mostrar a paginação em ação.
 
-### Example
+### Exemplo
 
-Given the bugs database in the previous section let's implement both types of pagination:
+Dado o banco de dados de bugs na seção anterior, vamos implementar os dois tipos de paginação:
 
-#### Offset-based
+#### Com base em deslocamento
 
-```js
-client
-  .db("logging")
+``` js
+cliente
+  .db("registro")
   .collection("bugs")
-  .find()
+  .encontrar()
   .sort({ timestamp: -1 })
   .limit(10)
   .skip(20);
 ```
 
-This would skip 20 results and then show the next 10. So would be on page 3 if we show 10 results per page!
+Isso pularia 20 resultados e mostraria os próximos 10. Assim seria na página 3 se mostrarmos 10 resultados por página!
 
-#### Cursor-based
+#### Baseado em cursor
 
-```js
-const latestBugs = await client
-  .db("logging")
+``` js
+const lastBugs = aguarda cliente
+  .db("registro")
   .collection("bugs")
-  .find({
-    timestamp: { $lt: next || new Date() },
+  .encontrar({
+    carimbo de data/hora: { $lt: próximo || Nova data() },
   })
   .sort({ timestamp: -1 })
   .limit(10);
 
-const cursorToGiveToUser = latestBugs[latestBugs.length - 1].timestamp;
+const cursorToGiveToUser = lastBugs[latestBugs.length - 1].timestamp;
 ```
 
-Two important things here:
+Duas coisas importantes aqui:
 
-- You need to always have the data sorted if you do cursor-based sorting as you are including the point you are at in the query.
-- You have to provide the user of your endpoint the information they need to send for the next query
+- Você precisa sempre ter os dados classificados se fizer uma classificação baseada em cursor, pois inclui o ponto em que está na consulta.
+- Você deve fornecer ao usuário do seu endpoint as informações que ele precisa enviar para a próxima consulta
 
-In the above code we do it with the timestamp, in other implementations an ID can be given.
+No código acima fazemos isso com o timestamp, em outras implementações um ID pode ser dado.
 
-### Exercise
+### Exercício
 
-Discuss the advantages and disadvantages of both approaches.
+Discuta as vantagens e desvantagens de ambas as abordagens.
 
-### Essence
+### Essência
 
-Pagination needs to be done, important to note is that it only works with sorted data!
+A paginação precisa ser feita, importante notar é que só funciona com dados ordenados!
 
-## 4. Indexes
+## 4. Índices
 
-## 5. Transactions
+## 5. Transações
 
-### Explanation
+### Explicação
 
-The idea behind an index and a transaction should already be clear as it has been handled in SQL. So purely syntax here, but if students cannot explain why we do these things, then go through it with them again.
+A ideia por trás de um índice e uma transação já deve estar clara, pois foi tratada em SQL. Então, puramente sintaxe aqui, mas se os alunos não puderem explicar por que fazemos essas coisas, então passe por isso com eles novamente.
 
-### Example
+### Exemplo
 
-```js
-client.db("logging").collection("bugs").createIndex({ timestamp: -1 });
+``` js
+client.db("log").collection("bugs").createIndex({ timestamp: -1 });
 ```
 
-This creates an index for sorting descending on timestamp which we have been querying a lot.
+Isso cria um índice para classificação decrescente no carimbo de data/hora que temos consultado muito.
 
-```js
-async function transferCredits(fromAccountId, toAccountId, amount) {
-  const accountsCollection = client.db("billing").collection("accounts");
-  const session = client.startSession();
+``` js
+função assíncrona transferCredits(fromAccountId, toAccountId, valor) {
+  const accountsCollection = client.db("cobrança").collection("contas");
+  const sessão = client.startSession();
 
-  try {
-    session.withTransaction(async () => {
-      // Remove from fromUser
-      await accountsCollection.updateOne(
+  experimentar {
+    session.withTransaction(async() => {
+      //Remove do usuário
+      aguarde accountsCollection.updateOne(
         { _id: fromAccountId },
-        { $inc: { credits: amount * -1 } },
-        { session }
+        { $inc: { créditos: valor * -1 } },
+        { sessão }
       );
 
-      // Add to toUser
-      await accountsCollection.updateOne(
+      // Adiciona a toUser
+      aguarde accountsCollection.updateOne(
         { _id: toAccountId },
-        { $inc: { credits: amount } },
-        { session }
+        { $inc: { créditos: valor } },
+        { sessão }
       );
     });
-  } catch (err) {
-    await session.abortTransaction();
-  } finally {
-    await session.endSession();
+  } pegar (errar) {
+    aguardar sessão.abortTransaction();
+  } finalmente {
+    aguardar sessão.endSession();
   }
 }
 ```
 
-### Exercise
+### Exercício
 
-Discuss when and why to do indexes and transactions. What kind of scenarios are there.
+Discuta quando e por que fazer índices e transações. Que tipo de cenários existem.
 
-### Essence
+### Essência
 
-Both indexes and transactions have a cost attached to them, but can improve your databases performance and security!
+Tanto os índices quanto as transações têm um custo associado a eles, mas podem melhorar o desempenho e a segurança de seus bancos de dados!
 
 ## 6. SQL vs NoSQL
 
-The prep exercise handles this, have a look at it [here](./QA_PREP_EXERCISE.md)
+O exercício de preparação lida com isso, dê uma olhada [aqui](./QA_PREP_EXERCISE.md)

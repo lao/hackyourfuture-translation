@@ -1,32 +1,32 @@
-# Reading Material Databases Week 2
+# Bancos de dados de materiais de leitura Semana 2
 
 ## Agenda
 
-These are the topics for week 2:
+Estes são os tópicos da semana 2:
 
-1. [Identifiers (Primary key, Foreign key, Composite key)](https://hackyourfuture.github.io/study/#/databases/sql/identifiers)
-2. [Relationships (One-to-One, One-to-Many, Many-to-Many)](https://hackyourfuture.github.io/study/#/databases/sql/relationships)
-3. [Advanced SQL commands](https://hackyourfuture.github.io/study/#/databases/sql/advanced-sql)
-   - Joins
-   - Aggregate functions
-   - Distinct
-   - Group By
-   - Have
+1. [Identificadores (chave primária, chave estrangeira, chave composta)](https://hackyourfuture.github.io/study/#/databases/sql/identifiers)
+2. [Relacionamentos (um para um, um para muitos, muitos para muitos)](https://hackyourfuture.github.io/study/#/databases/sql/relationships)
+3. [Comandos SQL avançados](https://hackyourfuture.github.io/study/#/databases/sql/advanced-sql)
+   - Juntas
+   - Funções agregadas
+   - Distinto
+   - Agrupar por
+   - Tenho
 4. [Indexes](https://hackyourfuture.github.io/study/#/databases/sql/indexes)
-5. [Domain modeling](https://hackyourfuture.github.io/study/#/databases/sql/domain-modeling)
+5. [Modelagem de domínio](https://hackyourfuture.github.io/study/#/databases/sql/domain-modeling)
 
-## Week goals
+## Metas da semana
 
-This week we are going to start diving deeper into SQL and how to structure your tables. Let's start by looking into identifiers that allow you to add constraints to your database [here](https://hackyourfuture.github.io/study/#/databases/sql/identifiers). After that, let's look into relationships between tables. There are three types of relationships (one-to-one, one-to-many and many-to-many), read about when to use them over [here](https://hackyourfuture.github.io/study/#/databases/sql/relationships).
+Esta semana vamos começar a mergulhar mais fundo no SQL e como estruturar suas tabelas. Vamos começar examinando os identificadores que permitem adicionar restrições ao seu banco de dados [aqui](https://hackyourfuture.github.io/study/#/databases/sql/identifiers). Depois disso, vamos examinar os relacionamentos entre as tabelas. Existem três tipos de relacionamentos (um para um, um para muitos e muitos para muitos), leia sobre quando usá-los [aqui](https://hackyourfuture.github.io/study/# /bancos de dados/sql/relacionamentos).
 
-Next we will look at more complex SQL commands that will be needed now that the table structures are getting more complicated. Let's look into the advanced sql commands and when to use them [here](https://hackyourfuture.github.io/study/#/databases/sql/advanced-sql).
+A seguir, veremos comandos SQL mais complexos que serão necessários agora que as estruturas das tabelas estão ficando mais complicadas. Vamos examinar os comandos sql avançados e quando usá-los [aqui](https://hackyourfuture.github.io/study/#/databases/sql/advanced-sql).
 
-With more complex and bigger databases performance can become a problem. To help you solve this, you can configure your database in such a way to speed up specific queries using [Indexes](https://hackyourfuture.github.io/study/#/databases/sql/indexes). Finally, with all of these relationships between multiple tables it can become a little hard to keep track. To help visualise your databases we generally use what is called an Entity Relationship Diagram, read all about them [here](https://hackyourfuture.github.io/study/#/databases/sql/domain-modeling).
+Com bancos de dados mais complexos e maiores, o desempenho pode se tornar um problema. Para ajudá-lo a resolver isso, você pode configurar seu banco de dados de forma a acelerar consultas específicas usando [Indexes](https://hackyourfuture.github.io/study/#/databases/sql/indexes). Por fim, com todos esses relacionamentos entre várias tabelas, pode se tornar um pouco difícil acompanhar. Para ajudar a visualizar seus bancos de dados, geralmente usamos o que é chamado de Diagrama de Relacionamento de Entidade, leia tudo sobre eles [aqui](https://hackyourfuture.github.io/study/#/databases/sql/domain-modeling).
 
-Bonus: We have a bonus video [here](https://www.youtube.com/watch?v=8yIuyUum3XU) of one of our mentors (@Unmesh on slack! Thank him if you found it useful) going through a practical example of how to deal with the asynchronicity of working with databases.
+Bônus: temos um vídeo bônus [aqui](https://www.youtube.com/watch?v=8yIuyUum3XU) de um de nossos mentores (@Unmesh no slack! Agradeça a ele se você achou útil) passando por uma prática exemplo de como lidar com a assincronia de trabalhar com bancos de dados.
 
-Bonus 2: A second bonus video [here](https://www.youtube.com/watch?v=H08wAwrWEec) that goes through some of the topics of this week: keys, relationships and joins. Again it is @Unmesh on slack, a thanks if this helped you is much appreciated!
+Bônus 2: Um segundo vídeo bônus [aqui](https://www.youtube.com/watch?v=H08wAwrWEec) que aborda alguns dos tópicos desta semana: chaves, relacionamentos e junções. Mais uma vez, é @Unmesh no slack, obrigado se isso ajudou você é muito apreciado!
 
-## Finished?
+## Finalizado?
 
-Are you finished with going through the materials? High five! If you feel ready to get practical, click [here](./MAKEME.md).
+Você terminou de passar pelos materiais? Toca aqui! Se você se sentir pronto para ser prático, clique [aqui](./MAKEME.md).

@@ -1,56 +1,56 @@
-# Git Project Workflow Guide
+# Guia de fluxo de trabalho do projeto Git
 
-There will be 1 remote repository (your class project repository) that everyone will work with. 
+Haverá 1 repositório remoto (seu repositório de projeto de classe) com o qual todos trabalharão.
 
-Before starting the sprint you should follow these steps:
-1. `Clone` the repository
-2. `Fetch` the most recent commit
-3. `Install` all the node modules (for both backend and frontend) 
+Antes de iniciar o sprint, você deve seguir estas etapas:
+1. `Clone` o repositório
+2. `Busca` o commit mais recente
+3. `Instale` todos os módulos do nó (para backend e frontend)
 
-### REMOTE
+### CONTROLO REMOTO
 
-- The remote repository will have a `master` branch, and a `development` branch (branched off from master)
-- The `development` branch will contain all the merged feature code
-- Each team will create a branch for each feature
-- Each member of the team will use this feature branch to work from
+- O repositório remoto terá um branch `master` e um branch `development` (ramificado do master)
+- A ramificação `development` conterá todo o código do recurso mesclado
+- Cada equipe criará uma ramificação para cada recurso
+- Cada membro da equipe usará essa ramificação de recursos para trabalhar a partir
 
 ### LOCAL
 
-- The local repository will also have a `master` and `development` branch. You will fetch and push code to their respective remote branches
-- Each team member will also have a branch for each branch they are working on (so there will be _2_ feature branches for each team member in total)
-- Each team member will work on their part of the feature locally, and when they have committed it locally send it to remote (GitHub) for the others to pull it from
+- O repositório local também terá um branch `master` e `development`. Você buscará e enviará código para suas respectivas ramificações remotas
+- Cada membro da equipe também terá uma ramificação para cada ramificação em que estiver trabalhando (portanto, haverá _2_ ramificações de recursos para cada membro da equipe no total)
+- Cada membro da equipe trabalhará em sua parte do recurso localmente e, quando tiver confirmado localmente, envie-o para o remoto (GitHub) para que os outros o retirem
 
-## COMMUNICATION GUIDELINES
+## DIRETRIZES DE COMUNICAÇÃO
 
-Communicate as often as possible. At the beginning of each day have a meeting about who’s going to do what for that day. This is the `daily standup/scrum`.
+Comunique-se com a maior frequência possível. No início de cada dia, faça uma reunião sobre quem vai fazer o quê naquele dia. Este é o `diariamente standup/scrum`.
 
-Afterwards you can take some time to discuss how to approach each task.
+Depois, você pode dedicar algum tempo para discutir como abordar cada tarefa.
 
-Tips to communicate:
+Dicas para comunicar:
 
-- Write down your tasks using checklists. This creates clarity and provides an overview for you and your teammembers
-- Make use of video chat when needed. The “Share screen” option on Slack is useful to help each other to debug code
+- Anote suas tarefas usando listas de verificação. Isso cria clareza e fornece uma visão geral para você e seus membros da equipe
+- Faça uso do bate-papo por vídeo quando necessário. A opção “Compartilhar tela” no Slack é útil para ajudar uns aos outros a depurar o código
 
-## GIT WORKFLOW
+## GIT FLUXO DE TRABALHO
 
-### Daily workflow:
+### Fluxo de trabalho diário:
 
-1. Write some code on **local** branch [FEATURE_NAME], for example “social-media-login-feature”
-2. Add and commit this code **locally**
-3. Push the code to the **remote** branch with the same name, “social-media-login-feature”
-4. Your team member pulls the code from **remote** branch “social-media-login” to their **local** branch “social-media-login-feature”
-5. Repeat step 1 to 4
+1. Escreva algum código na ramificação **local** [FEATURE_NAME], por exemplo, “social-media-login-feature”
+2. Adicione e confirme este código **localmente**
+3. Envie o código para a ramificação **remota** com o mesmo nome, "recurso de login de mídia social"
+4. O membro da sua equipe extrai o código do branch **remoto** "social-media-login" para o branch **local** "social-media-login-feature"
+5. Repita as etapas 1 a 4
 
-### When feature is finished:
+### Quando o recurso estiver concluído:
 
-1. Make sure every team member has merged their code with the **remote** branch “social-media-login-feature”
-2. Make sure every team member can functionally use the feature in 3. their **local** project
-3. One team member makes a **pull request to remote** branch development, but **doesn’t merge it**!
+1. Certifique-se de que todos os membros da equipe tenham mesclado seu código com a ramificação **remota** “social-media-login-feature”
+2. Certifique-se de que todos os membros da equipe possam usar funcionalmente o recurso em 3. seu projeto **local**
+3. Um membro da equipe faz uma **solicitação de pull para o desenvolvimento remoto** da ramificação, mas **não a mescla**!
 
-## IMPORTANT!
+## IMPORTANTE!
 
-1. Merging code with `development` and `master` will only be done on **remote** (GitHub), through pull requests
-2. Each team member will work on a feature while in the branch of that feature. Once you are done for the day, `git push origin [BRANCH_NAME]` the code to the remote branch. At the start of a new day, `git pull origin [BRANCH_NAME]` to get the latest version of the code base
-3. Each week you are expected to implement one feature, which you will present to the rest of the class that Sunday
-4. We will **merge the features into the development branch** on the Sunday
-5. When in need of help: contact the Product Owner
+1. Mesclar código com `development` e `master` só será feito no **remote** (GitHub), por meio de pull requests
+2. Cada membro da equipe trabalhará em um recurso enquanto estiver na ramificação desse recurso. Assim que terminar o dia, `git push origin [BRANCH_NAME]` o código para o branch remoto. No início de um novo dia, `git pull origin [BRANCH_NAME]` para obter a versão mais recente da base de código
+3. Espera-se que você implemente um recurso a cada semana, que será apresentado ao restante da turma naquele domingo
+4. Vamos **mesclar os recursos na ramificação de desenvolvimento** no domingo
+5. Quando precisar de ajuda: entre em contato com o Product Owner

@@ -1,185 +1,185 @@
-## Make a blog API
+## Faça uma API de blog
 
-Anyone here still remember blogs!? They were all the rage around 10 years ago. We are a bit late to the party, but I think we can still make some money with a blog application.
+Alguém aqui ainda se lembra dos blogs!? Eles estavam na moda há cerca de 10 anos. Estamos um pouco atrasados para a festa, mas acho que ainda podemos ganhar algum dinheiro com um aplicativo de blog.
 
-Since you just learned about REST and APIs we are going to use them when writing this application. The resource in the application are `blogs`. Each blog will have a `title` and `content`. The `title` will also serve as an `id` uniquely identifying a blog post.
+Como você acabou de aprender sobre REST e APIs, vamos usá-los ao escrever este aplicativo. O recurso na aplicação são `blogs`. Cada blog terá um `título` e um `conteúdo`. O `title` também servirá como um `id` identificando exclusivamente uma postagem do blog.
 
-We also want our blogs to be stored `persistently`. Data persistence means keeping the data you are working with around whether or not the Node.js service is restarted. To achieve this, each blog post will be stored as a separate file on the hard drive, where the blog post title will match the file name.
+Também queremos que nossos blogs sejam armazenados `persistentemente`. Persistência de dados significa manter os dados com os quais você está trabalhando independentemente de o serviço Node.js ser reiniciado ou não. Para conseguir isso, cada postagem do blog será armazenada como um arquivo separado no disco rígido, onde o título da postagem do blog corresponderá ao nome do arquivo.
 
-Before we start coding we need to define what operations will be supported via our API. Here's what we're going to do...
+Antes de começarmos a codificar, precisamos definir quais operações serão suportadas por meio de nossa API. Aqui está o que vamos fazer...
 
-| Operation | Description                                             | Method | Route |
-| --------- | ------------------------------------------------------- | ------ | ----- |
-| Create    | Given a title and content create a new post             |        |       |
-| Read one  | Given a title, return the content of a single blog post |        |       |
-| Update    | Given a title and content update an existing blog post  |        |       |
-| Delete    | Given a title delete an existing blog post              |        |       |
+| Operação | Descrição | Método | Rota |
+| --------- | -------------------------------------------------- ----- | ------ | ----- |
+| Criar | Dado um título e conteúdo crie um novo post | | |
+| Leia um | Dado um título, retorne o conteúdo de uma única postagem do blog | | |
+| Atualizar | Dado um título e atualização de conteúdo de uma postagem de blog existente | | |
+| Excluir | Dado um título, exclua uma postagem de blog existente | | |
 
-What do you think should be filled in the `Method` and `Route` columns? Think about it and see if you can guess what it should be...
+O que você acha que deve ser preenchido nas colunas `Method` e `Route`? Pense nisso e veja se você consegue adivinhar o que deveria ser...
 
-Once you're ready, let's start by setting up our environment. Follow the steps:
+Quando estiver pronto, vamos começar configurando nosso ambiente. Siga os passos:
 
-**Setup:**
+**Configuração:**
 
-1. Navigate to the exercise folder `1-blog-api`
-2. In the folder there is already a `server.js` and `package.json` file prepared for you with some starter code and the express dependency.
-3. Install the dependencies locally by running `npm install`. This command will read the dependencies from `package.json` and download them on your computer.
+1. Navegue até a pasta de exercícios `1-blog-api`
+2. Na pasta já existe um arquivo `server.js` e `package.json` preparado para você com algum código inicial e a dependência expressa.
+3. Instale as dependências localmente executando `npm install`. Este comando irá ler as dependências do `package.json` e baixá-las em seu computador.
 
-That was not too hard, was it? Now you are ready for the real coding. We will start off by...
+Isso não foi muito difícil, foi? Agora você está pronto para a codificação real. Começaremos por...
 
-**1.1 Creating new posts**
+**1.1 Criando novas postagens**
 
-To create a new blog post, we need 2 things:
+Para criar uma nova postagem no blog, precisamos de 2 coisas:
 
-1. A user that sends data from a client (for example, a webpage that contains a `<form>`)
-2. A web server that listens to a request that comes in at a certain `endpoint`.
+1. Um usuário que envia dados de um cliente (por exemplo, uma página da Web que contém um `<form>`)
+2. Um servidor web que escuta uma requisição que chega em um certo `endpoint`.
 
-We won't work on the first point, but we'll assume the incoming data from the client will be in JSON format. For example: `{ "title": "My first blog", "content": "Lorem ipsum" }`.
+Não trabalharemos no primeiro ponto, mas assumiremos que os dados recebidos do cliente estarão no formato JSON. Por exemplo: `{ "title": "Meu primeiro blog", "content": "Lorem ipsum" }`.
 
-You need to create another endpoint in our web server that will receive the data and store it into a separate file. The file storage will happen with use of [fs](https://nodejs.org/api/fs.html#fs_file_system), a native Node.js module that allows us to interact with our computer's file system so we can create new files.
+Você precisa criar outro endpoint em nosso servidor web que receberá os dados e os armazenará em um arquivo separado. O armazenamento de arquivos acontecerá com o uso do [fs](https://nodejs.org/api/fs.html#fs_file_system), um módulo nativo do Node.js que nos permite interagir com o sistema de arquivos do nosso computador para que possamos criar novos arquivos.
 
-Follow the steps:
+Siga os passos:
 
-1. Inside `server.js`, add the following starter code in the correct place:
+1. Dentro de `server.js`, adicione o seguinte código inicial no local correto:
 
 ```javascript
 const fs = require("fs");
 
-app.<METHOD>('/blogs', (req, res) => {
-    // How to get the title and content from the request??
-    fs.writeFileSync(title, content);
+app.<MÉTODO>('/blogs', (req, res) => {
+    // Como obter o título e o conteúdo da requisição??
+    fs.writeFileSync(título, conteúdo);
     res.end('ok')
 })
 ```
 
-2. Replace `<METHOD>` with the correct HTTP verb.
-3. Figure out how to access the `title` and `content` properties from out of the request.
+2. Substitua `<MÉTODO>` pelo verbo HTTP correto.
+3. Descubra como acessar as propriedades `title` e `content` fora da solicitação.
 
-Hint: Remember `express.json()`. Why did we use it during our lectures?
+Dica: Lembre-se de `express.json()`. Por que o usamos durante nossas palestras?
 
-After you've finished writing your code, use Postman to test that your code works. Send a request using the correct HTTP verb and URL. As the data you'll be sending in the request body, you can make use of the example: `{ "title": "My first blog", "content": "Lorem ipsum" }`. Make sure that you specify the`Content-Type` as JSON!
+Depois de terminar de escrever seu código, use o Postman para testar se seu código funciona. Envie uma solicitação usando o URL e o verbo HTTP corretos. Como os dados que você enviará no corpo da solicitação, você pode usar o exemplo: `{ "title": "Meu primeiro blog", "content": "Lorem ipsum" }`. Certifique-se de especificar o `Content-Type` como JSON!
 
-Expected output:
-You should get a response `ok` and see a new file `My first blog` in your `1-blog-api` folder.
+Saída esperada:
+Você deve obter uma resposta `ok` e ver um novo arquivo `My first blog` na sua pasta `1-blog-api`.
 
-![Obama not bad](https://nwlc.org/wp-content/uploads/2016/09/notbad.jpg)
+![Obama nada mal](https://nwlc.org/wp-content/uploads/2016/09/notbad.jpg)
 
-Up next:
+A seguir:
 
-**1.2 Updating existing posts**
+**1.2 Atualizando postagens existentes**
 
-Updating posts is very similar to creating them. You only need to use a different METHOD and add a conditional statement that checks to see if the blog post that the user is trying to update already exists with `fs.existsSync()`.
+Atualizar postagens é muito semelhante a criá-las. Você só precisa usar um MÉTODO diferente e adicionar uma instrução condicional que verifica se a postagem do blog que o usuário está tentando atualizar já existe com `fs.existsSync()`.
 
-This time we are going to use a _url parameter_ in Express to send the `title` while the `content` will be part of the `body`.
+Desta vez vamos usar um _parâmetro de url_ no Express para enviar o `título` enquanto o `conteúdo` fará parte do `corpo`.
 
-Follow the steps:
+Siga os passos:
 
-1. Inside `server.js`, add the following starter code in the correct place:
+1. Dentro de `server.js`, adicione o seguinte código inicial no local correto:
 
 ```javascript
 app.<METHOD>('/posts/:title', (req, res) => {
-    // How to get the title and content from the request?
-    // What if the request does not have a title and/or content?
-    if () {
-      fs.writeFileSync(title, content);
+    // Como obter o título e o conteúdo da solicitação?
+    // E se a solicitação não tiver título e/ou conteúdo?
+    E se () {
+      fs.writeFileSync(título, conteúdo);
       res.end('ok')
     }
-    else {
-      // Send response with error message
+    senão {
+      //Envia resposta com mensagem de erro
     }
 })
 ```
 
-2. Replace `<METHOD>` with the correct HTTP verb.
-3. Add a condition: if the file with the given title exists, rewrite it with the given content. Otherwise respond with a message, saying 'This post does not exist!'. Make use of the `fs.existsSync(title)` to check if a file exists.
+2. Substitua `<MÉTODO>` pelo verbo HTTP correto.
+3. Adicione uma condição: se o arquivo com o título fornecido existir, reescreva-o com o conteúdo fornecido. Caso contrário, responda com uma mensagem dizendo 'Esta postagem não existe!'. Use o `fs.existsSync(title)` para verificar se existe um arquivo.
 
-After you've finished writing your code, use Postman to test that your code works. Send a request using the correct HTTP verb and URL. As the data you'll be sending in the request body, you can make use of the example: `{ "title": "My first blog", "content": "This content is now updated!" }`.
+Depois de terminar de escrever seu código, use o Postman para testar se seu código funciona. Envie uma solicitação usando o URL e o verbo HTTP corretos. Como os dados que você enviará no corpo da solicitação, você pode usar o exemplo: `{ "title": "Meu primeiro blog", "content": "Este conteúdo já está atualizado!" }`.
 
-Does it send the correct response in the case the post exists, or if it doesn't?
+Ele envia a resposta correta caso o post exista ou não?
 
-Expected output:
-If the request could be handled, respond with 'ok', else respond with 'This post does not exist!'.
+Saída esperada:
+Se a solicitação puder ser tratada, responda com 'ok', senão responda com 'Esta postagem não existe!'.
 
-Next up:
+Próximo:
 
-**1.3 Deleting posts**
+**1.3 Excluindo postagens**
 
-For deleting posts we will again make use of `URL parameters`, this time to specify which post we want to delete.
+Para deletar postagens, usaremos novamente os `parâmetros de URL`, desta vez para especificar qual postagem queremos deletar.
 
-Since we are deleting a post there is no need to send any content in the request. To delete the corresponding, you can use `fs.unlinkSync(<filename>)`.
+Como estamos excluindo uma postagem, não há necessidade de enviar nenhum conteúdo na solicitação. Para excluir o correspondente, você pode usar `fs.unlinkSync(<filename>)`.
 
-Follow the steps:
+Siga os passos:
 
-1. Inside `server.js`, add the following starter code in the correct place:
+1. Dentro de `server.js`, adicione o seguinte código inicial no local correto:
 
 ```javascript
 app.<METHOD>('/blogs/:title', (req, res) => {
-    // How to get the title from the url parameters?
-    if () { // Add condition here
-      fs.unlinkSync(title);
+    // Como obter o título dos parâmetros de url?
+    if () { // Adiciona condição aqui
+      fs.unlinkSync(título);
       res.end('ok');
-    } else {
-      // Respond with message here
+    } senão {
+      // Responda com mensagem aqui
     }
 })
 ```
 
-2. Replace `<METHOD>` with the correct HTTP verb.
-3. Figure out how to get the `title` from the request.
-4. Add a condition, only delete the file if it exists. Make use of the `fs.existsSync(title)` method.
-5. Delete the file by passing the title to the `fs.unlinkSync()` method.
+2. Substitua `<MÉTODO>` pelo verbo HTTP correto.
+3. Descubra como obter o `título` da solicitação.
+4. Adicione uma condição, exclua o arquivo somente se ele existir. Faça uso do método `fs.existsSync(title)`.
+5. Exclua o arquivo passando o título para o método `fs.unlinkSync()`.
 
-After you've finished writing your code, use Postman to test that your code works. Send a request using the correct HTTP verb and URL. No body content needed!
+Depois de terminar de escrever seu código, use o Postman para testar se seu código funciona. Envie uma solicitação usando o URL e o verbo HTTP corretos. Nenhum conteúdo corporal necessário!
 
-**1.4 Reading posts**
+**1.4 Lendo postagens**
 
-Wanting to read a file is the most common form of request a client can send. Type in `https://www.google.com/` into your browser and you are sending a request, wanting to read a file!
+Querer ler um arquivo é a forma mais comum de solicitação que um cliente pode enviar. Digite `https://www.google.com/` no seu navegador e você está enviando uma solicitação, querendo ler um arquivo!
 
-When a web server receives a request to read a file, it sends back a response including the file that needs to be read.
+Quando um servidor web recebe uma solicitação para ler um arquivo, ele envia de volta uma resposta incluindo o arquivo que precisa ser lido.
 
-In our blog application, we'll be sending the correct file depending on the title of the blog post. We specify this in our request by putting the title of that blog in the URL parameters, like `http://localhost:3000/blogs/blogtitle`.
+Em nosso aplicativo de blog, enviaremos o arquivo correto dependendo do título da postagem do blog. Especificamos isso em nossa solicitação colocando o título desse blog nos parâmetros de URL, como `http://localhost:3000/blogs/blogtitle`.
 
-The moment the web server gets a request coming in at our new endpoint, we'll look at the URL parameters and then respond with the correct file.
+No momento em que o servidor da web receber uma solicitação em nosso novo endpoint, examinaremos os parâmetros de URL e responderemos com o arquivo correto.
 
-Follow the steps:
+Siga os passos:
 
-1. Inside `server.js`, add the following starter code in the correct place:
+1. Dentro de `server.js`, adicione o seguinte código inicial no local correto:
 
 ```javascript
 app.<METHOD>('/blogs/:title', (req, res) => {
 
-    // How to get the title from the url parameters?
-    // check if post exists
-    const post = fs.readFileSync(title);
-    // send response
+    // Como obter o título dos parâmetros de url?
+    //verifica se o post existe
+    post const = fs.readFileSync(título);
+    //envia resposta
 })
 ```
 
-2. Replace `<METHOD>` with the correct HTTP verb.
-3. Figure out how to get the `title` from the request.
-4. Add a condition, only send the post if it exists. Make use of the `fs.existsSync(title)` method.
+2. Substitua `<MÉTODO>` pelo verbo HTTP correto.
+3. Descubra como obter o `título` da solicitação.
+4. Adicione uma condição, só envie a postagem se ela existir. Faça uso do método `fs.existsSync(title)`.
 
-After you've finished writing your code, **use Postman to test that your code works**. Send a request using the correct HTTP verb and URL.
+Depois de terminar de escrever seu código, **use o Postman para testar se seu código funciona**. Envie uma solicitação usando o URL e o verbo HTTP corretos.
 
-Expected output:
-If the requested post exists, the response should be the post content as plain text. Otherwise the response should be 'This post does not exist!'. Both responses should have the appropriate status.
+Saída esperada:
+Se a postagem solicitada existir, a resposta deve ser o conteúdo da postagem como texto simples. Caso contrário, a resposta deve ser 'Esta postagem não existe!'. Ambas as respostas devem ter o status apropriado.
 
-All done? Congratulations!
+Tudo feito? Parabéns!
 
-![Congratulations](https://media.giphy.com/media/l1AsI389lnxkvQHAc/giphy.gif)
+![Parabéns](https://media.giphy.com/media/l1AsI389lnxkvQHAc/giphy.gif)
 
-**Bonus: Reading all posts**
-In addition to reading the content of a single post build an operation that reads all existing posts. To limit the size of response only send the title of the blog posts, e.g. `[{"title":"My First Blog"}, {"title":"Second Blog"}]`
+**Bônus: Lendo todas as postagens**
+Além de ler o conteúdo de uma única postagem, crie uma operação que leia todas as postagens existentes. Para limitar o tamanho da resposta, envie apenas o título das postagens do blog, por exemplo. `[{"title":"Meu Primeiro Blog"}, {"title":"Segundo Blog"}]`
 
 ```javascript
-app.<METHOD>('/blogs', (req, res) => {
-    // how to get the file names of all files in a folder??
+app.<MÉTODO>('/blogs', (req, res) => {
+    // como obter os nomes dos arquivos de todos os arquivos em uma pasta??
 })
 ```
 
-## Things to think about
+## Coisas para pensar
 
-- Why do you need to put the `:` in certain URLs?
-- What should you do if the file system gives an error (the `fs.readFileSync` line for example)? What is the best way of handling that?
-- Why do we use the synchronous function for reading files from the system?
-- Should we always only send back a JSON object?
+- Por que você precisa colocar o `:` em certas URLs?
+- O que você deve fazer se o sistema de arquivos apresentar um erro (a linha `fs.readFileSync` por exemplo)? Qual é a melhor maneira de lidar com isso?
+- Por que usamos a função síncrona para leitura de arquivos do sistema?
+- Devemos sempre enviar de volta apenas um objeto JSON?

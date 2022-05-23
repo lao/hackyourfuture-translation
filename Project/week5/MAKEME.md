@@ -1,67 +1,67 @@
-# Week 6 tasks
+# Tarefas da semana 6
 
-This week is a little different. You've now experienced how it is to work in a development team and it is time to refocus on getting that job. That means that this week is focused on making the project something that is CV worthy.
+Esta semana é um pouco diferente. Você já experimentou como é trabalhar em uma equipe de desenvolvimento e é hora de se concentrar novamente em conseguir esse emprego. Isso significa que esta semana está focada em tornar o projeto algo digno de currículo.
 
-# Week tasks:
+# Tarefas da semana:
 
-This week's tasks in a row:
+Tarefas desta semana consecutivas:
 
-- 1. Clean up!
-- 2. Final presentation
-- 3. (QA) Theory
+- 1. Limpe!
+- 2. Apresentação final
+- 3. Teoria (QA)
   - BDD/TDD/ATDD
-  - Automation best practices
-- 4. General Assessment
+  - Boas práticas de automação
+- 4. Avaliação Geral
 
-## 1. Clean up!
+## 1. Limpe!
 
-Working as a group under pressure will always create some things that are not optimal. In the business we call that `technical debt` and it is time to clean some of that up. In the meeting on Sunday you have created a list of things to work on! As there is nothing assigned, it is important to communicate with each other what you are working on so that work is only done once.
+Trabalhar em grupo sob pressão sempre criará algumas coisas que não são ideais. No negócio chamamos isso de 'dívida técnica' e é hora de limpar um pouco disso. Na reunião de domingo você criou uma lista de coisas para trabalhar! Como não há nada atribuído, é importante comunicar uns aos outros no que você está trabalhando para que o trabalho seja feito apenas uma vez.
 
-During clean up you will probably also encounter some more problems in the code/app as you now take a closer look. Remember the tip to keep your PRs small and focused so if you encounter something, try not to fix it in the same PR but add it to the list to fix later. That way every PR has one focus and is easy to review.
+Durante a limpeza, você provavelmente também encontrará mais alguns problemas no código/aplicativo, pois agora dá uma olhada mais de perto. Lembre-se da dica para manter seus PRs pequenos e focados, portanto, se você encontrar algo, tente não corrigi-lo no mesmo PR, mas adicione-o à lista para corrigir mais tarde. Dessa forma, cada PR tem um foco e é fácil de revisar.
 
-## 2. Final presentation
+## 2. Apresentação final
 
-Everyone who has helped you on the project would love to see what it has become in the end, so on the last Sunday you will hold a presentation to show it off. The guidelines for the presentation are:
+Todos que o ajudaram no projeto adorariam ver o que ele se tornou no final, então no último domingo você fará uma apresentação para mostrá-lo. As orientações para a apresentação são:
 
-- The presentation should be 15 - 20 mins long. Quality over quantity!
-- In addition to being informational, make it fun!
-- It’s up to you to choose who will be featured in the presentation. But make sure 3 people get to speak.
-- Use slides to support your presentation. Make sure the order is logical and the buildup makes sense for outsiders. The slides should contain only a few keywords and images are highly appreciated.
+- A apresentação deve ter de 15 a 20 minutos. Qualidade acima de quantidade!
+- Além de ser informativo, torne-o divertido!
+- Cabe a você escolher quem será apresentado na apresentação. Mas certifique-se de que 3 pessoas falem.
+- Use slides para apoiar sua apresentação. Certifique-se de que a ordem seja lógica e que o acúmulo faça sentido para pessoas de fora. Os slides devem conter apenas algumas palavras-chave e as imagens são muito apreciadas.
 
-The structure of the presentation needs to be as follows:
+A estrutura da apresentação deve ser a seguinte:
 
-- Demo: Introduce the team, showing the UX of the frontend
-- Technical accomplishments: Show the technologies used, what were some of the technological challenges and how did you solve them. The challenge here is to make it as specific as possible. Choose 1 or 2 examples in the application. Ask your mentor for help if needed.
-- Social accomplishments: how did you work in groups, what worked well and what didn’t, what were some of the challenges in the project? Again, please be as specific as possible!
+- Demo: Apresente o time, mostrando o UX do frontend
+- Realizações técnicas: Mostre as tecnologias utilizadas, quais foram alguns dos desafios tecnológicos e como você os resolveu. O desafio aqui é torná-lo o mais específico possível. Escolha 1 ou 2 exemplos no aplicativo. Peça ajuda ao seu mentor, se necessário.
+- Realizações sociais: como você trabalhou em grupo, o que funcionou bem e o que não funcionou, quais foram alguns dos desafios do projeto? Novamente, por favor, seja o mais específico possível!
 
-After the presentation, you will probably get some questions about how it went, what worked and what did not, etc. Anyone in the class can answer these questions, not just the people doing the presentation!
+Após a apresentação, você provavelmente receberá algumas perguntas sobre como foi, o que funcionou e o que não funcionou, etc. Qualquer pessoa da classe pode responder a essas perguntas, não apenas as pessoas que fazem a apresentação!
 
-## 3. (QA) Theory
+## 3. Teoria (QA)
 
-This week we will have some extra QA theory and we are going to talk about abbreviations in testing. We will start with development methods that teams can use to approach testing. You may have naturally already gravitated to one way of working, but now you will learn the name of it. We will also look into
+Esta semana teremos alguma teoria extra de QA e vamos falar sobre abreviações em testes. Começaremos com métodos de desenvolvimento que as equipes podem usar para abordar os testes. Você pode naturalmente já ter gravitado para uma forma de trabalhar, mas agora você aprenderá o nome dela. Também iremos analisar
 
 ### 3.1 BDD/TDD/ATDD
 
-In the agile world, testers need to collaborate and work together with developers, non-technical roles (like Product Owners and Business Analysts) and provide continuous feedback. Behavior-Driven Development (BDD), Test-Driven Development (TDD) and Acceptance Test-Driven Development (TDD) are different testing methods or practices adopted by the team to facilitate the collaboration and continuous feedback. Each method has benefits and serves a specific purpose.
+No mundo ágil, os testadores precisam colaborar e trabalhar em conjunto com desenvolvedores, funções não técnicas (como Product Owners e Business Analysts) e fornecer feedback contínuo. Behavior-Driven Development (BDD), Test-Driven Development (TDD) e Acceptance Test-Driven Development (TDD) são diferentes métodos ou práticas de teste adotados pela equipe para facilitar a colaboração e o feedback contínuo. Cada método tem benefícios e serve a um propósito específico.
 
-More details on BDD, TDD and ATDD covered by the following resources:
+Mais detalhes sobre BDD, TDD e ATDD cobertos pelos seguintes recursos:
 
 - [Behavior-Driven Development](https://www.linkedin.com/learning/behavior-driven-development/collaboration-with-behavior-driven-development-bdd)
-- [BDD in JavaScript](https://www.sitepoint.com/bdd-javascript-cucumber-gherkin/)
-- [What does TDD mean for me, the Tester?](https://www.ministryoftesting.com/dojo/series/the-testing-planet-archive/lessons/what-does-tdd-mean-for-me-the-tester)
-- [Is Acceptance Test Driven Development (ATDD) Worth the Effort?](https://www.ministryoftesting.com/dojo/lessons/is-acceptance-test-driven-development-atdd-worth-the-effort)
-- [BDD vs TDD vs ATDD : Key Differences](https://www.browserstack.com/guide/tdd-vs-bdd-vs-atdd)
+- [BDD em JavaScript](https://www.sitepoint.com/bdd-javascript-cucumber-gherkin/)
+- [O que TDD significa para mim, o testador?](https://www.ministryoftesting.com/dojo/series/the-testing-planet-archive/lessons/what-does-tdd-mean-for-me- o testador)
+- [O desenvolvimento orientado a testes de aceitação (ATDD) vale o esforço?](https://www.ministryoftesting.com/dojo/lessons/is-acceptance-test-driven-development-atdd-worth-the-effort)
+- [BDD vs TDD vs ATDD: principais diferenças](https://www.browserstack.com/guide/tdd-vs-bdd-vs-atdd)
 
-Have a think about how the team is working at the moment and see if it is applying one of these methods.
+Pense em como a equipe está trabalhando no momento e veja se ela está aplicando um desses métodos.
 
-### 3.2 Automation best practices
+### 3.2 Práticas recomendadas de automação
 
-Now that you have written some automation tests you will have probably need to refactor some things as well just like you would do during your curriculum as a developer. Look up the following terms and see if you can apply it to your test suite:
+Agora que você escreveu alguns testes de automação, provavelmente precisará refatorar algumas coisas, assim como faria durante seu currículo como desenvolvedor. Procure os seguintes termos e veja se você pode aplicá-los ao seu conjunto de testes:
 
-- Page objects
-- Fixers
-- Parametrised tests
+- Objetos de página
+- Fixadores
+- Testes parametrizados
 
-## 4. General assessment
+## 4. Avaliação geral
 
-This week you will also get a post in the class channel to schedule a time for your general assessment. Read more about it in the [week7 tasks](../week7/MAKEME.md). If no post is up, then poke the Education Director!
+Esta semana você também receberá um post no canal da aula para agendar um horário para sua avaliação geral. Leia mais sobre isso nas [tarefas da semana 7](../semana7/MAKEME.md). Se nenhum post estiver no ar, cutuque o Diretor de Educação!

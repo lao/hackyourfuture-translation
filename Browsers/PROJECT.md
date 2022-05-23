@@ -1,78 +1,78 @@
-# The Group Project
+# O Projeto do Grupo
 
-The goal of the project is to combine everything you have learned into a practical example to show you what you can already do with the knowledge you have! We also want to introduce you to working in a team and will provide you with a mentor that will guide you through this process. In the end it will be a variation of something like the following (a project made by some of the students of class 31):
+O objetivo do projeto é combinar tudo o que você aprendeu em um exemplo prático para mostrar o que você já pode fazer com o conhecimento que tem! Também queremos apresentá-lo ao trabalho em equipe e fornecer um mentor que o guiará nesse processo. No final será uma variação de algo como o seguinte (um projeto feito por alguns alunos da turma 31):
 
 [![JS-quiz](assets/js-quiz.png)](https://88kiwan.github.io/quiz_app/index.html)
 
-## The plan
+## O plano
 
-The projects starts on the Sunday of week 2. On Sunday, you will be divided into your groups and connected to a mentor who will explain the beginning codebase and how you are going to be working together. For the next week (until the Sunday of week 3) you will get to feel like a developer who is building features for a new website! There will be standups with your group, you will be looking at each others' code and you will be helping each other build as cool a version as you can! At the end you will be demoing your application to the others and you can ask each other how certain features were implemented. On the last few days you can then adjust your code based on feedback and prepare for the technical interview where we will be asking you about the code. These kinds of interviews are very similar to what you will encounter when you start looking for a job so it is a good time to already start practicing.
+Os projetos começam no domingo da semana 2. No domingo, vocês serão divididos em seus grupos e conectados a um mentor que explicará a base de código inicial e como vocês trabalharão juntos. Na próxima semana (até o domingo da semana 3), você se sentirá como um desenvolvedor que está criando recursos para um novo site! Haverá stand-ups com o seu grupo, vocês estarão olhando o código uns dos outros e estarão ajudando uns aos outros a construir uma versão tão legal quanto possível! No final, você fará uma demonstração do seu aplicativo para os outros e poderá perguntar uns aos outros como determinados recursos foram implementados. Nos últimos dias, você pode ajustar seu código com base no feedback e se preparar para a entrevista técnica em que perguntaremos sobre o código. Esses tipos de entrevistas são muito semelhantes ao que você encontrará quando começar a procurar um emprego, por isso é um bom momento para começar a praticar.
 
-To make it nice and visual this is the schedule:
+Para torná-lo agradável e visual, este é o cronograma:
 
 ![Weekflow](assets/project-weeks.png)
 
-## The project repository
-You can have a look at the base project repository over [here](https://github.com/HackYourFuture/browser-quiz-project-starter). Your mentor will (either himself, or ask one of you) to be cloning this repository to provide the space that your team will be combining code. There is a base folder structure as well as website given, but feel free to change anything you want. This is your group's project and you can adjust it to your liking!
+## O repositório do projeto
+Você pode dar uma olhada no repositório do projeto base [aqui](https://github.com/HackYourFuture/browser-quiz-project-starter). Seu mentor (ou ele mesmo ou pedirá a um de vocês) clonar este repositório para fornecer o espaço que sua equipe estará combinando código. Existe uma estrutura de pastas base, bem como um site fornecido, mas sinta-se à vontade para alterar o que quiser. Este é o projeto do seu grupo e você pode ajustá-lo ao seu gosto!
 
-### The folder structure
-A question we get a lot is `is there a standard folder structure?` or `is this the way all projects are organised?` and the answer to both is no. There is no best way to organise code and this comes down to the project as well as the framework(s) you are using. The thing to keep in mind is why we split files into folders. There is a great answer to this question by Max Fisher [here](https://www.quora.com/Why-do-you-want-to-split-your-program-code-into-multiple-files) that says:
+### A estrutura de pastas
+Uma pergunta que recebemos muito é `existe uma estrutura de pastas padrão?` ou `é assim que todos os projetos são organizados?` e a resposta para ambas é não. Não há melhor maneira de organizar o código e isso se resume ao projeto, bem como ao(s) framework(s) que você está usando. A coisa a ter em mente é por que dividimos os arquivos em pastas. Há uma ótima resposta para esta pergunta de Max Fisher [aqui](https://www.quora.com/Why-do-you-want-to-split-your-program-code-into-multiple-files) que diz:
 
->It is basic organisation. Imagine a library would glue every new book to a stack of the old ones. Lord of the Rings would turn from a door stopper to a door. After defeating Sauron, the reader would smoothly transition to The Little Mermaid, before plunging into 50 Shades of Grey.
+>É uma organização básica. Imagine que uma biblioteca colaria cada novo livro em uma pilha dos antigos. O Senhor dos Anéis passaria de um batente de porta para uma porta. Depois de derrotar Sauron, o leitor faria uma transição suave para A Pequena Sereia, antes de mergulhar em 50 Tons de Cinza.
 
->Small files are easier to stomach. If every file serves only one topic, you know quickly where to look. You also immediately know what does not belong to the topic, without having to read through commentary.
+>Arquivos pequenos são mais fáceis de digerir. Se cada arquivo servir apenas a um tópico, você saberá rapidamente onde procurar. Você também sabe imediatamente o que não pertence ao tópico, sem ter que ler os comentários.
 
->Multiple files allow for non-linear organisation. The building blocks of a program rarely follow a single, linear chain of interactions. Loosely coupled components are easily represented by individual files, and folders allow to add external structure.
+>Vários arquivos permitem uma organização não linear. Os blocos de construção de um programa raramente seguem uma única cadeia linear de interações. Componentes fracamente acoplados são facilmente representados por arquivos individuais, e as pastas permitem adicionar estrutura externa.
 
->Distinct files are easier to reorganise. As complexity grows, components move to sub packages, and sometimes you just need to clean up. A file can simply be moved as a whole. Copy/Pasting to migrate code is more work, especially if you have tacked on all the structuring manually.
+>Arquivos distintos são mais fáceis de reorganizar. À medida que a complexidade aumenta, os componentes são movidos para subpacotes e, às vezes, você só precisa limpar. Um arquivo pode simplesmente ser movido como um todo. Copiar/colar para migrar código é mais trabalhoso, especialmente se você tiver adicionado toda a estruturação manualmente.
 
->Individual files are easier to track. Code is ideally in a version control system. Knowing that backend/datastore/fileio.cpp changed is already quite informative, and lets you know whether the change is relevant for you. If everything is a single file, you get line 254–378 in app.cpp changed, and have to look up the context yourself.
+>Arquivos individuais são mais fáceis de rastrear. O código está idealmente em um sistema de controle de versão. Saber que backend/datastore/fileio.cpp mudou já é bastante informativo e permite que você saiba se a alteração é relevante para você. Se tudo for um único arquivo, você obterá a linha 254–378 em app.cpp alterada e terá que pesquisar o contexto você mesmo.
 
-Basically, a single file is easy to write. Multiple files are much easy to read, maintain and manage. For software development, the later is much more important. Even if you are working alone, future-you does not know everything that past-you has done.
+Basicamente, um único arquivo é fácil de escrever. Vários arquivos são muito fáceis de ler, manter e gerenciar. Para o desenvolvimento de software, o último é muito mais importante. Mesmo se você estiver trabalhando sozinho, no futuro - você não sabe tudo o que o passado - você fez.
 
-This also means that the folder structure can change as your application changes, as long as you keep the basic principles in mind: you want to separate code into logical parts and similarly want to separate your files into logical folders so that it helps you identify what each file is responsible for. This will make bigger code bases more manageable for teams as well as your future self.
+Isso também significa que a estrutura de pastas pode mudar à medida que seu aplicativo muda, contanto que você mantenha os princípios básicos em mente: você deseja separar o código em partes lógicas e, da mesma forma, deseja separar seus arquivos em pastas lógicas para ajudá-lo a identificar o que cada arquivo é responsável. Isso tornará bases de código maiores mais gerenciáveis para as equipes, bem como para o seu futuro eu.
 
-Having explained that, the readme in the project repo explains the initial folder [structure](https://github.com/HackYourFuture/browser-quiz-project-starter#structure) this application is using. If you as a group want to reorganise it, that is also fine, as long as you can explain the logic behind it!
+Tendo explicado isso, o readme no repositório do projeto explica a pasta inicial [structure](https://github.com/HackYourFuture/browser-quiz-project-starter#structure) que este aplicativo está usando. Se você como um grupo quiser reorganizá-lo, tudo bem, contanto que você possa explicar a lógica por trás disso!
 
-### The requirements
-In general we want to give you a little freedom on what you want to build, but there are a couple of requirements that the final project should adhere to:
+### Os requisitos
+Em geral, queremos dar a você um pouco de liberdade sobre o que você deseja construir, mas há alguns requisitos que o projeto final deve seguir:
 
-- The project needs to be a quiz
-- The quiz needs to require the user to answer 10 questions
-- Every question in the quiz needs to have 4 answers
-- There needs to be a button to go to the next question
-- The project needs to be deployed somewhere so that we can see it (before the last Sunday)
+- O projeto precisa ser um quiz
+- O questionário precisa exigir que o usuário responda 10 perguntas
+- Cada pergunta no quiz precisa ter 4 respostas
+- Precisa haver um botão para ir para a próxima pergunta
+- O projeto precisa ser implantado em algum lugar para que possamos vê-lo (antes do último domingo)
 
-#### Features
-In the project repository there is also a [backlog](https://github.com/HackYourFuture/browser-quiz-project-starter#backlog). See this as a guide, the `must-have`'s are required, the `nice-to-have`'s are suggestions for extra features, but feel free to think of your own.
+#### Recursos
+No repositório do projeto também há um [backlog](https://github.com/HackYourFuture/browser-quiz-project-starter#backlog). Veja isso como um guia, os `must-have`'s são obrigatórios, os `nice-to-have`'s são sugestões de recursos extras, mas sinta-se à vontade para pensar em seus próprios.
 
-## The presentation
-On the last Sunday every group will present their project to the others. The presentation should be a maximum of 15 minutes in which you do the following:
+## A apresentação
+No último domingo cada grupo apresentará seu projeto aos demais. A apresentação deverá ter um máximo de 15 minutos em que faça o seguinte:
 
-- Demo the application, showing all the features you built
-- Go through the code base, explain the files you made and what does what
-- Highlight one feature and explain how that feature was implemented
+- Demo do aplicativo, mostrando todos os recursos que você construiu
+- Percorra a base de código, explique os arquivos que você fez e o que faz o quê
+- Destaque um recurso e explique como esse recurso foi implementado
 
-The rest of the group, including the mentors will give your team feedback on your application and your code. Write these things down, as you will be fixing that in the 2 days after the presentation.
+O restante do grupo, incluindo os mentores, dará feedback à sua equipe sobre seu aplicativo e seu código. Anote essas coisas, pois você estará corrigindo isso nos 2 dias após a apresentação.
 
-## The interview
-At the end of the module you will have a mock tech interview as the test for this module. The structure of these interviews are generally as follows:
+## A entrevista
+No final do módulo, você terá uma entrevista técnica simulada como teste para este módulo. A estrutura dessas entrevistas geralmente é a seguinte:
 
-- You will first be asked some concept questions. Stuff like: 'What is the DOM?' 'What does an event listener do?', etc.
-- You will then be asked to share your screen and demo the project. Make it short, only a couple of minutes and pretend like you are presenting it to someone who has never seen it before.
-- We will ask you to demo the code. Generally you want to:
-    - explain the folder structure of the project (everything in the 'src' folder). What are the files in each folder responsible for?
-    - choose one or two feature(s) of your app and go through how that feature is implemented
-- During or after your code demo we will ask you about certain lines of code. Questions like: 'What does this line do?', 'Why did you implement it like this?', 'Why did you use a switch statement here?', etc.
+- Em primeiro lugar, serão feitas algumas perguntas conceituais. Coisas como: 'O que é o DOM?' 'O que um ouvinte de eventos faz?', etc.
+- Você será solicitado a compartilhar sua tela e demonstrar o projeto. Faça-o curto, apenas alguns minutos e finja que o está apresentando a alguém que nunca o viu antes.
+- Pediremos que você demonstre o código. Geralmente você quer:
+    - explicar a estrutura de pastas do projeto (tudo na pasta 'src'). Quais são os arquivos em cada pasta responsáveis?
+    - escolha um ou dois recursos do seu aplicativo e veja como esse recurso é implementado
+- Durante ou após a demonstração do código, perguntaremos a você sobre determinadas linhas de código. Perguntas como: 'O que esta linha faz?', 'Por que você a implementou assim?', 'Por que você usou uma instrução switch aqui?', etc.
 
-### Browsers module specific
-In the Browsers module we add one more step to the interview:
+### Módulo de navegadores específico
+No módulo Browsers adicionamos mais um passo à entrevista:
 
-- In the end we will pick a feature that your group did not implement and ask you to broadly explain what needs to be done to implement that feature.
+- No final, escolheremos um recurso que seu grupo não implementou e pediremos que você explique amplamente o que precisa ser feito para implementar esse recurso.
 
-### Preparation
-To prepare yourself best, here are some tips:
-- Practice the demonstration of your project and your code, make sure it is short and concise
-- Be able to share your screen and have your project open locally (and make sure it still works)
-- Go through the code of the project and make sure you understand how it works
-- Look at the other features in the project repository and get an idea of what is needed to implement them
+### Preparação
+Para se preparar melhor, aqui estão algumas dicas:
+- Pratique a demonstração do seu projeto e do seu código, certifique-se de que seja curto e conciso
+- Ser capaz de compartilhar sua tela e ter seu projeto aberto localmente (e certificar-se de que ainda funciona)
+- Percorra o código do projeto e certifique-se de entender como ele funciona
+- Veja os outros recursos no repositório do projeto e tenha uma ideia do que é necessário para implementá-los
