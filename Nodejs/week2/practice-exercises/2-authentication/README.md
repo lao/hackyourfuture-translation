@@ -1,33 +1,33 @@
-# Authentication
+# Autenticação
 
-So far all the APIs we used would happily respond to any request. In reality, most APIs hold sensitive information that should not be accessible for everyone.
+Até agora, todas as APIs que usamos responderiam com prazer a qualquer solicitação. Na realidade, a maioria das APIs contém informações confidenciais que não devem ser acessíveis a todos.
 
-In order to guard the data APIs use some way to `authenticate` the user. To authenticate essentially means: to verify the identity of the user. Does the server "know" them, or is it a complete stranger?
+Para proteger os dados, as APIs usam alguma forma de `autenticar` o usuário. Autenticar significa essencialmente: verificar a identidade do usuário. O servidor os "conhece" ou é um completo estranho?
 
-The simplest form of authentication is appropriately called _basic_. Similarly to how you log in to a website, the basic authentication expect a username and a password. This is sent in the request as part of the header, under the type: `Authorization`. The content of the header is: `Basic <username>:<password>`.
+A forma mais simples de autenticação é apropriadamente chamada de _basic_. Da mesma forma que você faz login em um site, a autenticação básica espera um nome de usuário e uma senha. Isso é enviado na solicitação como parte do cabeçalho, sob o tipo: `Autorização`. O conteúdo do cabeçalho é: `Basic <username>:<password>`.
 
-Naturally, there is catch. The username and password are not sent as plain text, but need to be encoded in base64, which is a way of encoding text for use in HTTP.
+Naturalmente, há captura. O nome de usuário e a senha não são enviados como texto simples, mas precisam ser codificados em base64, que é uma forma de codificação de texto para uso em HTTP.
 
-For this exercise you'll make an API request using Node.js. You'll be making a request to an API that requires you to authenticate yourself.
+Para este exercício, você fará uma solicitação de API usando o Node.js. Você fará uma solicitação a uma API que exige que você se autentique.
 
-The API can be found at https://restapiabasicauthe-sandbox.mxapps.io/api/books. In order to use it, you need to use the credentials `admin:hvgX8KlVEa` to authenticate.
+A API pode ser encontrada em https://restapiabasicauthe-sandbox.mxapps.io/api/books. Para usá-lo, você precisa usar as credenciais `admin:hvgX8KlVEa` para autenticar.
 
-Follow the steps:
+Siga os passos:
 
-1. Visit https://www.base64encode.org/ to convert the following credentials to base64 encoding:
+1. Visite https://www.base64encode.org/ para converter as seguintes credenciais para codificação base64:
 
-```md
-admin:hvgX8KlVEa
+``` md
+administrador:hvgX8KlVEa
 ```
 
-2. Set the Authorization header and API URL in the GET request (use `node-fetch`)
+2. Defina o cabeçalho de autorização e o URL da API na solicitação GET (use `node-fetch`)
 
-```js
+``` js
 fetch(<INSERT_API_URL>, {
-    headers: { 'Authorization': 'Basic <INSERT_BASE64_CREDENTIALS>' }
+    headers: { 'Autorização': 'Básico <INSERT_BASE64_CREDENTIALS>' }
   });
 ```
 
-3. Print the response to the console
+3. Imprima a resposta no console
 
-Use `async/await` and `try/catch`
+Use `async/await` e `try/catch`

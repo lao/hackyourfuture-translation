@@ -1,170 +1,170 @@
-# Homework Node.js Week 2
+# Homework Node.js Semana 2
 
-## Todo List
+## Lista de afazeres
 
-1. Prep exercises
-2. Practice exercises
-3. PROJECT: HackYourTemperature II
-4. Code alongs
-5. Optional: Side project ideas
+1. Exercícios de preparação
+2. Pratique exercícios
+3. PROJETO: HackYourTemperature II
+4. Código junto
+5. Opcional: ideias de projetos paralelos
 
-## **1. Prep exercises**
+## **1. Exercícios de preparação**
 
-> Prep exercises are exercises that you should work on _before_ the session on Sunday. These are a little more difficult or show an important concept and as such are a great exercise to talk about with your mentor. Have a solution ready by Sunday as you may be asked to show what you did.
+> Exercícios de preparação são exercícios que você deve trabalhar _antes_ da sessão de domingo. Estes são um pouco mais difíceis ou mostram um conceito importante e, como tal, são um ótimo exercício para conversar com seu mentor. Tenha uma solução pronta até domingo, pois pode ser solicitado que você mostre o que fez.
 
-Inside your `Node.js` fork, go to the folder `week2`. Inside of that folder, navigate to `/prep-exercises`. For each exercise, you will find a separate folder. The `README` explains what needs to be done. There will also be some questions at the bottom to think about. Go through them _before_ the session on Sunday as it will be covered then.
+Dentro do seu fork `Node.js`, vá para a pasta `week2`. Dentro dessa pasta, navegue até `/prep-exercises`. Para cada exercício, você encontrará uma pasta separada. O `README` explica o que precisa ser feito. Haverá também algumas perguntas na parte inferior para pensar. Passe por eles _antes_ da sessão no domingo, pois será coberto então.
 
-## **2. Practice exercises**
+## **2. Pratica exercícios**
 
-Inside of your `Node.js` fork, go to the folder `week2`. Inside of that folder, navigate to `/practice-exercises`. For each exercise, you will find a separate folder. The `README` explains what needs to be done. Go through them to practice concepts that you have learned about!
+Dentro do seu fork `Node.js`, vá para a pasta `week2`. Dentro dessa pasta, navegue até `/practice-exercises`. Para cada exercício, você encontrará uma pasta separada. O `README` explica o que precisa ser feito. Passe por eles para praticar os conceitos que você aprendeu!
 
-## **3. PROJECT: HackYourTemperature II**
+## **3. PROJETO: HackYourTemperature II**
 
-> This week you'll continue building on `HackYourTemperature`. Use the same folder from the previous week.
+> Esta semana você continuará desenvolvendo o `HackYourTemperature`. Use a mesma pasta da semana anterior.
 
-So far you've build a basic web server. We've loaded in the necessary modules. We have an `end point`, which is `/`. We have activated the server, by `listening` to a port number. And we have created a `POST` request to handle input from the user.
+Até agora você construiu um servidor web básico. Carregamos os módulos necessários. Temos um `end point`, que é `/`. Ativamos o servidor, `escutando` um número de porta. E criamos uma solicitação `POST` para lidar com a entrada do usuário.
 
-This week's homework we will expand on that, in 2 parts:
+A lição de casa desta semana vamos expandir isso, em 2 partes:
 
-1. We will connect our API to an external API to grab the data we want.
-2. We are going to add tests to our API to ensure that it works as intended.
+1. Vamos conectar nossa API a uma API externa para pegar os dados que queremos.
+2. Vamos adicionar testes à nossa API para garantir que ela funcione conforme o esperado.
 
-### 3.1 Add external API
+### 3.1 Adicionar API externa
 
-Our external API that we're going to work with is the [Open Weather Map API](https://openweathermap.org/). The goal of this part is to learn how to make an API request from the backend, and then to send the result to the frontend.
+Nossa API externa com a qual vamos trabalhar é a [Open Weather Map API](https://openweathermap.org/). O objetivo desta parte é aprender como fazer uma solicitação de API do back-end e, em seguida, enviar o resultado para o front-end.
 
-#### 3.1.1 Setting up the API
+#### 3.1.1 Configurando a API
 
-1. We first have to make an account: do so via [the website](https://openweathermap.org/appid)
-2. Go back to your project folder and create a new folder called `sources`. Inside create a file called `keys.js`. Go to your OpenWeatherMap account, find the API Key and copy it into a `keys.js` object with the property name `API_KEY`. Don't forget to export it
+1. Primeiro temos que fazer uma conta: faça isso através do [site](https://openweathermap.org/appid)
+2. Volte para a pasta do seu projeto e crie uma nova pasta chamada `sources`. Dentro crie um arquivo chamado `keys.js`. Vá para sua conta OpenWeatherMap, encontre a API Key e copie-a em um objeto `keys.js` com o nome da propriedade `API_KEY`. Não se esqueça de exportá-lo
 
-#### 3.1.2 Fetch it from our API
+#### 3.1.2 Busque em nossa API
 
-1. Remove the response from the `POST` route from last week, we'll rewrite it later
-2. Inside of the the `POST` route, bring in `node-fetch` and pass the value of the API endpoint: `https://api.openweathermap.org/data/2.5/weather`. For it to work we first have to import the keys, like so:
+1. Remova a resposta da rota "POST" da semana passada, vamos reescrevê-la mais tarde
+2. Dentro da rota `POST`, insira `node-fetch` e passe o valor do endpoint da API: `https://api.openweathermap.org/data/2.5/weather`. Para que funcione, primeiro temos que importar as chaves, assim:
 
-```js
-import keys from "./sources/keys.js";
+``` js
+importar chaves de "./sources/keys.js";
 ```
 
-Then we can use that object to fetch the information, like so:
+Então podemos usar esse objeto para buscar as informações, assim:
 
-```js
+``` js
 fetch(`https://api.openweathermap.org/data/2.5/weather?APPID=${keys.API_KEY}`);
 ```
 
-Now we have to send the city name provided by the user, have a look at the documentation on how to do that. There are 2 situations that could happen: if the city name is not found, we want to send to the client a response with a message that the city isn't found. However, if the city is found and then we want to return a message that contains the city name and current temperature.
+Agora temos que enviar o nome da cidade fornecido pelo usuário, dê uma olhada na documentação de como fazer isso. Existem 2 situações que podem acontecer: se o nome da cidade não for encontrado, queremos enviar ao cliente uma resposta com uma mensagem de que a cidade não foi encontrada. No entanto, se a cidade for encontrada e queremos retornar uma mensagem que contenha o nome da cidade e a temperatura atual.
 
-3. If the result is not found, we send back an object: `{ weatherText: "City is not found!" }`
-4. If the result is found, we also send back the object. Only, instead of just a string `City is not found!` dynamically add in the `cityName` and temperature (gotten from the result of the API call). Hint: use template strings to add variables in your strings!
+3. Se o resultado não for encontrado, enviamos de volta um objeto: `{ weatherText: "City is not found!" }`
+4. Se o resultado for encontrado, também devolvemos o objeto. Apenas, em vez de apenas uma string `City is not found!`, adicione dinamicamente o `cityName` e a temperatura (obtida do resultado da chamada da API). Dica: use strings de modelo para adicionar variáveis em suas strings!
 
-Check that this works as expected!
+Verifique se isso funciona como esperado!
 
-### 3.2 Adding test cases
+### 3.2 Adicionando casos de teste
 
-Now that we have the basics of our API working it is time to write the test cases that will ensure that any changes we make will not break the app. To do that we will be adding a library called `supertest` to test http requests as well as the test framework of choice for this curriculum `jest`.
+Agora que temos o básico de nossa API funcionando, é hora de escrever os casos de teste que garantirão que quaisquer alterações que fizermos não quebrem o aplicativo. Para fazer isso, adicionaremos uma biblioteca chamada `supertest` para testar solicitações http, bem como o framework de teste escolhido para este currículo `jest`.
 
-1. Install both libraries as a developer dependency. We don't need our tests in production so we make sure to only have them as dev dependencies!
-2. Create a new folder called `__tests__`, this is the default folder where `jest` looks for our test files. Then add a `app.test.js` file to write our tests in.
-3. Have a look at your JavaScript code to remind yourself what `describe`, `it` and `expect` did again and set up a simple test:
+1. Instale ambas as bibliotecas como uma dependência do desenvolvedor. Nós não precisamos de nossos testes em produção, então nos certificamos de tê-los apenas como dependências de desenvolvimento!
+2. Crie uma nova pasta chamada `__tests__`, esta é a pasta padrão onde o `jest` procura por nossos arquivos de teste. Em seguida, adicione um arquivo `app.test.js` para escrever nossos testes.
+3. Dê uma olhada no seu código JavaScript para se lembrar do que `describe`, `it` e `expect` fizeram novamente e configure um teste simples:
 
-```js
+``` js
 describe("POST /", () => {
-  it("Quick test", () => {
+  it("Teste rápido", () => {
     expect(1).toBe(1);
   });
 });
 ```
 
-Setup a test script in your `package.json` to check that it works! You should get no errors and 1 passing test.
+Configure um script de teste em seu `package.json` para verificar se funciona! Você não deve obter erros e 1 teste de aprovação.
 
-#### 3.2.1. Configuring jest with supertest
+#### 3.2.1. Configurando jest com supertest
 
-Jest is a JavaScript testing framework, but `express`, `node-fetch` and `supertest` are a little more than just JavaScript. So we need to do some extra configuration.
+Jest é um framework de teste JavaScript, mas `express`, `node-fetch` e `supertest` são um pouco mais do que apenas JavaScript. Então, precisamos fazer alguma configuração extra.
 
-The first problem is that we use `modules` and `modernJS`. Jest in of itself does not understand this and we need to set up `babel` to convert our code into plain JavaScript. `Babel` is something you will probably have set up in all of your applications, but it is done under the hood a lot of times. This time we are going to get our hands dirty!
+O primeiro problema é que usamos `modules` e `modernJS`. O Jest por si só não entende isso e precisamos configurar o `babel` para converter nosso código em JavaScript simples. `Babel` é algo que você provavelmente terá configurado em todos os seus aplicativos, mas é feito sob o capô muitas vezes. Desta vez vamos sujar as mãos!
 
-1. Install `babel-jest` and `@babel/preset-env` as developer dependencies. These are babel packages that are made to help `jest` compile
-2. Copy over the `babel.config.cjs` and `jest.config.js` files in the `config-files` folder to the `hackyourtemperature` folder. There are some comments in there explaining what we are configuring, but it will be hard to know how it all fits together. That is out of scope for now, but if you are interested you can do some research!
-3. Restart `jest` so that it can pick up the new `config` files
+1. Instale `babel-jest` e `@babel/preset-env` como dependências do desenvolvedor. Estes são pacotes babel que são feitos para ajudar o `jest` a compilar
+2. Copie os arquivos `babel.config.cjs` e `jest.config.js` na pasta `config-files` para a pasta `hackyourtemperature`. Há alguns comentários explicando o que estamos configurando, mas será difícil saber como tudo se encaixa. Isso está fora do escopo por enquanto, mas se você estiver interessado, pode fazer uma pesquisa!
+3. Reinicie o `jest` para que ele possa pegar os novos arquivos `config`
 
-The second problem is that tests in jest run asynchronously and whenever we will run multiple tests at the same time our server's code will start our application using the same port.
+O segundo problema é que os testes no jest são executados de forma assíncrona e sempre que executarmos vários testes ao mesmo tempo, o código do nosso servidor iniciará nossa aplicação usando a mesma porta.
 
-1. So figure out a way to split up your `server.js` code into a `app.js` and `server.js` file so that our tests can grab the Express app without it starting the server. Your `server.js` should be as small as possible, just grabbing the app and starting it on a port
-2. Check that this all works by adding the following imports to your `app.test.js` file:
+1. Então descubra uma maneira de dividir seu código `server.js` em um arquivo `app.js` e `server.js` para que nossos testes possam pegar o aplicativo Express sem que ele inicie o servidor. Seu `server.js` deve ser o menor possível, basta pegar o aplicativo e iniciá-lo em uma porta
+2. Verifique se tudo isso funciona adicionando as seguintes importações ao seu arquivo `app.test.js`:
 
-```js
-import app from "../app.js";
-import supertest from "supertest";
+``` js
+importar aplicativo de "../app.js";
+importar superteste de "supertest";
 
 const request = supertest(app);
 ```
 
-Run your tests again and you should get a green passing test again without any errors.
+Execute seus testes novamente e você deverá obter um teste de aprovação verde novamente sem erros.
 
-If you get a `cannot use import outside a module` error, that means that the `babel` setup has gone wrong. Make sure you have the latest version of Node and that the config files are being used. You can check if the files are being used by adding a syntax error to the file. If you get the same error then the config files are not being compiled.
+Se você receber um erro `não pode usar a importação fora de um módulo`, isso significa que a configuração do `babel` deu errado. Verifique se você tem a versão mais recente do Node e se os arquivos de configuração estão sendo usados. Você pode verificar se os arquivos estão sendo usados adicionando um erro de sintaxe ao arquivo. Se você receber o mesmo erro, os arquivos de configuração não estão sendo compilados.
 
-#### 3.2.2 Writing the tests
+#### 3.2.2 Escrevendo os testes
 
-Now comes the fun part, it is time to write your tests. Think about what needs to be tested! Remember that the happy path is just a small part of your api. What if the user does not give a cityName? What if the cityName is gibberish?
+Agora vem a parte divertida, é hora de escrever seus testes. Pense no que precisa ser testado! Lembre-se de que o caminho feliz é apenas uma pequena parte da sua API. E se o usuário não fornecer um cityName? E se o nome da cidade for sem sentido?
 
-Per test, create a new `it` with a nice descriptive title. That is the title you will see in the console so it should be clear what is going wrong from there.
+Por teste, crie um novo `it` com um bom título descritivo. Esse é o título que você verá no console, portanto, deve ficar claro o que está acontecendo de errado a partir daí.
 
-Some hints:
+Algumas dicas:
 
-- The `request` variable we created by calling `supertest(app)` has functions on it called `get`, `post`, etc. So to send a `POST` request you would write `request.post('/your-endpoint')`.
-- To send a body with your request, you can chain a `.send({ your: 'object' })` to the promise given by the `post` function
-- One of your tests will not give a fixed result but a dynamic one (namely the temperature that will change). Usually you will want to mock the API code, but that is out of the scope of this exercise. For now think about checking that the string 'contains' parts that you need. (If you ever find some time and want to look into how to do this, have a look at the jest documentation on mocking modules)
-- Don't forget to check the status code!
+- A variável `request` que criamos chamando `supertest(app)` tem funções nela chamadas `get`, `post`, etc. Então para enviar um pedido `POST` você escreveria `request.post('/your -endpoint')`.
+- Para enviar um corpo com sua requisição, você pode encadear um `.send({ your: 'object' })` para a promessa dada pela função `post`
+- Um de seus testes não dará um resultado fixo, mas dinâmico (ou seja, a temperatura que mudará). Normalmente, você desejará zombar do código da API, mas isso está fora do escopo deste exercício. Por enquanto, pense em verificar se a string 'contém' as partes que você precisa. (Se você encontrar algum tempo e quiser ver como fazer isso, dê uma olhada na documentação do jest sobre módulos de simulação)
+- Não se esqueça de verificar o código de status!
 
-Once all your tests are green you can be sure that everything works as expected! Have a look at your code and clean it up, if you wrote your tests well, then all you need to do at the end is run your test script to see if you did not break anything.
+Quando todos os seus testes estiverem verdes, você pode ter certeza de que tudo funciona conforme o esperado! Dê uma olhada no seu código e limpe-o, se você escreveu bem seus testes, tudo o que você precisa fazer no final é executar seu script de teste para ver se você não quebrou nada.
 
-## **4. Code alongs**
+## **4. Código junto**
 
-> Remember to upload the end code of all code alongs to your Github profile so that you can refer back to it anytime!
+> Lembre-se de enviar o código final de todos os códigos para o seu perfil do Github para que você possa consultá-lo a qualquer momento!
 
-### 4.1 Library API
+### 4.1 API de biblioteca
 
-Our mentor Andrej has created his own code along to build a Library API. Way to go above and beyond! Have a look and code along to go through all the steps of an API in its simplest form.
+Nosso mentor Andrej criou seu próprio código para construir uma API de biblioteca. Caminho para ir além! Dê uma olhada e codifique para passar por todas as etapas de uma API em sua forma mais simples.
 
-- [Library API](https://www.youtube.com/watch?v=PVb_vIyw4HI)
+- [API da biblioteca](https://www.youtube.com/watch?v=PVb_vIyw4HI)
 
-### 4.2 Ebook Sales application
+### 4.2 Aplicativo de vendas de e-books
 
-In this application you'll be building an Ebook Sales Application. You'll make it possible to add new books to a list of books. You'll even learn how to put it out online, so you can get a URL that you can use to access your application anywhere.
+Neste aplicativo você estará construindo um Aplicativo de Vendas de Ebooks. Você tornará possível adicionar novos livros a uma lista de livros. Você aprenderá até mesmo como colocá-lo online, para que possa obter um URL que pode ser usado para acessar seu aplicativo em qualquer lugar.
 
-Enjoy!
+Aproveitar!
 
-- [Ebook Sales Application](https://www.youtube.com/watch?v=QT3_zT97_1g)
+- [Aplicativo de vendas de e-books](https://www.youtube.com/watch?v=QT3_zT97_1g)
 
-## **5. Optional: Side project ideas**
+## **5. Opcional: ideias de projetos paralelos**
 
-> A part of the HackYourFuture curriculum is to work on as many side projects as you can throughout the time you have. This is a nice way to add extra knowledge to your arsenal and show in your CV that you are motivated to learn new technologies. This is also a great time to learn new things as there are plenty of mentors available to help you out in the `#projects` channel on Slack! You will not get this amount of time and support once you start working. Have a look at the [hyf_projects repo](https://github.com/HackYourFuture/hyf_projects/blob/main/README.md#project-2-a-try-out-application) for more details.
+> Uma parte do currículo do HackYourFuture é trabalhar em tantos projetos paralelos quanto possível ao longo do tempo que você tem. Esta é uma boa maneira de adicionar conhecimento extra ao seu arsenal e mostrar em seu currículo que você está motivado para aprender novas tecnologias. Este também é um ótimo momento para aprender coisas novas, pois há muitos mentores disponíveis para ajudá-lo no canal `#projetos` no Slack! Você não terá essa quantidade de tempo e suporte assim que começar a trabalhar. Dê uma olhada no [hyf_projects repo](https://github.com/HackYourFuture/hyf_projects/blob/main/README.md#project-2-a-try-out-application) para mais detalhes.
 
-### 5.1 Document your API!
+### 5.1 Documente sua API!
 
-When using API's in the `Using API's` module you will have noticed that those API's all have extensive documentation on how to use it. As developers like to build tools for everything there are quite a few good tools to semi-automatically document your API from your code! Saves a lot of work and makes sure that you don't forget to update the documentation if the code changes!
+Ao usar API's no módulo `Using API's` você terá notado que todas essas APIs possuem extensa documentação sobre como usá-las. Como os desenvolvedores gostam de construir ferramentas para tudo, existem algumas boas ferramentas para documentar semiautomaticamente sua API a partir do seu código! Economiza muito trabalho e garante que você não esqueça de atualizar a documentação caso o código mude!
 
-Add automatic documentation to your API by using one of these tools (Swagger, apiDoc or docbox)!
+Adicione documentação automática à sua API usando uma dessas ferramentas (Swagger, apiDoc ou docbox)!
 
-### 5.2 Web Sockets
+### 5.2 Soquetes da Web
 
-It is becoming normal that all webpages automatically refresh whenever there is new data available. Think about the live news feeds that tell you when there is a new item, or that there is a new message on twitter. This is all implemented using Web Sockets, where you as a programmer can set up a link between your page and the server.
+Está se tornando normal que todas as páginas da Web sejam atualizadas automaticamente sempre que houver novos dados disponíveis. Pense nos feeds de notícias ao vivo que informam quando há um novo item ou que há uma nova mensagem no twitter. Tudo isso é implementado usando Web Sockets, onde você como programador pode configurar um link entre sua página e o servidor.
 
-Have a go by building a simple full stack chat application with an express websocket server!
+Experimente criar um aplicativo de bate-papo simples de pilha completa com um servidor websocket expresso!
 
 ### 5.3 GraphQL
 
-We focused solely on the REST way of building an API, but there is a different way called `GraphQL`. This allows the frontend to define in their query the data that they want to get back. Very cool, but also quite complex. If you are up for a challenge, try to recreate your project using GraphQL (`express-graphql` package is probably the easiest way)!
+Nós nos concentramos apenas na maneira REST de construir uma API, mas existe uma maneira diferente chamada `GraphQL`. Isso permite que o frontend defina em sua consulta os dados que deseja obter de volta. Muito legal, mas também bastante complexo. Se você está pronto para um desafio, tente recriar seu projeto usando GraphQL (o pacote `express-graphql` é provavelmente a maneira mais fácil)!
 
-## **SUBMIT YOUR HOMEWORK!**
+## ** ENVIE SUA LIÇÃO DE CASA!**
 
-After you've finished your todo list it's time to show us what you got! Upload all your files to your forked repository (same as week 1). Then make a pull request to it.
+Depois de terminar sua lista de tarefas, é hora de nos mostrar o que você tem! Faça upload de todos os seus arquivos para o seu repositório bifurcado (o mesmo da semana 1). Em seguida, faça um pull request para ele.
 
-If you need a refresher, take a look at the following [guide](../hand-in-homework-guide.md) to see how it's done.
+Se você precisar de uma atualização, dê uma olhada no seguinte [guia](../hand-in-homework-guide.md) para ver como isso é feito.
 
-The homework that needs to be submitted is the following:
+A lição de casa que precisa ser enviada é a seguinte:
 
-1. Project: HackYourTemperature II
+1. Projeto: HackYourTemperature II
 
-_Deadline Tuesday 23.59 CET_
+_Prazo terça-feira 23.59 CET_

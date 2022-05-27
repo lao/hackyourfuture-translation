@@ -1,12 +1,12 @@
 1. execute `npm init`
 
-2. explain what has happened
+2. explique o que aconteceu
 
-* package.json
+* pacote.json
 
-3. install express dependency
+3. instale a dependência expressa
 
-4. show what has changed in package.json 
-and node_modules
+4. mostre o que mudou no package.json
+e node_modules
 
-5. run `index.js`
+5. execute `index.js`
