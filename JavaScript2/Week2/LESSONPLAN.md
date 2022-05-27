@@ -1,101 +1,101 @@
-# Lesson Plan JavaScript2 Week 2
+# Plano de aula JavaScript2 Semana 2
 
 ## Agenda
 
-The purpose of this class is to introduce to the student:
+O objetivo desta aula é apresentar ao aluno:
 
-- What synchronous vs. asynchronous processes are
-- What callbacks are and how to write your own
-- How the event loop works
-- Show 3 commonly used array functions (filter, reduce, map)
+- O que são processos síncronos vs. assíncronos
+- O que são callbacks e como escrever o seu próprio
+- Como funciona o loop de eventos
+- Mostrar 3 funções de matriz comumente usadas (filtro, redução, mapa)
 
-## Core concepts
+## Conceitos principais
 
-FIRST HALF (12.00 - 13.30)
+PRIMEIRA METADE (12h00 - 13h30)
 
-## 1. Q&A about last week's concepts & homework
+## 1. Perguntas e respostas sobre os conceitos e trabalhos de casa da semana passada
 
 - DOM
-- DOM manipulation
-- browser defined functions
+- Manipulação DOM
+- funções definidas pelo navegador
 
-Note: You can ask students to explain a concept or summerise the last lecture themselves
+Nota: Você pode pedir aos alunos que expliquem um conceito ou resumir a última aula por conta própria
 
-## 2. What synchronous vs. asynchronous processes are
+## 2. Quais são os processos síncronos vs. assíncronos
 
-### Explanation
+### Explicação
 
-### Example
+### Exemplo
 
-### Exercise
+### Exercício
 
-### Essence
+### Essência
 
-Notes:
+Notas:
 
-- Synchronous refers to a linear execution process: one step at a time
-- Asynchronous helps us do multiple things in parallel
+- Síncrono refere-se a um processo de execução linear: um passo de cada vez
+- Assíncrono nos ajuda a fazer várias coisas em paralelo
 
-## 3. Callbacks
+## 3. Retornos de chamada
 
-### Explanation
+### Explicação
 
-A callback in JavaScript is basically a function(callback) being passed as a parameter to another function which after some point of time would execute the function passed or invoke the callback.
+Um retorno de chamada em JavaScript é basicamente uma função (retorno de chamada) sendo passado como um parâmetro para outra função que, após algum ponto do tempo, executaria a função passada ou invocaria o retorno de chamada.
 
-Callbacks were primarily introduced in JavaScript to achieve asynchronous behaviour
+Os retornos de chamada foram introduzidos principalmente em JavaScript para obter um comportamento assíncrono
 (https://codeburst.io/javascript-what-the-heck-is-a-callback-aba4da2deced)
 
-### Example
+### Exemplo
 
-Consider a situation where person A wishes to go out for a movie with a friend person B one evening. Person A finds out the time and place and now needs to share it with B. A picks up the phone and tries to call B. Let's say that B is currently busy with some work and can't answer the phone. Person A has now got two options. One option is to stay on the line until B picks up the phone and then share the movie details. Or A could drop a voicemail and ask B to **callback** once free.
+Considere uma situação em que a pessoa A deseja ir ao cinema com uma pessoa amiga B uma noite. A pessoa A descobre a hora e o local e agora precisa compartilhar com B. A pega o telefone e tenta ligar para B. Digamos que B está ocupado com algum trabalho e não pode atender o telefone. A pessoa A agora tem duas opções. Uma opção é ficar na linha até que B atenda o telefone e depois compartilhar os detalhes do filme. Ou A pode enviar uma mensagem de voz e pedir a B que **retorne a chamada** uma vez gratuitamente.
 
 ```javascript
-function doHomework(subject, callback) {
-  alert(`Starting my ${subject} homework.`);
-  callback();
+function doHomework(assunto, retorno de chamada) {
+  alert(`Iniciando meu dever de casa ${subject}.`);
+  ligar de volta();
 }
 function alertFinished() {
-  alert('Finished my homework');
+  alert('Terminei meu dever de casa');
 }
-doHomework('math', alertFinished);
+doHomework('matemática', alertFinished);
 ```
 
-more examples (made by Yash): https://github.com/HackYourFuture/JavaScript2/blob/master/assets/callbacks.js
+mais exemplos (feitos por Yash): https://github.com/HackYourFuture/JavaScript2/blob/master/assets/callbacks.js
 
-### Exercise
+### Exercício
 
-#### 1. What will happen?
+#### 1. O que vai acontecer?
 
-#### 2. How to turn the output order around?
+#### 2. Como inverter a ordem de saída?
 
 ```javascript
-function first() {
-  // Simulate a code delay
-  setTimeout(function() {
+função primeiro() {
+  // Simula um atraso de código
+  setTimeout(function(){
     console.log(1);
   }, 500);
 }
-function second() {
+função segundo() {
   console.log(2);
 }
 
-first();
-second();
+primeiro();
+segundo();
 ```
 
-### Essence
+### Essência
 
-you can’t just call one function after another and hope they execute in the right order. Callbacks are a way to make sure certain code doesn’t execute until other code has already finished execution.
+você não pode simplesmente chamar uma função após a outra e esperar que elas sejam executadas na ordem correta. Os retornos de chamada são uma maneira de garantir que determinado código não seja executado até que outro código já tenha concluído a execução.
 
-SECOND HALF (14.00 - 16.00)
+SEGUNDA METADE (14.00 - 16.00)
 
-## 4. Event loops
+## 4. Loops de eventos
 
-### Explanation
+### Explicação
 
 https://github.com/HackYourFuture/fundamentals/blob/master/fundamentals/event_loop.md
 
-### Example
+### Exemplo
 
 ```Javascript
 const bar = () => console.log('bar')
@@ -112,7 +112,7 @@ const foo = () => {
 foo()
 ```
 
-Output:
+Saída:
 
 ```Javascript
 foo
@@ -120,86 +120,86 @@ bar
 baz
 ```
 
-Call stack
+Pilha de chamadas
 ![Call Stack](../assets/call_stack_example.png)
 
-### Exercise
+### Exercício
 
 > [Visualisation of an eventloop](http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D)
 
-### Essence
+### Essência
 
-## 5. filter, reduce, map
+## 5. filtrar, reduzir, mapear
 
-### Explanation
+### Explicação
 
-**map**, **filter** and **reduce** are three array methods that iterate (loop!) over the whole array and preform a computation or a transformation.
-They have in common that they return a new array based on the transformations/calculations.
+**map**, **filter** e **reduce** são três métodos de array que iteram (loop!) em todo o array e realizam um cálculo ou uma transformação.
+Eles têm em comum que retornam um novo array baseado nas transformações/cálculos.
 
-> [MDN definition](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map): The **map()** method creates a new array with the results of calling a provided function on every element in the calling array.
+> [definição de MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map): o método **map()** cria um novo array com o resultados de chamar uma função fornecida em cada elemento na matriz de chamada.
 
-> [MDN definition](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter): The **filter()** method creates a new array with all elements that pass the test implemented by the provided function
+> [definição de MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter): O método **filter()** cria um novo array com todos elementos que passam no teste implementado pela função fornecida
 
-> [MDN definition](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce): The **reduce()** method executes a **reducer** function (that you provide) on each member of the array resulting in a single output value†.
+> [definição de MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce): O método **reduce()** executa um **reducer* * função (que você fornece) em cada membro da matriz, resultando em um único valor de saída†.
 
-Writing the functions yourself: https://github.com/HackYourFuture/fundamentals/blob/master/fundamentals/map_filter.md
+Escrevendo as funções você mesmo: https://github.com/HackYourFuture/fundamentals/blob/master/fundamentals/map_filter.md
 
-### Example
+### Exemplo
 
 ```Javascript
-const numbers = [1, 2, 3, 4];
-const square = x => x * x;
-const squaredNumbers = numbers.map(square);
+const números = [1, 2, 3, 4];
+const quadrado = x => x * x;
+const squaredNumbers = números.map(quadrado);
 
 console.log(squaredNumbers); // -> [ 1, 4, 9, 16 ]
 ```
 
 ```Javascript
-const numbers = [1, 2, 3, 2];
-const isTwo = x => x === 2;
-const Twos = numbers.filter(isTwo);
+const números = [1, 2, 3, 2];
+const éDois = x => x === 2;
+const Dois = números.filtro(isDois);
 
-console.log(Twos); // -> [ 2, 4 ]
+console.log(Dois); // -> [ 2, 4 ]
 ```
 
 ```Javascript
-const numbers = [1, 2, 3, 4];
+const números = [1, 2, 3, 4];
 
-const sum = (a, b) => a + b;
-const total = numbers.xxx(sum, 0);
+soma const = (a, b) => a + b;
+const total = números.xxx(soma, 0);
 
 console.log(total); // -> 10
 ```
 
-### Exercise
+### Exercício
 
-Fill in the xxx with map, filter or reduce:
+Preencha o xxx com map, filter ou reduce:
 
 ```Javascript
-const numbers = [1, 2, 3, 4];
-const doubled = numbers.xxx(item => item * 2);
-console.log(doubled); // [2, 4, 6, 8]
+const números = [1, 2, 3, 4];
+const dobrou = números.xxx(item => item * 2);
+console.log(dobrado); // [2, 4, 6, 8]
 ```
 
 ```Javascript
-const numbers = [1, 2, 3, 4];
+const números = [1, 2, 3, 4];
 
-const times = (a, b) => a * b;
-const total = numbers.xxx(times, 0);
+const vezes = (a, b) => a * b;
+const total = números.xxx(vezes, 0);
 
 console.log(total); // -> 10
 ```
 
 ```Javascript
-const numbers = [1, 2, 3, 4];
-const evens = numbers.xxx(item => item % 2 === 0);
+const números = [1, 2, 3, 4];
+const pares = números.xxx(item => item % 2 === 0);
 console.log(evens); // [2, 4]
 ```
 
-Yash made a very nice exercise (with answers):
+Yash fez um exercício muito legal (com respostas):
 https://github.com/yash-kapila/HYF-JS2-Week2/tree/master/src
 
-### Essence
+### Essência
 
-Easy methodes to transform arrays, wich you'll have to do quite often, while keeping the original array intact.
-You can see it as a shortcut. Of course you can write these methodes yourself many times, but 'they' already did it for you
+Métodos fáceis para transformar arrays, o que você terá que fazer com bastante frequência, mantendo o array original intacto.
+Você pode vê-lo como um atalho. Claro que você pode escrever esses métodos muitas vezes, mas 'eles' já fizeram isso por você

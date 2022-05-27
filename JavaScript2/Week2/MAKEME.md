@@ -1,170 +1,170 @@
-# Homework JavaScript2 Week 2
+# Trabalho de casa JavaScript2 Semana 2
 
-## **Todo list**
+## **Lista de afazeres**
 
-1. Practice the concepts
-2. JavaScript exercises
-3. Code along
-4. PROJECT: The Pomodoro Clock
+1. Pratique os conceitos
+2. Exercícios de JavaScript
+3. Codifique junto
+4. PROJETO: O Relógio Pomodoro
 
-## **1. Practice the concepts**
+## **1. Pratique os conceitos**
 
-Before we head into the exercises, it might be nice to do some interactive exercises first! In the following resource you'll find some exercises that'll teach you all about callbacks and array functions!
+Antes de começarmos os exercícios, pode ser bom fazer alguns exercícios interativos primeiro! No recurso a seguir, você encontrará alguns exercícios que ensinarão tudo sobre retornos de chamada e funções de matriz!
 
-- [Learn JavaScript: Iterators](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-iterators)
+- [Aprenda JavaScript: Iteradores](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-iterators)
 
-## **2. JavaScript exercises**
+## **2. Exercícios de JavaScript**
 
-> Inside of your `JavaScript2` fork, find the folder called `Week2`. Inside of that folder, find the folder called `js-exercises`. In this folder you will find five `.js` files, one for each exercise where you need to write your code. Please use the correct file for the respective exercise.
+> Dentro do seu fork `JavaScript2`, encontre a pasta chamada `Week2`. Dentro dessa pasta, encontre a pasta chamada `js-exercises`. Nesta pasta você encontrará cinco arquivos `.js`, um para cada exercício onde você precisa escrever seu código. Por favor, use o arquivo correto para o respectivo exercício.
 
-**Exercise 1: The odd ones out**
+**Exercício 1: Os estranhos fora**
 
-Look at the following code snippet:
+Observe o seguinte trecho de código:
 
-```js
+``` js
 function doubleEvenNumbers(numbers) {
-  const newNumbers = [];
-  for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] % 2 === 0) {
+  const novosNúmeros = [];
+  for (seja i = 0; i < números.comprimento; i++) {
+    if (números[i] % 2 === 0) {
       newNumbers.push(numbers[i] * 2);
     }
   }
-  return newNumbers;
+  retornar novosNúmeros;
 }
 
-const myNumbers = [1, 2, 3, 4];
-console.log(doubleEvenNumbers(myNumbers)); // Logs "[4, 8]" to the console
+const meusNúmeros = [1, 2, 3, 4];
+console.log(doubleEvenNumbers(myNumbers)); // Registra "[4, 8]" no console
 ```
 
-The `doubleEvenNumbers` function returns only the even numbers in the array `myNumbers` and doubles them. Like you've learned in the [README](README.md), this block of code isn't easy to decipher.
+A função `doubleEvenNumbers` retorna apenas os números pares no array `myNumbers` e os duplica. Como você aprendeu no [README](README.md), esse bloco de código não é fácil de decifrar.
 
-Let's rewrite it.
+Vamos reescrevê-lo.
 
-- Using the `map` and `filter` functions, rewrite the `doubleEvenNumbers` function.
+- Usando as funções `map` e `filter`, reescreva a função `doubleEvenNumbers`.
 
-**Exercise 2: What's your Monday worth?**
+**Exercício 2: Quanto vale a sua segunda-feira?**
 
-When you're a developer at a big company your Monday could look something like this:
+Quando você é um desenvolvedor em uma grande empresa, sua segunda-feira pode ser algo assim:
 
-```js
-const mondayTasks = [
+``` js
+const segunda-feiraTarefas = [
   {
-    name: 'Daily standup',
-    duration: 30, // specified in minutes
+    nome: 'Standup diário',
+    duração: 30, // especificado em minutos
   },
   {
-    name: 'Feature discussion',
-    duration: 120,
+    nome: 'Discussão de recurso',
+    duração: 120,
   },
   {
-    name: 'Development time',
-    duration: 240,
+    nome: 'Tempo de desenvolvimento',
+    duração: 240,
   },
   {
-    name: 'Talk to different members from the product team',
-    duration: 60,
+    name: 'Fale com diferentes membros da equipe do produto',
+    duração: 60,
   },
 ];
 ```
 
-Let's assume your hourly rate is €25. How much would you earn on that day?
+Vamos supor que sua taxa horária seja de € 25. Quanto você ganharia nesse dia?
 
-- Write a program that finds out what your hourly rate on a Monday would be
-- Use the `map` array function to take out the duration time for each task.
-- Multiply each duration by a per-hour rate for billing and sum it all up.
-- Output a formatted Euro amount, rounded to Euro cents, e.g: `€11.34`.
-- Make sure the program can be used on any array of objects that contain a `duration` property with a number value
+- Escreva um programa que descubra qual seria sua taxa horária em uma segunda-feira
+- Use a função de array `map` para tirar o tempo de duração de cada tarefa.
+- Multiplique cada duração por uma taxa por hora para faturamento e some tudo.
+- Saída de um valor em euros formatado, arredondado para centavos de euro, por exemplo: `€11,34`.
+- Certifique-se de que o programa pode ser usado em qualquer array de objetos que contenha uma propriedade `duration` com um valor numérico
 
-**Exercise 3: Lemon allergy**
+**Exercício 3: Alergia ao limão**
 
-Your mom bought you a basket of fruit, because you're doing so well in HackYourFuture. How sweet of her!
+Sua mãe comprou uma cesta de frutas para você, porque você está indo muito bem no HackYourFuture. Que doce da parte dela!
 
-```js
-const fruitBasket = ['Apple', 'Lemon', 'Grapefruit', 'Lemon', 'Banana', 'Watermelon', 'Lemon'];
+``` js
+const cesta de frutas = ['Maçã', 'Limão', 'Toranja', 'Limão', 'Banana', 'Melancia', 'Limão'];
 ```
 
-However, she forgot that you are allergic to lemons! Let's quickly dispose of them before you get an attack.
+No entanto, ela esqueceu que você é alérgico a limões! Vamos eliminá-los rapidamente antes que você receba um ataque.
 
-- Write a function
-- Use the `filter` array function to take out the lemons
-- Output a string that says: "My mom bought me a fruit basket, containing [array of fruits] !"
+- Escreva uma função
+- Use a função de array `filter` para tirar os limões
+- Saída de uma string que diz: "Minha mãe me comprou uma cesta de frutas, contendo [array of fruit]!"
 
-**Exercise 4: Collective age**
+**Exercício 4: Idade coletiva**
 
-Have you ever wondered how old the HackYourFuture team members are? Or better yet: what the collective age is? Let's find out!
+Você já se perguntou quantos anos os membros da equipe HackYourFuture têm? Ou melhor ainda: qual é a idade coletiva? Vamos descobrir!
 
-```js
+``` js
 const hackYourFutureMembers = [
-  { name: 'Wouter', age: 33 },
-  { name: 'Federico', age: 32 },
-  { name: 'Noer', age: 27 },
-  { name: 'Tjebbe', age: 22 },
+  { nome: 'Wouter', idade: 33 },
+  { nome: 'Federico', idade: 32 },
+  { nome: 'Noer', idade: 27 },
+  { nome: 'Tjebbe', idade: 22 },
 ];
 ```
 
-- Write a program that calculates the combined age of every member
-- Make use of the `map` function to get the ages
-- It should contain a function that takes a callback
-- The callback adds all the ages together and returns the number
-- The main function should log the string "The collective age of the HYF team is: [number]" to the console, and afterwards return the number
+- Escreva um programa que calcule a idade combinada de cada membro
+- Faça uso da função `map` para obter as idades
+- Deve conter uma função que recebe um retorno de chamada
+- O retorno de chamada soma todas as idades e retorna o número
+- A função principal deve registrar a string "A idade coletiva da equipe HYF é: [número]" no console e depois retornar o número
 
-**Exercise 5: My favorite hobbies**
+**Exercício 5: Meus hobbies favoritos**
 
-I've got a couple of hobbies that I want to showcase in a webpage.
+Tenho alguns hobbies que quero mostrar em uma página da web.
 
-```js
-const myHobbies = [
-  'Meditation',
-  'Reading',
-  'Programming',
-  'Hanging out with friends',
-  'Going to the gym',
+``` js
+const meusHobbies = [
+  'Meditação',
+  'Lendo',
+  'Programação',
+  'Saindo com os amigos',
+  'Indo para a academia',
 ];
 ```
 
-- Write a program that outputs each of these inside an HTML file
-- Create an HTML and JavaScript file, link them together
-- Use the `map` and/or `forEach` function to put each hobby into a list item
-- Output the list items in an unordered list
+- Escreva um programa que produza cada um deles dentro de um arquivo HTML
+- Crie um arquivo HTML e JavaScript, vincule-os juntos
+- Use a função `map` e/ou `forEach` para colocar cada hobby em um item de lista
+- Saída dos itens da lista em uma lista não ordenada
 
-## **3. Code along**
+## **3. Código junto**
 
-Programming can be used to not only make websites, but also games! In the following tutorial you're going to apply your DOM manipulation skills in order to make a classic game: Rock, Paper, Scissors! Enjoy!
+A programação pode ser usada não apenas para criar sites, mas também para jogos! No tutorial a seguir, você aplicará suas habilidades de manipulação do DOM para fazer um jogo clássico: Pedra, Papel, Tesoura! Aproveitar!
 
-- [Build a Rock, Paper, Scissors Game](https://www.youtube.com/watch?v=WR_pWXJZiRY)
+- [Construa um jogo de pedra, papel e tesoura](https://www.youtube.com/watch?v=WR_pWXJZiRY)
 
-## **4. PROJECT: The Pomodoro Clock**
+## **4. PROJETO: O Relógio Pomodoro**
 
-> Every week ends with a project you have to build on your own. Instead of getting clear-cut instructions, you'll get a list of criteria that your project needs to measure up to.
+> Cada semana termina com um projeto que você deve construir por conta própria. Em vez de obter instruções claras, você receberá uma lista de critérios que seu projeto precisa atender.
 
-> Write the project code in the folder `Week2 \ project`.
+> Escreva o código do projeto na pasta `Week2 \ project`.
 
-In this week's project you'll be making a Pomodoro Clock! A user can specify how many minutes the timer should be set, and with a click on the play button it starts counting down! If the user wants to pause the timer, they can do so by clicking the pause button.
+No projeto desta semana você estará fazendo um Relógio Pomodoro! Um usuário pode especificar quantos minutos o cronômetro deve ser definido e, com um clique no botão play, ele começa a contagem regressiva! Se o usuário quiser pausar o cronômetro, ele poderá fazê-lo clicando no botão de pausa.
 
-It should look like this:
+Deve ficar assim:
 
-![Pomodoro Clock](../assets/pomodoro.png)
+![Relógio Pomodoro](../assets/pomodoro.png)
 
-Here are the requirements:
+Aqui estão os requisitos:
 
-- If the timer is running, the user can't change the session length anymore
-- Use at least 3 functions
-- Display minutes and seconds
-- If the timer finishes the timer should be replaced by the message: `Time's up!`
+- Se o cronômetro estiver em execução, o usuário não poderá mais alterar a duração da sessão
+- Use pelo menos 3 funções
+- Exibir minutos e segundos
+- Se o cronômetro terminar, o cronômetro deve ser substituído pela mensagem: `Time's up!`
 
-If you are having trouble understanding the functionality check this [demo](https://pomodoroclock-sandbox.mxapps.io).
+Se você está tendo problemas para entender a funcionalidade, verifique esta [demonstração](https://pomodoroclock-sandbox.mxapps.io).
 
-Good luck!
+Boa sorte!
 
-## **SUBMIT YOUR HOMEWORK!**
+## ** ENVIE SUA LIÇÃO DE CASA!**
 
-After you've finished your todo list it's time to show us what you got! The homework that needs to be submitted is the following:
+Depois de terminar sua lista de tarefas, é hora de nos mostrar o que você tem! A lição de casa que precisa ser enviada é a seguinte:
 
-1. JavaScript exercises
-2. PROJECT: The Pomodoro Clock
+1. Exercícios de JavaScript
+2. PROJETO: O Relógio Pomodoro
 
-Upload both to your forked JavaScript2 repository in GitHub. Make a pull request to the original repository.
+Carregue ambos para seu repositório JavaScript2 bifurcado no GitHub. Faça um pull request para o repositório original.
 
-> Forgotten how to upload your homework? Go through the [guide](../hand-in-homework-guide.md) to learn how to do this again.
+> Esqueceu como fazer o upload de sua lição de casa? Vá até o [guia](../hand-in-homework-guide.md) para aprender como fazer isso novamente.
 
-_Deadline Saturday 23.59 CET_
+_Prazo sábado 23.59 CET_

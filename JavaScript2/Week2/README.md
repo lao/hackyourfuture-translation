@@ -1,165 +1,165 @@
-# Reading Material JavaScript2 Week 2
+# Material de leitura JavaScript2 Semana 2
 
 ## Agenda
 
-These are the topics for week 2:
+Estes são os tópicos da semana 2:
 
-1. Synchronous vs. asynchronous
-   - Synchronous
-   - Asynchronous
-2. Introducing asynchronicity using callbacks
-   - Higher order functions
-   - Functions as arguments to other functions
-3. Array Functions
-4. Event Loop
+1. Síncrono vs. assíncrono
+   - Síncrono
+   - Assíncrono
+2. Apresentando assincronicidade usando retornos de chamada
+   - Funções de ordem superior
+   - Funções como argumentos para outras funções
+3. Funções de matriz
+4. Ciclo de Eventos
 
-## 0. Video Lectures
+## 0. Vídeo-aulas
 
-Your teacher Wilgert has made video lectures for this week's material. You can find them here: [Videos 11 - 21](https://www.youtube.com/playlist?list=PLVYDhqbgYpYU-7_oyPBkUuuis5bL1Dk8n)
+Seu professor Wilgert fez palestras em vídeo para o material desta semana. Você pode encontrá-los aqui: [Vídeos 11 - 21](https://www.youtube.com/playlist?list=PLVYDhqbgYpYU-7_oyPBkUuuis5bL1Dk8n)
 
-<a href="https://www.youtube.com/playlist?list=PLVYDhqbgYpYU-7_oyPBkUuuis5bL1Dk8n" target="_blank"><img src="../assets/wilgert.png" width="600" height="350" alt="HYF Video" /></a>
+<a href="https://www.youtube.com/playlist?list=PLVYDhqbgYpYU-7_oyPBkUuuis5bL1Dk8n" target="_blank"><img src="../assets/wilgert.png" width="600" height= "350" alt="HYF Video" /></a>
 
-## 1. Synchronous vs. asynchronous
+## 1. Síncrono vs. assíncrono
 
-### Synchronous
+### Síncrono
 
-In the previous module you've learned about **control flow**. In short: it's the order in which the computer executes statements in a script. In JavaScript this goes from left to right, top to bottom.
+No módulo anterior, você aprendeu sobre **controle de fluxo**. Resumindo: é a ordem em que o computador executa as instruções em um script. Em JavaScript isso vai da esquerda para a direita, de cima para baixo.
 
-Let's look at code execution from another angle. The program that executes your code can do it in two basic ways: synchronous or asynchronous. Whenever code blocks are executed line after line (from top to bottom) we call this **synchronous execution**. However, when code blocks can be executed **without having to wait until a command ends**, we call this **asynchronous execution**. This is illustrated in the following diagram:
+Vejamos a execução do código de outro ângulo. O programa que executa seu código pode fazê-lo de duas maneiras básicas: síncrona ou assíncrona. Sempre que os blocos de código são executados linha após linha (de cima para baixo), chamamos isso de **execução síncrona**. No entanto, quando blocos de código podem ser executados **sem ter que esperar até que um comando termine**, chamamos isso de **execução assíncrona**. Isso é ilustrado no diagrama a seguir:
 
-![Sync vs. Async](../assets/javascript-sync-vs-async.png)
+![Sincronizar vs. Assíncrono](../assets/javascript-sync-vs-async.png)
 
-Now imagine the following scenario:
+Agora imagine o seguinte cenário:
 
-> Noer wants to have breakfast but he doesn't have any food at home. He decides he want to eat oatmeal. The ingredients (oats and milk) can be bought at the supermarket. How to do this? First Noer takes a shower. Then he puts on some clothes. Then some shoes. Then he opens the door and goes outside. Then he jumps on the bike and goes to the closest supermarket. After looking for some time he finds the ingredients. Then Noer buys the ingredients. Then he jump back on the bike and go home. Then he mixes the ingredients and makes oatmeal. Then Noer eats and feels amazing!
+> O Noer quer tomar o pequeno-almoço mas não tem comida em casa. Ele decide que quer comer aveia. Os ingredientes (aveia e leite) podem ser comprados no supermercado. Como fazer isso? Primeiro Noer toma banho. Em seguida, ele coloca algumas roupas. Em seguida, alguns sapatos. Então ele abre a porta e sai. Então ele pula na moto e vai até o supermercado mais próximo. Depois de procurar por algum tempo, ele encontra os ingredientes. Então Noer compra os ingredientes. Então ele pula de volta na moto e vai para casa. Em seguida, ele mistura os ingredientes e faz mingau de aveia. Então Noer come e se sente incrível!
 
-In this example, each action could only happen after the previous has been completed. Noer can't put on his shoes, while taking a shower. Or, he can't eat oatmeal while he buys the ingredients.
+Neste exemplo, cada ação só poderia acontecer após a conclusão da anterior. Noer não consegue calçar os sapatos enquanto toma banho. Ou ele não pode comer aveia enquanto compra os ingredientes.
 
-As you can see, each action is executed in a synchronous manner. This is to say: in a logical order sequentially and only one action at a time.
+Como você pode ver, cada ação é executada de forma síncrona. Ou seja: em uma ordem lógica sequencialmente e apenas uma ação por vez.
 
-**This is also how JavaScript by default operates**. Only one operation can happen at a time. If something else wants to start, it has to wait until the current action has finished.
+**É também assim que o JavaScript funciona por padrão**. Apenas uma operação pode acontecer por vez. Se outra coisa quiser começar, tem que esperar até que a ação atual termine.
 
-### Asynchronous
+### Assíncrono
 
-Sometimes we want to do multiple things at the same time, without each action to be dependent on each other. Asynchronous execution avoids this bottleneck. You are essentially saying, “I know this function call is going to take a great deal of time, but my program doesn’t want to wait around while it executes.” Consider the following scenario:
+Às vezes queremos fazer várias coisas ao mesmo tempo, sem que cada ação seja dependente uma da outra. A execução assíncrona evita esse gargalo. Você está essencialmente dizendo: “Eu sei que esta chamada de função vai levar muito tempo, mas meu programa não quer esperar enquanto é executado”. Considere o seguinte cenário:
 
-> Wouter is feeling hungry, so he decides to go to a restaurant. He arrives there and gets into the line to order food. After ordering he takes a seat and, while he waits, reads a book. Occassionally he looks around and sees different things happening: new people enter the restaurant, some people get their food served and others are just talking. After a short while Wouter's food arrives and it's time to dig in!
+> Wouter está com fome, então decide ir a um restaurante. Ele chega lá e entra na fila para pedir comida. Depois de fazer o pedido, ele se senta e, enquanto espera, lê um livro. Ocasionalmente, ele olha ao redor e vê coisas diferentes acontecendo: novas pessoas entram no restaurante, algumas pessoas servem sua comida e outras estão apenas conversando. Depois de um curto período de tempo, a comida de Wouter chega e é hora de cavar!
 
-In this example Wouter reads a book, but that doesn't affect his meal from being prepared. While his meal is prepared there are other people walking around, eating or just talking with each other. In short: multiple things are happening simultaneously and every event is not dependent upon another.
+Neste exemplo, Wouter lê um livro, mas isso não afeta a preparação de sua refeição. Enquanto sua refeição é preparada, há outras pessoas andando, comendo ou apenas conversando entre si. Resumindo: várias coisas estão acontecendo simultaneamente e cada evento não depende de outro.
 
-This does not happen by default in JavaScript, and needs to be invoked. A way to do that is by using `callbacks`, which you'll be learning about in the next section.
+Isso não acontece por padrão em JavaScript e precisa ser invocado. Uma maneira de fazer isso é usando `callbacks`, que você aprenderá na próxima seção.
 
-## 2. Introducing asynchronicity using callbacks
+## 2. Apresentando assincronicidade usando retornos de chamada
 
-Before we dive into what a `callback` is we have to understand a little about `higher order functions`.
+Antes de nos aprofundarmos no que é um `callback`, temos que entender um pouco sobre `funções de ordem superior`.
 
-### Higher order functions
+### Funções de ordem superior
 
-Let's start with a simple, practical definition: a higher order function is any function that can take another function as an argument or returns a function.
+Vamos começar com uma definição simples e prática: uma função de ordem superior é qualquer função que pode receber outra função como argumento ou retornar uma função.
 
-```js
-// Example 1
-function higherOrderFunction(anotherFunction) {
-  anotherFunction();
-  return;
+``` js
+// Exemplo 1
+function HigherOrderFunction(anotherFunction) {
+  outraFunção();
+  Retorna;
 }
 
-// Example 2
-function anotherHigherOrderFunction() {
-  return function () {
-    return;
+// Exemplo 2
+function outraHigherOrderFunction() {
+  função de retorno () {
+    Retorna;
   };
 }
 ```
 
-Why do we need them? A higher order function integrates multiple functions, which each have a singular operational purpose. This will allow us to reuse code much more than if we had to write everything out.
+Por que nós precisamos deles? Uma função de ordem superior integra várias funções, cada uma com um propósito operacional singular. Isso nos permitirá reutilizar o código muito mais do que se tivéssemos que escrever tudo.
 
-> Higher order functions are a core concept within a programming paradigm called "functional programming". It's not relevant at all for you to know or care about this, but it's important to be exposed to it.
+> Funções de ordem superior são um conceito central dentro de um paradigma de programação chamado "programação funcional". Não é relevante para você saber ou se importar com isso, mas é importante estar exposto a isso.
 
-### Functions as arguments to other functions
+### Funções como argumentos para outras funções
 
-Imagine the following situation:
+Imagine a seguinte situação:
 
-> It's 15.00 and you're studying at home for an exam on the next day. Suddenly, your phone rings. You pick up and find it's your best friend! They ask if you'd like to hang out later. What do you do? On the one hand, you'd love to hang out have fun. On the other hand, you really should study some more. You don't know so you tell your friend that you're going to _call back_ later with your answer. You end the conversation and go back to studying. Maybe you take a break or have a snack as well. On the other line your friend hangs up the phone and continues along with their day: they go out grocery shopping, cleaning the house and cooking dinner. After finishing your studies you call your friend and makes plans to go out together.
+> São 15h00 e você está estudando em casa para uma prova no dia seguinte. De repente, seu telefone toca. Você pega e descobre que é seu melhor amigo! Eles perguntam se você gostaria de sair mais tarde. O que você faz? Por um lado, você adoraria sair e se divertir. Por outro lado, você realmente deveria estudar um pouco mais. Você não sabe, então diz ao seu amigo que vai _ligar de volta_ mais tarde com sua resposta. Você termina a conversa e volta a estudar. Talvez você faça uma pausa ou faça um lanche também. Na outra linha, seu amigo desliga o telefone e continua com o dia: vai fazer compras, limpar a casa e fazer o jantar. Depois de terminar seus estudos, você liga para seu amigo e faz planos para sair juntos.
 
-This example illustrates the concept of **asynchronicity**: there are multiple processes happening simultaneously, without any single thing being dependent upon another. Your friend is not waiting by the phone until you have the answer. Or in technical terms: until the callback (which is you) has the return value (the answer to your friend's request to hang out).
+Este exemplo ilustra o conceito de **assincronicidade**: existem vários processos acontecendo simultaneamente, sem que uma única coisa dependa de outra. Seu amigo não está esperando ao lado do telefone até que você tenha a resposta. Ou em termos técnicos: até que o callback (que é você) tenha o valor de retorno (a resposta ao pedido do seu amigo para sair).
 
-This is the utility of `callbacks`: they allow us to introduce asynchronicity into the control flow of an application.
+Esta é a utilidade dos `callbacks`: eles nos permitem introduzir assincronicidade no fluxo de controle de uma aplicação.
 
-Study the following resources to learn more about the importance of callbacks:
+Estude os seguintes recursos para saber mais sobre a importância dos retornos de chamada:
 
-- [Asynchronous JavaScript](https://www.youtube.com/watch?v=YxWMxJONp7E)
-- [Understanding JavaScript Callbacks](https://www.youtube.com/watch?v=Nau-iEEgEoM)
-- [Callback Functions](https://www.youtube.com/watch?v=QRq2zMHlBz4)
+- [JavaScript assíncrono](https://www.youtube.com/watch?v=YxWMxJONp7E)
+- [Noções básicas sobre retornos de chamada JavaScript](https://www.youtube.com/watch?v=Nau-iEEgEoM)
+- [Funções de retorno de chamada](https://www.youtube.com/watch?v=QRq2zMHlBz4)
 
-## 3. Array Functions
+## 3. Funções de matriz
 
-There are different ways of dealing with arrays. The most common way is by using a loop and then writing custom logic inside it in order to manipulate the values. This solution works, but it comes at several disadvantages.
+Existem diferentes maneiras de lidar com arrays. A maneira mais comum é usar um loop e, em seguida, escrever uma lógica personalizada dentro dele para manipular os valores. Esta solução funciona, mas tem várias desvantagens.
 
-1. The first disadvantage is that using loops requires us to write custom logic for each use case. This can lead to repeated code, which we always want to [avoid](https://www.youtube.com/watch?v=IGH4-ZhfVDk)
-2. The second disadvantage is that a loop isn't descriptive about what it intends to do. If another developer reads that code it wouldn't be obvious what it would do, without spending time on it to decipher it
+1. A primeira desvantagem é que o uso de loops exige que escrevamos uma lógica personalizada para cada caso de uso. Isso pode levar a códigos repetidos, que sempre queremos [evitar](https://www.youtube.com/watch?v=IGH4-ZhfVDk)
+2. A segunda desvantagem é que um loop não é descritivo sobre o que pretende fazer. Se outro desenvolvedor ler esse código, não seria óbvio o que ele faria, sem gastar tempo para decifrá-lo
 
-There are certain functions, `array functions`, that aim to solve these two problems simultaneously. Array functions are higher order functions, because they take a function as an argument.
+Existem certas funções, `funções array`, que visam resolver esses dois problemas simultaneamente. As funções de matriz são funções de ordem superior, porque recebem uma função como argumento.
 
-Let's take an example: the `map()` function. It takes a function as an argument, and executes that unto each index position of the array, returning at the end a new array with all the "mapped" values.
+Vamos dar um exemplo: a função `map()`. Ele recebe uma função como argumento e a executa para cada posição de índice do array, retornando no final um novo array com todos os valores "mapeados".
 
-Take a look at the following code snippet to see it in action:
+Dê uma olhada no trecho de código a seguir para vê-lo em ação:
 
-```js
-const numbers = [2, 4, 6, 8, 10];
+``` js
+const números = [2, 4, 6, 8, 10];
 
-function addTwo(number) {
-  return number + 2;
+function addDois(número) {
+  retornar número + 2;
 }
 
-const numbersPlusTwo = numbers.map(addTwo);
+const númerosMaisDois = números.map(adicionarDois);
 
 console.log(numbersPlusTwo);
 ```
 
-Copy and paste this snippet in the browser console to see how it works. As you can see the function `addTwo` added 2 to each value in the `numbers` array, because that's what the `map()` function does: it "maps" a function unto each array index.
+Copie e cole este snippet no console do navegador para ver como ele funciona. Como você pode ver, a função `addTwo` adicionou 2 a cada valor no array `numbers`, porque é isso que a função `map()` faz: ela "mapeia" uma função para cada índice do array.
 
-We could've done the same thing with a regular loop, but that would've been (1) much less readable, and (2) much more code:
+Poderíamos ter feito a mesma coisa com um loop regular, mas isso teria sido (1) muito menos legível e (2) muito mais código:
 
-```js
-const numbers = [2, 4, 6, 8, 10];
-const numbersPlusTwo = [];
+``` js
+const números = [2, 4, 6, 8, 10];
+const númerosMaisDois = [];
 
-for (let i = 0; i < numbers.length; i++) {
-  const number = numbers[i];
-  const addedTwo = number + 2;
+for (seja i = 0; i < números.comprimento; i++) {
+  const numero = numeros[i];
+  const adicionadoDois = número + 2;
 
-  numbersPlusTwo.push(addedTwo);
+  númerosPlusTwo.push(addedTwo);
 }
 
 console.log(numbersPlusTwo);
 ```
 
-Can you see why the array function is the better way to go?
+Você pode ver por que a função array é o melhor caminho a seguir?
 
-Go through the following resources to learn more about the different array functions and their use:
+Percorra os seguintes recursos para saber mais sobre as diferentes funções de matriz e seu uso:
 
-- [JavaScript Higher Order Functions & Arrays](https://www.youtube.com/watch?v=rRgD1yVwIvE)
-- [8 Must Know JavaScript Array Methods](https://www.youtube.com/watch?v=R8rmfD9Y5-c)
+- [Funções e matrizes JavaScript de ordem superior](https://www.youtube.com/watch?v=rRgD1yVwIvE)
+- [8 métodos obrigatórios de matriz JavaScript](https://www.youtube.com/watch?v=R8rmfD9Y5-c)
 
-## 4. Event Loop
+## 4. Ciclo de eventos
 
-If a webpage contains JavaScript, then the browser knows it has to execute the instructions contained in the script files. But how does the browser know what to do first? This is where the `Event Loop` comes in.
+Se uma página da Web contiver JavaScript, o navegador saberá que deve executar as instruções contidas nos arquivos de script. Mas como o navegador sabe o que fazer primeiro? É aqui que entra o `Event Loop`.
 
-Note: while this mechanism is important to be aware of, keep in mind that you won't be using it actively in development.
+Observação: embora seja importante conhecer esse mecanismo, lembre-se de que você não o usará ativamente no desenvolvimento.
 
-In simple terms, the `Event Loop` is a mechanism that operates in the browser. It keeps track of the order of execution of JavaScript commands. consists of 4 parts:
+Em termos simples, o `Event Loop` é um mecanismo que opera no navegador. Ele mantém o controle da ordem de execução dos comandos JavaScript. é composto por 4 partes:
 
-1. Heap. This is where the browser assigns space in memory to each process
-2. Call Stack. This is the amount of JavaScript commands (read: function calls and events) that need to be executed
-3. Web APIs. These are objects (like the document) and functions (like XMLHttpRequest) that can be used within the JavaScript commands found in the Call Stack
-4. Callback Queue. This is the "waiting line" for asynchronous function calls
+1. Pilha. É aqui que o navegador atribui espaço na memória a cada processo
+2. Pilha de Chamadas. Esta é a quantidade de comandos JavaScript (leia-se: chamadas de função e eventos) que precisam ser executados
+3. APIs da Web. Estes são objetos (como o documento) e funções (como XMLHttpRequest) que podem ser usados dentro dos comandos JavaScript encontrados na pilha de chamadas
+4. Fila de retorno de chamada. Esta é a "linha de espera" para chamadas de funções assíncronas
 
-To see it in action check out the following resources:
+Para vê-lo em ação, confira os seguintes recursos:
 
-- [What the heck is an event loop?](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
-- [JavaScript Event Loop](https://www.youtube.com/watch?v=XzXIMZMN9k4)
+- [O que diabos é um loop de eventos?](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
+- [Loop de evento JavaScript](https://www.youtube.com/watch?v=XzXIMZMN9k4)
 
-## Finished?
+## Finalizado?
 
-Are you finished with going through the materials? High five! If you feel ready to get practical, click [here](./MAKEME.md).
+Você terminou de passar pelos materiais? Toca aqui! Se você se sentir pronto para ser prático, clique [aqui](./MAKEME.md).

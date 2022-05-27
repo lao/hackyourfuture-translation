@@ -1,79 +1,79 @@
-# DEPRECATED - JavaScript 2
-This module has been replace with the Browsers module, find it [here](https://github.com/HackYourFuture/Browsers)
+# OBSOLETO - JavaScript 2
+Este módulo foi substituído pelo módulo Browsers, encontre-o [aqui](https://github.com/HackYourFuture/Browsers)
 
 
-```If you were to ask a random person on the street the question "What is a browser?", you'll most likely get a variety of (incorrect) answers. For proof, check [this](https://www.youtube.com/watch?v=o4MwTvtyrUQ) out.
+```Se você perguntasse a uma pessoa aleatória na rua a pergunta "O que é um navegador?", você provavelmente obterá uma variedade de respostas (incorretas). Para provar, confira [este](https://www.youtube.com/watch?v=o4MwTvtyrUQ).
 
-You might be one of those people right now, but after this module no more. In **JavaScript2** you'll learn all about how to use JavaScript within the browser.
+Você pode ser uma dessas pessoas agora, mas depois deste módulo não mais. Em **JavaScript2**, você aprenderá tudo sobre como usar JavaScript no navegador.
 
-## Learning goals
+## Metas de aprendizagem
 
-In order to successfully complete this module you will need to master the following:
+Para concluir com sucesso este módulo, você precisará dominar o seguinte:
 
-- Understand what the `DOM` is
-- Use the basics of `DOM Manipulation`
-- Differentiate between `synchronous` and `asynchronous` operations
-- Gain awareness of the inner workings of JavaScript
-- Learn to think based on `principles`, instead of libraries and frameworks
+- Entenda o que é o `DOM`
+- Use o básico de `Manipulação DOM`
+- Diferenciar entre operações `síncronas` e `assíncronas`
+- Ganhar consciência do funcionamento interno do JavaScript
+- Aprenda a pensar com base em `princípios`, em vez de bibliotecas e frameworks
 
-## How to use this repository
+## Como usar este repositório
 
-### Repository content
+### Conteúdo do repositório
 
-This repository consists of 3 essential parts:
+Este repositório é composto por 3 partes essenciais:
 
-1. `README`: this document contains all the required theory you need to understand **while** working on the homework. It contains not only the right resources to learn about the concepts, but also lectures done by HackYourFuture teachers. This is the **first thing** you should start with every week
-2. `MAKEME`: this document contains the instructions for each week's homework. Start with the exercises rather quickly, so that you can ground the concepts you read about earlier.
-3. `LESSONPLAN`: this document is meant for teachers as a reference. However, as a student don't be shy to take a look at it as well!
+1. `README`: este documento contém toda a teoria necessária que você precisa entender **enquanto** trabalha na lição de casa. Ele contém não apenas os recursos certos para aprender sobre os conceitos, mas também palestras feitas por professores do HackYourFuture. Esta é a **primeira coisa** com a qual você deve começar toda semana
+2. `MAKEME`: este documento contém as instruções para o dever de casa de cada semana. Comece com os exercícios rapidamente, para que você possa fundamentar os conceitos sobre os quais leu anteriormente.
+3. `PLANO DE AULA`: este documento é uma referência para professores. No entanto, como estudante, não tenha vergonha de dar uma olhada também!
 
-### How to study
+### Como estudar
 
-Let's say you are just starting out with the JavaScript2 module. This is what you do...
+Digamos que você está apenas começando com o módulo JavaScript2. Isto é o que você faz...
 
-1. The week always starts on **Wednesday**. First thing you'll do is open the `README.md` for that week. For the first week of `JavaScript2`, that would be [Week1 Reading](/Week1/README.md)
-2. You spend **Wednesday** and **Thursday** going over the resources and try to get a basic understanding of the concepts. In the meanwhile, you'll also implement any feedback you got on last week's homework (from the JavaScript1 module)
-3. On **Friday** you start with the homework, found in the `MAKEME.md`. For the first week of `JavaScript2`, that would be [Week1 Homework](/Week1/MAKEME.md)
-4. You spend **Friday** and **Saturday** playing around with the exercises and write down any questions you might have
-5. **DEADLINE 1**: You'll submit any questions you might have before **Saturday 23.59**, in the class channel
-6. On **Sunday** you'll attend class. It'll be of the Q&A format, meaning that there will be no new material. Instead your questions shall be discussed and you can learn from others
-7. You spend **Monday** and **Tuesday** finalizing your homework
-8. **DEADLINE 2**: You submit your homework to the right channels (GitHub) before **Tuesday 23.59**. If you can't make it on time, please communicate it with your mentor
-9. Start the new week by going back to point 1!
+1. A semana sempre começa na **quarta-feira**. A primeira coisa que você vai fazer é abrir o `README.md` dessa semana. Para a primeira semana de `JavaScript2`, seria [Week1 Reading](/Week1/README.md)
+2. Você passa a **quarta-feira** e a **quinta-feira** examinando os recursos e tentando entender os conceitos básicos. Enquanto isso, você também implementará qualquer feedback que tenha recebido na lição de casa da semana passada (do módulo JavaScript1)
+3. Na **Sexta** você começa com o dever de casa, encontrado no `MAKEME.md`. Para a primeira semana de `JavaScript2`, isso seria [Week1 Homework](/Week1/MAKEME.md)
+4. Você passa a **sexta-feira** e o **sábado** brincando com os exercícios e anotando quaisquer dúvidas que possa ter
+5. **Prazo 1**: você enviará suas dúvidas até **sábado, 23h59**, no canal da turma
+6. No **Domingo** você vai assistir à aula. Será no formato de perguntas e respostas, o que significa que não haverá material novo. Em vez disso, suas perguntas devem ser discutidas e você pode aprender com os outros
+7. Você passa a **segunda-feira** e a **terça-feira** finalizando sua lição de casa
+8. **Prazo 2**: Você envia sua lição de casa para os canais certos (GitHub) antes de **terça-feira, 23h59**. Se você não puder chegar a tempo, por favor comunique ao seu mentor
+9. Comece a nova semana voltando ao ponto 1!
 
-In summary:
+Resumindo:
 
 ![Weekflow](assets/weekflow.png)
 
-To have a more detailed overview of the guidelines, please read [this document](https://docs.google.com/document/d/1JUaEbxMQTyljAPFsWIbbLwwvvIXZ0VCHmCCN8RaeVIc/edit?usp=sharing) or ask your mentor/class on Slack!
+Para ter uma visão geral mais detalhada das diretrizes, leia [este documento](https://docs.google.com/document/d/1JUaEbxMQTyljAPFsWIbbLwwvvIXZ0VCHmCCN8RaeVIc/edit?usp=sharing) ou pergunte ao seu mentor/classe no Slack!
 
-### Video lectures
+### Vídeo aulas
 
-For each module HackYourFuture provides you with video lectures. These are made by experienced software developers who know what they're talking about. The main teacher for this module will be [Wilgert Velinga](https://hackyourfuture.slack.com/team/UGTGC0T41): senior frontend developer and consultant!
+Para cada módulo, o HackYourFuture oferece palestras em vídeo. Estes são feitos por desenvolvedores de software experientes que sabem do que estão falando. O professor principal deste módulo será [Wilgert Velinga](https://hackyourfuture.slack.com/team/UGTGC0T41): desenvolvedor frontend sênior e consultor!
 
-You can find out more about him here:
+Você pode saber mais sobre ele aqui:
 
 - [GitHub](https://github.com/wilgert)
-- [@Wilgert on Slack](https://hackyourfuture.slack.com/team/UGTGC0T41)
+- [@Wilgert no Slack](https://hackyourfuture.slack.com/team/UGTGC0T41)
 
-Learn from Wilgert in the following playlist of videos he has made for you! (Click on the image to open the link)
+Aprenda com Wilgert na seguinte playlist de vídeos que ele fez para você! (Clique na imagem para abrir o link)
 
-<a href="https://www.youtube.com/playlist?list=PLVYDhqbgYpYU-7_oyPBkUuuis5bL1Dk8n" target="_blank"><img src="./assets/wilgert.png" width="600" height="350" alt="HYF Video" /></a>
+<a href="https://www.youtube.com/playlist?list=PLVYDhqbgYpYU-7_oyPBkUuuis5bL1Dk8n" target="_blank"><img src="./assets/wilgert.png" width="600" height=" 350" alt="HYF Video" /></a>
 
-## Planning
+## Planejamento
 
-| Week | Topic                                                                | Reading Materials              | Homework                        | Lesson Plan                            |
-| ---- | -------------------------------------------------------------------- | ------------------------------ | ------------------------------- | -------------------------------------- |
-| 1.   | Document-Object Model (DOM), DOM manipulation                        | [Reading W1](/Week1/README.md) | [Homework W1](/Week1/MAKEME.md) | [Lesson Plan W1](/Week1/LESSONPLAN.md) |
-| 2.   | Synchronous vs. asynchronous, Event Loop, Callbacks, Array Functions | [Reading W2](/Week2/README.md) | [Homework W2](/Week2/MAKEME.md) | [Lesson Plan W2](/Week1/LESSONPLAN.md) |
-| 3.   | Scope, Hoisting, Closures, Thinking like a programmer II             | [Reading W3](/Week3/README.md) | [Homework W3](/Week3/MAKEME.md) | [Lesson Plan W3](/Week1/LESSONPLAN.md) |
-| 4.   | Test                                                                 | [Details](/test/README.md)     | -                               | -                                      |
+| Semana | Tópico | Materiais de Leitura | Lição de casa | Plano de aula |
+| ---- | -------------------------------------------------- ------------------ | ------------------------------ | ------------------------------- | --------------------------------------- |
+| 1. | Modelo de Documento-Objeto (DOM), manipulação de DOM | [Leitura W1](/Week1/README.md) | [Trabalho de casa W1](/Week1/MAKEME.md) | [Plano de aula W1](/Week1/LESSONPLAN.md) |
+| 2. | Síncrono vs. assíncrono, Loop de Eventos, Callbacks, Funções de Array | [Leitura W2](/Week2/README.md) | [Trabalho de casa W2](/Week2/MAKEME.md) | [Plano de aula W2](/Week1/LESSONPLAN.md) |
+| 3. | Escopo, Içamento, Fechamentos, Pensando como um programador II | [Leitura W3](/Week3/README.md) | [Trabalho de casa W3](/Week3/MAKEME.md) | [Plano de aula W3](/Week1/LESSONPLAN.md) |
+| 4. | Teste | [Detalhes](/test/README.md) | - | - |
 
-## Finished?
+## Finalizado?
 
-Did you finish the module? Good job! You're doing great!
+Você terminou o módulo? Bom trabalho! Você está indo bem!
 
-If you feel ready for the next challenge, click [here](https://www.github.com/HackYourFuture/JavaScript3) to go to JavaScript3!
+Se você se sentir pronto para o próximo desafio, clique [aqui](https://www.github.com/HackYourFuture/JavaScript3) para ir para JavaScript3!
 
-_The HackYourFuture curriculum is subject to CC BY copyright. This means you can freely use our materials, but just make sure to give us credit for it :)_
+_O currículo HackYourFuture está sujeito aos direitos autorais CC BY. Isso significa que você pode usar nossos materiais livremente, mas certifique-se de nos dar crédito por isso :)_
 
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.```
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https:/ /i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Esta obra está licenciada sob uma <a rel="license" href="http://creativecommons.org /licenses/by/4.0/">Licença Creative Commons Atribuição 4.0 Internacional</a>.```

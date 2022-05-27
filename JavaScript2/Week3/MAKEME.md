@@ -1,187 +1,187 @@
-# Homework JavaScript2 Week 3
+# Tarefa JavaScript2 Semana 3
 
-## **Todo list**
+## **Lista de afazeres**
 
-1. Practice the concepts
-2. JavaScript exercises
-3. Code along
-4. PROJECT: The Tip Calculator
+1. Pratique os conceitos
+2. Exercícios de JavaScript
+3. Codifique junto
+4. PROJETO: A Calculadora de Gorjetas
 
-## **1. Practice the concepts**
+## **1. Pratique os conceitos**
 
-Let's get familiar with basic Javascript concepts, with interactive exercises! Check out the following resources:
+Vamos nos familiarizar com os conceitos básicos de Javascript, com exercícios interativos! Confira os seguintes recursos:
 
-- [Introduction to JavaScript: Scope](https://www.codecademy.com/courses/introduction-to-javascript/lessons/scope/exercises/scope)
+- [Introdução ao JavaScript: Escopo](https://www.codecademy.com/courses/introduction-to-javascript/lessons/scope/exercises/scope)
 
-## **2. JavaScript exercises**
+## **2. Exercícios de JavaScript**
 
-> Inside of your `JavaScript2` fork, navigate to the folder `Week3`. Then to the folder `js-exercises`. In this folder you will find separate files for each exercise. Please put your code in the correct file.
+> Dentro do seu fork `JavaScript2`, navegue até a pasta `Week3`. Em seguida, para a pasta `js-exercícios`. Nesta pasta você encontrará arquivos separados para cada exercício. Por favor, coloque seu código no arquivo correto.
 
-**Exercise 1: Add nine**
+**Exercício 1: Adicione nove**
 
-Declare a function called `createBase`. The function takes a number as a parameter and return a closure, that adds a number to the base number argument.
+Declare uma função chamada `createBase`. A função recebe um número como parâmetro e retorna um encerramento, que adiciona um número ao argumento do número base.
 
-Call the function three times. The return values should be:
+Chame a função três vezes. Os valores de retorno devem ser:
 
 1. 15
 2. 24
 3. 33
 
-It should look a little like this:
+Deve ficar um pouco assim:
 
-```js
-function createBase() {
-  // Put here your logic...
+``` js
+função criarBase() {
+  //Coloque aqui sua lógica...
 }
 
 const addNine = createBase(6);
 
-// Put here your function calls...
-addNine();
+//Coloque aqui suas chamadas de função...
+addNove();
 ```
 
-**Exercise 2: Take out the duplicates**
+**Exercício 2: Retire as duplicatas**
 
-Write a function called `removeDuplicates`, that takes in an array as an argument:
+Escreva uma função chamada `removeDuplicates`, que receba um array como argumento:
 
-```js
-const letters = ['a', 'b', 'b', 'c', 'd', 'a', 'e', 'f', 'f', 'c', 'b'];
+``` js
+letras const = ['a', 'b', 'b', 'c', 'd', 'a', 'e', 'f', 'f', 'c', 'b'];
 ```
 
-The function should modifies the original array: it should remove duplicate letters and `return` the result. 
+A função deve modificar o array original: deve remover letras duplicadas e `retornar` o resultado.
 
-The end result should be:
+O resultado final deve ser:
 
-```js
+``` js
 ['a', 'b', 'c', 'd', 'e', 'f'];
 ```
 
-**Exercise 3: Guess the output**
+**Exercício 3: Adivinhe a saída**
 
-In this exercise you'll be presented with a code snippet. Your task is to guess the output and write out your reasoning in 50 words or less.
+Neste exercício, você verá um snippet de código. Sua tarefa é adivinhar a saída e escrever seu raciocínio em 50 palavras ou menos.
 
-```js
-// Snippet
-let a = 10;
-const x = (function() {
+``` js
+// Trecho
+seja a = 10;
+const x = (função() {
   a = 12;
-  return function() {
-    alert(a);
+  função de retorno(){
+    alerta(a);
   };
 })();
 
 x();
 ```
 
-**Exercise 4: Guess more**
+**Exercício 4: Adivinhe mais**
 
-In this exercise you'll be presented with another code snippet. Guess the output and write out your reasoning in 50 words or less.
+Neste exercício, você verá outro trecho de código. Adivinhe a saída e escreva seu raciocínio em 50 palavras ou menos.
 
-```js
-// Snippet
+``` js
+// Trecho
 const x = 9;
-function f1(val) {
-  val = val + 1;
-  return val;
+função f1(val) {
+  vale = vale + 1;
+  valor de retorno;
 }
 f1(x);
 console.log(x);
 
 const y = { x: 9 };
-function f2(val) {
+função f2(val) {
   val.x = val.x + 1;
-  return val;
+  valor de retorno;
 }
 f2(y);
 console.log(y);
 ```
 
-**Exercise 5: The lottery machine**
+**Exercício 5: A máquina de loteria**
 
-Don't you just love the thrill of the lottery? What if I told you we can make our own lottery machine? Let's get started!
+Você não adora a emoção da loteria? E se eu te disser que podemos fazer nossa própria máquina de loteria? Vamos começar!
 
-Write a function that takes 4 arguments.
+Escreva uma função que receba 4 argumentos.
 
-- A start value
-- An end value
-- A callback that executes if the number is divisible by 3
-- A callback that executes if the number is divisible by 5
+- Um valor inicial
+- Um valor final
+- Um retorno de chamada que é executado se o número for divisível por 3
+- Um retorno de chamada que é executado se o número for divisível por 5
 
-The function should first generate an array containing values from start value to end value (inclusive).
+A função deve primeiro gerar um array contendo valores do valor inicial ao valor final (inclusive).
 
-Then the function should take the newly created array and iterate over it, and calling the first callback if the array value is divisible by 3.
+Em seguida, a função deve pegar o array recém-criado e iterar sobre ele, e chamar o primeiro retorno de chamada se o valor do array for divisível por 3.
 
-The function should call the second callback if the array value is divisible by 5.
+A função deve chamar o segundo retorno de chamada se o valor da matriz for divisível por 5.
 
-Both functions should be called if the array value is divisible by both 3 and 5.
+Ambas as funções devem ser chamadas se o valor da matriz for divisível por 3 e 5.
 
-Here is a starter template:
+Aqui está um modelo inicial:
 
-```js
+``` js
 function threeFive(startIndex, stopIndex, threeCallback, fiveCallback) {
-  const numbers = [];
-  // make array
-  // start at beginning of array and check if you should call threeCallback or fiveCallback or go on to next
+  const numeros = [];
+  //cria matriz
+  // começa no início do array e verifica se você deve chamar threeCallback ou fiveCallback ou ir para o próximo
 }
 
-threeFive(10, 15, sayThree, sayFive);
+trêsCinco(10, 15, digamosTrês, digamosCinco);
 
-// Should create an array [10,11,12,13,14,15]
-// and call sayFive, sayThree, sayThree, sayFive
+// Deve criar um array [10,11,12,13,14,15]
+// e chama sayFive, sayThree, sayThree, sayFive
 ```
 
-## **3. Code along**
+## **3. Código junto**
 
-In the following "code along" you'll be making a Booklist App. A user will be able to add books to a list by filling in a form, and also delete each book entry in the list.
+No seguinte "código junto" você estará fazendo um App Booklist. Um usuário poderá adicionar livros a uma lista preenchendo um formulário e também excluir cada entrada de livro na lista.
 
-You'll make the app using vanilla JavaScript and CSS framework [Bootstrap](https://www.getbootstrap.com).
+Você criará o aplicativo usando JavaScript vanilla e estrutura CSS [Bootstrap](https://www.getbootstrap.com).
 
-Happy learning!
+Feliz aprendizado!
 
-- [Build a Booklist App](https://www.youtube.com/watch?v=JaMCxVWtW58)
+- [Crie um aplicativo de lista de livros](https://www.youtube.com/watch?v=JaMCxVWtW58)
 
-## **4. PROJECT: The Tip Calculator**
+## **4. PROJETO: A Calculadora de Gorjeta**
 
-> Every week ends with a project you have to build on your own. Instead of getting clear-cut instructions, you'll get a list of criteria that your project needs to measure up to.
+> Cada semana termina com um projeto que você deve construir por conta própria. Em vez de obter instruções claras, você receberá uma lista de critérios que seu projeto precisa atender.
 
-> Important! Place your code in the folder `Week3 \ project`.
+> Importante! Coloque seu código na pasta `Week3\project`.
 
-In this week's project you'll be making a Tip Calculator! A user can fill in 3 things:
+No projeto desta semana você estará fazendo uma Calculadora de Gorjetas! Um usuário pode preencher 3 coisas:
 
-1. The amount of the bill
-2. How good the service was
-3. How many people will share the bill
+1. O valor da conta
+2. Quão bom foi o serviço
+3. Quantas pessoas vão dividir a conta
 
-When the button is clicked a calculation is made and the user can read the tip amount underneath.
+Quando o botão é clicado, um cálculo é feito e o usuário pode ler o valor da gorjeta abaixo.
 
-It should look like this:
+Deve ficar assim:
 
-![The Tip Calculator](../assets/tipcalculator.png)
+![A calculadora de gorjetas](../assets/tipcalculator.png)
 
-Here are the requirements:
+Aqui estão os requisitos:
 
-- No frameworks allowed
-- Use a form, that has 3 input fields (the first and last can only take numbers)
-- The second field should have the following options:
+- Não são permitidos frameworks
+- Use um formulário, que tenha 3 campos de entrada (o primeiro e o último só podem receber números)
+- O segundo campo deve ter as seguintes opções:
 
-![Service Quality](../assets/servicequality.png)
+![Qualidade do serviço](../assets/servicequality.png)
 
-- If there's only 1 person who shares the bill, output only the tip amount (omit the "each")
-- If any of the input fields are empty when the button is clicked, call an alert that says: "You need to fill in all the fields!"
+- Se houver apenas 1 pessoa que compartilha a conta, emita apenas o valor da gorjeta (omitir o "cada")
+- Se algum dos campos de entrada estiver vazio quando o botão for clicado, chame um alerta que diga: "Você precisa preencher todos os campos!"
 
-See it in action [here](https://tipcalculator-sandbox.mxapps.io/).
+Veja em ação [aqui](https://tipcalculator-sandbox.mxapps.io/).
 
-Good luck!
+Boa sorte!
 
-## **SUBMIT YOUR HOMEWORK!**
+## ** ENVIE SUA LIÇÃO DE CASA!**
 
-Finished? Good on you! The homework that needs to be submitted is the following:
+Finalizado? Bem em você! A lição de casa que precisa ser enviada é a seguinte:
 
-1. JavaScript exercises
-2. PROJECT: The Tip Calculator
+1. Exercícios de JavaScript
+2. PROJETO: A Calculadora de Gorjetas
 
-Upload both to your forked JavaScript2 repository in GitHub. Make a pull request to the original repository.
+Carregue ambos para seu repositório JavaScript2 bifurcado no GitHub. Faça um pull request para o repositório original.
 
-> Forgotten how to upload your homework? Go through the [guide](../hand-in-homework-guide.md) to learn how to do this again.
+> Esqueceu como fazer o upload de sua lição de casa? Vá até o [guia](../hand-in-homework-guide.md) para aprender como fazer isso novamente.
 
-_Deadline Saturday 23.59 CET_
+_Prazo sábado 23.59 CET_

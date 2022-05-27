@@ -1,54 +1,54 @@
-# JavaScript1 and JavaScript2 Test
+# Teste JavaScript1 e JavaScript2
 
-You’ll be doing a comprehension test. It will be about the most important JavaScript concepts you’ve learned about so far (JavaScript1 and JavaScript2). 
+Você fará um teste de compreensão. Será sobre os conceitos JavaScript mais importantes que você aprendeu até agora (JavaScript1 e JavaScript2).
 
-## Practical information
-Practical information about the test will be shared in the class channel prior to the test. Keep an eye on it!
+## Informação prática
+Informações práticas sobre o teste serão compartilhadas no canal de aula antes do teste. Fique de olho nisto!
 
-## Purpose of the test
-The purpose of this exam is to test your comprehension of JavaScript 1 and JavaScript 2 concepts.
-- The goal for us is to know how solid your knowledge is and if you need any extra assistance throughout the program.
-- The goal for you is to test how well enough you master the material so far.
-Like the homework you will get feedback and are expected to improve upon your weak points.
+## Objetivo do teste
+O objetivo deste exame é testar sua compreensão dos conceitos de JavaScript 1 e JavaScript 2.
+- O objetivo para nós é saber o quão sólido é o seu conhecimento e se você precisa de alguma assistência extra ao longo do programa.
+- O objetivo para você é testar o quão bem você domina o material até agora.
+Como a lição de casa, você receberá feedback e espera-se que melhore seus pontos fracos.
 
-## Test material
-These are the most important concepts that will be tested:
-- `Variables`
-- `Data types` (`strings`, `numbers`, `arrays`, `objects`, `booleans`)
-- `Conditional statements` (`if`/`switch` statement)
+## Material de teste
+Estes são os conceitos mais importantes que serão testados:
+- `Variáveis`
+- `Tipos de dados` (`strings`, `numbers`, `arrays`, `objects`, `booleans`)
+- `Declarações condicionais` (instrução `if`/`switch`)
 - `Loops`
-- `ES5 functions` and `arrow functions`
-- How to use JavaScript to do basic `DOM manipulations` (add, modify and remove DOM elements)
-- `Code commenting`
-- `Array functions` (`map` and `filter`)
-- `Callbacks`
+- `Funções ES5` e `funções de seta`
+- Como usar JavaScript para fazer `manipulações DOM` básicas (adicionar, modificar e remover elementos DOM)
+- `Comentário de código`
+- `Funções de matriz` (`map` e `filter`)
+- `Retornos de chamada`
 
-## Preparation
-Advice on how to optimally prepare:
-- Find out 2 things about each concepts listed above: (1) how does the basic structure look and (2) what is the most common use case.
+## Preparação
+Conselhos sobre como preparar otimamente:
+- Descubra 2 coisas sobre cada conceito listado acima: (1) como é a estrutura básica e (2) qual é o caso de uso mais comum.
 
-- Be familiar with creating a new project repository in github. For the test you will get some files to edit and they will need to be uploaded to your github.
+- Estar familiarizado com a criação de um novo repositório de projetos no github. Para o teste, você receberá alguns arquivos para editar e eles precisarão ser carregados no seu github.
 
-- Ask questions through Slack to your teachers and/or your classmates
+- Faça perguntas através do Slack para seus professores e/ou colegas
 
-- Practice for understanding (why something is the case), NOT just for repetition’s sake (and hoping ‘you will understand it one day’).
+- Pratique para entender (por que algo é o caso), NÃO apenas para repetir (e esperando 'você entenderá um dia').
 
-- Make a summary of all the study material.
+- Faça um resumo de todo o material de estudo.
 
-- After you prepared try to make the sample questions that are in this file.
+- Depois de preparado tente fazer os exemplos de perguntas que estão neste arquivo.
 
-## During the test
-Advise on how to make a test:
-- **Look for low hanging fruit**. Which of the assignments is easiest for you to do? Tackle that one first. 
-- **If you get stuck in an assignment, move on to the next one**. You can always come back later if time permits.
-- After finishing an assignment, read the question again to **make sure you actually gave an answer to the question**. 
-- Before handing in the test, read it all over again to pick out the small mistakes. **Double check your work!**
+## Durante o teste
+Orientar sobre como fazer um teste:
+- **Procure frutas baixas**. Qual das tarefas é mais fácil para você fazer? Enfrente isso primeiro.
+- **Se você ficar preso em uma tarefa, passe para a próxima**. Você sempre pode voltar mais tarde se o tempo permitir.
+- Depois de terminar uma tarefa, leia a pergunta novamente para **certificar-se de que você realmente respondeu à pergunta**.
+- Antes de entregar o teste, leia-o novamente para identificar os pequenos erros. **Verifique novamente seu trabalho!**
 
-## Sample questions
-1. Write and call a function that creates and appends a <p> tag to the <body> of an HTML file. Make use of the already predefined DOM methods createElement() and appendChild(). The innerText of the <p> should be “hello HackYourFuture!”.
+## Perguntas de exemplo
+1. Escreva e chame uma função que cria e anexa uma tag <p> ao <body> de um arquivo HTML. Faça uso dos métodos DOM já predefinidos createElement() e appendChild(). O innerText do <p> deve ser “hello HackYourFuture!”.
 
-2. Transform the given array of strings named letters into a new array with numbers (for example: `numbers = [0, 1, 2, 3 ]` ), by creating a new function called lettersToNumbers. Log the new array to the console. Return the new array. Make use of the map() array function. 
-`const letters = [ ‘a’ , ‘b’ , ‘c’ , ‘d’ ];`
+2. Transforme um determinado array de strings chamado letras em um novo array com números (por exemplo: `numbers = [0, 1, 2, 3 ]`), criando uma nova função chamada letrasToNumbers. Registre a nova matriz no console. Retorne a nova matriz. Faça uso da função de array map().
+`const letras = [ 'a' , 'b' , 'c' , 'd' ];`
 
 
-If there’s anything unclear please let us know. Also, if any of you need additional support, now is the moment to let us know as we could pair you up with someone to answer any questions you may have.
+Se houver algo obscuro, por favor nos avise. Além disso, se algum de vocês precisar de suporte adicional, agora é o momento de nos informar, pois podemos emparelhá-lo com alguém para responder a quaisquer perguntas que você possa ter.
