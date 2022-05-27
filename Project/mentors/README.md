@@ -1,10 +1,10 @@
-# Project mentors
+# Mentores do projeto
 
-For the final project the team consists of a `tech lead`, a `QA lead` a `product owner` and a `scrum master`. The goal of the project is to build an mvp of an app together with the students that they can show off on their CVs. This will not only show them how a full stack application works, but also how an agile team operates and why this has become the standard way of organising development teams. After the project our students will start internships at companies and we would like them to be prepared for professional life in The Netherlands.
+Para o projeto final, a equipe consiste em um `líder técnico`, um `líder de controle de qualidade`, um `proprietário do produto` e um `scrum master`. O objetivo do projeto é construir um mvp de um aplicativo junto com os alunos que eles possam exibir em seus currículos. Isso não apenas mostrará a eles como um aplicativo full stack funciona, mas também como uma equipe ágil opera e por que isso se tornou a maneira padrão de organizar equipes de desenvolvimento. Após o projeto, nossos alunos iniciarão estágios em empresas e gostaríamos que estivessem preparados para a vida profissional na Holanda.
 
-For a better explanation of what each role is responsible for and what we expect, have a look at:
+Para uma melhor explicação do que cada função é responsável e o que esperamos, dê uma olhada em:
 
-- [Product owner](./PRODUCT_OWNER.md)
+- [Proprietário do produto](./PRODUCT_OWNER.md)
 - [Scrum master](./SCRUM_MASTER.md)
-- [Tech lead](./TECH_LEAD.md)
-- [QA lead](./QA_LOAD.md)
+- [Líder técnico](./TECH_LEAD.md)
+- [líder de controle de qualidade](./QA_LOAD.md)

@@ -1,50 +1,50 @@
-# Week 2
+# Semana 2
 
-## Sunday meeting
+## Reunião de domingo
 
-On Sunday our agenda will look as follows:
+No domingo nossa agenda será a seguinte:
 
-| Time        | Activity                   |
+| Hora | Atividade |
 | ----------- | -------------------------- |
-| 12:00-12:30 | Discuss app design         |
-| 12:30-13:00 | Discuss database structure |
-| 13:00-13:30 | Discuss test plan          |
-| 13:30-13:45 | BREAK                      |
-| 13:45-14:30 | Sprint planning            |
+| 12:00-12:30 | Discutir o design do aplicativo |
+| 12:30-13:00 | Discutir a estrutura do banco de dados |
+| 13:00-13:30 | Discutir plano de teste |
+| 13:30-13:45 | INTERROMPER |
+| 13:45-14:30 | Planejamento de sprint |
 
-### Discussions
+### Discussões
 
-This week's meeting will have 3 discussions: App design, database structure and the test plan. For each, the students will do a presentation on what they came up with that week and the rest can give feedback and possibly decide on some last minute adjustments.
+A reunião desta semana terá 3 discussões: design do aplicativo, estrutura do banco de dados e plano de teste. Para cada um, os alunos farão uma apresentação sobre o que fizeram naquela semana e os demais poderão dar feedback e possivelmente decidir alguns ajustes de última hora.
 
-### Sprint planning
+### Planejamento de Sprint
 
-Every week from now on you will be doing a sprint planning. This includes the following steps:
+Toda semana a partir de agora você estará fazendo um planejamento de sprint. Isso inclui as seguintes etapas:
 
-- Decide on which user stories to tackle the upcoming week
-- Determine the acceptance criteria of the user story
-- Determine the steps needed to build it (Technical Refinement step)
-- Use planning poker to determine the amount of points for this user story
-- Divide the group into pairs and decide who will start with which user story
-- Determine a daily meeting organiser (rotates every week)
+- Decida quais histórias de usuários abordar na próxima semana
+- Determinar os critérios de aceitação da história do usuário
+- Determinar as etapas necessárias para construí-lo (etapa de Refinamento Técnico)
+- Use o planning poker para determinar a quantidade de pontos para esta história de usuário
+- Divida o grupo em pares e decida quem começará com qual história de usuário
+- Determinar um organizador de reuniões diárias (troca todas as semanas)
 
-#### Technical Refinement step
+#### Etapa de refinamento técnico
 
-From this week on you will be asked to do a technical refinement step on Sunday. Per feature we want to build a student will be asked to explain the technical steps needed to be implemented. Think about things like:
+A partir desta semana, você será solicitado a fazer uma etapa de refinamento técnico no domingo. Por recurso que queremos construir, um aluno será solicitado a explicar as etapas técnicas necessárias para serem implementadas. Pense em coisas como:
 
-- Do I need to do some research about some new concept?
-- Does the database model need to be changed?
-- Does there need to be a new endpoint? Or does an existing endpoint need to be changed?
-- What needs to happen on the frontend? Will new components be made?
-- Will a context be needed? A custom hook?
+- Preciso fazer alguma pesquisa sobre algum novo conceito?
+- O modelo de banco de dados precisa ser alterado?
+- É necessário haver um novo endpoint? Ou um endpoint existente precisa ser alterado?
+- O que precisa acontecer no frontend? Serão feitos novos componentes?
+- Será necessário um contexto? Um gancho personalizado?
 
-This refinement will help you through the week, but it will also help make an `estimation` of how big the issue is. This estimation will allow for better planning by the product owner and is an important step in any sprint planning.
+Esse refinamento o ajudará durante a semana, mas também ajudará a fazer uma 'estimativa' de quão grande é o problema. Essa estimativa permitirá um melhor planejamento pelo proprietário do produto e é um passo importante em qualquer planejamento de sprint.
 
-## Week goals
+## Metas da semana
 
-This is the first week of actually starting to build. There will be some startup issues, but your mentors are here to help you so please contact them if you have questions. Do _not_ wait until the next Sunday meeting to ask questions, you are expected to have already finished the features by then and present it to the group.
+Esta é a primeira semana de realmente começar a construir. Haverá alguns problemas de inicialização, mas seus mentores estão aqui para ajudá-lo, portanto, entre em contato com eles se tiver dúvidas. _não_ espere até a próxima reunião de domingo para fazer perguntas, espera-se que você já tenha terminado os recursos até lá e apresente-os ao grupo.
 
-For extra support in the first week, the education director will also be there during the daily meetings, but the daily meeting organiser is responsible for facilitating it.
+Para apoio extra na primeira semana, o diretor de educação também estará presente durante as reuniões diárias, mas o organizador da reunião diária é responsável por facilitar.
 
-## Ready?
+## Preparar?
 
-If you are ready to get started on your tasks for the week, click [here](./MAKEME.md).
+Se você estiver pronto para começar suas tarefas da semana, clique [aqui](./MAKEME.md).

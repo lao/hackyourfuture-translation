@@ -1,27 +1,27 @@
-# Week 1
+# Semana 1
 
-## Sunday meeting
+## Reunião de domingo
 
-On Sunday our agenda will look as follows:
+No domingo nossa agenda será a seguinte:
 
-| Time        | Activity                                                       |
-| ----------- | -------------------------------------------------------------- |
-| 12:00-12:30 | Introduce mentors for this module and do an introduction round |
-| 12:30-13:00 | Decide on the App idea                                         |
-| 13:00-13:15 | BREAK                                                          |
-| 13:30-?     | Go over user challenges                                        |
+| Hora | Atividade |
+| ----------- | -------------------------------------------------- ------------ |
+| 12:00-12:30 | Apresente mentores para este módulo e faça uma rodada de introdução |
+| 12:30-13:00 | Decidir sobre a ideia do App |
+| 13:00-13:15 | INTERROMPER |
+| 13:30-? | Repasse os desafios do usuário |
 
-## Week goals
+## Metas da semana
 
-The start of the project requires a lot of decision making, which will be the focus for this week. We will first decide on the app idea and then with the help of our product owner work on going through the user challenges. This will give us a nice list of initial user stories to develop further throughout the weeks. These user stories will also provide the basis to decide on our database structure.
+O início do projeto exige muita tomada de decisão, que será o foco desta semana. Primeiro decidiremos sobre a ideia do aplicativo e, em seguida, com a ajuda de nosso proprietário do produto, trabalharemos para superar os desafios do usuário. Isso nos dará uma boa lista de histórias de usuários iniciais para desenvolver ainda mais ao longo das semanas. Essas histórias de usuários também fornecerão a base para decidir sobre nossa estrutura de banco de dados.
 
-This week we also want to get familiar with the base repo and the environment you will be coding in. You should already have been given a day and time of a session that will go through the repo/structure and allow for questions to be asked. In that meeting we will go over the following points, but make sure you go through the repo beforehand (the `README` also offers a lot of information already):
+Esta semana também queremos nos familiarizar com o repositório base e o ambiente em que você codificará. Você já deve ter recebido um dia e hora de uma sessão que passará pelo repositório/estrutura e permitirá que perguntas sejam feitas. Nessa reunião vamos abordar os seguintes pontos, mas certifique-se de passar pelo repo antes (o `README` também já oferece muitas informações):
 
-- The stack and all the libraries that will be used
-- The folder structure of both the `client` and the `server`
-- The code style decisions
-- How the CI/CD pipeline is set up and what checks are run automatically
+- A pilha e todas as bibliotecas que serão usadas
+- A estrutura de pastas do `cliente` e do `servidor`
+- As decisões de estilo de código
+- Como o pipeline de CI/CD é configurado e quais verificações são executadas automaticamente
 
-## Ready?
+## Preparar?
 
-If you are ready to get started on your tasks for the week, click [here](./MAKEME.md).
+Se você estiver pronto para começar suas tarefas da semana, clique [aqui](./MAKEME.md).

@@ -1,5 +1,5 @@
 ## HackYourSocial (class20)
 
-Made by the team of #class20, HackYourSocial is a social networking application made for developers.
+Feito pela equipe da #class20, o HackYourSocial é um aplicativo de rede social feito para desenvolvedores.
 
-The following [link](https://hackyoursocial.herokuapp.com/) will take you to the app.
+O seguinte [link](https://hackyoursocial.herokuapp.com/) levará você ao aplicativo.

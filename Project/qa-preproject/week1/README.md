@@ -1,50 +1,50 @@
-# Reading Material QA PreProject Week 1
+# Material de leitura QA Pré-Projeto Semana 1
 
 ## Agenda
 
-These are the topics for week 1:
+Estes são os tópicos da semana 1:
 
-- What is Software testing?
-- Fundamentals of testing
-- QA Engineer Mindset
-- Testing Pyramid
+- O que é teste de software?
+- Fundamentos de testes
+- Mindset do engenheiro de controle de qualidade
+- Pirâmide de testes
 
-### What is Software testing?
+### O que é teste de software?
 
-Most of us use airplanes and cars. Would you ride in a car or take a seat on an airplane if you knew these vehicles were not tested? Would you feel safe and secure? It’s human nature to avoid risks if possible. To understand the value of testing you need to what is software testing in the first place ..
+A maioria de nós usa aviões e carros. Você andaria de carro ou se sentaria em um avião se soubesse que esses veículos não foram testados? Você se sentiria seguro e protegido? É da natureza humana evitar riscos, se possível. Para entender o valor do teste, você precisa saber o que é teste de software em primeiro lugar.
 
-> Software testing is an investigation conducted to provide stakeholders with information about the quality of the software product or service under test. Software testing can also provide an objective, independent view of the software to allow the business to appreciate and understand the risks of software implementation.
+> O teste de software é uma investigação conduzida para fornecer às partes interessadas informações sobre a qualidade do produto ou serviço de software sob teste. O teste de software também pode fornecer uma visão objetiva e independente do software para permitir que a empresa avalie e compreenda os riscos da implementação do software.
 
-Read the following to know more about testing and it's value :
+Leia o seguinte para saber mais sobre o teste e seu valor:
 
-- [So, What Is Software Testing?](https://www.ministryoftesting.com/dojo/series/the-testing-planet-2017/lessons/so-what-is-software-testing)
-- [The Most Common Types of Testing](https://testautomationresources.com/software-testing-basics/software-testing-types/)
+- [Então, o que é teste de software?](https://www.ministryoftesting.com/dojo/series/the-testing-planet-2017/lessons/so-what-is-software-testing)
+- [Os tipos mais comuns de teste](https://testautomationresources.com/software-testing-basics/software-testing-types/)
 
-### Fundamentals of testing
+### Fundamentos de testes
 
-Now that we know what it is, let's look at a global overview of the fundamentals of testing and your role as a QA engineer. How to determine what parts of the application to monitor and how to communicate the health of the application. Go through the following course:
+Agora que sabemos o que é, vamos ver uma visão geral global dos fundamentos dos testes e sua função como engenheiro de controle de qualidade. Como determinar quais partes do aplicativo devem ser monitoradas e como comunicar a integridade do aplicativo. Faça o seguinte curso:
 
-- [Fundamentals of testing](https://www.linkedin.com/learning/programming-foundations-software-testing-qa)
+- [Fundamentos de teste](https://www.linkedin.com/learning/programming-foundations-software-testing-qa)
 
-### QA Engineer Mindset
+### Mentalidade do engenheiro de controle de qualidade
 
-What makes QAs valuable is their mindset! A mindset is a set of assumptions, methods, or notations held by one or more person. In simple words ... it's the way of thinking. As a QA engineer having the right mindset is the key to ensure quality.
+O que torna os QAs valiosos é a mentalidade deles! Uma mentalidade é um conjunto de suposições, métodos ou notações mantidas por uma ou mais pessoas. Em palavras simples... é a maneira de pensar. Como engenheiro de controle de qualidade, ter a mentalidade certa é a chave para garantir a qualidade.
 
-> A tester's mind should be like that of a child. Someone who is curious, unbiased and not afraid to ask the stupidest of questions .
+> A mente de um testador deve ser como a de uma criança. Alguém curioso, imparcial e sem medo de fazer as perguntas mais estúpidas.
 
-If you're curious to know the inside story of a testers mind, you can read it [here](https://www.linkedin.com/pulse/testers-mind-inside-story-srinivas-murthy/)
+Se você está curioso para conhecer a história de uma mente de testadores, você pode ler [aqui](https://www.linkedin.com/pulse/testers-mind-inside-story-srinivas-murthy/)
 
-To know more how to use the mindset in testing read:
+Para saber mais como usar a mentalidade em testes, leia:
 
-- [3 Tips To Help Testers Ask Better Questions](https://www.ministryoftesting.com/dojo/series/the-testing-planet-archive/lessons/3-tips-to-help-testers-ask-better-questions)
-- [Software Testing Basics](https://usersnap.com/blog/software-testing-basics/)
+- [3 dicas para ajudar os testadores a fazer perguntas melhores](https://www.ministryoftesting.com/dojo/series/the-testing-planet-archive/lessons/3-tips-to-help-testers-ask-better- questões)
+- [Noções básicas de teste de software](https://usersnap.com/blog/software-testing-basics/)
 
-### Testing Pyramid
+### Pirâmide de teste
 
-In the previous week, you read about the common types of testing. To build on that, the testing pyramid puts these methods into a diagram, which indicates what kind of testing will be more valuable at which stage.
+Na semana anterior, você leu sobre os tipos comuns de teste. Para construir isso, a pirâmide de testes coloca esses métodos em um diagrama, que indica que tipo de teste será mais valioso em qual estágio.
 
-> The "Test Pyramid" is a metaphor that tells us to group software tests into buckets of different granularity. It also gives an idea of how many tests we should have in each of these groups
+> A "Pirâmide de Teste" é uma metáfora que nos diz para agrupar os testes de software em baldes de granularidade diferente. Também dá uma ideia de quantos testes devemos ter em cada um desses grupos
 
-Learn how the testing pyramid helps define testing strategies here:
+Saiba como a pirâmide de teste ajuda a definir estratégias de teste aqui:
 
-- [Define Testing Strategy using the Testing Pyramid](https://medium.com/@Colin_But/define-testing-strategy-using-the-testing-pyramid-1dabee37e823)
+- [Definir estratégia de teste usando a pirâmide de teste](https://medium.com/@Colin_But/define-testing-strategy-using-the-testing-pyramid-1dabee37e823)

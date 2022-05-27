@@ -1,30 +1,30 @@
-# Week 5
+# Semana 5
 
-## Sunday meeting
+## Reunião de domingo
 
-On Sunday our agenda will look as follows:
+No domingo nossa agenda será a seguinte:
 
-| Time        | Activity                    |
+| Hora | Atividade |
 | ----------- | --------------------------- |
-| 12:00-12:45 | Sprint Demo                 |
-| 12:45-13:15 | QA Exploratory test debrief |
-| 13:15-13:30 | BREAK                       |
-| 13:30-14:15 | Preparing pruning sprint    |
+| 12:00-12:45 | Demonstração do Sprint |
+| 12:45-13:15 | Teste exploratório de controle de qualidade |
+| 13:15-13:30 | INTERROMPER |
+| 13:30-14:15 | Preparando o sprint de poda |
 
-### Preparing pruning sprint
+### Preparando o sprint de poda
 
-This week is about making the project perfect! This project will be the centerpiece of your CV and should not only work perfectly, but should also look great (both the application as well as the code)! So during the meeting on Sunday, create a list of the things you want to fix. These will probably be smaller issues so unlike previous weeks you will not be assigned features, but will just have a bunch of things to do as a team.
+Esta semana é sobre como tornar o projeto perfeito! Este projeto será a peça central do seu currículo e não deve apenas funcionar perfeitamente, mas também deve ter uma ótima aparência (tanto o aplicativo quanto o código)! Então, durante a reunião de domingo, crie uma lista das coisas que você quer consertar. Esses provavelmente serão problemas menores, então, diferentemente das semanas anteriores, você não receberá recursos, mas terá apenas um monte de coisas para fazer em equipe.
 
-Think of things like:
+Pense em coisas como:
 
-- Bugs
-- Design improvements
-- Code inconsistencies
-- Creating custom hooks for shared logic
-- Combining components into one or splitting big components into multiple
+- Insetos
+- Melhorias no projeto
+- Inconsistências de código
+- Criação de ganchos personalizados para lógica compartilhada
+- Combinando componentes em um ou dividindo grandes componentes em vários
 
-You will also be preparing a final presentation this week to have on Sunday for everyone that helped you in the project aswell as the HYF core team!
+Você também estará preparando uma apresentação final esta semana para ter no domingo para todos que o ajudaram no projeto, bem como para a equipe principal do HYF!
 
-## Ready?
+## Preparar?
 
-If you are ready to get started on your tasks for the week, click [here](./MAKEME.md).
+Se você estiver pronto para começar suas tarefas da semana, clique [aqui](./MAKEME.md).

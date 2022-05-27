@@ -1,25 +1,25 @@
-# Scrum master
+# Scrum Master
 
-As the Scrum master, it is your role to facilitate the process of our Agile team and make sure that the meetings are ran efficiently.
+Como Scrum master, é seu papel facilitar o processo de nossa equipe Agile e garantir que as reuniões sejam realizadas com eficiência.
 
-Below you will find an overview of what is expected of you every week. The weeks start on Sunday with a full team meeting and last until the next Saturday.
+Abaixo, você encontrará uma visão geral do que é esperado de você a cada semana. As semanas começam no domingo com uma reunião de equipe completa e duram até o próximo sábado.
 
-| Week # | Sunday meeting                                 | Week responsibilities |
-| ------ | ---------------------------------------------- | --------------------- |
-| 1.     | Help think of user stories                     | -                     |
-| 2.     | Facilitate meeting: [Agenda](/week2/README.md) | -                     |
-| 3.     | Facilitate meeting: [Agenda](/week3/README.md) | -                     |
-| 4.     | Facilitate meeting: [Agenda](/week4/README.md) | -                     |
-| 5.     | Facilitate meeting: [Agenda](/week5/README.md) | -                     |
+| Semana # | Reunião de domingo | Responsabilidades semanais |
+| ------ | ---------------------------------------------- | ---------- |
+| 1. | Ajude a pensar em histórias de usuários | - |
+| 2. | Facilitar a reunião: [Agenda](/week2/README.md) | - |
+| 3. | Facilitar a reunião: [Agenda](/week3/README.md) | - |
+| 4. | Facilitar a reunião: [Agenda](/week4/README.md) | - |
+| 5. | Facilitar a reunião: [Agenda](/week5/README.md) | - |
 
-Below we will explain each task in more detail.
+A seguir, explicaremos cada tarefa com mais detalhes.
 
-## Help think of user stories
+## Ajude a pensar em histórias de usuários
 
-In the first kickoff meeting in week 1 we will only have an app idea which needs to be fleshed out. As part of the team you will assist in the thinking of user stories and help brainstorming.
+Na primeira reunião inicial na semana 1, teremos apenas uma ideia de aplicativo que precisa ser desenvolvida. Como parte da equipe, você ajudará no pensamento de histórias de usuários e ajudará no brainstorming.
 
-## Facilitate meeting
+## Facilitar a reunião
 
-From week 2 on, you are responsible for facilitating the meetings on Sunday. Go through the agenda and make sure that the steps are followed. You can use whatever tools you want to facilitate it using your experience as a scrum master, just make sure it is open for anyone to use!
+A partir da semana 2, você é responsável por facilitar as reuniões de domingo. Percorra a agenda e certifique-se de que as etapas sejam seguidas. Você pode usar as ferramentas que quiser para facilitar usando sua experiência como scrum master, apenas certifique-se de que esteja aberto para qualquer pessoa usar!
 
-It is also your responsibility to start the meeting on Sunday by providing a link to a video conferencing meeting in the class channel on Sunday at 12:00.
+Também é sua responsabilidade iniciar a reunião no domingo fornecendo um link para uma reunião por videoconferência no canal da classe no domingo às 12h.

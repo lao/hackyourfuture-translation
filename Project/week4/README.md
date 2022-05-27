@@ -1,20 +1,20 @@
-# Week 4
+# Semana 4
 
-## Sunday meeting
+## Reunião de domingo
 
-On Sunday our agenda will look as follows:
+No domingo nossa agenda será a seguinte:
 
-| Time        | Activity             |
+| Hora | Atividade |
 | ----------- | -------------------- |
-| 12:00-12:45 | Sprint Demo          |
-| 12:45-13:15 | Sprint Retrospective |
-| 13:15-13:30 | BREAK                |
-| 13:30-14:15 | Sprint Planning      |
+| 12:00-12:45 | Demonstração do Sprint |
+| 12:45-13:15 | Retrospectiva da Sprint |
+| 13:15-13:30 | INTERROMPER |
+| 13:30-14:15 | Planejamento de Sprint |
 
-## Week goals
+## Metas da semana
 
-A normal working week, except for our QAs who will do an exploratory test this week. This will help identify what smaller bugs or inconsistencies have entered our application.
+Uma semana de trabalho normal, exceto para nossos QAs que farão um teste exploratório esta semana. Isso ajudará a identificar quais bugs ou inconsistências menores entraram em nosso aplicativo.
 
-## Ready?
+## Preparar?
 
-If you are ready to get started on your tasks for the week, click [here](./MAKEME.md).
+Se você estiver pronto para começar suas tarefas da semana, clique [aqui](./MAKEME.md).

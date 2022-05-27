@@ -1,84 +1,84 @@
-# Week 2 tasks
+# Tarefas da semana 2
 
-This week we start development! Have a look at the role(s) you are fulfilling on what your tasks are.
+Esta semana começamos o desenvolvimento! Dê uma olhada no(s) papel(es) que você está cumprindo e quais são suas tarefas.
 
-> This week, the mentors will be a little more available than normal to help get a good start. The education director will also be at the meetings to make sure that everything is going well and/or answer any questions about what to do in certain situations. This is only for this week, during the next week(s) the amount of support will get lowered until you can do it all yourselves.
+> Esta semana, os mentores estarão um pouco mais disponíveis do que o normal para ajudar a começar bem. O diretor de educação também estará nas reuniões para se certificar de que tudo está indo bem e/ou tirar dúvidas sobre o que fazer em determinadas situações. Isto é apenas para esta semana, durante a(s) próxima(s) semana(s), a quantidade de suporte será reduzida até que você possa fazer tudo sozinho.
 
-Have a look at the [tips](../TIPS.md) for a successful project.
+Dê uma olhada nas [dicas](../TIPS.md) para um projeto de sucesso.
 
-# Week tasks:
+# Tarefas da semana:
 
-- 1. Daily meeting organiser specifics
-- 2. (Dev) Developer tasks
-- 3. (QA) QA Engineer tasks
-- 4. Getting settled in
+- 1. Especificidades do organizador da reunião diária
+- 2. (Desenvolvimento) Tarefas do desenvolvedor
+- 3. (QA) Tarefas do Engenheiro de QA
+- 4. Estabelecendo-se
 
-## 1. Daily meeting organiser specifics
+## 1. Especificidades do organizador da reunião diária
 
-If you are the daily meeting organiser you have an extra task this week. Every day on the time decided on Sunday it is up to you to share a link to a video conference. To facilitate the meeting, have every team answer the following questions:
+Se você é o organizador da reunião diária, você tem uma tarefa extra esta semana. Todos os dias no horário decidido no domingo cabe a você compartilhar um link para uma videoconferência. Para facilitar a reunião, peça a cada equipe que responda às seguintes perguntas:
 
-- What did you do yesterday?
-- What will you do today?
-- Are you blocked?
+- O que você fez ontem?
+- O que você vai fazer hoje?
+- Você está bloqueado?
 
-Avoid vague answers like 'I worked on my feature' or 'I will fix a bug' as that doesn't help anyone. The goal is to give everyone an idea of where you are or what you are going to do so that everyone can place the code you are writing in the bigger context or even give tips on how to solve the problem you are facing.
+Evite respostas vagas como 'Trabalhei no meu recurso' ou 'Vou corrigir um bug', pois isso não ajuda ninguém. O objetivo é dar a todos uma ideia de onde você está ou o que você vai fazer para que todos possam colocar o código que você está escrevendo no contexto maior ou até mesmo dar dicas de como resolver o problema que você está enfrentando.
 
-For example, if someone says that they are going to build a context today to provide multiple components with access to the logged in user name, someone else may say that if they could add the e-mail to the context as well it would help out with their feature.
+Por exemplo, se alguém disser que vai construir um contexto hoje para fornecer vários componentes com acesso ao nome de usuário conectado, outra pessoa pode dizer que se pudesse adicionar o e-mail ao contexto também ajudaria com sua característica.
 
-Remember that a sprint is a team game and it will help you so much to understand the code base if you have an idea what everyone is working on.
+Lembre-se de que um sprint é um jogo de equipe e ajudará muito a entender a base do código se você tiver uma ideia no que todos estão trabalhando.
 
-If someone is blocked, it is time to figure out how to unblock them. If they are waiting for another team to finish, the other team may need to shift priorities or already push part of their code to allow the first to continue. If they are stuck on some problem, it is up to the whole group to decide who is needed to help fix the problem and reprioritize the tasks for the day.
+Se alguém estiver bloqueado, é hora de descobrir como desbloqueá-lo. Se eles estiverem esperando que outra equipe termine, a outra equipe pode precisar mudar as prioridades ou já enviar parte de seu código para permitir que a primeira continue. Se eles estão presos em algum problema, cabe a todo o grupo decidir quem é necessário para ajudar a resolver o problema e redefinir as prioridades das tarefas do dia.
 
-## 2. (Dev) Developer tasks
+## 2. (Desenvolvimento) Tarefas do desenvolvedor
 
-If you are a Developer, you will have the following responsibilities every week:
+Se você é um Desenvolvedor, terá as seguintes responsabilidades todas as semanas:
 
-- On Sunday you will get assigned a feature and a group. As that group you are responsible for building that feature that week and will demo it in the next Sunday's meeting. The QA team will fill the ticket with test scenario's
-- If another team needs a code review then the rest of the team needs to prioritise it to get the PR through. Every PR requires 2 other developers to approve the code that goes in and should not be merged until that is the case. This is to ensure code quality, but also helps others keep track of all the code that gets added to the code base. During a code review, be critical and feel free to ask for explanations if you do not understand a part of the code. In the future you may have to work on a feature that builds on top of the code you are reviewing so it is a good idea to know how it works!
-- You are also responsible for informing QA and fixing any bugs that they find
+- No domingo, você receberá um recurso e um grupo. Como esse grupo, você é responsável por construir esse recurso naquela semana e fará uma demonstração na reunião do próximo domingo. A equipe de controle de qualidade preencherá o ticket com os cenários de teste
+- Se outra equipe precisar de uma revisão de código, o restante da equipe precisará priorizá-la para passar o PR. Cada PR requer 2 outros desenvolvedores para aprovar o código que entra e não deve ser mesclado até que seja o caso. Isso é para garantir a qualidade do código, mas também ajuda outras pessoas a acompanhar todo o código que é adicionado à base de código. Durante uma revisão de código, seja crítico e sinta-se à vontade para pedir explicações se não entender uma parte do código. No futuro, você pode ter que trabalhar em um recurso que se baseia no código que você está revisando, então é uma boa ideia saber como ele funciona!
+- Você também é responsável por informar o controle de qualidade e corrigir quaisquer bugs que eles encontrarem
 
-Remember to have small and easy to review PRs, as mentioned in the [tips](../TIPS.md)
+Lembre-se de ter PRs pequenos e fáceis de revisar, conforme mencionado nas [dicas](../TIPS.md)
 
-If you are unsure of what to do or want to confirm you are doing the right thing, then contact your tech lead!
+Se você não tiver certeza do que fazer ou quiser confirmar que está fazendo a coisa certa, entre em contato com seu líder de tecnologia!
 
-## 3. (QA) QA Engineer tasks
+## 3. (QA) Tarefas do Engenheiro de QA
 
-If you are a QA Engineer, you will have the following responsibilities every week as a team:
+Se você for um engenheiro de controle de qualidade, terá as seguintes responsabilidades todas as semanas como equipe:
 
-- look at all of the features being built and write up test scenarios for each of them in the ticket itself. This will help ensure that the devs and yourself are clear on what the feature needs to do. You will also want to think of the test scenarios that you can automate and create an issue per scenario to automate it and add it to the backlog
-- if a dev feature is ready then it is up to you to ensure that all of the test scenarios are covered by manualy testing the deployed version. If there are problems, then report the issues to the developers in the PR. Some issues may be minor and can be fixed in a later sprint, if that is the case, then make a new issue and add it to the backlog. _We leave the decision up to the team during the project, usually this would be decided with the Product Owner there._
-- go through the QA Theory of the week
-- at the start of the sprint the team will decide to add a couple of automation issues to the sprint to be completed. If no feature needs testing, then this is what to work on.
+- veja todos os recursos que estão sendo construídos e escreva cenários de teste para cada um deles no próprio ticket. Isso ajudará a garantir que os desenvolvedores e você saibam claramente o que o recurso precisa fazer. Você também vai querer pensar nos cenários de teste que você pode automatizar e criar um problema por cenário para automatizá-lo e adicioná-lo ao backlog
+- se um recurso de desenvolvimento estiver pronto, cabe a você garantir que todos os cenários de teste sejam cobertos testando manualmente a versão implantada. Se houver problemas, informe os problemas aos desenvolvedores no PR. Alguns problemas podem ser menores e podem ser corrigidos em um sprint posterior, se for o caso, crie um novo problema e adicione-o ao backlog. _Deixamos a decisão para a equipe durante o projeto, normalmente isso seria decidido com o Product Owner lá._
+- passar pela Teoria QA da semana
+- no início do sprint, a equipe decidirá adicionar alguns problemas de automação ao sprint a ser concluído. Se nenhum recurso precisar de teste, é nisso que trabalhar.
 
-## 4. Getting settled in
+## 4. Estabelecendo-se
 
-This will be your first week of working in an Agile team so a lot will feel unfamiliar. To help you out, keep the following things in mind:
+Esta será sua primeira semana de trabalho em uma equipe Agile, então muita coisa parecerá desconhecida. Para ajudá-lo, lembre-se do seguinte:
 
-### 4.1 Daily standups
+### 4.1 Standups diários
 
-Remember that during the first week of daily standups the Education Director will be there to make sure that those are going according to plan. After the standup is done, feel free to ask any questions about the way of working to get it cleared up as soon as possible.
+Lembre-se de que durante a primeira semana de reuniões diárias, o Diretor de Educação estará lá para garantir que elas estejam indo de acordo com o planejado. Depois que o standup estiver concluído, sinta-se à vontade para fazer qualquer pergunta sobre a maneira de trabalhar para esclarecer o mais rápido possível.
 
-### 4.2 Preparing for the retrospective
+### 4.2 Preparando-se para a retrospectiva
 
-Keep in mind that at the end of the week you will have a retrospective as that is a part of every agile team. The goal of the retrospective is to look at the way the team is working and identify the positive and negative parts of it. Then, as a team, adjustments to the way of working can be made to make everyone
+Tenha em mente que no final da semana você terá uma retrospectiva, pois isso faz parte de todo time ágil. O objetivo da retrospectiva é observar a maneira como a equipe está trabalhando e identificar as partes positivas e negativas dela. Então, em equipe, podem ser feitos ajustes na forma de trabalhar para que todos
 
-If during the week you encounter something that really helped you, or hindered you, then write it down somewhere. In the retrospective you will be asked the following questions:
+Se durante a semana você encontrar algo que realmente o ajudou, ou o atrapalhou, então anote em algum lugar. Na retrospectiva, serão feitas as seguintes perguntas:
 
-- What went well?
-- What can we improve?
+- O que foi bem?
+- O que podemos melhorar?
 
-This can be in relation to the team, the way of working, the technologies used, etc. Anything that needs to be highlighted! It will be harder to come up with these on the spot, keep a list for yourself.
+Isso pode ser em relação à equipe, a forma de trabalhar, as tecnologias utilizadas, etc. Qualquer coisa que precise ser destacada! Será mais difícil chegar a estes no local, mantenha uma lista para si mesmo.
 
-### 4.3 You are a team!
+### 4.3 Você é uma equipe!
 
-Although we do split you off into pairs and assign a ticket this is merely to indicate how to start the week. During the week you will run into complications that others may have run into before. Sometimes just having 10 minutes of help from someone else will allow you to get unstuck and move faster as a team. Once you are done with your ticket, check with the rest to see where you can help out. Either the team finishes everything or the team failed.
+Embora nós o dividamos em pares e atribuamos um bilhete, isso é apenas para indicar como começar a semana. Durante a semana, você terá complicações que outros podem ter enfrentado antes. Às vezes, ter apenas 10 minutos de ajuda de outra pessoa permitirá que você se solte e se mova mais rápido como equipe. Depois de terminar com o seu bilhete, verifique com o resto para ver onde você pode ajudar. Ou a equipe termina tudo ou a equipe falhou.
 
-### 4.4 Developers & QA roles do NOT have a wall between them
+### 4.4 As funções de desenvolvedores e controle de qualidade NÃO têm uma parede entre elas
 
-You may sometimes feel that something is not part of your role, but that is an old way of thinking. You may not be as experienced a developer as a QA or you may not be that good of a tester as a developer but that should not stop you from helping out if the team notices a bottle neck. If there are a lot of tickets waiting for testing, then as a developer you can jump in and run through the test scenarios to help get those tickets through! Our QAs have quite some developer experience already, so if you see that not enough tickets are reaching the testing stage, start programming!
+Às vezes você pode sentir que algo não faz parte do seu papel, mas essa é uma maneira antiga de pensar. Você pode não ser um desenvolvedor tão experiente quanto um QA ou pode não ser tão bom em um testador como um desenvolvedor, mas isso não deve impedi-lo de ajudar se a equipe perceber um gargalo. Se houver muitos tíquetes aguardando teste, como desenvolvedor, você pode entrar e executar os cenários de teste para ajudar a obter esses tíquetes! Nossos QAs já têm bastante experiência de desenvolvedor, portanto, se você perceber que não há tickets suficientes chegando ao estágio de teste, comece a programar!
 
-The great thing about Agile teams is that the goal is clear and although everyone has their specialties these are not defining. The team either succeeds or fails together!
+O melhor das equipes ágeis é que o objetivo é claro e, embora todos tenham suas especialidades, elas não são definidoras. A equipe tem sucesso ou falha junto!
 
-### 4.5 Testing is not just on the QA role
+### 4.5 O teste não é apenas na função de controle de qualidade
 
-Sometimes we here people in the developer role say: 'why should I test, the QA is here right?'. Although we love your faith in the QA, testing is a shared responsibility. Generally, unit testing and component testing is not the QA's responsibility, they are there for you as a developer and are therefore the developer's responsibility. This is why these types of testing were part of the main curriculum and why end to end testing was not.
+Às vezes nós aqui pessoas na função de desenvolvedor dizemos: 'por que eu deveria testar, o controle de qualidade está aqui certo?'. Embora gostemos de sua fé no controle de qualidade, o teste é uma responsabilidade compartilhada. Geralmente, o teste de unidade e o teste de componentes não são de responsabilidade do QA, eles estão lá para você como desenvolvedor e, portanto, são de responsabilidade do desenvolvedor. É por isso que esses tipos de testes faziam parte do currículo principal e por que os testes de ponta a ponta não eram.

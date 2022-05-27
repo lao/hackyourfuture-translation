@@ -1,5 +1,5 @@
 ## HackYourForecast
 
-Brought to you by #class15: HackYourForecast!
+Trazido a você por #class15: HackYourForecast!
 
-The following [link](https://www.hackyourforecast.com/) will take you to the app.
+O seguinte [link](https://www.hackyourforecast.com/) levará você ao aplicativo.

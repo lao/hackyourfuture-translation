@@ -1,26 +1,26 @@
-# Development team tips
-Working on a project with multiple people has a lot of benefits, but it also brings about some challenges. We want to give you some tips of how to transition into the project where you are not studying/learning individually anymore.
+# Dicas da equipe de desenvolvimento
+Trabalhar em um projeto com várias pessoas traz muitos benefícios, mas também traz alguns desafios. Queremos dar algumas dicas de como fazer a transição para o projeto onde você não está mais estudando/aprendendo individualmente.
 
-Good luck in the project! Make it awesome and your CV will be very happy.
+Boa sorte no projeto! Torná-lo incrível e seu currículo será muito feliz.
 
-## Keep PRs small and focused!
-At the start of the week, make sure you think about the `steps to complete` the feature. You should *not* be doing everything at once, but do everything in small steps. Make it small steps that are functionality on their own so that whenever you finish a step you can already create a PR and have someone review it. The key to keeping a code base clean is to keep the PR's manageable. 
+## Mantenha os PRs pequenos e focados!
+No início da semana, certifique-se de pensar nas `etapas para concluir` o recurso. Você *não* deve fazer tudo de uma vez, mas fazer tudo em pequenos passos. Faça pequenos passos que sejam funcionalidades por si só, para que sempre que você terminar uma etapa você já possa criar um PR e ter alguém revisá-lo. A chave para manter uma base de código limpa é manter as relações públicas gerenciáveis.
 
-A huge PR is very hard to review and will make it a lot easier for bugs to get through into the production environment, which is about the worst thing that can happen. So keep the steps small and make it easier on everyone!
+Um PR enorme é muito difícil de revisar e tornará muito mais fácil para os bugs entrarem no ambiente de produção, o que é a pior coisa que pode acontecer. Portanto, mantenha os passos pequenos e facilite para todos!
 
-For example, if you are building a user list that requires the names and avatars of the user to be displayed on the screen you could split this into 4 different steps:
-- Create a user model
-- Create an endpoint for all users with routers and controllers
-- Create a visual component that shows the name and avatar of a single user
-- Create a page that grabs the list from the endpoint and shows our component in step 3 for all of the users
+Por exemplo, se você estiver criando uma lista de usuários que exija que os nomes e avatares do usuário sejam exibidos na tela, você pode dividir isso em 4 etapas diferentes:
+- Criar um modelo de usuário
+- Crie um endpoint para todos os usuários com roteadores e controladores
+- Crie um componente visual que mostre o nome e o avatar de um único usuário
+- Crie uma página que pegue a lista do endpoint e mostre nosso componente na etapa 3 para todos os usuários
 
-Each of these PRs are manageable and reviewable in a short time which make it much easier for your classmates to review. The first 3 do not change the UI/UX in any way so are safe to push to the code base without having the rest implemented yet.
+Cada um desses PRs é gerenciável e revisável em um curto espaço de tempo, o que torna muito mais fácil para seus colegas revisarem. Os 3 primeiros não alteram a UI/UX de forma alguma, portanto, é seguro enviar para a base de código sem ter o restante implementado ainda.
 
-## Do not forget about UX!
-We do not have a designer in the team, which means you are responsible for the design of the application. Remember that the [design guidelines repo](https://github.com/HackYourFuture/design_guidelines) gives you loads of tips on how to make an application look good!
+## Não se esqueça do UX!
+Não temos um designer na equipe, o que significa que você é responsável pelo design do aplicativo. Lembre-se de que o [repositório de diretrizes de design](https://github.com/HackYourFuture/design_guidelines) fornece muitas dicas sobre como fazer um aplicativo parecer bom!
 
-## Work as a team
-If you are struggling with a bug or are unsure of how to implement something, post it in the class channel! You now have a development team to support you. Sometimes all you need is someone to explain your problem to to get to a solution. This happens all the time in a work environment.
+## Trabalhe em equipe
+Se você está lutando com um bug ou não tem certeza de como implementar algo, poste no canal da turma! Agora você tem uma equipe de desenvolvimento para apoiá-lo. Às vezes, tudo o que você precisa é de alguém para explicar seu problema para chegar a uma solução. Isso acontece o tempo todo em um ambiente de trabalho.
 
-## What to do once finished?
-Some features will be done earlier than others, but the sprint is only done when everything is done! So once you are finished, see what other team may need some help! Only if noone else needs help is it fine to pick up a new issue, or possibly use the time to refactor some code! As one of our mentors always said: 'code is never done!'.
+## O que fazer uma vez terminado?
+Algumas funcionalidades serão feitas antes de outras, mas o sprint só é feito quando tudo estiver pronto! Então, quando terminar, veja qual outra equipe pode precisar de ajuda! Somente se ninguém mais precisar de ajuda é bom pegar um novo problema ou possivelmente usar o tempo para refatorar algum código! Como um de nossos mentores sempre disse: 'código nunca é feito!'.

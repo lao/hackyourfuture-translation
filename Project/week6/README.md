@@ -1,18 +1,18 @@
-# Week 6
+# Semana 6
 
-## Sunday meeting
+## Reunião de domingo
 
-On Sunday our agenda will look as follows:
+No domingo nossa agenda será a seguinte:
 
-| Time          | Activity                          |
+| Hora | Atividade |
 | ------------- | --------------------------------- |
-| 12:30 - 12:50 | Presentation of the final project |
-| 12:50 - 13:30 | Question and answers              |
+| 12:30 - 12:50 | Apresentação do projeto final |
+| 12:50 - 13:30 | Pergunta e respostas |
 
-## Week goals
+## Metas da semana
 
-This week is about finishing off the project and hopefully graduating from HYF!
+Esta semana é sobre terminar o projeto e, esperançosamente, me formar no HYF!
 
-## Am I graduated?
+## Sou formado?
 
-Not everyone graduates immediately after completing the project, click [here](./MAKEME.md) for more information.
+Nem todo mundo se forma imediatamente após concluir o projeto, clique [aqui](./MAKEME.md) para mais informações.

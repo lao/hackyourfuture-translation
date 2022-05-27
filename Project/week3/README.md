@@ -1,30 +1,30 @@
-# Week 3
+# Semana 3
 
-## Sunday meeting
+## Reunião de domingo
 
-On Sunday our agenda will look as follows:
+No domingo nossa agenda será a seguinte:
 
-| Time        | Activity             |
+| Hora | Atividade |
 | ----------- | -------------------- |
-| 12:00-12:45 | Sprint Demo          |
-| 12:45-13:15 | Sprint Retrospective |
-| 13:15-13:30 | BREAK                |
-| 13:30-14:15 | Sprint Planning      |
+| 12:00-12:45 | Demonstração do Sprint |
+| 12:45-13:15 | Retrospectiva da Sprint |
+| 13:15-13:30 | INTERROMPER |
+| 13:30-14:15 | Planejamento de Sprint |
 
-### Sprint Demo
+### Demonstração do Sprint
 
-After a week of development every user story in the sprint should be finished. It is then time to show to the rest of the company what has been built and this is what we call a Sprint Demo. In our case we want to show our mentors what has been built as they are not embedded into the team (usually they would be). So make sure beforehand you know who is going to present which user story and have it prepared.
+Após uma semana de desenvolvimento, cada história de usuário no sprint deve ser concluída. Então é hora de mostrar ao resto da empresa o que foi construído e isso é o que chamamos de Sprint Demo. No nosso caso, queremos mostrar aos nossos mentores o que foi construído, pois eles não estão incorporados à equipe (geralmente estariam). Portanto, certifique-se de antemão de quem vai apresentar qual história de usuário e prepare-a.
 
-### Sprint Retrospective
+### Retrospectiva da Sprint
 
-The sprint retrospective is held after every sprint and the first one will be held today. The retrospective is a look back over the sprint to see what went well, what did not and what can be done about it. By doing a retrospective the team can identify processes to improve the way the team is working! Don't be afraid to be a little negative or nitpicky here, that is the only way to improve as a team!
+A retrospectiva do sprint é realizada após cada sprint e a primeira será realizada hoje. A retrospectiva é uma retrospectiva do sprint para ver o que deu certo, o que não deu e o que pode ser feito a respeito. Ao fazer uma retrospectiva a equipe pode identificar processos para melhorar a forma como a equipe está trabalhando! Não tenha medo de ser um pouco negativo ou meticuloso aqui, essa é a única maneira de melhorar como equipe!
 
-## Week goals
+## Metas da semana
 
-This is the second week of actually starting to build. At this point the codebase should be forming nicely and you already have some experience of working together and getting things done. At the end of this week, the hope is to have a usable albeit minimal application online to be used.
+Esta é a segunda semana de realmente começar a construir. Neste ponto, a base de código deve estar se formando bem e você já tem alguma experiência em trabalhar em conjunto e fazer as coisas. No final desta semana, a esperança é ter um aplicativo online utilizável, embora mínimo, para ser usado.
 
-At this point your tech lead will only supervise the code reviews, which means the quality of the code is now in your hands! Also, you will be doing the daily standups on your own from now on.
+Neste ponto, seu líder técnico supervisionará apenas as revisões de código, o que significa que a qualidade do código está agora em suas mãos! Além disso, você estará fazendo os standups diários por conta própria a partir de agora.
 
-## Ready?
+## Preparar?
 
-If you are ready to get started on your tasks for the week, click [here](./MAKEME.md).
+Se você estiver pronto para começar suas tarefas da semana, clique [aqui](./MAKEME.md).

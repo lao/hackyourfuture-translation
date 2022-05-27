@@ -1,48 +1,48 @@
-# Week 4 tasks
+# Tarefas da semana 4
 
-This week will be very similar to the previous one and you will have the same tasks, so have a look at the tasks [here](../week2/MAKEME.md).
+Esta semana será muito parecida com a anterior e você terá as mesmas tarefas, então dê uma olhada nas tarefas [aqui](../week2/MAKEME.md).
 
-If you are the daily meeting organiser then look at the [week 2 tasks](../week2/MAKEME.md) to see what that entails.
+Se você for o organizador da reunião diária, veja as [tarefas da semana 2](../week2/MAKEME.md) para ver o que isso implica.
 
-If you are in the QA team then look at the [week 2 QA explanation](../week2/MAKEME.md) to see what that entails.
+Se você estiver na equipe de controle de qualidade, consulte a [explicação de controle de qualidade da semana 2](../week2/MAKEME.md) para ver o que isso implica.
 
-Remember the [tips](../TIPS.md) to a successful developer team!
+Lembre-se das [dicas](../TIPS.md) para uma equipe de desenvolvedores de sucesso!
 
-# Week specific tasks:
+# Tarefas específicas da semana:
 
-Besides the normal 'working' tasks, this week has the following specific tasks:
+Além das tarefas normais de 'trabalho', esta semana tem as seguintes tarefas específicas:
 
-- 1. (QA) Exploratory testing
-  - Exploratory testing
-  - Debriefing
-- 2. (QA) Doing an exploratory test
+- 1. (QA) Teste exploratório
+  - Testes exploratórios
+  - Interrogatório
+- 2. (QA) Fazendo um teste exploratório
 
-## 1. (QA) Exploratory testing
+## 1. (QA) Teste exploratório
 
-This week we will be focusing on the topic of exploratory testing and the subsequent debriefing of it. This week there is also a practical side, it is up to you to do an exploratory testing session on your own and then plan a debriefing session with your QA lead to practice this!
+Esta semana estaremos focando no tópico de testes exploratórios e o subsequente debriefing do mesmo. Esta semana também há um lado prático, cabe a você fazer uma sessão de testes exploratórios por conta própria e depois planejar uma sessão de debriefing com seu líder de controle de qualidade para praticar isso!
 
-### 1.1 Exploratory Testing
+### 1.1 Testes Exploratórios
 
-> It is a type of software testing where test cases are not created in advance but testers check system on the fly. They may note down ideas about what to test before test execution. The focus of exploratory testing is more on testing as a "thinking" activity.
-> Exploratory Testing is widely used in Agile models and is all about discovery, investigation, and learning. It emphasizes personal freedom and responsibility of the individual tester.
+> É um tipo de teste de software em que os casos de teste não são criados antecipadamente, mas os testadores verificam o sistema em tempo real. Eles podem anotar ideias sobre o que testar antes da execução do teste. O foco do teste exploratório é mais no teste como uma atividade de "pensamento".
+> O teste exploratório é amplamente utilizado em modelos ágeis e tem tudo a ver com descoberta, investigação e aprendizado. Ele enfatiza a liberdade pessoal e a responsabilidade do testador individual.
 
-The following course explains exploratory testing and how it's the key to effective testing:
+O curso a seguir explica o teste exploratório e como ele é a chave para um teste eficaz:
 
-- [Software Testing: Exploratory Testing](https://www.linkedin.com/learning/software-testing-exploratory-testing/exploration-the-key-to-effective-testing)
+- [Teste de software: teste exploratório](https://www.linkedin.com/learning/software-testing-exploratory-testing/exploration-the-key-to-effective-testing)
 
-Extra reading :
-[Three Digestible Diagrams to Describe Exploratory Testing](https://www.ministryoftesting.com/dojo/lessons/three-digestible-diagrams-to-describe-exploratory-testing)
+Leitura adicional:
+[Três diagramas digeríveis para descrever testes exploratórios](https://www.ministryoftesting.com/dojo/lessons/three-digestible-diagrams-to-describe-exploratory-testing)
 
 ### 1.2 Debriefing
 
-Communicating your testing results is as important as testing itself, after running exploratiry testing a debriefing session is necessarily
+Comunicar os resultados do seu teste é tão importante quanto o próprio teste, depois de executar o teste exploratório, uma sessão de debriefing é necessariamente
 
-Read what is debriefing and how it's done here:
+Leia o que é debriefing e como é feito aqui:
 
-- [Carrying Out A Successful Debrief](https://huddle.eurostarsoftwaretesting.com/session-based-test-management-part-4-session-based-exploratory-testing/)
+- [Realizando um relatório bem-sucedido](https://huddle.eurostarsoftwaretesting.com/session-based-test-management-part-4-session-based-exploratory-testing/)
 
-## 2. Doing an exploratory test
+## 2. Fazendo um teste exploratório
 
-We have gone through a few weeks of development now and even though we always try to only deliver outstanding applications there are bound to have been some bugs/inconsistencies/problems that have slipped through. This happens to the best and let's be honest here, we are not the best (yet). As a QA engineer you will want to do an exploratory test to identify parts of the application that can be improved and create issues to fix these things.
+Passamos por algumas semanas de desenvolvimento agora e, embora sempre tentemos entregar apenas aplicativos excelentes, é provável que tenha havido alguns bugs/inconsistências/problemas que escaparam. Isso acontece com os melhores e vamos ser honestos aqui, não somos os melhores (ainda). Como engenheiro de controle de qualidade, você desejará fazer um teste exploratório para identificar partes do aplicativo que podem ser aprimoradas e criar problemas para corrigir essas coisas.
 
-At the end of this week, you will present these findings to the team so that the product owner can decide what needs to be fixed before the final version.
+No final desta semana, você apresentará essas descobertas à equipe para que o proprietário do produto possa decidir o que precisa ser corrigido antes da versão final.
