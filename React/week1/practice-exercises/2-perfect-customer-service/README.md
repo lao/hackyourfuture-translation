@@ -1,16 +1,16 @@
-# Perfect customer service
+# Atendimento ao cliente perfeito
 
-Don't you love it when a company provides great customer service?
+Você não adora quando uma empresa oferece um ótimo atendimento ao cliente?
 
-Take a look at the following image:
+Dê uma olhada na imagem a seguir:
 
-![Exercise 2](../../assets/exercises/exercise2.png)
+![Exercício 2](../../assets/exercises/exercise2.png)
 
-In this exercise you have to create a single component that you'll reuse to display different information each time.
+Neste exercício, você precisa criar um único componente que será reutilizado para exibir informações diferentes a cada vez.
 
-1. Run `create-react-app` in this folder to create your environment
-2. Create a functional component called `<Guarantee>`
-3. Instantiate it 3 times
-4. Give each component 3 `props`: an `img`, `title` and `description`
-5. Pass down to each component the appropriate content. Take the images from the **assets** folder, inside the **exercise1** folder
-6. Test out if it works by importing it into the top level component, which is `<App>`
+1. Execute `create-react-app` nesta pasta para criar seu ambiente
+2. Crie um componente funcional chamado `<Garantia>`
+3. Instancie 3 vezes
+4. Dê a cada componente 3 `props`: um `img`, `title` e `description`
+5. Passe para cada componente o conteúdo apropriado. Pegue as imagens da pasta **assets**, dentro da pasta **exercise1**
+6. Teste se funciona importando-o para o componente de nível superior, que é `<App>`

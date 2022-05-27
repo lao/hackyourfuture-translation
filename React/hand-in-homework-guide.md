@@ -1,40 +1,40 @@
-# How to hand in homework
+# Como entregar o dever de casa
 
-In this module you'll submit your homework only using GIT and GitHub.
+Neste módulo, você enviará sua lição de casa apenas usando GIT e GitHub.
 
 1. [GitHub](https://www.github.com/HackYourFuture/React)
 
-## 1. GitHub homework guide
+## 1. Guia de lição de casa do GitHub
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=CpYARPYGQU8" target="_blank"><img src="./assets/submit-homework.png" width="400" height="250" alt="HYF Video" /></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=CpYARPYGQU8" target="_blank"><img src="./assets/submit-homework.png" width="400" height ="250" alt="HYF Vídeo" /></a>
 
-Watch the video (by clicking the image) or go through the following walk-through to learn how to submit your homework:
+Assista ao vídeo (clicando na imagem) ou siga o passo a passo a seguir para saber como enviar sua lição de casa:
 
-ONE TIME ONLY (START OF EVERY MODULE)
+APENAS UMA VEZ (INÍCIO DE CADA MÓDULO)
 
-1. Create a [fork](https://help.github.com/en/articles/fork-a-repo) of the homework module repository. For JavaScript (as well as the next 2 modules), the homework module repository is `https://www.github.com/HackYourHomework/React-classXX` where XX is your class number. You do this by using the `fork` option on the top right
-2. Navigate to the URL of the cloned repository (it should be in your personal GitHub account, under "repositories")
-3. Clone the repository, using SSH, to your local machine. You can do this by typing in `git clone <git url>` in the command line
-4. On your local machine, navigate to the folder using the command line
-5. Make sure you've cloned it correctly by running `git status` from the command line.
+1. Crie um [fork](https://help.github.com/en/articles/fork-a-repo) do repositório do módulo homework. Para JavaScript (assim como os próximos 2 módulos), o repositório do módulo homework é `https://www.github.com/HackYourHomework/React-classXX` onde XX é o número da sua turma. Você faz isso usando a opção `fork` no canto superior direito
+2. Navegue até a URL do repositório clonado (deve estar na sua conta pessoal do GitHub, em "repositórios")
+3. Clone o repositório, usando SSH, em sua máquina local. Você pode fazer isso digitando `git clone <git url>` na linha de comando
+4. Em sua máquina local, navegue até a pasta usando a linha de comando
+5. Certifique-se de ter clonado corretamente executando `git status` na linha de comando.
 
-EVERY WEEK
+TODA SEMANA
 
-1. Do a `git pull` on your main branch to get the latest version.
-2. Create a new branch for each week you have homework. For example, for the week 1 homework for JavaScript create a branch called `YOUR_NAME-w1-JavaScript`. Don't forget to checkout this branch after creating it.
-3. Make your homework!
-4. Once you're finished, add your homework to a commit. Make sure you *only* commit your homework files and nothing else. You can use `git add -p` if you only want to add a couple files. You can always check what is happening with the `git status` command (as one of our mentors always says, it is the console.log of git!). 
-5. Create the commit (`git commit`). Make the commit message meaningful, for example `finished project for homework week1`.
-6. Deploy the homework on netlify/now and copy the the deployed link.
-7. Push the branch to your forked repository
-8. On the GitHub page of your forked repository, click on the `create pull request` button. Make sure the `base repository` is your teacher's repository, on branch master
-9. Give the pull request a title in the following format:
+1. Faça um `git pull` em seu branch principal para obter a versão mais recente.
+2. Crie uma nova ramificação para cada semana que você tiver lição de casa. Por exemplo, para a lição de casa da semana 1 para JavaScript, crie uma ramificação chamada `YOUR_NAME-w1-JavaScript`. Não se esqueça de fazer o checkout deste branch após criá-lo.
+3. Faça sua lição de casa!
+4. Quando terminar, adicione seu dever de casa a um commit. Certifique-se de *somente* enviar seus arquivos de lição de casa e nada mais. Você pode usar `git add -p` se quiser adicionar apenas alguns arquivos. Você sempre pode verificar o que está acontecendo com o comando `git status` (como um de nossos mentores sempre diz, é o console.log do git!).
+5. Crie o commit (`git commit`). Torne a mensagem de confirmação significativa, por exemplo, `projeto finalizado para a semana de lição de casa1`.
+6. Implante a lição de casa no netlify/now e copie o link implantado.
+7. Envie a ramificação para seu repositório bifurcado
+8. Na página do GitHub do seu repositório bifurcado, clique no botão `create pull request`. Certifique-se de que o `repositório base` seja o repositório do seu professor, no branch master
+9. Dê um título à solicitação pull no seguinte formato:
 
-```markdown
-Homework week 1 <Your name>
+```remarcação
+Lição de casa semana 1 <Seu nome>
 ```
 
-10. Add the deployed url of the homework to the pull request description.
-11. Submit the pull request from your forked repository branch into the `master` branch
+10. Adicione o URL implantado do dever de casa à descrição do pull request.
+11. Envie o pull request do seu branch de repositório bifurcado para o branch `master`
 
-If you have any questions or if something is not entirely clear ¯\\\_(ツ)\_/¯, please ask/comment on Slack!
+Se você tiver alguma dúvida ou se algo não estiver totalmente claro ¯\\\_(ツ)\_/¯, pergunte/comente no Slack!

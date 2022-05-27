@@ -1,14 +1,14 @@
-# Check screen size
+# Verifique o tamanho da tela
 
-For this prep exercise we are actually going to use an online exercise. Have a look at the [following prompt](https://epic-react-exercises.vercel.app/react/advanced-hooks/4). To summarize:
+Para este exercício de preparação, vamos usar um exercício online. Dê uma olhada no [próximo prompt](https://epic-react-exercises.vercel.app/react/advanced-hooks/4). Para resumir:
 
-> Create a hook to determine the window user's window screen size and update the view based on it. Use the ][useDebugValue hook](https://reactjs.org/docs/hooks-reference.html#usedebugvalue) so that when a component uses the hook three different times, you'll be able to differentiate them on the The React DevTools browser extension.
+> Crie um gancho para determinar o tamanho da tela da janela do usuário da janela e atualize a visualização com base nele. Use o gancho ][useDebugValue](https://reactjs.org/docs/hooks-reference.html#usedebugvalue) para que quando um componente usar o gancho três vezes diferentes, você possa diferenciá-los no The React Extensão do navegador DevTools.
 
-In the link you will see some more details about the steps to take. There is also their solution, but try to only look at that if you are really stuck. Preferably ask some classmates first as that will teach you more than just copying over their solution.
+No link você verá mais alguns detalhes sobre as etapas a serem seguidas. Há também a solução deles, mas tente apenas olhar para isso se você estiver realmente preso. De preferência, pergunte a alguns colegas primeiro, pois isso ensinará mais do que apenas copiar a solução deles.
 
-The solution given is also not necessarily the only solution, compare it to yours and see if you can get some good ideas from theirs. Because they want to show just one file, you will notice they put a lot of different functionality in one component. It is generally better to do it in separate components so good job if you thought of that!
+A solução dada também não é necessariamente a única solução, compare-a com a sua e veja se você consegue algumas boas ideias com as deles. Como eles querem mostrar apenas um arquivo, você notará que eles colocam muitas funcionalidades diferentes em um componente. Geralmente é melhor fazê-lo em componentes separados, então bom trabalho se você pensou nisso!
 
-## Things to think about
+## Coisas para pensar
 
-- Why do you think their solution has two different hooks?
-- What is the difference between using a custom hook to handle state, to using a context API with some logic? When would you use which one?
+- Por que você acha que a solução deles tem dois ganchos diferentes?
+- Qual é a diferença entre usar um gancho personalizado para manipular o estado, usar uma API de contexto com alguma lógica? Quando você usaria qual?

@@ -1,72 +1,72 @@
-# Homework React Week 1
+# Trabalho de casa Reagir Semana 1
 
-## **Todo list**
+## **Lista de afazeres**
 
-1. Practice the concepts
-2. React exercises
-3. Optional: Practice exercises
-4. Code along
-5. PROJECT: Ecommerce Shop I
-6. Optional: Challenges
+1. Pratique os conceitos
+2. Exercícios de reação
+3. Opcional: Exercícios práticos
+4. Codifique junto
+5. PROJETO: Loja de comércio eletrônico I
+6. Opcional: Desafios
 
-## **1. Practice the concepts**
+## **1. Pratique os conceitos**
 
-Let's get started with some interactive exercises! Complete the exercises from the following resources:
+Vamos começar com alguns exercícios interativos! Complete os exercícios dos seguintes recursos:
 
-- [Scotch.io: React challenges. Exercises 1-6](https://scotch.io/courses/10-react-challenges-beginner)
+- [Scotch.io: Reaja desafios. Exercícios 1-6](https://scotch.io/courses/10-react-challenges-beginner)
 
-## **2. Prep exercises**
+## **2. Exercícios de preparação**
 
-> Prep exercises are exercises that you should work on _before_ the session on Sunday. These are a little more difficult or show an important concept and as such are a great exercise to talk about with your mentor. Have a solution ready by Sunday as you may be asked to show what you did.
+> Exercícios de preparação são exercícios que você deve trabalhar _antes_ da sessão de domingo. Estes são um pouco mais difíceis ou mostram um conceito importante e, como tal, são um ótimo exercício para conversar com seu mentor. Tenha uma solução pronta até domingo, pois pode ser solicitado que você mostre o que fez.
 
-Inside your `React` fork, go to the folder `week1`. Inside of that folder, navigate to `/prep-exercises`. For each exercise, you will find a separate folder. The `README` explains what needs to be done. There will also be some questions at the bottom to think about. Go through them _before_ the session on Sunday as it will be covered then.
+Dentro do seu fork `React`, vá para a pasta `week1`. Dentro dessa pasta, navegue até `/prep-exercises`. Para cada exercício, você encontrará uma pasta separada. O `README` explica o que precisa ser feito. Haverá também algumas perguntas na parte inferior para pensar. Passe por eles _antes_ da sessão no domingo, pois será coberto então.
 
-If you are struggling with the prep exercises, try out some of the practice exercises, maybe they will give you some ideas!
+Se você está tendo dificuldades com os exercícios de preparação, experimente alguns dos exercícios práticos, talvez eles lhe dêem algumas ideias!
 
-## **3. Optional: Practice exercises**
+## **3. Opcional: exercícios práticos**
 
-Practice, practice, practice! Watching videos is a good way to get new ideas, but to cement them into your mind you need to program a lot. What you build is up to you as long as you keep challenging yourself. We have provided some practice exercises to help you if you don't know what to build.
+Pratique, pratique, pratique! Assistir a vídeos é uma boa maneira de obter novas ideias, mas para consolidá-las em sua mente você precisa programar muito. O que você constrói depende de você, desde que continue se desafiando. Nós fornecemos alguns exercícios práticos para ajudá-lo se você não sabe o que construir.
 
-Inside of your `React` fork, go to the folder `week1`. Inside of that folder, navigate to `/practice-exercises`. For each exercise, you will find a separate folder. The `README` explains what needs to be done. Go through them to practice concepts that you have learned about!
+Dentro do seu fork `React`, vá para a pasta `week1`. Dentro dessa pasta, navegue até `/practice-exercises`. Para cada exercício, você encontrará uma pasta separada. O `README` explica o que precisa ser feito. Passe por eles para praticar os conceitos que você aprendeu!
 
-## **4. Code along**
+## **4. Código junto**
 
-> Create a new GitHub repository for this project.
+> Crie um novo repositório GitHub para este projeto.
 
-Learning how to work with React is a fundamentally different approach to building a user interface. Therefore, we need to practice a lot!
+Aprender a trabalhar com o React é uma abordagem fundamentalmente diferente para construir uma interface de usuário. Portanto, precisamos praticar muito!
 
-In the following tutorial you'll learn how to build a `Budget Calculator`!
+No tutorial a seguir você aprenderá como construir uma `Calculadora de Orçamento`!
 
-It might seem complicated at first, but don't worry. Aim for understanding the principle behind it to the best you can. If you ever feel in doubt: do a Google search or ask a question in Slack!
+Pode parecer complicado no começo, mas não se preocupe. Procure entender o princípio por trás dele da melhor maneira possível. Se você tiver dúvidas: faça uma pesquisa no Google ou faça uma pergunta no Slack!
 
-Enjoy!
+Aproveitar!
 
-- [Build a Budget Calculator](https://www.youtube.com/watch?v=f6HYLHrYpGs)
+- [Crie uma calculadora de orçamento](https://www.youtube.com/watch?v=f6HYLHrYpGs)
 
-## **5. PROJECT: Ecommerce Shop I**
+## **5. PROJETO: Loja de comércio eletrônico I**
 
-During this module you'll be starting a project called `Ecommerce Shop`! Like in the Node.js module, each week you'll add to it until it becomes a fully-fledged application that has used all of the concepts you have learned.
+Durante este módulo, você iniciará um projeto chamado `Ecommerce Shop`! Assim como no módulo Node.js, a cada semana você fará acréscimos até que ele se torne um aplicativo completo que tenha usado todos os conceitos que você aprendeu.
 
-Here's what you're eventually going to end up with: [Ecommerce Shop Finished](https://hyf-react-w3-example.netlify.app/)
+Aqui está o que você vai acabar com: [Ecommerce Shop Finished](https://hyf-react-w3-example.netlify.app/)
 
-Have a look at the [project/README.md](./project/README.md) file to know what to do this week.
+Dê uma olhada no arquivo [project/README.md](./project/README.md) para saber o que fazer esta semana.
 
-## **6. Optional: Challenges**
+## **6. Opcional: Desafios**
 
-Our friends over at CodeYourFuture have provided a repository with different ideas for [challenges to build](https://github.com/CodeYourFuture/cyf-react-challenges). Have a look at the `README.md` in each folder to see what the challenge is and try to build it. It mentions the difficulty in the different README's, anything with easy should be doable at this point. But if not, leave it for next week and then try again.
+Nossos amigos do CodeYourFuture forneceram um repositório com ideias diferentes para [desafios a serem construídos](https://github.com/CodeYourFuture/cyf-react-challenges). Dê uma olhada no `README.md` em cada pasta para ver qual é o desafio e tente construí-lo. Menciona a dificuldade nos diferentes README's, qualquer coisa com fácil deve ser factível neste momento. Mas se não, deixe para a próxima semana e tente novamente.
 
-Building many different small applications will get you the practice you need to do your final project in week 4, so in the next 3 weeks if you are done with the rest of the homework, look back at the challenges and try to do as many as you can.
+Construir muitos aplicativos pequenos diferentes lhe dará a prática necessária para fazer seu projeto final na semana 4, portanto, nas próximas 3 semanas, se você terminar o resto da lição de casa, olhe para os desafios e tente fazer você pode.
 
-## **SUBMIT YOUR HOMEWORK!**
+## ** ENVIE SUA LIÇÃO DE CASA!**
 
-After you've finished your list it's time to show us what you got! Upload all your files to the HackYourHomework repository (which in this case is the [React](https://www.github.com/HackYourHomework/React) repository) using GIT.
+Depois de terminar sua lista, é hora de nos mostrar o que você tem! Faça upload de todos os seus arquivos para o repositório HackYourHomework (que neste caso é o repositório [React](https://www.github.com/HackYourHomework/React)) usando o GIT.
 
-If you need a refresher, take a look at the following [guide](../hand-in-homework-guide.md) to see how it's done.
+Se você precisar de uma atualização, dê uma olhada no seguinte [guia](../hand-in-homework-guide.md) para ver como isso é feito.
 
-The homework that needs to be submitted is the following:
+A lição de casa que precisa ser enviada é a seguinte:
 
-1. Project: Ecommerce Shop I
+1. Projeto: Loja de comércio eletrônico I
 
-Make sure you _only_ commit the project files to the repository!
+Certifique-se de _somente_ confirmar os arquivos do projeto no repositório!
 
-_Deadline Tuesday 23.59 CET_
+_Prazo terça-feira 23.59 CET_

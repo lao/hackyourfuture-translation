@@ -1,14 +1,14 @@
-# Dog photo gallery
+# Galeria de fotos de cães
 
-Let's make a randomized dog photo gallery!
+Vamos fazer uma galeria aleatória de fotos de cachorros!
 
-In this exercise we'll be using the following API endpoint: `https://dog.ceo/api/breeds/image/random`
+Neste exercício, usaremos o seguinte endpoint de API: `https://dog.ceo/api/breeds/image/random`
 
-1. Create 3 functional components: `<DogGallery>`, `<DogPhoto>` and `<Button>`
-2. Inside `<DogGallery>` create a state variable called `dogPhotos` (initialize with value `[]`) and state handler `setDogPhotos`
-3. Inside (before the return statement) also create a function called `getDogPhoto`. The purpose of this function is to make an API call to `https://dog.ceo/api/breeds/image/random`. You can either use `fetch` or `axios`. At the end of the function push the new `dog image URL` into the `dogPhotos` array state variable using `setDogPhotos`
-4. Inside the `<Button>` component, create a `<button>` that has the text "Get a dog!" and `onClick` attribute
-5. Pass down the function `getDogPhoto` to `<Button>`
-6. Inside `<DogGallery>` return all the dogs stored in the `dogPhotos` array using the `map()` function. Pass down each `dogPhoto` into an instance of `<DogPhoto>`.
-7. However, when there are no dogs in the array yet make sure to display the message "Get your first dog by clicking the button!"
-8. Check your components by importing it into the top level component, which is `<App>`
+1. Crie 3 componentes funcionais: `<DogGallery>`, `<DogPhoto>` e `<Button>`
+2. Dentro de `<DogGallery>` crie uma variável de estado chamada `dogPhotos` (inicialize com o valor `[]`) e o manipulador de estado `setDogPhotos`
+3. Dentro (antes da instrução return) também crie uma função chamada `getDogPhoto`. O objetivo desta função é fazer uma chamada de API para `https://dog.ceo/api/breeds/image/random`. Você pode usar `fetch` ou `axios`. No final da função, envie o novo `URL da imagem do cão` para a variável de estado do array `dogPhotos` usando `setDogPhotos`
+4. Dentro do componente `<Button>`, crie um `<button>` que tenha o texto "Get a dog!" e atributo `onClick`
+5. Passe a função `getDogPhoto` para `<Button>`
+6. Dentro de `<DogGallery>` retorne todos os cães armazenados no array `dogPhotos` usando a função `map()`. Passe cada `dogPhoto` para uma instância de `<DogPhoto>`.
+7. No entanto, quando ainda não houver cães na matriz, certifique-se de exibir a mensagem "Pegue seu primeiro cachorro clicando no botão!"
+8. Verifique seus componentes importando-os para o componente de nível superior, que é `<App>`
