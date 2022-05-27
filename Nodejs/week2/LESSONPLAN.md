@@ -1,81 +1,81 @@
-# Node.js Week 2 (Lesson Plan)
+# Node.js Semana 2 (Plano de aula)
 
 ## Agenda
 
-1. REST
-2. CRUD and HTTP methods
-3. RESTful API
+1. DESCANSO
+2. Métodos CRUD e HTTP
+3. API RESTful
 
-## Core concepts
+## Conceitos principais
 
-FIRST HALF (12.00 - 13.30)
+PRIMEIRA METADE (12h00 - 13h30)
 
-### REST
+### DESCANSO
 
-**Explanation**
+**Explicação**
 
-REST stands for REpresentational State Transfer.
+REST significa Transferência de Estado Representacional.
 
-1. not restful API just REST
+1. API não repousante apenas REST
 
-   - focus on resources and how they are the center of REST
+   - foco nos recursos e como eles são o centro do REST
 
-   Resource — a resource can be any object the API can provide information about. In Instagram’s API, for example, a resource can be a user, a photo, a hashtag. Each resource has a unique identifier. The identifier can be a name or a number. Now let’s get back to REST.
+   Recurso — um recurso pode ser qualquer objeto sobre o qual a API possa fornecer informações. Na API do Instagram, por exemplo, um recurso pode ser um usuário, uma foto, uma hashtag. Cada recurso possui um identificador exclusivo. O identificador pode ser um nome ou um número. Agora vamos voltar ao REST.
 
-A RESTful web application exposes information about itself in the form of metadata: descriptions of its resources. It also enables the client to take actions on those resources, such as (1) create new resources (i.e. create a new user) or (2) change existing resources (i.e. edit a post).
+Uma aplicação web RESTful expõe informações sobre si mesma na forma de metadados: descrições de seus recursos. Ele também permite que o cliente execute ações nesses recursos, como (1) criar novos recursos (ou seja, criar um novo usuário) ou (2) alterar recursos existentes (ou seja, editar uma postagem).
 
-- http methods, urls, request body, query parameters, status, response body, error handling
+- métodos http, urls, corpo da solicitação, parâmetros de consulta, status, corpo da resposta, tratamento de erros
 
-**Example**
+**Exemplo**
 
-Facebook: Explain what are the main resources: users, posts, comments.
+Facebook: Explique quais são os principais recursos: usuários, postagens, comentários.
 
-**Exercise**
+**Exercício**
 
-1. Ask students to identify the resources on Github and write them down together.
+1. Peça aos alunos para identificar os recursos no Github e anotá-los juntos.
 
-2. Ask students to identify the following in this screenshot:
+2. Peça aos alunos que identifiquem o seguinte nesta captura de tela:
 
-![HTTP request exercise](../assets/request_exercise.png)
+![Exercício de solicitação HTTP](../assets/request_exercise.png)
 
 - URL
-- PORT
-- Method
-- IP address
-- Request ?? status
-- Explain request headers
-- Response status
-- Explain response headers
+- PORTO
+- Método
+- Endereço de IP
+- Solicitação ?? status
+- Explicar cabeçalhos de solicitação
+- Situação da resposta
+- Explicar os cabeçalhos de resposta
 
-**Essence**
+**Essência**
 
-### CRUD and HTTP methods
+### Métodos CRUD e HTTP
 
-**Explanation**
+**Explicação**
 
-Explain the four operations: create, read, update, delete
+Explique as quatro operações: criar, ler, atualizar, excluir
 
-How they map to http verbs: post, get, put, delete
+Como eles mapeiam para verbos http: post, get, put, delete
 
-**Example**
+**Exemplo**
 
-**Exercise**
+**Exercício**
 
-**Essence**
+**Essência**
 
-### RESTful APIs
+### APIs RESTful
 
-**Explanation**
+**Explicação**
 
-Start by explaining what a web API is: https://hackr.io/blog/web-application-architecture-definition-models-types-and-more/thumbnail/large
+Comece explicando o que é uma API da Web: https://hackr.io/blog/web-application-architecture-definition-models-types-and-more/thumbnail/large
 
-Finally complete the full picture of restful APIs: resources and operations.
+Por fim, complete o quadro completo das APIs tranquilas: recursos e operações.
 
-Mention that RESTful is not the only way to build APIs but do not go into details
+Mencione que RESTful não é a única maneira de construir APIs, mas não entre em detalhes
 
-**Example**
+**Exemplo**
 
-See Github API for repositories:
+Consulte a API do Github para repositórios:
 
 https://developer.github.com/v3/repos/#create
 
@@ -85,21 +85,21 @@ https://developer.github.com/v3/repos/#edit
 
 https://developer.github.com/v3/repos/#delete-a-repository
 
-**Exercise**
+**Exercício**
 
-Ask students to define the endpoints for a library API. Write them together.
+Peça aos alunos que definam os endpoints para uma API de biblioteca. Escreva-os juntos.
 
-**Essence**
+**Essência**
 
-SECOND HALF (14.00 - 16.00)
+SEGUNDA METADE (14.00 - 16.00)
 
-**Build with students**
+**Construa com os alunos**
 
-- library app with the four basic operations, no saving/reading to/from file,
-  - make sure to explain how routes are defined (verb + url)
-  - how request body can be get
-  - how parameters can be extracted from the url (:id)
-  - how to generate ids
-  - how to respond with the correct status
-  - how to correctly handle any errors (return 500 or 404 and a user friendly error message, while logging the error details)
-- show how to test the different endpoints and methods using postman
+- aplicativo de biblioteca com as quatro operações básicas, sem salvar/ler de/para arquivo,
+  - certifique-se de explicar como as rotas são definidas (verbo + url)
+  - como o corpo da solicitação pode ser obtido
+  - como os parâmetros podem ser extraídos da url (:id)
+  - como gerar ids
+  - como responder com o status correto
+  - como lidar corretamente com quaisquer erros (retorne 500 ou 404 e uma mensagem de erro amigável, enquanto registra os detalhes do erro)
+- mostrar como testar os diferentes endpoints e métodos usando o carteiro

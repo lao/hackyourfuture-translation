@@ -1,22 +1,22 @@
-# Party time
+# Hora da festa
 
-Are you excited for the biggest party on the planet? We are and we would like to invite everyone, but there is only a limited number of seats.
+Você está animado para a maior festa do planeta? Estamos e gostaríamos de convidar a todos, mas o número de vagas é limitado.
 
-Start by taking a look at the documentation of the API: https://reservation100-sandbox.mxapps.io/rest-doc/api.
-While reading the documentation make sure to note the following:
+Comece dando uma olhada na documentação da API: https://reservation100-sandbox.mxapps.io/rest-doc/api.
+Ao ler a documentação, certifique-se de observar o seguinte:
 
-- Which methods are available (GET or POST)?
-- What is the route?
-- What headers are expected?
-- What should the request body contain, and how it should be formatted?
+- Quais métodos estão disponíveis (GET ou POST)?
+- Qual é a rota?
+- Que cabeçalhos são esperados?
+- O que deve conter o corpo da solicitação e como deve ser formatado?
 
-After you understand the API, write a function that makes a reservation and logs the response to the console. Follow the steps:
+Depois de entender a API, escreva uma função que faça uma reserva e registre a resposta no console. Siga os passos:
 
-1. Use `node-fetch` to make a request with the correct headers and body format
-2. Make use of `async/await` and `try/catch`
-3. Print the response to the console
+1. Use `node-fetch` para fazer uma solicitação com os cabeçalhos e o formato do corpo corretos
+2. Use `async/await` e `try/catch`
+3. Imprima a resposta no console
 
-Hints:
+Dicas:
 
-- To set headers use `fetch(<URL>, { headers: { 'XXXX': 'YYYY' } }`
-- The documentation at https://www.npmjs.com/package/node-fetch can be of great help
+- Para definir os cabeçalhos use `fetch(<URL>, { headers: { 'XXXX': 'YYYY' } }`
+- A documentação em https://www.npmjs.com/package/node-fetch pode ser de grande ajuda
