@@ -1,74 +1,74 @@
-> This homework assumes you have installed the software [MySQL](https://dev.mysql.com/downloads/installer/) to your computer. If not please do that first!
+> Este dever de casa pressupõe que você instalou o software [MySQL](https://dev.mysql.com/downloads/installer/) em seu computador. Se não, por favor, faça isso primeiro!
 
-# Homework Databases Week 2
+# Bases de dados de trabalhos de casa Semana 2
 
-## **Todo list**
+## **Lista de afazeres**
 
-1. Practice the concepts
-2. Prep exercises
-3. MySQL exercises
+1. Pratique os conceitos
+2. Exercícios de preparação
+3. Exercícios MySQL
 
-## 1. **Practice the concepts**
+## 1. **Pratique os conceitos**
 
-Let's do some interactive exercises first. In the following online course, **do sections 3 (Aggregate Functions) and sections 4 (Multiple Tables)**.
+Vamos fazer alguns exercícios interativos primeiro. No curso online a seguir, **faça as seções 3 (Funções Agregadas) e as seções 4 (Múltiplas Tabelas)**.
 
-- [Codecademy: Learn SQL](https://www.codecademy.com/learn/learn-sql)
+- [Codecademy: Aprenda SQL](https://www.codecademy.com/learn/learn-sql)
 
-Also make time to do lesson 6-12 from the following:
+Também reserve um tempo para fazer a lição 6-12 do seguinte:
 
 - [SQLBolt](https://sqlbolt.com/lesson/select_queries_with_joins)
 
-## 2. **Prep exercises**
+## 2. **Exercícios de preparação**
 
-> Prep exercises are exercises that you should work on _before_ the session on Sunday. These are a little more difficult or show an important concept and as such are a great exercise to talk about with your mentor. Have a solution ready by Sunday as you may be asked to show what you did.
+> Exercícios de preparação são exercícios que você deve trabalhar _antes_ da sessão de domingo. Estes são um pouco mais difíceis ou mostram um conceito importante e, como tal, são um ótimo exercício para conversar com seu mentor. Tenha uma solução pronta até domingo, pois pode ser solicitado que você mostre o que fez.
 
-Inside your `databases` fork, go to the folder `Week2`. Inside of that folder, navigate to `QA_PREP_EXERCISE.md` file which explains what needs to be done. There will also be some questions at the bottom to think about. Go through them _before_ the session on Sunday as it will be covered then.
+Dentro do seu fork `databases`, vá para a pasta `Week2`. Dentro dessa pasta, navegue até o arquivo `QA_PREP_EXERCISE.md` que explica o que precisa ser feito. Haverá também algumas perguntas na parte inferior para pensar. Passe por eles _antes_ da sessão no domingo, pois será coberto então.
 
-## 3. **MySQL exercises**
+## 3. **Exercícios de MySQL**
 
-> You will need to do some research to solve these exercises. All the concepts necessary to solve
-> these exercises are NOT covered in the reading material. This is on purpose.
+> Você precisará fazer alguma pesquisa para resolver esses exercícios. Todos os conceitos necessários para resolver
+> estes exercícios NÃO são abordados no material de leitura. Isso é de propósito.
 
-This week we'll practice some more with writing SQL queries using JavaScript. For each exercise make a separate `.js` file; make sure to give it an appropriate name!
+Esta semana vamos praticar um pouco mais com a escrita de consultas SQL usando JavaScript. Para cada exercício crie um arquivo `.js` separado; certifique-se de dar-lhe um nome apropriado!
 
-**Exercise 1: Keys**
+**Exercício 1: Chaves**
 
-1. Create a table, called `authors`. Give it the following fields: `(author_no(Primary Key), author_name, university, date_of_birth, h_index, gender)`
-2. Write a query that adds a column called `mentor` to `authors` table that references the column `author_no`.
-   For integrity add a `foreign key` on this column.
+1. Crie uma tabela, chamada `autores`. Forneça os seguintes campos: `(author_no(Primary Key), author_name, university, date_of_birth, h_index, gender)`
+2. Escreva uma consulta que adiciona uma coluna chamada `mentor` à tabela `authors` que faz referência à coluna `author_no`.
+   Para integridade, adicione uma `chave estrangeira` nesta coluna.
 
-**Exercise 2: Relationships**
+**Exercício 2: Relacionamentos**
 
-1. Create another table, called `research_Papers` with the following fields: `(paper_id, paper_title, conference, publish_date, ...)`
-2. What is the relationship between Authors and Research papers ? Make necessary changes to `authors` and
-   `research_Papers` tables and add more tables if necessary.
-3. Read exercises 3 and 4 and then add information (insert rows) of 15 authors and 30 research papers such that
-   all queries in the exercises 3 and 4 will return some answers
+1. Crie outra tabela, chamada `research_Papers` com os seguintes campos: `(paper_id, paper_title, conference, publish_date, ...)`
+2. Qual é a relação entre autores e artigos de pesquisa? Faça as alterações necessárias em `autores` e
+   tabelas `research_Papers` e adicione mais tabelas se necessário.
+3. Leia os exercícios 3 e 4 e, em seguida, adicione informações (inserir linhas) de 15 autores e 30 trabalhos de pesquisa, de modo que
+   todas as consultas nos exercícios 3 e 4 retornarão algumas respostas
 
-**Exercise 3: Joins**
+**Exercício 3: Juntas**
 
-1. Write a query that prints names of all `authors` and their corresponding `mentors`.
-2. Write a query that prints all columns of `authors` and their published `paper_title`.
-   If there is an author without any `research_Papers`, print the information of that `author` too.
+1. Escreva uma consulta que imprima os nomes de todos os `autores` e seus respectivos `mentores`.
+2. Escreva uma consulta que imprima todas as colunas de `authors` e seus `paper_title` publicados.
+   Se houver um autor sem nenhum `research_Papers`, imprima as informações desse `autor` também.
 
-**Exercise 4: Aggregate Functions**
+**Exercício 4: Funções agregadas**
 
-Write some queries to retrieve the following rows:
+Escreva algumas consultas para recuperar as seguintes linhas:
 
-1. All research papers and the number of authors that wrote that paper.
-2. Sum of the research papers published by all female authors.
-3. Average of the h-index of all authors per university.
-4. Sum of the research papers of the authors per university.
-5. Minimum and maximum of the h-index of all authors per university.
+1. Todos os artigos de pesquisa e o número de autores que escreveram esse artigo.
+2. Soma dos trabalhos de pesquisa publicados por todas as autoras.
+3. Média do índice h de todos os autores por universidade.
+4. Soma dos trabalhos de pesquisa dos autores por universidade.
+5. Mínimo e máximo do índice h de todos os autores por universidade.
 
-## **SUBMIT YOUR HOMEWORK!**
+## ** ENVIE SUA LIÇÃO DE CASA!**
 
-After you've finished your todo list it's time to show us what you got! The homework that needs to be submitted is the following:
+Depois de terminar sua lista de tarefas, é hora de nos mostrar o que você tem! A lição de casa que precisa ser enviada é a seguinte:
 
-1. MySQL exercises
+1. Exercícios MySQL
 
-Upload both to your forked Databases repository in GitHub. Make a pull request to HackYourFuture's forked repository.
+Faça upload de ambos para o repositório de bancos de dados bifurcados no GitHub. Faça um pull request para o repositório bifurcado do HackYourFuture.
 
-> Forgotten how to upload your homework? Go through the [guide](../hand-in-homework-guide.md) to learn how to do this again.
+> Esqueceu como fazer o upload de sua lição de casa? Vá até o [guia](../hand-in-homework-guide.md) para aprender como fazer isso novamente.
 
-_Deadline Tuesday 23.59 CET_
+_Prazo terça-feira 23.59 CET_

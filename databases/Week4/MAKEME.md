@@ -1,48 +1,48 @@
-# Homework Databases Week 4
+# Bases de dados de trabalhos de casa Semana 4
 
-## **Todo list**
+## **Lista de afazeres**
 
-1. Practice the concepts
-2. Prep exercises
-3. MongoDB exercises
-4. Code along
+1. Pratique os conceitos
+2. Exercícios de preparação
+3. Exercícios do MongoDB
+4. Codifique junto
 
-## 1. **Practice the concepts**
+## 1. **Pratique os conceitos**
 
-Let's practice some advanced MongoDB queries. Have a look at the following exercises. If you feel unsure about the commands you used last week then feel free to also do 01 and 02 of this series. You will need to go back to 00 to import the data into your database:
+Vamos praticar algumas consultas avançadas do MongoDB. Dê uma olhada nos exercícios a seguir. Se você não tiver certeza sobre os comandos que usou na semana passada, sinta-se à vontade para também fazer 01 e 02 desta série. Você precisará voltar para 00 para importar os dados para seu banco de dados:
 
-- [Advanced MongoDB exercises](https://github.com/mattdavis0351/mongodb-labs/blob/master/exercises/03_advanced-mongo-queries.md)
+- [Exercícios avançados do MongoDB](https://github.com/mattdavis0351/mongodb-labs/blob/master/exercises/03_advanced-mongo-queries.md)
 
-## 2. **Prep exercises**
+## 2. **Exercícios de preparação**
 
-> Prep exercises are exercises that you should work on _before_ the session on Sunday. These are a little more difficult or show an important concept and as such are a great exercise to talk about with your mentor. Have a solution ready by Sunday as you may be asked to show what you did.
+> Exercícios de preparação são exercícios que você deve trabalhar _antes_ da sessão de domingo. Estes são um pouco mais difíceis ou mostram um conceito importante e, como tal, são um ótimo exercício para conversar com seu mentor. Tenha uma solução pronta até domingo, pois pode ser solicitado que você mostre o que fez.
 
-Inside your `databases` fork, go to the folder `Week4`. Inside of that folder, navigate to `QA_PREP_EXERCISE.md` file which explains what needs to be done. There will also be some questions at the bottom to think about. Go through them _before_ the session on Sunday as it will be covered then.
+Dentro do seu fork `databases`, vá para a pasta `Week4`. Dentro dessa pasta, navegue até o arquivo `QA_PREP_EXERCISE.md` que explica o que precisa ser feito. Haverá também algumas perguntas na parte inferior para pensar. Passe por eles _antes_ da sessão no domingo, pois será coberto então.
 
-## 3. **MongoDB exercises**
+## 3. **Exercícios do MongoDB**
 
-Let's create a fresh database for this week's homework. You can create a database called `databaseWeek4` that you can use for the following exercises.
+Vamos criar um novo banco de dados para a lição de casa desta semana. Você pode criar um banco de dados chamado `databaseWeek4` que pode ser usado para os exercícios a seguir.
 
-### 3.1 **Exercise 1 : Aggregation**
+### 3.1 **Exercício 1: Agregação**
 
-Let's practice some aggregation queries, for that we will have to use some data and luckily [kaggle](https://www.kaggle.com/) is a great website that provides datasets to use. In the `ex1-aggregation` folder you will find a csv file with data for you.
+Vamos praticar algumas consultas de agregação, para isso teremos que usar alguns dados e felizmente [kaggle](https://www.kaggle.com/) é um ótimo site que fornece conjuntos de dados para usar. Na pasta `ex1-aggregation` você encontrará um arquivo csv com dados para você.
 
-1. Find a way to get the data in the csv file into your MongoDB database. The documents should look like:
+1. Encontre uma maneira de obter os dados do arquivo csv em seu banco de dados MongoDB. Os documentos devem se parecer com:
 
-```js
+``` js
 {
   _id: ObjectId(625ff77ada84ee8b5dd06e82),
-  Country:"Afghanistan",
-  Year:1950,
-  Age:"20-24",
+  País:"Afeganistão",
+  Ano: 1950,
+  Idade: "20-24",
   M:374109,
   F:318392
 }
 ```
 
-2. Write a function that will return the array of the total population (M + F over all age groups) for a given `Country` per year. The result should look something like this, these are the values for `Netherlands`:
+2. Escreva uma função que retornará a matriz da população total (M + F em todas as faixas etárias) para um determinado "País" por ano. O resultado deve ser algo assim, estes são os valores para `Holanda`:
 
-```js
+``` js
 [
   { _id: 1950, countPopulation: 10042051 },
   { _id: 1960, countPopulation: 11448815 },
@@ -50,104 +50,104 @@ Let's practice some aggregation queries, for that we will have to use some data 
   { _id: 1980, countPopulation: 14148410 },
   { _id: 1990, countPopulation: 14965442 },
   { _id: 2000, countPopulation: 15926188 },
-  { _id: 2010, countPopulation: 16682925 },
+  { _id: 2010, contagemPopulação: 16682925},
   { _id: 2020, countPopulation: 17134872 },
-  { _id: 2022, countPopulation: 17211448 },
+  { _id: 2022, contagemPopulação: 17211448},
 ];
 ```
 
-3. Write a function that will return all of the information of each continent for a given `Year` and `Age` field but add a new field `TotalPopulation` that will be the addition of `M` and `F`. For example, if I would give `2020` for the `Year` and `100+` for the `Age` it should return something like this:
+3. Escreva uma função que retornará todas as informações de cada continente para um determinado campo `Year` e `Age`, mas adicione um novo campo `TotalPopulation` que será a adição de `M` e `F`. Por exemplo, se eu der `2020` para o `Year` e `100+` para a `Age`, ele deve retornar algo assim:
 
-```js
+``` js
 [
   {
     _id: new ObjectId("62600561b0a05834e3382cf8"),
-    Country: "AFRICA",
-    Year: 2020,
-    Age: "100+",
+    País: "ÁFRICA",
+    Ano: 2020,
+    Idade: "100+",
     M: 1327,
     F: 2723,
-    TotalPopulation: 4050,
+    População Total: 4050,
   },
   {
     _id: new ObjectId("62600561b0a05834e3382da0"),
-    Country: "ASIA",
-    Year: 2020,
-    Age: "100+",
+    País: "ÁSIA",
+    Ano: 2020,
+    Idade: "100+",
     M: 57019,
     F: 207883,
-    TotalPopulation: 264902,
+    População Total: 264902,
   },
   {
     _id: new ObjectId("62600561b0a05834e33832a1"),
-    Country: "EUROPE",
-    Year: 2020,
-    Age: "100+",
+    País: "EUROPA",
+    Ano: 2020,
+    Idade: "100+",
     M: 22579,
     F: 102056,
-    TotalPopulation: 124635,
+    População Total: 124635,
   },
   {
     _id: new ObjectId("62600561b0a05834e33835d4"),
-    Country: "LATIN AMERICA AND THE CARIBBEAN",
-    Year: 2020,
-    Age: "100+",
+    País: "AMÉRICA LATINA E CARIBE",
+    Ano: 2020,
+    Idade: "100+",
     M: 19858,
     F: 49218,
-    TotalPopulation: 69076,
+    População Total: 69076,
   },
   {
     _id: new ObjectId("62600561b0a05834e3383946"),
-    Country: "NORTHERN AMERICA",
-    Year: 2020,
-    Age: "100+",
+    País: "AMÉRICA DO NORTE",
+    Ano: 2020,
+    Idade: "100+",
     M: 22267,
     F: 83419,
-    TotalPopulation: 105686,
+    População Total: 105686,
   },
   {
     _id: new ObjectId("62600561b0a05834e3383985"),
-    Country: "OCEANIA",
-    Year: 2020,
-    Age: "100+",
+    País: "OCEANIA",
+    Ano: 2020,
+    Idade: "100+",
     M: 1094,
     F: 3980,
-    TotalPopulation: 5074,
+    População Total: 5074,
   },
 ];
 ```
 
-### 3.2 **Exercise 2 : Transactions**
+### 3.2 **Exercício 2: Transações**
 
-Just like last week, let's solve the same transaction problem but then in MongoDB. Note that you will need to include some libraries which means you will need to set that up as well (use the `ex2-transactions` folder for this). You will also probably want to add an `index.js` that calls the functions we will create to test it out, we leave the implementation of that up to you. Now let's get started, we will split our code into multiple files again, first being the setup file:
+Assim como na semana passada, vamos resolver o mesmo problema de transação, mas no MongoDB. Observe que você precisará incluir algumas bibliotecas, o que significa que você precisará configurá-las também (use a pasta `ex2-transactions` para isso). Você provavelmente também desejará adicionar um `index.js` que chame as funções que criaremos para testá-lo, deixamos a implementação disso para você. Agora vamos começar, vamos dividir nosso código em vários arquivos novamente, primeiro sendo o arquivo de configuração:
 
-1. Create a `setup.js` file.
-2. It should clean up the `accounts` array and then fill it with some sample data. Just like last last week we want an account document to have an `account_number` and `balance` field. Then it should have another field called `account_changes` that is an array that contains the fields: `change_number, amount, changed_date, remark`.
-3. It's probably best to make this a function that you can export and call
+1. Crie um arquivo `setup.js`.
+2. Ele deve limpar o array `accounts` e então preenchê-lo com alguns dados de exemplo. Assim como na semana passada, queremos que um documento de conta tenha um campo `account_number` e `balance`. Então ele deve ter outro campo chamado `account_changes` que é um array que contém os campos: `change_number, amount, changes_date, remark`.
+3. Provavelmente é melhor fazer disso uma função que você possa exportar e chamar
 
-Then it is time to write our transaction function:
+Então é hora de escrever nossa função de transação:
 
-1. Create a `transfer.js` file that will hold our `transfer` function.
-2. It should transfer money from one account to another, so it will need to know the following things: from which account, to which account, the amount and the remark for this transaction.
-3. This should update the balances of both accounts and for each account add a change to the list. The change number should be incremented, so if the latest `change_number` is 30, the `change_number` for the new change should be 31.
-4. Test that it works by calling the function to transfer 1000 from account number 101 to account number 102.
+1. Crie um arquivo `transfer.js` que conterá nossa função `transfer`.
+2. Deve transferir dinheiro de uma conta para outra, pelo que terá de saber o seguinte: de qual conta, para qual conta, o valor e a observação desta transação.
+3. Isso deve atualizar os saldos de ambas as contas e, para cada conta, adicionar uma alteração à lista. O número da alteração deve ser incrementado, portanto, se o último `change_number` for 30, o `change_number` para a nova alteração deverá ser 31.
+4. Teste se funciona chamando a função para transferir 1000 da conta número 101 para a conta número 102.
 
-Submit the `setup.js` and `transfer.js` files.
+Envie os arquivos `setup.js` e `transfer.js`.
 
-## 4. **Code Along**
+## 4. **Código junto**
 
-This week we have a small code along to show how to implement pagination and make it reusable for all your routes!
+Esta semana temos um pequeno código junto para mostrar como implementar a paginação e torná-la reutilizável para todas as suas rotas!
 
-- [Paginated API with Node and Mongoose](https://www.youtube.com/watch?v=ZX3qt0UWifc). We will be working in Mongoose in the final project, but this gives a little teaser on what mongoose is!
+- [API paginada com Node e Mongoose](https://www.youtube.com/watch?v=ZX3qt0UWifc). Estaremos trabalhando no Mongoose no projeto final, mas isso dá um pequeno teaser sobre o que é o mangusto!
 
-## **SUBMIT YOUR HOMEWORK!**
+## ** ENVIE SUA LIÇÃO DE CASA!**
 
-After you've finished your todo list it's time to show us what you got! The homework that needs to be submitted is the following:
+Depois de terminar sua lista de tarefas, é hora de nos mostrar o que você tem! A lição de casa que precisa ser enviada é a seguinte:
 
-1. MongoDB exercises
+1. Exercícios do MongoDB
 
-Upload your code to your forked Databases repository in GitHub. Make a pull request to HackYourHomework's forked repository.
+Carregue seu código para o repositório de bancos de dados bifurcados no GitHub. Faça um pull request para o repositório bifurcado do HackYourHomework.
 
-> Forgotten how to upload your homework? Go through the [guide](../hand-in-homework-guide.md) to learn how to do this again.
+> Esqueceu como fazer o upload de sua lição de casa? Vá até o [guia](../hand-in-homework-guide.md) para aprender como fazer isso novamente.
 
-_Deadline Tuesday 23.59 CET_
+_Prazo terça-feira 23.59 CET_

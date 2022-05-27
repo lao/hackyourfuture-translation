@@ -1,93 +1,93 @@
-# 1. No-Bake Cheesecake:
+# 1. Cheesecake sem assar:
 
-### Categories:
-    Cake
-    No-Bake
-    Vegetarian
+### Categorias:
+    Bolo
+    Sem assar
+    Vegetariano
 
-### Ingredients: 
-    Condensed milk
-    Cream Cheese
-    Lemon Juice
-    Pie Crust
-    Cherry Jam
+### Ingredientes:
+    Leite condensado
+    Requeijão cremoso
+    Suco de limão
+    crosta de torta
+    Geléia de Cereja
 
-### Steps:
-    Beat Cream Cheese
-    Add condenced Milk and blend
-    Add Lemon Juice and blend
-    Add the mix to the pie crust
-    Spead the Cherry Jam
-    Place in refrigerator for 3h.
+### Passos:
+    Bata o queijo creme
+    Adicione o leite condensado e misture
+    Adicione o suco de limão e misture
+    Adicione a mistura à massa da torta
+    Espalhe a geléia de cereja
+    Leve à geladeira por 3h.
 
 
-# Roasted Brussels Sprouts
+# Couves de Bruxelas assadas
 
-### Categories: 
-    Vegan
-    Gluten-Free
+### Categorias:
+    Vegano
+    Sem glúten
 
-### Ingredients: 
-    Brussels Sprouts
-    Lemon juice
-    Sesame seeds
-    Pepper
-    Salt
-    Olive oil
+### Ingredientes:
+    Couves de Bruxelas
+    Suco de limão
+    sementes de Sesamo
+    Pimenta
+    Sal
+    Azeite
 
-### Steps:
-    Preheat the oven
-    Mix the ingredients in a bowl
-    Spread the mix on baking sheet
-    Bake for 30'
+### Passos:
+    PRE-aqueça o forno
+    Misture os ingredientes em uma tigela
+    Espalhe a mistura na assadeira
+    Asse por 30'
 
-# Mac & Cheese:
+# Macarrão e Queijo:
 
-### Categories:
-    Vegetarian
+### Categorias:
+    Vegetariano
 
-### Ingredients:
-    Macaroni
-    Butter
-    Flour
-    Salt 
-    Pepper
-    Milk
-    Shredded Cheddar cheese
+### Ingredientes:
+    Macarrão
+    Manteiga
+    Farinha de trigo
+    Sal
+    Pimenta
+    Leite
+    Queijo cheddar ralado
 
-### Steps:
-    Cook Macaroni for 8'
-    Melt butter in a saucepan
-    Add flour, salt, pepper and mix 
-    Add Milk and mix
-    Cook until mix is smooth
-    Add cheddar cheese
-    Add the macaroni
+### Passos:
+    Cozinhe o macarrão por 8'
+    Derreta a manteiga em uma panela
+    Adicione a farinha, sal, pimenta e misture
+    Adicione o leite e misture
+    Cozinhe até a mistura ficar homogênea
+    Adicione o queijo cheddar
+    Adicione o macarrão
 
-# Tamagoyaki Japanese Omelette
+# Omelete Japonesa Tamagoyaki
 
-### Categories:
-    Vegetarian
-    Japanese
+### Categorias:
+    Vegetariano
+    japonês
 
-### Ingredients:
-    Eggs
-    Soy sauce
-    Sugar
-    Salt
-    Olive Oil
+### Ingredientes:
+    Ovos
+    Molho de soja
+    Açúcar
+    Sal
+    Azeite
 
-### Steps:
-    Beat the eggs
-    Add soya sauce, sugar and salt
-    Add oil to a sauce pan 
-    Bring to medium heat
-    Add some mix to the sauce pan
-    Let is cook for 1'
-    Add oil to a sauce pan
-    Add some mix to the sauce pan
-    Let is cook for 1'
-    Remove pan from fire
+### Passos:
+    Bata os ovos
+    Adicione o molho de soja, o açúcar e o sal
+    Adicione óleo a uma panela de molho
+    Leve ao fogo médio
+    Adicione um pouco da mistura à panela de molho
+    Vamos cozinhar por 1'
+    Adicione óleo a uma panela de molho
+    Adicione um pouco da mistura à panela de molho
+    Vamos cozinhar por 1'
+    Retire a panela do fogo
 
 
 
