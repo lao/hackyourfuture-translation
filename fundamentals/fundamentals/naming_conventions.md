@@ -1,116 +1,116 @@
-# Naming conventions
+# Convenções de nomenclatura
 
-## Background
+## Fundo
 
-In programming you will need to come up with appropriate names for your variables, functions and function parameters.
+Na programação, você precisará criar nomes apropriados para suas variáveis, funções e parâmetros de função.
 
-> _The most important consideration in naming a variable is that the name fully and accurately describes the entity the variable represents. An effective technique for coming up with a good name is to state in words what the variable represents. Often that statement itself is the best variable name. It’s easy to read because it doesn’t contain cryptic abbreviations, and it’s unambiguous. Because it’s a full description of the
-entity, it won’t be confused with something else. And it’s easy to remember because the name is similar to the concept._
+> _A consideração mais importante ao nomear uma variável é que o nome descreva completa e precisamente a entidade que a variável representa. Uma técnica eficaz para criar um bom nome é declarar em palavras o que a variável representa. Muitas vezes, essa declaração em si é o melhor nome de variável. É fácil de ler porque não contém abreviações enigmáticas e é inequívoco. Porque é uma descrição completa do
+entidade, não será confundido com outra coisa. E é fácil de lembrar porque o nome é semelhante ao conceito._
 
-> Source: [Code Complete 2, Steve McConnell](https://www.amazon.de/Code-Complete-Practical-Construction-Costruction/dp/0735619670)
+> Fonte: [Code Complete 2, Steve McConnell](https://www.amazon.de/Code-Complete-Practical-Construction-Costruction/dp/0735619670)
 
-The names you choose are for the benefit of the human consumer of your code. Foremost this human consumer will be you yourself: when writing code carefully chosen names help you to stay focussed on the business problem you are trying to solve. When the need arises to revisit your code in the future, carefully chosen names will help you to reconstruct your state of mind at the time you originally wrote the code.
+Os nomes que você escolhe são para o benefício do consumidor humano do seu código. Acima de tudo, esse consumidor humano será você mesmo: ao escrever o código, nomes cuidadosamente escolhidos o ajudam a manter o foco no problema de negócios que você está tentando resolver. Quando surgir a necessidade de revisitar seu código no futuro, nomes cuidadosamente escolhidos o ajudarão a reconstruir seu estado de espírito no momento em que você escreveu o código originalmente.
 
-In practice your code may need to be maintained by others, as you move on to other projects or jobs. For the developers doing maintenance, it is even more important to use carefully chosen names, as they do not have the benefit of having gone through your thought processes.
+Na prática, seu código pode precisar ser mantido por outras pessoas, à medida que você avança para outros projetos ou trabalhos. Para os desenvolvedores que fazem manutenção, é ainda mais importante usar nomes cuidadosamente escolhidos, pois eles não têm o benefício de ter passado por seus processos de pensamento.
 
-The consumer least interested in the names you choose is the runtime environment (i.e. the JavaScript engine in your browser or Node). The runtime environment does not mind meaningless, one-letter variable names. In fact, a process called 'minification' is sometimes used to create a minified version of your JavaScript code for running in the browser, the purpose of which is to speed up fetching your code over the Internet.
+O consumidor menos interessado nos nomes que você escolhe é o ambiente de tempo de execução (ou seja, o mecanismo JavaScript em seu navegador ou Node). O ambiente de tempo de execução não se importa com nomes de variáveis de uma letra sem sentido. Na verdade, um processo chamado 'minificação' às vezes é usado para criar uma versão minificada de seu código JavaScript para execução no navegador, cujo objetivo é acelerar a busca de seu código pela Internet.
 
 ## camelCase vs PascalCase vs snake_case vs kebab-case
 
-These terms are used to describe the conventions for the spelling of multi-word variable (and function) names.
+Esses termos são usados para descrever as convenções para a ortografia de nomes de variáveis (e funções) com várias palavras.
 
 ### camelCase
 
-In JavaScript the convention is to spell the names of variables that contain data using _camelCase_, i.e. the first word in the variable name should start with a lower case letter and each subsequent word with an an upper case letter. It is called _camelCase_ because the hump in the middle of the word has some similarity with the hump of a camel.
+Em JavaScript, a convenção é soletrar os nomes das variáveis que contêm dados usando _camelCase_, ou seja, a primeira palavra no nome da variável deve começar com uma letra minúscula e cada palavra subsequente com uma letra maiúscula. Chama-se _camelCase_ porque a corcova no meio da palavra tem alguma semelhança com a corcova de um camelo.
 
-Example:
+Exemplo:
 
-```js
-let myFavouriteMovies;
+``` js
+deixe meusFilmes Favoritos;
 ```
 
 ### PascalCase
 
-This casing is restricted in JavaScript to class names and constructor functions. This style of casing was customary in the Pascal programming language. 
+Essa caixa é restrita em JavaScript a nomes de classes e funções construtoras. Esse estilo de caixa era habitual na linguagem de programação Pascal.
 
-Example:
+Exemplo:
 
-```js
-class Movie {
+``` js
+classe Filme {
   ...
 }
 ```
 
 ### snake_case
 
-This casing is not generally used in JavaScript except for naming global constants. In this case the variable name should be completely in upper case.
+Essa caixa geralmente não é usada em JavaScript, exceto para nomear constantes globais. Neste caso, o nome da variável deve estar completamente em maiúsculas.
 
-```js
-const MAX_AGE = 60;
+``` js
+const MAX_IDADE = 60;
 ```
 
-### kebab-case
+### caixa de kebab
 
-This casing is used for class names in css and sometimes for filenames in JavaScript.
+Essa caixa é usada para nomes de classes em CSS e às vezes para nomes de arquivos em JavaScript.
 
 
 
-```css
-.page-title { 
-  color: #ff23be.
+``` css
+.título da página {
+  cor: #ff23be.
 }
 ```
 
 ```html
-<h1 class="page-title">Beautiful Title</h1>
+<h1 class="page-title">Lindo título</h1>
 ```
 
-```js
+``` js
 const fileName = 'movie-collection.js';
 ```
 
 
-## Variable names for data
+## Nomes de variáveis para dados
 
-Variables that contain data should be named using noun phrases, i.e. have a noun as its head word. The name should be in camelCase. Example:
+As variáveis que contêm dados devem ser nomeadas usando frases nominais, ou seja, ter um substantivo como palavra principal. O nome deve estar em camelCase. Exemplo:
 
-```js
-let myFavouriteMovie;
+``` js
+deixe meuFilme Favorito;
 ```
 
-If the data consists of a single item the noun should be in singular form as in the example above. If the data consists of a collection, such as a JavaScript array or a JavaScript object that is used as a keyed collection then a plural form should be used:
+Se os dados consistem em um único item, o substantivo deve estar na forma singular, como no exemplo acima. Se os dados consistirem em uma coleção, como uma matriz JavaScript ou um objeto JavaScript que é usado como uma coleção com chave, uma forma plural deve ser usada:
 
-```js
-let myFavouriteMovies;
+``` js
+deixe meusFilmes Favoritos;
 ```
 
-Sometimes a mass noun is used as head word instead of an explicit plural form for naming a collection. Examples of mass nouns are `data`, `input`, `money`.
+Às vezes, um substantivo de massa é usado como palavra principal em vez de uma forma plural explícita para nomear uma coleção. Exemplos de substantivos de massa são `data`, `input`, `money`.
 
-## Function names
+## Nomes de funções
 
-Function names (exception: constructor functions, see below) should generally start with a verb to indicate the _action_ performed by the function. The name should be in camelCase. Example:
+Nomes de funções (exceção: funções construtoras, veja abaixo) geralmente devem começar com um verbo para indicar a _ação_ executada pela função. O nome deve estar em camelCase. Exemplo:
 
-```js
-function fetchMovie() {
+``` js
+function buscarFilme() {
   ...
 }
 ```
 
-## Constructor functions and class names
+## Funções construtoras e nomes de classes
 
-The naming convention for constructor functions, i.e. functions that are used in conjunction with the `new` keyword, and ES6 class names is to use a noun phrase in PascalCase. Example:
+A convenção de nomenclatura para funções construtoras, ou seja, funções que são usadas em conjunto com a palavra-chave `new` e nomes de classe ES6 é usar uma frase nominal em PascalCase. Exemplo:
 
-```js
-class Movie {
+``` js
+classe Filme {
   ...
 }
 ```
 
-## Reserved keywords
+## Palavras-chave reservadas
 
-Certain names are reserved by JavaScript for its own use. You cannot use the names for your variable. For example, you can't name a variable `if`. 
+Certos nomes são reservados pelo JavaScript para seu próprio uso. Você não pode usar os nomes para sua variável. Por exemplo, você não pode nomear uma variável como `if`.
 
-For a complete list of reserved names, see the MDN page for [Keywords](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords). 
+Para obter uma lista completa de nomes reservados, consulte a página MDN para [Palavras-chave](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords).
 
 
 

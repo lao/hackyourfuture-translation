@@ -1,78 +1,78 @@
-# Event Loop
+# Loop de eventos
 
-## YouTube Video
+## Vídeo do youtube
 
-This article is a companion to the excellent YouTube video [What the heck is the event loop anyway?](https://www.youtube.com/watch?v=8aGhZQkoFbQ) by Philip Roberts.
+Este artigo acompanha o excelente vídeo do YouTube [What the heck is the event loop afinal?](https://www.youtube.com/watch?v=8aGhZQkoFbQ) de Philip Roberts.
 
 [![Event Loop](https://img.youtube.com/vi/8aGhZQkoFbQ/0.jpg)](https://www.youtube.com/watch?v=8aGhZQkoFbQ "Event Loop")
 
-## Introduction
+## Introdução
 
-The way of programming when developing JavaScript applications for the browser is sometimes called _Event-Driven Programming_. Once a JavaScript program has been loaded in the browser and has completed its initialization, it is normally waiting for specific "events" to happen. These events can take the form of mouse movements and clicks, keyboard interactions and network-related events (e.g. a response from an `XMLHttpRequest`)*.
+A maneira de programar ao desenvolver aplicativos JavaScript para o navegador às vezes é chamada de _Programação Orientada a Eventos_. Uma vez que um programa JavaScript tenha sido carregado no navegador e tenha completado sua inicialização, ele normalmente está esperando que “eventos” específicos aconteçam. Esses eventos podem assumir a forma de movimentos e cliques do mouse, interações de teclado e eventos relacionados à rede (por exemplo, uma resposta de um `XMLHttpRequest`)*.
 
-In order for a JavaScript program to respond to a specific (type of) event, a programmer needs to add an "event listener" for the event type of interest to the target DOM element or network request object.
+Para que um programa JavaScript responda a um (tipo de) evento específico, um programador precisa adicionar um "ouvinte de evento" para o tipo de evento de interesse ao elemento DOM de destino ou objeto de solicitação de rede.
 
-Event examples are:
+Exemplos de eventos são:
 
-- a `'click'` event from an HTML button element.
-- a `'load'` event from an XMLHttpRequest.
+- um evento `'click'` de um elemento de botão HTML.
+- um evento `'load'` de um XMLHttpRequest.
 
-A JavaScript program can also set up one or more timers and execute a function when a specific timeout expires. One could consider these to be  _software-initiated_ events.
+Um programa JavaScript também pode configurar um ou mais temporizadores e executar uma função quando um tempo limite específico expirar. Pode-se considerar estes eventos _iniciados por software_.
 
-When a event occurs, the browser places an object with information about the event along with the JavaScript function designated to handle the event in an Event Queue. When the JavaScript engine is idle (i.e. when the call stack is empty, see below), it picks up the next event from the Event Queue and invokes the corresponding event handler, passing the event object as a parameter. This mechanism could be depicted by the follow pseudo-code:
+Quando ocorre um evento, o navegador coloca um objeto com informações sobre o evento junto com a função JavaScript designada para tratar o evento em uma Fila de Eventos. Quando o mecanismo JavaScript está ocioso (ou seja, quando a pilha de chamadas está vazia, veja abaixo), ele pega o próximo evento da fila de eventos e invoca o manipulador de eventos correspondente, passando o objeto de evento como parâmetro. Este mecanismo pode ser representado pelo seguinte pseudo-código:
 
 ```
-// Event Loop
+// Loop de eventos
 while (waiting_for_event) {
-  execute_event_handler(event)
+  execute_event_handler(evento)
 }
 ```
 
 
-\* Note: There are more [Web APIs](https://developer.mozilla.org/en-US/docs/Web/API) available in the browser that could potentially generate events, e.g. the [SpeechSynthesis API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis) and the [MIDIAccess API](https://developer.mozilla.org/en-US/docs/Web/API/MIDIAccess), to name just two.
+\* Observação: há mais [APIs da Web](https://developer.mozilla.org/en-US/docs/Web/API) disponíveis no navegador que podem gerar eventos, por exemplo, a [API SpeechSynthesis](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis) e a [API MIDIAccess](https://developer.mozilla.org/en-US/docs /Web/API/MIDIAccess), para citar apenas dois.
 
-## Call Stack
+## Pilha de chamadas
 
-The JavaScript engine maintains a [call stack](https://developer.mozilla.org/en-US/docs/Glossary/Call_stack) to keep track of nested function calls. (The call stack is similar to a JavaScript array to which items are pushed and from which items are popped.)
+O mecanismo JavaScript mantém uma [pilha de chamadas](https://developer.mozilla.org/en-US/docs/Glossary/Call_stack) para acompanhar as chamadas de função aninhadas. (A pilha de chamadas é semelhante a uma matriz JavaScript para a qual os itens são enviados e de quais itens são exibidos.)
 
-Figure 1 below depicts the call stack for a scenario where function **A**() calls function **B**(). The currently executing function is always the one at the top of the call stack. In this case, execution starts with function **A**().
+A Figura 1 abaixo mostra a pilha de chamadas para um cenário em que a função **A**() chama a função **B**(). A função atualmente em execução é sempre a que está no topo da pilha de chamadas. Neste caso, a execução começa com a função **A**().
 
-1. The JavaScript engine pushes **A**() on the call stack and starts its execution.
-2. Function **A**() calls function **B()**: the JavaScript engine suspends the execution of **A**() (taking note where it left off), pushes **B**() on the call stack and starts executing **B**().
-3. When function **B**() returns, the JavaScript engine pops **B**() off the stack. Since function **A**() is now again at the top the stack, the JavaScript engine resumes **A**() at the point where it left off.
-4. Finally, when function **A**() returns it is popped of the stack and with the call stack now empty, the JavaScript engine enters its event loop.
+1. O mecanismo JavaScript empurra **A**() na pilha de chamadas e inicia sua execução.
+2. A função **A**() chama a função **B()**: o mecanismo JavaScript suspende a execução de **A**() (observando de onde parou), empurra **B**( ) na pilha de chamadas e começa a executar **B**().
+3. Quando a função **B**() retorna, o mecanismo JavaScript remove **B**() da pilha. Como a função **A**() agora está novamente no topo da pilha, o mecanismo JavaScript retoma **A**() no ponto em que parou.
+4. Finalmente, quando a função **A**() retorna, ela é removida da pilha e com a pilha de chamadas agora vazia, o mecanismo JavaScript entra em seu loop de eventos.
 
 ![Call Stack](assets/call-stack.png)
 
-Figure 1. Call Stack
+Figura 1. Pilha de Chamadas
 
-## Example Code
+## Código de exemplo
 
-We will use the example application below for our discussion of the event loop. The application consist of a simple HTML page with three buttons and an associated JavaScript file. The web page looks like this:
+Usaremos o aplicativo de exemplo abaixo para nossa discussão sobre o loop de eventos. O aplicativo consiste em uma página HTML simples com três botões e um arquivo JavaScript associado. A página da web se parece com isso:
 
-![Syn/Async Demo Page](assets/sync-async.png)
+![Página de demonstração Syn/Async](assets/sync-async.png)
 
-All output resulting from button clicks will be printed in the browser's console.
+Todas as saídas resultantes de cliques de botões serão impressas no console do navegador.
 
 ### index.html
 
 ```html
-<!DOCTYPE html>
+<!DOCTYPEhtml>
 <html>
-<head>
-  <title>Sync/Async Demo</title>
-  <style>
-    button {
-      margin-right: 4px;
+<cabeça>
+  <title>Demonstração de sincronização/assíncrona</title>
+  <estilo>
+    botão {
+      margem direita: 4px;
     }
   </style>
 </head>
-<body>
+<corpo>
   <div>
-    <h1>Sync/Async Demo</h1>
-    <button id="btn-sync">START SYNC TIMER</button>
-    <button id="btn-async">START ASYNC TIMER</button>
-    <button id="btn-hello">HELLO</button>
+    <h1>Demonstração de sincronização/assíncrona</h1>
+    <button id="btn-sync">INICIAR TEMPORIZADOR DE SINCRONIZAÇÃO</button>
+    <button id="btn-async">INICIAR TEMPORIZADOR ASYNC</button>
+    <button id="btn-hello">OLÁ</button>
   </div>
   <script src="app.js"></script>
 </body>
@@ -81,42 +81,42 @@ All output resulting from button clicks will be printed in the browser's console
 
 ### app.js
 
-The JavaScript file `app.js` adds a `'click'` event listener for each of the three buttons. Rather than using anonymous functions for the event handlers, all functions are given a name so that these names show up in the call stack should we run this code in the Chrome debugger.
+O arquivo JavaScript `app.js` adiciona um ouvinte de evento `'click'` para cada um dos três botões. Em vez de usar funções anônimas para os manipuladores de eventos, todas as funções recebem um nome para que esses nomes apareçam na pilha de chamadas, caso executemos esse código no depurador do Chrome.
 
-```js
-'use strict';
+``` js
+'usar estrito';
 {
-  function synTimeout(delay) {
+  function synTimeout(atraso) {
     const stopTime = Date.now() + delay;
     while (Date.now() < stopTime);
   }
 
   function addSyncOnClickListener() {
-    document
+    documento
       .getElementById('btn-sync')
       .addEventListener('click', function onSyncClick() {
-        console.log('start sync timer');
+        console.log('iniciar cronômetro de sincronização');
         synTimeout(5000);
-        console.log('stop sync timer');
+        console.log('parar cronômetro de sincronização');
       });
   }
 
   function addAsyncOnClickListener() {
-    document
+    documento
       .getElementById('btn-async')
       .addEventListener('click', function onAsyncClick() {
-        console.log('start async timer');
-        setTimeout(function onTimeout() {
-          console.log('stop async timer');
+        console.log('iniciar timer assíncrono');
+        setTimeout(função onTimeout() {
+          console.log('parar temporizador assíncrono');
         }, 5000);
       });
   }
 
   function addHelloOnClickListener() {
-    document
+    documento
       .getElementById('btn-hello')
       .addEventListener('click', function onHelloClick() {
-        console.log('Hello, world!');
+        console.log('Olá, mundo!');
       });
   }
 
@@ -128,52 +128,52 @@ The JavaScript file `app.js` adds a `'click'` event listener for each of the thr
 }
 ```
 
-### Synchronous, blocking code
+### Síncrono, código de bloqueio
 
-In Figure 2.1 below, when the **START SYNC TIMER** button is clicked ①, a `click` event with its `onSyncClick` event handler is placed in the Event Queue and, because the call stack is empty, is immediately executed. The `onSyncClick` function calls the `synTimeout` function, passing the desired time delay in milliseconds in the `delay` parameter. The call stack at this point in time is depicted in ②.
+Na Figura 2.1 abaixo, quando o botão **START SYNC TIMER** é clicado ①, um evento `click` com seu manipulador de eventos `onSyncClick` é colocado na Event Queue e, como a pilha de chamadas está vazia, é executada imediatamente. A função `onSyncClick` chama a função `synTimeout`, passando o atraso de tempo desejado em milissegundos no parâmetro `delay`. A pilha de chamadas neste momento é descrita em ②.
 
-The `synTimeout` function keeps racing around in a tight `while` loop, in each loop iteration calling `Date.now()` to check whether the specified delay has already been reached. While the JavaScript engine is busy executing this `while` loop, it cannot run any other code. In particular, it cannot pick up events from the Event Queue, for instance click events from the **HELLO** button, while the loop is executing ③. The `onHelloClick` event handler awaits execution in the Event Queue (with the browser appearing to be unresponsive) until the `synTimeout` function completes, and with it, the `onSyncClick` function (Figure 2.2, ④).
+A função `synTimeout` continua correndo em um loop `while` apertado, em cada iteração do loop chamando `Date.now()` para verificar se o atraso especificado já foi alcançado. Enquanto o mecanismo JavaScript está ocupado executando esse loop `while`, ele não pode executar nenhum outro código. Em particular, ele não pode pegar eventos da Fila de Eventos, por exemplo, clicar em eventos do botão **HELLO**, enquanto o loop está sendo executado ③. O manipulador de eventos `onHelloClick` aguarda a execução na Fila de Eventos (com o navegador parecendo não responder) até que a função `synTimeout` seja concluída e, com ela, a função `onSyncClick` (Figura 2.2, ④).
 
 ![Event Loop 1](assets/event-loop-1.png)
 
-Figure 2.1 The Event Loop - blocking code.
+Figura 2.1 O Event Loop - código de bloqueio.
 
-At this point the call stack becomes empty, and the event loop can pick up `onHelloClick` from the Event Queue and execute it ⑤. In the browser this is experienced as a delayed, sluggish response to the click on the **HELLO** button.
+Neste ponto, a pilha de chamadas fica vazia e o loop de eventos pode pegar `onHelloClick` da fila de eventos e executá-lo ⑤. No navegador, isso é percebido como uma resposta demorada e lenta ao clique no botão **HELLO**.
 
-Finally, when the `onHelloClick` event handler has finished execution, the call stack becomes empty again ⑥, and the event loop awaits further, future events.
+Finalmente, quando o manipulador de eventos `onHelloClick` termina a execução, a pilha de chamadas fica vazia novamente ⑥, e o loop de eventos aguarda mais eventos futuros.
 
-**In conclusion:** Synchronous, blocking code, such as implemented by
-the `synTimeout` function is to be avoided as it makes the application appear to be unresponsive.
+**Em conclusão:** Código de bloqueio síncrono, como implementado por
+a função `synTimeout` deve ser evitada, pois faz com que o aplicativo pareça não responder.
 
 ![Event Loop 2](assets/event-loop-2.png)
 
-Figure 2.2 The Event Loop - blocking code - continued.
+Figura 2.2 O Event Loop - código de bloqueio - continuação.
 
-## Asynchronous, non-blocking code
+## Código assíncrono e sem bloqueio
 
-In contrast, in Figure 3.1, when we click the **START ASYNC TIMER** button ①, the `onAsyncClick` event handler is placed and the Event Queue and, because the call stack is empty, is immediately executed ②. It in turn calls the `setTimeout` function provided by the browser (**not** the JavaScript engine!). This starts a timer internal to the browser ③. Once the timer has been set up the `setTimeout` function returns and subsequently the `onAsyncClick` event handler exits.
+Em contraste, na Figura 3.1, quando clicamos no botão **START ASYNC TIMER** ①, o manipulador de eventos `onAsyncClick` é colocado e a Event Queue e, como a pilha de chamadas está vazia, é executada imediatamente ②. Ele, por sua vez, chama a função `setTimeout` fornecida pelo navegador (**não** o mecanismo JavaScript!). Isso inicia um temporizador interno ao navegador ③. Uma vez que o temporizador foi configurado, a função `setTimeout` retorna e, posteriormente, o manipulador de eventos `onAsyncClick` é encerrado.
 
-Suppose that one second later we click the **HELLO** button ④. This causes the `onHelloClick` event handler to be placed in the Event Queue. Because the call stack is empty the `onHelloClick` event handler is immediately executed ⑤ and subsequently exits.
+Suponha que um segundo depois cliquemos no botão **HELLO** ④. Isso faz com que o manipulador de eventos `onHelloClick` seja colocado na Fila de Eventos. Como a pilha de chamadas está vazia, o manipulador de eventos `onHelloClick` é executado imediatamente ⑤ e, posteriormente, é encerrado.
 
 ![Event Loop 3](assets/event-loop-3.png)
 
-Figure 3.1 The Event Loop - non-blocking code.
+Figura 3.1 O Event Loop - código não bloqueante.
 
 
-When some time later the timer set up in step 3 expires, the `onTimeout` callback is placed in the event queue ⑥. Again, because the call stack is empty at that point in time it is immediately executed ⑦.
+Quando algum tempo depois o temporizador configurado na etapa 3 expirar, o retorno de chamada `onTimeout` é colocado na fila de eventos ⑥. Novamente, como a pilha de chamadas está vazia naquele momento, ela é executada imediatamente ⑦.
 
 ![Event Loop 4](assets/event-loop-4.png)
 
-Figure 3.2 The Event Loop - non-blocking code - continued.
+Figura 3.2 O Event Loop - código sem bloqueio - continuação.
 
-Subsequently it exits, leaving the call stack empty again ⑧, ready to take on new events from the event loop whenever they occur.
+Subseqüentemente, ele sai, deixando a pilha de chamadas vazia novamente ⑧, pronta para receber novos eventos do loop de eventos sempre que eles ocorrerem.
 
 ![Event Loop 5](assets/event-loop-5.png)
 
-Figure 3.3 The Event Loop - non-blocking code - continued.
+Figura 3.3 O Event Loop - código sem bloqueio - continuação.
 
-**In conclusion:** Asynchronous, non-blocking code is to be preferred at all times to ensure that the application maintains its responsiveness.
+**Em conclusão:** o código assíncrono e sem bloqueio deve ser sempre preferido para garantir que o aplicativo mantenha sua capacidade de resposta.
 
-## More Information
+## Mais Informações
 
-Mozilla Developer Network: [Concurrency model and Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
+Mozilla Developer Network: [Modelo de simultaneidade e loop de eventos](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)

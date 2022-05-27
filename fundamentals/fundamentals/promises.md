@@ -1,52 +1,52 @@
-# Promises
+# Promessas
 
 
-## What is a promise?
+## O que é uma promessa?
 
-Why is a JavaScript ES6 `promise` called a 'promise'? Here is a snippet from the *Oxford Dictionary of English* definition of 'promise':
+Por que uma 'promessa' JavaScript ES6 é chamada de 'promessa'? Aqui está um trecho da definição de 'promessa' do *Oxford Dictionary of English*:
 
-> **promise** |ˈprɒmɪs|<br>
-noun<br>
-1 a declaration or assurance that one will do something or that a particular thing will happen
+> **promessa** |ˈprɒmɪs|<br>
+substantivo<br>
+1 declaração ou garantia de que alguém fará algo ou que algo em particular acontecerá
 
-This pretty well sums up what a promise means in JavaScript: something that will be delivered in the future (if and when the promise is *fulfilled*).
+Isso resume muito bem o que uma promessa significa em JavaScript: algo que será entregue no futuro (se e quando a promessa for *cumprida*).
 
-Traditionally, *callbacks* are used as a way to receive the data that is delivered asynchronously (meaning that the data is not likely to be available at the time it is requested but can be expected some time later). Using callbacks can quickly become unwieldy when dealing with many asynchronous events (e.g., ajax calls), especially when they depend on each other (google for *callback hell*).
+Tradicionalmente, *callbacks* são usados como uma forma de receber os dados que são entregues de forma assíncrona (o que significa que os dados provavelmente não estarão disponíveis no momento em que são solicitados, mas podem ser esperados algum tempo depois). O uso de retornos de chamada pode se tornar rapidamente complicado ao lidar com muitos eventos assíncronos (por exemplo, chamadas ajax), especialmente quando eles dependem um do outro (google para *callback hell*).
 
-JavaScript ES6 introduces promises as a better alternative for callbacks when dealing with asynchronous events.
+JavaScript ES6 apresenta promessas como uma alternativa melhor para retornos de chamada ao lidar com eventos assíncronos.
 
-We can state a number of simple facts about ES6 promises:
+Podemos declarar vários fatos simples sobre as promessas do ES6:
 
-- A promise is a JavaScript object (`typeof somePromise === 'object'`) that serves as a placeholder for a (future) value.
-- Because a promise is an ordinary JavaScript object you can pass it around as an argument to a function, return it from a function, assign it to a variable, push it to an array, etc.
-- You can receive the 'promised' value by calling the `.then()` method of the promise, passing it a function that will receive that value as its argument as soon as it is available.
-- You can create a promise by calling the ES6 `Promise` constructor function with `new` (see Listing 1 below), then call `resolve()` when results are ready or `reject()` on detecting an error.
-- Sometimes you can get a ready-made promise by calling an appropriate API or library function, like the `fetch()` Web API function in Listing 1.
-- Internally, a promise can be in one of three states:
-   - **pending**: the asynchronous result is still awaiting delivery
-   - **fulfilled**: the asynchronous result has been delivered and is available (`resolve()` was called)
-   - **rejected**: an error was encountered: the promise could not be fulfilled (`reject()` was called)
-- A promise that is no longer pending because it was either fulfilled or rejected is said to be _settled_.
-- A promise that is _settled_ has reached its final state. Its state and value can no longer be changed. It has become _immutable_. Subsequently calling `resolve()` or `reject()` does no longer affect the outcome of the promise.
+- Uma promessa é um objeto JavaScript (`typeof somePromise === 'object'`) que serve como um espaço reservado para um valor (futuro).
+- Como uma promessa é um objeto JavaScript comum, você pode passá-la como um argumento para uma função, retorná-la de uma função, atribuí-la a uma variável, enviá-la para um array, etc.
+- Você pode receber o valor 'promised' chamando o método `.then()` da promessa, passando a ele uma função que receberá esse valor como seu argumento assim que estiver disponível.
+- Você pode criar uma promessa chamando a função construtora `Promise` do ES6 com `new` (veja a Listagem 1 abaixo), então chame `resolve()` quando os resultados estiverem prontos ou `reject()` ao detectar um erro.
+- Às vezes, você pode obter uma promessa pronta chamando uma API ou função de biblioteca apropriada, como a função `fetch()` Web API na Listagem 1.
+- Internamente, uma promessa pode estar em um dos três estados:
+   - **pendente**: o resultado assíncrono ainda está aguardando entrega
+   - **cumprido**: o resultado assíncrono foi entregue e está disponível (`resolve()` foi chamado)
+   - **rejected**: foi encontrado um erro: a promessa não pôde ser cumprida (`reject()` foi chamado)
+- Uma promessa que não está mais pendente porque foi cumprida ou rejeitada é considerada _settled_.
+- Uma promessa _settled_ atingiu seu estado final. Seu estado e valor não podem mais ser alterados. Tornou-se _imutável_. Chamar subsequentemente `resolve()` ou `reject()` não afeta mais o resultado da promessa.
 
-## Example code
+## Código de exemplo
 
-Listing 1 shows an example based on an asynchronous XMLHttpRequest that we will use throughout the rest of this discussion.
+A Listagem 1 mostra um exemplo baseado em um XMLHttpRequest assíncrono que usaremos no restante desta discussão.
 
-```js
-'use strict';
+``` js
+'usar estrito';
 
-function fetchJSON(url) {
-  return new Promise((resolve, reject) => {
+função buscarJSON(url) {
+  return new Promise((resolver, rejeitar) => {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url);
     xhr.responseType = 'json';
     xhr.onreadystatechange = () => {
       if (xhr.readyState === 4) {
         if (xhr.status < 400) {
-          resolve(xhr.response);
-        } else {
-          reject(new Error(xhr.statusText));
+          resolve(xhr.resposta);
+        } senão {
+          rejeitar(novo Erro(xhr.statusText));
         }
       }
     };
@@ -54,168 +54,168 @@ function fetchJSON(url) {
   });
 }
 
-// alternative:
+// alternativo:
 // const fetchJSON = url => fetch(url).then(res => res.json());
 
 const url = 'http://api.nobelprize.org/v1/laureate.json?gender=female';
 
-fetchJSON(url)
+buscarJSON(url)
   .then(data => renderData(data))
   .catch(err => renderError(err));
 
-function renderData(data) {
-  console.log(data);
+função renderDados(dados) {
+  console.log(dados);
 }
 
-function renderError(err) {
+função renderError(err) {
   console.error(err.message);
 }
 ```
 
-Listing 1. Asynchronous `XMLHttpRequest` (and `fetch` alternative) using a promise.
+Listagem 1. `XMLHttpRequest` assíncrono (e alternativa `fetch`) usando uma promessa.
 
-The `fetchJSON()` function in Listing 1 returns a `promise` that resolves to a value converted from JSON data received from a remote API end point. The alternative version of `fetchJSON()` (commented out here) uses a more modern browser function that natively returns a promise.
+A função `fetchJSON()` na Listagem 1 retorna uma `promise` que resolve para um valor convertido de dados JSON recebidos de um ponto de extremidade de API remoto. A versão alternativa de `fetchJSON()` (comentado aqui) usa uma função de navegador mais moderna que retorna uma promessa nativamente.
 
 
-## The .then() method
+## O método .then()
 
-A promise exposes a `.then()` method through which you can obtain its fulfilled value or an error value in the case the promise was rejected:
+Uma promessa expõe um método `.then()` através do qual você pode obter seu valor cumprido ou um valor de erro caso a promessa tenha sido rejeitada:
 
-```js
+``` js
 somePromise.then(onFulfilled, onRejected);
 ```
 
-The `.then()` method takes as its parameters two **optional** functions, the first one dealing with the 'happy' scenario (the promise is fulfilled) and the second one dealing with the error case (the promise is rejected). If you are only interested in the success case you can leave out the second parameter:
+O método `.then()` tem como parâmetros duas funções **opcionais**, a primeira lidando com o cenário 'feliz' (a promessa é cumprida) e a segunda lidando com o caso de erro (a promessa é rejeitada ). Se você estiver interessado apenas no caso de sucesso, pode deixar de fora o segundo parâmetro:
 
-```js
+``` js
 somePromise.then(data => {
   // ...
 });
 ```
 
-If you are only interested in the error case, you can pass `null` for the first argument:
+Se você está interessado apenas no caso de erro, você pode passar `null` para o primeiro argumento:
 
-```js
+``` js
 somePromise.then(null, err => {
   //...
 });
 ```
 
-or you can use another method available on a promise, `.catch()`, which is just a shorthand for calling `then()` with `null` as its first argument:
+ou você pode usar outro método disponível em uma promessa, `.catch()`, que é apenas um atalho para chamar `then()` com `null` como seu primeiro argumento:
 
-```js
-somePromise
-  .then(data => {
+``` js
+alguma promessa
+  .then(dados => {
     // ...
   })
-  .catch(err => {
+  .catch(erro => {
     // ...
   });
 ```
 
-Note that the `onFulfilled` and `onRejected` handler functions always execute asynchronously. When the promise is settled, the `onFulFilled` or `onRejected` handler is placed on the event/callback queue. They execute when the currently executing JavaScript code runs to completion, causing the [call stack](./event_loop.md#call-stack) to become empty and enabling the event loop to process the next event from the queue. This holds true even if the promise is immediately fulfilled or rejected, as in this example:
+Observe que as funções de manipulador `onFulfilled` e `onRejected` sempre são executadas de forma assíncrona. Quando a promessa é resolvida, o manipulador `onFulFilled` ou `onRejected` é colocado na fila de evento/retorno de chamada. Eles são executados quando o código JavaScript atualmente em execução é concluído, fazendo com que a [pilha de chamadas](./event_loop.md#call-stack) fique vazia e permitindo que o loop de eventos processe o próximo evento da fila. Isso vale mesmo que a promessa seja imediatamente cumprida ou rejeitada, como neste exemplo:
 
-```js
-Promise.resolve(42)
-  .then(data => console.log(data));
+``` js
+Promessa.resolver(42)
+  .then(dados => console.log(dados));
 
-console.log('after promise');
+console.log('depois da promessa');
 
-// console output:
-// after promise
+// saída do console:
+// depois da promessa
 // 42
 ```
 
-This example also shows how you can create a promise that is immediately resolved. There is no need to use `new` or to pass a `(resolve, reject) => {}` function to the `Promise` constructor. Similarly you can create a promise that is immediately rejected:
+Este exemplo também mostra como você pode criar uma promessa que é resolvida imediatamente. Não há necessidade de usar `new` ou passar uma função `(resolve, rejeitar) => {}` para o construtor `Promise`. Da mesma forma, você pode criar uma promessa que é imediatamente rejeitada:
 
-```js
+``` js
 Promise.reject(new Error('oops'))
   .catch(err => console.log(err.message));
 
-console.log('after promise');
+console.log('depois da promessa');
 
-// console output:
-// after promise
-// oops
+// saída do console:
+// depois da promessa
+// opa
 ```
 
-## Promise chaining
+## Encadeamento de promessas
 
-It is important to understand that the `.then()` method returns a new promise that resolves to the return value of `onFulfilled` (if specified) in case of the 'happy' scenario or the return value of `onRejected()` (if specified) in case of an error. If the return value of these functions is a plain JavaScript value, the new promise is immediately fulfilled with that value. If the return value is yet another promise then the outcome is determined by the inner promise, once settled. If the function does not return a value, the new promise is immediately fulfilled with the value `undefined`.
+É importante entender que o método `.then()` retorna uma nova promessa que resolve o valor de retorno de `onFulfilled` (se especificado) no caso do cenário 'happy' ou o valor de retorno de `onRejected()` (se especificado) em caso de erro. Se o valor de retorno dessas funções for um valor JavaScript simples, a nova promessa será imediatamente cumprida com esse valor. Se o valor de retorno for mais uma promessa, o resultado será determinado pela promessa interna, uma vez liquidada. Se a função não retornar um valor, a nova promessa é imediatamente cumprida com o valor `undefined`.
 
-Because `.then()` (and `.catch`) return new promises, you can chain them together such that your code can be read as: do *this*, then do *that* and then *that*, etc.:
+Como `.then()` (e `.catch`) retornam novas promessas, você pode encadeá-las de modo que seu código possa ser lido como: do *this*, then do *that* e então *that*, etc. :
 
-```js
+``` js
 function fetchAndRender(url, otherUrl) {
-  fetchJSON(url)
-    .then(data => {
-      renderData(data);
+  buscarJSON(url)
+    .then(dados => {
+      renderData(dados);
       return fetchJSON(otherUrl);
     })
     .then(otherData => {
-      renderOtherData(otherData);
+      renderOutroDados(outrosDados);
     })
-    .catch(err => {
-      renderError(err);
+    .catch(erro => {
+      renderError(erro);
     });
 }
 
 fetchAndRender();
 ```
 
-Listing 2. Chaining of `then` and `catch`
+Listagem 2. Encadeamento de `then` e `catch`
 
-Let's examine Listing 2 in a bit more detail. There two calls to `fetchJSON()`. Errors are handled in one place, by means of the `.catch()` method that terminates the promise "chain".
+Vamos examinar a Listagem 2 com um pouco mais de detalhes. Existem duas chamadas para `fetchJSON()`. Os erros são tratados em um só lugar, por meio do método `.catch()` que encerra a promessa "chain".
 
-If you embed another promise inside the function that you pass to the `.then()` method (in Listing 2 this is done in the first `.then()`) you should return that promise as the function's return value. If you don't return the promise, there is no way for the `.catch()` at the end of the chain to "see" a `reject()` of the inner promise, leaving the rejection unhandled.
+Se você incorporar outra promessa dentro da função que você passa para o método `.then()` (na Listagem 2 isso é feito no primeiro `.then()`), você deve retornar essa promessa como o valor de retorno da função. Se você não retornar a promessa, não há como o `.catch()` no final da cadeia "ver" um `reject()` da promessa interna, deixando a rejeição sem tratamento.
 
-In case a promise in the chain is rejected due to some error, the promise chain will be traversed until an `onRejected` handler (e.g., in a terminating `.catch()` method) is found. All intermediate `onFulfilled` handlers (e.g. `.then()`) will be skipped.
+Caso uma promessa na cadeia seja rejeitada devido a algum erro, a cadeia de promessas será percorrida até que um manipulador `onRejected` (por exemplo, em um método final `.catch()`) seja encontrado. Todos os manipuladores `onFulfilled` intermediários (por exemplo, `.then()`) serão ignorados.
 
-Handling errors at the end of a promise chain is a major advantage over the repetition of error handling code in the case of callbacks.
+O tratamento de erros no final de uma cadeia de promessas é uma grande vantagem sobre a repetição do código de tratamento de erros no caso de retornos de chamada.
 
-Note however that a `.catch()` method does not necessarily have to be the last method in the chain. It can be used to handle errors midway. As mentioned previously, the `.catch()` method returns a new promise which can be used to provide some "fallback" value in case of errors.
+Note, entretanto, que um método `.catch()` não precisa necessariamente ser o último método na cadeia. Ele pode ser usado para lidar com erros no meio do caminho. Como mencionado anteriormente, o método `.catch()` retorna uma nova promessa que pode ser usada para fornecer algum valor de "retorno" em caso de erros.
 
-In the example below a promise is created that is immediately rejected. The promise is subsequently "consumed" twice.
+No exemplo abaixo é criada uma promessa que é imediatamente rejeitada. A promessa é subsequentemente "consumida" duas vezes.
 
-1. In the first case ('consumer 1'), the rejection is caught by a `.catch()` method and the rejection value `'bad'` is printed on the console.
+1. No primeiro caso ('consumer 1'), a rejeição é capturada por um método `.catch()` e o valor de rejeição `'bad'` é impresso no console.
 
-2. In the second case ('consumer 2'), the rejection is also caught by a `.catch()` method, but now the catch handler completely ignores the rejection value and just returns the fallback value `'good.`. This becomes the fulfilled value of the promise returned by `.catch()`. The next `.then()` in the chain, completely oblivious that an error ever occurred, now prints the fulfilled value `'good'` on the console.
+2. No segundo caso ('consumer 2'), a rejeição também é capturada por um método `.catch()`, mas agora o manipulador catch ignora completamente o valor de rejeição e apenas retorna o valor de fallback `'good.`. Isso se torna o valor cumprido da promessa retornada por `.catch()`. O próximo `.then()` na cadeia, completamente inconsciente de que um erro ocorreu, agora imprime o valor preenchido `'good'` no console.
 
-```js
-const promise = Promise.reject('bad');
+``` js
+const promessa = Promise.reject('bad');
 
-// consumer 1
-promise
-  .catch(console.log); // -> "bad"
+// consumidor 1
+promessa
+  .catch(console.log); // -> "ruim"
 
-// consumer 2
-promise
-  .catch(() => 'good')
-  .then(console.log); // -> "good"
+// consumidor 2
+promessa
+  .catch(() => 'bom')
+  .then(console.log); // -> "bom"
 ```
 
-## Promise.all()
+## Promessa.todos()
 
-There may be situations where you want to execute multiple promises in parallel and wait until all promises are resolved. Of course, these promises must not be interdependent (i.e. a promise must not depend on the result of another promise running in parallel). The `Promise.all()` method accepts an array (or more precisely, an _iterable_) of promises. It return a new promise that is resolved when all promises in the array are resolved, or rejected as soon as one of the promises in the array is rejected.
+Pode haver situações em que você deseja executar várias promessas em paralelo e esperar até que todas as promessas sejam resolvidas. Obviamente, essas promessas não devem ser interdependentes (ou seja, uma promessa não deve depender do resultado de outra promessa sendo executada em paralelo). O método `Promise.all()` aceita um array (ou mais precisamente, um _iterable_) de promessas. Ele retorna uma nova promessa que é resolvida quando todas as promessas da matriz são resolvidas ou rejeitadas assim que uma das promessas da matriz é rejeitada.
 
-The fulfilled value of the new promise is an array of fulfilled values of the individual promises passed to `Promise.all()`, in the same order.
+O valor cumprido da nova promessa é uma matriz de valores cumpridos das promessas individuais passadas para `Promise.all()`, na mesma ordem.
 
-More details on MDN: [Promise.all()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
+Mais detalhes sobre o MDN: [Promise.all()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
 
-## Additional resources
+## Recursos adicionais
 
-Our previous students also enjoyed learning about promises at:
+Nossos alunos anteriores também gostaram de aprender sobre promessas em:
 
-In text:
+Em texto:
 
 - http://javascript.info/promise-basics
 - https://blog.cloudboost.io/explaining-basic-javascript-promises-in-jip-en-janneketaal-c98763c0abd6
 - https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261
 
-Video: The net Ninja: https://www.youtube.com/watch?v=yswb4SkDoj0
+Vídeo: A rede Ninja: https://www.youtube.com/watch?v=yswb4SkDoj0
 
 MDN:
 
-- [MDN - Promise definition](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
-- [MDN - Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
-- [Promises/A+ specification](https://promisesaplus.com/)
+- [MDN - Definição de promessa](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+- [MDN - Usando promessas](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
+- [Promises/especificação A+](https://promisesaplus.com/)

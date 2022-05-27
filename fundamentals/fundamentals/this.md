@@ -1,180 +1,180 @@
-# What is 'this'?
+# O que é isto'?
 
-At any point during the execution of a JavaScript program there is a context-dependent value that you can access through the keyword `this`. Often, the value of `this` is simply `undefined` and therefore not of much significance for use in your own code.
+Em qualquer ponto durante a execução de um programa JavaScript existe um valor dependente do contexto que você pode acessar através da palavra-chave `this`. Muitas vezes, o valor de `this` é simplesmente `undefined` e, portanto, não tem muita importância para uso em seu próprio código.
 
-> Note: The value of `this` is only useful if used inside a function. When accessed outside of any function, the value of `this` is different depending on whether you run your program in the browser or in Node. In the case of the browser, the value of `this` refers to the global `window` object. In the case of Node, the value of `this` outside any function is an empty object (`{}`).
+> Nota: O valor de `this` só é útil se usado dentro de uma função. Quando acessado fora de qualquer função, o valor de `this` é diferente dependendo se você executa seu programa no navegador ou no Node. No caso do navegador, o valor de `this` refere-se ao objeto global `window`. No caso do Node, o valor de `this` fora de qualquer função é um objeto vazio (`{}`).
 
-## Regular functions and `this`
+## Funções regulares e `this`
 
-Let's look at the value of `this` when used in a regular function:
+Vejamos o valor de `this` quando usado em uma função regular:
 
-```js
-'use strict';
-
-function whatIsThis(arg) {
-  console.log(arg, this);
-}
-
-whatIsThis('Hello'); // --> Hello undefined
-```
-
-As mentioned, the value of `this` in this case is `undefined`. Note however that this is only the case if we start our file with the string literal `'use strict'`. (In versions of JavaScript prior to ES5 the `'use strict'` option did not exist.) If you leave out `'use strict'` then `this` refers to the 'global context' (in the browser this is the `window` object, in Node it is the `global` object).
-
-In the example below you can see the effect (the shown output is for the browser).
-
-```js
-// left out: 'use strict';
+``` js
+'usar estrito';
 
 function whatIsThis(arg) {
   console.log(arg, this);
 }
 
-whatIsThis('Hello'); // --> Hello 
-                     //     ▶︎ Window {postMessage: f, ...}
+whatIsThis('Olá'); // --> Olá indefinido
 ```
 
-Accessing the global context through `this` (accidentally or on purpose) is never a good idea, especially when it comes to forgetting to declare a variable. The designers of JavaScript recognised this as an issue and provided the `'use strict'` option in ES5 as a remedy.
+Como mencionado, o valor de `this` neste caso é `undefined`. Note, entretanto, que este é apenas o caso se iniciarmos nosso arquivo com a string literal `'use strict'`. (Nas versões de JavaScript anteriores ao ES5 a opção `'use strict'` não existia.) Se você deixar de fora `'use strict'` então `this` se refere ao 'contexto global' (no navegador este é o ` window`, no Node é o objeto `global`).
 
-More info on MDN: [Strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
+No exemplo abaixo você pode ver o efeito (a saída mostrada é para o navegador).
 
-## Function invocation through the `call` method
-
-When you call a regular function by specifying its name followed by zero or more arguments enclosed within parentheses, the JavaScript engine in fact invokes the `call` method that exists on every function (yes, a function is actually a special type of JavaScript object). The code snippet below shows how a regular function is invoked behind the scenes by the JavaScript engine, setting the `this` value (the first argument of the `call` method) to `undefined`.
-
-```js
-'use strict';
+``` js
+// deixado de fora: 'use strict';
 
 function whatIsThis(arg) {
   console.log(arg, this);
 }
 
-whatIsThis.call(undefined, 'Hello'); // --> Hello undefined
+whatIsThis('Olá'); // --> Olá
+                     // ▶︎ Janela {postMessage: f, ...}
 ```
 
-We can use the `call` method ourselves and pass something else in place of `undefined`, as shown in the next snippet:
+Acessar o contexto global através do `this` (acidentalmente ou de propósito) nunca é uma boa ideia, principalmente quando se trata de esquecer de declarar uma variável. Os designers de JavaScript reconheceram isso como um problema e forneceram a opção `'use strict'` no ES5 como um remédio.
 
-```js
-whatIsThis.call('world!', 'Hello'); // --> Hello world!
+Mais informações sobre o MDN: [modo estrito](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
+
+## Invocação de função através do método `call`
+
+Quando você chama uma função regular especificando seu nome seguido por zero ou mais argumentos entre parênteses, o mecanismo JavaScript de fato invoca o método `call` que existe em cada função (sim, uma função é na verdade um tipo especial de objeto JavaScript) . O trecho de código abaixo mostra como uma função regular é invocada nos bastidores pelo mecanismo JavaScript, definindo o valor `this` (o primeiro argumento do método `call`) para `undefined`.
+
+``` js
+'usar estrito';
+
+function whatIsThis(arg) {
+  console.log(arg, this);
+}
+
+whatIsThis.call(undefined, 'Olá'); // --> Olá indefinido
 ```
 
-However, in practice there are not many occasions where we would need to use the `call` method ourselves to set the value of `this`.
+Podemos usar o método `call` e passar outra coisa no lugar de `undefined`, conforme mostrado no próximo trecho:
 
-Next, we will see how `this` becomes relevant when used in combination with JavaScript objects.
+``` js
+whatIsThis.call('mundo!', 'Olá'); // --> Olá mundo!
+```
 
-More info on `this` and JavaScript function properties and methods:
+No entanto, na prática, não há muitas ocasiões em que precisaríamos usar o método `call` para definir o valor de `this`.
 
-- [Understanding JavaScript Function Invocation and "this"](http://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/), by Yehuda Katz.
-- MDN: [Function prototype object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function#Function_prototype_object)
+A seguir, veremos como `this` se torna relevante quando usado em combinação com objetos JavaScript.
 
-## JavaScript objects and 'this'
+Mais informações sobre propriedades e métodos da função `this` e JavaScript:
 
-When used in conjunction with JavaScript methods (including those from ES6 classes) the `this` keyword gets overriding importance.
+- [Compreendendo a invocação de função JavaScript e "isto"](http://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/), por Yehuda Katz.
+- MDN: [objeto de protótipo de função](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function#Function_prototype_object)
 
-> **What is a method?** A method is a regular JavaScript function that is 'called on' an object, using dot notation. In almost all cases this function will be defined as a property of the object (or it's prototype) it is called upon. In ES6 classes, methods are directly defined as member functions on the class.
+## Objetos JavaScript e 'this'
 
-The example below shows a simple object with a data property `myData` and a method property `myMethod`. When `myMethod` is called using dot notation such as shown in the example below, the `this` value inside the method is set to the object itself. Hence, `myMethod` has access to the `myData` property through the `this` keyword.
+Quando usado em conjunto com métodos JavaScript (incluindo aqueles de classes ES6), a palavra-chave `this` ganha importância primordial.
 
-```js
-const myObj = {
-  myData: 'Hello world!',
-  myMethod: function () {
+> **O que é um método?** Um método é uma função JavaScript normal que é 'chamada' em um objeto, usando a notação de ponto. Em quase todos os casos esta função será definida como uma propriedade do objeto (ou seu protótipo) que é chamado. Nas classes ES6, os métodos são definidos diretamente como funções-membro na classe.
+
+O exemplo abaixo mostra um objeto simples com uma propriedade de dados `myData` e uma propriedade de método `myMethod`. Quando `myMethod` é chamado usando a notação de ponto, como mostrado no exemplo abaixo, o valor `this` dentro do método é definido para o próprio objeto. Portanto, `myMethod` tem acesso à propriedade `myData` através da palavra-chave `this`.
+
+``` js
+const meuObj = {
+  myData: 'Olá mundo!',
+  meuMétodo: function() {
     console.log(this.myData);
   }
 };
 
-myObj.myMethod(); // --> Hello world!
+meuObj.meuMétodo(); // --> Olá mundo!
 ```
 
-## Function.prototype.bind
+## Função.prototype.bind
 
-There is yet another way to set the `this` value. This can be done through the `bind` method that is avaiable on every function (although it has no effect on fat arrow functions).
+Existe ainda outra maneira de definir o valor `this`. Isso pode ser feito através do método `bind` que está disponível em todas as funções (embora não tenha efeito nas funções fat arrow).
 
-To set the value of `this` you call the `bind` method with a single parameter, passing the value to be assigned to `this`. (The `bind` method accepts additional parameters, but their use is beyond the scope of this article. See the reference below for more information).
+Para definir o valor de `this` você chama o método `bind` com um único parâmetro, passando o valor a ser atribuído a `this`. (O método `bind` aceita parâmetros adicionais, mas seu uso está além do escopo deste artigo. Consulte a referência abaixo para obter mais informações).
 
-The `bind` method returns a new function for which the `this` value is fixed to the value specified in the `bind` parameter, as shown below.
+O método `bind` retorna uma nova função para a qual o valor `this` é fixado no valor especificado no parâmetro `bind`, conforme mostrado abaixo.
 
-```js
-const myObj = {
-  myData: 'Hello world!'
+``` js
+const meuObj = {
+  myData: 'Olá mundo!'
 };
 
-function printMyData() {
+função imprimirMeuDados() {
   console.log(this.myData);
 }
 
-const newFunction = printMyData.bind(myObj);
-newFunction(); // --> Hello world!
+const novaFunção = printMyData.bind(myObj);
+novaFunção(); // --> Olá mundo!
 ```
 
-Using the `printMyData` function as a basis, the `bind` method fixes the `this` value to `myObj` and returns a new function assigned here to the variable `newFunction`. When we call `newFunction` the `this` value will be `myObj`, and therefore we can console.log `myData` through the `this` keyword.
+Usando a função `printMyData` como base, o método `bind` fixa o valor `this` para `myObj` e retorna uma nova função atribuída aqui à variável `newFunction`. Quando chamamos `newFunction` o valor `this` será `myObj`, e portanto podemos console.log `myData` através da palavra-chave `this`.
 
-You will come across the `bind` method extensively in the HYF React module.
+Você encontrará o método `bind` extensivamente no módulo HYF React.
 
 MDN: [Function.prototype.bind()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
 
-## Fat arrow functions and 'this'
+## Funções de seta gorda e 'this'
 
-In fat arrow functions the value of `this` is unchanged from its enclosing scope. This makes fat arrow functions specifically useful as event handlers and callbacks when used in objects and ES classes where `this` is used.
+Em funções de setas gordas, o valor de `this` é inalterado em relação ao seu escopo. Isso torna as funções fat arrow especificamente úteis como manipuladores de eventos e callbacks quando usadas em objetos e classes ES onde `this` é usado.
 
-In the example below we have defined a simple ES6 class which uses a `setTimeout` to console.log the `myData` value after one second. The callback passed as the first parameter of `setTimeout` is written as a fat arrow function. Hence, the `this` value inside the fat arrow function refers to the `this` value of the `sayDelayed` method. Because `sayDelayed` is called using object notation, the `this` value is set to the object itself. Thus, the expected result is printed.
+No exemplo abaixo nós definimos uma classe ES6 simples que usa um `setTimeout` para console.log o valor `myData` após um segundo. O retorno de chamada passado como o primeiro parâmetro de `setTimeout` é escrito como uma função de seta gorda. Portanto, o valor `this` dentro da função de seta gorda se refere ao valor `this` do método `sayDelayed`. Como `sayDelayed` é chamado usando a notação de objeto, o valor `this` é definido para o próprio objeto. Assim, o resultado esperado é impresso.
 
-Had we written the callback as a regular (anonymous) function, using the `function` keyword, this would have failed as its `this` value would have been set to `undefined`. Try it!
+Se tivéssemos escrito o retorno de chamada como uma função regular (anônima), usando a palavra-chave `function`, isso teria falhado, pois seu valor `this` teria sido definido como `undefined`. Tente!
 
-```js
-class MyClass {
+``` js
+class MinhaClasse {
 
-  constructor() {
-    this.myData = 'Hello world'
+  construtor(){
+    this.myData = 'Olá mundo'
   }
 
-  sayDelayed() {
+  digaAtrasado() {
     setTimeout(() => {
       console.log(this.myData);
     }, 1000);
   }
 }
 
-const myClass = new MyClass();
-myClass.sayDelayed();
+const minhaClasse = new MinhaClasse();
+minhaClasse.sayDelayed();
 ```
 
-Nevertheless, there are ways to use regular functions in this scenario as was the common case before fat arrow functions were introduced in ES6. One way is to use `bind` as in this example:
+No entanto, existem maneiras de usar funções regulares neste cenário, como era o caso comum antes das funções de setas gordas serem introduzidas no ES6. Uma maneira é usar `bind` como neste exemplo:
 
-```js
-class MyClass {
+``` js
+class MinhaClasse {
 
-  constructor() {
-    this.myData = 'Hello world'
+  construtor(){
+    this.myData = 'Olá mundo'
   }
 
-  sayDelayed() {
-    setTimeout(function () {
+  digaAtrasado() {
+    setTimeout(função() {
       console.log(this.myData);
-    }.bind(this), 1000);
+    }.bind(este), 1000);
   }
 }
 
-const myClass = new MyClass();
-myClass.sayDelayed();
+const minhaClasse = new MinhaClasse();
+minhaClasse.sayDelayed();
 ```
 
-Another way is to introduce an intermediate variable, often named `self` or `that`, in a closure:
+Outra maneira é introduzir uma variável intermediária, geralmente chamada de `self` ou `that`, em um encerramento:
 
-```js
-class MyClass {
+``` js
+class MinhaClasse {
 
-  constructor() {
-    this.myData = 'Hello world'
+  construtor(){
+    this.myData = 'Olá mundo'
   }
 
-  sayDelayed() {
+  digaAtrasado() {
     const self = this;
-    setTimeout(function () {
+    setTimeout(função() {
       console.log(self.myData);
     }, 1000);
   }
 }
 
-const myClass = new MyClass();
-myClass.sayDelayed();
+const minhaClasse = new MinhaClasse();
+minhaClasse.sayDelayed();
 ```

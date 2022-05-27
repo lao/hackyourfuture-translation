@@ -1,163 +1,163 @@
-# Express
+# Expresso
 
-## Purpose
+## Objetivo
 
-This article gives an overview of Express and how it can be used to build complex HTTP server applications based on the Node.js `http` module.
+Este artigo fornece uma visão geral do Express e como ele pode ser usado para construir aplicativos de servidor HTTP complexos baseados no módulo `http` do Node.js.
 
-## A simple Express server
+## Um servidor Express simples
 
-Let's create a simple Express server with Node:
+Vamos criar um servidor Express simples com o Node:
 
-```js
+``` js
 const http = require('http');
 const express = require('express');
 const app = express();
 
 http.createServer(app)
   .listen(3000, () => {
-    console.log('Express server listening on port 3000');
+    console.log('Express server escutando na porta 3000');
   });
 ```
 
-So, what is `app` here? The `http.createServer()` function is part of the Node.js `http` module. Inspection of the Node.js documentation shows that `createServer()` expects a **request listener** as its argument. This is a function that takes two arguments: a request object and a response object, named here respectively: `req` and `res`.
+Então, o que é `app` aqui? A função `http.createServer()` faz parte do módulo `http` do Node.js. A inspeção da documentação do Node.js mostra que `createServer()` espera um **request listener** como argumento. Esta é uma função que recebe dois argumentos: um objeto de solicitação e um objeto de resposta, nomeados aqui respectivamente: `req` e `res`.
 
-```js
+``` js
 function requestListener(req, res) {
   // ...
 }
 ```
 
-Therefore, `app` must be (and actually is) a request listener function:
+Portanto, `app` deve ser (e na verdade é) uma função de ouvinte de solicitação:
 
-```js
-function app(req, res) {
+``` js
+função app(req, res) {
   // ...
 }
 ```
 
-But actually, `app` is far more than that. The Express package adds number of properties to the `app` function. Remember that a JavaScript function is in essence a JavaScript object, although one of a special type. You can add properties to any JavaScript object, including to function objects, such as `app` here.
+Mas, na verdade, `app` é muito mais do que isso. O pacote Express adiciona várias propriedades à função `app`. Lembre-se de que uma função JavaScript é essencialmente um objeto JavaScript, embora seja de um tipo especial. Você pode adicionar propriedades a qualquer objeto JavaScript, incluindo objetos de função, como `app` aqui.
 
-Below is a simplified representation of the internals of Express:
+Abaixo está uma representação simplificada dos componentes internos do Express:
 
-```js
-// Simplified internal implementation of the 'express' Node module
+``` js
+// Implementação interna simplificada do módulo Node 'express'
 
-function createApplication() {
+function criarAplicativo() {
   const app = function(req, res) {
     // ...
   }
   
   app.use = function use(...middleWareFns) {
-    // adds middleware shared across all routes
+    // adiciona middleware compartilhado em todas as rotas
   };
 
   app.get = function get(path, ...middleWareFns) {
-    // adds middleware for the GET method for a specific route
+    // adiciona middleware para o método GET para uma rota específica
   }
 
-  // etc.
+  //etc
 
-  return app;
+  aplicativo de retorno;
 }
 
-module.exports = createApplication;
+module.exports = criarAplicativo;
 ```
 
-## A real world Express application
+## Um aplicativo Expresso do mundo real
 
-Figure 1 below shows a real world (though trimmed down) example of an Express application (this one is taken from the **Hyfer** application). We will dissect this code snippet in the next sections.
+A Figura 1 abaixo mostra um exemplo do mundo real (embora reduzido) de um aplicativo Express (este é retirado do aplicativo **Hyfer**). Vamos dissecar esse trecho de código nas próximas seções.
 
-```js
+``` js
 const http = require('http');
 const express = require('express');
-const compression = require('compression');
+compressão const = require('compressão');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const serveStatic = require('serve-static');
 
 const app = express();
 
-// shared middleware for all routes
+// middleware compartilhado para todas as rotas
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(serveStatic('./public'));
 
-// route specific request handlers
+// rotear manipuladores de requisições específicas
 app.get('/api/timeline', getTimeLine);
 app.get('/api/user/:id', isAuthenticated, getUser);
 
 http.createServer(app)
   .listen(3000, () => {
-    console.log('Express server listening on port 3000');
+    console.log('Express server escutando na porta 3000');
   });
 
-// example request handler implementations
+// exemplo de implementações de manipulador de requisições
 
 function getTimeLine(req, res) {
   //...
-  res.json(timeline);
+  res.json(linha do tempo);
 }
 
 function getUser(req, res) {
   //...
-  res.json(user);
+  res.json(usuário);
 }
 
 function isAuthenticated(req, res, next) {
   //...
-  if (authenticated) {
-    next();
-  } else {
-    // unauthorized
+  if (autenticado) {
+    Next();
+  } senão {
+    // não autorizado
     res.sendStatus(401);
   }
 }
 ```
 
-Listing 1: A real world Express application
+Listagem 1: Um aplicativo Express do mundo real
 
 ## Middleware
 
-In the Express documentation the term **middleware** is used to describe a special type of request handler. It has the following [function signature](https://developer.mozilla.org/en-US/docs/Glossary/Signature/Function):
+Na documentação do Express, o termo **middleware** é usado para descrever um tipo especial de manipulador de solicitação. Tem a seguinte [assinatura de função](https://developer.mozilla.org/en-US/docs/Glossary/Signature/Function):
 
-```js
+``` js
 function middlewareFn(req, res, next) {
   // ...
 }
 ```
 
-Note that a third parameter, `next` is added to the function signature. This `next` parameter is a function that takes no parameters.
+Observe que um terceiro parâmetro, `next`, é adicionado à assinatura da função. Este parâmetro `next` é uma função que não recebe parâmetros.
 
-Express constructs a pipeline of middleware functions through which an incoming HTTP request (`req`) is routed and an outgoing HTTP response (`res`) is sent back.
+O Express constrói um pipeline de funções de middleware através do qual uma solicitação HTTP de entrada (`req`) é roteada e uma resposta HTTP de saída (`res`) é enviada de volta.
 
-Each middleware function is expected to either pass on the request to the next function in the pipeline, i.e. by calling `next()`, or send a response itself. In the latter case, handling of the request ends there and then. Otherwise the next middleware function in the pipeline is called.
+Espera-se que cada função de middleware passe a solicitação para a próxima função no pipeline, ou seja, chamando `next()`, ou envie uma resposta por conta própria. Neste último caso, o tratamento do pedido termina ali mesmo. Caso contrário, a próxima função de middleware no pipeline é chamada.
 
-Middleware functions can (and usually do) make change to the request object, the response object or both, before passing them on. In fact, this is the main purpose of middleware: adding functionality and information as the request progresses through the pipeline.
+As funções de middleware podem (e geralmente fazem) fazer alterações no objeto de solicitação, no objeto de resposta ou em ambos, antes de passá-las adiante. Na verdade, esse é o objetivo principal do middleware: adicionar funcionalidades e informações à medida que a solicitação avança pelo pipeline.
 
-Ultimately there must be some middleware function in the pipeline that sends a response. If not, the client will time out with an error.
+Em última análise, deve haver alguma função de middleware no pipeline que envie uma resposta. Caso contrário, o cliente atingirá o tempo limite com um erro.
 
-Figure 1 below illustrates the middleware configuration of Listing 1 above.
+A Figura 1 abaixo ilustra a configuração de middleware da Listagem 1 acima.
 
 ![Middleware Pipeline](./assets/express.png)
 
-Figure 1. Express middleware pipeline representation of Listing 1 code.
+Figura 1. Representação do pipeline de middleware expresso do código da Listagem 1.
 
-All incoming requests are routed through the common middleware functions added and configured through `app.use()`. Next, the requests are routed to middleware functions based on the request method (e.g. a `GET`) and request path (e.g. `/api/timeline`). These functions are usually added and configured through `app.get()`, `app.post()`, etc.
+Todas as solicitações recebidas são roteadas através das funções de middleware comuns adicionadas e configuradas através de `app.use()`. Em seguida, as solicitações são roteadas para funções de middleware com base no método de solicitação (por exemplo, um `GET`) e no caminho da solicitação (por exemplo, `/api/timeline`). Essas funções geralmente são adicionadas e configuradas através de `app.get()`, `app.post()`, etc.
 
-Application specific routes are ultimately handled by request handlers at leaf nodes of the pipeline. Because they are leaf nodes, they usually leave out the `next` parameter, as there is no 'next' to pass the request on to. 
+As rotas específicas do aplicativo são tratadas por manipuladores de solicitação em nós folha do pipeline. Por serem nós folha, eles geralmente deixam de fora o parâmetro `next`, pois não há 'next' para passar a solicitação.
 
-### Conditional middleware
+### Middleware condicional
 
-In Listing 1 and Figure 1 there are two middleware functions that conditionally call `next()`. 
+Na Listagem 1 e na Figura 1 há duas funções de middleware que chamam condicionalmente `next()`.
 
-1. The first one comes from the [serve-static](https://github.com/expressjs/serve-static) middleware. This middleware checks whether the requested URL corresponds to a file (e.g. `index.html`) in the server folder designated for hosting static content. If so, this file is served as the response. If not, the middleware function calls `next()` to continue the pipeline.
+1. O primeiro vem do middleware [serve-static](https://github.com/expressjs/serve-static). Este middleware verifica se a URL solicitada corresponde a um arquivo (por exemplo, `index.html`) na pasta do servidor designada para hospedar conteúdo estático. Em caso afirmativo, esse arquivo é servido como resposta. Caso contrário, a função de middleware chama `next()` para continuar o pipeline.
 
-2. The second one in this example is the function `isAuthenticated()` which test whether the requesting user is authenticated (details on how this is done is left out here). If the requesting user is an authenticated user, then, the request is allowed to pass through. Otherwise an `HTTP 401 - Unauthorized` is sent back, without allowing the request to continue.
+2. A segunda neste exemplo é a função `isAuthenticated()` que testa se o usuário solicitante está autenticado (os detalhes de como isso é feito são deixados de fora aqui). Se o usuário solicitante for um usuário autenticado, a solicitação terá permissão para passar. Caso contrário, um `HTTP 401 - Unauthorized` é enviado de volta, sem permitir que a solicitação continue.
 
-## Further reading
+## Leitura adicional
 
-There is far more to Express than can be covered in this article.
+Há muito mais no Express do que pode ser abordado neste artigo.
 
-- [Official Express site](https://expressjs.com/)
-- [HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
-- [HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+- [Site oficial do Express](https://expressjs.com/)
+- [Métodos de solicitação HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+- [códigos de status de resposta HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)

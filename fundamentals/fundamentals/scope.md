@@ -1,168 +1,168 @@
-# Scope
+# Alcance
 
-## What is scope?
+## O que é escopo?
 
-Definition from [Dictionary.com](http://www.dictionary.com/browse/scope):
+Definição de [Dictionary.com](http://www.dictionary.com/browse/scope):
 
-> noun
-1\. extent or range of view, outlook, application, operation, effectiveness, etc.:
+> substantivo
+1\. extensão ou alcance de visão, perspectiva, aplicação, operação, eficácia, etc.:
 
-If you imagine yourself as the computer that is executing your JavaScript code, you can think of scope as meaning:
+Se você se imaginar como o computador que está executando seu código JavaScript, você pode pensar em escopo como significando:
 
-> what you can see from where you are 
+> o que você pode ver de onde você está
 
-In this case the 'things' that you are looking for are variables and functions. When we say, "What's in scope?", we mean "Which variables and functions can be accessed from the current point of execution in your code?" As it happens, in JavaScript there are three types of scope to consider.
+Neste caso, as 'coisas' que você está procurando são variáveis e funções. Quando dizemos "O que está no escopo?", queremos dizer "Quais variáveis e funções podem ser acessadas a partir do ponto atual de execução em seu código?" Acontece que em JavaScript existem três tipos de escopo a serem considerados.
 
-## Global scope
+## Âmbito global
 
-Variables and functions defined at global scope are visible from any point of execution in your code. Sometimes that's a good thing (or even essential), but in general you must avoid creating variables and functions in global scope unless you have specific reasons to do so.
+Variáveis e funções definidas no escopo global são visíveis de qualquer ponto de execução em seu código. Às vezes isso é uma coisa boa (ou mesmo essencial), mas em geral você deve evitar criar variáveis e funções no escopo global, a menos que tenha razões específicas para fazê-lo.
 
-Consider the example below:
+Considere o exemplo abaixo:
 
-```js
-a = 'Hello'; // don't do this
+``` js
+a = 'Olá'; // não faça isso
 console.log(a);
 ```
 
-In this example we have assigned the value `'Hello'` to a variable that we forgot to declare (we forgot to use `let`, `const` or `var`). The JavaScript engine tries to be helpful and defines a variable `a` for us in **global** scope. More recently, the JavaScript community considered this friendliness to be a mistake and with ES5 introduced `strict` mode: place the string `'use strict';` at the top of your file. This now causes our code to fail with a run-time error when forgetting to 'declare' our variables.
+Neste exemplo atribuímos o valor `'Hello'` a uma variável que esquecemos de declarar (esquecemos de usar `let`, `const` ou `var`). O mecanismo JavaScript tenta ser útil e define uma variável `a` para nós no escopo **global**. Mais recentemente, a comunidade JavaScript considerou essa facilidade um erro e com o ES5 introduziu o modo `strict`: coloque a string `'use strict';` no topo do seu arquivo. Isso agora faz com que nosso código falhe com um erro de tempo de execução ao esquecer de 'declarar' nossas variáveis.
 
-```js
-'use strict';
-a = 'Hello'; // produces: ReferenceError: a is not defined
+``` js
+'usar estrito';
+a = 'Olá'; // produz: ReferenceError: a não está definido
 console.log(a);
 ```
 
-You can correct this by declaring your variable with `let`, `const` or `var`:
+Você pode corrigir isso declarando sua variável com `let`, `const` ou `var`:
 
-```js
-'use strict';
-var a = 'Hello';
+``` js
+'usar estrito';
+var a = 'Olá';
 console.log(a);
 ```
 
-This still puts the variable `a` into the global scope. So why is global scope a problem? Because you cannot be sure that the variable names you choose do not conflict with names already present in global scope (global scope is a busy place).
+Isso ainda coloca a variável `a` no escopo global. Então, por que o escopo global é um problema? Porque você não pode ter certeza de que os nomes de variáveis escolhidos não entram em conflito com os nomes já presentes no escopo global (o escopo global é um lugar ocupado).
 
-It is best to apply the principle of 'need to know'. Only expose your variables to other parts in the JavaScript ecosystem that need to know about them. This is where local scope and block scope come in.
+É melhor aplicar o princípio da 'necessidade de saber'. Apenas exponha suas variáveis a outras partes do ecossistema JavaScript que precisam saber sobre elas. É aqui que entram o escopo local e o escopo do bloco.
 
-## Local scope
+## Escopo local
 
-When you declare a function in JavaScript the function body represents a new, local scope, distinct from global scope. Variables defined in the function body are visible in that function body only: from the outside, you can't look in.
+Quando você declara uma função em JavaScript, o corpo da função representa um novo escopo local, distinto do escopo global. As variáveis definidas no corpo da função são visíveis apenas nesse corpo da função: de fora, você não pode olhar para dentro.
 
-```js
-'use strict';
+``` js
+'usar estrito';
 
-function myFunction() {
-  const a = 'Hello';
+função minhaFunção() {
+  const a = 'Olá';
   console.log(a);
 }
 
-myFunction();
+minhaFunção();
 
-// console.log(a); <= this would produce: ReferenceError: a is not defined
+// console.log(a); <= isso produziria: ReferenceError: a não está definido
 ```
 
-But from the inside you can look out. In the example below the variable `a` is visible from inside the function body.
+Mas de dentro você pode olhar para fora. No exemplo abaixo, a variável `a` é visível de dentro do corpo da função.
 
-```js
-'use strict';
+``` js
+'usar estrito';
 
-const a = 'Hello';
+const a = 'Olá';
 
-function myFunction() {
-  const b = ', world';
+função minhaFunção() {
+  const b = ', mundo';
   console.log(a + b);
 }
 
-myFunction();
+minhaFunção();
 ```
 
-You might think that the variable `a` is in global scope. Actually, variables declared with either `let` or `const` have block scope, as will be discussed next. Note however that the function `myFunction` still resides in global scope. There is a way to  get `myFunction` out of the global scope by using, what is called, an **IIFE** to create a **local scope** (or, with ES6, by placing the function definition in a block to create a **block scope**). See further down below.
+Você pode pensar que a variável `a` está no escopo global. Na verdade, variáveis declaradas com `let` ou `const` têm escopo de bloco, como será discutido a seguir. Observe, no entanto, que a função `myFunction` ainda reside no escopo global. Existe uma maneira de tirar `myFunction` do escopo global usando, o que é chamado, um **IIFE** para criar um **escopo local** (ou, com ES6, colocando a definição da função em um bloco para criar um **escopo de bloco**). Veja mais abaixo.
 
-## Block scope
+## Escopo do bloco
 
-The keywords `let` and `const` were introduced in ES6 as alternatives to the existing `var` keyword. We recommend that you use these newer keywords instead of `var`. They adhere to the rules for **block scope**, whereas `var` is completely oblivious of the concept.
+As palavras-chave `let` e `const` foram introduzidas no ES6 como alternativas à palavra-chave `var` existente. Recomendamos que você use essas palavras-chave mais recentes em vez de `var`. Eles aderem às regras para **escopo do bloco**, enquanto `var` ignora completamente o conceito.
 
-A new block scope (sometimes called _lexical_ scope) is created whenever you create a block of code inside a pair of curly braces. (Exception: the curly braces used to enclose the body of a function definition do not create a block scope. Instead, a **local scope** is created as discussed in the previous section.) 
+Um novo escopo de bloco (às vezes chamado de escopo _lexical_) é criado sempre que você cria um bloco de código dentro de um par de chaves. (Exceção: as chaves usadas para delimitar o corpo de uma definição de função não criam um escopo de bloco. Em vez disso, um **escopo local** é criado conforme discutido na seção anterior.)
 
-Variables defined with `let` and `const` at the file level (i.e., not inside a function or a block) are considered to be in a file-level block scope ('script' scope). That's why the variable `a` in the previous code snippet is not in global scope. Had we replaced `const a` with `var a` then variable `a` _would be_ in global scope.
+Variáveis definidas com `let` e `const` no nível do arquivo (ou seja, não dentro de uma função ou bloco) são consideradas em um escopo de bloco em nível de arquivo (escopo 'script'). É por isso que a variável `a` no trecho de código anterior não está no escopo global. Se tivéssemos substituído `const a` por `var a`, então a variável `a` _seria_ no escopo global.
 
-## Scope Example
+## Exemplo de escopo
 
-In the figure below we show an example bringing all scope types together. The code fragment on the right-hand side is executed by means of a `<script>` tag in `index.html`. The scope hierarchy shows the state of the scopes at the execution point indicated by the red triangle.
+Na figura abaixo mostramos um exemplo reunindo todos os tipos de escopo. O fragmento de código do lado direito é executado por meio de uma tag `<script>` em `index.html`. A hierarquia de escopo mostra o estado dos escopos no ponto de execução indicado pelo triângulo vermelho.
 
 ![Scopes](assets/scopes.png)
 
-Let's go through these scopes from the top down:
+Vamos passar por esses escopos de cima para baixo:
 
-- The `alert` function and the `document` object are placed in **global scope** by the browser at start-up (along with many other predefined 'system' variables). The `myFunction` function originates from our code snippet.
-- The next scope shown is a **block scope** at the file level (our file `app.js` loaded up with a `<script>` tag). Variables defined outside of a block or function in this file will be visible from any location within the file. This holds true for the variable `a`.
-- Next comes the **local scope** of the function `myFunction`. It contains the variables `b`, `h1` and `root`.
-- The most inner scope is the **block scope** exists within the `if` statement block only. This is the scope that holds the variable `c`.
+- A função `alert` e o objeto `document` são colocados em **escopo global** pelo navegador na inicialização (junto com muitas outras variáveis 'sistema' predefinidas). A função `myFunction` se origina do nosso trecho de código.
+- O próximo escopo mostrado é um **escopo de bloco** no nível do arquivo (nosso arquivo `app.js` carregado com uma tag `<script>`). As variáveis definidas fora de um bloco ou função neste arquivo serão visíveis de qualquer local dentro do arquivo. Isso vale para a variável `a`.
+- Em seguida vem o **escopo local** da função `myFunction`. Ele contém as variáveis `b`, `h1` e `root`.
+- O escopo mais interno é o **escopo do bloco** que existe apenas no bloco de instruções `if`. Este é o escopo que contém a variável `c`.
 
-### Variable resolution
+### Resolução variável
 
-Let's consider the statement below taken from the example code snippet and examine how the variable references `a`, `b` and `c` are resolved by 'walking the scope chain'.
+Vamos considerar a declaração abaixo tirada do trecho de código de exemplo e examinar como as referências de variáveis `a`, `b` e `c` são resolvidas 'caminhando na cadeia de escopo'.
 
-```js
+``` js
 h1.innerHTML = a + b + c;
 ```
 
-Variable resolution proceeds by attempting to resolve a variable reference from the current scope (i.e., at the point of reference), through intermediate scopes and ultimately ending in global scope, in the direction of the arrows.
+A resolução de variável prossegue tentando resolver uma referência de variável do escopo atual (ou seja, no ponto de referência), através de escopos intermediários e, finalmente, terminando no escopo global, na direção das setas.
 
-| Variable | Resolution |
+| Variável | Resolução |
 | -------- | ---------- |
-| `c`      | This variable is defined in the current (block) scope and is resolved immediately. |
-| `b`      | After failing to resolve this variable from the current (block) scope, JavaScript walks up the scope chain and finds its definition in the local (function) scope. |
-| `a` | To resolve this variable the JavaScript engine must hop up to the block scope at the file level. |
+| `c` | Esta variável é definida no escopo atual (bloco) e é resolvida imediatamente. |
+| `b` | Depois de falhar em resolver essa variável do escopo atual (bloco), o JavaScript percorre a cadeia de escopo e encontra sua definição no escopo local (função). |
+| `a` | Para resolver essa variável, o mecanismo JavaScript deve saltar para o escopo do bloco no nível do arquivo. |
 
-For the statement below, taken again from the code snippet in the picture, the JavaScript engine must walk the scope chain starting from the local (function) scope up to the global scope to find the definition of `document`.
+Para a declaração abaixo, tirada novamente do trecho de código na imagem, o mecanismo JavaScript deve percorrer a cadeia de escopo começando do escopo local (função) até o escopo global para encontrar a definição de `document`.
 
-```js
+``` js
 const root = document.getElementById('root')
 ```
 
-## Guidance
+## Orientação
 
-Following the principle of 'need to know', it is best to define variables at the point of need, i.e. just before you need to have access to these variables. This will either be in the same scope of the code where you access the variable, or, in case you need to access the variable from multiple places, the nearest scope that is common to the points of need.
+Seguindo o princípio de 'necessidade de saber', é melhor definir as variáveis no momento da necessidade, ou seja, imediatamente antes de você precisar ter acesso a essas variáveis. Isso estará no mesmo escopo do código em que você acessa a variável ou, caso precise acessar a variável de vários lugares, o escopo mais próximo que seja comum aos pontos de necessidade.
 
 ## IIFE
 
-We were left with the issue that functions defined at the file level still end up in global scope. The traditional method of solving this in JavaScript is to use an Immediately Invoked Function Expression (IIFE). We present it here for info. When you build web applications with modern tools such as React and Node, you do not need to use IIFEs.
+Ficamos com o problema de que as funções definidas no nível do arquivo ainda acabam no escopo global. O método tradicional de resolver isso em JavaScript é usar uma Expressão de Função Imediatamente Invocada (IIFE). Apresentamos aqui para informação. Ao construir aplicativos da Web com ferramentas modernas, como React e Node, você não precisa usar IIFEs.
 
-To use an IIFE you must wrap all of your JavaScript code in a function body of an anonymous function (i.e., a function with no name) and immediately call that function (as indicated by the empty set of parentheses on the last line). This creates a local scope for your code. Now even the `myFunction` function is in local scope.
+Para usar um IIFE, você deve envolver todo o seu código JavaScript em um corpo de função de uma função anônima (ou seja, uma função sem nome) e imediatamente chamar essa função (conforme indicado pelo conjunto vazio de parênteses na última linha). Isso cria um escopo local para seu código. Agora até a função `myFunction` está no escopo local.
 
-```js
-(function () {
-  'use strict';
+``` js
+(função () {
+  'usar estrito';
 
-  const a = 'Hello';
+  const a = 'Olá';
 
-  function myFunction() {
-    const b = ', world!';
+  função minhaFunção() {
+    const b = ', mundo!';
     console.log(a + b);
   }
 
-  myFunction();
+  minhaFunção();
 })();
 ```
 
-More info on MDN: [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
+Mais informações sobre o MDN: [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
 
-## IIFE alternative (ES6)
+## Alternativa IIFE (ES6)
 
-In ES6 you can replace the IIFE by a simple block, like this, to achieve the same effect.
+No ES6 você pode substituir o IIFE por um bloco simples, como este, para obter o mesmo efeito.
 
-```js
+``` js
 {
-  'use strict';
+  'usar estrito';
 
-   const a = 'Hello';
+   const a = 'Olá';
 
-  function myFunction() {
-    const b = ', world!';
+  função minhaFunção() {
+    const b = ', mundo!';
     console.log(a + b);
   }
 
-  myFunction();
+  minhaFunção();
 };
 ```

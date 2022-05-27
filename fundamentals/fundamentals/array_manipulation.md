@@ -1,204 +1,204 @@
-# Array Manipulations
+# Manipulações de matriz
 
-[MDN on Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-As we know by now, arrays are collections of values.
+[MDN em matrizes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+Como já sabemos, arrays são coleções de valores.
 
-As we will see, there are often many ways to achieve the same thing when working arrays. Over time, you will add different techniques to your mental toolbox to achieve the result you want quickly.
+Como veremos, muitas vezes há muitas maneiras de conseguir a mesma coisa ao trabalhar com arrays. Com o tempo, você adicionará diferentes técnicas à sua caixa de ferramentas mental para alcançar o resultado desejado rapidamente.
 
-The basics.
+O básico.
 
-- How do we create an array?
-- How do we add items to an array?
-- How do we change items of an array?
-- How do we remove items from an array?
-- How do we know the length of an array?
-- How do we iterate over an array?
+- Como criamos um array?
+- Como adicionamos itens a um array?
+- Como alteramos os itens de um array?
+- Como removemos itens de um array?
+- Como sabemos o comprimento de uma matriz?
+- Como iteramos sobre uma matriz?
 
-## How do we create an array?
+## Como criamos um array?
 
-An array can be created multiple ways
+Um array pode ser criado de várias maneiras
 
-From scratch:
+Do princípio:
 
-```js
-const a = []; // result: []
-const b = ['item1', 'item2']; // result: ['item1', 'item2']
+``` js
+const a = []; // resultado: []
+const b = ['item1', 'item2']; // resultado: ['item1', 'item2']
 
-// The examples with new Array() are NOT recommended and shown here for demo purposes only.
-const c = new Array(); // result: []
-const d = new Array('item 1', 'item2'); // result: ['item1', 'item2']
-const e = new Array(20); // result: [ <20 empty items> ]
-const f = new Array(20, 21); // result: [20, 21]
-// Note that `e` and `f` are a beautiful example of how weird and unexpected JavaScript can be.
-// You should use `a` or `b` by default.
+// Os exemplos com new Array() NÃO são recomendados e mostrados aqui apenas para fins de demonstração.
+const c = new Array(); // resultado: []
+const d = new Array('item 1', 'item2'); // resultado: ['item1', 'item2']
+const e = new Array(20); // resultado: [ <20 itens vazios> ]
+const f = new Array(20, 21); // resultado: [20, 21]
+// Note que `e` e `f` são um belo exemplo de como o JavaScript pode ser estranho e inesperado.
+// Você deve usar `a` ou `b` por padrão.
 ```
 
-From value (as an example, many ways to create an array from another value):
+From value (como exemplo, muitas maneiras de criar uma matriz a partir de outro valor):
 
-```js
-const a = 'hello world'; // result: 'hello world'
-const b = a.split(' '); // result:  ['hello', 'world' ]
+``` js
+const a = 'olá mundo'; // resultado: 'olá mundo'
+const b = a.split(' '); // resultado: ['hello', 'world']
 ```
 
-## Array length
+## Comprimento da matriz
 
-Every array has as a 'static' property `length`. Meaning that we can easily get the amount of items in an array.
+Cada array tem como propriedade 'estática' `length'. O que significa que podemos obter facilmente a quantidade de itens em uma matriz.
 
-```js
-const f = ['hi', 'there'];
-console.log(f.length); // 2
+``` js
+const f = ['oi', 'lá'];
+console.log(f.comprimento); // 2
 ```
 
-## Array index
+## Índice de matriz
 
-We can access array elements through the position of the element in the array. This is called an index. Indices (plural of index) are 0-based, meaning that the first item's index is 0, the second element is 1.
+Podemos acessar os elementos do array através da posição do elemento no array. Isso é chamado de índice. Índices (plural de índice) são baseados em 0, o que significa que o índice do primeiro item é 0, o segundo elemento é 1.
 
-```js
-const x = ['first', 'second', 'third'];
-console.log(x[0]); // 'first'
+``` js
+const x = ['primeiro', 'segundo', 'terceiro'];
+console.log(x[0]); // 'primeiro'
 
-x[3] = 'fourth';
+x[3] = 'quarto';
 ```
 
-Note that arrays can have empty values. This should be avoided usually to prevent unexpected behaviour.
+Observe que os arrays podem ter valores vazios. Isso deve ser evitado geralmente para evitar comportamentos inesperados.
 
-```js
-x[10] = 'eleventh';
-console.log(x); // [ 'first',  'second',  'third',  'fourth',  <6 empty items>,  'eleventh' ]
+``` js
+x[10] = 'décimo primeiro';
+console.log(x); // [ 'primeiro', 'segundo', 'terceiro', 'quarto', <6 itens vazios>, 'décimo primeiro' ]
 ```
 
-Next to the index, we have a wide range of tools to manipulate arrays.
+Ao lado do índice, temos uma ampla gama de ferramentas para manipular arrays.
 
-## Array methods
+## Métodos de matriz
 
-These methods are essential.
+Esses métodos são essenciais.
 
-**Extremely important is to remember to always ask these two questions**:
+**Extremamente importante é lembrar de sempre fazer essas duas perguntas**:
 
-- What is the return value of this method?
-- What does this method do to the original array it is used on?
+- Qual é o valor de retorno deste método?
+- O que esse método faz com o array original em que é usado?
 
-**Adding items**
+**Adicionando itens**
 
-- [`.push()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) Add item to end of array.
-  Example:
+- [`.push()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) Adicionar item ao final do array.
+  Exemplo:
 
-```js
-const animals = ['pigs', 'goats', 'sheep'];
+``` js
+const animais = ['porcos', 'cabras', 'ovelhas'];
 
-// 1.What is the return value of this method?
-// returns the length of the new array
-console.log(animals.push('cows'));
-// expected output: 4
+// 1.Qual é o valor de retorno deste método?
+// retorna o comprimento do novo array
+console.log(animais.push('vacas'));
+// saída esperada: 4
 
-// 2. What does this method do to the original array it is used on?
-// modifies the original array - adds at the end of the array the given element(s)
-console.log(animals);
-// expected output: Array ["pigs", "goats", "sheep", "cows"]
+// 2. O que esse método faz com o array original em que é usado?
+// modifica o array original - adiciona no final do array o(s) elemento(s) dado(s)
+console.log(animais);
+// saída esperada: Array ["porcos", "cabras", "ovelha", "vacas"]
 
-// can add multiple elements in one call
-animals.push('chickens', 'parrot');
+// pode adicionar vários elementos em uma chamada
+animais.push('galinhas', 'papagaio');
 
-console.log(animals);
-// expected output: Array ["pigs", "goats", "sheep", "cows", "chicken", "parrot"]
+console.log(animais);
+// saída esperada: Array ["porcos", "cabras", "ovelha", "vacas", "galinha", "papagaio"]
 ```
 
-> _See this in action in this [JSBin](https://jsbin.com/lawovip/edit?js,console)._
+> _Veja isso em ação neste [JSBin](https://jsbin.com/lawovip/edit?js,console)._
 
-- [`.unshift()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift) Add item to beginning of array.
-  Example:
+- [`.unshift()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift) Adicionar item ao início do array.
+  Exemplo:
 
-```js
+``` js
 const array1 = [1, 2, 3];
 
-// 1.What is the return value of this method?
-// returns the length of the new array
+// 1.Qual é o valor de retorno deste método?
+// retorna o comprimento do novo array
 console.log(array1.unshift(4, 5));
-// expected output: 5
+// saída esperada: 5
 
-// 2. What does this method do to the original array it is use
-// modifies the original array - adds at the begining of the array the given element(s)
+// 2. O que esse método faz com o array original que é usado
+// modifica o array original - adiciona no início do array o(s) elemento(s) dado(s)
 console.log(array1);
-// expected output: Array [4, 5, 1, 2, 3]
+// saída esperada: Array [4, 5, 1, 2, 3]
 ```
 
-> _See this in action in this [JSBin](https://jsbin.com/pikupol/edit?js,console)._
+> _Veja isso em ação neste [JSBin](https://jsbin.com/pikupol/edit?js,console)._
 
-**Removing items**
+**Removendo itens**
 
-- [`.shift()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) Remove first element from array.
-  Example:
+- [`.shift()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) Remova o primeiro elemento do array.
+  Exemplo:
 
-```js
+``` js
 const array1 = [1, 2, 3];
 
-const firstElement = array1.shift();
+const primeiroElemento = array1.shift();
 
-// 1.What is the return value of this method?
-// returns the first element of the array
+// 1.Qual é o valor de retorno deste método?
+// retorna o primeiro elemento do array
 console.log(firstElement);
-// expected output: 1
+// saída esperada: 1
 
-// 2. What does this method do to the original array it is use
-// modifies the initial array - removes the first element
+// 2. O que esse método faz com o array original que é usado
+// modifica o array inicial - remove o primeiro elemento
 console.log(array1);
-// expected output: Array [2, 3]
+// saída esperada: Array [2, 3]
 ```
 
-> _See this in action in this [JSBin](https://jsbin.com/madaxuq/edit?js,console)._
+> _Veja isso em ação neste [JSBin](https://jsbin.com/madaxuq/edit?js,console)._
 
-- [`.pop()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop) Remove last element from array. Example:
+- [`.pop()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop) Remova o último elemento do array. Exemplo:
 
-```js
-const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
+``` js
+const plantas = ['brócolis', 'couve-flor', 'repolho', 'couve', 'tomate'];
 
-// 1.What is the return value of this method?
-// returns the last element
-console.log(plants.pop());
-// expected output: "tomato"
+// 1.Qual é o valor de retorno deste método?
+// retorna o último elemento
+console.log(plantas.pop());
+// saída esperada: "tomate"
 
-// 2. What does this method do to the original array it is use
-// modifies the original array - removes the last element from the end of the array
-console.log(plants);
-// expected output: Array ["broccoli", "cauliflower", "cabbage", "kale"]
+// 2. O que esse método faz com o array original que é usado
+// modifica o array original - remove o último elemento do final do array
+console.log(plantas);
+// saída esperada: Array ["brócolis", "couve-flor", "repolho", "kale"]
 
-plants.pop();
+plantas.pop();
 
-console.log(plants);
-// expected output: Array ["broccoli", "cauliflower", "cabbage"]
+console.log(plantas);
+// saída esperada: Array ["brócolis", "couve-flor", "repolho"]
 ```
 
-> _See this in action in this [JSBin](https://jsbin.com/nicazaf/edit?js,console)._
+> _Veja isso em ação neste [JSBin](https://jsbin.com/nicazaf/edit?js,console)._
 
-- [`.splice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) Remove a specific element from array using index.
-  Example:
+- [`.splice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) Remova um elemento específico do array usando index.
+  Exemplo:
 
-```js
-const months = ['Jan', 'March', 'April', 'June'];
+``` js
+const meses = ['Jan', 'Março', 'Abril', 'Junho'];
 
-// 1.What is the return value of this method?
-// return an array containing the elements removed
-console.log(months.splice(1, 0, 'Feb'));
+// 1.Qual é o valor de retorno deste método?
+// retorna um array contendo os elementos removidos
+console.log(meses.splice(1, 0, 'fev'));
 
-// 2. What does this method do to the original array it is use
-// modifies the original array:
+// 2. O que esse método faz com o array original que é usado
+// modifica o array original:
 
-// inserts at 1st index position
-console.log(months);
-// expected output: Array ['Jan', 'Feb', 'March', 'April', 'June']
+// insere na 1ª posição do índice
+console.log(meses);
+// saída esperada: Array ['Jan', 'Fev', 'Março', 'Abril', 'Junho']
 
-console.log(months.splice(4, 1, 'May'));
-// replaces 1 element at 4th index
-console.log(months);
-// expected output: Array ['Jan', 'Feb', 'March', 'April', 'May']
+console.log(meses.splice(4, 1, 'maio'));
+// substitui 1 elemento no 4º índice
+console.log(meses);
+// saída esperada: Array ['Jan', 'Feb', 'March', 'April', 'May']
 ```
 
-> _See this in action in this [JSBin](https://jsbin.com/yuriyer/edit?js,console)._
+> _Veja isso em ação neste [JSBin](https://jsbin.com/yuriyer/edit?js,console)._
 
-**Useful iterators over arrays**
+**Iteradores úteis sobre arrays**
 
-- [`.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) creates a new array with the results of calling a provided function on every element in the calling array.
-- [`.filter()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) creates a new array with all elements that pass the test implemented by the provided function.
-- [`.sort()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) sorts the elements of an array in place and returns the array
+- [`.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) cria um novo array com os resultados da chamada de uma função fornecida em cada elemento na matriz de chamada.
+- [`.filter()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) cria um novo array com todos os elementos que passam no teste implementado pela função fornecida.
+- [`.sort()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) classifica os elementos de um array no lugar e retorna o array
 
-Detailed examples: [`here`](https://github.com/HackYourFuture/fundamentals/blob/master/fundamentals/map_filter.md)
+Exemplos detalhados: [`aqui`](https://github.com/HackYourFuture/fundamentals/blob/master/fundamentals/map_filter.md)
