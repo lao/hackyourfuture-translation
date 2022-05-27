@@ -1,47 +1,47 @@
-# Handing in homework
-If the module repository does not specify a different process, the standard way of handing in homework is as follows.
+# Entrega de trabalhos de casa
+Se o repositório do módulo não especificar um processo diferente, a maneira padrão de entregar o dever de casa é a seguinte.
 
-## Initial setup (one time only)
-There is a single repository with all of the homework you will be doing for HackYourFuture that can be found [here](https://www.github.com/HackYourFuture/homework). Follow these steps to get set up:
+## Configuração inicial (apenas uma vez)
+Existe um único repositório com todos os trabalhos de casa que você fará para o HackYourFuture que pode ser encontrado [aqui](https://www.github.com/HackYourFuture/homework). Siga estas etapas para configurar:
 
-- Fork the repository. In the top right of the homework repository page, click on the fork button to fork it to your github. 
-- Set up a remote upstream by issueing the following command: `git remote add upstream https://www.github.com/HackYourFuture/homework`
+- Fork o repositório. No canto superior direito da página do repositório de trabalhos de casa, clique no botão de bifurcação para bifurcá-lo no seu github.
+- Configure um upstream remoto emitindo o seguinte comando: `git remote add upstream https://www.github.com/HackYourFuture/homework`
 
-Once done your own forked repository is what you will be working on, make sure to never push anything to the `main` branch so that you can keep updating your fork to the latest changes. 
+Uma vez feito, seu próprio repositório bifurcado é o que você estará trabalhando, certifique-se de nunca enviar nada para o branch `main` para que você possa continuar atualizando seu fork para as alterações mais recentes.
 
-(OPTIONAL): To remind yourself there is a function in github to protect certain branches, many times the `main` branch will be protected from direct pushes as the `main` branch is what the user is working on. Mistakes pushed to such a branch can be disastrous. To protect your main branch follow the following steps:
-- Go to your forked repository. Something like https://www.github.com/GITHUBNAME/Homework
-- Click on `Settings`
-- In the side menu click on `Branches`
-- Next to the `Branch protection rules` title click on the `Add rule` button
-- Fill in `main` as the `Branch name pattern`
-- Check the box `Require pull request reviews before merging`. This means that the only way to get something into that branch is via a pull request.
-- Check the box `Include administrators`. This means that you also get blocked as you are the administrator.
-- Click `Save` and it is set up!
+(OPCIONAL): Para se lembrar de que existe uma função no github para proteger certos branches, muitas vezes o branch `main` será protegido de pushs diretos, pois o branch `main` é o que o usuário está trabalhando. Erros empurrados para tal ramo podem ser desastrosos. Para proteger seu branch principal, siga os seguintes passos:
+- Vá para o seu repositório bifurcado. Algo como https://www.github.com/GITHUBNAME/Homework
+- Clique em `Configurações`
+- No menu lateral clique em `Ramos`
+- Ao lado do título "Regras de proteção de ramificação", clique no botão "Adicionar regra"
+- Preencha `main` como o `Padrão de nome da ramificação`
+- Marque a caixa `Exigir revisões de pull request antes de mesclar`. Isso significa que a única maneira de obter algo nessa ramificação é por meio de uma solicitação pull.
+- Marque a caixa `Incluir administradores`. Isso significa que você também será bloqueado por ser o administrador.
+- Clique em 'Salvar' e está configurado!
 
-## Week of homework (every week)
-If your week in the curriculum calls for homework to be handed in, the following steps should be taken. This process will make it the easiest for our mentors to give you feedback on your code and allows us to keep track on how everyone is doing.
+## Semana de lição de casa (todas as semanas)
+Se sua semana no currículo exigir a entrega de lição de casa, as etapas a seguir devem ser seguidas. Esse processo tornará mais fácil para nossos mentores fornecer feedback sobre seu código e nos permitirá acompanhar como todos estão se saindo.
 
-1. Make sure you are up to date with the latest version of the homework by issueing the following commands:
-  - `git fetch upstream` to check the latest version
-  - `git checkout main` to make sure you are on your main branch
-  - `git rebase -Xtheirs upstream/main` to grab the latest version from the HYF Homework repository
-  - `git push` to update the main branch of your forked repo on GitHUb (Remember to remove your branch protection and reenable that if you did that in the setup)
-  - `npm install` to make sure any needed packages are installed
-2. Create a new branch `MODULENAME-WEEKNAME`. So for example, the first week of JavaScript should be called `JavaScript-Week1`
-3. Do your homework! Remember that there is a test runner that does some automated testing of your homework, you can find out about that in the `README`.
-4. Once completed add and commit everything to the branch
-5. Push the branch to your repository
-6. Create a pull request by click the `create pull request` button in your github repository page (`https://github.com/GITHUBNAME/Homework/pulls`). The pull request should be from your branch to the main branch. Do *not* create a pull request to the HYF Homework repository.
-7. Add an issue to your class repository with the name `YOURNAME - MODULENAME (WEEKNAME)`. In it, share a link to the PR request you just created. Also assign it the correct milestone (the name of the module), the correct week label and make sure you assign yourself to the issue as well. 
-8. Lastly, add the 'Needs review' label so our mentors know they can start reviewing it.
+1. Verifique se você está atualizado com a versão mais recente do dever de casa emitindo os seguintes comandos:
+  - `git fetch upstream` para verificar a versão mais recente
+  - `git checkout main` para ter certeza de que você está no seu branch principal
+  - `git rebase -Xtheirs upstream/main` para pegar a versão mais recente do repositório HYF Homework
+  - `git push` para atualizar o branch principal do seu repositório bifurcado no GitHUb (Lembre-se de remover sua proteção de branch e reativar isso se você fez isso na configuração)
+  - `npm install` para garantir que todos os pacotes necessários sejam instalados
+2. Crie uma nova ramificação `MODULENAME-WEEKNAME`. Por exemplo, a primeira semana de JavaScript deve ser chamada de `JavaScript-Week1`
+3. Faça sua lição de casa! Lembre-se que existe um executor de testes que faz alguns testes automatizados de sua lição de casa, você pode descobrir sobre isso no `README`.
+4. Depois de concluído, adicione e confirme tudo no branch
+5. Envie a ramificação para seu repositório
+6. Crie um pull request clicando no botão `create pull request` na sua página de repositório do github (`https://github.com/GITHUBNAME/Homework/pulls`). O pull request deve ser do seu branch para o branch principal. *Não* crie um pull request para o repositório HYF Homework.
+7. Adicione um problema ao seu repositório de classe com o nome `YOURNAME - MODULENAME (WEEKNAME)`. Nele, compartilhe um link para a solicitação de RP que você acabou de criar. Atribua também o marco correto (o nome do módulo), o rótulo de semana correto e certifique-se de atribuir a si mesmo ao problema.
+8. Por último, adicione o rótulo 'Precisa de revisão' para que nossos mentores saibam que podem começar a revisá-lo.
 
-## Review process
-All of your homework will be reviewed by one of our mentors in a very similar way code reviews happen in any company you are going to work at. The homework issues you create every week will go through the following process:
+## Processo de revisão
+Todos os seus trabalhos de casa serão revisados por um de nossos mentores de uma maneira muito semelhante que as revisões de código acontecem em qualquer empresa em que você vai trabalhar. As questões de lição de casa que você cria toda semana passarão pelo seguinte processo:
 
-1. Initially the `Needs review` label is set.
-2. When the mentor starts reviewing, the label `Review in progress` is added.
-3. Once they are done the mentor decides if the homework is good enough or some work is still needed. If the homework is good enough, the issue will receive the `Approved` label. If not, the label `Reviewed with feedback` will be set.
-4. The student looks at the feedback and corrects their homework. Once finished, the label `Needs review` is set again. We then go back to step 2.
+1. Inicialmente, o rótulo "Precisa de revisão" é definido.
+2. Quando o mentor começa a revisar, o rótulo 'Revisão em andamento' é adicionado.
+3. Uma vez concluídos, o mentor decide se o dever de casa é bom o suficiente ou se ainda é necessário algum trabalho. Se a lição de casa for boa o suficiente, a edição receberá o rótulo "Aprovado". Caso contrário, o rótulo "Revisado com feedback" será definido.
+4. O aluno observa o feedback e corrige o dever de casa. Depois de concluído, o rótulo "Precisa de revisão" é definido novamente. Voltamos então ao passo 2.
 
-So if an issue is assigned to a student with the `Reviewed with feedback` label, that means the student needs to work on it. If an issue has the label `Needs review` it means it is for the mentor to look at. In the end all issues should get the `Approved` label! The class mentor will keep an eye on the issues and close the issues once everything checks out.
+Portanto, se um problema for atribuído a um aluno com o rótulo "Revisado com feedback", isso significa que o aluno precisa trabalhar nele. Se um problema tiver o rótulo "Precisa de revisão", significa que é para o mentor analisar. No final, todos os problemas devem receber o rótulo "Aprovado"! O mentor da turma ficará de olho nas questões e fechará as questões assim que tudo for verificado.
