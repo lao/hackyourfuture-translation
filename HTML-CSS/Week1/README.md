@@ -1,224 +1,224 @@
-# Reading Material HTML/CSS/GIT Week 1
+# Material de leitura HTML/CSS/GIT Semana 1
 
 ## Agenda
 
-These are the topics for week 1:
+Estes são os tópicos da semana 1:
 
-1. What is the command line interface (CLI)?
-2. Introduction to HTML:
-   - Crash course
-   - The most commonly used tags
-   - Semantic HTML
-3. Introduction to CSS:
-   - Crash course
-   - Where to write it?
-   - The box model
-   - The cascading effect
-   - Specificity
-4. Working with the browsers
-   - What is a web browser?
-   - Choosing the right web browser
-   - How to use the inspector
-   - Useful browser extensions
+1. O que é a interface de linha de comando (CLI)?
+2. Introdução ao HTML:
+   - Rota de colisão
+   - As tags mais usadas
+   - HTML semântico
+3. Introdução ao CSS:
+   - Rota de colisão
+   - Onde escrevê-lo?
+   - O modelo da caixa
+   - O efeito cascata
+   - Especificidade
+4. Trabalhando com os navegadores
+   - O que é um navegador da web?
+   - Escolhendo o navegador certo
+   - Como usar o inspetor
+   - Extensões de navegador úteis
 
-## 0. Video Lectures
+## 0. Vídeo-aulas
 
-Your teacher Arco has made video lectures for this week's material. You can find them here: [Videos 1 - 6](https://www.youtube.com/playlist?list=PLVYDhqbgYpYXbAL_Hps1Y--THRmaTFipj)
+Seu professor Arco fez videoaulas para o material desta semana. Você pode encontrá-los aqui: [Vídeos 1 - 6](https://www.youtube.com/playlist?list=PLVYDhqbgYpYXbAL_Hps1Y--THRmaTFipj)
 
-<a href="https://www.youtube.com/playlist?list=PLVYDhqbgYpYXbAL_Hps1Y--THRmaTFipj" target="_blank"><img src="../assets/week1-arco.png" width="600" height="400" alt="HYF Video" /></a>
+<a href="https://www.youtube.com/playlist?list=PLVYDhqbgYpYXbAL_Hps1Y--THRmaTFipj" target="_blank"><img src="../assets/week1-arco.png" width="600 " height="400" alt="HYF Video" /></a>
 
-## 1. What is the command line interface (CLI)?
+## 1. O que é a interface de linha de comando (CLI)?
 
-The `Command Line interface` (also known as CLI or shell) is a way to navigate through your computer's content (media, folders, applications, etc.) without a visual user interface. It allows you to type text commands to perform specific tasks. Since you can directly control the computer by typing, many tasks can be performed more quickly, and some tasks can be automated with special commands that loop through and perform the same action on many files.
+A `interface de linha de comando` (também conhecida como CLI ou shell) é uma maneira de navegar pelo conteúdo do seu computador (mídia, pastas, aplicativos, etc.) sem uma interface de usuário visual. Ele permite que você digite comandos de texto para executar tarefas específicas. Como você pode controlar diretamente o computador digitando, muitas tarefas podem ser executadas mais rapidamente e algumas tarefas podem ser automatizadas com comandos especiais que percorrem e executam a mesma ação em muitos arquivos.
 
-As a beginning developer it's important to get familiar with it, as it will teach you how computers work: as tools that you give instructions to. This is not any different from programming for web development; but instead of writing instructions to the computer directly, you write instructions for browsers to execute!
+Como um desenvolvedor iniciante, é importante se familiarizar com ele, pois ele ensinará como os computadores funcionam: como ferramentas às quais você dá instruções. Isso não é diferente de programar para desenvolvimento web; mas em vez de escrever instruções diretamente para o computador, você escreve instruções para os navegadores executarem!
 
-The first thing you'll notice is that once you type in a command, the computer doesn't always give back feedback. This is completely normal. Most of application development goes like that, and it's good to get used to it.
+A primeira coisa que você notará é que, uma vez que você digita um comando, o computador nem sempre dá feedback. Isso é completamente normal. A maior parte do desenvolvimento de aplicativos é assim, e é bom se acostumar com isso.
 
-**Note for Windows users**: Please install [Git for Windows](https://gitforwindows.org). It comes with an application called _Git BASH_ which simulates frequently used CLI commands in Unix fashion. This aligns our work here in this course, as we can all use the same commands. But there is an even bigger reason: Being comfortable in the Unix Bash shell is very important for a web developer, as web servers usually run Linux.
+**Observação para usuários do Windows**: instale o [Git for Windows](https://gitforwindows.org). Ele vem com um aplicativo chamado _Git BASH_ que simula comandos CLI frequentemente usados no estilo Unix. Isso alinha nosso trabalho aqui neste curso, pois todos podemos usar os mesmos comandos. Mas há uma razão ainda maior: estar confortável no shell Unix Bash é muito importante para um desenvolvedor web, já que os servidores web geralmente rodam Linux.
 
-For more information, check the following resources and code along:
+Para obter mais informações, verifique os seguintes recursos e codifique:
 
-- [Understanding the Command Line for Beginners](https://learntocodewith.me/getting-started/topics/command-line/)
-- [A Command Line Primer for Beginners](https://lifehacker.com/a-command-line-primer-for-beginners-5633909)
-- [Command Line Crash Course](https://www.youtube.com/watch?v=yz7nYlnXLfE)
+- [Compreendendo a linha de comando para iniciantes](https://learntocodewith.me/getting-started/topics/command-line/)
+- [Uma cartilha de linha de comando para iniciantes](https://lifehacker.com/a-command-line-primer-for-beginners-5633909)
+- [Curso rápido de linha de comando](https://www.youtube.com/watch?v=yz7nYlnXLfE)
 
-## 2. Introduction to HTML
+## 2. Introdução ao HTML
 
-### Crash course
+### Rota de colisão
 
-HTML is the foundation of web development. It is an acronym for **HyperText Markup Language**. It is used to structure content on a webpage. What do we mean by content? Plain text, images, videos, links to other websites, etc. The structure gives content meaning by defining that content as, for example, headings, paragraphs, or images.
+HTML é a base do desenvolvimento web. É um acrônimo para **HyperText Markup Language**. Ele é usado para estruturar o conteúdo em uma página da web. O que entendemos por conteúdo? Texto simples, imagens, vídeos, links para outros sites, etc. A estrutura dá significado ao conteúdo definindo-o como, por exemplo, títulos, parágrafos ou imagens.
 
-In order to learn HTML properly it's important to know what is is. Go through the following resources to learn more about it:
+Para aprender HTML corretamente é importante saber o que é. Acesse os seguintes recursos para saber mais sobre isso:
 
-- [HTML5 Basics - History of HTML](https://www.youtube.com/watch?v=NzzGt7EmXVw)
-- [HTML Crash Course](https://www.youtube.com/watch?v=UB1O30fR-EE)
+- [Noções básicas de HTML5 - História do HTML](https://www.youtube.com/watch?v=NzzGt7EmXVw)
+- [Curso intensivo de HTML](https://www.youtube.com/watch?v=UB1O30fR-EE)
 
-### The most commonly used tags
+### As tags mais usadas
 
-If at any point you came to believe you would have to learn a whole list of tags by heart in order to write great HTML, you are in luck: that's not needed.
+Se em algum momento você passou a acreditar que teria que aprender uma lista inteira de tags de cor para escrever um ótimo HTML, você está com sorte: isso não é necessário.
 
-The most important thing to know is that the tags are used to **structure content**, or in other words: to decide how each part is organized in order to more easily understand what the page is trying to communicate.
+O mais importante a saber é que as tags são usadas para **estruturar o conteúdo**, ou seja: para decidir como cada parte está organizada para entender mais facilmente o que a página está tentando comunicar.
 
-It's useful to memorize this list, but don't feel like you have to learn and memorize _every_ HTML tag. Once you understand the basics, you can easily look up which tag you need.
+É útil memorizar esta lista, mas não sinta que precisa aprender e memorizar _toda_ tag HTML. Depois de entender o básico, você pode procurar facilmente qual tag precisa.
 
-Check out the following article to find a list of the most commonly used tags: [The Most Commonly Used Tags](https://www.geeksforgeeks.org/most-commonly-used-tags-in-html/)
+Confira o artigo a seguir para encontrar uma lista das tags mais usadas: [As tags mais usadas](https://www.geeksforgeeks.org/most-commonly-used-tags-in-html/)
 
-## Semantic HTML
+## HTML semântico
 
-Semantic HTML are HTML tags that introduce meaning to the web page rather than just presentation. For example, a `<p>` tag indicates that the enclosed text is a paragraph. A `<nav>` tag indicates a navigation menu of some kind. Both examples show meaning and structure, in this way it's easier to understand for both the browser and the developer.
+HTML semântico são tags HTML que introduzem significado à página da Web em vez de apenas apresentação. Por exemplo, uma tag `<p>` indica que o texto incluído é um parágrafo. Uma tag `<nav>` indica algum tipo de menu de navegação. Ambos os exemplos mostram significado e estrutura, desta forma fica mais fácil de entender tanto para o navegador quanto para o desenvolvedor.
 
-This leads to the following insight about writing code: while code is written to produce working software, it should also be written so **other developers can easily read and understand it**. That's why it's so important to write meaningful code: if somebody else can read it and understand what you meant you did a great job!
+Isso leva ao seguinte insight sobre como escrever código: embora o código seja escrito para produzir um software funcional, ele também deve ser escrito para que **outros desenvolvedores possam lê-lo e entendê-lo com facilidade**. É por isso que é tão importante escrever um código significativo: se outra pessoa puder lê-lo e entender o que você quis dizer, você fez um ótimo trabalho!
 
-Take a look at the following resources to learn more about semantic HTML:
+Dê uma olhada nos seguintes recursos para saber mais sobre HTML semântico:
 
-- [Semantic HTML](https://www.internetingishard.com/html-and-css/semantic-html/)
-- [HTML5 as Fast as Possible](https://www.youtube.com/watch?v=IsXEVQRaTX8)
+- [HTML semântico](https://www.internetingishard.com/html-and-css/semantic-html/)
+- [HTML5 o mais rápido possível](https://www.youtube.com/watch?v=IsXEVQRaTX8)
 
-## 3. Introduction to CSS
+## 3. Introdução ao CSS
 
-### Crash course
+### Rota de colisão
 
-CSS is just as important as HTML. It is an acronym for **Cascading Style Sheets**. It is a language created to change the appearance of content. By referring to the HTML tags you can `style` it in various ways: change the `font-size`, increase the `height` or attach a `background-image` to it.
+CSS é tão importante quanto HTML. É um acrônimo para **Cascading Style Sheets**. É uma linguagem criada para alterar a aparência do conteúdo. Ao consultar as tags HTML, você pode 'estilizar' de várias maneiras: alterar o 'tamanho da fonte', aumentar a 'altura' ou anexar uma 'imagem de fundo' a ela.
 
-Go through the following video to get a firmer grasp of the fundamentals of CSS:
+Assista ao vídeo a seguir para entender melhor os fundamentos do CSS:
 
-- [CSS Crash Course](https://www.youtube.com/watch?v=yfoY53QXEnI)
+- [Curso intensivo de CSS](https://www.youtube.com/watch?v=yfoY53QXEnI)
 
-### Where to write it?
+### Onde escrever?
 
-There are 3 basic ways to write CSS:
+Existem 3 maneiras básicas de escrever CSS:
 
-- In an external stylesheet: a `.css` file, that is linked to a `.html` file using the following tag:
+- Em uma folha de estilo externa: um arquivo `.css`, que está vinculado a um arquivo `.html` usando a seguinte tag:
 
 ```html
 <link href="/path/to/style.css" rel="stylesheet" />
 ```
 
-- In the `<head>` of a `.html` file. This is done using the `<style>` tag. This is called an `internal stylesheet`:
+- No `<head>` de um arquivo `.html`. Isso é feito usando a tag `<style>`. Isso é chamado de `folha de estilo interna`:
 
 ```html
-<head>
-  <style>
-    body {
-      background-color: blue;
+<cabeça>
+  <estilo>
+    corpo {
+      cor de fundo: azul;
     }
   </style>
 </head>
 ```
 
-- As part of the attribute `style` inside any HTML tag. This is called `inline styling`:
+- Como parte do atributo `style` dentro de qualquer tag HTML. Isso é chamado de `estilo embutido`:
 
 ```html
-<div style="background-color: blue;">HackYourFuture is cool!</div>
+<div style="background-color: blue;">HackYourFuture é legal!</div>
 ```
 
-In practice, you'll always write your CSS in separate `.css` files. This is because you want to make sure **every file has a single purpose**: an HTML file should only contain the content and structure of a page, while a stylesheet should only contain styling rules that apply to a page.
+Na prática, você sempre escreverá seu CSS em arquivos `.css` separados. Isso ocorre porque você deseja garantir que **todo arquivo tenha um único propósito**: um arquivo HTML deve conter apenas o conteúdo e a estrutura de uma página, enquanto uma folha de estilo deve conter apenas regras de estilo que se aplicam a uma página.
 
-This is a software design principle called [`separation of concerns`](https://softwareengineering.stackexchange.com/questions/32581/how-do-you-explain-separation-of-concerns-to-others).
+Este é um princípio de design de software chamado [`separação de interesses`](https://softwareengineering.stackexchange.com/questions/32581/how-do-you-explain-separation-of-concerns-to-others).
 
-### The box model
+### O modelo da caixa
 
-"In CSS, everything is a box". This phrase summarizes a central concept in HTML/CSS: the box model. When building a web page each element can be considered a box that has the following properties: `margin`, `border`, `padding` and `content`. Starting from the first element within the `<body>`, everything that comes after will be pushed down (thanks to these 4 properties).
+"Em CSS, tudo é uma caixa". Esta frase resume um conceito central em HTML/CSS: o modelo de caixa. Ao construir uma página web cada elemento pode ser considerado uma caixa que possui as seguintes propriedades: `margin`, `border`, `padding` e `content`. A partir do primeiro elemento dentro do `<body>`, tudo o que vem depois será empurrado para baixo (graças a essas 4 propriedades).
 
-To learn more about the box model, go through the following:
+Para saber mais sobre o modelo de caixa, acesse o seguinte:
 
-- [Learn CSS Box Model In 8 Minutes](https://www.youtube.com/watch?v=rIO5326FgPE)
-- [Opening the Box Model](https://learn.shayhowe.com/html-css/opening-the-box-model/)
+- [Aprenda o modelo de caixa CSS em 8 minutos](https://www.youtube.com/watch?v=rIO5326FgPE)
+- [Abrindo o modelo da caixa](https://learn.shayhowe.com/html-css/opening-the-box-model/)
 
-### The cascading effect
+### O efeito cascata
 
-The first C in CSS stands for Cascading and it's crucial to learning how to use CSS correctly. Essentially, it means that it matters
-(1) **in which order** and
-(2) **how specific** you write CSS rules.
+O primeiro C em CSS significa Cascading e é crucial para aprender a usar CSS corretamente. Essencialmente, significa que importa
+(1) **em que ordem** e
+(2) **quão específico** você escreve regras CSS.
 
-Read the following articles to learn about it:
+Leia os seguintes artigos para aprender sobre isso:
 
-- [The "C" in CSS](https://css-tricks.com/the-c-in-css-the-cascade/).
-- [How CSS works: understanding the cascade](https://blog.logrocket.com/how-css-works-understanding-the-cascade-d181cd89a4d8)
+- [O "C" em CSS](https://css-tricks.com/the-c-in-css-the-cascade/).
+- [Como o CSS funciona: entendendo a cascata](https://blog.logrocket.com/how-css-works-understanding-the-cascade-d181cd89a4d8)
 
-### Specificity
+### Especificidade
 
-As there are multiple ways to write your css code which leads to multiple rules applying to the same html element CSS needs to decide which rule to follow. In the simplest form, if we for example have the following HTML:
+Como existem várias maneiras de escrever seu código CSS, o que leva a várias regras aplicadas ao mesmo elemento html, o CSS precisa decidir qual regra seguir. Na forma mais simples, se tivermos, por exemplo, o seguinte HTML:
 
 ```html
-<p>This paragraph should be styled normally</p>
-<p class="explanation">
-  This paragraph should be styled differently as we add a class to the element
+<p>Este parágrafo deve ser estilizado normalmente</p>
+<p class="explicação">
+  Este parágrafo deve ter um estilo diferente à medida que adicionamos uma classe ao elemento
 </p>
 ```
 
-and the following CSS:
+e o seguinte CSS:
 
-```css
-p .explanation {
-  font-weight: 600;
+``` css
+p.explicação {
+  peso da fonte: 600;
 }
 
-p {
-  font-weight: 400;
+p{
+  peso da fonte: 400;
 }
 ```
 
-Then because the `p .explanation` rule is more specific than the `p` rule the `font-weight` of our second paragraph will be `600` even though the other rule was applied last. Read the following articles to learn more about how it works:
+Então porque a regra `p .explanation` é mais específica que a regra `p`, o `peso da fonte` do nosso segundo parágrafo será `600` mesmo que a outra regra tenha sido aplicada por último. Leia os seguintes artigos para saber mais sobre como funciona:
 
-- [Learn Basic CSS Selectors in 15 mins](https://www.youtube.com/watch?v=7kxhOI1Y38Y)
-- [Specifics on CSS specificity](https://css-tricks.com/specifics-on-css-specificity/)
-- Optional as it goes into every detail: [MDN's guide on Specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)
+- [Aprenda seletores CSS básicos em 15 minutos](https://www.youtube.com/watch?v=7kxhOI1Y38Y)
+- [Especificações sobre especificidade CSS](https://css-tricks.com/specifics-on-css-specificity/)
+- Opcional, pois entra em todos os detalhes: [guia do MDN sobre Especificidade](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)
 
-## 4. Working with the browser
+## 4. Trabalhando com o navegador
 
-### What is a web browser?
+### O que é um navegador da web?
 
-You probably use it daily. Let's take a closer look at what it actually is.
+Você provavelmente usa diariamente. Vamos dar uma olhada no que realmente é.
 
-A `web browser` is software that allows you to view webpages, either retrieved from the internet or loaded from your computer. The primary function of a web browser is to render HTML files: transforming all the code (HTML, CSS and JavaScript) as well as the references (images, videos, etc.) to display a page correctly.
+Um `navegador da web` é um software que permite visualizar páginas da web, recuperadas da Internet ou carregadas do seu computador. A principal função de um navegador web é renderizar arquivos HTML: transformando todo o código (HTML, CSS e JavaScript) bem como as referências (imagens, vídeos, etc.) para exibir uma página corretamente.
 
-For further study, delve into the following:
+Para um estudo mais aprofundado, aprofunde-se no seguinte:
 
-- [What is a browser?](https://www.youtube.com/watch?v=TcbhVv9ty44)
-- [How web browsers work](https://www.youtube.com/watch?v=WjDrMKZWCt0)
-- [About your web browser](http://www.allaboutcookies.org/browsers/)
+- [O que é um navegador?](https://www.youtube.com/watch?v=TcbhVv9ty44)
+- [Como funcionam os navegadores da web](https://www.youtube.com/watch?v=WjDrMKZWCt0)
+- [Sobre seu navegador da web](http://www.allaboutcookies.org/browsers/)
 
-### Choosing the right browser
+### Escolhendo o navegador certo
 
-As a web developer you will write code that will display in different browsers. As such it is important that you get familiar with most major browsers in use today. These are:
+Como desenvolvedor web, você escreverá código que será exibido em diferentes navegadores. Como tal, é importante que você se familiarize com a maioria dos principais navegadores em uso hoje. Esses são:
 
 - [Internet Explorer](https://support.microsoft.com/en-us/help/17621/internet-explorer-downloads)
 - [Google Chrome](https://www.google.com/chrome/)
 - [Safari](https://support.apple.com/downloads/safari)
 - [Mozilla Firefox](https://www.mozilla.org/en-GB/firefox/new/)
-- [Microsoft Edge](https://www.microsoft.com/en-us/windows/microsoft-edge) (Not available for Mac/Linux yet)
+- [Microsoft Edge](https://www.microsoft.com/en-us/windows/microsoft-edge) (ainda não disponível para Mac/Linux)
 - [Opera](https://www.opera.com/download)
 
-In your HackYourFuture journey you'll mainly be using **Google Chrome** when developing, as is has great developer tools that allow us to develop web applications in an easier and clearer way.
+Em sua jornada HackYourFuture, você usará principalmente o **Google Chrome** ao desenvolver, pois possui ótimas ferramentas de desenvolvedor que nos permitem desenvolver aplicativos da Web de maneira mais fácil e clara.
 
-### How to use the browser inspector
+### Como usar o inspetor do navegador
 
-The inspector is a part of web browsers developers can use to take a closer look at the composition of the HTML elements. This makes it easier to write HTML and CSS code that works.
+O inspetor é uma parte dos navegadores que os desenvolvedores podem usar para examinar mais de perto a composição dos elementos HTML. Isso torna mais fácil escrever código HTML e CSS que funcione.
 
-Watch the following videos and follow along:
+Assista os vídeos a seguir e acompanhe:
 
-- [Using browser inspector tools](https://www.youtube.com/watch?v=WJIqIDm7CoA)
-- [Google Chrome Developer Tools Crash Course](https://www.youtube.com/watch?v=x4q86IjJFag)
+- [Usando as ferramentas do inspetor do navegador](https://www.youtube.com/watch?v=WJIqIDm7CoA)
+- [Curso rápido de ferramentas para desenvolvedores do Google Chrome](https://www.youtube.com/watch?v=x4q86IjJFag)
 
-### Useful browser extensions
+### Extensões úteis do navegador
 
-As web developers we'll be dealing with the browser all the time. Why not upgrade our browser so it can make our programming life easier?
+Como desenvolvedores da web, estaremos lidando com o navegador o tempo todo. Por que não atualizar nosso navegador para facilitar nossa vida de programação?
 
-A `browser extension` is a piece of software someone has written to increase the capability of the web browser. For example, if you hate receiving advertisements you probably use something like [Adblock](https://chrome.google.com/webstore/detail/adblock/gighmmpiobklfepjocnamgkkbiglidom) to block all the unwanted ads you might find in your webpages (if not, download it as soon as possible!).
+Uma `extensão do navegador` é um software que alguém escreveu para aumentar a capacidade do navegador da web. Por exemplo, se você odeia receber anúncios, provavelmente usa algo como [Adblock](https://chrome.google.com/webstore/detail/adblock/gighmmpiobklfepjocnamgkkbiglidom) para bloquear todos os anúncios indesejados que você pode encontrar em suas páginas da web (se não , faça o download o mais rápido possível!).
 
-The following is a list of extensions that have proven to be useful during web development. This list only applies for Google Chrome, so if you don't have it, [install it](https://www.google.com/chrome/).
+A seguir está uma lista de extensões que provaram ser úteis durante o desenvolvimento web. Esta lista se aplica apenas ao Google Chrome, portanto, se você não a tiver, [instale-a](https://www.google.com/chrome/).
 
-Extensions:
+Extensões:
 
-- Modify the technologies underlying each website, in real time, using [Web developer](https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm/related?hl=en-US)
-- Expose what technologies a website is using with [WhatRuns](https://chrome.google.com/webstore/detail/whatruns/cmkdbmfndkfgebldhnkbfhlneefdaaip?hl=en-US)
-- If you ever wanted to know the exact color of any element in a page, you can now do so with [ColorZilla](https://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp?hl=en-US)
-- When developing you'll be using dummy text to populate your elements. Enter [Loren Ipsum Generator](https://chrome.google.com/webstore/detail/lorem-ipsum-generator-def/mcdcbjjoakogbcopinefncmkcamnfkdb?hl=en%20)
+- Modificar as tecnologias subjacentes a cada site, em tempo real, usando [Desenvolvedor da Web](https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm/related?hl=en-US)
+- Expor quais tecnologias um site está usando com o [WhatRuns](https://chrome.google.com/webstore/detail/whatruns/cmkdbmfndkfgebldhnkbfhlneefdaaip?hl=en-US)
+- Se você sempre quis saber a cor exata de qualquer elemento em uma página, agora pode fazê-lo com [ColorZilla](https://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp?hl=en-US )
+- Ao desenvolver, você usará texto fictício para preencher seus elementos. Digite [Loren Ipsum Generator](https://chrome.google.com/webstore/detail/lorem-ipsum-generator-def/mcdcbjjoakogbcopinefncmkcamnfkdb?hl=en%20)
 
-There are many more of these extensions and we encourage you to explore. See what fits your needs!
+Há muito mais dessas extensões e recomendamos que você explore. Veja o que se adapta às suas necessidades!
 
-## Finished?
+## Finalizado?
 
-Are you finished with going through the materials? Nice job!!! If you feel ready to get practical, click [here](./MAKEME.md).
+Você terminou de passar pelos materiais? Bom trabalho!!! Se você se sentir pronto para ser prático, clique [aqui](./MAKEME.md).

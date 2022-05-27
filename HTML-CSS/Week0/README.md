@@ -1,116 +1,116 @@
-# Welcome to HackYourFuture!
+# Bem-vindo ao HackYourFuture!
 
-Hi new student, welcome to HackYourFuture! In this document you'll find all the instructions you need in order to prepare yourself for your journey in HackYourFuture, and beyond!
+Olá novo aluno, bem-vindo ao HackYourFuture! Neste documento, você encontrará todas as instruções necessárias para se preparar para sua jornada no HackYourFuture e além!
 
 ## Agenda
 
-We'll discuss the following points:
+Vamos discutir os seguintes pontos:
 
-- How do I communicate with everybody? Use communication tool [Slack](https://www.slack.com)
-- Where do I write my code? Inside a code editor called [Visual Studio Code](https://code.visualstudio.com/)
-- What's the way to submit my homework? Use planning tool [Trello](https://trello.com/)
-- How do I put my code online? On software development platform [GitHub](https://www.github.com/)
+- Como me comunico com todos? Use a ferramenta de comunicação [Slack](https://www.slack.com)
+- Onde escrevo meu código? Dentro de um editor de código chamado [Visual Studio Code](https://code.visualstudio.com/)
+- Qual é a maneira de enviar minha lição de casa? Use a ferramenta de planejamento [Trello](https://trello.com/)
+- Como coloco meu código online? Na plataforma de desenvolvimento de software [GitHub](https://www.github.com/)
 
-### How do I communicate with everybody? Use Slack
+### Como me comunico com todos? Usar o Slack
 
 ![slack logo](../assets/slack-logo.png)
 
 
-Slack is an application that allows us to communicate with others through (video) chat. It's used in most tech companies and is really easy to use. In order for you to get familiar we're going to use it as well!
+Slack é um aplicativo que nos permite nos comunicar com outras pessoas por meio de bate-papo (vídeo). É usado na maioria das empresas de tecnologia e é muito fácil de usar. Para que você se familiarize, vamos usá-lo também!
 
-Have a look at this
+Veja isso
 
-Please download the app for on your desktop:
+Faça o download do aplicativo em seu desktop:
 
-- [macOS](https://slack.com/downloads/mac) 
+- [macOS](https://slack.com/downloads/mac)
 - [Windows](https://slack.com/downloads/windows)
 - [Linux](https://slack.com/downloads/linux)
 
-And if you really can't go without your phone, you can also get it for mobile:
+E se você realmente não pode ficar sem seu telefone, também pode obtê-lo para celular:
 
 - [App store](https://itunes.apple.com/nl/app/slack/id803453959?mt=12)
 - [Google Play](https://play.google.com/store/apps/details?id=com.Slack&hl=nl)
 
-When it's all installed it's time to get into it! First try out the demo:
+Quando tudo estiver instalado, é hora de entrar nele! Primeiro experimente a demonstração:
 
-- [Slack Demo](https://slackdemo.com/)
+- [Demonstração do Slack](https://slackdemo.com/)
 
-Important things to note is to:
+Coisas importantes a serem observadas são:
 
-- make use of threads to isolate discussions
-- format code to make it easier to read by using the ` ``` your code ``` ` syntax
+- fazer uso de tópicos para isolar discussões
+- formatar o código para facilitar a leitura usando a sintaxe ` ``` your code ``` `
 
-These are the first things to do once you have been invited into slack:
+Estas são as primeiras coisas a fazer depois de ter sido convidado para o slack:
 
-- Add a (professional looking) profile picture
-- Add a nice description about yourself
-- Say hi to your classmates in the class channel
+- Adicione uma foto de perfil (com aparência profissional)
+- Adicione uma boa descrição sobre você
+- Diga oi para seus colegas no canal de aula
 
-Done? This is optional, but for those who are curious:
+Feito? Isso é opcional, mas para quem estiver curioso:
 
-- [Cheat sheet for basics and shortcuts](https://slack.com/intl/en-nl/help/articles/201374536-Slack-keyboard-shortcuts)
-- [How to format your messages in Slack](https://api.slack.com/reference/surfaces/formatting)
+- [Folha de dicas para noções básicas e atalhos](https://slack.com/intl/en-nl/help/articles/201374536-Slack-keyboard-shortcuts)
+- [Como formatar suas mensagens no Slack](https://api.slack.com/reference/surfaces/formatting)
 
-### Where do I write my code? Inside a code editor called Visual Studio Code
+### Onde escrevo meu código? Dentro de um editor de código chamado Visual Studio Code
 
 ![vscode logo](../assets/vscode-logo.png)
 
-Technically speaking, you can write code for the web in any application that allows you to write and save plain text files (such as Notepad or TextEdit). However a code editor is a tool specifically designed for editing code.
+Tecnicamente falando, você pode escrever código para a web em qualquer aplicativo que permita escrever e salvar arquivos de texto simples (como o Bloco de Notas ou o TextEdit). No entanto, um editor de código é uma ferramenta projetada especificamente para edição de código.
 
-Depending on the programming language, the code editor highlights special keywords, gives suggestions to some extent, adds automatic indentation and sometimes has an integrated command line interface (more on that in the next section) as well.
+Dependendo da linguagem de programação, o editor de código destaca palavras-chave especiais, dá sugestões até certo ponto, adiciona recuo automático e às vezes também possui uma interface de linha de comando integrada (mais sobre isso na próxima seção).
 
-While your code editor does the basic job of allowing you to write code, it can always be improved to make our lives as developers easier. In [this video](https://www.youtube.com/watch?v=ORrELERGIHs&t=324s) you'll get a great introduction on all the features. His code is python, so don't worry about understanding the code, it is about how to navigate the visual studio code environment.
+Embora seu editor de código faça o trabalho básico de permitir que você escreva código, ele sempre pode ser aprimorado para facilitar nossas vidas como desenvolvedores. Neste [vídeo](https://www.youtube.com/watch?v=ORrELERGIHs&t=324s), você terá uma ótima introdução sobre todos os recursos. Seu código é python, então não se preocupe em entender o código, trata-se de como navegar no ambiente de código do Visual Studio.
 
-Currently, Visual Studio Code is one of the top code editors on the market. As such, we have chosen it has our default code editor to use. Click the following link to download it:
+Atualmente, o Visual Studio Code é um dos principais editores de código do mercado. Como tal, escolhemos que ele tenha nosso editor de código padrão para usar. Clique no link a seguir para baixá-lo:
 
-- [Visual Studio Code](https://code.visualstudio.com/)
+- [Código do Visual Studio](https://code.visualstudio.com/)
 
-#### Improving our code editor
+#### Melhorando nosso editor de código
 
-We can always improve what we have, including our code editor! We can add `extensions` to make our programming life much easier. Please install the following extensions as well and see for yourself!
+Sempre podemos melhorar o que temos, inclusive nosso editor de código! Podemos adicionar `extensões` para tornar nossa vida de programação muito mais fácil. Instale também as seguintes extensões e veja por si mesmo!
 
-- [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) (Make sure to enable 'Format on save' in the Visual Studio Code settings after installing this plugin)
+- [Servidor ao vivo](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) (Certifique-se de habilitar 'Format on save' nas configurações do Visual Studio Code após instalar este plugin)
 
-For more specific information on how to setup your editor:
+Para obter informações mais específicas sobre como configurar seu editor:
 
-- [VSCode Tips](https://github.com/HackYourFuture/fundamentals/tree/master/VSCodeTips)
+- [Dicas do VSCode](https://github.com/HackYourFuture/fundamentals/tree/master/VSCodeTips)
 
-### What's the way to submit my homework? Use planning tool Trello
+### Qual é a maneira de enviar minha lição de casa? Use a ferramenta de planejamento Trello
 
 <br/>
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=tVooja0Ta5I" target="_blank"><img src="../assets/trello-logo.png" alt="Trello Video" /></a><br/>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=tVooja0Ta5I" target="_blank"><img src="../assets/trello-logo.png" alt="Trello Video " /></a><br/>
 
-Trello is a planning tool that allows you to make todo lists in order to organize and prioritize your projects. In HackYourFuture we'll use it to submit your homework for the first module. Before you start your first class, please do the following:
+O Trello é uma ferramenta de planejamento que permite fazer listas de tarefas para organizar e priorizar seus projetos. No HackYourFuture vamos usá-lo para enviar sua lição de casa para o primeiro módulo. Antes de iniciar sua primeira aula, faça o seguinte:
 
-- [Register](https://trello.com/signup) for an account
-- Get access to the `Feedback Assignments` board, by asking @Wouter in Slack
-- Create a card with your name. Inside, add a CodePen URL of your technical assignment + a short description of your website
+- [Cadastre-se](https://trello.com/signup) para uma conta
+- Obtenha acesso ao quadro `Feedback Assignments`, perguntando a @Wouter no Slack
+- Crie um cartão com seu nome. Dentro, adicione um URL CodePen de sua atribuição técnica + uma breve descrição do seu site
 
-### How do I put my code online? On software development platform GitHub
+### Como coloco meu código online? Na plataforma de desenvolvimento de software GitHub
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=w3jLJU7DT5E" target="_blank"><img src="../assets/github-logo.png" alt="GitHub Video" /></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=w3jLJU7DT5E" target="_blank"><img src="../assets/github-logo.png" alt="GitHub Video " /></a>
 
-GitHub is a place where you can put your code online. Why? To safely store your code in case something bad happens to your computer (computer crash, virus, faulty files). You'll always be able to access this code from GitHub, using any other computer.
+O GitHub é um lugar onde você pode colocar seu código online. Por quê? Para armazenar seu código com segurança caso algo ruim aconteça com seu computador (travamento do computador, vírus, arquivos defeituosos). Você sempre poderá acessar esse código do GitHub, usando qualquer outro computador.
 
-- [Register](https://github.com/join) for an account
-- Put the URL for your account in the class channel
+- [Cadastre-se](https://github.com/join) para uma conta
+- Coloque o URL da sua conta no canal da turma
 
-### Check double check
+### Verificação dupla
 
-Let's make sure you have done everything necessary:
+Vamos garantir que você tenha feito tudo o que é necessário:
 
-- Slack: downloaded, added profile and said hi
-- Visual Studio Code: downloaded, added plugins
-- Trello: registered and added a card, including the CodePen URL of your technical assignment + short description
-- Github: registered and put the URL of your account in the class channel
+- Slack: baixou, adicionou perfil e disse oi
+- Visual Studio Code: plugins baixados e adicionados
+- Trello: cadastrou e adicionou um cartão, incluindo a URL do CodePen do seu trabalho técnico + breve descrição
+- Github: cadastre-se e coloque a URL da sua conta no canal da aula
 
-> If the answer to this is 'no', don't panic. First try and see if you can find some information about the above tools yourself (hint: ask Google first). If that doesn't work, don't be shy to ask your classmates or anyone from HackYourFuture on what to do next.
+> Se a resposta for 'não', não entre em pânico. Primeiro tente e veja se você pode encontrar algumas informações sobre as ferramentas acima (dica: pergunte primeiro ao Google). Se isso não funcionar, não tenha vergonha de perguntar aos seus colegas ou a qualquer pessoa do HackYourFuture sobre o que fazer a seguir.
 
-### Finished?
+### Finalizado?
 
-Have you finished with everything? Be proud of yourself, as you have optimally prepared yourself with all the tools needed to make your coding adventure a success!
+Você já terminou com tudo? Tenha orgulho de si mesmo, pois você se preparou de maneira ideal com todas as ferramentas necessárias para tornar sua aventura de codificação um sucesso!
 
-Before getting technical, please read about the HackYourFuture culture [here](https://github.com/HackYourFuture/culture) and also check [these scenarios](https://github.com/HackYourFuture/culture/blob/main/scenarios.md) that will give you a hint on how we work. The first or second week of the course, there will be a collaborative session with your whole class to discuss all of this.
+Antes de ficar técnico, leia sobre a cultura HackYourFuture [aqui](https://github.com/HackYourFuture/culture) e também verifique [estes cenários](https://github.com/HackYourFuture/culture/blob/main/ cenários.md) que lhe dará uma dica sobre como trabalhamos. Na primeira ou segunda semana do curso, haverá uma sessão colaborativa com toda a turma para discutir tudo isso.
 
-Now, with that out of the way we can get started with the readings for the first week. You can find that [here](https://github.com/HackYourFuture/HTML-CSS/blob/master/Week1/README.md). Make sure you've finished it before your first class on Sunday!
+Agora, com isso fora do caminho, podemos começar com as leituras para a primeira semana. Você pode encontrar isso [aqui](https://github.com/HackYourFuture/HTML-CSS/blob/master/Week1/README.md). Certifique-se de ter terminado antes de sua primeira aula no domingo!
