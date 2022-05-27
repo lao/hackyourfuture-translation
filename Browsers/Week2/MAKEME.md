@@ -1,64 +1,64 @@
-# Homework Browsers Week 2
+# Trabalho de casa Navegadores Semana 2
 
-## **Todo list**
+## **Lista de afazeres**
 
-1. Presentation assignment 1
-2. JavaScript 30 Refactors (Optional)
-3. Project!
-4. Optional: Post-project side project ideas
+1. Trabalho de apresentação 1
+2. Refatorações JavaScript 30 (opcional)
+3. Projeto!
+4. Opcional: ideias de projetos paralelos pós-projeto
 
-## **1. Presentation**
+## **1. Apresentação**
 
-Have a look at the assignment over [here](https://github.com/HackYourFuture/presentation-module/blob/main/assignment1.md).
+Dê uma olhada na atribuição [aqui](https://github.com/HackYourFuture/presentation-module/blob/main/assignment1.md).
 
-## **2. JavaScript 30 Refactors (Optional)**
+## **2. Refatorações JavaScript 30 (opcional)**
 
-If you have time before the start of the project, continue with your JavaScript 30 refactoring that you started last week. These will help you navigate bigger code bases.
+Se você tiver tempo antes do início do projeto, continue com a refatoração do JavaScript 30 que você iniciou na semana passada. Isso ajudará você a navegar em bases de código maiores.
 
-## **3. Project**
+## **3. Projeto**
 
-Have a look at the [project description](../PROJECT.md) to see what to do here.
+Dê uma olhada na [descrição do projeto](../PROJECT.md) para ver o que fazer aqui.
 
-## **4. Optional: Post-project side project ideas**
+## **4. Opcional: ideias de projetos paralelos pós-projeto**
 
-> A part of the HackYourFuture curriculum is to work on as many side projects as you can throughout the time you have. This is a nice way to add extra knowledge to your arsenal and show in your CV that you are motivated to learn new technologies. This is also a great time to learn new things as there are plenty of mentors available to help you out in the `#projects` channel! You will not get this amount of time and support once you start working. Have a look at the [hyf_projects repo](https://github.com/HackYourFuture/hyf_projects/blob/main/README.md#project-2-a-try-out-application) for more details.
+> Uma parte do currículo do HackYourFuture é trabalhar em tantos projetos paralelos quanto possível ao longo do tempo que você tem. Esta é uma boa maneira de adicionar conhecimento extra ao seu arsenal e mostrar em seu currículo que você está motivado para aprender novas tecnologias. Este também é um ótimo momento para aprender coisas novas, pois há muitos mentores disponíveis para ajudá-lo no canal `#projects`! Você não terá essa quantidade de tempo e suporte assim que começar a trabalhar. Dê uma olhada no [repositório hyf_projects](https://github.com/HackYourFuture/hyf_projects/blob/main/README.md#project-2-a-try-out-application) para mais detalhes.
 
-### 4.1 Project rewrite
+### 4.1 Reescrita do projeto
 
-During the project you used a specific structure that we prepared for you or that your mentor decided on, but in this kind of project there are many ways to approach it. A way to get a better idea on how folder structures work is by refactoring the same project but use a different guideline of splitting up the components.
+Durante o projeto você usou uma estrutura específica que preparamos para você ou que seu mentor decidiu, mas nesse tipo de projeto existem muitas maneiras de abordá-lo. Uma maneira de ter uma ideia melhor de como as estruturas de pastas funcionam é refatorando o mesmo projeto, mas usando uma diretriz diferente de dividir os componentes.
 
-In our project we are separating the `view` components away from the `logic` and `data` of our application. This is a very common way of splitting via what is called the Model View Controller method (where controller is synonymous with `logic` and model is synonymous with `data`). In the rest of the curriculum you are going to see this pattern used a lot with varying names, but with a similar idea.
+Em nosso projeto estamos separando os componentes `view` da `logic` e `data` da nossa aplicação. Esta é uma maneira muito comum de dividir através do que é chamado de método Model View Controller (onde controller é sinônimo de `logic` e model é sinônimo de `data`). No restante do currículo, você verá esse padrão muito usado com nomes variados, mas com uma ideia semelhante.
 
-#### 4.1.1 Feature based split
-Another way to separate your code that some of our mentors do in their work is to separate it by feature. So instead of a `view` folder you would have a `question` folder that contains all of the logic/html/data that that specific feature needs. Any global data and the initialisation of your app would then be in the main folder. For example:
+#### 4.1.1 Divisão baseada em recursos
+Outra maneira de separar seu código que alguns de nossos mentores fazem em seu trabalho é separá-lo por recurso. Então, em vez de uma pasta `view`, você teria uma pasta `question` que contém toda a lógica/html/dados que esse recurso específico precisa. Quaisquer dados globais e a inicialização do seu aplicativo estariam na pasta principal. Por exemplo:
 
 
 ```
-├── public
+├── público
 └── src
-    └── features
-    |   └── question
-    |   |   └── questionHandlers.js
-    |   |   └── questionViews.js
-    |   |   └── questionData.js
-    |   └── timer
-    |   |   └── timerHandlers.js
-    |   |   └── timerViews.js
-    |   |   └── timerData.js
-    |   └── ...
-    └── util
+    └── características
+    | └── pergunta
+    | | └── questionHandlers.js
+    | | └── questionViews.js
+    | | └── questionData.js
+    | └── temporizador
+    | | └── timerHandlers.js
+    | | └── timerViews.js
+    | | └── timerData.js
+    | └──...
+    └── útil
     app.js
-    constants.js
+    constantes.js
     data.js
 ```
 
-You can still see the same split in files inside each `feature` folder (handlers as logic, views as views and data as the model) but every feature is split up in a separate folder. In bigger projects this will be mandatory as your `views` folder will be filled with hundreds of files.
+Você ainda pode ver a mesma divisão em arquivos dentro de cada pasta `feature` (manipuladores como lógica, visualizações como visualizações e dados como modelo), mas cada recurso é dividido em uma pasta separada. Em projetos maiores, isso será obrigatório, pois sua pasta `views` será preenchida com centenas de arquivos.
 
-To have a go, create a new folder in your quiz folder called `component-structure` and copy over all of the current files in the `src` directory. Then start creating some files in `src` to create this structure. You can copy paste the code from the 'old' structure by looking in the `component-structure` folder. 
+Para tentar, crie uma nova pasta em sua pasta do quiz chamada `component-structure` e copie todos os arquivos atuais no diretório `src`. Então comece a criar alguns arquivos em `src` para criar essa estrutura. Você pode copiar e colar o código da estrutura 'antiga' procurando na pasta 'component-structure'.
 
-We want you to notice how easy it is to make these kinds of changes because we made use of code separation and used imports. Imagine having to change the `index.html` to import all the new files rather than just `app.js` in your `src` folder!
+Queremos que você perceba como é fácil fazer esse tipo de alteração porque usamos a separação de código e as importações. Imagine ter que mudar o `index.html` para importar todos os novos arquivos ao invés de apenas `app.js` em sua pasta `src`!
 
-#### 4.1.2 Change data structure to an Object-oriented programming (OOP) methodology
-Your `data.js` file in the starter repository contains a simple object with a couple of properties. The manipulation of this data is then handled all over the other files, which could become an issue if you would spend a little longer on this project. The reason is that this data is now `global` and as such can be changed from anywhere to whatever you want. To save ourselves some weird bugs in the future we could rewrite this using the OOP way of thinking by using classes. Classes are outside of the scope of the curriculum as the JavaScript community is moving away from them but if you would get a job in a different programming language you may be working differently.
+#### 4.1.2 Alterar a estrutura de dados para uma metodologia de programação orientada a objetos (OOP)
+Seu arquivo `data.js` no repositório inicial contém um objeto simples com algumas propriedades. A manipulação desses dados é então tratada em todos os outros arquivos, o que pode se tornar um problema se você gastar um pouco mais neste projeto. A razão é que esses dados agora são 'globais' e, como tal, podem ser alterados de qualquer lugar para o que você quiser. Para nos salvar de alguns bugs estranhos no futuro, poderíamos reescrever isso usando a maneira de pensar OOP usando classes. As aulas estão fora do escopo do currículo, pois a comunidade JavaScript está se afastando delas, mas se você conseguir um emprego em uma linguagem de programação diferente, poderá estar trabalhando de maneira diferente.
 
-To have a go, study the idea behind OOP and then change your `data.js` file to export a class called `QuizManager`. Then think about what functionality in other files should be a `method` on the class rather than a function in the different files.
+Para tentar, estude a ideia por trás da OOP e então altere seu arquivo `data.js` para exportar uma classe chamada `QuizManager`. Então pense sobre qual funcionalidade em outros arquivos deve ser um `método` na classe ao invés de uma função nos diferentes arquivos.

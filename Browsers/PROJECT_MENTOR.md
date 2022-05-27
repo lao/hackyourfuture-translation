@@ -1,34 +1,34 @@
-# Project mentor role
+# Função de mentor do projeto
 
-First of all, thanks for volunteering your time! 
+Em primeiro lugar, obrigado por disponibilizar seu tempo!
 
-This primer should help you get to know where we expect students to be at this point and what is expected from you as a mentor. You can see the project description in the [PROJECT file](./PROJECT.md) which the students will read.
+Esta cartilha deve ajudá-lo a saber onde esperamos que os alunos estejam neste momento e o que se espera de você como mentor. Você pode ver a descrição do projeto no [arquivo PROJETO](./PROJECT.md) que os alunos irão ler.
 
-## Schedule
-This is the schedule of the project (it starts on the Sunday of the second week):
+## Cronograma
+Este é o cronograma do projeto (começa no domingo da segunda semana):
 
 ![Weekflow](assets/project-weeks.png)
 
-### Pre-start
-Before the first sunday there is one thing to do and that is set up a repository for your group to work on. The starter repository is [here](https://github.com/HackYourFuture/browser-quiz-project-starter), but feel free to adjust if you want. Just make sure to explain any changes you have made. If you feel very ambitious you can also make your own repository to make something completely different. The goal of this group exercise is to learn about working in a group as well as use DOM manipulation to make an interactive website. As long as the project does that, it fits into what can be done here.
+### Pré-partida
+Antes do primeiro domingo, há uma coisa a fazer: criar um repositório para o seu grupo trabalhar. O repositório inicial está [aqui](https://github.com/HackYourFuture/browser-quiz-project-starter), mas fique à vontade para ajustar se quiser. Apenas certifique-se de explicar todas as alterações que você fez. Se você se sentir muito ambicioso, você também pode criar seu próprio repositório para fazer algo completamente diferente. O objetivo deste exercício em grupo é aprender sobre como trabalhar em grupo, bem como usar a manipulação do DOM para criar um site interativo. Desde que o projeto faça isso, ele se encaixa no que pode ser feito aqui.
 
-### First sunday
-On the first sunday we will divide the class into the groups and you will have your own room with your group. This is the time to do the following:
+### Primeiro domingo
+No primeiro domingo dividiremos a turma em grupos e você terá seu próprio quarto com seu grupo. Este é o momento de fazer o seguinte:
 
-- go through the starter repository to explain code structure. This is their first time writing JavaScript multiple files so explain why we do this for bigger projects. There is a basic implementation of questions and being able to click through them you can use as an example.
-- show a single PR lifecycle on how code gets into the master branch. The students will know about PR's from their homework and will have read about Agile, but I think it is nice to have a demo of it. We suggest some css changes to make the quiz look a little better.
-- explain to your team how the upcoming week is going to work. We want them to have a daily standup meeting to get to know how that works, but this can also be done via slack messages if that is easier for you. Make sure you let your group know how you would like to have questions for you to be sent (in the slack channel? Grouped and given in a daily meeting?). Whatever works for you.
-- look through the list of features and discuss them with the team to prioritize them. You will be playing Product Owner, Scrum master and Tech lead in this project.
-- Divide the team into smaller groups (probably 2 groups of 2) and give them their first feature. If you have time, you may want to do one feature together with them to get an idea how it all works.
-- And most importantly! Think of a team name and let Tjebbe or Rob know so they can create a nice slack channel for you to communicate in!
+- passe pelo repositório inicial para explicar a estrutura do código. Esta é a primeira vez que eles escrevem vários arquivos JavaScript, então explique por que fazemos isso para projetos maiores. Há uma implementação básica de perguntas e, ao clicar nelas, você pode usar como exemplo.
+- mostre um único ciclo de vida de PR sobre como o código chega ao branch master. Os alunos saberão sobre PR's de sua lição de casa e terão lido sobre Agile, mas acho que é bom ter uma demonstração disso. Sugerimos algumas mudanças no CSS para deixar o quiz um pouco melhor.
+- explique à sua equipe como vai funcionar a próxima semana. Queremos que eles tenham uma reunião diária para saber como isso funciona, mas isso também pode ser feito por meio de mensagens do slack, se for mais fácil para você. Certifique-se de informar ao seu grupo como você gostaria que perguntas fossem enviadas para você (no canal do slack? Agrupadas e dadas em uma reunião diária?). O que quer que funcione para você.
+- examine a lista de recursos e discuta-os com a equipe para priorizá-los. Você estará jogando como Product Owner, Scrum master e Tech lead neste projeto.
+- Divida a equipe em grupos menores (provavelmente 2 grupos de 2) e dê a eles sua primeira característica. Se você tiver tempo, você pode querer fazer um recurso junto com eles para ter uma ideia de como tudo funciona.
+- E o mais importante! Pense em um nome de equipe e informe Tjebbe ou Rob para que eles possam criar um bom canal de slack para você se comunicar!
 
-### During the week
-There are a couple things we would like you to do during the week:
+### Durante a semana
+Há algumas coisas que gostaríamos que você fizesse durante a semana:
 
-- Be available for questions and check in with your group. A week is not a lot of time and we have noticed some are not comfortable yet to ask for help so a quick 'How is it going guys?' every now and then to see what is happening will help move things along.
-- Have a look at the PRs and code review them. Once approved you can merge it into the main branch!
+- Esteja disponível para perguntas e check-in com seu grupo. Uma semana não é muito tempo e notamos que alguns ainda não estão à vontade para pedir ajuda, então um rápido 'Como vai pessoal?' de vez em quando, para ver o que está acontecendo, ajudará a mover as coisas.
+- Dê uma olhada nos PRs e revise-os. Uma vez aprovado, você pode mesclá-lo no branch principal!
 
-### Second Sunday
-On the second Sunday we want to get together with the whole class and show off the projects that were made. Decide amongst the group who will present the project to the other groups. This is both a demo of the application as well as going through the code for one feature.
+### Segundo Domingo
+No segundo domingo queremos nos reunir com toda a turma e mostrar os projetos que foram feitos. Decida entre o grupo quem apresentará o projeto aos outros grupos. Esta é uma demonstração do aplicativo, bem como passar pelo código de um recurso.
 
-As a mentor on this day we would like you to provide feedback to the other groups and what they built.
+Como mentor neste dia, gostaríamos que você fornecesse feedback aos outros grupos e o que eles construíram.
