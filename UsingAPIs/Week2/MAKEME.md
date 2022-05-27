@@ -1,54 +1,54 @@
-# Homework Using API's Week 2
+# Homework Usando API's Semana 2
 
-## **Todo list**
+## **Lista de afazeres**
 
-1. Practice the concepts
-2. Prep exercises
-3. Code along
-4. Homework exercises
-5. Interview preparation
-6. Extra: Code along
+1. Pratique os conceitos
+2. Exercícios de preparação
+3. Codifique junto
+4. Exercícios de lição de casa
+5. Preparação da entrevista
+6. Extra: Codifique junto
 
-## **1. Practice the concepts**
+## **1. Pratique os conceitos**
 
-This week's concepts can be challenging, therefore let's get an easy introduction using some interactive exercises! Check the following resources out and start practicing:
+Os conceitos desta semana podem ser desafiadores, portanto, vamos fazer uma introdução fácil usando alguns exercícios interativos! Confira os seguintes recursos e comece a praticar:
 
-- [Learn JavaScript: Requests I and II](https://www.codecademy.com/learn/learn-intermediate-javascript/modules/intermediate-javascript-requests) (only the two lessons, not the articles/project and quiz)
+- [Aprenda JavaScript: Solicitações I e II](https://www.codecademy.com/learn/learn-intermediate-javascript/modules/intermediate-javascript-requests) (apenas as duas lições, não os artigos/projeto e questionário )
 
-This part also introduces you to some other concepts `XMLHttpRequest`
+Esta parte também apresenta alguns outros conceitos `XMLHttpRequest`
 
-## **2. Prep exercises**
+## **2. Exercícios de preparação**
 
-> Prep exercises are exercises that you should work on _before_ the session on Sunday. These are a little more difficult or show an important concept and as such are a great exercise to talk about with your class and your Q&A mentor. Have a solution ready by Sunday as you may be asked to show what you did.
+> Exercícios de preparação são exercícios que você deve trabalhar _antes_ da sessão de domingo. Estes são um pouco mais difíceis ou mostram um conceito importante e, como tal, são um ótimo exercício para conversar com sua turma e seu mentor de perguntas e respostas. Tenha uma solução pronta até domingo, pois pode ser solicitado que você mostre o que fez.
 
-Inside your `Using API's` fork, go to the folder `Week2`. Inside of that folder, navigate to `/prep-exercises`. For each exercise, you will find a separate folder. The `README` explains what needs to be done. There will also be some questions at the bottom to think about. Go through them _before_ the session on Sunday as it will be covered then.
+Dentro do seu fork `Using API's`, vá para a pasta `Week2`. Dentro dessa pasta, navegue até `/prep-exercises`. Para cada exercício, você encontrará uma pasta separada. O `README` explica o que precisa ser feito. Haverá também algumas perguntas na parte inferior para pensar. Passe por eles _antes_ da sessão no domingo, pois será coberto então.
 
-## **3. Code along**
+## **3. Código junto**
 
-In the following "code along" you'll be building a complete Weather App that makes use of the [Darksky API](https://darksky.net).
+No "code along" a seguir, você criará um aplicativo meteorológico completo que faz uso da [Darksky API](https://darksky.net).
 
-- [Build a Weather App with Vanilla JavaScript Tutorial](https://www.youtube.com/watch?v=wPElVpR1rwA)
+- [Crie um aplicativo de clima com o tutorial do Vanilla JavaScript](https://www.youtube.com/watch?v=wPElVpR1rwA)
 
-## **4. Homework exercises**
+## **4. Exercícios para casa**
 
-This week we expect you to do the exercises in the corresponding module/week folder (Using API's / Week 2). Have a look at the [homework guide](https://github.com/HackYourFuture/UsingAPIs/blob/main/homework-handin-guide.md) to see how to hand in your homework.
+Esta semana esperamos que você faça os exercícios na pasta módulo/semana correspondente (Usando API's / Semana 2). Dê uma olhada no [guia de lição de casa](https://github.com/HackYourFuture/UsingAPIs/blob/main/homework-handin-guide.md) para ver como entregar sua lição de casa.
 
-*NOTE: do NOT forget to checkout the main branch before creating the branch for this week. Otherwise your previous homework will be a part of the PR*
+*NOTA: NÃO se esqueça de fazer o checkout do branch principal antes de criar o branch para esta semana. Caso contrário, sua lição de casa anterior fará parte do PR*
 
-## **5. Interview preparation**
+## **5. Preparação para entrevista**
 
-After reading the info on the [‘Interview Preparation’ Repo](https://github.com/HackYourFuture/interviewpreparation), make a copy of [this file](https://docs.google.com/document/u/2/d/114rTGS4eG6tpkrMAyVIdvgTrnpmkRL6ax_smkw1B0HI/copy) and submit your answers to the team [here](https://hackyourfuture.typeform.com/to/s6zYAugm). These answers will help us assess how ready you are for interviews and we will also discuss your answers in the Career Training Session II which will happen this (or next) week. More information about this session will be shared on Slack!
+Depois de ler as informações no [repositório de preparação para entrevistas](https://github.com/HackYourFuture/interviewpreparation), faça uma cópia de [este arquivo](https://docs.google.com/document/u/ 2/d/114rTGS4eG6tpkrMAyVIdvgTrnpmkRL6ax_smkw1B0HI/copy) e envie suas respostas para a equipe [aqui](https://hackyourfuture.typeform.com/to/s6zYAugm). Essas respostas nos ajudarão a avaliar o quanto você está pronto para as entrevistas e também discutiremos suas respostas na Sessão de Treinamento de Carreira II, que acontecerá nesta (ou na próxima) semana. Mais informações sobre esta sessão serão compartilhadas no Slack!
 
-## **6. Extra: Code along**
+## **6. Extra: Código junto**
 
-If you are done and want to practice some more, the following code along implements a GitHub profile finder using the GitHub API.
+Se você terminou e quer praticar um pouco mais, o código a seguir implementa um localizador de perfil do GitHub usando a API do GitHub.
 
-- [Using APIs in JavaScript - Create a Github Profile Finder Application](https://www.youtube.com/watch?v=sJspH620ZsU)
+- [Usando APIs em JavaScript - Crie um aplicativo localizador de perfil do Github](https://www.youtube.com/watch?v=sJspH620ZsU)
 
-He uses some things that will be new for you:
-- `scss` - This is what is called a css precompiler that adds some functionality to your css. `sass` is another version of this. Some projects use these, some do not. It is not necessary to know what this does specifically.
-- `package.json` commands with the `live server` extension. This is a way to set up a project, don't worry too much about understanding exactly how it works
+Ele usa algumas coisas que serão novas para você:
+- `scss` - Isso é o que é chamado de pré-compilador css que adiciona algumas funcionalidades ao seu css. `sass` é outra versão disso. Alguns projetos usam isso, outros não. Não é necessário saber o que isso faz especificamente.
+- Comandos `package.json` com a extensão `live server`. Esta é uma maneira de configurar um projeto, não se preocupe muito em entender exatamente como ele funciona
 
-## Done early?
+## Feito mais cedo?
 
-Have a look at the project for next week and start thinking of ideas. You can even start a bit already if you wish, just remember to make sure all your homework is done beforehand!
+Dê uma olhada no projeto para a próxima semana e comece a pensar em ideias. Você pode até começar um pouco já, se desejar, apenas lembre-se de garantir que toda a sua lição de casa seja feita com antecedência!

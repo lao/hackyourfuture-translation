@@ -1,32 +1,32 @@
-# Homework Using API's Week 1
+# Homework Usando API's Week 1
 
-## **Todo list**
+## **Lista de afazeres**
 
-1. Practice the concepts
-2. Prep exercises
-3. Homework exercises
+1. Pratique os conceitos
+2. Exercícios de preparação
+3. Exercícios de lição de casa
 
-## **1. Practice the concepts**
+## **1. Pratique os conceitos**
 
-This week is tough, asynchronous coding is another one of these programming things that takes awhile to get your head around. Let's start this week off with some interactive exercises! Visit the following link to get started:
+Esta semana é difícil, a codificação assíncrona é outra dessas coisas de programação que demora um pouco para entender. Vamos começar esta semana com alguns exercícios interativos! Acesse o link a seguir para começar:
 
-- [Visualising Asynchronicity](https://www.jsv9000.app/). _Note that you do not need to actually solve anything here, but you can use this visualizer to see how asynchronicity works under the hood. Very cool!_
-- [Learn JavaScript: Promises](https://www.codecademy.com/learn/learn-intermediate-javascript/modules/javascript-promises). _Note that the last exercise is not necessary, it is very complicated and something that is rarely used. You will not need to be able to do this. See it as a challenge!_
-- [JavaScript promises, mastering the asynchronous](https://www.codingame.com/playgrounds/347/javascript-promises-mastering-the-asynchronous/what-is-asynchronous-in-javascript)
+- [Visualizando assincronicidade](https://www.jsv9000.app/). _Observe que você não precisa resolver nada aqui, mas pode usar este visualizador para ver como a assincronicidade funciona nos bastidores. Muito legal!_
+- [Aprenda JavaScript: promessas](https://www.codecademy.com/learn/learn-intermediate-javascript/modules/javascript-promises). _Observe que o último exercício não é necessário, é muito complicado e algo que raramente é usado. Você não precisará ser capaz de fazer isso. Veja isso como um desafio!_
+- [Promessas de JavaScript, dominando o assíncrono](https://www.codingame.com/playgrounds/347/javascript-promises-mastering-the-asynchronous/what-is-asynchronous-in-javascript)
 
-## **2. Prep exercises**
+## **2. Exercícios de preparação**
 
-> Prep exercises are exercises that you should work on _before_ the session on Sunday. These are a little more difficult or show an important concept and as such are a great exercise to talk about with your class and your Q&A mentor. Have a solution ready by Sunday as you may be asked to show what you did.
+> Exercícios de preparação são exercícios que você deve trabalhar _antes_ da sessão de domingo. Estes são um pouco mais difíceis ou mostram um conceito importante e, como tal, são um ótimo exercício para conversar com sua turma e seu mentor de perguntas e respostas. Tenha uma solução pronta até domingo, pois pode ser solicitado que você mostre o que fez.
 
-Inside your `Using API's` fork, go to the folder `Week1`. Inside of that folder, navigate to `/prep-exercises`. For each exercise, you will find a separate folder. The `README` explains what needs to be done. There will also be some questions at the bottom to think about. Go through them _before_ the session on Sunday as it will be covered then.
+Dentro do seu fork `Using API's`, vá para a pasta `Week1`. Dentro dessa pasta, navegue até `/prep-exercises`. Para cada exercício, você encontrará uma pasta separada. O `README` explica o que precisa ser feito. Haverá também algumas perguntas na parte inferior para pensar. Passe por eles _antes_ da sessão no domingo, pois será coberto então.
 
-## **3. Homework exercises**
+## **3. Exercícios para casa**
 
-This week we expect you to do the exercises in the corresponding module/week folder (Using API's / Week 1). Have a look at the [homework guide](https://github.com/HackYourFuture/UsingAPIs/blob/main/homework-handin-guide.md) to see how to hand in your homework.
+Esta semana esperamos que você faça os exercícios na pasta módulo/semana correspondente (Usando API's/Semana 1). Dê uma olhada no [guia de lição de casa](https://github.com/HackYourFuture/UsingAPIs/blob/main/homework-handin-guide.md) para ver como entregar sua lição de casa.
 
-*NOTE: do NOT forget to checkout the main branch before creating the branch for this week. Otherwise your previous homework will be a part of the PR*
+*NOTA: NÃO se esqueça de fazer o checkout do branch principal antes de criar o branch para esta semana. Caso contrário, sua lição de casa anterior fará parte do PR*
 
-## Done early?
+## Feito mais cedo?
 
-Have a look at the material for next week!
+Dê uma olhada no material para a próxima semana!
 

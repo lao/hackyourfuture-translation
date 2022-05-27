@@ -1,35 +1,35 @@
-# How to hand in homework
+# Como entregar o dever de casa
 
-In this module you'll submit your homework only using GIT and GitHub.
+Neste módulo, você enviará sua lição de casa apenas usando GIT e GitHub.
 
 1. [GitHub](https://www.github.com/HackYourFuture/UsingAPIs)
 
-## 1. GitHub homework guide
+## 1. Guia de lição de casa do GitHub
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=CpYARPYGQU8" target="_blank"><img src="./assets/submit-homework.png" width="400" height="250" alt="HYF Video" /></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=CpYARPYGQU8" target="_blank"><img src="./assets/submit-homework.png" width="400" height ="250" alt="HYF Vídeo" /></a>
 
-Watch the video (by clicking the image) or go through the following walk-through to learn how to submit your homework:
+Assista ao vídeo (clicando na imagem) ou siga o passo a passo a seguir para saber como enviar sua lição de casa:
 
-ONE TIME ONLY (START OF EVERY MODULE)
+APENAS UMA VEZ (INÍCIO DE CADA MÓDULO)
 
-This module is slightly different as you have already done the one time setup for the homework repo in the previous module. We will be using the same fork as we used there (`https://www.github.com/HackYourHomework/Homework-classXX`).
+Este módulo é um pouco diferente, pois você já fez a configuração única para o repositório de lição de casa no módulo anterior. Usaremos o mesmo fork que usamos lá (`https://www.github.com/HackYourHomework/Homework-classXX`).
 
-EVERY WEEK
+TODA SEMANA
 
-1. Do a `git pull` on your main branch to get the latest version.
-2. Create a new branch for each week you have homework. For example, for the week 1 homework for Using API's create a branch called `YOUR_NAME-w1-UsingAPIs`. Don't forget to checkout this branch after creating it.
-3. Make your homework!
-4. Once you're finished, add your homework to a commit. There will be some test and config files added by the test runner, this is expected and should be added!
-5. Create the commit (`git commit`). Make the commit message meaningful, for example `finished project for homework week1`.
-6. Push the branch to your forked repository
-7. On the GitHub page of your forked repository, click on the `create pull request` button. Make sure the `base repository` is your teacher's repository, on branch master
-8. Give the pull request a title in the following format:
+1. Faça um `git pull` em seu branch principal para obter a versão mais recente.
+2. Crie uma nova ramificação para cada semana que você tiver lição de casa. Por exemplo, para a lição de casa da semana 1 para Using API's, crie uma ramificação chamada `YOUR_NAME-w1-UsingAPIs`. Não se esqueça de fazer o checkout deste branch após criá-lo.
+3. Faça sua lição de casa!
+4. Quando terminar, adicione seu dever de casa a um commit. Haverá alguns arquivos de teste e configuração adicionados pelo executor de teste, isso é esperado e deve ser adicionado!
+5. Crie o commit (`git commit`). Torne a mensagem de confirmação significativa, por exemplo, `projeto finalizado para a semana de lição de casa1`.
+6. Envie a ramificação para seu repositório bifurcado
+7. Na página do GitHub do seu repositório bifurcado, clique no botão `create pull request`. Certifique-se de que o `repositório base` seja o repositório do seu professor, no branch master
+8. Dê um título à solicitação pull no seguinte formato:
 
-```markdown
-Homework week 1 <Your name>
+```remarcação
+Lição de casa semana 1 <Seu nome>
 ```
 
-9. Submit the pull request from your forked repository branch into the `main` branch
+9. Envie o pull request do seu branch de repositório bifurcado para o branch `main`
 
-If you have any questions or if something is not entirely clear ¯\\\_(ツ)\_/¯, please ask/comment on Slack!
+Se você tiver alguma dúvida ou se algo não estiver totalmente claro ¯\\\_(ツ)\_/¯, pergunte/comente no Slack!
 

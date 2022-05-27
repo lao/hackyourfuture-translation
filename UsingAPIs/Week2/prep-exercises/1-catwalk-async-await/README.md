@@ -1,11 +1,11 @@
-# Prep exercise - Cat walk with async/await
+# Exercício de preparação - Cat walk com async/await
 
-In the previous week we changed the cat walk to an implementation using `Promise`s. Let's now use the new `async/await` syntax to simplify it a little more. Have a look at the `index.js` to see what to do. 
+Na semana anterior nós mudamos o cat walk para uma implementação usando `Promise`s. Vamos agora usar a nova sintaxe `async/await` para simplificar um pouco mais. Dê uma olhada no `index.js` para ver o que fazer.
 
-The `dance` and `walk` functions are identical to last week, but our `catWalk` function can now be implemented using a standard `while` loop. Try to implement that and look at the following questions.
+As funções `dance` e `walk` são idênticas às da semana passada, mas nossa função `catWalk` agora pode ser implementada usando um loop padrão `while`. Tente implementar isso e observe as seguintes perguntas.
 
-## Things to think about
+## Coisas para pensar
 
-- Do you feel this version is easier to read than the version you made in the previous week?
-- Is this version more efficient or not or is there no difference?
-- Async/await makes the code wait until the Promise is resolved. Does this then also block any other functions from running? Why or why not?
+- Você acha que esta versão é mais fácil de ler do que a versão que você fez na semana anterior?
+- Esta versão é mais eficiente ou não ou não há diferença?
+- Async/await faz o código esperar até que a Promise seja resolvida. Isso também bloqueia a execução de outras funções? Por que ou por que não?

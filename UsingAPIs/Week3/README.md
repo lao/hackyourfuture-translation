@@ -1,73 +1,73 @@
-# Week 3
+# Semana 3
 
-In the final week of the Using API's module you will put everything you have learned to good use and build your own single page application that is connected to an API! What you build is totally up to you. Maybe you already had an idea in your head for a while, or maybe you will get inspired by all the open API's that are available.
+Na última semana do módulo Using API's, você colocará em prática tudo o que aprendeu e construirá seu próprio aplicativo de página única conectado a uma API! O que você constrói depende totalmente de você. Talvez você já tenha uma ideia na cabeça há algum tempo, ou talvez se inspire em todas as API's abertas que estão disponíveis.
 
-This is quite a big undertaking, so during the project one of the mentors for this module will be assigned to you. Feel free to ask them for help if you are stuck or unsure, but they have been instructed to not write any code for you :).
+Este é um empreendimento bastante grande, portanto, durante o projeto, um dos mentores deste módulo será designado a você. Sinta-se à vontade para pedir ajuda se estiver travado ou inseguro, mas eles foram instruídos a não escrever nenhum código para você :).
 
-## Project requirements
-We want you to get excited and be free to build something you are passionate about, but there are some things that we need to see you have mastered. This means there are a few requirements:
+## Requisitos do projeto
+Queremos que você fique animado e seja livre para construir algo pelo qual você é apaixonado, mas há algumas coisas que precisamos ver que você dominou. Isso significa que existem alguns requisitos:
 
-- The app needs to be a single page application. That means only one `index.html` file and JavaScript needs to update the html using DOM manipulation.
-- The app needs to interact with an API to grab data.
-- The app needs to have loading/error handling for the interaction with the API.
-- The app needs some user interaction such that you need to grab different data from the API. So you cannot just grab everything from the API and store it locally with one fetch.
-- Follow the [guidelines for technical assignments](https://github.com/HackYourFuture/ta_guidelines). This will help you not get stuck or end up with only half an application and make sure that what you have at the end is something presentable.
+- O aplicativo precisa ser um aplicativo de página única. Isso significa que apenas um arquivo `index.html` e JavaScript precisa atualizar o html usando a manipulação do DOM.
+- O aplicativo precisa interagir com uma API para coletar dados.
+- O aplicativo precisa ter carregamento/tratamento de erros para a interação com a API.
+- O aplicativo precisa de alguma interação do usuário, de modo que você precise obter dados diferentes da API. Portanto, você não pode simplesmente pegar tudo da API e armazená-lo localmente com uma busca.
+- Siga as [diretrizes para atribuições técnicas](https://github.com/HackYourFuture/ta_guidelines). Isso ajudará você a não ficar preso ou acabar com apenas metade de um aplicativo e garantir que o que você tenha no final seja algo apresentável.
 
-## Ideas
-There are many APIs that are open to get data from, have a look at the following lists to see if there is a topic that interests you:
+## Ideias
+Existem muitas APIs abertas para obter dados, dê uma olhada nas listas a seguir para ver se há um tópico que lhe interessa:
 
 - [publicapi.dev](https://publicapi.dev)
-- [public api repo](https://github.com/public-apis/public-apis)
-- [API list](https://apilist.fun/)
-- [Public APIs](https://public-apis.io/)
+- [repositório de API público](https://github.com/public-apis/public-apis)
+- [lista de APIs](https://apilist.fun/)
+- [APIs públicas](https://public-apis.io/)
 
-When looking to see if an API is suitable for you there are a couple of questions to check:
-1. Is the API rated, and if so how?
+Ao verificar se uma API é adequada para você, há algumas perguntas a serem verificadas:
+1. A API é classificada e, em caso afirmativo, como?
 
-`Rated` in an API context means how many requests you can do. It could be rated in time (how many requests you can make per second), or in total requests. Avoid those that have a total requests rate. Generally these apps will not make many requests a second so that is not a problem. If you don't need an API key then you are generally safe.
-If you are unsure, contact your project mentor.
+`Rated` em um contexto de API significa quantas solicitações você pode fazer. Pode ser avaliado em tempo (quantas solicitações você pode fazer por segundo) ou em solicitações totais. Evite aqueles que têm uma taxa total de solicitações. Geralmente, esses aplicativos não fazem muitas solicitações por segundo, então isso não é um problema. Se você não precisa de uma chave de API, geralmente está seguro.
+Se você não tiver certeza, entre em contato com o mentor do seu projeto.
 
-2. Is the data available that I want?
+2. Estão disponíveis os dados que desejo?
 
-Have a look through the end points (there is documentation for every API) and check how the endpoints are structured. What data is available and will you be able to get what you need? You can even already query it a bit with `Postman` to try some things out.
+Dê uma olhada nos endpoints (há documentação para cada API) e verifique como os endpoints estão estruturados. Quais dados estão disponíveis e você será capaz de obter o que precisa? Você pode até mesmo consultá-lo um pouco com o `Postman` para experimentar algumas coisas.
 
-3. Does the API support CORS?
+3. A API suporta CORS?
 
-CORS stands for Cross-Origin Resource Sharing and can be a problem when interacting with an API. In some of the lists above you can see or filter on if it is supported and you should be fine. The best way to check this is to try to do a request of the API via a fetch command in the browser as you have learned last week. Then you know for sure it works as expected!
-For more information about CORS have a look at the [MDN article](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+CORS significa Cross-Origin Resource Sharing e pode ser um problema ao interagir com uma API. Em algumas das listas acima, você pode ver ou filtrar se é compatível e deve ficar bem. A melhor maneira de verificar isso é tentar fazer uma solicitação da API por meio de um comando de busca no navegador, como você aprendeu na semana passada. Então você sabe com certeza que funciona como esperado!
+Para obter mais informações sobre o CORS, consulte o [artigo do MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 
-If you really are stuck and have no inspiration, have a chat with your project mentor and talk it through together to come up with something.
+Se você realmente está preso e não tem inspiração, converse com o mentor do seu projeto e conversem juntos para chegar a algo.
 
-## Final product
-The final product (the repository is the product, not just the application) should be something that you can show off on your CV. So have a look at our technical assignment guidelines [here](https://github.com/HackYourFuture/ta_guidelines) and our design guidelines [here](https://github.com/HackYourFuture/design_guidelines) to see what it entails. By following those guidelines your app AND your code will look great, making it a great thing to show off to employers. You will also get into the habit of doing this with all the technical assignments you will get during your job search.
+## Produto final
+O produto final (o repositório é o produto, não apenas o aplicativo) deve ser algo que você possa exibir em seu currículo. Portanto, dê uma olhada em nossas diretrizes de atribuição técnica [aqui](https://github.com/HackYourFuture/ta_guidelines) e nossas diretrizes de design [aqui](https://github.com/HackYourFuture/design_guidelines) para ver o que isso implica . Seguindo essas diretrizes, seu aplicativo E seu código ficarão ótimos, tornando-se uma ótima coisa para mostrar aos empregadores. Você também adquirirá o hábito de fazer isso com todas as atribuições técnicas que receber durante sua busca de emprego.
 
-## Planning and deadlines
-There are only 2 deadlines in the project, how you divide your time for the rest is up to you.
+## Planejamento e prazos
+Existem apenas 2 prazos no projeto, como você divide seu tempo para o resto é com você.
 
-### Deadline 1: Project definition
-By *Thursday 18:00PM CET* (but the earlier the better) you should send a short description of what your app will be as well as the name of the company whose brand/colour palette you will be mimicking to your project mentor.
+### Prazo 1: Definição do projeto
+Até *Quinta-feira 18:00PM CET* (mas quanto mais cedo melhor) você deve enviar uma breve descrição do que seu aplicativo será, bem como o nome da empresa cuja marca/paleta de cores você irá imitar ao seu mentor de projeto.
 
-The description should make it clear that your application will adhere to the requirements. It is best to divide it into `must have` parts (that fulfil the requirements and will be built first) and `nice to have` parts (features you can add on later to make your app cooler). The reason to make this division is to make sure that you will also prioritise your work correctly. You will probably run into time issues at the end, and it is possible to cut out extra features, but not the `must have`'s. A week is not a lot for building an application and in the end we will only be able to evaluate based on what is working.
+A descrição deve deixar claro que seu aplicativo cumprirá os requisitos. É melhor dividi-lo em partes 'obrigatórias' (que atendem aos requisitos e serão construídas primeiro) e partes 'bom ter' (recursos que você pode adicionar mais tarde para tornar seu aplicativo mais legal). O motivo para fazer essa divisão é ter certeza de que você também priorizará seu trabalho corretamente. Você provavelmente terá problemas de tempo no final, e é possível cortar recursos extras, mas não os "obrigatórios". Uma semana não é muito para construir um aplicativo e no final só poderemos avaliar com base no que está funcionando.
 
-The company brand/colour palette will help you design something that looks good, as explained in our [design guidelines](https://github.com/HackYourFuture/design_guidelines).
+A paleta de cores/marca da empresa ajudará você a criar algo que pareça bom, conforme explicado em nossas [diretrizes de design](https://github.com/HackYourFuture/design_guidelines).
 
-### Deadline 2: Application
-By *Tuesday 23:59PM CET* you should send a link to your github project to the Education Director. Make sure that everything works for them! The best way to test this is to clone your repository to a new directory on your computer and try to run it there.
+### Prazo 2: Candidatura
+Até *terça-feira 23:59 PM CET* você deve enviar um link para o seu projeto github para o Diretor de Educação. Certifique-se de que tudo funciona para eles! A melhor maneira de testar isso é clonar seu repositório para um novo diretório em seu computador e tentar executá-lo lá.
 
-## Grading
-After finishing the project you will get another technical interview about your own project to determine if you can go on to the next module. This technical interview is similar to what you had in the [Browsers module](https://github.com/HackYourFuture/Browsers/blob/main/PROJECT.md#the-interview), except that instead of explaining how to implement a feature you will be given some JavaScript code and asked some questions about it. Keep an eye on your class channel to see when these will be.
+## Classificação
+Depois de terminar o projeto, você receberá outra entrevista técnica sobre seu próprio projeto para determinar se pode passar para o próximo módulo. Esta entrevista técnica é semelhante ao que você teve no [módulo de navegadores](https://github.com/HackYourFuture/Browsers/blob/main/PROJECT.md#the-interview), exceto que em vez de explicar como implementar um recurso, você receberá algum código JavaScript e algumas perguntas sobre ele. Fique de olho no canal da sua turma para saber quando serão.
 
-_Note: The difficulty of the application affects the grading in two ways:_
-- You get extra points for creating a difficult application (things like multiple pages, using multiple data sources, having many features, etc)
-- We will expect simpler applications to have better structured code and will be more lenient on more complex applications
+_Nota: A dificuldade do aplicativo afeta a classificação de duas maneiras:_
+- Você ganha pontos extras por criar um aplicativo difícil (coisas como várias páginas, usar várias fontes de dados, ter muitos recursos etc.)
+- Esperamos que aplicativos mais simples tenham código melhor estruturado e sejam mais tolerantes em aplicativos mais complexos
 
-_Note: following the technical assignment guidelines will also be a part of the grading_
-- Make sure you have read the [design guidelines](https://github.com/HackYourFuture/design_guidelines) and that your app design follows these guidelines
-- Make sure you have read the [technical assignment guidelines](https://github.com/HackYourFuture/ta_guidelines) and that your code and README follows these guidelines
+_Observação: seguir as diretrizes de atribuição técnica também fará parte da classificação_
+- Certifique-se de ler as [diretrizes de design](https://github.com/HackYourFuture/design_guidelines) e de que o design do seu aplicativo segue essas diretrizes
+- Certifique-se de ter lido as [diretrizes de atribuição técnica](https://github.com/HackYourFuture/ta_guidelines) e que seu código e README seguem estas diretrizes
 
-## Final remarks
-As you are all working on the projects this week there will not be a Q&A session on Sunday this week.
+## Considerações finais
+Como todos vocês estão trabalhando nos projetos esta semana, não haverá uma sessão de perguntas e respostas no domingo desta semana.
 
-Enjoy getting practical!
+Aproveite para ser prático!
 
 

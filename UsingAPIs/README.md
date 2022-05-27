@@ -1,66 +1,66 @@
-> Please help us improve and share your feedback! If you find better tutorials
-> or links, please share them by [opening a pull request](https://github.com/HackYourFuture/UsingAPIs/pulls).
+> Ajude-nos a melhorar e compartilhe seus comentários! Se você encontrar tutoriais melhores
+> ou links, compartilhe-os [abrindo uma solicitação pull](https://github.com/HackYourFuture/UsingAPIs/pulls).
 
-# Module #4 - Using APIs (Frontend)
+# Módulo #4 - Usando APIs (Frontend)
 
-![Using APIs](./assets/usingapis.png)
+![Usando APIs](./assets/usingapis.png)
 
-Welcome to Using API's! Congratulations on making it this far. You're well on your way to the top!
+Bem-vindo ao Usando APIs! Parabéns por chegar até aqui. Você está bem no seu caminho para o topo!
 
-A big part of being a programmer means moving data from one place to another. It also means working with other people's software. In this module you'll be learning about one of the core things of what makes a web developer: working with APIs!
+Uma grande parte de ser um programador significa mover dados de um lugar para outro. Também significa trabalhar com software de outras pessoas. Neste módulo, você aprenderá sobre uma das coisas principais do que faz um desenvolvedor web: trabalhar com APIs!
 
-## Learning goals
+## Metas de aprendizagem
 
-In order to successfully complete this module you will need to master the following:
+Para concluir com sucesso este módulo, você precisará dominar o seguinte:
 
-- Learn what an `Application Programming Interface` (API) is
-- Understand how to write more readable `asynchronous JavaScript`
-- Connect with different `public APIs`
-- Build a `Single Page Application` (SPA)
+- Saiba o que é uma `Application Programming Interface` (API)
+- Entenda como escrever `JavaScript assíncrono` mais legível
+- Conecte-se com diferentes `APIs públicas`
+- Crie um 'Aplicativo de página única' (SPA)
 
-## How to use this repository
+## Como usar este repositório
 
-### Repository content
+### Conteúdo do repositório
 
-This repository consists of 2 essential parts per week:
+Este repositório é composto por 2 partes essenciais por semana:
 
-1. `README`: this document contains all the required theory you need to understand **while** working on the homework. It contains not only the right resources to learn about the concepts, but also lectures done by HackYourFuture teachers. This is the **first thing** you should start with every week
-2. `MAKEME`: this document contains the instructions for each week's homework. Start with the exercises rather quickly, so that you can ground the concepts you read about earlier.
+1. `README`: este documento contém toda a teoria necessária que você precisa entender **enquanto** trabalha na lição de casa. Ele contém não apenas os recursos certos para aprender sobre os conceitos, mas também palestras feitas por professores do HackYourFuture. Esta é a **primeira coisa** com a qual você deve começar toda semana
+2. `MAKEME`: este documento contém as instruções para o dever de casa de cada semana. Comece com os exercícios rapidamente, para que você possa fundamentar os conceitos sobre os quais leu anteriormente.
 
-### How to study
+### Como estudar
 
-Let's say you are just starting out with the Using API's module. This is what you do...
+Digamos que você esteja começando com o módulo Using API's. Isto é o que você faz...
 
-1. The week always starts on **Wednesday**. First thing you'll do is open the `README.md` for that week. For the first week of `Using API's`, that would be [Week1 Reading](/Week1/README.md)
-2. You spend **Wednesday** and **Thursday** going over the resources and try to get a basic understanding of the concepts. In the meanwhile, you'll also implement any feedback you got on last week's homework (from the JavaScript2 module)
-3. On **Friday** you start with the homework, found in the `MAKEME.md`. For the first week of `Using API's`, that would be [Week1 Homework](/Week1/MAKEME.md)
-4. You spend **Friday** and **Saturday** playing around with the exercises and write down any questions you might have
-5. **DEADLINE 1**: You'll submit any questions you might have before **Saturday 23.59**, in the class channel
-6. On **Sunday** you'll attend class. It'll be of the Q&A format, meaning that there will be no new material. Instead your questions shall be discussed and you can learn from others
-7. You spend **Monday** and **Tuesday** finalizing your homework
-8. **DEADLINE 2**: You submit your homework to the right channels (GitHub) before **Tuesday 23.59**. If you can't make it on time, please communicate it with your mentor
-9. Start the new week by going back to point 1!
+1. A semana sempre começa na **quarta-feira**. A primeira coisa que você vai fazer é abrir o `README.md` dessa semana. Para a primeira semana de `Usando APIs`, isso seria [Week1 Reading](/Week1/README.md)
+2. Você passa a **quarta-feira** e a **quinta-feira** examinando os recursos e tentando entender os conceitos básicos. Enquanto isso, você também implementará qualquer feedback que tenha recebido na lição de casa da semana passada (do módulo JavaScript2)
+3. Na **Sexta** você começa com o dever de casa, encontrado no `MAKEME.md`. Para a primeira semana de `Usando APIs`, isso seria [Week1 Homework](/Week1/MAKEME.md)
+4. Você passa a **sexta-feira** e o **sábado** brincando com os exercícios e anotando quaisquer dúvidas que possa ter
+5. **Prazo 1**: você enviará suas dúvidas até **sábado, 23h59**, no canal da turma
+6. No **Domingo** você vai assistir à aula. Será no formato de perguntas e respostas, o que significa que não haverá material novo. Em vez disso, suas perguntas devem ser discutidas e você pode aprender com os outros
+7. Você passa a **segunda-feira** e a **terça-feira** finalizando sua lição de casa
+8. **Prazo 2**: Você envia sua lição de casa para os canais certos (GitHub) antes de **terça-feira, 23h59**. Se você não puder chegar a tempo, por favor comunique ao seu mentor
+9. Comece a nova semana voltando ao ponto 1!
 
-In summary:
+Resumindo:
 
 ![Weekflow](assets/weekflow.png)
 
-To have a more detailed overview of the guidelines, please read [this document](https://docs.google.com/document/d/1JUaEbxMQTyljAPFsWIbbLwwvvIXZ0VCHmCCN8RaeVIc/edit?usp=sharing) or ask your mentor/class on Slack!
+Para ter uma visão geral mais detalhada das diretrizes, leia [este documento](https://docs.google.com/document/d/1JUaEbxMQTyljAPFsWIbbLwwvvIXZ0VCHmCCN8RaeVIc/edit?usp=sharing) ou pergunte ao seu mentor/classe no Slack!
 
-## Planning
+## Planejamento
 
-| Week | Topic | Reading Materials | Homework |
+| Semana | Tópico | Materiais de Leitura | Lição de casa |
 | ---- | ----- | ----------------- | -------- |
-| 1.   | Synchronous vs asynchronous, Callbacks, Promises, The Event Loop                | [Reading W1](/Week1/README.md) | [Homework W1](/Week1/MAKEME.md) |
-| 2.   | Application Programming Interface (API), Fetch, Async/await                     | [Reading W2](/Week2/README.md) | [Homework W2](/Week2/MAKEME.md) |
-| 3.   | Individual project + Interview as test                                          | [Project](/Week3/README.md)    |
+| 1. | Síncrono vs assíncrono, Callbacks, Promises, The Event Loop | [Leitura W1](/Week1/README.md) | [Trabalho de casa W1](/Week1/MAKEME.md) |
+| 2. | Interface de programação de aplicativos (API), busca, assíncrona/aguarda | [Leitura W2](/Week2/README.md) | [Trabalho de casa W2](/Week2/MAKEME.md) |
+| 3. | Projeto individual + Entrevista como teste | [Projeto](/Week3/README.md) |
 
-## Finished?
+## Finalizado?
 
-Did you finish the module? High five!
+Você terminou o módulo? Toca aqui!
 
-If you feel ready for the next challenge, click [here](https://www.github.com/HackYourFuture/Node.js) to go to Node.js!
+Se você se sentir pronto para o próximo desafio, clique [aqui](https://www.github.com/HackYourFuture/Node.js) para acessar o Node.js!
 
-_The HackYourFuture curriculum is subject to CC BY copyright. This means you can freely use our materials, but just make sure to give us credit for it :)_
+_O currículo HackYourFuture está sujeito aos direitos autorais CC BY. Isso significa que você pode usar nossos materiais livremente, mas certifique-se de nos dar crédito por isso :)_
 
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https:/ /i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Esta obra está licenciada sob uma <a rel="license" href="http://creativecommons.org /licenses/by/4.0/">Licença Creative Commons Atribuição 4.0 Internacional</a>.
