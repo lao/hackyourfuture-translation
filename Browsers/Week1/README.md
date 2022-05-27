@@ -1,30 +1,30 @@
-# Reading Material Browsers Week 1
+# Navegadores de material de leitura Semana 1
 
 ## Agenda
 
-These are the topics for week 1:
+Estes são os tópicos da semana 1:
 
-1. [What is a web browser?](https://study.hackyourfuture.net/#/the-internet/browser)
-   - How a browser works
-   - Different browsers work differently
-2. [What is the Document-Object Model (DOM)?](https://study.hackyourfuture.net/#/the-internet/dom)
-   - JavaScript and the browser
-   - The DOM
-   - The Critical Rendering Path
-   - Traversing the DOM
-3. [What is DOM Manipulation?](https://study.hackyourfuture.net/#/the-internet/dom-manipulation)
-   - Manipulating elements
-   - Browser events
-   - Event listeners and handlers
+1. [O que é um navegador da web?](https://study.hackyourfuture.net/#/the-internet/browser)
+   - Como funciona um navegador
+   - Diferentes navegadores funcionam de forma diferente
+2. [O que é o Document-Object Model (DOM)?](https://study.hackyourfuture.net/#/the-internet/dom)
+   - JavaScript e o navegador
+   - O DOM
+   - O Caminho Crítico de Renderização
+   - Percorrendo o DOM
+3. [O que é manipulação de DOM?](https://study.hackyourfuture.net/#/the-internet/dom-manipulation)
+   - Manipulação de elementos
+   - Eventos do navegador
+   - Ouvintes e manipuladores de eventos
 
-## Week goals
-All of the detailed information about every concept is in your study book. The following goal explanation will link you to the correct place to get studying. Read through the goal description once to get an idea of what you will be learning, then go through the different links (either from the agenda or this goal list).
+## Metas da semana
+Todas as informações detalhadas sobre cada conceito estão em seu livro de estudo. A explicação do objetivo a seguir irá ligá-lo ao local correto para começar a estudar. Leia a descrição do objetivo uma vez para ter uma ideia do que você aprenderá e, em seguida, acesse os diferentes links (da agenda ou desta lista de objetivos).
 
-This week we will learn about how we can use JavaScript to react to user interactions and change the website on the fly. We'll start off by learning about browsers [here](https://study.hackyourfuture.net/#/the-internet/browser). After that we will look into something called the DOM that forms the framework of how a website is built, read all about that [here](https://study.hackyourfuture.net/#/the-internet/dom). Then the fun part starts and we will have a look at how all the things we learned in the previous module can be used to actually interact with this DOM and adjust to pretty much anything the user does. Have a look [here](https://study.hackyourfuture.net/#/the-internet/dom-manipulation).
+Esta semana vamos aprender sobre como podemos usar JavaScript para reagir às interações do usuário e alterar o site em tempo real. Começaremos aprendendo sobre navegadores [aqui](https://study.hackyourfuture.net/#/the-internet/browser). Depois disso, veremos algo chamado DOM que forma a estrutura de como um site é construído, leia tudo sobre isso [aqui](https://study.hackyourfuture.net/#/the-internet/dom). Em seguida, a parte divertida começa e veremos como todas as coisas que aprendemos no módulo anterior podem ser usadas para realmente interagir com este DOM e se ajustar a praticamente qualquer coisa que o usuário faça. Dê uma olhada [aqui](https://study.hackyourfuture.net/#/the-internet/dom-manipulation).
 
-While working with the DOM we need to also keep thinking about how we can test what we build. Testing using the DOM gets a lot more complicated as we need to somehow interact with the browser during our tests which is not easy. There are ways to do it, but later on in the curriculum we will be going into frontend frameworks that will actually take a lot of the difficulty away. This means for now that we will not be testing our code (if you are interested, your homework is being tested using JSDOM, have a look at those tests).
+Enquanto trabalhamos com o DOM, também precisamos continuar pensando em como podemos testar o que construímos. Testar usando o DOM fica muito mais complicado, pois precisamos interagir de alguma forma com o navegador durante nossos testes, o que não é fácil. Existem maneiras de fazer isso, mas mais adiante no currículo, entraremos em estruturas de front-end que, na verdade, eliminarão muito da dificuldade. Isso significa que por enquanto não testaremos nosso código (se você estiver interessado, sua lição de casa está sendo testada usando JSDOM, dê uma olhada nesses testes).
 
-## Finished?
+## Finalizado?
 
-Are you finished with going through the materials? High five! If you feel ready to get practical, click [here](./MAKEME.md).
+Você terminou de passar pelos materiais? Toca aqui! Se você se sentir pronto para ser prático, clique [aqui](./MAKEME.md).
 

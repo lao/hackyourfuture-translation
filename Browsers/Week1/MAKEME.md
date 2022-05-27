@@ -1,63 +1,63 @@
-# Homework Browsers Week 1
+# Navegadores de lição de casa Semana 1
 
-## **Todo list**
+## **Lista de afazeres**
 
-1. Practice the concepts
-2. Prep exercises
-3. Homework exercises
-5. Extra: JavaScript 30 Refactors
-6. Optional: Side project ideas
+1. Pratique os conceitos
+2. Exercícios de preparação
+3. Exercícios de lição de casa
+5. Extra: refatorações JavaScript 30
+6. Opcional: ideias de projetos paralelos
 
-## **1. Practice the concepts**
+## **1. Pratique os conceitos**
 
-Before we head into the exercises, it might be nice to do some interactive exercises first! In the following resource you'll find some exercises that'll teach you the basics of the interaction between JavaScript and the DOM:
+Antes de entrarmos nos exercícios, pode ser bom fazer alguns exercícios interativos primeiro! No recurso a seguir, você encontrará alguns exercícios que ensinarão o básico da interação entre JavaScript e o DOM:
 
-- [Making webpages interactive](https://www.khanacademy.org/computing/computer-programming/html-css-js)
+- [Tornar as páginas da web interativas](https://www.khanacademy.org/computing/computer-programming/html-css-js)
 
-## **2. Prep exercises**
+## **2. Exercícios de preparação**
 
-> Prep exercises are exercises that you should work on _before_ the session on Sunday. These are a little more difficult or show an important concept and as such are a great exercise to talk about with your class and your Q&A mentor. Have a solution ready by Sunday as you may be asked to show what you did.
+> Exercícios de preparação são exercícios que você deve trabalhar _antes_ da sessão de domingo. Estes são um pouco mais difíceis ou mostram um conceito importante e, como tal, são um ótimo exercício para conversar com sua turma e seu mentor de perguntas e respostas. Tenha uma solução pronta até domingo, pois pode ser solicitado que você mostre o que fez.
 
-Inside your `homework` fork, go to the folder `2-Browsers/Week1`. At the bottom there is a section called Prep Exercises for you to have a look at.
+Dentro do seu fork `homework`, vá para a pasta `2-Browsers/Week1`. Na parte inferior, há uma seção chamada Exercícios de preparação para você dar uma olhada.
 
-## **3. Homework exercises**
+## **3. Exercícios para casa**
 
-This week we expect you to do the exercises in the corresponding module/week folder (`2-Browsers/Week1`). Have a look at the [homework guide](https://github.com/HackYourFuture/Browsers/blob/main/hand-in-homework-guide.md) to see how to hand in your homework.
+Esta semana esperamos que você faça os exercícios na pasta módulo/semana correspondente (`2-Browsers/Week1`). Dê uma olhada no [guia de lição de casa](https://github.com/HackYourFuture/Browsers/blob/main/hand-in-homework-guide.md) para ver como entregar sua lição de casa.
 
-*NOTE: do NOT forget to checkout the main branch before creating the branch for this week. Otherwise your previous homework will be a part of the PR*
+*NOTA: NÃO se esqueça de fazer o checkout do branch principal antes de criar o branch para esta semana. Caso contrário, sua lição de casa anterior fará parte do PR*
 
-*NOTE: The prep exercise of the previous section does not need to be handed in*
+*NOTA: O exercício de preparação da seção anterior não precisa ser entregue*
 
-## **4. Extra: JavaScript 30 Refactors**
+## **4. Extra: JavaScript 30 Refators**
 
-There's an outstanding series of tutorials called [The JavaScript 30](https://javascript30.com/) put together by [Wes Bos](https://wesbos.com), it's 30 small frontend projects with video tutorials and finished code to study. You will learn a lot from Wes Bos but his tutorials are just the beginning of your study.
+Há uma excelente série de tutoriais chamados [The JavaScript 30](https://javascript30.com/) reunidos por [Wes Bos](https://wesbos.com), são 30 pequenos projetos de front-end com tutoriais em vídeo e código finalizado estudar. Você aprenderá muito com Wes Bos, mas seus tutoriais são apenas o começo de seu estudo.
 
-All of his finished code is in a single file, the main objective of this module is that you understand what he is doing and learn how to structure your projects across multiple files according to the **separation of concerns**. After completing his tutorials you will need to take his finished code as a starting point and refactor it into separate folders and files.
+Todo o seu código finalizado está em um único arquivo, o principal objetivo deste módulo é que você entenda o que ele está fazendo e aprenda a estruturar seus projetos em vários arquivos de acordo com a **separação de interesses**. Depois de concluir seus tutoriais, você precisará pegar seu código finalizado como ponto de partida e refatorá-lo em pastas e arquivos separados.
 
-To keep track of your progress through the JS 30 and to store your refactored projects there's the following [the javascript-30](https://github.com/HackYourFutureBelgium/JavaScript-30) repo provided by HYF Belgium. In this repo you will find more detailed instructions on how to work your way through these projects, as well as a folder structure for your refactors and a checklist to keep track of your progress. Fork this repository to your own github to serve as your basis.
+Para acompanhar seu progresso no JS 30 e armazenar seus projetos refatorados, há o seguinte repositório [javascript-30](https://github.com/HackYourFutureBelgium/JavaScript-30) fornecido pela HYF Belgium. Neste repositório, você encontrará instruções mais detalhadas sobre como trabalhar nesses projetos, bem como uma estrutura de pastas para seus refatorações e uma lista de verificação para acompanhar seu progresso. Fork este repositório para o seu próprio github para servir como sua base.
 
-Your goal for the rest of the curriculum is to refactor as many JS 30 projects into your repository as you can as they show you cool tricks that you can do. This does not have to be done this week, this is a 'when I have time' suggestion! 
+Seu objetivo para o resto do currículo é refatorar o máximo possível de projetos JS 30 em seu repositório, pois eles mostram truques interessantes que você pode fazer. Isso não precisa ser feito esta semana, esta é uma sugestão 'quando eu tiver tempo'!
 
-Here are some suggestions to start with:
+Aqui estão algumas sugestões para começar:
 
-- #1: JavaScript Drum Kit
-- #3: CSS Variables
-- #5: Flex Panel Gallery
-- #8: Fun with HTML5 Canvas
-- #10: Hold Shift and Check Checkboxes
-- #13: Slide in on Scroll
-- #16: Mouse Move Shadow
-- #18: Adding Up Times
-- #20: Speech Recognition
-- #22: Follow Along Link Highlighter
-- #28: Video Speed Controller
+- #1: Bateria JavaScript
+- #3: Variáveis CSS
+- #5: Galeria de painéis flexíveis
+- #8: Diversão com HTML5 Canvas
+- #10: Segure Shift e marque as caixas de seleção
+- #13: Deslize na rolagem
+- #16: Mouse Mover Sombra
+- Nº 18: Adicionando Tempos
+- #20: Reconhecimento de fala
+- #22: Marcador de links de acompanhamento
+- #28: Controlador de velocidade de vídeo
 
-## **5. Optional: Side project ideas**
+## **5. Opcional: ideias de projetos paralelos**
 
-> A part of the HackYourFuture curriculum is to work on as many side projects as you can throughout the time you have. This is a nice way to add extra knowledge to your arsenal and show in your CV that you are motivated to learn new technologies. This is also a great time to learn new things as there are plenty of mentors available to help you out in the `#projects` channel! You will not get this amount of time and support once you start working. Have a look at the [hyf_projects repo](https://github.com/HackYourFuture/hyf_projects/blob/main/README.md#project-2-a-try-out-application) for more details.
+> Uma parte do currículo do HackYourFuture é trabalhar em tantos projetos paralelos quanto possível ao longo do tempo que você tem. Esta é uma boa maneira de adicionar conhecimento extra ao seu arsenal e mostrar em seu currículo que você está motivado para aprender novas tecnologias. Este também é um ótimo momento para aprender coisas novas, pois há muitos mentores disponíveis para ajudá-lo no canal `#projects`! Você não terá essa quantidade de tempo e suporte assim que começar a trabalhar. Dê uma olhada no [hyf_projects repo](https://github.com/HackYourFuture/hyf_projects/blob/main/README.md#project-2-a-try-out-application) para mais detalhes.
 
-### 4.1 Canvas and WebGL
+### 4.1 Canvas e WebGL
 
-A very powerful and underused part of HTML is the [canvas element](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API). It allows you to create 2D and even 3D graphics. 3D graphics is very complex, but using some of the [libraries](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API#libraries) that are built on top of the canvas API is quite doable at this point of your studies. 
+Uma parte muito poderosa e subutilizada do HTML é o [elemento canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API). Ele permite que você crie gráficos 2D e até 3D. Gráficos 3D são muito complexos, mas usar algumas das [bibliotecas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API#libraries) que são construídas em cima da API de tela é bastante possível neste momento de seus estudos.
 
-Have a go by looking through the libraries and find one that has some cool examples. Try to recreate an example to get a nice basis, you can then add on a couple more features!
+Dê uma olhada nas bibliotecas e encontre uma que tenha alguns exemplos interessantes. Tente recriar um exemplo para obter uma boa base, então você pode adicionar mais alguns recursos!

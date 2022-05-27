@@ -1,26 +1,26 @@
-# Reading Material Browser Week 2
+# Navegador de Material de Leitura Semana 2
 
 ## Agenda
 
-These are the topics for week 2:
+Estes são os tópicos da semana 2:
 
-1. [Agile development](https://hackyourfuture.github.io/study/#/software-development/agile)
-2. [Revisit Naming conventions](https://hackyourfuture.github.io/study/#/programming/naming-conventions)
+1. [Desenvolvimento ágil](https://hackyourfuture.github.io/study/#/software-development/agile)
+2. [Revisar convenções de nomenclatura](https://hackyourfuture.github.io/study/#/programming/naming-conventions)
 3. [DRY](https://study.hackyourfuture.net/#/programming/dont-repeat-yourself)
-3. [Incremental Coding](https://study.hackyourfuture.net/#/programming/incremental-coding)
-4. [Presenting](https://github.com/HackYourFuture/presentation-module)
-5. [Group Project time!](../PROJECT.md)
+3. [Codificação incremental](https://study.hackyourfuture.net/#/programming/incremental-coding)
+4. [Apresentando](https://github.com/HackYourFuture/presentation-module)
+5. [Tempo do projeto do grupo!](../PROJECT.md)
 
 
-## Week(s) goals
-In the next 2 weeks you will be working on a group project with guidance from a mentor! This will be your first experience of working on code together, which is what you will be doing daily at your job. As a group, you will be building a quiz app, combining everything you have learned so far (html/css/js) in a practical example. Once completed, you will have an individual 'mock tech interview' about the application you have built. These kinds of interviews are very similar to what you will encounter when you start looking for a job so it is a good time to already start practicing. Luckily you are working on the presentation module as well this week which will help you with this!
+## Metas de semana(s)
+Nas próximas 2 semanas você estará trabalhando em um projeto de grupo com a orientação de um mentor! Esta será sua primeira experiência trabalhando em código juntos, que é o que você fará diariamente em seu trabalho. Em grupo, vocês irão construir um aplicativo de quiz, combinando tudo o que aprenderam até agora (html/css/js) em um exemplo prático. Depois de concluído, você terá uma 'entrevista técnica simulada' individual sobre o aplicativo que você criou. Esses tipos de entrevistas são muito semelhantes ao que você encontrará quando começar a procurar um emprego, por isso é um bom momento para começar a praticar. Felizmente, você também está trabalhando no módulo de apresentação esta semana, o que o ajudará com isso!
 
-Learn more about the project [here](../PROJECT.md). The project will start on Sunday, to prepare even more for that the upcoming days we would like you to have a look at some information about working together and how software development teams do that. Your study book has a nice section on agile [here](https://hackyourfuture.github.io/study/#/software-development/agile). This is based on bigger teams and projects, but it should give you an indication of how software developers work and your mentors may use some of these terms when guiding you through the project.
+Saiba mais sobre o projeto [aqui](../PROJECT.md). O projeto começará no domingo, para se preparar ainda mais para isso nos próximos dias, gostaríamos que você desse uma olhada em algumas informações sobre como trabalhar em conjunto e como as equipes de desenvolvimento de software fazem isso. Seu livro de estudo tem uma boa seção sobre ágil [aqui](https://hackyourfuture.github.io/study/#/software-development/agile). Isso é baseado em equipes e projetos maiores, mas deve fornecer uma indicação de como os desenvolvedores de software trabalham e seus mentores podem usar alguns desses termos ao guiá-lo pelo projeto.
 
-This will also be the first time you are going to work with bigger code bases and less defined problems. It is therefore a good idea to revisit some of the material that was mentioned in your JavaScript module on coding practices. Refresh your memory on the topic of [Naming conventions](https://hackyourfuture.github.io/study/#/programming/naming-conventions) and have a look at the [DRY principle](https://study.hackyourfuture.net/#/programming/dont-repeat-yourself). We would also like to introduce you to a technique that programmers use to be able to solve problems in such a way that you do not get lost: Incremental Coding. Read all about it [here](https://study.hackyourfuture.net/#/programming/incremental-coding) and get into the habit of using this technique whenever you are solving a tough problem like the ones you will face in the project! It will save you a lot of headaches.
+Esta também será a primeira vez que você trabalhará com bases de código maiores e problemas menos definidos. Portanto, é uma boa ideia revisitar alguns dos materiais mencionados em seu módulo JavaScript sobre práticas de codificação. Refresque sua memória sobre o tópico [Convenções de nomenclatura](https://hackyourfuture.github.io/study/#/programming/naming-conventions) e dê uma olhada no [princípio DRY](https://study.hackyourfuture .net/#/programming/dont-repeat-yourself). Gostaríamos também de lhe apresentar uma técnica que os programadores usam para poder resolver problemas de forma que você não se perca: Codificação Incremental. Leia tudo sobre isso [aqui](https://study.hackyourfuture.net/#/programming/incremental-coding) e adquira o hábito de usar essa técnica sempre que estiver resolvendo um problema difícil como os que você enfrentará no projeto! Vai te poupar muitas dores de cabeça.
 
-Besides that we will also work on our soft skills by reading up on the principles of presenting in the [presentation module](https://github.com/HackYourFuture/presentation-module/).
+Além disso, também trabalharemos nossas habilidades sociais lendo os princípios de apresentação no [módulo de apresentação](https://github.com/HackYourFuture/presentation-module/).
 
-## Finished?
+## Finalizado?
 
-Are you finished with going through the materials? High five! If you feel ready to get practical, click [here](./MAKEME.md).
+Você terminou de passar pelos materiais? Toca aqui! Se você se sentir pronto para ser prático, clique [aqui](./MAKEME.md).
