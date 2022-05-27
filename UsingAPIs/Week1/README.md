@@ -1,33 +1,33 @@
-# Reading Material Using API's Week 1
+# Lendo o material usando a semana 1 da API
 
 ## Agenda
 
-These are the topics for week 1:
+Estes são os tópicos da semana 1:
 
-1. [Synchronous vs. asynchronous](https://study.hackyourfuture.net/#/javascript/asynchronous)
-   - Synchronous
-   - Asynchronous
-   - Introducing asynchronicity using callbacks 
-2. [Promises](https://study.hackyourfuture.net/#/javascript/promises)
-   - Callback Hell
-   - Promise States
-   - Chaining
-   - Benefits
-3. [The Event Loop](https://study.hackyourfuture.net/#/the-internet/event-loop)
-4. [Career Training II (Interview preparation)](https://github.com/HackYourFuture/interviewpreparation)
+1. [Síncrono x assíncrono](https://study.hackyourfuture.net/#/javascript/asynchronous)
+   - Síncrono
+   - Assíncrono
+   - Introduzindo assincronicidade usando retornos de chamada
+2. [Promessas](https://study.hackyourfuture.net/#/javascript/promises)
+   - Inferno de retorno de chamada
+   - Estados Promessas
+   - Encadeamento
+   - Benefícios
+3. [O Loop do Evento](https://study.hackyourfuture.net/#/the-internet/event-loop)
+4. [Treinamento de Carreira II (preparação para entrevista)](https://github.com/HackYourFuture/interviewpreparation)
 
 
-## Week goals
+## Metas da semana
 
-All of the detailed information about every concept is in your study book. The following goal explanation will link you to the correct place to get studying. Read through the goal description once to get an idea of what you will be learning, then go through the different links (either from the agenda or this goal list).
+Todas as informações detalhadas sobre cada conceito estão em seu livro de estudo. A explicação do objetivo a seguir irá ligá-lo ao local correto para começar a estudar. Leia a descrição do objetivo uma vez para ter uma ideia do que você aprenderá e, em seguida, acesse os diferentes links (da agenda ou desta lista de objetivos).
 
-In this module we are going to learn how to connect our applications with data sources from the internet, via what's called APIs. But before we get into that we need to learn about asynchronous code. Until now you've built everything in a synchronous way as all your code runs only locally and superfast. As soon as you start requesting data from other sources we get into the problem of having to wait. This means we will need to start writing what is called [asynchronous code](https://study.hackyourfuture.net/#/javascript/asynchronous). We will then go into the concept of [Promises](https://study.hackyourfuture.net/#/javascript/promises), which is a syntax the JavaScript language offers us to work with asynchronous problems.
+Neste módulo vamos aprender como conectar nossas aplicações com fontes de dados da internet, através do que chamamos de APIs. Mas antes de entrarmos nisso, precisamos aprender sobre código assíncrono. Até agora, você construiu tudo de maneira síncrona, pois todo o seu código é executado apenas localmente e super-rápido. Assim que você começa a solicitar dados de outras fontes, entramos no problema de ter que esperar. Isso significa que precisaremos começar a escrever o que é chamado de [código assíncrono](https://study.hackyourfuture.net/#/javascript/asynchronous). Em seguida, entraremos no conceito de [Promises](https://study.hackyourfuture.net/#/javascript/promises), que é uma sintaxe que a linguagem JavaScript nos oferece para trabalhar com problemas assíncronos.
 
-Lastly, as we now know everything about asynchronicity, we can look at the browser's [Event Loop](https://study.hackyourfuture.net/#/the-internet/event-loop) which every browser implements. This will help you understand how and when your code gets executed in the browser. This will help you decide where to link up your code with the DOM so that it does what you expect.
+Por fim, como agora sabemos tudo sobre assincronicidade, podemos observar o [Event Loop](https://study.hackyourfuture.net/#/the-internet/event-loop) do navegador que cada navegador implementa. Isso ajudará você a entender como e quando seu código é executado no navegador. Isso ajudará você a decidir onde vincular seu código ao DOM para que ele faça o que você espera.
 
-## Career training II (Interview preparation)
-Finally it is time to continue with developing your soft skills to ace those job interviews. For that, have a look at the [interview preparation repo](https://github.com/HackYourFuture/interviewpreparation). It is a lot to get through, so you may need some time next week as well. There is no homework for this week, but there is some homework for the career training next week, you can already have a look at it if you find these things difficult.
+## Formação profissional II (preparação para entrevista)
+Finalmente, é hora de continuar desenvolvendo suas habilidades sociais para se destacar nas entrevistas de emprego. Para isso, dê uma olhada no [repositório de preparação de entrevistas](https://github.com/HackYourFuture/interviewpreparation). É muito para passar, então você pode precisar de algum tempo na próxima semana também. Não há dever de casa para esta semana, mas há algum dever de casa para o treinamento de carreira na próxima semana, você já pode dar uma olhada se achar essas coisas difíceis.
 
-## Finished?
+## Finalizado?
 
-Are you finished with going through the materials? High five! If you feel ready to get practical, click [here](./MAKEME.md).
+Você terminou de passar pelos materiais? Toca aqui! Se você se sentir pronto para ser prático, clique [aqui](./MAKEME.md).

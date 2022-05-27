@@ -1,32 +1,32 @@
-# Reading Material Using API's Week 2
+# Lendo Material Usando API's Semana 2
 
 ## Agenda
 
-These are the topics for week 2:
+Estes são os tópicos da semana 2:
 
 1. [Application Programming Interface (API)](https://study.hackyourfuture.net/#/the-internet/api)
-   - Public/private APIs
-   - Connecting with APIs
-2. [Fetch API](https://study.hackyourfuture.net/#/the-internet/fetch)
+   - APIs públicas/privadas
+   - Conexão com APIs
+2. [Buscar API](https://study.hackyourfuture.net/#/the-internet/fetch)
 3. [Async/Await](https://study.hackyourfuture.net/#/javascript/modern-js)
-   - Catching errors with try/catch
-4. [Interview preparation](https://github.com/HackYourFuture/interviewpreparation)
+   - Capturando erros com try/catch
+4. [Preparação da entrevista](https://github.com/HackYourFuture/interviewpreparation)
 
-## Week goals
+## Metas da semana
 
-All of the detailed information about every concept is in your study book. The following goal explanation will link you to the correct place to get studying. Read through the goal description once to get an idea of what you will be learning, then go through the different links (either from the agenda or this goal list).
+Todas as informações detalhadas sobre cada conceito estão em seu livro de estudo. A explicação do objetivo a seguir irá ligá-lo ao local correto para começar a estudar. Leia a descrição do objetivo uma vez para ter uma ideia do que você aprenderá e, em seguida, acesse os diferentes links (da agenda ou desta lista de objetivos).
 
-This week we finally get to learn what an API is although you will probably already have an idea. Read through the thorough explanation [here](https://study.hackyourfuture.net/#/the-internet/api). Now that we know what we are doing, let's learn how to do it!
+Esta semana, finalmente aprendemos o que é uma API, embora você provavelmente já tenha uma ideia. Leia a explicação completa [aqui](https://study.hackyourfuture.net/#/the-internet/api). Agora que sabemos o que estamos fazendo, vamos aprender a fazer!
 
-There are many ways to request data from an API, initially everything was done using [XMLHttpRequest](https://developer.mozilla.org/nl/docs/Web/API/XMLHttpRequest), but that is now hardly used anymore. It's good to know it exists and you will see it in some videos but it is not something to focus on. Then libraries like [Axios](https://github.com/axios/axios) were created to make it easier to use. These days all modern browsers, however, have a [Fetch API](https://study.hackyourfuture.net/#/the-internet/fetch) built in that makes it even easier to connect to API's from your frontend application. So for our curriculum we are only going to focus on the Fetch API and just mention the other ways so that you know what people are talking about when you hear that term.
+Existem muitas maneiras de solicitar dados de uma API, inicialmente tudo era feito usando [XMLHttpRequest](https://developer.mozilla.org/nl/docs/Web/API/XMLHttpRequest), mas agora quase não é mais usado. É bom saber que existe e você verá em alguns vídeos, mas não é algo para se focar. Em seguida, bibliotecas como [Axios](https://github.com/axios/axios) foram criadas para facilitar o uso. Atualmente, todos os navegadores modernos, no entanto, têm uma [Fetch API](https://study.hackyourfuture.net/#/the-internet/fetch) integrada que facilita ainda mais a conexão com APIs de seu aplicativo front-end. Portanto, para nosso currículo, vamos nos concentrar apenas na API Fetch e apenas mencionar as outras maneiras para que você saiba do que as pessoas estão falando quando ouvir esse termo.
 
-Last week we learned about Promises and with the increased use of promises, modern JavaScript introduced some new syntax that can be used with those promises. Have a look at the section on Async/await in the modern JavaScript page of your study book [here]((https://study.hackyourfuture.net/#/javascript/modern-js)) now that you know what promises are so that you know what it does.
+Na semana passada, aprendemos sobre Promises e com o aumento do uso de promessas, o JavaScript moderno introduziu algumas novas sintaxes que podem ser usadas com essas promessas. Dê uma olhada na seção sobre Async/await na página JavaScript moderna do seu livro de estudos [aqui]((https://study.hackyourfuture.net/#/javascript/modern-js)) agora que você sabe quais são as promessas para que você saiba o que ele faz.
 
-You will probably ask yourself now which way is best to handle asynchronous code and the answer is that there is no best way. Generally callbacks are great for simple applications, but get into callback hell if stuff gets too complicated. Promises with `.then` chains are great for more complex situations where the chaining can be very powerful, but can be a little hard to follow for people who do not have much experience with them. Using async/await makes the code look a little more synchronous again and that can make it easier to follow. It does, however, make it a little more complex to handle errors or situations where something absolutely needs to be done (a `finally` is invaluable in these situations). So, it is up to you to decide based on the situation what to use. 
+Você provavelmente se perguntará agora qual é a melhor maneira de lidar com código assíncrono e a resposta é que não há melhor maneira. Geralmente, os retornos de chamada são ótimos para aplicativos simples, mas entre no inferno do retorno de chamada se as coisas ficarem muito complicadas. Promessas com cadeias `.then` são ótimas para situações mais complexas onde o encadeamento pode ser muito poderoso, mas pode ser um pouco difícil de seguir para pessoas que não têm muita experiência com elas. Usar async/await faz com que o código pareça um pouco mais síncrono novamente e isso pode facilitar o acompanhamento. No entanto, torna um pouco mais complexo lidar com erros ou situações em que algo absolutamente precisa ser feito (um 'finalmente' é inestimável nessas situações). Então, cabe a você decidir com base na situação o que usar.
 
-## Career training II (Interview preparation)
-If you haven't finished all the material yet, then continue with it this week.
+## Formação profissional II (preparação para entrevista)
+Se você ainda não terminou todo o material, continue com ele esta semana.
 
-## Finished?
+## Finalizado?
 
-Are you finished with going through the materials? High five! If you feel ready to get practical, click [here](./MAKEME.md).
+Você terminou de passar pelos materiais? Toca aqui! Se você se sentir pronto para ser prático, clique [aqui](./MAKEME.md).
