@@ -1,130 +1,130 @@
-# Reading Material HTML/CSS/GIT Week 3
+# Material de leitura HTML/CSS/GIT Semana 3
 
 ## Agenda
 
-These are the topics for week 3:
+Estes são os tópicos da semana 3:
 
-1. GIT branching
-   - Local branches
-   - Working with branches on GitHub
-   - Making pull requests
-2. CSS Frameworks
-   - Why use a framework?
-   - Most popular frameworks
-   - CSS Framework vs. custom CSS
+1. Ramificação GIT
+   - Filiais locais
+   - Trabalhando com branches no GitHub
+   - Fazer pull request
+2. Estruturas CSS
+   - Por que usar um framework?
+   - Estruturas mais populares
+   - CSS Framework vs. CSS personalizado
 
-## 0. Video Lectures
+## 0. Vídeo-aulas
 
-Your teacher Arco has made video lectures for this week's material. You can find them here: [Videos 12 - 15](https://www.youtube.com/playlist?list=PLVYDhqbgYpYXbAL_Hps1Y--THRmaTFipj)
+Seu professor Arco fez videoaulas para o material desta semana. Você pode encontrá-los aqui: [Vídeos 12 - 15](https://www.youtube.com/playlist?list=PLVYDhqbgYpYXbAL_Hps1Y--THRmaTFipj)
 
-<a href="https://www.youtube.com/playlist?list=PLVYDhqbgYpYXbAL_Hps1Y--THRmaTFipj" target="_blank"><img src="../assets/week1-arco.png" width="600" height="400" alt="HYF Video" /></a>
+<a href="https://www.youtube.com/playlist?list=PLVYDhqbgYpYXbAL_Hps1Y--THRmaTFipj" target="_blank"><img src="../assets/week1-arco.png" width="600 " height="400" alt="HYF Video" /></a>
 
-## 1. GIT branching
+## 1. Ramificação GIT
 
-### Local branches
+### Filiais locais
 
-`Branches` are a core feature of GIT. A branch allows you to work on a different "version" of your project. Take a look at the following image:
+`Ramos` são um recurso central do GIT. Uma ramificação permite que você trabalhe em uma "versão" diferente do seu projeto. Dê uma olhada na imagem a seguir:
 
-![branches](assets/branches.png)
+![filiais](ativos/filiais.png)
 
-Whenever you make a branch, you're creating an exact copy of your workspace that you can work with. Try it out:
+Sempre que você cria uma ramificação, está criando uma cópia exata da sua área de trabalho com a qual pode trabalhar. Experimente:
 
-```md
-Go into a folder and initialize GIT to create a local repository. Then create a branch. In this new branch, create some basic files. **stage** and **commit** the changes you've made. Now, switch back to the original branch (**main**). What do you see? Nothing! That's because in that branch you didn't make those changes. If you switch back to the other branch you will see the files you've created again. Magic!
+``` md
+Entre em uma pasta e inicialize o GIT para criar um repositório local. Em seguida, crie uma ramificação. Neste novo branch, crie alguns arquivos básicos. **faça o estágio** e **comprometa** as alterações que você fez. Agora, volte para o branch original (**main**). O que você vê? Nada! Isso porque nesse branch você não fez essas alterações. Se você voltar para a outra ramificação, verá os arquivos que criou novamente. Magia!
 ```
 
-You can see a branch as an experiment, a possible way your project can evolve. Usually, each branch (except the `main` branch) contains code for what is called a new `feature`: a piece of functionality that you want to add to your software. Let's take Facebook as a simple example: After creating an account (which is a feature itself) you can do multiple things. Each "thing" is a feature: having a news feed, being able to send friend requests or liking posts.
+Você pode ver um branch como um experimento, uma possível forma de seu projeto evoluir. Normalmente, cada branch (exceto o branch `main`) contém código para o que é chamado de novo `feature`: uma funcionalidade que você deseja adicionar ao seu software. Vamos pegar o Facebook como um exemplo simples: depois de criar uma conta (que é um recurso em si) você pode fazer várias coisas. Cada "coisa" é uma característica: ter um feed de notícias, poder enviar solicitações de amizade ou curtir postagens.
 
-Working with branches is especially important when working with other developers. This only applies when working with a **remote** repository, which we'll talk about in the next section.
+Trabalhar com branches é especialmente importante ao trabalhar com outros desenvolvedores. Isso só se aplica ao trabalhar com um repositório **remoto**, sobre o qual falaremos na próxima seção.
 
-When working with different branches it is useful to have one single branch that contains all the working and finished code: the `main` branch (we call it main out of convention, but in actuality you can name it whatever you want). Whenever you're working on a project that has already been put on the internet, it is the code from the main branch that is online.
+Ao trabalhar com diferentes ramificações, é útil ter uma única ramificação que contenha todo o código de trabalho e finalizado: a ramificação `main` (nós a chamamos de main por convenção, mas na verdade você pode nomeá-la como quiser). Sempre que você está trabalhando em um projeto que já foi colocado na internet, é o código do branch principal que está online.
 
-However, usually there's a separate branch that contains all the development code. Of course, this is called the `development` branch. This branch is an almost exact copy of main, but contains features that have not been tested yet.
+No entanto, geralmente há uma ramificação separada que contém todo o código de desenvolvimento. Claro, isso é chamado de ramo `desenvolvimento`. Este branch é uma cópia quase exata do main, mas contém recursos que ainda não foram testados.
 
-After finishing a feature, it is time to merge the branch into the main branch. This is usually either the `main` or `development` branch.
+Depois de terminar um recurso, é hora de mesclar a ramificação na ramificação principal. Geralmente é a ramificação `main` ou `development`.
 
-Once the new version of the software has been tested and approved, the cycle repeats!
+Uma vez testada e aprovada a nova versão do software, o ciclo se repete!
 
-Go through the following resources to learn more:
+Acesse os seguintes recursos para saber mais:
 
-- [Git Tutorial: Branches](https://www.youtube.com/watch?v=sgzkY5vFKQQ)
-- [Introduction to GIT - Branching and Merging](https://www.youtube.com/watch?v=FyAAIHHClqI)
+- [Tutorial do Git: Ramos](https://www.youtube.com/watch?v=sgzkY5vFKQQ)
+- [Introdução ao GIT - Branching and Merging](https://www.youtube.com/watch?v=FyAAIHHClqI)
 
-### Working with branches on GitHub
+### Trabalhando com branches no GitHub
 
-While working with branches works a bit differently on GitHub (because of its user interface) the concept remains the same: you always want to have a main branch that holds all your stable, working code. Any other branches will contain software features that eventually will be merged into main.
+Enquanto trabalhar com branches funciona um pouco diferente no GitHub (por causa de sua interface de usuário), o conceito permanece o mesmo: você sempre quer ter um branch principal que mantenha todo o seu código estável e funcional. Quaisquer outras ramificações conterão recursos de software que eventualmente serão mesclados no main.
 
-Go through the following project to learn how to work with branches on GitHub:
+Veja o projeto a seguir para aprender a trabalhar com branches no GitHub:
 
-- [GitHub 'Hello World' Project](https://guides.github.com/activities/hello-world/)
+- [Projeto 'Hello World' do GitHub](https://guides.github.com/activities/hello-world/)
 
-### Making pull requests
+### Fazendo pull requests
 
-A **pull request** is a term GitHub uses to refer to a request to incorporate code changes from one branch made by a developer (whether it's you or another developer) into the code stored in a different branch of a repository.
+Uma **solicitação pull** é um termo que o GitHub usa para se referir a uma solicitação para incorporar alterações de código de uma ramificação feita por um desenvolvedor (seja você ou outro desenvolvedor) no código armazenado em uma ramificação diferente de um repositório.
 
-> Sometimes you'll hear developers speak of "merge requests". This is just another name for the same thing: pulling changes from another branch or fork into your branch and merging the changes with your existing code. Software development platforms like GitLab (an alternative to GitHub) use this the term "merge request" instead of "pull request".
+> Às vezes você ouvirá desenvolvedores falarem de "solicitações de mesclagem". Este é apenas outro nome para a mesma coisa: puxar alterações de outra ramificação ou bifurcação para sua ramificação e mesclar as alterações com seu código existente. Plataformas de desenvolvimento de software como o GitLab (uma alternativa ao GitHub) usam o termo "solicitação de mesclagem" em vez de "solicitação pull".
 
-These changes are made in one branch, and the pull request usually is made to merge into the `main` branch. However, this doesn't happen directly: in normal circumstances, there has to be at least one other person reviewing the proposal before it is approved to be merged. The reason why is simple: it's very easy to merge code that might be buggy or conflicts with what's already there.
+Essas mudanças são feitas em um branch, e o pull request geralmente é feito para mesclar no branch `main`. No entanto, isso não acontece diretamente: em circunstâncias normais, deve haver pelo menos uma outra pessoa analisando a proposta antes que ela seja aprovada para ser mesclada. A razão é simples: é muito fácil mesclar código que pode estar com bugs ou em conflito com o que já existe.
 
-- [GitHub Pull Request in 100 Seconds](https://www.youtube.com/watch?v=8lGpZkjnkt4)
+- [Solicitação de pull do GitHub em 100 segundos](https://www.youtube.com/watch?v=8lGpZkjnkt4)
 
-Pull requests only happen in remote repositories. This can happen in 2 ways:
-(1) From one branch to another **within the same repository**. For more information on this, read:
+As solicitações de pull só acontecem em repositórios remotos. Isso pode acontecer de 2 formas:
+(1) De um branch para outro **dentro do mesmo repositório**. Para mais informações sobre isso, leia:
 
-- [Creating a pull request](https://help.github.com/en/articles/creating-a-pull-request)
+- [Criando uma solicitação pull](https://help.github.com/en/articles/creating-a-pull-request)
 
-(2) From one branch to another branch **from a forked repository into the original repository**. A `fork` is a copy of a repository, that is stored in your personal GitHub account. Forks let you make changes to a project without affecting the original repository. You can fetch updates from or submit changes to the original repository with pull requests.
+(2) De uma ramificação para outra ramificação **de um repositório bifurcado para o repositório original**. Um `fork` é uma cópia de um repositório, que é armazenado em sua conta pessoal do GitHub. As bifurcações permitem que você faça alterações em um projeto sem afetar o repositório original. Você pode buscar atualizações ou enviar alterações para o repositório original com pull requests.
 
-While both are important to know about, it's useful to study the second way a little more in-depth because that's how you'll submit your homework:
+Embora ambos sejam importantes para conhecer, é útil estudar a segunda maneira um pouco mais a fundo, porque é assim que você enviará sua lição de casa:
 
-- [About forks](https://help.github.com/en/articles/about-forks)
-- [GitHub Homework flow](https://www.youtube.com/watch?v=CpYARPYGQU8)
+- [Sobre garfos](https://help.github.com/en/articles/about-forks)
+- [Fluxo de lição de casa do GitHub](https://www.youtube.com/watch?v=CpYARPYGQU8)
 
-## 2. CSS Frameworks
+## 2. Estruturas CSS
 
-In order to explain CSS frameworks, we first must understand what a framework is. Let's illustrate this using an analogy.
+Para explicar os frameworks CSS, primeiro devemos entender o que é um framework. Vamos ilustrar isso usando uma analogia.
 
-Let's suppose you want to make a ginger tea on daily basis. You do this with several ingredients: water, pieces of ginger and sugar. Doing so you will find it is really difficult to put all ingredients in the right proportions, to get the right flavor, all the time.
+Vamos supor que você queira fazer um chá de gengibre diariamente. Você faz isso com vários ingredientes: água, pedaços de gengibre e açúcar. Ao fazer isso, você descobrirá que é realmente difícil colocar todos os ingredientes nas proporções certas, para obter o sabor certo, o tempo todo.
 
-One morning you come up with idea of mixing all the ingredients in one jar in the correct proportion, such that every spoon will serve the right amount to make the tea.
+Uma manhã você tem a ideia de misturar todos os ingredientes em um frasco na proporção correta, de modo que cada colher sirva a quantidade certa para fazer o chá.
 
-This jar is your framework. By using it you don't have to think about the ingredients, nor the proportions. Only about how much you want to use to fit your needs.
+Este jar é o seu framework. Ao usá-lo você não precisa pensar nos ingredientes, nem nas proporções. Apenas sobre o quanto você deseja usar para atender às suas necessidades.
 
-Or here's another analogy:
+Ou aqui está outra analogia:
 
-Imagine you want to make star-shaped pancakes. That's pretty hard to do by itself, so you choose to use a mold. The mold helps you "structure" the pancake. All you need to add is the right content, which is the pancake batter.
+Imagine que você quer fazer panquecas em forma de estrela. Isso é muito difícil de fazer por si só, então você escolhe usar um molde. O molde ajuda a "estruturar" a panqueca. Tudo o que você precisa adicionar é o conteúdo certo, que é a massa de panqueca.
 
-This mold is your framework. By using it, you need only think about the actual content you want to use. The rest will be taken care of for you.
+Este molde é a sua estrutura. Ao usá-lo, você só precisa pensar no conteúdo real que deseja usar. O resto será cuidado para você.
 
-> Tip: The concept of a framework will come back many times, as we don't want to reinvent the wheel every time we create a new application. The point of any piece of software is to write it as simply as possible, and a framework really helps with that. So keep it in mind!
+> Dica: O conceito de framework voltará muitas vezes, pois não queremos reinventar a roda toda vez que criamos uma nova aplicação. O objetivo de qualquer software é escrevê-lo da forma mais simples possível, e um framework realmente ajuda nisso. Então mantenha isso em mente!
 
-### Why use a CSS framework?
+### Por que usar um framework CSS?
 
-A CSS framework allows you to style your HTML reliably, by making use of pre-defined CSS rules. This way you don't have to think about what custom CSS you have to write to make something the way you want. This is useful mainly to **speed up development**.
+Um framework CSS permite que você estilize seu HTML de forma confiável, fazendo uso de regras CSS pré-definidas. Dessa forma, você não precisa pensar em qual CSS personalizado precisa escrever para fazer algo do jeito que deseja. Isso é útil principalmente para **acelerar o desenvolvimento**.
 
-There are other reasons as well which you can learn about in the following article:
+Há outras razões também que você pode aprender no seguinte artigo:
 
-- [What are the benefits of using a CSS framework](https://css-tricks.com/what-are-the-benefits-of-using-a-css-framework/)
+- [Quais são os benefícios de usar uma estrutura CSS](https://css-tricks.com/what-are-the-benefits-of-using-a-css-framework/)
 
-It does come with a drawback, however, and that is that it forces you into a specific design and adjusting things to your needs will be more difficult.
+Ele vem com uma desvantagem, no entanto, e é que o força a um design específico e ajustar as coisas às suas necessidades será mais difícil.
 
-### Most popular frameworks
+### Estruturas mais populares
 
-There are a lot of different CSS frameworks out, each with their pros and cons. In the following video you'll learn about several of the top ones used and what problems exactly they're trying to solve:
+Existem muitos frameworks CSS diferentes, cada um com seus prós e contras. No vídeo a seguir, você aprenderá sobre vários dos principais usados e quais problemas exatamente eles estão tentando resolver:
 
-- [CSS frameworks](https://www.youtube.com/watch?v=AMDx0IIgiK4)
+- [estruturas CSS](https://www.youtube.com/watch?v=AMDx0IIgiK4)
 
-### CSS Framework vs. custom CSS
+### CSS Framework vs. CSS personalizado
 
-As a general rule, you always want to be able to write custom CSS when needed. And if you're using a framework, you need to at least know why it works the way it does. This means that you look at the **documentation** of that particular CSS framework first. Alternatively, you could also look into the class definition within the stylesheet (you can use the browser inspector for this, more on that later).
+Como regra geral, você sempre deseja escrever CSS personalizado quando necessário. E se você estiver usando um framework, você precisa pelo menos saber por que ele funciona da maneira que funciona. Isso significa que você deve examinar primeiro a **documentação** desse framework CSS específico. Alternativamente, você também pode examinar a definição de classe dentro da folha de estilo (você pode usar o inspetor do navegador para isso, mais sobre isso depois).
 
-However, writing custom CSS is in practice not always possible. This could be because of project deadlines, lack of skill or wanting to do rapid prototyping (a technique to quickly build a working version in order to test if it works). This is when we use frameworks to help us out.
+No entanto, escrever CSS personalizado na prática nem sempre é possível. Isso pode ser devido aos prazos do projeto, falta de habilidade ou querer fazer prototipagem rápida (uma técnica para construir rapidamente uma versão funcional para testar se funciona). É quando usamos frameworks para nos ajudar.
 
-Keep in mind that a framework should be there only to assist, not compensate or define your application. Research the following resources to learn about the pros and cons of CSS frameworks:
+Tenha em mente que uma estrutura deve estar lá apenas para auxiliar, não compensar ou definir sua aplicação. Pesquise os seguintes recursos para aprender sobre os prós e contras dos frameworks CSS:
 
-- [Are CSS Frameworks Bad?](https://www.youtube.com/watch?v=VlY5CfkL760)
-- [Discussing the Pros and Cons of Using a CSS Framework](https://speckyboy.com/discussing-the-pros-and-cons-of-using-a-css-framework/)
+- [Os frameworks CSS são ruins?](https://www.youtube.com/watch?v=VlY5CfkL760)
+- [Discutindo os prós e contras de usar uma estrutura CSS](https://speckyboy.com/discussing-the-pros-and-cons-of-using-a-css-framework/)
 
-## Finished?
+## Finalizado?
 
-Are you finished with going through the materials? Nice job!!! If you feel ready to get practical, click [here](./MAKEME.md).
+Você terminou de passar pelos materiais? Bom trabalho!!! Se você se sentir pronto para ser prático, clique [aqui](./MAKEME.md).

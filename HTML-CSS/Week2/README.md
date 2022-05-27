@@ -1,246 +1,246 @@
-# Reading Material HTML/CSS/GIT Week 2
+# Material de leitura HTML/CSS/GIT Semana 2
 
 ## Agenda
 
-These are the topics for week 2:
+Estes são os tópicos da semana 2:
 
-1. Introduction to GIT
-   - What is GIT?
-   - Installing GIT
-   - Basic GIT commands
-   - What is GitHub?
-   - Working with SSH
-2. More advanced CSS
-   - Flexible organizing with flexbox
-   - Using the grid layout
-   - Pseudo class selectors
-   - Responsive design with media queries
-3. Markdown
+1. Introdução ao GIT
+   - O que é GIT?
+   - Instalando o GIT
+   - Comandos básicos do GIT
+   - O que é o GitHub?
+   - Trabalhando com SSH
+2. CSS mais avançado
+   - Organização flexível com flexbox
+   - Usando o layout da grade
+   - Seletores de pseudo classe
+   - Design responsivo com media queries
+3. Remarcação
 
-## 0. Video Lectures
+## 0. Vídeo-aulas
 
-Your teacher Arco has made video lectures for this week's material. You can find them here: [Videos 7 - 11](https://www.youtube.com/playlist?list=PLVYDhqbgYpYXbAL_Hps1Y--THRmaTFipj)
+Seu professor Arco fez videoaulas para o material desta semana. Você pode encontrá-los aqui: [Vídeos 7 - 11](https://www.youtube.com/playlist?list=PLVYDhqbgYpYXbAL_Hps1Y--THRmaTFipj)
 
-<a href="https://www.youtube.com/playlist?list=PLVYDhqbgYpYXbAL_Hps1Y--THRmaTFipj" target="_blank"><img src="../assets/week1-arco.png" width="600" height="400" alt="HYF Video" /></a>
+<a href="https://www.youtube.com/playlist?list=PLVYDhqbgYpYXbAL_Hps1Y--THRmaTFipj" target="_blank"><img src="../assets/week1-arco.png" width="600 " height="400" alt="HYF Video" /></a>
 
-## 1. Introduction to GIT
+## 1. Introdução ao GIT
 
-### What is GIT?
+### O que é GIT?
 
-GIT is software that allows you to save your work at any given moment in time. It's typically called a `version control system`, which essentially means that it allows you to create `versions` of your workspace and makes possible to switch between older and newer states.
+GIT é um software que permite que você salve seu trabalho a qualquer momento. É normalmente chamado de `sistema de controle de versão`, o que essencialmente significa que ele permite que você crie `versões` do seu espaço de trabalho e torna possível alternar entre os estados mais antigos e mais recentes.
 
-You can think of it like a video game. You get to a certain point in the game, after hours of struggle. You're really proud of how far you've come, and don't want to do it over again in case you die. So you decide to _save your game_. If something bad happens after that point you can always reload your game and start from that point on.
+Você pode pensar nisso como um videogame. Você chega a um certo ponto no jogo, depois de horas de luta. Você está realmente orgulhoso de quão longe você chegou, e não quer fazer tudo de novo caso morra. Então você decide _salvar seu jogo_. Se algo ruim acontecer depois desse ponto, você sempre poderá recarregar seu jogo e começar a partir desse ponto.
 
-This is exactly what happens with GIT: however, instead of calling it _saving your game_ we call it **committing your changes**. A "change" is a code modification you made in one or more files. It's recommended to commit multiple times a day, every time you make something that is worth saving. Making commits often also makes it easier to reset your work to the last working state. Discarding changes with GIT is better than to trust on CTRL-Z to undo failed attempts.
+Isso é exatamente o que acontece com o GIT: no entanto, em vez de chamá-lo de _salvar seu jogo_, chamamos de **confirmar suas alterações**. Uma "alteração" é uma modificação de código que você fez em um ou mais arquivos. É recomendável fazer commit várias vezes ao dia, toda vez que você fizer algo que valha a pena salvar. Fazer commits com frequência também torna mais fácil redefinir seu trabalho para o último estado de trabalho. Descartar alterações com GIT é melhor do que confiar em CTRL-Z para desfazer tentativas com falha.
 
-If you ever would want to go back to a previous _game save_ you can make GIT help you do so by **checking out to that commit**. You will learn more about that in the next sections.
+Se você quiser voltar para um _game save_ anterior, você pode fazer com que o GIT o ajude a fazê-lo **conferindo esse commit**. Você aprenderá mais sobre isso nas próximas seções.
 
-Check out the following short clip to learn about the essentials of GIT:
+Confira o clipe curto a seguir para aprender sobre os fundamentos do GIT:
 
-- [GIT explained in 100 seconds](https://www.youtube.com/watch?v=hwP7WQkmECE)
+- [GIT explicado em 100 segundos](https://www.youtube.com/watch?v=hwP7WQkmECE)
 
-### Installing GIT
+### Instalando o GIT
 
-In order to use GIT you first have to install it. The software is different depending on your operating system:
+Para usar o GIT, primeiro você precisa instalá-lo. O software é diferente dependendo do seu sistema operacional:
 
-- For Windows, install [Git Bash](https://git-scm.com/download/win)
-- For MacOS, install [GIT](https://git-scm.com/download/mac)
-- For Linux, install [GIT](https://git-scm.com/download/linux)
+- Para Windows, instale o [Git Bash](https://git-scm.com/download/win)
+- Para MacOS, instale [GIT](https://git-scm.com/download/mac)
+- Para Linux, instale o [GIT](https://git-scm.com/download/linux)
 
-After you've installed it you can use it through the CLI. To verify that it worked, enter the command:
-
-```bash
-git --version
-```
-
-It should say that the version is **2.21** (or up if you've installed a new version).
-
-You can work with GIT using only the CLI but you can also use a GUI (graphical user interface).
-Two free cross-platform examples are [SourceTree](https://www.sourcetreeapp.com/) and [Gitkraken](https://www.gitkraken.com/).
-It's up to personal preference what works the best, both CLI and GUI will use the same underlying system.
-You can even use both in the same project, e.g. commands on the CLI will reflect instantly in the GUI.
-The main advantage of a GUI is that it has a visual overview of all commits and branches, local and remote.
-
-Now that you have GIT installed, it's important to make a basic configuration. Inside your CLI, type in the following (Replace "Your name" and "your.email@youremailserver.com" with your own name and email address, respectively).
-In case you are using a GUI, it will probably ask the same data the first time you open the application, and it will do these commands for you.
+Depois de instalá-lo, você pode usá-lo através da CLI. Para verificar se funcionou, digite o comando:
 
 ```bash
-git config --global user.name "Your name"
-git config --global user.email "your.email@yourmailserver.com"
+git --versão
 ```
 
-This makes sure GIT is able to identify you as the person that uses it to save your files and folders.
+Deve dizer que a versão é **2.21** (ou superior se você instalou uma nova versão).
 
-### Basic GIT commands
+Você pode trabalhar com GIT usando apenas a CLI, mas também pode usar uma GUI (interface gráfica do usuário).
+Dois exemplos gratuitos de plataforma cruzada são [SourceTree](https://www.sourcetreeapp.com/) e [Gitkraken](https://www.gitkraken.com/).
+Depende da preferência pessoal o que funciona melhor, tanto a CLI quanto a GUI usarão o mesmo sistema subjacente.
+Você pode até usar ambos no mesmo projeto, por exemplo. comandos na CLI refletirão instantaneamente na GUI.
+A principal vantagem de uma GUI é que ela tem uma visão geral de todos os commits e branches, locais e remotos.
 
-You'll use GIT like any software you execute through the CLI.
+Agora que você tem o GIT instalado, é importante fazer uma configuração básica. Dentro de sua CLI, digite o seguinte (Substitua "Seu nome" e "seu.email@seuservidor.com" por seu próprio nome e endereço de e-mail, respectivamente).
+Caso você esteja usando uma GUI, ela provavelmente solicitará os mesmos dados na primeira vez que você abrir o aplicativo e fará esses comandos para você.
 
-There are different ways of using GIT. For now we'll learn one procedure: **committing your workspace to a local repository**. Let's take that phrase apart first:
+```bash
+git config --global user.name "Seu nome"
+git config --global user.email "seu.email@seuservidor.com"
+```
 
-- **Committing** is another word for saving or storing the changes you've made to the files in your workspace. For example, changing the content of a file is a "change".
-- **Workspace** is another word for the project folder (and its contents). When making a repository it will be in the root (in other words, the top level) of the folder.
-- **Local** refers to your computer, with no involvement of the internet. When you create a file or folder on your computer, you are creating it "locally".
-- **Repository** is a storage location containing the data regarding your project folder. GIT creates a hidden folder `.git` that functions as the local repository.
+Isso garante que o GIT possa identificá-lo como a pessoa que o usa para salvar seus arquivos e pastas.
 
-Before we start we must know the most basic command of all:
+### Comandos básicos do GIT
+
+Você usará o GIT como qualquer software executado por meio da CLI.
+
+Existem diferentes maneiras de usar o GIT. Por enquanto, aprenderemos um procedimento: **confirmando seu espaço de trabalho em um repositório local**. Vamos separar essa frase primeiro:
+
+- **Committing** é outra palavra para salvar ou armazenar as alterações feitas nos arquivos em seu workspace. Por exemplo, alterar o conteúdo de um arquivo é uma "mudança".
+- **Workspace** é outra palavra para a pasta do projeto (e seu conteúdo). Ao fazer um repositório, ele estará na raiz (em outras palavras, no nível superior) da pasta.
+- **Local** refere-se ao seu computador, sem envolvimento da internet. Quando você cria um arquivo ou pasta em seu computador, você o está criando "localmente".
+- **Repositório** é um local de armazenamento que contém os dados referentes à pasta do seu projeto. O GIT cria uma pasta oculta `.git` que funciona como repositório local.
+
+Antes de começarmos, devemos conhecer o comando mais básico de todos:
 
 ```bash
 git init
 ```
 
-What it does is creating a brand new **local** repository in your project folder. Only after doing this you will be able to follow along the next procedure.
+O que ele faz é criar um novo repositório **local** na pasta do seu projeto. Somente depois de fazer isso você poderá acompanhar o próximo procedimento.
 
-Now we can continue with the actual procedure itself. This happens in 3 stages:
+Agora podemos continuar com o procedimento propriamente dito. Isso acontece em 3 etapas:
 
-1. **Untracked**. In this stage GIT is not aware of the changes in your workspace.
-2. **Staged**. In this stage the changes are selected for the next commit.
-3. **Committed** In this stage your changes have been saved into the local repository. If you need to refer to a previous version of your workspace you can safely do that now.
+1. **Não rastreado**. Neste estágio, o GIT não está ciente das alterações em seu espaço de trabalho.
+2. **Encenação**. Neste estágio as mudanças são selecionadas para o próximo commit.
+3. **Commitida** Nesta etapa, suas alterações foram salvas no repositório local. Se você precisar consultar uma versão anterior do seu espaço de trabalho, poderá fazer isso com segurança agora.
 
-This might sound very abstract, and it is. So to make it more comprehensible, you can watch the following videos and/or try stuff in the Git playground:
+Isso pode soar muito abstrato, e é. Então, para torná-lo mais compreensível, você pode assistir aos seguintes vídeos e/ou experimentar coisas no playground do Git:
 
-- [GIT command line basics](https://www.youtube.com/watch?v=HVsySz-h9r4)
-- [Learn Git - using CLI & GitKraken](https://www.youtube.com/playlist?list=PLe6EXFvnTV7-_41SpakZoTIYCgX4aMTdU)
-- [Introduction to GIT - Core Concepts](https://www.youtube.com/watch?v=uR6G2v_WsRA)
+- [Noções básicas de linha de comando GIT](https://www.youtube.com/watch?v=HVsySz-h9r4)
+- [Aprenda Git - usando CLI e GitKraken](https://www.youtube.com/playlist?list=PLe6EXFvnTV7-_41SpakZoTIYCgX4aMTdU)
+- [Introdução ao GIT - Conceitos principais](https://www.youtube.com/watch?v=uR6G2v_WsRA)
 - [GIT & GitHub Crash Course](https://www.youtube.com/watch?v=SWYqp7iY_Tc)
 - [Git Playground](https://git-school.github.io/visualizing-git/)
 
-## What is GitHub?
+## O que é o GitHub?
 
-GitHub is **NOT the same** as GIT. While GIT is software that allows you to keep track of your files, GitHub is an online software development platform that allows you to store a copy of your code online. Check the following video to learn more:
+O GitHub **NÃO é o mesmo** que o GIT. Enquanto o GIT é um software que permite que você acompanhe seus arquivos, o GitHub é uma plataforma de desenvolvimento de software online que permite armazenar uma cópia do seu código online. Confira o vídeo a seguir para saber mais:
 
-- [What is GitHub?](https://www.youtube.com/watch?v=w3jLJU7DT5E)
+- [O que é o GitHub?](https://www.youtube.com/watch?v=w3jLJU7DT5E)
 
-We use GitHub because of its main benefit: it allows us to freely store our code online (or `remote`, as we developers also call it). This is useful, for example, in the case that our computer crashes and our projects are lost.
+Usamos o GitHub devido ao seu principal benefício: ele nos permite armazenar livremente nosso código online (ou `remoto`, como nós desenvolvedores também o chamamos). Isso é útil, por exemplo, no caso de nosso computador travar e nossos projetos forem perdidos.
 
-The second benefit of using an online code storage is that it allows us to work together with other developers, using one central (and remote) repository. This is done using branches, which you will learn about [next week](../Week3/README.me).
+O segundo benefício de usar um armazenamento de código online é que ele nos permite trabalhar em conjunto com outros desenvolvedores, usando um repositório central (e remoto). Isso é feito usando branches, sobre os quais você aprenderá [na próxima semana](../Week3/README.me).
 
 - [GIT Good: A Practical Introduction to GIT and GitHub I](https://codeburst.io/git-good-part-a-e0d826286a2a)
-- [GIT Good: A Practical Introduction to GIT and GitHub II](https://codeburst.io/git-good-a-practical-introduction-to-git-and-github-in-git-we-trust-f18fa263ec48)
+- [GIT Good: A Practical Introduction to GIT and GitHub II](https://codeburst.io/git-good-a-practical-introduction-to-git-and-github-in-git-we-trust-f18fa263ec48 )
 
-### Working with SSH
+### Trabalhando com SSH
 
-SSH stands for Secure Shell and is a way of providing users a secure way of accessing (the content of) a computer over an unsecure network. Simply put, it makes the connection much more difficult to hack or intercept.
+SSH significa Secure Shell e é uma maneira de fornecer aos usuários uma maneira segura de acessar (o conteúdo de) um computador em uma rede não segura. Simplificando, torna a conexão muito mais difícil de hackear ou interceptar.
 
-When working with online (or what you'll hear more often: `remote`) code repositories, you might be dealing with unsecure connections. In order to make the connection more secure, you have to use an **SSH key**. Similar to a real key, this digital key allows your computer to be identified by the network you're trying to access. If the connection has been made you can access and modify the contents of network.
+Ao trabalhar com repositórios de código online (ou o que você ouvirá com mais frequência: `remoto`), você pode estar lidando com conexões não seguras. Para tornar a conexão mais segura, você deve usar uma **chave SSH**. Semelhante a uma chave real, esta chave digital permite que seu computador seja identificado pela rede que você está tentando acessar. Se a conexão foi feita, você pode acessar e modificar o conteúdo da rede.
 
-> The concept of secure networking through use of identifiers (like an SSH key) is also known as "authentication": are you who you say you are? Authentication is a central idea within programming and you should keep it in mind. You'll also be seeing more of it in later modules!
+> O conceito de rede segura através do uso de identificadores (como uma chave SSH) também é conhecido como "autenticação": você é quem diz ser? A autenticação é uma ideia central dentro da programação e você deve ter isso em mente. Você também verá mais disso em módulos posteriores!
 
-Check the following resources for more information:
+Verifique os seguintes recursos para obter mais informações:
 
-- [Beginners Guide To SSH](https://www.youtube.com/watch?v=qWKK_PNHnnA)
-- [How SSH works](https://www.youtube.com/watch?v=zlv9dI-9g1U)
+- [Guia para iniciantes em SSH](https://www.youtube.com/watch?v=qWKK_PNHnnA)
+- [Como funciona o SSH](https://www.youtube.com/watch?v=zlv9dI-9g1U)
 
-When working with GitHub we want to ensure the same level of security. Thus, we will have to make an SSH key and link it to GitHub!
+Ao trabalhar com o GitHub, queremos garantir o mesmo nível de segurança. Assim, teremos que fazer uma chave SSH e vinculá-la ao GitHub!
 
-- [How to generate an SSH key](https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
-- [Adding SSH Key to GitHub](https://www.youtube.com/watch?v=H5qNpRGB7Qw)
+- [Como gerar uma chave SSH](https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+- [Adicionando chave SSH ao GitHub](https://www.youtube.com/watch?v=H5qNpRGB7Qw)
 
-## 2. More advanced CSS
+## 2. CSS mais avançado
 
-By now you've had some practice with CSS. In the following sections you'll learn about some more essentials concepts in order to write modern stylesheets for the web!
+Até agora você já teve alguma prática com CSS. Nas seções a seguir, você aprenderá mais alguns conceitos essenciais para escrever folhas de estilo modernas para a web!
 
-### Flexible organizing with flexbox
+### Organização flexível com flexbox
 
-CSS is used to order and style HTML elements. A big part of this is organising elements in a visually attractive way. This can be done using `flexbox`.
+CSS é usado para ordenar e estilizar elementos HTML. Uma grande parte disso é organizar os elementos de uma maneira visualmente atraente. Isso pode ser feito usando `flexbox`.
 
-What it does is helping you to think according to `grid-based web design`: elements are not randomly placed on the page, but are neatly organised along a grid.
+O que ele faz é ajudar você a pensar de acordo com o `design da web baseado em grade`: os elementos não são colocados aleatoriamente na página, mas são organizados ordenadamente ao longo de uma grade.
 
-Read the following to learn more about 'grid-based web design':
+Leia o seguinte para saber mais sobre 'design da web baseado em grade':
 
-- [Introduction to grids in web design](https://webdesign.tutsplus.com/articles/a-comprehensive-introduction-to-grids-in-web-design--cms-26521)
-- [Intro to Web Design Grids](https://www.youtube.com/watch?v=gjYZoPEk0ow)
+- [Introdução às grades no web design](https://webdesign.tutsplus.com/articles/a-comprehensive-introduction-to-grids-in-web-design--cms-26521)
+- [Introdução ao Web Design Grids](https://www.youtube.com/watch?v=gjYZoPEk0ow)
 
-Once you understand this way of thinking you'll know why it makes sense to use `flexbox`.
+Uma vez que você entenda essa maneira de pensar, você saberá por que faz sentido usar o `flexbox`.
 
-In order to make use of it we have to access it through the `display` CSS property:
+Para utilizá-lo devemos acessá-lo através da propriedade CSS `display`:
 
-```css
-display: flex;
+``` css
+exibição: flexível;
 ```
 
-This will give us the `flexbox`-specific properties, so we can develop clean and organised CSS. Check the following links to understand how this is done:
+Isso nos dará as propriedades específicas do `flexbox`, para que possamos desenvolver um CSS limpo e organizado. Confira os links a seguir para entender como isso é feito:
 
-- [CSS Flexbox in 100 Seconds](https://www.youtube.com/watch?v=K74l26pE4YA)
-- [What is Flexbox and Why to Learn it](https://www.youtube.com/watch?v=CXSwNIPsyTs)
-- [CSS Flexbox Course](https://www.youtube.com/watch?v=-Wlt8NRtOpo)
+- [CSS Flexbox em 100 segundos](https://www.youtube.com/watch?v=K74l26pE4YA)
+- [O que é Flexbox e por que aprender](https://www.youtube.com/watch?v=CXSwNIPsyTs)
+- [Curso de CSS Flexbox](https://www.youtube.com/watch?v=-Wlt8NRtOpo)
 
-### Using the grid layout
+### Usando o layout da grade
 
-The most recent addition to the css toolkit for organising your layout is using `display: grid`. Where every other layout always goes from top to bottom, grid allows you to create a two-dimensional layout.
+A adição mais recente ao kit de ferramentas css para organizar seu layout está usando `display: grid`. Onde todos os outros layouts sempre vão de cima para baixo, a grade permite que você crie um layout bidimensional.
 
-The complete guide to grid by css-tricks is the go to guide, read it here:
+O guia completo para grid by css-tricks é o guia, leia aqui:
 
 - [CSS-tricks complete guide to grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 
-### Pseudo class selectors
+### Seletores de pseudoclasses
 
-Every HTML element can be in different states. The default state is when an element is untouched. You already know how to style for this.
+Cada elemento HTML pode estar em diferentes estados. O estado padrão é quando um elemento é intocado. Você já sabe como estilizar para isso.
 
-```css
-button {
-  background-color: white;
+``` css
+botão {
+  cor de fundo: branco;
 }
 ```
 
-There are times when a user interacts with an element. For example: clicking a button that opens another page. As frontend developers we need to give the user feedback on that particular action. When they place the mouse on top of the button it lights up (we call this a `hover state`). We need to write instructions for that to happen:
+Há momentos em que um usuário interage com um elemento. Por exemplo: clicar em um botão que abre outra página. Como desenvolvedores frontend, precisamos dar feedback ao usuário sobre essa ação específica. Quando eles colocam o mouse em cima do botão, ele acende (chamamos isso de 'estado de foco'). Precisamos escrever instruções para que isso aconteça:
 
-```css
-button:hover {
-  background-color: blue;
+``` css
+botão: passar {
+  cor de fundo: azul;
 }
 ```
 
-Like the hover state there are others as well: `click`, `focus`, `visited`, and others. For most of these element states we have special selectors. Read the following article to learn about them. Once you have done that, try them out for yourself!:
+Assim como o estado de foco, existem outros também: `click`, `focus`, `visited` e outros. Para a maioria desses estados de elementos, temos seletores especiais. Leia o artigo a seguir para saber mais sobre eles. Depois de ter feito isso, experimente-os por si mesmo!:
 
-- [Pseudo class selectors](https://css-tricks.com/pseudo-class-selectors/)
-- [Pseudo-Classes vs Pseudo-Elements in CSS](https://www.youtube.com/watch?v=0VDx1570X3U)
+- [Seletores de pseudoclasse](https://css-tricks.com/pseudo-class-selectors/)
+- [Pseudo-classes vs pseudo-elementos em CSS](https://www.youtube.com/watch?v=0VDx1570X3U)
 
-### Responsive design with media queries
+### Design responsivo com consultas de mídia
 
-Nowadays people use different devices to access websites: desktops, tablets and mobile phones of all different sizes. Responsive design is a way to put together a website so that it automatically scales its content and elements to match the screen size of the viewer. It prevents that images are larger than the screen width, so visitors on mobile devices will see a visually attractive website as well
+Hoje em dia as pessoas usam diferentes dispositivos para acessar sites: desktops, tablets e celulares de todos os tamanhos. O design responsivo é uma maneira de montar um site para que ele dimensione automaticamente seu conteúdo e elementos para corresponder ao tamanho da tela do visualizador. Ele evita que as imagens sejam maiores que a largura da tela, para que os visitantes em dispositivos móveis também vejam um site visualmente atraente
 
-For more information about responsive design, check this article: [Responsive Design](https://www.internetingishard.com/html-and-css/responsive-design/).
+Para obter mais informações sobre design responsivo, consulte este artigo: [Design responsivo](https://www.internetingishard.com/html-and-css/responsive-design/).
 
-The primary way of making a responsive website is by writing custom CSS code that makes it so. This can be done using `media queries`: CSS instructions that only apply to certain screen sizes.
+A principal maneira de criar um site responsivo é escrever um código CSS personalizado que o torne assim. Isso pode ser feito usando `consultas de mídia`: instruções CSS que se aplicam apenas a determinados tamanhos de tela.
 
-Learn more about media queries here:
+Saiba mais sobre consultas de mídia aqui:
 
-- [Introduction to Media Queries](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries).
-- [Learn CSS Media Query in 7 Minutes](https://www.youtube.com/watch?v=yU7jJ3NbPdA)
+- [Introdução às consultas de mídia](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries).
+- [Aprenda a consulta de mídia CSS em 7 minutos](https://www.youtube.com/watch?v=yU7jJ3NbPdA)
 
-### Layouts
+### Esquemas
 
-Now that you know about all the tools at your disposal it is time to look at creating layouts, which are the most basic design of your app/website. It is important to always do this step first as any changes in the layout will affect all of the other parts in the website, whereas the smaller parts should not affect the layout.
+Agora que você conhece todas as ferramentas à sua disposição, é hora de olhar para a criação de layouts, que são o design mais básico do seu aplicativo/site. É importante sempre fazer esta etapa primeiro, pois qualquer alteração no layout afetará todas as outras partes do site, enquanto as partes menores não devem afetar o layout.
 
-Learn more about them here:
-- [The fundamentals of css layouts](https://www.youtube.com/watch?v=yMEjLBKyvEg)
+Aprenda mais sobre eles aqui:
+- [Os fundamentos dos layouts css](https://www.youtube.com/watch?v=yMEjLBKyvEg)
 
-## 3. Markdown
+## 3. Remarcação
 
-As you've probably seen, every project on GitHub comes with a file called `README.md`
-This readme file is used in general to outline the goal of the project and usually includes some code examples.
+Como você provavelmente já viu, todo projeto no GitHub vem com um arquivo chamado `README.md`
+Este arquivo leia-me é usado em geral para delinear o objetivo do projeto e geralmente inclui alguns exemplos de código.
 
-Even the page you are reading now is also created using Markdown.
+Até mesmo a página que você está lendo agora também é criada usando Markdown.
 
-Markdown is not a syntax that browsers understand, it is however really simple to write and read with any text editor.
-Many online GIT platforms, like GitHub, will parse Markdown files and display them as pretty HTML pages.
-Another good example on Markdown support is Slack. You can style your Slack messages using Markdown!
+Markdown não é uma sintaxe que os navegadores entendem, mas é muito simples de escrever e ler com qualquer editor de texto.
+Muitas plataformas GIT online, como o GitHub, analisam arquivos Markdown e os exibem como belas páginas HTML.
+Outro bom exemplo de suporte ao Markdown é o Slack. Você pode estilizar suas mensagens do Slack usando o Markdown!
 
-A few examples of what you can do with Markdown:
+Alguns exemplos do que você pode fazer com o Markdown:
 
-| HTML                         | Markdown                                     |
+| HTML | Remarcação |
 | ---------------------------- | -------------------------------------------- |
-| H1                           | `# title`                                    |
-| H2                           | `## title`                                   |
-| _Emphasis_                   | `*italic`                                    |
-| **Bold**                     | `**bold**`                                   |
-| ~~Strikethrough~~            | `~~Scratch this.~~`                          |
-| [Link](#)                    | `[link text](https://somewhere)`             |
-| `<p>Single line of code</p>` | `` use single `backticks` around your code`` |
+| H1 | `# título` |
+| H2 | `## título` |
+| _Ênfase_ | `*itálico` |
+| **Negrito** | `**negrito**` |
+| ~~Tachado~~ | `~~Raspe isso.~~` |
+| [Link](#) | `[texto do link](https://somewhere)` |
+| `<p>Única linha de código</p>` | `` use `backticks` únicos em torno de seu código`` |
 
-If you want to show a bigger block of code, you start and end with 3 backticks
+Se você quiser mostrar um bloco de código maior, comece e termine com 3 acentos graves
 
-````markdown
+````remarcação
 ```
    <html>
       <head>...</head>
@@ -249,12 +249,12 @@ If you want to show a bigger block of code, you start and end with 3 backticks
 ```
 ````
 
-With Markdown you can to more things like images, list, checklists, tables and more.
-If you want to learn more about Markdown you could check these sources:
+Com o Markdown você pode fazer mais coisas como imagens, listas, checklists, tabelas e muito mais.
+Se você quiser saber mais sobre o Markdown, verifique estas fontes:
 
 - [Markdown Crash Course](https://www.youtube.com/watch?v=HUBNt18RFbo)
 - [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
-## Finished?
+## Finalizado?
 
-Are you finished with going through the materials? Nice job!!! If you feel ready to get practical, click [here](./MAKEME.md).
+Você terminou de passar pelos materiais? Bom trabalho!!! Se você se sentir pronto para ser prático, clique [aqui](./MAKEME.md).

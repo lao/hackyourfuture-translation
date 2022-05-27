@@ -1,122 +1,122 @@
-# Lesson Plan Week 1
+# Plano de aula Semana 1
 
 ## Agenda
 
-The purpose of this class is to introduce to the student:
+O objetivo desta aula é apresentar ao aluno:
 
-1. The basics of working with the command line interface
-2. Basic HTML/CSS concepts:
-   - HTML basics
-   - Difference between `<head>` and `<body>` tags
-   - Semantic HTML5
-   - CSS basics
-   - The box model
+1. Noções básicas de trabalho com a interface de linha de comando
+2. Conceitos básicos de HTML/CSS:
+   - Noções básicas de HTML
+   - Diferença entre as tags `<head>` e `<body>`
+   - HTML5 semântico
+   - Noções básicas de CSS
+   - O modelo da caixa
 
-## Core concepts
+## Conceitos principais
 
-**FIRST HALF (12.00 - 13.30)**
+**PRIMEIRA METADE (12h - 13h30)**
 
-## 1. Command line interface basics
+## 1. Noções básicas da interface de linha de comando
 
-### Explanation
+### Explicação
 
-- The command line interface (CLI) is a way to navigate your computer by issuing direct commands
-- In the past the computer had **ONLY** a command line
-- The CLI doesn't always give feedback, like any other program on your computer would give
-- Desktop application icons are visual shortcuts (Windows: show `$ calc` to launch the calculator)
+- A interface de linha de comando (CLI) é uma maneira de navegar em seu computador emitindo comandos diretos
+- No passado, o computador tinha **SOMENTE** uma linha de comando
+- A CLI nem sempre dá feedback, como qualquer outro programa em seu computador daria
+- Ícones de aplicativos da área de trabalho são atalhos visuais (Windows: mostre `$ calc` para iniciar a calculadora)
 
-### Example
+### Exemplo
 
-| Command                                                         | Description                                                                                |
-| --------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| `pwd`                                                           | present working directory                                                                  |
-| `ls`                                                            | List files in the directory                                                                |
-| `cd`                                                            | change the directory                                                                       |
-| `touch`                                                         | Create an empty file                                                                       |
-| `echo`                                                          | display the string                                                                         |
-| `echo -n`                                                       | Display the string without newline                                                         |
-| `echo “something” > file`                                       | Redirect the output of echo and create file                                                |
-| `echo “another thing” >> file`                                  | Append the string to the file                                                              |
-| `mkdir`                                                         | make a new directory                                                                       |
-| `cd ~`                                                          | home                                                                                       |
-| `cd -`                                                          | previous directory                                                                         |
-| `cd ..`                                                         | parent directory                                                                           |
-| `ls -a`                                                         | List all files including hidden files                                                      |
-| `cd /`                                                          | change to the root directory                                                               |
-| `cat`                                                           | Concatenate the file line by line and display it on the terminal                           |
-| `less`                                                          | Print the big file line by line                                                            |
-| `vim <file>`                                                    | open the editor with <file> {`a:` to go to the insert mode, <ESC>`:wq` to write and quit } |
-| `for var in {START..END}; do <COMMAND1>; <COMMAND2>;..; ; done` |                                                                                            |
-| `head <file>`                                                   | display the first 10 lines of file                                                         |
-| `tail <file>`                                                   | display the last 10 lines of file                                                          |
-| `head -n <file>`                                                | display first n lines of file                                                              |
-| `tail -n <file>`                                                | display last n lines of file                                                               |
-| `man <COMMAND>`                                                 | Display manual of the COMMAND                                                              |
+| Comando | Descrição |
+| -------------------------------------------------- ------------- | -------------------------------------------------- ---------------------------------------- |
+| `pwd` | diretório de trabalho atual |
+| `ls` | Listar arquivos no diretório |
+| `cd` | alterar o diretório |
+| `toque` | Crie um arquivo vazio |
+| `eco` | exibir a string |
+| `eco -n` | Exibe a string sem nova linha |
+| `echo “algo” > arquivo` | Redirecione a saída do eco e crie o arquivo |
+| `echo “outra coisa” >> arquivo` | Anexe a string ao arquivo |
+| `mkdir` | fazer um novo diretório |
+| `cd ~` | casa |
+| `cd -` | diretório anterior |
+| `cd ..` | diretório pai |
+| `ls -a` | Listar todos os arquivos, incluindo arquivos ocultos |
+| `cd /` | mude para o diretório raiz |
+| `gato` | Concatenar o arquivo linha por linha e exibi-lo no terminal |
+| `menos` | Imprima o arquivo grande linha por linha |
+| `vim <arquivo>` | abra o editor com <file> {`a:` para ir para o modo de inserção, <ESC>`:wq` para escrever e sair } |
+| `para var em {START..END}; faça <COMMAND1>; <COMANDO2>;...; ; feito' | |
+| `head <arquivo>` | exibir as primeiras 10 linhas do arquivo |
+| `cauda <arquivo>` | exibir as últimas 10 linhas do arquivo |
+| `head -n <arquivo>` | exibir as primeiras n linhas do arquivo |
+| `tail -n <arquivo>` | exibir as últimas n linhas do arquivo |
+| `man <COMANDO>` | Exibir manual do COMANDO |
 
-### Exercise
+### Exercício
 
-- Open a command line (Git Bash on Windows)
-- Create a project folder to contain all your HYF work (mkdir)
-- Create a module folder (cd, mkdir)
-- Create a text file: notes.txt (cd, touch)
-- Open Visual Studio Code and add some notes (code .)
-- Rename the file to lecture1.txt (mv)
+- Abra uma linha de comando (Git Bash no Windows)
+- Crie uma pasta de projeto para conter todo o seu trabalho HYF (mkdir)
+- Crie uma pasta de módulo (cd, mkdir)
+- Crie um arquivo de texto: notes.txt (cd, touch)
+- Abra o Visual Studio Code e adicione algumas notas (code .)
+- Renomeie o arquivo para palestra1.txt (mv)
 
-_"I go on holiday and I take with me"_ with CLI commands:
+_"Vou de férias e levo comigo"_ com comandos CLI:
 
-- They have to repeat the commands said before them.
-- Add a new command and explain what it does.
-- Let the round continue twice otherwise the students that went first don't have to repeat all the commands.
+- Eles têm que repetir os comandos ditos antes deles.
+- Adicione um novo comando e explique o que ele faz.
+- Deixe a rodada continuar duas vezes, caso contrário os alunos que foram primeiro não precisam repetir todos os comandos.
 
-E.g., first student says _"ls : lists commands"_. Second student must say _"ls and cd: change directory"_. Then third student must say _"ls, cd and pwd : show print working directory"_ and so on.
-_By [@unmeshvrije](https://github.com/unmeshvrije)_
+Por exemplo, o primeiro aluno diz _"ls : listas de comandos"_. O segundo aluno deve dizer _"ls and cd: change directory"_. Então o terceiro aluno deve dizer _"ls, cd and pwd : show print working directory"_ e assim por diante.
+_Por [@unmeshvrije](https://github.com/unmeshvrije)_
 
-### Essence
+### Essência
 
-SECOND HALF (14.00 - 16.00)
+SEGUNDA METADE (14.00 - 16.00)
 
-## 2. HTML basics
+## 2. Noções básicas de HTML
 
-### Explanation
+### Explicação
 
-- HTML is just plain text, nothing special
-- Browsers read the HTML and CSS and render a beautiful webpage
-- HTML of a website comes from a server (which is just another computer somewhere)
-- Difference `<head>` and `<body>`
+- HTML é apenas texto simples, nada de especial
+- Os navegadores lêem o HTML e CSS e renderizam uma bela página da web
+- O HTML de um site vem de um servidor (que é apenas outro computador em algum lugar)
+- Diferença `<head>` e `<body>`
 
-Box model
+Modelo de caixa
 
-- Everything is a box
-- The "box" refers to the attributes universal to every element: `margin`, `padding`, `border`
-- Every element pushes against one another
+- Tudo é uma caixa
+- A "caixa" refere-se aos atributos universais para cada elemento: `margin`, `padding`, `border`
+- Cada elemento empurra um contra o outro
 
-### Example
+### Exemplo
 
-- Show most basic HTML structure, also show how Visual Studio Code can autocomplete html structure by just typing: html
-- `<title>`, `<link>`, `<meta>`
-- Show example of the box model by using the browser inspector on various elements
+- Mostre a estrutura HTML mais básica, também mostre como o Visual Studio Code pode autocompletar a estrutura html apenas digitando: html
+- `<título>`, `<link>`, `<meta>`
+- Mostrar exemplo do modelo de caixa usando o inspetor do navegador em vários elementos
 
-### Exercise
+### Exercício
 
-- Using the command line create a project folder, a html file and css file
-- Create a basic html structure, and link to an external css file
-- Create a webpage which uses all the html tags and css properties which were have discussed
+- Usando a linha de comando, crie uma pasta de projeto, um arquivo html e um arquivo css
+- Crie uma estrutura html básica e vincule a um arquivo css externo
+- Crie uma página da web que use todas as tags html e propriedades css que foram discutidas
 
-### Essence
+### Essência
 
-## 3. Semantic HTML5
+## 3. HTML5 semântico
 
-### Explanation
+### Explicação
 
-- Explain why there are `<h1>`, `<h2>`, `<h3>`
-- In theory a page can be constructed using only `<div>`s
-- Semantic tags make the code more comprehensible
-- It helps organize the page
+- Explique por que existem `<h1>`, `<h2>`, `<h3>`
+- Em teoria, uma página pode ser construída usando apenas `<div>`s
+- Tags semânticas tornam o código mais compreensível
+- Ajuda a organizar a página
 
-### Example
+### Exemplo
 
-- Show examples of semantic HTML: `<header>`, `<footer>`, `<main>`, `<section>`, `<article>`, `<nav>`, `<aside>`
+- Mostrar exemplos de HTML semântico: `<header>`, `<footer>`, `<main>`, `<section>`, `<article>`, `<nav>`, `<aside>`
 
-### Exercise
+### Exercício
 
-### Essence
+### Essência

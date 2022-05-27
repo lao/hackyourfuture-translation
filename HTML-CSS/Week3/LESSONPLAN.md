@@ -1,75 +1,75 @@
-# Lesson Plan Week 3
+# Plano de aula Semana 3
 
 ## Agenda
 
-The purpose of this class is to introduce to the student:
+O objetivo desta aula é apresentar ao aluno:
 
--   What is GIT branching?
--   Remote vs. local branches
--   What's a pull request?
+- O que é ramificação GIT?
+- Filiais remotas vs. locais
+- O que é um pull request?
 
--   What is a framework?
--   Popular CSS frameworks
--   Framework vs custom CSS
+- O que é um quadro?
+- Estruturas CSS populares
+- Framework vs CSS personalizado
 
-## Core Concepts
+## Conceitos Fundamentais
 
-FIRST HALF (12.00 - 13.30)
+PRIMEIRA METADE (12h00 - 13h30)
 
-## 1. GIT branching
+## 1. Ramificação GIT
 
-### Explanation
+### Explicação
 
--   A branch is an experiment, a possible way your project can evolve.
--   Local branch can be created with `git branch <name>` command. Remote branch must be set using `--set-upstream` option while pushing
--   Pull request is a `diff` between two commit points. It can be merged when we want to suggest changes to a Github repository to which we don't have write access.
+- Um branch é um experimento, uma possível forma de seu projeto evoluir.
+- O branch local pode ser criado com o comando `git branch <name>`. A ramificação remota deve ser definida usando a opção `--set-upstream` ao empurrar
+- Pull request é um `diff` entre dois pontos de commit. Ele pode ser mesclado quando queremos sugerir alterações em um repositório do Github ao qual não temos acesso de gravação.
 
-### Example
+### Exemplo
 
-Create a repository and initialize GIT. Show the use of `git branch`, `git checkout -b`
+Crie um repositório e inicialize o GIT. Mostrar o uso de `git branch`, `git checkout -b`
 
-### Exercise
+### Exercício
 
-A fun exercise by [Arco](https://github.com/ArcoMul) to practise creating pull requests: [Cat pull request exercise](https://github.com/ArcoMul/netlify-cats)
+Um exercício divertido do [Arco](https://github.com/ArcoMul) para praticar a criação de pull requests: [Cat pull request exercise](https://github.com/ArcoMul/netlify-cats)
 
-Instruction on how to set things up at Netlify: https://github.com/ArcoMul/netlify-cats/blob/main/SETUP.md
+Instruções sobre como configurar as coisas no Netlify: https://github.com/ArcoMul/netlify-cats/blob/main/SETUP.md
 
-### Essence
+### Essência
 
 
-SECOND HALF (14.00 - 16.00)
+SEGUNDA METADE (14.00 - 16.00)
 
-## 2. CSS framework
+## 2. Estrutura CSS
 
-### Explanation
+### Explicação
 
--   A software framework is prewritten code that provides generic functionality and a structure to build applications with
--   Analogy of pot of ingredients (see [example](./README.md) at section 2)
--   CSS frameworks allow for faster development
+- Uma estrutura de software é um código pré-escrito que fornece funcionalidade genérica e uma estrutura para construir aplicativos com
+- Analogia do pote de ingredientes (veja [exemplo](./README.md) na seção 2)
+- Estruturas CSS permitem um desenvolvimento mais rápido
 
--   Pros and cons of framework
+- Prós e contras da estrutura
 
-    -   PRO: Speeds up your development
-    -   PRO: Enables cross-browser functionality
-    -   PRO: Are usually maintained by a community of developers
-    -   CON: It takes time to learn a framework
-    -   CON: Lack of understanding the underlying CSS
+    - PRO: Acelera seu desenvolvimento
+    - PRO: Ativa a funcionalidade entre navegadores
+    - PRO: Geralmente são mantidos por uma comunidade de desenvolvedores
+    - CONTRA: Leva tempo para aprender uma estrutura
+    - CONTRA: Falta de compreensão do CSS subjacente
 
--   Pros and cons of custom CSS
-    -   PRO: Satisfies your specific needs
-    -   PRO: Total control over the direction of CSS
-    -   PRO: Creates a unique look
-    -   CON: Have to maintain own code
-    -   CON: You have to make sure it works cross-browser
+- Prós e contras do CSS personalizado
+    - PRO: Satisfaz suas necessidades específicas
+    - PRO: Controle total sobre a direção do CSS
+    - PRO: Cria um visual único
+    - CONTRA: Tem que manter código próprio
+    - CONTRA: Você precisa ter certeza de que funciona em vários navegadores
 
-### Example
+### Exemplo
 
-Show various CSS frameworks: [MaterializeCSS](https://materializecss.com/), [Bootstrap](https://getbootstrap.com/), [Foundation](https://foundation.zurb.com/)
+Mostrar vários frameworks CSS: [MaterializeCSS](https://materializecss.com/), [Bootstrap](https://getbootstrap.com/), [Foundation](https://foundation.zurb.com/)
 
-### Exercise
+### Exercício
 
-Give students an exercise to rebuild a button and navbar with custom CSS. Then let them do the same with any of the CSS frameworks you feel most comfortable with!
+Dê aos alunos um exercício para reconstruir um botão e uma barra de navegação com CSS personalizado. Então deixe-os fazer o mesmo com qualquer um dos frameworks CSS com os quais você se sinta mais confortável!
 
-### Essence
+### Essência
 
-A CSS framework is used to speed up development: it's prewritten code that provides the developer with basic structure and styling in order to create a presentable user interface.
+Um framework CSS é usado para acelerar o desenvolvimento: é um código pré-escrito que fornece ao desenvolvedor estrutura e estilo básicos para criar uma interface de usuário apresentável.

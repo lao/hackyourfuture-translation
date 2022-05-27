@@ -1,18 +1,18 @@
-# Create a bird using just HTML and CSS!
+# Crie um pássaro usando apenas HTML e CSS!
 
-Your task is to create the following bird using just html and css:
+Sua tarefa é criar o seguinte pássaro usando apenas html e css:
 
-![Bird created with HTML and CSS](../../../assets/bird.png)
+![Pássaro criado com HTML e CSS](../../../assets/bird.png)
 
-Tips:
+Pontas:
 
-- The beak is probably the hardest and may need some googling on how you can do triangles in CSS.
-- Remember to create an html as well as a css file, do not use inline styling!
+- O bico é provavelmente o mais difícil e pode precisar de uma pesquisa no Google sobre como você pode fazer triângulos em CSS.
+- Lembre-se de criar um arquivo html e também um arquivo css, não use estilo inline!
 
-## Things to think about
+## Coisas para pensar
 
-In this exercise you have seen that you can do quite cool things already with just some basic html/css knowledge. Before the session on Sunday, have a think about the following questions. You don't need to know or fill in the answers as they will be discussed on Sunday, but see if you can figure it out:
+Neste exercício você viu que já pode fazer coisas bem legais com apenas alguns conhecimentos básicos de html/css. Antes da sessão de domingo, pense nas seguintes perguntas. Você não precisa saber ou preencher as respostas, pois elas serão discutidas no domingo, mas veja se você consegue descobrir:
 
-- Which html element(s) did you use for each of the shapes? Why did you use that one/those?
-- If you couldn't change the css file that you just created but you are allowed to add a new css file, how would you change the color of the bird?
-- Can you think of a reason why you sometimes cannot change a css file?
+- Qual(is) elemento(s) html você usou para cada uma das formas? Por que você usou aquele/aqueles?
+- Se você não pudesse alterar o arquivo css que acabou de criar, mas tem permissão para adicionar um novo arquivo css, como você alteraria a cor do pássaro?
+- Você consegue pensar em uma razão pela qual às vezes você não pode alterar um arquivo css?
