@@ -1,3 +1,3 @@
-## Post Graduation
+## Pós-graduação
 
-Congratulations with gradution from the HackYourFuture program!
+Parabéns pela formatura do programa HackYourFuture!

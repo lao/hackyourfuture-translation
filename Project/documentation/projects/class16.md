@@ -1,5 +1,5 @@
 ## HackYourEstate
 
-Made by the team of #class16, HackYourEstate makes life for easier for those wanting to buy houses in the current housing market.
+Feito pela equipe da #class16, o HackYourEstate facilita a vida de quem quer comprar casas no mercado imobiliário atual.
 
-The following [link](https://hackyourestate.herokuapp.com) will take you to the app.
+O seguinte [link](https://hackyourestate.herokuapp.com) levará você ao aplicativo.

@@ -1,90 +1,90 @@
-# Reading Material QA PreProject Week 2
+# Material de leitura QA Pré-Projeto Semana 2
 
 ## Agenda
 
-These are the topics for week 2:
+Estes são os tópicos da semana 2:
 
-- Test plans/scenarios/cases
-- Gherkin
-- Creating Issues
-- Agile Testing
-- (Optional) ISTBQ
+- Planos/cenários/casos de teste
+- Pepino
+- Criando problemas
+- Testes Ágeis
+- (Opcional) ISTBQ
 
-### Test plans/scenarios/cases
+### Planos/cenários/casos de teste
 
-We need to consolidate our testing ideas for specific features and be able to communicate them through a test plan so that everyone knows what the feature is required to do.
+Precisamos consolidar nossas ideias de teste para recursos específicos e poder comunicá-los por meio de um plano de teste para que todos saibam o que o recurso deve fazer.
 
-Learn how you can do that by reading the following resources:
+Saiba como fazer isso lendo os seguintes recursos:
 
-- [What is Test Scenario? Template with Examples](https://www.guru99.com/test-scenario.html)
-- [How to Write Test Cases: Sample Template with Examples](https://www.guru99.com/test-case.html)
-- [The One Page Test Plan](https://www.ministryoftesting.com/dojo/series/the-testing-planet-2016/lessons/the-one-page-test-plan)
+- [O que é Cenário de Teste? Modelo com exemplos](https://www.guru99.com/test-scenario.html)
+- [Como escrever casos de teste: modelo de amostra com exemplos](https://www.guru99.com/test-case.html)
+- [Plano de teste de uma página](https://www.ministryoftesting.com/dojo/series/the-testing-planet-2016/lessons/the-one-page-test-plan)
 
-Examples :
+Exemplos :
 
-- [Web Application Testing Checklist](https://www.guru99.com/complete-web-application-testing-checklist.html)
-- [The Software Testing Planning Checklist](https://www.ministryoftesting.com/dojo/series/the-testing-planet-2019/lessons/the-software-testing-planning-checklist)
+- [Lista de verificação de teste de aplicativos da Web](https://www.guru99.com/complete-web-application-testing-checklist.html)
+- [Lista de verificação de planejamento de teste de software](https://www.ministryoftesting.com/dojo/series/the-testing-planet-2019/lessons/the-software-testing-planning-checklist)
 
-### Gherkin
+### pepino
 
-Not everyone can speakc JavaScript but almost everyone can speak [Gherkin](https://cucumber.io/docs/gherkin/reference/)!
+Nem todos podem falar JavaScript, mas quase todos podem falar [Gherkin](https://cucumber.io/docs/gherkin/reference/)!
 
-Gherkin is a domain specific language created especially for business behavior descriptions without the need to go into detail of implementation. Since it's tied to the behavior, it's strongly conncted with Behavior-Driven Development (BDD).
+Gherkin é uma linguagem específica de domínio criada especialmente para descrições de comportamento de negócios sem a necessidade de entrar em detalhes de implementação. Uma vez que está ligado ao comportamento, está fortemente ligado ao Behavior-Driven Development (BDD).
 
-Example:
+Exemplo:
 
 ```
-Given I visit "/login"
-  When I enter "Bob" in the "user name" field
-    And I enter "tester" in the "password" field
-    And I press the "login" button
-  Then I should see the "welcome" page
+Dado que eu visito "/login"
+  Quando insiro "Bob" no campo "nome de usuário"
+    E eu insiro "testador" no campo "senha"
+    E eu pressiono o botão "login"
+  Então eu deveria ver a página "bem-vindo"
 ```
 
-Did you understand the desired behavior? Then you speak Gherkin too ;)
+Você entendeu o comportamento desejado? Aí você fala Gherkin também ;)
 
-Master the Gherkin language by getting to know the syntax here:
+Domine a linguagem Gherkin conhecendo a sintaxe aqui:
 
-- [What is Gherkin?](https://www.guru99.com/gherkin-test-cucumber.html)
+- [O que é Gherkin?](https://www.guru99.com/gherkin-test-cucumber.html)
 
-Extra resource: [Gherkin Reference](https://cucumber.io/docs/gherkin/reference/)
+Recurso extra: [Referência Gherkin](https://cucumber.io/docs/gherkin/reference/)
 
-### Creating (Bug) issues
+### Criando problemas (Bug)
 
-Imagine you have your test scenarios (translated into Gherkin or not), and while executing them something went wrong ... you're not seeing what you're supposed to see, the actual behaviour is not as the expected behaviour!
+Imagine que você tem seus cenários de teste (traduzidos para Gherkin ou não), e ao executá-los algo deu errado... você não está vendo o que deveria ver, o comportamento real não é o esperado!
 
-Then you might have caught a bug 🐞! To know what is a bug and what are the kinds of bugs .. watch this:
+Então você pode ter pego um bug 🐞! Para saber o que é um bug e quais são os tipos de bugs.. veja isso:
 
-- [Testing Essentials - What is a bug?](https://www.youtube.com/watch?v=jvBoKXDCvLE)
+- [Testes essenciais - O que é um bug?](https://www.youtube.com/watch?v=jvBoKXDCvLE)
 
-To communicate a bug to the developers we want to discuss the art of 🐞storytelling.
+Para comunicar um bug aos desenvolvedores, queremos discutir a arte de 🐞contar histórias.
 
-> Testers are storytellers. Coming from a communications background, one of the striking parallels I have made since working in quality assurance and software testing is that an important part of their role is to tell short stories through immediate product feedback. One powerful storytelling device they use to achieve this is: the bug report. (By Anneliese Herbosa)
+> Os testadores são contadores de histórias. Vindo de uma formação em comunicação, um dos paralelos marcantes que fiz desde que trabalhei em garantia de qualidade e teste de software é que uma parte importante de seu papel é contar histórias curtas por meio de feedback imediato do produto. Um poderoso dispositivo de contar histórias que eles usam para conseguir isso é: o relatório de bug. (Por Anneliese Herbosa)
 
 - [The Art Of The Bug Report](https://www.ministryoftesting.com/dojo/series/the-testing-planet-2019/lessons/the-art-of-the-bug-report)
 
-### Agile Testing
+### Testes Ágeis
 
-As part of the team, QA engineers have an important role throughout the whole process of development. Agile Testing is not sequential (in the sense it's executed only after coding phase) but continuous.
+Como parte da equipe, os engenheiros de controle de qualidade têm um papel importante em todo o processo de desenvolvimento. O Agile Testing não é sequencial (no sentido em que é executado somente após a fase de codificação), mas sim contínuo.
 
-Learn more by going through the following course:
+Saiba mais através do seguinte curso:
 
-- [Agile Testing](https://www.linkedin.com/learning/agile-testing-2/uplevel-with-agile-testing)
+- [Teste ágil](https://www.linkedin.com/learning/agile-testing-2/uplevel-with-agile-testing)
 
-### (Optional) ISTQB
+### (Opcional) ISTQB
 
-From _Wikipedia_
+Da _Wikipédia_
 
-> The International Software Testing Qualifications Board (ISTQB) is a software testing certification board that operates internationally. ISTQB Certified Tester is a standardized qualification for software testers and the certification is offered by the ISTQB.
+> O International Software Testing Qualifications Board (ISTQB) é um conselho de certificação de teste de software que opera internacionalmente. O ISTQB Certified Tester é uma qualificação padronizada para testadores de software e a certificação é oferecida pelo ISTQB.
 
-> ISTQB streams focus on:
+> Os fluxos ISTQB se concentram em:
 >
-> - Core – these modules correspond to the “historical” ISTQB certifications
-> - Agile – these modules address testing practices specifically for the Agile SDLC
-> - Specialist – these modules are new in the ISTQB product portfolio and address specific
+> - Core – estes módulos correspondem às certificações “históricas” do ISTQB
+> - Agile – esses módulos abordam práticas de teste especificamente para o Agile SDLC
+> - Especialista – esses módulos são novos no portfólio de produtos do ISTQB e atendem
 
-ISTQB Foundation Level syllabus stated the principles of software testing, read about them here :
+O syllabus do ISTQB Foundation Level declarou os princípios de teste de software, leia sobre eles aqui:
 
-- [7 Principles of Software Testing](https://www.toolsqa.com/software-testing/principles-of-software-testing/)
+- [7 Princípios de teste de software](https://www.toolsqa.com/software-testing/principles-of-software-testing/)
 
-This site also offers a lot of other information about testing from the standard! So in the next few weeks/months, make sure to keep going back to see what else is out there that is out of scope for our curriculum.
+Este site também oferece muitas outras informações sobre testes do padrão! Portanto, nas próximas semanas/meses, continue voltando para ver o que mais está fora do escopo do nosso currículo.

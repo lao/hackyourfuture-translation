@@ -1,12 +1,12 @@
-# Learn By Example!
+# Aprenda pelo exemplo!
 
-While the Project module is the final phase of your HackYourFuture journey, it doesn't mean it's going to be easy. If anything, you might be feeling frustrated right now!
+Embora o módulo Projeto seja a fase final de sua jornada HackYourFuture, isso não significa que será fácil. Se alguma coisa, você pode estar se sentindo frustrado agora!
 
-If you feel scared for what's to come: don't worry! Others have gone before you and came out on top.
+Se você está com medo do que está por vir: não se preocupe! Outros foram antes de você e saíram por cima.
 
-In this section you can take a peek at the work of older classes and see what you can learn from it! Just click the link:
+Nesta seção, você pode dar uma olhada no trabalho das turmas mais antigas e ver o que pode aprender com isso! Basta clicar no link:
 
-- [Class14: HackYourFuture Website 2018](./class14.md)
+- [Class14: Site HackYourFuture 2018](./class14.md)
 - [Class15: HackYourForecast](./class15.md)
 - [Class16: HackYourEstate](./class16.md)
 - [Class17: HackYourEstate](./class17.md)

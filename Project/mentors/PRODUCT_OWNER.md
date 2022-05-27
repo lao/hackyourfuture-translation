@@ -1,40 +1,40 @@
-# Product owner
+# Proprietário do produto
 
-As the product owner, it is your role to decide on the priority of the different features the team will be building. There is not a lot of time, but we do want a functional application in the end so prioritising the right things is extremely important.
+Como proprietário do produto, é seu papel decidir sobre a prioridade dos diferentes recursos que a equipe estará construindo. Não há muito tempo, mas queremos um aplicativo funcional no final, então priorizar as coisas certas é extremamente importante.
 
-Below you will find an overview of what is expected of you every week. The weeks start on Sunday with a full team meeting and last until the next Saturday.
+Abaixo, você encontrará uma visão geral do que é esperado de você a cada semana. As semanas começam no domingo com uma reunião de equipe completa e duram até o próximo sábado.
 
-| Week # | Sunday meeting                                      | Week responsibilities                   |
-| ------ | --------------------------------------------------- | --------------------------------------- |
-| 1.     | Guide team through initial user stories             | Support the team in making user stories |
-| 2.     | Determine priority                                  | -                                       |
-| 3.     | Determine priority / validate user demos            | -                                       |
-| 4.     | Determine priority / validate user demos            | -                                       |
-| 5.     | Determine final issues to fix / validate user demos | -                                       |
+| Semana # | Reunião de domingo | Responsabilidades semanais |
+| ------ | -------------------------------------------------- - | --------------------------------------- |
+| 1. | Guiar a equipe por meio de histórias iniciais de usuários | Apoiar a equipe na criação de histórias de usuários |
+| 2. | Determinar prioridade | - |
+| 3. | Determinar prioridade/validar demonstrações de usuário | - |
+| 4. | Determinar prioridade/validar demonstrações de usuário | - |
+| 5. | Determinar problemas finais para corrigir/validar demonstrações de usuários | - |
 
-Below we will explain each task in more detail.
+A seguir, explicaremos cada tarefa com mais detalhes.
 
-## Guide team through initial user stories
+## Oriente a equipe por meio de histórias de usuários iniciais
 
-In the first kickoff meeting in week 1 we will only have an app idea which needs to be fleshed out. It is up to the Product Owner to facilitate this process of brainstorming to get to a list of user stories that are in and out of the scope for this application. The end product should be a list of user stories that the team can design an app with pages/buttons/designs around during the first week of the project.
+Na primeira reunião inicial na semana 1, teremos apenas uma ideia de aplicativo que precisa ser desenvolvida. Cabe ao Product Owner facilitar esse processo de brainstorming para obter uma lista de histórias de usuários que estão dentro e fora do escopo desta aplicação. O produto final deve ser uma lista de histórias de usuários que a equipe pode criar um aplicativo com páginas/botões/designs durante a primeira semana do projeto.
 
-How you want to facilitate this is up to you, there is no right or wrong way, as long as the end product is reached. If you want some suggestions then let us know.
+Como você quer facilitar isso é com você, não existe jeito certo ou errado, desde que o produto final seja alcançado. Se você quiser algumas sugestões, então deixe-nos saber.
 
-## Supporting the team in making user stories
+## Apoiar a equipe na criação de histórias de usuários
 
-In week 1 the class will have a deliverable of having user stories set up. The goal is to have a nice and clear wireframe set up that can serve as a guide for the students of what to build. They will also need to decide on what is in the initial version (doable in 2 weeks). From previous experience, expect the following:
+Na semana 1, a classe terá uma entrega de criação de histórias de usuários. O objetivo é ter uma configuração de wireframe bonita e clara que possa servir como um guia para os alunos sobre o que construir. Eles também precisarão decidir sobre o que está na versão inicial (realizável em 2 semanas). Da experiência anterior, espere o seguinte:
 
-- Questions about `user stories` and how to word them
-- The inability to cut features because 'it is all needed to be useful'
+- Perguntas sobre `histórias de usuários` e como redigi-las
+- A incapacidade de cortar recursos porque 'tudo é necessário para ser útil'
 
-## Determine priority
+## Determinar a prioridade
 
-During the sprint planning it is your job to determine which user stories are the most important to fulfil during the upcoming week to end up with a working project.
+Durante o planejamento do sprint, é seu trabalho determinar quais histórias de usuário são as mais importantes a serem cumpridas durante a próxima semana para terminar com um projeto em funcionamento.
 
-## Validate user demos
+## Validar demonstrações do usuário
 
-During the sprint demo it is your job to determine if the built solution solves the user story or that there are some extra steps needed that require a new ticket.
+Durante a demonstração do sprint, é seu trabalho determinar se a solução criada resolve a história do usuário ou se há algumas etapas extras necessárias que exigem um novo ticket.
 
-## Determine final issues to fix
+## Determine os problemas finais a serem corrigidos
 
-In the last week we want to focus on finalising the MVP and that means making sure all of the inconsistencies/bugs/placeholder buttons are cleaned up. It is your job to keep the team from taking on too much in this last week. It is better to have a clean small product than a messy big one.
+Na última semana, queremos nos concentrar em finalizar o MVP e isso significa garantir que todas as inconsistências/bugs/botões de espaço reservado sejam limpos. É seu trabalho evitar que a equipe assuma demais nesta última semana. É melhor ter um pequeno produto limpo do que um grande bagunçado.

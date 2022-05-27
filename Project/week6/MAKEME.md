@@ -1,44 +1,44 @@
-# Week 7
+# Semana 7
 
-After the final presentation it is time for the HYF core team to decide who is graduated and who is not. The whole goal of HYF is to get you a junior developer internship and give you the tools to get through it, so to be graduated means that we are sure you are ready to do that.
+Após a apresentação final, é hora da equipe principal do HYF decidir quem é graduado e quem não é. Todo o objetivo do HYF é conseguir um estágio de desenvolvedor júnior e fornecer as ferramentas para passar por isso, então ser graduado significa que temos certeza de que você está pronto para fazer isso.
 
-There are four categories the class can be divided up into:
+Existem quatro categorias em que a classe pode ser dividida:
 
-- Graduated without general assessment
-- Needs to do a soft skills assessment
-- Needs to do a tech skills assessment
-- Needs to do a general assessment (soft skills + tech skills)
+- Graduado sem avaliação geral
+- Precisa fazer uma avaliação de soft skills
+- Precisa fazer uma avaliação de habilidades técnicas
+- Precisa fazer uma avaliação geral (soft skills + tech skills)
 
-For some students, the previous results in the curriculum as well as their performance in the project has shown that they are ready for an internship and so, they will graduate without any need of the general assessment.
+Para alguns alunos, os resultados anteriores no currículo, bem como seu desempenho no projeto, mostraram que estão prontos para o estágio e, portanto, se formarão sem a necessidade da avaliação geral.
 
-For others, the feedback from mentors or from their interviews with adyen/the HYF team mean that more work is needed before graduation. This means that there will be a soft skills assessment section in your general assessment interview. Have a look at the [Graduation interview preparation repo](https://github.com/HackYourFuture/interviewpreparation/blob/main/graduation_Interviews.md) again to prepare for this. You will be applying for the position that is mentioned there!
+Para outros, o feedback dos mentores ou de suas entrevistas com a adyen/equipe HYF significa que é necessário mais trabalho antes da formatura. Isso significa que haverá uma seção de avaliação de habilidades sociais em sua entrevista de avaliação geral. Dê uma olhada no [Repositório de preparação para entrevista de graduação](https://github.com/HackYourFuture/interviewpreparation/blob/main/graduation_Interviews.md) novamente para se preparar para isso. Você estará se candidatando para o cargo que está mencionado lá!
 
-If your previous technical interviews did not go very well, or you struggled with the code base during the project you will be asked to do another tech skills assessment during you general assessment interview.
+Se suas entrevistas técnicas anteriores não foram muito bem, ou você lutou com a base de código durante o projeto, você será solicitado a fazer outra avaliação de habilidades técnicas durante sua entrevista de avaliação geral.
 
-Remember that whatever path we suggest you follow is because we want to help you forward in your career. If you are in doubt on why we choose a specific path for you from the list above, feel free to discuss it with us.
+Lembre-se de que qualquer caminho que sugerimos que você siga é porque queremos ajudá-lo a avançar em sua carreira. Se você estiver em dúvida sobre por que escolhemos um caminho específico para você na lista acima, sinta-se à vontade para discutir isso conosco.
 
-## Failing: What now?
+## Falhando: E agora?
 
-If you do not pass the general assessment it is not the end of the world! The curriculum is hard and sometimes it just takes a little longer. For anyone that does not pass we will set up a tailored plan to work on the parts that you need to improve. The plan really depends on you and what we think you need to improve, but here are some examples as reference:
+Se você não passar na avaliação geral, não é o fim do mundo! O currículo é difícil e às vezes demora um pouco mais. Para quem não passar, montaremos um plano sob medida para trabalhar nas partes que você precisa melhorar. O plano depende muito de você e do que achamos que precisa melhorar, mas aqui estão alguns exemplos como referência:
 
-Example 1: Build 1 or 2 technical assignments from real companies in a defined period of time.
-Example 2: Conduct some interviews with HYF mentors to get a second opinion on how we can help you improve your interviewing skills.
-Example 3: Redo the graduation project with another class.
+Exemplo 1: Construir 1 ou 2 trabalhos técnicos de empresas reais em um período de tempo definido.
+Exemplo 2: Conduza algumas entrevistas com mentores do HYF para obter uma segunda opinião sobre como podemos ajudá-lo a melhorar suas habilidades de entrevista.
+Exemplo 3: Refazer o projeto de graduação com outra turma.
 
-If you keep putting in the work, we will continue to support you even after the final project!
+Se você continuar trabalhando, continuaremos a apoiá-lo mesmo após o projeto final!
 
-## Passing: After the assessment
+## Aprovado: Após a avaliação
 
-If you pass, definitely feel free to take a week off. Those were quite the 7 months and you deserve it!
+Se você passar, definitivamente sinta-se à vontade para tirar uma semana de folga. Esses foram os 7 meses e você merece!
 
-After that it is important to keep programming though. By then you will hopefully already be in the interview process, but if for some reason there is a scarceness of opportunities, or you are waiting on responses, keep building something and improving your CV!
+Depois disso, é importante manter a programação. Até lá, esperamos que você já esteja no processo de entrevista, mas se por algum motivo houver escassez de oportunidades ou estiver esperando respostas, continue construindo algo e melhorando seu currículo!
 
-If you have an app in mind that you've always wanted to build then this is your chance! If you do not, then choose a technology that you have heard of and build something simple in it to try it out. Developers do this all the time, usually with a chat or todo app as those are the simplest apps to build.
+Se você tem um aplicativo em mente que sempre quis construir, então esta é sua chance! Caso contrário, escolha uma tecnologia da qual já ouviu falar e construa algo simples nela para experimentá-la. Os desenvolvedores fazem isso o tempo todo, geralmente com um aplicativo de bate-papo ou tarefas, pois esses são os aplicativos mais simples de criar.
 
-Some suggestions of technologies (but go for anything that catches your eye):
+Algumas sugestões de tecnologias (mas vá para qualquer coisa que chame sua atenção):
 
-- Nextjs - build a small app using nextjs (https://nextjs.org/) which is a react framework!
-- Angular or Vue.js - widen your frontend knowledge by building an app in an alternative to react
-- GraphQL - we teach REST API's but graphql is an alternative and definitely gaining popularity, have a look at [Apollo](https://www.apollographql.com/docs/react/) and use that
+- Nextjs - construa um pequeno aplicativo usando nextjs (https://nextjs.org/) que é um framework react!
+- Angular ou Vue.js - amplie seu conhecimento de frontend criando um aplicativo em uma alternativa para reagir
+- GraphQL - ensinamos APIs REST, mas graphql é uma alternativa e definitivamente está ganhando popularidade, dê uma olhada em [Apollo](https://www.apollographql.com/docs/react/) e use isso
 
-Keep the [technical assignment repo](https://github.com/HackYourFuture/ta_guidelines) in mind with all these projects though! Potential recruiters will be looking at them and making them look good is important!
+Lembre-se do [repositório de tarefas técnicas](https://github.com/HackYourFuture/ta_guidelines) com todos esses projetos! Os potenciais recrutadores estarão olhando para eles e fazê-los parecer bons é importante!

@@ -1,66 +1,66 @@
-# Module #8 - Project: Build an application with a team (Full Stack)
+# Módulo #8 - Projeto: Construir um aplicativo com uma equipe (Full Stack)
 
-![Project](https://user-images.githubusercontent.com/23367061/131866344-83a11480-be48-4ca2-8a4d-948728dafe88.png)
+![Projeto](https://user-images.githubusercontent.com/23367061/131866344-83a11480-be48-4ca2-8a4d-948728dafe88.png)
 
-Welcome to the Project module! Congratulations on making it this far!
+Bem-vindo ao módulo Projeto! Parabéns por chegar até aqui!
 
-In the upcoming 6 weeks you'll be immersed into the web developer life. By the end of it you and your classmates will have created your own full-stack web application and published it to the internet!
+Nas próximas 6 semanas, você estará imerso na vida do desenvolvedor web. Ao final, você e seus colegas terão criado seu próprio aplicativo da Web full-stack e publicado na Internet!
 
-Everything you have learned so far will be combined and put into practice. We will start with deciding on an app, then building an MVP (Minimal Viable Product), and incrementally add more features afterwards. This way you'll learn how all the pieces of a full stack application are built and work together.
+Tudo o que você aprendeu até agora será combinado e colocado em prática. Começaremos decidindo sobre um aplicativo e, em seguida, criando um MVP (Minimal Viable Product) e adicionando mais recursos posteriormente. Dessa forma, você aprenderá como todas as partes de um aplicativo de pilha completa são criadas e funcionam juntas.
 
-Along with practicing your programming skills you will also be working on your communication skills. This is just as important, because as a developer you need to be able to communicate your ideas and efforts in an easy-to-understand manner.
+Além de praticar suas habilidades de programação, você também estará trabalhando em suas habilidades de comunicação. Isso é tão importante quanto, porque, como desenvolvedor, você precisa ser capaz de comunicar suas ideias e esforços de maneira fácil de entender.
 
-## Learning Goals
+## Metas de aprendizagem
 
-At the end of this module you'll have learned the following:
+Ao final deste módulo, você terá aprendido o seguinte:
 
-Technical skills:
+Habilidades técnicas:
 
-- How to `build a complete full-stack application`
-- Understanding `how each part of an application relates` to each other
-- What it means to work on a `feature`
-- How to work with `GIT in a team setting`
-- How to write `readable code`
+- Como `construir um aplicativo full-stack completo`
+- Compreender `como cada parte de um aplicativo se relaciona` entre si
+- O que significa trabalhar em um `recurso`
+- Como trabalhar com `GIT em um ambiente de equipe`
+- Como escrever `código legível`
 
-Communication skills:
+Habilidades de comunicação:
 
-- How to `communicate effectively` with team members
-- `Keeping track` of your project's progress
-- Knowing if you `understand what's asked` of you
-- How to `communicate with non-developers` about what you're doing
-- Learning how to be `solutions-oriented`
-- How to work in an `Agile setting`
+- Como 'comunicar-se efetivamente' com os membros da equipe
+- `Manter o controle` do progresso do seu projeto
+- Saber se você 'entende o que é pedido' de você
+- Como 'comunicar com não desenvolvedores' sobre o que você está fazendo
+- Aprender a ser `orientado para soluções`
+- Como trabalhar em uma `configuração ágil`
 
-## Project Outline
+## Esboço do Projeto
 
-In the following table you'll see the outline for each week.
+Na tabela a seguir, você verá o esboço de cada semana.
 
-| Week # | Topic                                                             | Sunday meeting                | Week tasks                             |
-| ------ | ----------------------------------------------------------------- | ----------------------------- | -------------------------------------- |
-| 0.     | Decide on the app to build                                        | -                             | [Tasks W0](/week0/README.md)           |
-| 1.     | Create wireframes, user stories, decide on schema's and endpoints | [Sunday W1](/week1/README.md) | [Tasks W1](/week1/MAKEME.md)           |
-| 2.     | Build week                                                        | [Sunday W2](/week2/README.md) | [Tasks W2](/week2/MAKEME.md)           |
-| 3.     | Build week                                                        | [Sunday W3](/week3/README.md) | [Tasks W3](/week3/MAKEME.md)           |
-| 4.     | Build week                                                        | [Sunday W4](/week4/README.md) | [Tasks W4](/week4/MAKEME.md)           |
-| 5.     | Finalize project                                                  | [Sunday W5](/week5/README.md) | [Tasks W5](/week5/MAKEME.md)           |
-| 6.     | Final presentation, General assessment                            | [Sunday W6](/week6/README.md) | [General assessment](/week6/MAKEME.md) |
+| Semana # | Tópico | Reunião de domingo | Tarefas semanais |
+| ------ | -------------------------------------------------- --------------- | ----------------------------- | --------------------------------------- |
+| 0. | Decida sobre o aplicativo para construir | - | [Tarefas W0](/week0/README.md) |
+| 1. | Crie wireframes, histórias de usuários, decida sobre esquemas e endpoints | [Domingo W1](/week1/README.md) | [Tarefas W1](/week1/MAKEME.md) |
+| 2. | Semana de construção | [Domingo S2](/semana2/README.md) | [Tarefas W2](/week2/MAKEME.md) |
+| 3. | Semana de construção | [Domingo W3](/week3/README.md) | [Tarefas W3](/week3/MAKEME.md) |
+| 4. | Semana de construção | [Domingo W4](/week4/README.md) | [Tarefas W4](/week4/MAKEME.md) |
+| 5. | Finalizar projeto | [Domingo W5](/week5/README.md) | [Tarefas W5](/week5/MAKEME.md) |
+| 6. | Apresentação final, Avaliação geral | [Domingo S6](/week6/README.md) | [Avaliação geral](/week6/MAKEME.md) |
 
-## After the Project
+## Após o Projeto
 
-Congratulations, you finished the Project module and got a working full stack application online to show off to potential employers! Copy the code over to your personal github, fill in the README and go through the code to make sure you understand how it all fits together. This is also the time you can make adjustments to the code base you didn't have time to do during the project itself. Have a look at the [technical assignment guidelines](https://github.com/HackYourFuture/ta_guidelines#6-prepare-the-repository) to see how you should fill in the README.
+Parabéns, você terminou o módulo do Projeto e obteve um aplicativo de pilha completo on-line para mostrar aos empregadores em potencial! Copie o código para o seu github pessoal, preencha o README e leia o código para ter certeza de entender como tudo se encaixa. Este também é o momento em que você pode fazer ajustes na base de código que não teve tempo de fazer durante o projeto em si. Dê uma olhada nas [diretrizes de atribuição técnica](https://github.com/HackYourFuture/ta_guidelines#6-prepare-the-repository) para ver como você deve preencher o README.
 
-## General assessment
+## Avaliação geral
 
-After the final presentation the HYF Core will do a general assessment interview with you. This is a mock social and technical interview with two members of the HYF core team. The HYF core team in these interviews will determine if you are ready to interview for junior developer positions. If that is the case, you will officially graduate and we will start sending your CV's to companies! Expect a lot of interviews and technical assignments coming your way!
+Após a apresentação final, o HYF Core fará uma entrevista de avaliação geral com você. Esta é uma entrevista social e técnica simulada com dois membros da equipe principal do HYF. A equipe principal do HYF nessas entrevistas determinará se você está pronto para entrevistar para cargos de desenvolvedor júnior. Se for esse o caso, você se formará oficialmente e começaremos a enviar seus currículos para empresas! Espere muitas entrevistas e trabalhos técnicos vindo em sua direção!
 
-If not, do not panic. We will sit down with you to see where more work is needed. As long as you put in the effort, we will continue to support you.
+Se não, não entre em pânico. Vamos sentar com você para ver onde é necessário mais trabalho. Enquanto você se esforçar, continuaremos a apoiá-lo.
 
-For more information, have a look at the [general assessment section](./week7/MAKEME.md) and do not forget to read the [Graduation Interviews Repo](https://github.com/HackYourFuture/interviewpreparation/blob/main/graduation_Interviews.md) to be as prepared as you can be!
+Para mais informações, dê uma olhada na [seção de avaliação geral](./week7/MAKEME.md) e não se esqueça de ler o [Repositório de Entrevistas de Graduação](https://github.com/HackYourFuture/interviewpreparation/blob/ main/graduation_Interviews.md) para estar o mais preparado possível!
 
-## Mentors
+## Mentores
 
-For more information on what is required from the mentors for this module, please have a look at the [mentors section](./mentors/README.md)
+Para obter mais informações sobre o que é exigido dos mentores para este módulo, consulte a [seção de mentores](./mentors/README.md)
 
-_The HackYourFuture curriculum is subject to CC BY copyright. This means you can freely use our materials, but just make sure to give us credit for it :)_
+_O currículo HackYourFuture está sujeito aos direitos autorais CC BY. Isso significa que você pode usar nossos materiais livremente, mas certifique-se de nos dar crédito por isso :)_
 
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https:/ /i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Esta obra está licenciada sob uma <a rel="license" href="http://creativecommons.org /licenses/by/4.0/">Licença Creative Commons Atribuição 4.0 Internacional</a>.
