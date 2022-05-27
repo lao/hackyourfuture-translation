@@ -1,12 +1,12 @@
-# Random Joke Generator]
+# Gerador de piadas aleatórias]
 
-Never run out of jokes with the Random Joke Generator!
+Nunca fique sem piadas com o Gerador de Piadas Aleatórias!
 
-In this exercise we'll be using the following API endpoint: `https://official-joke-api.appspot.com/random_joke`
+Neste exercício, usaremos o seguinte endpoint de API: `https://official-joke-api.appspot.com/random_joke`
 
-1. Create 2 functional components: `<RandomJoke>` and `<Joke>`
-2. Inside `<RandomJoke>` create a state variable called `joke` (with initial state `{}`) and state handler `setJoke`
-3. Make use of the `useEffect` hook to make an asynchronous API call to the API endpoint. Put the end result into the state variable using `setJoke`
-4. Now pass the reassigned state variable `joke` to the `<Joke>` component
-5. Inside the `<Joke>` component, display the `setup` and `punchline` attributes in 2 `<p>` tags
-6. Check out your work by importing your components into the top level component, which is `<App>`
+1. Crie 2 componentes funcionais: `<RandomJoke>` e `<Joke>`
+2. Dentro de `<RandomJoke>`, crie uma variável de estado chamada `joke` (com estado inicial `{}`) e o manipulador de estado `setJoke`
+3. Use o gancho `useEffect` para fazer uma chamada de API assíncrona para o endpoint da API. Coloque o resultado final na variável de estado usando `setJoke`
+4. Agora passe a variável de estado reatribuída `joke` para o componente `<Joke>`
+5. Dentro do componente `<Joke>`, exiba os atributos `setup` e `punchline` em 2 tags `<p>`
+6. Confira seu trabalho importando seus componentes para o componente de nível superior, que é `<App>`

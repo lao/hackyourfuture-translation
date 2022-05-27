@@ -1,310 +1,310 @@
-# Lesson Plan Week 1
+# Plano de aula Semana 1
 
 ## Agenda
 
-The purpose of this class is to introduce the student to the most basic React concepts:
+O objetivo desta aula é apresentar ao aluno os conceitos mais básicos do React:
 
--   How to look at a `webpage` from the React point of view
--   What `create-react-app` is
--   How to write `reusable components` and why
--   The purpose of `JSX`
--   What are `props` and how to `pass them down components`
--   What is `state`?
+- Como olhar para uma `página da web` do ponto de vista do React
+- O que é `create-react-app`
+- Como escrever `componentes reutilizáveis` e por quê
+- O propósito do `JSX`
+- O que são `props` e como `passá-los componentes`
+- O que é 'estado'?
 
-When illustrating these concepts, make use of [create-react-app](https://github.com/facebook/create-react-app). Make sure that students have installed it as well.
+Ao ilustrar esses conceitos, use [create-react-app](https://github.com/facebook/create-react-app). Certifique-se de que os alunos também o instalaram.
 
-_Explain to students what each library does: React, ReactDOM and Babel._
+_Explique aos alunos o que cada biblioteca faz: React, ReactDOM e Babel._
 
-## Core concepts
+## Conceitos principais
 
-## 1. Looking at webpages from the React point of view
+## 1. Olhando para páginas da web do ponto de vista do React
 
-### Explanation
+### Explicação
 
-React aims to build webpages, by breaking the page down into small pieces: components. These components are isolated bits of HTML that can receive changing data in order to be reusable for different purposes. In this way you could say that components are custom HTML elements.
+O React visa construir páginas da web, dividindo a página em pequenos pedaços: componentes. Esses componentes são bits isolados de HTML que podem receber dados alterados para serem reutilizáveis para diferentes propósitos. Dessa forma, você poderia dizer que os componentes são elementos HTML personalizados.
 
-These components are structured similar to the DOM: in a tree-like structure. The top-level element contains the component that has the rest of the application nested inside of it.
+Esses componentes são estruturados de forma semelhante ao DOM: em uma estrutura em forma de árvore. O elemento de nível superior contém o componente que possui o restante do aplicativo aninhado dentro dele.
 
-### Example
+### Exemplo
 
-Take a look the following example:
+Dê uma olhada no exemplo a seguir:
 
 ![stats](./../assets/stats.png)
 
-This is made using one single component (reused several times):
+Isso é feito usando um único componente (reutilizado várias vezes):
 
-```jsx
+``` jsx
 const Stat = ({ statNum, statDesc }) => {
-	return (
-		<div>
-			<span>{statNum}</span>
-			<span>{statDesc}</span>
-		</div>
-	);
+Retorna (
+<div>
+<span>{statNum}</span>
+<span>{statDesc}</span>
+</div>
+);
 };
 ```
 
-By instantiating it several times you can output it like in the image:
+Ao instanciá-lo várias vezes, você pode produzi-lo como na imagem:
 
-```jsx
+``` jsx
 <>
-	<Stat statNum={'52147'} statDesc={'CODE LINES'} />
-	<Stat statNum={'24583'} statDesc={'PROJECTS'} />
-	<Stat statNum={'7348'} statDesc={'WORKING HOURS'} />
-	<Stat statNum={'87904'} statDesc={'JOB OFFERS'} />
+<Stat statNum={'52147'} statDesc={'CODE LINES'} />
+<Stat statNum={'24583'} statDesc={'PROJECTS'} />
+<Stat statNum={'7348'} statDesc={'WORKING HORAS'} />
+<Stat statNum={'87904'} statDesc={'OFERTAS DE TRABALHO'} />
 </>
 ```
 
-### Exercise
+### Exercício
 
-Show this [example](https://htmlstream.com/preview/unify-v2.6.2/unify-main/home/home-default.html) and dissect a part of the site into components. After, ask 2 students to do the same.
+Mostre este [exemplo](https://htmlstream.com/preview/unify-v2.6.2/unify-main/home/home-default.html) e divida uma parte do site em componentes. Depois, peça a 2 alunos que façam o mesmo.
 
-### Essence
+### Essência
 
-Using React allows us to make webpages using reusable building blocks: components. That saves us time and effort in the longterm!
+O uso do React nos permite criar páginas da Web usando blocos de construção reutilizáveis: componentes. Isso nos poupa tempo e esforço a longo prazo!
 
-## 2. create-react-app
+## 2. criar-reagir-aplicativo
 
-### Explanation
+### Explicação
 
-In order to quickly start building React applications, we can use a tool called `create-react-app`. It's an NPM package that sets up a basic template project, incorporating tools needed for us to translate React code into regular JavaScript the browser can understand.
+Para começar a construir aplicativos React rapidamente, podemos usar uma ferramenta chamada `create-react-app`. É um pacote NPM que configura um projeto de modelo básico, incorporando ferramentas necessárias para traduzirmos o código React em JavaScript normal que o navegador possa entender.
 
-These tools are `webpack` (which bundles and optimizes our component files into one) and `babel` (which transforms our modern JavaScript into an older version most browsers will understand).
+Essas ferramentas são `webpack` (que agrupa e otimiza nossos arquivos de componentes em um) e `babel` (que transforma nosso JavaScript moderno em uma versão mais antiga que a maioria dos navegadores entenderá).
 
-To set this up manually will be time costly, therefore we can make things easy by using `create-react-app`.
+Para configurar isso manualmente, custará muito tempo, portanto, podemos facilitar as coisas usando `create-react-app`.
 
-### Example
+### Exemplo
 
-_Install `create-react-app` and create a sample project. Go over the various files and explain what their purpose is._
+_Instale o `create-react-app` e crie um projeto de amostra. Percorra os vários arquivos e explique qual é a sua finalidade._
 
-### Exercise
+### Exercício
 
-Ask students to install `create-react-app` and get it started on their machines!
+Peça aos alunos que instalem o `create-react-app` e iniciem em suas máquinas!
 
-### Essence
+### Essência
 
-`create-react-app` allows us to:
+`create-react-app` nos permite:
 
--   Generate an fully functional out-of-the-box React environment
--   Solve problem of manually configuring file bundler (like Webpack) or transpiler (Babel)
--   Improve our development workflow through `hot reloading`
--   Give a more realistic folder structure
--   Build a production version of react app and deploying on static site hosting service (netlify/now)
+- Gere um ambiente React pronto para uso e totalmente funcional
+- Resolva o problema de configurar manualmente o empacotador de arquivos (como Webpack) ou transpilador (Babel)
+- Melhorar nosso fluxo de trabalho de desenvolvimento por meio de `recarregamento a quente`
+- Dê uma estrutura de pastas mais realista
+- Construir uma versão de produção do aplicativo reagir e implantar no serviço de hospedagem de site estático (netlify/now)
 
-## 3. Components
+## 3. Componentes
 
-### Explanation
+### Explicação
 
-A component is a part of a webpage. It contains 2 things: (1) the necessary HTML to structure the element and (2) the necessary JavaScript to give it dynamic data.
+Um componente é uma parte de uma página da Web. Ele contém 2 coisas: (1) o HTML necessário para estruturar o elemento e (2) o JavaScript necessário para fornecer dados dinâmicos.
 
-### Example
+### Exemplo
 
-In the React world you'll find 2 types of components: `class`-based and `function`-based.
+No mundo React você encontrará 2 tipos de componentes: baseados em `class` e baseados em `função`.
 
-```jsx
-// Class based component (Old way)
-class Counter {
-	state = {
-		count: 0,
-	};
+``` jsx
+// Componente baseado em classe (antiga maneira)
+contador de classe {
+estado = {
+contagem: 0,
+};
 
-	render() {
-		return <div>{this.state.count}</div>;
-	}
+render(){
+return <div>{this.state.count}</div>;
+}
 }
 ```
 
-```jsx
-// Function based component (New way)
+``` jsx
+// Componente baseado em função (Novo caminho)
 const ThisIsAComponent = () => {
-	const [count, setCount] = useState(0);
+const [count, setCount] = useState(0);
 
-	return <div>{setCount}</div>;
+return <div>{setCount}</div>;
 };
 ```
 
-You should focus on `function` based components.
+Você deve focar em componentes baseados em `funções`.
 
-### Exercise
+### Exercício
 
-Ask students to rebuild the following:
+Peça aos alunos que reconstruam o seguinte:
 
 ![Navbar](./../assets/navbar.png)
 
--   The components should be `functional`
--   Make 2 components `NavBar` and `NavBarItem`
--   Pass props to each `NavBarItem` instance
--   Styling is optional
+- Os componentes devem ser `funcionais`
+- Faça 2 componentes `NavBar` e `NavBarItem`
+- Passe props para cada instância `NavBarItem`
+- O estilo é opcional
 
-After they're done discuss and highlight the works of at least 2 students.
+Depois disso, discuta e destaque os trabalhos de pelo menos 2 alunos.
 
-### Essence
+### Essência
 
-Components are:
+Os componentes são:
 
--   Custom HTML elements: reusable building blocks used to create webpages.
--   Designed to receive different data in each instance.
--   Able to display JavaScript values using the `{ }` symbols.
--   Always returning HTML-like elements, which is called JSX
+- Elementos HTML personalizados: blocos de construção reutilizáveis usados para criar páginas da web.
+- Projetado para receber dados diferentes em cada instância.
+- Capaz de exibir valores JavaScript usando os símbolos `{ }`.
+- Sempre retornando elementos semelhantes a HTML, que são chamados de JSX
 
 ## 4. JSX
 
-### Explanation
+### Explicação
 
-`JSX` stands for JavaScript XML. Effectively, it's our ability to return HTML elements in our React components.
+`JSX` significa JavaScript XML. Efetivamente, é nossa capacidade de retornar elementos HTML em nossos componentes React.
 
-### Example
+### Exemplo
 
-```jsx
-const Section = () => {
-	return (
-		<section>
-			<h1>The section component</h1>
-			<p>In this component we return HTML. In the React world we call this JSX!</p>
-		</section>
-	);
+``` jsx
+const Seção = () => {
+Retorna (
+<seção>
+<h1>O componente de seção</h1>
+<p>Neste componente, retornamos HTML. No mundo React chamamos isso de JSX!</p>
+</section>
+);
 };
 ```
 
-### Exercise
+### Exercício
 
-Ask students to create a functional component that returns the following HTML elements:
+Peça aos alunos para criarem um componente funcional que retorne os seguintes elementos HTML:
 
--   1 `<nav>`
--   1 `<ul>`
--   2 `<li>`: t
+- 1 `<nav>`
+- 1 `<ul>`
+- 2 `<li>`: t
 
-### Essence
+### Essência
 
--   A way to write dynamic HTML code with JavaScript
--   It is a more intuitive version of the function `createElement()` (that takes its name from the DOM function `createElement()`)
--   A component should always return JSX
--   These are the parts that will build the DOM structure
+- Uma maneira de escrever código HTML dinâmico com JavaScript
+- É uma versão mais intuitiva da função `createElement()` (que leva o nome da função DOM `createElement()`)
+- Um componente deve sempre retornar JSX
+- Estas são as partes que irão construir a estrutura DOM
 
-_Show example of both JSX and createElement component and ask students to do the same._
+_Mostre um exemplo do componente JSX e createElement e peça aos alunos que façam o mesmo._
 
-## 5. Props
+## 5. Adereços
 
-### Explanation
+### Explicação
 
-`Props` is short for `property`: like the ones you give an HTML element. However, in React we can make up our own property names for the components we create.
+`Props` é a abreviação de `property`: como aqueles que você dá a um elemento HTML. No entanto, em React podemos criar nossos próprios nomes de propriedades para os componentes que criamos.
 
-With `props` we can pass down information from one level of the component tree into another, lower level.
+Com `props` podemos passar informações de um nível da árvore de componentes para outro nível inferior.
 
-In this way we can give each component instance different data. We can access this data from that instance using the `prop` name.
+Dessa forma, podemos fornecer dados diferentes a cada instância de componente. Podemos acessar esses dados dessa instância usando o nome `prop`.
 
-### Example
+### Exemplo
 
-```jsx
-const UserItem = ({ name }) => {
-	return <li>{name}</li>
+``` jsx
+const UserItem = ({ nome }) => {
+retornar <li>{name}</li>
 }
 
 const UserList = () => {
-	return (
-		<ul>
-			<UserItem name={"Wouter"}>
-			<UserItem name={"Federico"}>
-			<UserItem name={"Noer"}>
-		</ul>
-	)
+Retorna (
+<ul>
+<UserItem name={"Wouter"}>
+<UserItem name={"Federico"}>
+<UserItem name={"Noer"}>
+</ul>
+)
 }
 ```
 
-### Exercise
+### Exercício
 
-Ask students to make a **list of posts**, where each post has a `title` and a `content` part. It should look like similar to this:
+Peça aos alunos que façam uma **lista de postagens**, em que cada postagem tenha uma parte "título" e uma parte "conteúdo". Deve ficar parecido com isso:
 
-![List of posts](./../assets/posts.png)
+![Lista de postagens](./../assets/posts.png)
 
-Requirements:
+Requisitos:
 
--   Create a functional component called `PostList`, that will store 3 posts
--   Create a functional component called `Post`, that will take 2 props: `title` and `content`
--   Styling is optional
+- Crie um componente funcional chamado `PostList`, que irá armazenar 3 posts
+- Crie um componente funcional chamado `Post`, que terá 2 props: `title` e `content`
+- O estilo é opcional
 
-### Essence
+### Essência
 
-`Props` are:
+`Props` são:
 
--   used to pass down data from component to component.
--   are custom named HTML properties.
--   making it possible for our components to be reusable
+- usado para passar dados de componente para componente.
+- são propriedades HTML com nome personalizado.
+- tornando possível que nossos componentes sejam reutilizáveis
 
-## 6. Forms
+## 6. Formulários
 
-### Explanation
+### Explicação
 
-In HTML, forms have a default behavior. They store the data and automically want to refresh the page. In React we're trying to stop this default behavior and bring the data under our control: by putting it into `state`!
+Em HTML, os formulários têm um comportamento padrão. Eles armazenam os dados e desejam atualizar automaticamente a página. Em React estamos tentando parar este comportamento padrão e trazer os dados sob nosso controle: colocando-os em `state`!
 
-We bring form data into state by listening to it, using the `onChange` and `value` attribute. We are controlling our `<input>` fields, thereby creating `controlled inputs`. Then when we want to submit it, we can use the `onSubmit` attribute.
+Trazemos os dados do formulário para o estado ouvindo-os, usando o atributo `onChange` e `value`. Estamos controlando nossos campos `<input>`, criando assim `entradas controladas`. Então, quando queremos enviá-lo, podemos usar o atributo `onSubmit`.
 
-### Example
+### Exemplo
 
-```jsx
-const Form = () => {
-	const [formValues, setFormValues] = useState({ title: '' });
+``` jsx
+formulário const = () => {
+const [formValues, setFormValues] = useState({ title: '' });
 
-	const inputHandler = (event) => {
-		setFormValues();
-	};
+const inputHandler = (evento) => {
+setFormValues();
+};
 
-	return (
-		<form onSubmit={}>
-			<input type="text" onChange={inputHandler} value={formValues.title} />
-		</form>
-	);
+Retorna (
+<form onSubmit={}>
+<input type="text" onChange={inputHandler} value={formValues.title} />
+</form>
+);
 };
 ```
 
-### Exercise
+### Exercício
 
 
 
-### Essence
+### Essência
 
 
-## 7. What is state?
+## 7. O que é estado?
 
-### Explanation
+### Explicação
 
-State is all the data in the application, that can change because of user interaction. It's defined using a special React function, called `useState`.
+Estado são todos os dados no aplicativo, que podem mudar devido à interação do usuário. Ele é definido usando uma função especial do React, chamada `useState`.
 
-This `useState` function provides the state value, and a function that allows us to modify the state value.
+Esta função `useState` fornece o valor do estado e uma função que nos permite modificar o valor do estado.
 
-All state values must be declared at the top function, ideally in the parent component.
+Todos os valores de estado devem ser declarados na função top, de preferência no componente pai.
 
-Whenever we want to pass a state value down into a component, we assign it to a custom named `prop`. It can then be accessed as part of the `props` within that child component.
+Sempre que queremos passar um valor de estado para um componente, nós o atribuímos a um personalizado chamado `prop`. Ele pode ser acessado como parte dos `props` dentro desse componente filho.
 
-### Example
+### Exemplo
 
-```jsx
-const Counter = () => {
-	// State value, state modifier, initial state
-	const [count, setCount] = useState(0);
+``` jsx
+contador const = () => {
+// Valor do estado, modificador de estado, estado inicial
+const [count, setCount] = useState(0);
 
-	// Handler to change state
-	const handleClick = () => {
-		setCount((prevState) => prevState + 1);
-	};
-
-	return (
-		<div>
-			<Count count={count} />
-			<button onClick={handleClick}>+ 1</button>
-		</div>
-	);
+// Manipulador para mudar o estado
+const handleClick = () => {
+setCount((prevState) => prevState + 1);
 };
 
-const Count = ({ count }) => {
-	return <p>Count is: {count}</p>;
+Retorna (
+<div>
+<Contagem={conta} />
+<button onClick={handleClick}>+ 1</button>
+</div>
+);
+};
+
+const Contagem = ({ contagem }) => {
+return <p>Contagem é: {count}</p>;
 };
 ```
 
-### Exercise
+### Exercício
 
-Ask students to remake aforementioned by themselves.
+Peça aos alunos que refaçam sozinhos o que foi mencionado acima.
 
-### Essence
+### Essência
 
-Having state allows our application to handle 'dynamic data': data that can change. Using the React defined `useState` function we can define and modify all pieces of state that need to change
+Ter estado permite que nosso aplicativo lide com 'dados dinâmicos': dados que podem mudar. Usando a função `useState` definida pelo React, podemos definir e modificar todas as partes do estado que precisam ser alteradas

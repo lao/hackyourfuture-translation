@@ -1,26 +1,26 @@
-# Ecommerce Project I
+# Projeto de comércio eletrônico I
 
-## 1. Setup
+## 1. Configuração
 
-The first step to any project is to setup your development environment. Follow the steps:
+O primeiro passo para qualquer projeto é configurar seu ambiente de desenvolvimento. Siga os passos:
 
-1. Inside this folder (`week1/project`), use `create-react-app` to create a React application. Give it the name `ecommerce`
-   > You are going to be copying and refactoring your code every week but will simultaneously be getting feedback for previous weeks. As such, at the beginning of every week you copy over the project files from the previous week into a new folder and a new branch. To help you identify if all is well, we suggest keeping it in the week folder that it is a part of.
-2. Copy and paste the folder `fake-data` inside the `src` folder of your new project
+1. Dentro desta pasta (`week1/project`), use `create-react-app` para criar uma aplicação React. Dê-lhe o nome de `ecommerce`
+   > Você vai copiar e refatorar seu código toda semana, mas simultaneamente receberá feedback das semanas anteriores. Assim, no início de cada semana, você copia os arquivos do projeto da semana anterior para uma nova pasta e uma nova ramificação. Para ajudá-lo a identificar se está tudo bem, sugerimos mantê-lo na pasta da semana da qual faz parte.
+2. Copie e cole a pasta `fake-data` dentro da pasta `src` do seu novo projeto
 
-## 2. Requirements
+## 2. Requisitos
 
-This week you'll build the foundation of your application. It should eventually look like this:
+Esta semana você construirá a base do seu aplicativo. Deverá eventualmente ficar assim:
 
-[![Week 1 Wireframe](../../assets/project/week1.png)](https://hyf-react-w1-example.netlify.app)
+[![Semana 1 Wireframe](../../assets/project/week1.png)](https://hyf-react-w1-example.netlify.app)
 
-There is a live version [here](https://hyf-react-w1-example.netlify.app)
+Existe uma versão ao vivo [aqui](https://hyf-react-w1-example.netlify.app)
 
-We will be using the information in the `fake-data` folder as an example of what we get back from the API. The actual connection to the API will be done next week.
+Usaremos as informações na pasta `fake-data` como exemplo do que recebemos da API. A conexão real com a API será feita na próxima semana.
 
-What you need to have done at the end of the week:
+O que você precisa ter feito no final da semana:
 
-- A product list that displays all of the products in the `all-products` file. _Note: the site is responsive, so have a look at the breakpoints in the deployed example project._
-- A category list that displays all of the categories in the `all-categories` file at the top of the page
-- If the user clicks on a category only the products that have that category in their `category` property should be displayed on the screen.
-- There should only be 1 category active at a time and the user should see which category is selected.
+- Uma lista de produtos que exibe todos os produtos no arquivo `all-products`. _Observação: o site é responsivo, então dê uma olhada nos pontos de interrupção no projeto de exemplo implantado._
+- Uma lista de categorias que exibe todas as categorias no arquivo `all-categories` na parte superior da página
+- Se o usuário clicar em uma categoria apenas os produtos que possuem essa categoria em sua propriedade `category` devem ser exibidos na tela.
+- Deve haver apenas 1 categoria ativa por vez e o usuário deve ver qual categoria está selecionada.

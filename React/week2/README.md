@@ -1,29 +1,29 @@
-# Reading Material React Week 2
+# Material de Leitura Reagir Semana 2
 
 ## Agenda
 
-These are the topics for week 2:
+Estes são os tópicos da semana 2:
 
-1. [API calls in React](https://study.hackyourfuture.net/#/react/api-calls.md)
-   - When to load data
-2. [Client-side routing](https://study.hackyourfuture.net/#/react/routing.md)
-   - React-router
-   - Protected routes
+1. [Chamadas de API no React](https://study.hackyourfuture.net/#/react/api-calls.md)
+   - Quando carregar dados
+2. [Roteamento do lado do cliente](https://study.hackyourfuture.net/#/react/routing.md)
+   - React-roteador
+   - Rotas protegidas
 
-## Important note on React
+## Nota importante sobre React
 
-> In the React world there is a huge shift happening since the introduction of 'hooks' in 2018. Before hooks React was built using both class and function components. Currently it is recommended to use only function components in combination with hooks for all of the code you build from now on. When you are going to do research on your own or when you get into your internship you are going to run into class components however. This will be less and less as time goes on and hopefully we can remove this at some point in the future.
+> No mundo React, há uma grande mudança acontecendo desde a introdução dos 'hooks' em 2018. Antes dos hooks, o React foi construído usando componentes de classe e função. Atualmente, é recomendado usar apenas componentes de função em combinação com ganchos para todo o código que você construir a partir de agora. No entanto, quando você vai fazer pesquisa por conta própria ou quando você entra em seu estágio, você vai se deparar com componentes de classe. Isso será cada vez menos com o passar do tempo e esperamos que possamos remover isso em algum momento no futuro.
 
-> We at HackYourFuture will only be teaching you the recommended way of building applications and have provided a section in the study book to share the most basic details on how to read class components [here](https://study.hackyourfuture.net/#/react/class-vs-function-components.md). If you encounter class components in your research, try to look for a more up to date tutorial, question, or video. If you encounter class components during your internship, then convert it to a function component. The developers will love you :).
+> Nós do HackYourFuture ensinaremos apenas a maneira recomendada de criar aplicativos e fornecemos uma seção no livro de estudo para compartilhar os detalhes mais básicos sobre como ler os componentes da classe [aqui](https://study.hackyourfuture.net/ #/react/class-vs-function-components.md). Se você encontrar componentes de classe em sua pesquisa, tente procurar um tutorial, pergunta ou vídeo mais atualizado. Se você encontrar componentes de classe durante seu estágio, converta-o em um componente de função. Os desenvolvedores vão te amar :).
 
-## Week goals
+## Metas da semana
 
-Last week we learned the basic building blocks of React and how to think in components. This week we are going to introduce some more advanced techniques to give you even more power!
+Na semana passada, aprendemos os blocos básicos de construção do React e como pensar em componentes. Esta semana vamos apresentar algumas técnicas mais avançadas para lhe dar ainda mais poder!
 
-Firstly, it is time to work with API's again. In vanilla JavaScript we learned about the fetch mechanism, but when thinking in a component way we need to approach it a little differently. Take a look at the study book [here](https://study.hackyourfuture.net/#/react/api-calls.md) to learn how you can interact with an API using React.
+Em primeiro lugar, é hora de trabalhar com APIs novamente. No JavaScript vanilla, aprendemos sobre o mecanismo de busca, mas ao pensar em um componente, precisamos abordá-lo de maneira um pouco diferente. Dê uma olhada no livro de estudo [aqui](https://study.hackyourfuture.net/#/react/api-calls.md) para saber como você pode interagir com uma API usando React.
 
-Next, let's look at routing. Because we build single page applications in React, the location in the address bar has no effect on what we should show. When building more advanced applications that becomes a problem, as we want to be able to define different pages. To solve this we use what is called client-side routing, have a look [here](https://study.hackyourfuture.net/#/react/routing.md).
+Em seguida, vamos ver o roteamento. Como criamos aplicativos de página única no React, a localização na barra de endereço não afeta o que devemos mostrar. Ao construir aplicações mais avançadas isso se torna um problema, pois queremos poder definir páginas diferentes. Para resolver isso, usamos o que é chamado de roteamento do lado do cliente, dê uma olhada [aqui](https://study.hackyourfuture.net/#/react/routing.md).
 
-## Finished?
+## Finalizado?
 
-Are you finished with going through the materials? High five! If you feel ready to get practical, click [here](./MAKEME.md).
+Você terminou de passar pelos materiais? Toca aqui! Se você se sentir pronto para ser prático, clique [aqui](./MAKEME.md).

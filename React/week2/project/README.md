@@ -1,25 +1,25 @@
-# Ecommerce Project II
+# Projeto de comércio eletrônico II
 
-## 1. Setup
+## 1. Configuração
 
-Make sure you created a new week2 branch from the `main` branch of your forked repo. Then copy over the `ecommerce` folder you made last week into the `week2/project` folder. That way any feedback you get for week1 can be changed in the week1 branch and you are free to refactor this week as you see fit. This does mean you may need to apply the same changes to multiple branches, but let's say that that is good for the learning process :).
+Certifique-se de ter criado um novo branch week2 do branch `main` do seu repositório bifurcado. Em seguida, copie a pasta `ecommerce` que você criou na semana passada para a pasta `week2/project`. Dessa forma, qualquer feedback que você receber para a semana1 pode ser alterado na ramificação da semana1 e você está livre para refatorar esta semana como achar melhor. Isso significa que você pode precisar aplicar as mesmas alterações em várias ramificações, mas digamos que isso seja bom para o processo de aprendizado :).
 
-## 2. Requirements
+## 2. Requisitos
 
-We are going to focus on linking up our app to the API this week. By the end of the assignment your application should work similar to this:
+Vamos nos concentrar em vincular nosso aplicativo à API esta semana. Ao final da tarefa, seu aplicativo deve funcionar de forma semelhante a isto:
 
-[![Week 2 Screenshot](../../assets/project/week2.png)](https://hyf-react-w2-example.netlify.app/)
+[![Captura de tela da semana 2](../../assets/project/week2.png)](https://hyf-react-w2-example.netlify.app/)
 
-There is a live version [here](https://hyf-react-w2-example.netlify.app/)
+Existe uma versão ao vivo [aqui](https://hyf-react-w2-example.netlify.app/)
 
-_Note: The API is a fully open API so can be a little slow to respond sometimes. Great for checking your loading UX!_
+_Observação: A API é uma API totalmente aberta, portanto às vezes pode demorar um pouco para responder. Ótimo para verificar sua UX de carregamento!_
 
-What you need to have done at the end of the week:
+O que você precisa ter feito no final da semana:
 
-- The fake-data directory should not be a part of your project anymore
-- Your app will need to make 2 queries to the following endpoints:
-  - `https://fakestoreapi.com/products/categories` -> To get all the categories
-  - `https://fakestoreapi.com/products` or `https://fakestoreapi.com/products/category/<selectedCategory>` -> To get the products. The API needs to do the filtering, not the frontend. Usually the amount of products will be too large to do the filtering on the frontend.
-- Your app needs to show that it is loading when waiting on the request to come back. You can test this by mimicing a slow connection in your browsers' developer tools
-- Your app needs to show an error message if the request failed
-- Your app needs to go to a detail page `/product/:id` whenever you click on the product card in the list. This should get the details from the endpoint: `https://fakestoreapi.com/products/<id>`. For now we won't add a navigation bar, the browsers 'back' button will do the trick. _TIP: You will need to add the `react-router-dom` package and add the routing to your app regardless._
+- O diretório de dados falsos não deve mais fazer parte do seu projeto
+- Seu aplicativo precisará fazer 2 consultas aos seguintes endpoints:
+  - `https://fakestoreapi.com/products/categories` -> Para obter todas as categorias
+  - `https://fakestoreapi.com/products` ou `https://fakestoreapi.com/products/category/<selectedCategory>` -> Para obter os produtos. A API precisa fazer a filtragem, não o frontend. Normalmente a quantidade de produtos será muito grande para fazer a filtragem no frontend.
+- Seu aplicativo precisa mostrar que está carregando enquanto aguarda a solicitação de retorno. Você pode testar isso imitando uma conexão lenta nas ferramentas de desenvolvedor de seus navegadores
+- Seu aplicativo precisa mostrar uma mensagem de erro se a solicitação falhar
+- Seu aplicativo precisa ir para uma página de detalhes `/product/:id` sempre que você clicar no cartão do produto na lista. Isso deve obter os detalhes do endpoint: `https://fakestoreapi.com/products/<id>`. Por enquanto não adicionaremos uma barra de navegação, o botão 'voltar' do navegador fará o truque. _DICA: Você precisará adicionar o pacote `react-router-dom` e adicionar o roteamento ao seu aplicativo independentemente._

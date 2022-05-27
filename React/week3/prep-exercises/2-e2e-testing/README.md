@@ -1,37 +1,37 @@
-# End-to-end testing
+# Teste de ponta a ponta
 
-As mentioned in the reading materials, end-to-end testing is becoming more and more popular as it is as close to testing the user experience as you can get. Where in the past the theory was to test every component separately to identify errors early in development, with the current technologies testing end-to-end is becoming fast enough to be able to identify issues early on as well.
+Conforme mencionado nos materiais de leitura, o teste de ponta a ponta está se tornando cada vez mais popular, pois é o mais próximo possível de testar a experiência do usuário. Onde no passado a teoria era testar cada componente separadamente para identificar erros no início do desenvolvimento, com as tecnologias atuais, o teste de ponta a ponta está se tornando rápido o suficiente para identificar problemas no início também.
 
-In this exercise we will look at the end-to-end testing tool [Cypress](https://www.cypress.io/) which is a popular framework because it does a lot while still being relatively easy to learn. So perfect for beginners to try out!
+Neste exercício, veremos a ferramenta de teste de ponta a ponta [Cypress](https://www.cypress.io/), que é uma estrutura popular porque faz muito enquanto ainda é relativamente fácil de aprender. Tão perfeito para iniciantes para experimentar!
 
-## Setting up
+## Configurando
 
-So let's get started! We will guide you through the steps to set up cypress in a separate repository.
+Então vamos começar! Vamos guiá-lo pelas etapas para configurar o cypress em um repositório separado.
 
-1. Create a new github repository, name it something like `cypress-playground` as we are just going to play around with it here.
+1. Crie um novo repositório github, nomeie-o como `cypress-playground`, pois vamos brincar com ele aqui.
 
-Now let's follow the installation guide as mentioned [here](https://docs.cypress.io/guides/getting-started/installing-cypress):
+Agora vamos seguir o guia de instalação conforme mencionado [aqui](https://docs.cypress.io/guides/getting-started/installing-cypress):
 
-2. Clone it locally and write `npm install cypress --save-dev` to install the cypress package. Note that you do _not_ have to do anything with React in this exercise, end-to-end testing is completely independent from any implementation details.
-3. After installing the package we can run cypress using `npx cypress open`.
+2. Clone-o localmente e escreva `npm install cypress --save-dev` para instalar o pacote cypress. Observe que você _não_ precisa fazer nada com o React neste exercício, o teste de ponta a ponta é completamente independente de quaisquer detalhes de implementação.
+3. Depois de instalar o pacote podemos rodar o cypress usando `npx cypress open`.
 
-This does a lot! You will now see that a `cypress` folder was added to your file system. There is also a `cypress.json` file that contains some configuration (or usually empty to start). And by opening cypress you also have a window that looks a bit like this:
+Isso faz muito! Você verá agora que uma pasta `cypress` foi adicionada ao seu sistema de arquivos. Há também um arquivo `cypress.json` que contém alguma configuração (ou geralmente vazio para iniciar). E ao abrir o cipreste você também tem uma janela que se parece um pouco com isso:
 
-![Cypress window screenshot](../../../assets/cypress-window.png)
+![Captura de tela da janela Cypress](../../../assets/cypress-window.png)
 
-Cypress has added a lot of sample tests for you that connect to their deployed applications and show off all the things you can do with it. Go ahead and click on some of the tests to see why everyone gets really excited about end-to-end testing. You can pretty much programmatically write down all of those tests that you usually do manually to check that a certain user flow still works after every change you make!
+Cypress adicionou muitos testes de amostra para você que se conectam aos aplicativos implantados e mostram todas as coisas que você pode fazer com ele. Vá em frente e clique em alguns dos testes para ver por que todos ficam realmente empolgados com os testes de ponta a ponta. Você pode escrever programaticamente todos os testes que costuma fazer manualmente para verificar se um determinado fluxo de usuário ainda funciona após cada alteração feita!
 
-All of these tests are inside of the `cypress` folder that was added to your project. If you look into the `cypress/integration` folder you will see all of the code that generates the tests inside cypress.
+Todos esses testes estão dentro da pasta `cypress` que foi adicionada ao seu projeto. Se você olhar na pasta `cypress/integration` verá todo o código que gera os testes dentro do cypress.
 
-## Get started!
+## Iniciar!
 
-Now for the fun part, playing around ourselves!
+Agora para a parte divertida, brincando com nós mesmos!
 
-1. In this folder you will find a folder called `0-myown`. Copy this over to your project inside of the `cypress/integration` folder so that it is next to the cypress examples. We start with `0-` to make ours nicely at the top of the list :D!
-2. Go through those files, we numbered them so that you know where to start, the extra explanations get less and less as you go on. _Note: The API we use is sometimes a little slow with responses and can cause timeout issues. If you get these, have a look at the cypress documentation to figure out how to increase the time cypress will wait per command._
-3. Fill in the tests that are missing!
+1. Nesta pasta você encontrará uma pasta chamada `0-myown`. Copie isso para o seu projeto dentro da pasta `cypress/integration` para que fique ao lado dos exemplos de cypress. Começamos com '0-' para deixar o nosso bem no topo da lista :D!
+2. Percorra esses arquivos, nós os numeramos para que você saiba por onde começar, as explicações extras ficam cada vez menos à medida que você avança. _Observação: a API que usamos às vezes é um pouco lenta com respostas e pode causar problemas de tempo limite. Se você conseguir isso, dê uma olhada na documentação do cipreste para descobrir como aumentar o tempo que o cipreste esperará por comando._
+3. Preencha os testes que estão faltando!
 
-## Things to think about
+## Coisas para pensar
 
-- The API we use has a stable data set. How would you test a data set that is not this stable? What would you need to change in these tests?
-- It is possible to [add your own commands](https://docs.cypress.io/api/cypress-api/custom-commands) to cypress, are there things in the code you think should be made a custom command?
+- A API que usamos tem um conjunto de dados estável. Como você testaria um conjunto de dados que não é tão estável? O que você precisaria mudar nesses testes?
+- É possível [adicionar seus próprios comandos](https://docs.cypress.io/api/cypress-api/custom-commands) para cypress, há coisas no código que você acha que deveria ser feito um comando personalizado?

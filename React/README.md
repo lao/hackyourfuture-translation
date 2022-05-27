@@ -1,95 +1,95 @@
-> If you are following the HackYourFuture curriculum we recommend you to start with module 1: [HTML/CSS/GIT](https://github.com/HackYourFuture/HTML-CSS). To get a complete overview of the HackYourFuture curriculum first, click [here](https://github.com/HackYourFuture/curriculum).
+> Se você estiver seguindo o currículo do HackYourFuture, recomendamos que comece com o módulo 1: [HTML/CSS/GIT](https://github.com/HackYourFuture/HTML-CSS). Para obter uma visão geral completa do currículo HackYourFuture primeiro, clique [aqui](https://github.com/HackYourFuture/curriculum).
 
-> Please help us improve and share your feedback! If you find better tutorials or links, please share them by [opening a pull request](https://github.com/HackYourFuture/React/pulls).
+> Ajude-nos a melhorar e compartilhe seus comentários! Se você encontrar tutoriais ou links melhores, compartilhe-os [abrindo um pull request](https://github.com/HackYourFuture/React/pulls).
 
-# Module #7 - React.js: Building dynamic UIs with modern JavaScript (Frontend)
+# Módulo 7 - React.js: Construindo UIs dinâmicas com JavaScript moderno (Frontend)
 
-![React Module](./assets/react.png)
+![Módulo React](./assets/react.png)
 
-Welcome to the React module! Congratulations on making it this far!
+Bem-vindo ao módulo React! Parabéns por chegar até aqui!
 
-In these 4 weeks we will go back to the frontend and learn how to make faster, more modern user interfaces. In the HTML and JavaScript modules you've learned all about creating webpages that that hold unchanging data. No matter who is using the website, the data will always be the same. We call this a `static website`. At the same time you've build various HTML pages so the user is able to access various parts of the website. We call this a `multi-page application (MPA)`
+Nestas 4 semanas voltaremos ao frontend e aprenderemos a fazer interfaces de usuário mais rápidas e modernas. Nos módulos HTML e JavaScript, você aprendeu tudo sobre como criar páginas da Web que contêm dados imutáveis. Não importa quem está usando o site, os dados serão sempre os mesmos. Chamamos isso de 'site estático'. Ao mesmo tempo, você construiu várias páginas HTML para que o usuário possa acessar várias partes do site. Chamamos isso de `aplicativo de várias páginas (MPA)`
 
-In the Node.js module you've learned about how to change the content of the page, based on the user's input, using a `templating engine`. Type in a keyword and the server sends back a `template` with customized data. We call this a `dynamic website`. However, we did it in such a way were we still had to send different pages to the client depending on the URL (for example, `/` or `/users`). This is also an MPA.
+No módulo Node.js, você aprendeu como alterar o conteúdo da página, com base na entrada do usuário, usando um `mecanismo de modelagem`. Digite uma palavra-chave e o servidor envia de volta um `template` com dados personalizados. Chamamos isso de 'site dinâmico'. No entanto, fizemos isso de tal forma que ainda tínhamos que enviar páginas diferentes para o cliente dependendo da URL (por exemplo, `/` ou `/users`). Este também é um MPA.
 
-In this module, however, you'll learn how to make more complex websites. Though, we won't be calling them websites anymore: they'll be `web applications`. They're not just informational, but allow the user to interact with it. This similar to any application on your desktop. These React applications will also deal with `dynamic data`: its `state` changes depending on who's using it.
+Neste módulo, no entanto, você aprenderá a criar sites mais complexos. No entanto, não vamos mais chamá-los de sites: eles serão `aplicativos da web`. Eles não são apenas informativos, mas permitem que o usuário interaja com ele. Isso é semelhante a qualquer aplicativo em sua área de trabalho. Esses aplicativos React também lidam com `dados dinâmicos`: seu `estado` muda dependendo de quem o está usando.
 
-Besides being dynamic, React applications also are `single page applications (SPA)`. Essentially, this means that on loading the whole application (every page and its contents) is accessible to the user, without the need to send requests to the server to get another page.
+Além de serem dinâmicos, os aplicativos React também são `aplicativos de página única (SPA)`. Essencialmente, isso significa que ao carregar toda a aplicação (cada página e seu conteúdo) fica acessível ao usuário, sem a necessidade de enviar solicitações ao servidor para obter outra página.
 
-## Before you start
+## Antes que você comece
 
-In order to properly work through this module smoothly we're going to use software that will allow us to write React applications with ease. It's called `create-react-app`.
+Para trabalhar adequadamente com este módulo, vamos usar um software que nos permitirá escrever aplicativos React com facilidade. É chamado de `create-react-app`.
 
-Go to your command line and execute the following:
+Vá para sua linha de comando e execute o seguinte:
 
 ```bash
 npm install -g create-react-app
 ```
 
-Now verify that you have it by executing the following:
+Agora, verifique se você o possui executando o seguinte:
 
 ```bash
 create-react-app --version
 ```
 
-It should be at least version `2.1.x`.
+Deve ser pelo menos a versão `2.1.x`.
 
-## Learning goals
+## Metas de aprendizagem
 
-In order to successfully complete this module you will need to master the following:
+Para concluir com sucesso este módulo, você precisará dominar o seguinte:
 
-- Understand the React way of thinking about `user interfaces`
-- Know the importance and place of `state` and how to pass it down
-- Be able to work with different `hooks` and even create your own
-- Recognize the utility of `modularization`
-- Putting emphasis on writing reusable code (`components`)
-- How to handle `client-side routing`
+- Compreender o modo React de pensar sobre `interfaces de usuário`
+- Conheça a importância e o lugar do 'estado' e como transmiti-lo
+- Ser capaz de trabalhar com diferentes `ganchos` e até mesmo criar seus próprios
+- Reconhecer a utilidade da `modularização`
+- Colocando ênfase na escrita de código reutilizável (`components`)
+- Como lidar com o `roteamento do lado do cliente`
 
-## How to use this repository
+## Como usar este repositório
 
-### Repository content
+### Conteúdo do repositório
 
-This repository consists of 3 essential parts:
+Este repositório é composto por 3 partes essenciais:
 
-1. `README`: this document contains all the required theory you need to understand **while** working on the homework. It contains not only the right resources to learn about the concepts, but also lectures done by HackYourFuture teachers. This is the **first thing** you should start with every week
-2. `MAKEME`: this document contains the instructions for each week's homework. Start with the exercises rather quickly, so that you can ground the concepts you read about earlier.
-3. `LESSONPLAN`: this document is meant for teachers as a reference. However, as a student don't be shy to take a look at it as well!
+1. `README`: este documento contém toda a teoria necessária que você precisa entender **enquanto** trabalha na lição de casa. Ele contém não apenas os recursos certos para aprender sobre os conceitos, mas também palestras feitas por professores do HackYourFuture. Esta é a **primeira coisa** com a qual você deve começar toda semana
+2. `MAKEME`: este documento contém as instruções para o dever de casa de cada semana. Comece com os exercícios rapidamente, para que você possa fundamentar os conceitos sobre os quais leu anteriormente.
+3. `PLANO DE AULA`: este documento é uma referência para professores. No entanto, como estudante, não tenha vergonha de dar uma olhada também!
 
-### How to study
+### Como estudar
 
-Let's say you are just starting out with the Databases module. This is what you do...
+Digamos que você esteja começando com o módulo Bancos de Dados. Isto é o que você faz...
 
-1. The week always starts on **Wednesday**. First thing you'll do is open the `README.md` for that week. For the first week of `Databases`, that would be [Week1 Reading](/Week1/README.md)
-2. You spend **Wednesday** and **Thursday** going over the resources and try to get a basic understanding of the concepts. In the meanwhile, you'll also implement any feedback you got on last week's homework (from the Node.js module)
-3. On **Friday** you start with the homework, found in the `MAKEME.md`. For the first week of `React`, that would be [Week1 Homework](/Week1/MAKEME.md)
-4. You spend **Friday** and **Saturday** playing around with the exercises and write down any questions you might have
-5. **DEADLINE 1**: You'll submit any questions you might have before **Saturday 23.59**, in the class channel
-6. On **Sunday** you'll attend class. It'll be of the Q&A format, meaning that there will be no new material. Instead your questions shall be discussed and you can learn from others
-7. You spend **Monday** and **Tuesday** finalizing your homework
-8. **DEADLINE 2**: You submit your homework to the right channels (GitHub) before **Tuesday 23.59**. If you can't make it on time, please communicate it with your mentor
-9. Start the new week by going back to point 1!
+1. A semana sempre começa na **quarta-feira**. A primeira coisa que você vai fazer é abrir o `README.md` dessa semana. Para a primeira semana de `Bancos de dados`, isso seria [Leitura da Semana1](/Week1/README.md)
+2. Você passa a **quarta-feira** e a **quinta-feira** examinando os recursos e tentando obter uma compreensão básica dos conceitos. Enquanto isso, você também implementará qualquer feedback recebido na lição de casa da semana passada (do módulo Node.js)
+3. Na **Sexta** você começa com o dever de casa, encontrado no `MAKEME.md`. Para a primeira semana de `React`, isso seria [Week1 Homework](/Week1/MAKEME.md)
+4. Você passa a **sexta-feira** e o **sábado** brincando com os exercícios e anotando quaisquer dúvidas que possa ter
+5. **Prazo 1**: você enviará suas dúvidas até **sábado, 23h59**, no canal da turma
+6. No **Domingo** você vai assistir à aula. Será no formato de perguntas e respostas, o que significa que não haverá material novo. Em vez disso, suas perguntas devem ser discutidas e você pode aprender com os outros
+7. Você passa a **segunda-feira** e a **terça-feira** finalizando sua lição de casa
+8. **Prazo 2**: Você envia sua lição de casa para os canais certos (GitHub) antes de **terça-feira, 23h59**. Se você não puder chegar a tempo, por favor comunique ao seu mentor
+9. Comece a nova semana voltando ao ponto 1!
 
-In summary:
+Resumindo:
 
 ![Weekflow](assets/weekflow.png)
 
-To have a more detailed overview of the guidelines, please read [this document](https://docs.google.com/document/d/1JUaEbxMQTyljAPFsWIbbLwwvvIXZ0VCHmCCN8RaeVIc/edit?usp=sharing) or ask your mentor/class on Slack!
+Para ter uma visão geral mais detalhada das diretrizes, leia [este documento](https://docs.google.com/document/d/1JUaEbxMQTyljAPFsWIbbLwwvvIXZ0VCHmCCN8RaeVIc/edit?usp=sharing) ou pergunte ao seu mentor/classe no Slack!
 
-## Planning
+## Planejamento
 
-| Week | Topics                                                  | Reading Materials                | Homework                         |
-| ---- | ------------------------------------------------------- | -------------------------------- | -------------------------------- |
-| 1.   | What is React, JSX, State & Props, Deploy a static site | [Readings W1](./week1/README.md) | [Homework W1](./week1/MAKEME.md) |
-| 2.   | API calls, Testing                                      | [Readings W2](./week2/README.md) | [Homework W2](./week2/MAKEME.md) |
-| 3.   | Client-side routing, Context, Custom hooks              | [Readings W3](./week3/README.md) | [Homework W3](./week3/MAKEME.md) |
-| 4.   | Project!                                                | [Readings W4](./week4/README.md) |                                  |
+| Semana | Tópicos | Materiais de Leitura | Lição de casa |
+| ---- | -------------------------------------------------- ----- | -------------------------------- | -------------------------------- |
+| 1. | O que é React, JSX, State & Props, Implante um site estático | [Leituras W1](./week1/README.md) | [Trabalho de casa W1](./week1/MAKEME.md) |
+| 2. | chamadas de API, teste | [Leituras W2](./week2/README.md) | [Trabalho de casa W2](./week2/MAKEME.md) |
+| 3. | Roteamento do lado do cliente, Contexto, Ganchos personalizados | [Leituras W3](./week3/README.md) | [Trabalho de casa W3](./week3/MAKEME.md) |
+| 4. | Projeto! | [Leituras W4](./week4/README.md) | |
 
-## Finished?
+## Finalizado?
 
-Did you finish the module? Impressive!
+Você terminou o módulo? Impressionante!
 
-If you feel ready for the **final** challenge, click [here](https://www.github.com/HackYourFuture/Project) to go to Project!
+Se você se sentir pronto para o desafio **final**, clique [aqui](https://www.github.com/HackYourFuture/Project) para acessar o Projeto!
 
-_The HackYourFuture curriculum is subject to CC BY copyright. This means you can freely use our materials, but just make sure to give us credit for it :)_
+_O currículo HackYourFuture está sujeito aos direitos autorais CC BY. Isso significa que você pode usar nossos materiais livremente, mas certifique-se de nos dar crédito por isso :)_
 
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https:/ /i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Esta obra está licenciada sob uma <a rel="license" href="http://creativecommons.org /licenses/by/4.0/">Licença Creative Commons Atribuição 4.0 Internacional</a>.

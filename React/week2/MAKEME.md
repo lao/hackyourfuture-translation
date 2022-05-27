@@ -1,52 +1,52 @@
-# Homework React Week 2
+# Trabalho de casa Reagir Semana 2
 
-## **Todo list**
+## **Lista de afazeres**
 
-1. Prep exercises
-2. Optional: Practice exercises
-3. PROJECT: Ecommerce Shop II
-4. Optional: Practice projects
-5. Optional: Challenges
+1. Exercícios de preparação
+2. Opcional: exercícios práticos
+3. PROJETO: Loja de comércio eletrônico II
+4. Opcional: Projetos práticos
+5. Opcional: Desafios
 
-## **1. Prep exercises**
+## **1. Exercícios de preparação**
 
-> Prep exercises are exercises that you should work on _before_ the session on Sunday. These are a little more difficult or show an important concept and as such are a great exercise to talk about with your mentor. Have a solution ready by Sunday as you may be asked to show what you did.
+> Exercícios de preparação são exercícios que você deve trabalhar _antes_ da sessão de domingo. Estes são um pouco mais difíceis ou mostram um conceito importante e, como tal, são um ótimo exercício para conversar com seu mentor. Tenha uma solução pronta até domingo, pois pode ser solicitado que você mostre o que fez.
 
-Inside your `React` fork, go to the folder `week2`. Inside of that folder, navigate to `/prep-exercises`. For each exercise, you will find a separate folder. The `README` explains what needs to be done. There will also be some questions at the bottom to think about. Go through them _before_ the session on Sunday as it will be covered then.
+Dentro do seu fork `React`, vá para a pasta `week2`. Dentro dessa pasta, navegue até `/prep-exercises`. Para cada exercício, você encontrará uma pasta separada. O `README` explica o que precisa ser feito. Haverá também algumas perguntas na parte inferior para pensar. Passe por eles _antes_ da sessão no domingo, pois será coberto então.
 
-## **2. Optional: Practice exercises**
+## **2. Opcional: exercícios práticos**
 
-Practice, practice, practice! Watching videos is a good way to get new ideas, but to cement them into your mind you need to program a lot. What you build is up to you as long as you keep challenging yourself. We have provided some practice exercises to help you if you don't know what to build.
+Pratique, pratique, pratique! Assistir a vídeos é uma boa maneira de obter novas ideias, mas para consolidá-las em sua mente você precisa programar muito. O que você constrói depende de você, desde que continue se desafiando. Nós fornecemos alguns exercícios práticos para ajudá-lo se você não sabe o que construir.
 
-Inside of your `React` fork, go to the folder `week2`. Inside of that folder, navigate to `/practice-exercises`. For each exercise, you will find a separate folder. The `README` explains what needs to be done. Go through them to practice concepts that you have learned about!
+Dentro do seu fork `React`, vá para a pasta `week2`. Dentro dessa pasta, navegue até `/practice-exercises`. Para cada exercício, você encontrará uma pasta separada. O `README` explica o que precisa ser feito. Passe por eles para praticar os conceitos que você aprendeu!
 
-## **3. PROJECT: Ecommerce Shop II**
+## **3. PROJETO: Loja de comércio eletrônico II**
 
-Let's continue building on our application! This week you'll replace the application's data source: instead of using a JSON file you'll be using an external API, called [Fake Store API](https://fakestoreapi.com/).
+Vamos continuar desenvolvendo nosso aplicativo! Esta semana você substituirá a fonte de dados do aplicativo: em vez de usar um arquivo JSON, você usará uma API externa, chamada [Fake Store API](https://fakestoreapi.com/).
 
-Have a look at the [project/README.md](./project/README.md) file to know what to do this week.
+Dê uma olhada no arquivo [project/README.md](./project/README.md) para saber o que fazer esta semana.
 
-## **4. Optional: Practice projects**
+## **4. Opcional: projetos práticos**
 
-The following exercises give you a prompt of what to build and then provide a solution when stuck. Try to do it yourself as much as possible and then compare to what they give as a solution:
+Os exercícios a seguir fornecem um prompt sobre o que construir e, em seguida, fornecem uma solução quando travados. Tente fazer você mesmo o máximo possível e depois compare com o que eles dão como solução:
 
-- First let's create a project without an API and [implement a tic-tac-toe game](https://epic-react-exercises.vercel.app/react/hooks/1)
-- Now let's use the pokemon API and [build a pokemon finder](https://epic-react-exercises.vercel.app/react/hooks/3)
+- Primeiro vamos criar um projeto sem uma API e [implementar um jogo da velha](https://epic-react-exercises.vercel.app/react/hooks/1)
+- Agora vamos usar a API pokemon e [construir um pokemon finder](https://epic-react-exercises.vercel.app/react/hooks/3)
 
-> The solutions they give is not necessarily the only solution, compare it to yours and see if you can get some good ideas from theirs. Because they want to show just one file, you will notice they put a lot of different functionality in one component. It is generally better to do it in separate components so good job if you thought of that!
+> As soluções que eles dão não são necessariamente a única solução, compare-a com a sua e veja se você consegue algumas boas ideias com as deles. Como eles querem mostrar apenas um arquivo, você notará que eles colocam muitas funcionalidades diferentes em um componente. Geralmente é melhor fazê-lo em componentes separados, então bom trabalho se você pensou nisso!
 
-## **5. Optional: Challenges**
+## **5. Opcional: Desafios**
 
-Remember that our friends over at CodeYourFuture have provided a repository with different ideas for [challenges to build](https://github.com/CodeYourFuture/cyf-react-challenges). Have a look at the `README.md` in each folder to see what the challenge is and now you can also do ones that require you to connect to an API!
+Lembre-se de que nossos amigos do CodeYourFuture forneceram um repositório com ideias diferentes para [desafios a serem construídos](https://github.com/CodeYourFuture/cyf-react-challenges). Dê uma olhada no `README.md` em cada pasta para ver qual é o desafio e agora você também pode fazer aqueles que exigem que você se conecte a uma API!
 
-## **SUBMIT YOUR HOMEWORK!**
+## ** ENVIE SUA LIÇÃO DE CASA!**
 
-After you've finished your list it's time to show us what you got! Upload all your files to a forked repository (a copy from the original, which in this case is the [React](https://www.github.com/HackYourFuture/React) repository) using GIT. Then make a pull request to your teacher's forked repository.
+Depois de terminar sua lista, é hora de nos mostrar o que você tem! Faça upload de todos os seus arquivos para um repositório bifurcado (uma cópia do original, que neste caso é o repositório [React](https://www.github.com/HackYourFuture/React)) usando o GIT. Em seguida, faça um pull request para o repositório bifurcado do seu professor.
 
-If you need a refresher, take a look at the following [guide](../hand-in-homework-guide.md) to see how it's done.
+Se você precisar de uma atualização, dê uma olhada no seguinte [guia](../hand-in-homework-guide.md) para ver como isso é feito.
 
-The homework that needs to be submitted is the following:
+A lição de casa que precisa ser enviada é a seguinte:
 
-1. Project: Ecommerce Shop II
+1. Projeto: Loja de comércio eletrônico II
 
-_Deadline Tuesday 23.59 CET_
+_Prazo terça-feira 23.59 CET_

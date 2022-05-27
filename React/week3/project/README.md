@@ -1,26 +1,26 @@
-# Ecommerce Project III
+# Projeto de comércio eletrônico III
 
-## 1. Setup
+## 1. Configuração
 
-Make sure you created a new week3 branch from the `main` branch of your forked repo. Then copy over the `ecommerce` folder you made last week into the `week3/project` folder.
+Certifique-se de ter criado um novo branch week3 do branch `main` do seu repositório bifurcado. Em seguida, copie a pasta `ecommerce` que você criou na semana passada para a pasta `week3/project`.
 
-Copy over the `assets` folder to your `ecommerce/src` folder. We will use these svg files for our favourites functionality.
+Copie a pasta `assets` para sua pasta `ecommerce/src`. Usaremos esses arquivos svg para nossa funcionalidade de favoritos.
 
-## 2. Requirements
+## 2. Requisitos
 
-We are going to implement some cool new features this week now that we have all of the React building blocks at our disposal. By the end of the assignment your application should work similar to this:
+Vamos implementar alguns novos recursos interessantes esta semana, agora que temos todos os blocos de construção do React à nossa disposição. Ao final da tarefa, seu aplicativo deve funcionar semelhante a este:
 
-[![Week 3 Screenshot](../../assets/project/week3.png)](https://hyf-react-w3-example.netlify.app)
+[![Captura de tela da semana 3](../../assets/project/week3.png)](https://hyf-react-w3-example.netlify.app)
 
-There is a live version [here](https://hyf-react-w3-example.netlify.app)
+Existe uma versão ao vivo [aqui](https://hyf-react-w3-example.netlify.app)
 
-What you need to have done at the end of the week:
+O que você precisa ter feito no final da semana:
 
-- There should be a context that stores the `id` of all of the favourites of the user. You should not store the whole object!
-- For the images in the product list as well as the product details page there needs to be a heart that if clicked will update the favourites array in the context. The heart should show the right svg file depending if it is favourited or not.
-- Your app should have a favourites page to list all of the products the user has favourited. You will need to perform multiple fetches as you only have the `id` of the favourites.
-  > Storing the whole object would make this easier of course and in this example would probably be a better solution, but we want to challenge you a bit by adding a multiple fetch scenario.
-- Add a navigation bar at the top that handles routing between `/` and `/favourites`. The `/favourites` route should go the favourites page.
-- If you did the same things as us then in the Products and ProductDetails pages you will have quite a lot of duplicate logic concerning the `loading` and `error` states of all those requests. Fix that by creating a `useFetch` custom hook.
-  > Your custom hook will have a couple of challenges. The URL for the products changes and you will have to perform that fetch whenever the user clicks a category so you will need to give the user of your hook the option to do that.
-  > Extra challenge: We purposefully do not say Favourites page here as that would make the custom hook even more difficult to build. If you are up for the challenge, add functionality to your hook for multiple fetches!
+- Deve haver um contexto que armazene o `id` de todos os favoritos do usuário. Você não deve armazenar o objeto inteiro!
+- Para as imagens na lista de produtos, bem como na página de detalhes do produto, deve haver um coração que, se clicado, atualizará a matriz de favoritos no contexto. O coração deve mostrar o arquivo svg correto dependendo se é favorito ou não.
+- Seu aplicativo deve ter uma página de favoritos para listar todos os produtos favoritos do usuário. Você precisará realizar várias buscas, pois você só tem o `id` dos favoritos.
+  > Armazenar o objeto inteiro tornaria isso mais fácil, é claro, e neste exemplo provavelmente seria uma solução melhor, mas queremos desafiá-lo um pouco adicionando um cenário de busca múltipla.
+- Adicione uma barra de navegação na parte superior que trata do roteamento entre `/` e `/favourites`. A rota `/favourites` deve ir para a página de favoritos.
+- Se você fez as mesmas coisas que nós, nas páginas Produtos e Detalhes do Produto você terá muita lógica duplicada em relação aos estados `loading` e `error` de todas essas solicitações. Corrija isso criando um gancho personalizado `useFetch`.
+  > Seu gancho personalizado terá alguns desafios. A URL dos produtos muda e você terá que realizar essa busca sempre que o usuário clicar em uma categoria, então você precisará dar ao usuário do seu gancho a opção de fazer isso.
+  > Desafio extra: Nós propositadamente não dizemos página de Favoritos aqui, pois isso tornaria o gancho personalizado ainda mais difícil de construir. Se você estiver pronto para o desafio, adicione funcionalidade ao seu gancho para várias buscas!
