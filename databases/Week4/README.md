@@ -1,26 +1,26 @@
-# Reading Material Databases Week 4
+# Lendo Bancos de Dados de Material Semana 4
 
 ## Agenda
 
-These are the topics for week 4, all in MongoDB:
+Estes são os tópicos da semana 4, todos no MongoDB:
 
-- [Embedded vs Normalised data modeling](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/embedded-vs-normalised.md)
-- [Advanced MongoDB operations](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/advanced-operations.md)
-- [Pagination](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/pagination.md)
-- [Indexes in MongoDB](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/indexes.md)
-- [Transactions in MongoDB](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/transactions.md)
-- [SQL vs NoSQL databases](https://hackyourfuture.github.io/study/#/databases/sql-vs-nosql-databases.md)
+- [Modelagem de dados incorporado vs normalizado](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/embedded-vs-normalized.md)
+- [Operações avançadas do MongoDB](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/advanced-operations.md)
+- [Paginação](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/pagination.md)
+- [Índices no MongoDB](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/indexes.md)
+- [Transações no MongoDB](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/transactions.md)
+- [Bancos de dados SQL vs NoSQL](https://hackyourfuture.github.io/study/#/databases/sql-vs-nosql-databases.md)
 
-## Week goals
+## Metas da semana
 
-This week we are going to focus fully on MongoDB as the main example of a document-based database which is the most common subset of NoSQL databases. Let's start with some more advanced data modeling ideas by talking about the difference in [Embedded and Normalised data modeling](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/embedded-vs-normalised.md).
+Esta semana vamos nos concentrar totalmente no MongoDB como o principal exemplo de um banco de dados baseado em documentos, que é o subconjunto mais comum de bancos de dados NoSQL. Vamos começar com algumas ideias de modelagem de dados mais avançadas falando sobre a diferença em [Modelagem de dados incorporada e normalizada](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/embedded-vs-normalized.md ).
 
-With more complex data models we will also need some more advanced MongoDB operations to work with it, have a look at the [Advanced MongoDB operations](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/advanced-operations.md) section to get to know some of the more commonly used them and then the [Pagination](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/pagination.md) section for a common use case using these functions!
+Com modelos de dados mais complexos, também precisaremos de algumas operações MongoDB mais avançadas para trabalhar com ele, dê uma olhada nas [Operações avançadas do MongoDB](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/ advanced-operations.md) para conhecer alguns dos mais usados e depois a seção [Paginação](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/pagination.md) para um caso de uso comum usando essas funções!
 
-Next it is time to look at some topics that are theoretically the same as in SQL but we want to look at how it works in MongoDB as well. So have a look at [Indexes](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/indexes.md) and [Transactions](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/transactions.md).
+Em seguida, é hora de examinar alguns tópicos que são teoricamente os mesmos do SQL, mas também queremos ver como ele funciona no MongoDB. Então dê uma olhada em [Indexes](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/indexes.md) e [Transactions](https://hackyourfuture.github.io/study/ #/databases/nosql/mongodb/transactions.md).
 
-Lastly, now that you have an idea of what both SQL and NoSQL means and how they work it is time to answer the question when to use which in the [SQL vs NoSQL](https://hackyourfuture.github.io/study/#/databases/sql-vs-nosql-databases.md) section.
+Por fim, agora que você tem uma ideia do que significa SQL e NoSQL e como eles funcionam, é hora de responder à pergunta quando usar qual no [SQL vs NoSQL](https://hackyourfuture.github.io/study/ #/databases/sql-vs-nosql-databases.md).
 
-## Finished?
+## Finalizado?
 
-Are you finished with going through the materials? High five! If you feel ready to get practical, click [here](./MAKEME.md).
+Você terminou de passar pelos materiais? Toca aqui! Se você se sentir pronto para ser prático, clique [aqui](./MAKEME.md).

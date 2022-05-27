@@ -1,528 +1,528 @@
-# Lesson Plan Databases Week 3
+# Bancos de dados do plano de aula Semana 3
 
-The lesson plan is primarily written for teachers so that they can
-use examples and anecdotes from this document in conjunction with the README
-and explain the concepts better in the class.
+O plano de aula é escrito principalmente para os professores, para que eles possam
+use exemplos e anedotas deste documento em conjunto com o README
+e explicar melhor os conceitos na aula.
 
-## Topics (essentially same as the README file)
+## Tópicos (essencialmente iguais ao arquivo README)
 
-0. Super Key vs Candidate Key vs Primary key
-1. Normalization
-2. Transactions
-3. SQL injection
-4. NoSQL (with MongoDB)
+0. Super Chave vs Chave Candidata vs Chave Primária
+1. Normalização
+2. Transações
+3. Injeção de SQL
+4. NoSQL (com MongoDB)
 
-## 0. Super Key vs Candidate Key vs Primary key
+## 0. Super Chave vs Chave Candidata vs Chave Primária
 
-#### Explanation
+#### Explicação
 
-1. Super key is a set of columns that uniquely identify a row.
-2. Candidate key is a minimal super key that can uniquely identify a row.
-3. Primary key is a choice of candidate key chosen by the database designer.
+1. A superchave é um conjunto de colunas que identifica exclusivamente uma linha.
+2. A chave candidata é uma superchave mínima que pode identificar exclusivamente uma linha.
+3. A chave primária é uma escolha de chave candidata escolhida pelo designer do banco de dados.
 
-#### Example
+#### Exemplo
 
-For the following table
-`Employee (employee_id, employee_name, gender, salary, department, age, city)`
+Para a seguinte tabela
+`Funcionário (employee_id, employee_name, gênero, salário, departamento, idade, cidade)`
 
-- Two super keys from this table are
+- Duas super chaves desta tabela são
 
-1. SK1 = `{employee_name, department, age, city}`
-2. SK2 = `{employee_id, employee_name, salary}`
+1. SK1 = `{nome_funcionário, departamento, idade, cidade}`
+2. SK2 = `{employee_id, Employee_name, salário}`
 
-- The candidate keys derived from these super key can be
+- As chaves candidatas derivadas dessas superchaves podem ser
 
-1. CK1 from SK1 = `{employee_name, city}`
-   if two employees with the same name always come from different city.
-   Then, we don't need the `age` and `department` columns in this candidate key.
-2. CK2 from SK2 = `{employee_id}` if different identifier is generated for every
-   employee. Then we don't need the `employee_name` and `salary` columns in this candidate key.
+1. CK1 de SK1 = `{employee_name, cidade}`
+   se dois funcionários com o mesmo nome sempre vêm de cidade diferente.
+   Então, não precisamos das colunas `age` e `department` nesta chave candidata.
+2. CK2 de SK2 = `{employee_id}` se um identificador diferente for gerado para cada
+   empregado. Então não precisamos das colunas `employee_name` e `salary` nesta chave candidata.
 
-- The primary key chosen from these candidate keys could be `employee_id`.
+- A chave primária escolhida dessas chaves candidatas pode ser `employee_id`.
 
-#### Exercise
+#### Exercício
 
-Consider the following table:
-`Book (ISBN int, book_name, author_name, publication_year, publisher, book_language)`.
-Find out 2 sets of super keys, candidate keys and choose an appropriate primary key.
+Considere a seguinte tabela:
+`Livro (ISBN int, nome_do_livro, nome_do_autor, ano_de publicação, editora, idioma_do livro)`.
+Descubra 2 conjuntos de superchaves, chaves candidatas e escolha uma chave primária apropriada.
 
-#### Essence
+#### Essência
 
-Primary key uniquely identifies rows.
-Super keys and Candidate keys are used in database design.
+A chave primária identifica exclusivamente as linhas.
+As superchaves e as chaves candidatas são usadas no design do banco de dados.
 
-## 1. Normalization and normal forms
+## 1. Normalização e formas normais
 
-### Explanation
+### Explicação
 
-The goal of normalization is to reduce duplication of data.
-Different levels of normalization are called _normal forms_.
-A table is said to be in `X normal form` if it satisfies all rules
-defined by that normal form and all the normal forms before X.
+O objetivo da normalização é reduzir a duplicação de dados.
+Diferentes níveis de normalização são chamados de _formas normais_.
+Diz-se que uma tabela está na 'forma normal X' se satisfizer todas as regras
+definido por essa forma normal e todas as formas normais antes de X.
 
-#### 1NF (5 rules)
+#### 1NF (5 regras)
 
-1. Single valued columns (each column should have atomic value, no multiple values)
-2. Column domain (for any column) should not change.
-3. Unique names for columns.
-4. Order (of rows/columns) does not matter.
-5. No duplicate records (every record has a primary key).
+1. Colunas de valor único (cada coluna deve ter valor atômico, sem valores múltiplos)
+2. O domínio da coluna (para qualquer coluna) não deve ser alterado.
+3. Nomes exclusivos para colunas.
+4. A ordem (das linhas/colunas) não importa.
+5. Nenhum registro duplicado (todo registro possui uma chave primária).
 
-#### 2NF (1NF + rule)
+#### 2NF (1NF + regra)
 
-- no non-prime column that is not a part of primary key
-  should be functionally dependent on any proper subset of a candidate key.
-  In other words, there should be
-  No partial dependency (no column should depend on the part of the primary key).
+- nenhuma coluna não principal que não faça parte da chave primária
+  deve ser funcionalmente dependente de qualquer subconjunto adequado de uma chave candidata.
+  Em outras palavras, deve haver
+  Nenhuma dependência parcial (nenhuma coluna deve depender da parte da chave primária).
 
 ```
-Functional dependency: Denoted with A => B.
-A and B are columns of a table. An oversimplified explanation of Function dependency is
-as follows.
-If I know a value in column A then I for sure know the value in column B
-but the reverse is not true.
-E.g. A is student number and B is student name.
-I can tell the name of the student from student number, but
-I cannot tell the student number from the name because there could be multiple students with the same name.
+Dependência funcional: denotada com A => B.
+A e B são colunas de uma tabela. Uma explicação simplificada da dependência de função é
+do seguinte modo.
+Se eu conheço um valor na coluna A, com certeza conheço o valor na coluna B
+mas o inverso não é verdade.
+Por exemplo. A é o número do aluno e B é o nome do aluno.
+Eu posso dizer o nome do aluno pelo número do aluno, mas
+Não consigo distinguir o número do aluno do nome porque pode haver vários alunos com o mesmo nome.
 ```
 
-If you feel adventurous, then read this [Functional Dependency Wikipage](https://en.wikipedia.org/wiki/Functional_dependency)
+Se você se sente aventureiro, leia esta [Functional Dependency Wikipage](https://en.wikipedia.org/wiki/Functional_dependency)
 
-#### 3NF (2NF + rule)
+#### 3NF (2NF + regra)
 
-- No transitive dependency (i.e. no column should depend on non-key column).
+- Nenhuma dependência transitiva (ou seja, nenhuma coluna deve depender de uma coluna não chave).
 
-#### 3.5NF AKA BCNF (3NF + rule)
+#### 3.5NF AKA BCNF (3NF + regra)
 
-- For any dependency A => B, A should be a super key.
-  In other words, for a dependency A => B, A cannot be a non-prime column, if B is a prime column.
+- Para qualquer dependência A => B, A deve ser uma superchave.
+  Em outras palavras, para uma dependência A => B, A não pode ser uma coluna não principal, se B for uma coluna principal.
 
-#### 4NF (3NF + rule)
+#### 4NF (3NF + regra)
 
-- No multi-value dependency.
+- Nenhuma dependência de vários valores.
 
-### Example
+### Exemplo
 
 #### 1NF
 
-Consider the following table
+Considere a seguinte tabela
 
 ```
-+-------------+------------+-----------------------+
-| Employee Id |   Name     |   Contact             |
-+-------------+------------+-----------------------+
-|       101   |   Amit     | 0684927317            |
-|       102   |   Ben      | 0634899234, ben@bu.nl |
-|       103   |   Cathy    | 0647882102, cat@dog.us|
-|       104   |   Dua      | 0622467559            |
-+-------------+------------+-----------------------+
++-------------+------------+---------------------- -+
+| ID do funcionário | Nome | Contato |
++-------------+------------+---------------------- -+
+| 101 | Amit | 0684927317 |
+| 102 | Ben | 0634899234, ben@bu.nl |
+| 103 | Cathy | 0647882102, cat@dog.us|
+| 104 | Dua | 0622467559 |
++-------------+------------+---------------------- -+
 ```
 
-This table is not in 1NF because rule (1) of 1NF is violated because
-row 2 and row 3 contain multiple values for the column `Contact`.
-Also the rule (2) of 1NF is violated because the column `Contact` contains
-numeric values (for phone numbers) and string value (for emails).
+Esta tabela não está na 1NF porque a regra (1) da 1NF é violada porque
+a linha 2 e a linha 3 contêm vários valores para a coluna `Contato`.
+Também a regra (2) de 1NF é violada porque a coluna `Contato` contém
+valores numéricos (para números de telefone) e valor de string (para e-mails).
 
-This table could be converted to 1NF as follows:
+Esta tabela pode ser convertida para 1NF da seguinte forma:
 
 ```
-+-------------+------------+------------------------+
-| Employee Id |   Name     | Phone      | Email     |
-+-------------+------------+------------------------+
-|       101   |   Amit     | 0684927317 | NULL      |
-|       102   |   Ben      | 0634899234 | ben@bu.nl |
-|       103   |   Cathy    | 0647882102 | cat@dog.us|
-|       104   |   Dua      | 0622467559 | NULL      |
-+-------------+------------+----------------------- +
++-------------+------------+---------------------- --+
+| ID do funcionário | Nome | Telefone | E-mail |
++-------------+------------+---------------------- --+
+| 101 | Amit | 0684927317 | NULO |
+| 102 | Ben | 0634899234 | ben@bu.nl |
+| 103 | Cathy | 0647882102 | cat@dog.us|
+| 104 | Dua | 0622467559 | NULO |
++-------------+------------+---------------------- - +
 ```
 
-In real life, you actually need to
+Na vida real, você realmente precisa
 
-- DROP column Contact.
-- ADD column Phone with the type int.
-- ADD column Email with the type varchar(50).
+- Contato da coluna DROP.
+- ADD coluna Telefone com o tipo int.
+- ADD coluna Email com o tipo varchar(50).
 
 #### 2NF
 
-Consider the following table (employee-project M-M relationship table).
+Considere a tabela a seguir (tabela de relacionamento M-M empregado-projeto).
 
 ```
-+-------------+------------+-----------------------+
-| Employee Id | Project ID |  Project Budget       |
-+-------------+------------+-----------------------+
-|       101   |   1001     | 317                   |
-|       102   |   1001     | 234                   |
-|       103   |   2001     | 102                   |
-|       104   |   2001     | 559                   |
-+-------------+------------+-----------------------+
++-------------+------------+---------------------- -+
+| ID do funcionário | ID do projeto | Orçamento do Projeto |
++-------------+------------+---------------------- -+
+| 101 | 1001 | 317 |
+| 102 | 1001 | 234 |
+| 103 | 2001 | 102 |
+| 104 | 2001 | 559 |
++-------------+------------+---------------------- -+
 ```
 
-2NF is violated here because
+2NF é violado aqui porque
 
 ```
-porj_budget (non prime column)
-proj_no => proj_budget (functionally dependent on proj_no)
-proj_no (It is part of the candidate key)
-emp_no + proj_no (is a candidate key)
+porj_budget (coluna não principal)
+proj_no => proj_budget (funcionalmente dependente de proj_no)
+proj_no (Faz parte da chave candidata)
+emp_no + proj_no (é uma chave candidata)
 ```
 
-This table could be converted to 2NF by removing the `Project Budget` column and
-adding it to the project table.
+Esta tabela pode ser convertida para 2NF removendo a coluna 'Orçamento do Projeto' e
+adicionando-o à tabela do projeto.
 
 #### 3NF
 
-Consider the following table (employees)
+Considere a tabela a seguir (funcionários)
 
 ```
-+-------------+------------+-----------------------+
-| Employee Id | Dept Id    |  Dept Location        |
-+-------------+------------+-----------------------+
-|       101   |   2221     | Amsterdam             |
-|       102   |   2221     | Amsterdam             |
-|       103   |   3335     | Rome                  |
-|       104   |   3335     | Rome                  |
-+-------------+------------+-----------------------+
++-------------+------------+---------------------- -+
+| ID do funcionário | ID de departamento | Localização do Departamento |
++-------------+------------+---------------------- -+
+| 101 | 2221 | Amsterdã |
+| 102 | 2221 | Amsterdã |
+| 103 | 3335 | Roma |
+| 104 | 3335 | Roma |
++-------------+------------+---------------------- -+
 ```
 
-This table violates the 3NF because there is a transitive dependency.
-`Employee Id => Dept Id` and `Dept Id => Dept Location.`
-`Dept Location` column depends on the `Dept Id` which is not a primary key column.
+Esta tabela viola a 3NF porque há uma dependência transitiva.
+`Employee Id => Dept Id` e `Dept Id => Dept Location.`
+A coluna "Dept Location" depende do "Dept Id" que não é uma coluna de chave primária.
 
 #### 3.5 NF (AKA BCNF)
 
-Consider the following table (students opting for subjects)
+Considere a tabela a seguir (alunos optando por disciplinas)
 
 ```
-+-------------+------------+-----------------------+
-| Student Id  | Subject    |  Professor            |
-+-------------+------------+-----------------------+
-|       101   |   Java     | X                     |
-|       102   |   Java     | X                     |
-|       101   |   C++      | Y                     |
-|       103   |   C++      | Y                     |
-|       103   |   Java     | X                     |
-|       104   |   C++      | Y                     |
-+-------------+------------+-----------------------+
++-------------+------------+---------------------- -+
+| ID do aluno | Assunto | Professor |
++-------------+------------+---------------------- -+
+| 101 | Java | X |
+| 102 | Java | X |
+| 101 | C++ | S |
+| 103 | C++ | S |
+| 103 | Java | X |
+| 104 | C++ | S |
++-------------+------------+---------------------- -+
 ```
 
-This table violates the 3.5NF because there is a functional dependency
-`Professor => Subject` and `Professor` is not a super key.
-`Student Id + Subject` is the primary key. Hence `Subject` is a prime column.
+Esta tabela viola a 3.5NF porque existe uma dependência funcional
+`Professor => Assunto` e `Professor` não é uma super chave.
+`ID do Aluno + Assunto` é a chave primária. Portanto, `Assunto` é uma coluna principal.
 
-This table could be converted to 3.5NF as follows:
+Esta tabela pode ser convertida para 3.5NF da seguinte forma:
 
 ```
 +-------------+------------+
-| Student Id  | Prof Id    |
+| ID do aluno | ID do Prof |
 +-------------+------------+
-|       101   |   P0001    |
-|       102   |   P0001    |
-|       101   |   P0002    |
-|       103   |   P0002    |
-|       103   |   P0001    |
-|       104   |   P0002    |
+| 101 | P0001 |
+| 102 | P0001 |
+| 101 | P0002 |
+| 103 | P0002 |
+| 103 | P0001 |
+| 104 | P0002 |
 +-------------+------------+
 ```
 
-and
+e
 
 ```
 +-------------+------------+----------+
-| Prof Id     | Professor  |  Subject |
+| ID do Prof | Professor | Assunto |
 +-------------+------------+----------+
-|   P0001     |   X        | C++      |
-|   P0002     |   Y        | Java     |
+| P0001 | X | C++ |
+| P0002 | S | Java |
 +-------------+------------+----------+
 ```
 
 #### 4NF
 
-Consider the following table (students opting for subjects)
+Considere a tabela a seguir (alunos optando por disciplinas)
 
 ```
 +-------------+------------+-----------+
-| Student     | Subject    |  Hobby    |
+| Aluno | Assunto | Passatempo |
 +-------------+------------+-----------+
-|    Benno    |  Excel     |  Violin   |
-|    Benno    |  Python    |  Woodwork |
-|    Benno    |  Dutch     |  Paint    |
-|    Lukas    |  Java      |  Running  |
-|    Lukas    |  C++       |  Reading  |
+| Beno | Excel | Violino |
+| Beno | Python | Marcenaria |
+| Beno | Holandês | Pintar |
+| Lucas | Java | Correndo |
+| Lucas | C++ | Leitura |
 +-------------+------------+-----------+
 ```
 
-This table violates 4NF because `Subject` and `Hobby` are independent of each other.
-Hence the hobby of the student must be repeated in the table with each subject
-the student chooses.
+Esta tabela viola a 4NF porque `Subject` e `Hobby` são independentes um do outro.
+Daí o hobby do aluno deve ser repetido na tabela com cada assunto
+o aluno escolhe.
 
 ```
-+-------------+------------+-----------------------+
-| Student     | Subject    |  Hobby                |
-+-------------+------------+-----------------------+
-|    Benno    |  Excel     |  Violin               |
-|    Benno    |  Excel     |  Woodwork             |
-|    Benno    |  Excel     |  Paint                |
-|    Benno    |  Python    |  Violin               |
-|    Benno    |  Python    |  Woodwork             |
-|    Benno    |  Python    |  Paint                |
-|    Benno    |  Dutch     |  Violin               |
-|    Benno    |  Dutch     |  Woodwork             |
-|    Benno    |  Dutch     |  Paint                |
-+-------------+------------+-----------------------+
++-------------+------------+---------------------- -+
+| Aluno | Assunto | Passatempo |
++-------------+------------+---------------------- -+
+| Beno | Excel | Violino |
+| Beno | Excel | Marcenaria |
+| Beno | Excel | Pintar |
+| Beno | Python | Violino |
+| Beno | Python | Marcenaria |
+| Beno | Python | Pintar |
+| Beno | Holandês | Violino |
+| Beno | Holandês | Marcenaria |
+| Beno | Holandês | Pintar |
++-------------+------------+---------------------- -+
 ```
 
-It leads to a lot of repetition.
-This table could be converted to 4NF by splitting it into two.
+Isso leva a muita repetição.
+Esta tabela pode ser convertida para 4NF dividindo-a em duas.
 
 ```
 +-------------+------------+
-| Student     | Subject    |
+| Aluno | Assunto |
 +-------------+------------+
-|    Benno    |  Excel     |
-|    Benno    |  Python    |
-|    Benno    |  Dutch     |
-|    Lukas    |  Java      |
-|    Lukas    |  C++       |
+| Beno | Excel |
+| Beno | Python |
+| Beno | Holandês |
+| Lucas | Java |
+| Lucas | C++ |
 +-------------+------------+
 ```
 
-and
+e
 
 ```
 +-------------+-----------+
-| Student     |  Hobby    |
+| Aluno | Passatempo |
 +-------------+-----------+
-|    Benno    |  Violin   |
-|    Benno    |  Woodwork |
-|    Benno    |  Paint    |
-|    Lukas    |  Running  |
-|    Lukas    |  Reading  |
+| Beno | Violino |
+| Beno | Marcenaria |
+| Beno | Pintar |
+| Lucas | Correndo |
+| Lucas | Leitura |
 +-------------+-----------+
 ```
 
-### Exercise
+### Exercício
 
-Normalize the following table.
-
-```
-+-------------+------------+-----------------------------------------------+------------+
-| Full name   | Adddress   |  Movies rented                                | Salutation |
-+-------------+------------+-----------------------------------------------+------------+
-| Janet Jones | 5 John St  |  Pirate of the Carribean, Clash of the Titans |     Ms.    |
-| Rob Smith   | 12 Ann St  |  Shawshank Redemption, Beautiful mind         |     Mr.    |
-| Rob Smith   | 9 Joy St   |  Clash of the Titans                          |     Mr.    |
-+-------------+------------+-----------------------------------------------+------------+
-```
-
-### Essence
-
-Normal forms help in a better database design mostly by reducing redundancy.
-
-## 2. Transactions
-
-### Explanation
-
-We explain the need for the transaction with the following anecdotal illustration:
-
-Assume that the balance in Ali's bank is 500€ and
-the balance in the bank account of Birgul is 700€.
-Imagine that Ali is transferring 50€ to Birgul. Then, at the end
-of this money transaction, Ali should have 450€ and Birgul should have 750€.
-Note that this involved two database queries.
-
-1. Update the row of the account of Ali and _subtract_ the balance by 50.
-2. Update the row of the account of Birgul and _add_ the balance by 50.
-
-These two database queries together form a transaction. If we execute only
-one of them, then there is inconsistency.
-
-Transactions have the following syntax:
+Normalize a tabela a seguir.
 
 ```
-start transaction;
-SQL command 1
-SQL command 2 ...
-SQL command N
-
-rollback OR commit;
-
-# "rollback" aborts the transaction (also ends the transaction)
-# "commit" commits the transaction (also ends the transaction)
++-------------+------------+---------------------- -------------------------+------------+
+| Nome completo | Endereço | Filmes alugados | Saudação |
++-------------+------------+---------------------- -------------------------+------------+
+| Janet Jones | 5 João St | Pirata do Caribe, Fúria de Titãs | Sra. |
+| Rob Smith | 12 Ann St | Redenção Shawshank, mente bonita | Sr. |
+| Rob Smith | 9 Joy St | Confronto de Titãs | Sr. |
++-------------+------------+---------------------- -------------------------+------------+
 ```
 
-> Note that there is no "end transaction" command. To end the transaction,
-> we have to either commit the transaction or rollback the transaction.
+### Essência
 
-#### ACID properties
+Os formulários normais ajudam em um melhor design de banco de dados principalmente reduzindo a redundância.
 
-Transactions in relational databases (like MySQL) follow the
-following properties.
+## 2. Transações
 
-1. Atomicity : Execute all commands in the transaction or execute zero commands in the transaction (all or none).
-2. Consistency : A transaction brings database from one valid state to the next valid state.
-3. Isolation : Concurrent execution of transactions (possibly by different users) should leave the database in a consistent state.
-4. Durability : When a transaction is committed, it will remain committed even in the case of system failure. In other words,
-   committed transactions are recorded on the disk.
+### Explicação
 
-### Example
+Explicamos a necessidade da transação com a seguinte ilustração anedótica:
 
-Atomicity can be demonstrated with the following `rollback` and `commit` examples:
+Suponha que o saldo no banco de Ali seja de 500€ e
+o saldo na conta bancária da Birgul é de 700€.
+Imagine que Ali está transferindo 50€ para Birgul. Então, no final
+desta transação em dinheiro, Ali deveria ter 450€ e Birgul deveria ter 750€.
+Observe que isso envolveu duas consultas de banco de dados.
 
-#### Rollback example
+1. Atualize a linha da conta de Ali e _subtraia_ o saldo em 50.
+2. Atualize a linha da conta de Birgul e _adicione_ o saldo em 50.
 
-```
-set autocommit = 0; # default is 1 which automatically commits every command as transaction.
+Essas duas consultas de banco de dados juntas formam uma transação. Se executarmos apenas
+um deles, então há inconsistência.
 
-start transaction;
-
-select * from employees; # Show all the rows of the table
-
-update employees set salary = 10000 where employee_id = 101; # Update the salary of one employee
-
-select * from employees; # Show the new salary
-
-rollback; # Does not show any output but actually rolls back the transaction
-
-select * from employees; # Show the old salary
-```
-
-> There can be hundreds of commands after `start transaction`. rollback command will undo all of them.
-
-#### Commit example
+As transações têm a seguinte sintaxe:
 
 ```
-set autocommit = 0; # default is 1 which automatically commits every command as transaction.
+iniciar transação;
+Comando SQL 1
+Comando SQL 2...
+Comando SQL N
 
-start transaction;
+reversão OU confirmação;
 
-select * from employees; # Show all the rows of the table
-
-update employees set salary = 10000 where employee_id = 101; # Update the salary of one employee
-
-select * from employees; # Show the new salary
-
-commit; # Does not show any output but actually commits the transaction
-
-select * from employees; # Show the new salary
+# "rollback" aborta a transação (também encerra a transação)
+# "commit" confirma a transação (também encerra a transação)
 ```
 
-> After commit, the changes are written permanently on the disk.
+> Observe que não há comando "finalizar transação". Para encerrar a transação,
+> temos que confirmar a transação ou reverter a transação.
 
-#### Isolation and Consistency examples
+#### Propriedades do ácido
 
-Start two `mysql` command line clients.
+As transações em bancos de dados relacionais (como MySQL) seguem o
+seguintes propriedades.
 
-```
-# First client
+1. Atomicity : Execute todos os comandos na transação ou execute zero comandos na transação (todos ou nenhum).
+2. Consistência: Uma transação traz o banco de dados de um estado válido para o próximo estado válido.
+3. Isolamento: A execução simultânea de transações (possivelmente por usuários diferentes) deve deixar o banco de dados em um estado consistente.
+4. Durabilidade: Quando uma transação é confirmada, ela permanecerá confirmada mesmo em caso de falha do sistema. Em outras palavras,
+   as transações confirmadas são gravadas no disco.
 
-update employees set city = 'Mumbai' where employee_id = 101;
+### Exemplo
 
-commit;
-```
+A atomicidade pode ser demonstrada com os seguintes exemplos de `rollback` e `commit`:
 
-In the second client, show that the value is updated.
-
-```
-# Second client
-select * from employees;
-
-```
-
-> The change made by one database client in the database server will be seen by the other client(s). Thus,
-> both clients have the consistent view on the database.
+#### Exemplo de reversão
 
 ```
-# First client
+definir autocommit = 0; # padrão é 1 que automaticamente confirma cada comando como transação.
 
-set autocommit = 1;
+iniciar transação;
 
-LOCK TABLES employees WRITE;
+selecione * de funcionários; # Mostra todas as linhas da tabela
 
-update employees set salary = 7000 where employee_id = 101;
+atualize os funcionários defina o salário = 10000 em que funcionário_id = 101; # Atualizar o salário de um funcionário
+
+selecione * de funcionários; # Mostra o novo salário
+
+reversão; # Não mostra nenhuma saída, mas na verdade reverte a transação
+
+selecione * de funcionários; # Mostra o salário antigo
+```
+
+> Pode haver centenas de comandos após `start transaction`. comando rollback irá desfazer todos eles.
+
+#### Exemplo de commit
+
+```
+definir autocommit = 0; # padrão é 1 que automaticamente confirma cada comando como transação.
+
+iniciar transação;
+
+selecione * de funcionários; # Mostra todas as linhas da tabela
+
+atualize os funcionários defina o salário = 10000 em que funcionário_id = 101; # Atualizar o salário de um funcionário
+
+selecione * de funcionários; # Mostra o novo salário
+
+comprometer-se; # Não mostra nenhuma saída, mas realmente confirma a transação
+
+selecione * de funcionários; # Mostra o novo salário
+```
+
+> Após o commit, as alterações são gravadas permanentemente no disco.
+
+#### Exemplos de isolamento e consistência
+
+Inicie dois clientes de linha de comando `mysql`.
+
+```
+# Primeiro cliente
+
+atualizar funcionários definir cidade = 'Mumbai' onde funcionário_id = 101;
+
+comprometer-se;
+```
+
+No segundo cliente, mostre que o valor está atualizado.
+
+```
+# Segundo cliente
+selecione * de funcionários;
 
 ```
 
-```
-# Second client
-
-select * from employees; # Will hang because First client has the WRITE lock on that table
-```
-
-As soon as the First client executes `UNLOCK TABLES;` command,
-the Second client will get the output of the `select` command.
-
-> Transactions can also be created from the JavaScript client. Demo program is [async-transaction](async-transaction.js).
-
-### Exercise
-
-Discuss the transaction in the context of an Uber ride. How many operations/actions are involved in the successful transaction ?
-When can the transaction be aborted ? What would be the database tables ?
-
-### Essence
-
-A transaction is a set of SQL commands that is treated as ONE command.
-
-## 3. SQL injection
-
-### Explanation
-
-SQL injection is a type of hacker attack where the attacker tries to get the program to execute a query to read/write
-the data that they should not have access to.
-
-### Example
-
-Use the `prompt` package in `input-demo.js` to simulate the input from HTML forms.
-
-`sql-injection.js` contains three ways of passing the input to the select query
+> A alteração feita por um cliente de banco de dados no servidor de banco de dados será vista pelo(s) outro(s) cliente(s). Por isso,
+> ambos os clientes têm a visão consistente no banco de dados.
 
 ```
-// 1. Naive way of passing the parameter to the query
-const select_query = `select * from employees WHERE employee_id =  ${input_number};`
-```
+# Primeiro cliente
 
-This way is vulnerable to the following attacks.
+definir autocommit = 1;
 
-```
-$ node sql-injection.js # Execute the Javascript program from the (VS code) terminal.
+BLOQUEAR TABELAS funcionários ESCREVER;
 
-prompt: employee_number: 1234 OR 1=1
-# select * from employees where employee_id = 1234 OR 1=1;
-
-
-prompt: employee_number: 1234 OR 1=1; show tables;
-# select * from employees where employee_id = 1234 OR 1=1; show tables;
-
-
-prompt: employee_number: 1234 OR 1=1; drop table demo;
-# select * from employees where employee_id = 1234 OR 1=1; drop table demo;
-```
-
-To solve this problem, there are two ways of sanitizing the input:
+atualize os funcionários defina o salário = 7000 em que funcionário_id = 101;
 
 ```
-// 1. Escaping the parameter ( replacing the unwanted characters)
+
+```
+# Segundo cliente
+
+selecione * de funcionários; # Vai travar porque o primeiro cliente tem o bloqueio WRITE nessa tabela
+```
+
+Assim que o primeiro cliente executa o comando `UNLOCK TABLES;`,
+o segundo cliente obterá a saída do comando `select`.
+
+> As transações também podem ser criadas a partir do cliente JavaScript. O programa de demonstração é [async-transaction](async-transaction.js).
+
+### Exercício
+
+Discuta a transação no contexto de uma corrida Uber. Quantas operações/ações estão envolvidas na transação bem-sucedida?
+Quando a transação pode ser abortada? Quais seriam as tabelas do banco de dados?
+
+### Essência
+
+Uma transação é um conjunto de comandos SQL que é tratado como UM comando.
+
+## 3. Injeção de SQL
+
+### Explicação
+
+A injeção de SQL é um tipo de ataque de hacker em que o invasor tenta fazer com que o programa execute uma consulta para leitura/gravação
+os dados aos quais não devem ter acesso.
+
+### Exemplo
+
+Use o pacote `prompt` em `input-demo.js` para simular a entrada de formulários HTML.
+
+`sql-injection.js` contém três maneiras de passar a entrada para a consulta de seleção
+
+```
+// 1. Maneira ingênua de passar o parâmetro para a consulta
+const select_query = `select * from employees WHERE employee_id = ${input_number};`
+```
+
+Desta forma fica vulnerável aos seguintes ataques.
+
+```
+$ node sql-injection.js # Executa o programa Javascript a partir do terminal (código VS).
+
+prompt: número_funcionário: 1234 OU 1=1
+# selecione * de funcionários onde employee_id = 1234 OR 1=1;
+
+
+prompt: número_funcionário: 1234 OU 1=1; mostrar tabelas;
+# selecione * de funcionários onde employee_id = 1234 OR 1=1; mostrar tabelas;
+
+
+prompt: número_funcionário: 1234 OU 1=1; demonstração de mesa suspensa;
+# selecione * de funcionários onde employee_id = 1234 OR 1=1; demonstração de mesa suspensa;
+```
+
+Para resolver esse problema, existem duas maneiras de sanitizar a entrada:
+
+```
+// 1. Escapando o parâmetro (substituindo os caracteres indesejados)
 const select_query = `select * from employees WHERE employee_id =` + connection.escape(input_number);
 
-// 2. Using a question mark syntax to do the escaping
+// 2. Usando uma sintaxe de ponto de interrogação para fazer o escape
 const select_query = `select * from employees WHERE employee_id = ?`
 ```
 
-### Exercise
+### Exercício
 
 https://www.hacksplaining.com/exercises/sql-injection#/start
 
-### Essence
+### Essência
 
-SQL injections are dangerous. Always sanitize the input from your HTML forms.
+As injeções de SQL são perigosas. Sempre limpe a entrada de seus formulários HTML.
 
-## 4. No SQL
+## 4. Sem SQL
 
-### Explanation
+### Explicação
 
-### Example
+### Exemplo
 
-> use the same tables here (as Week 1 lessonplan) to be consistent and show students how to make similar databases using MySQL and MongoDB
+> use as mesmas tabelas aqui (como plano de aula da Semana 1) para ser consistente e mostrar aos alunos como fazer bancos de dados semelhantes usando MySQL e MongoDB
 
-### Exercise
+### Exercício
 
-### Essence
+### Essência

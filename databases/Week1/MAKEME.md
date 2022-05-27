@@ -1,83 +1,83 @@
-> This homework assumes you have installed the software [MySQL](https://dev.mysql.com/downloads/installer/) to your computer. If not please do that first!
+> Este dever de casa pressupõe que você instalou o software [MySQL](https://dev.mysql.com/downloads/installer/) em seu computador. Se não, por favor, faça isso primeiro!
 
-# Homework Databases Week 1
+# Bases de dados de trabalhos de casa Semana 1
 
-## **Todo list**
+## **Lista de afazeres**
 
-1. Practice the concepts
-2. MySQL exercises
-3. Prep exercises
-4. Code along
+1. Pratique os conceitos
+2. Exercícios MySQL
+3. Exercícios de preparação
+4. Codifique junto
 
-## 1. **Practice the concepts**
+## 1. **Pratique os conceitos**
 
-Let's start this week off with some interactive exercises. Check out the following to get started writing your first queries! In the following online course, **do sections 1 (Manipulation) and sections 2 (Queries)**.
+Vamos começar esta semana com alguns exercícios interativos. Confira a seguir para começar a escrever suas primeiras consultas! No curso online a seguir, **faça as seções 1 (Manipulação) e as seções 2 (Consultas)**.
 
-- [Codecademy: Learn SQL](https://www.codecademy.com/learn/learn-sql)
+- [Codecademy: Aprenda SQL](https://www.codecademy.com/learn/learn-sql)
 
-Also make time to do lesson 1-5 from the following:
+Também reserve um tempo para fazer a lição 1-5 do seguinte:
 
 - [SQLBolt](https://sqlbolt.com/lesson/select_queries_introduction)
 
-## 2. **MySQL exercises**
+## 2. **Exercícios de MySQL**
 
-> You will need to do some research to solve these exercises. All the concepts necessary to solve
-> these exercises are NOT covered in the reading material. This is on purpose.
+> Você precisará fazer alguma pesquisa para resolver esses exercícios. Todos os conceitos necessários para resolver
+> estes exercícios NÃO são abordados no material de leitura. Isso é de propósito.
 
-**Exercise 1: Create and insert queries**
+**Exercício 1: criar e inserir consultas**
 
-Write a JavaScript file (to be executed with Node.js) that creates and makes a connection to a MySQL database. Do so using the `mysql` package (https://www.npmjs.com/package/mysql).
+Escreva um arquivo JavaScript (para ser executado com Node.js) que cria e faz uma conexão com um banco de dados MySQL. Faça isso usando o pacote `mysql` (https://www.npmjs.com/package/mysql).
 
-Remember, It's always better to test your queries as soon as you have created them. Feel free to first write them in any sql viewer tool or mysql console before writing the node program.
+Lembre-se, é sempre melhor testar suas consultas assim que as tiver criado. Sinta-se à vontade para primeiro escrevê-los em qualquer ferramenta de visualização sql ou console mysql antes de escrever o programa node.
 
-1. Create a database called `meetup`
-2. Make a connection to your database, using your MySQL `hyfuser` login credentials
-3. Create a table called `Invitee` with the following fields (`invitee_no`, `invitee_name` and `invited_by`).
-4. Create a table called `Room` with the following fields (`room_no`, `room_name` and `floor_number`)
-5. Create a table called `Meeting` with the following fields (`meeting_no, meeting_title, starting_time, ending_time`,`room_no`)
-6. Insert 5 rows into each table with relevant fields. Find a way to create the data for those fields
-7. Test your code by executing `node <FILE_NAME>` in the terminal. Then check your MySQL database and see if everything has been created as expected. Please, be sure your file can be run more than once. You can drop and create the database every time the file is run.
+1. Crie um banco de dados chamado `meetup`
+2. Faça uma conexão com seu banco de dados, usando suas credenciais de login do MySQL `hyfuser`
+3. Crie uma tabela chamada `Invitee` com os seguintes campos (`invitee_no`, `invitee_name` e `invited_by`).
+4. Crie uma tabela chamada `Room` com os seguintes campos (`room_no`, `room_name` e `floor_number`)
+5. Crie uma tabela chamada `Meeting` com os seguintes campos (`meeting_no, meeting_title, begin_time, ending_time`,`room_no`)
+6. Insira 5 linhas em cada tabela com campos relevantes. Encontre uma maneira de criar os dados para esses campos
+7. Teste seu código executando `node <FILE_NAME>` no terminal. Em seguida, verifique seu banco de dados MySQL e veja se tudo foi criado conforme o esperado. Por favor, certifique-se de que seu arquivo pode ser executado mais de uma vez. Você pode descartar e criar o banco de dados toda vez que o arquivo for executado.
 
-**Exercise 2 : Select queries on the "world" database**
+**Exercício 2: Selecione as consultas no banco de dados "world"**
 
-> For this part of the homework, use the `world.sql` file in the `week1/databases` folder to create the database and tables. Before you go on, execute the file to create a database instance of the `world` database, using mysql console or any tool. Test to see if it's created. Make sure all the tables (`city`, `country` and `countrylanguage`) and the containing data are there.
+> Para esta parte do dever de casa, use o arquivo `world.sql` na pasta `week1/databases` para criar o banco de dados e as tabelas. Antes de continuar, execute o arquivo para criar uma instância de banco de dados do banco de dados `world`, usando o console mysql ou qualquer ferramenta. Teste para ver se ele foi criado. Certifique-se de que todas as tabelas (`city`, `country` e `countrylanguage`) e os dados contidos estejam lá.
 
-Write a JavaScript file (to be executed with Node.js) that queries (using select statements) the `world` database. The results given back should answer following questions:
-Don't omit to test your queries evey time.
+Escreva um arquivo JavaScript (para ser executado com Node.js) que consulte (usando instruções select) o banco de dados `world`. Os resultados devolvidos devem responder às seguintes perguntas:
+Não deixe de testar suas consultas todas as vezes.
 
-1. What are the names of countries with population greater than 8 million?
-2. What are the names of countries that have “land” in their names?
-3. What are the names of the cities with population in between 500,000 and 1 million?
-4. What's the name of all the countries on the continent ‘Europe’?
-5. List all the countries in the descending order of their surface areas.
-6. What are the names of all the cities in the Netherlands?
-7. What is the population of Rotterdam?
-8. What's the top 10 countries by Surface Area?
-9. What's the top 10 most populated cities?
-10. What is the population number of the world?
+1. Quais são os nomes dos países com população superior a 8 milhões?
+2. Quais são os nomes dos países que têm “terra” em seus nomes?
+3. Quais são os nomes das cidades com população entre 500.000 e 1 milhão?
+4. Qual é o nome de todos os países do continente 'Europa'?
+5. Liste todos os países em ordem decrescente de suas áreas de superfície.
+6. Quais são os nomes de todas as cidades da Holanda?
+7. Qual é a população de Roterdã?
+8. Quais são os 10 principais países por Área de Superfície?
+9. Quais são as 10 cidades mais populosas?
+10. Qual é o número da população do mundo?
 
-After you've written your **tested** queries, test to see if everything work by executing `node <FILE_NAME>`.
+Depois de escrever suas consultas **testadas**, teste para ver se tudo funciona executando `node <FILE_NAME>`.
 
-## 3. **Prep exercises**
+## 3. **Exercícios de preparação**
 
-> Prep exercises are exercises that you should work on _before_ the session on Sunday. These are a little more difficult or show an important concept and as such are a great exercise to talk about with your mentor. Have a solution ready by Sunday as you may be asked to show what you did.
+> Exercícios de preparação são exercícios que você deve trabalhar _antes_ da sessão de domingo. Estes são um pouco mais difíceis ou mostram um conceito importante e, como tal, são um ótimo exercício para conversar com seu mentor. Tenha uma solução pronta até domingo, pois pode ser solicitado que você mostre o que fez.
 
-Inside your `databases` fork, go to the folder `Week1`. Inside of that folder, navigate to `QA_PREP_EXERCISE.md` file which explains what needs to be done. There will also be some questions at the bottom to think about. Go through them _before_ the session on Sunday as it will be covered then.
+Dentro do seu fork `databases`, vá para a pasta `Week1`. Dentro dessa pasta, navegue até o arquivo `QA_PREP_EXERCISE.md` que explica o que precisa ser feito. Haverá também algumas perguntas na parte inferior para pensar. Passe por eles _antes_ da sessão no domingo, pois será coberto então.
 
-## 4. **Code along**
+## 4. **Codifique junto**
 
-In this week's code along you won't be building a complete app, but get familiar with using MySQL together with Node.js.
+No código desta semana, você não criará um aplicativo completo, mas se familiarizará com o uso do MySQL junto com o Node.js.
 
-- [Using MySQL with Node.js](https://www.youtube.com/watch?v=EN6Dx22cPRI)
+- [Usando MySQL com Node.js](https://www.youtube.com/watch?v=EN6Dx22cPRI)
 
-## **SUBMIT YOUR HOMEWORK!**
+## ** ENVIE SUA LIÇÃO DE CASA!**
 
-After you've finished your todo list it's time to show us what you got! The homework that needs to be submitted is the following:
+Depois de terminar sua lista de tarefas, é hora de nos mostrar o que você tem! A lição de casa que precisa ser enviada é a seguinte:
 
-1. MySQL exercises
+1. Exercícios MySQL
 
-Upload your code to your forked Databases repository in GitHub. Make a pull request to `HackYourHomework/databases` repository.
+Carregue seu código para o repositório de bancos de dados bifurcados no GitHub. Faça um pull request para o repositório `HackYourHomework/databases`.
 
-> Forgotten how to upload your homework? Go through the [guide](../hand-in-homework-guide.md) to learn how to do this again.
+> Esqueceu como fazer o upload de sua lição de casa? Vá até o [guia](../hand-in-homework-guide.md) para aprender como fazer isso novamente.
 
-_Deadline Tuesday 23.59 CET_
+_Prazo terça-feira 23.59 CET_

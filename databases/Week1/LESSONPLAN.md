@@ -1,388 +1,388 @@
-# Lesson Plan Databases Week 1
+# Bancos de dados do plano de aula Semana 1
 
-The lesson plan is primarily written for teachers so that they can
-use examples and anecdotes from this document in conjunction with the README
-and explain the concepts better in the class.
+O plano de aula é escrito principalmente para os professores, para que eles possam
+use exemplos e anedotas deste documento em conjunto com o README
+e explicar melhor os conceitos na aula.
 
-## Topics (essentially same as the README file)
+## Tópicos (essencialmente iguais ao arquivo README)
 
-1. What is an information (system)?
-2. What are entities?
-3. What is a database?
-4. What is the role of a database in an application?
-5. What is Structured Query Language (SQL)?
-6. What are data types (as applied to databases)?
-7. How to use SQL to Create, Read, Update and Delete (CRUD) ?
-8. What is a database dump?
+1. O que é uma informação (sistema)?
+2. O que são entidades?
+3. O que é um banco de dados?
+4. Qual é a função de um banco de dados em um aplicativo?
+5. O que é a Linguagem de Consulta Estruturada (SQL)?
+6. O que são tipos de dados (aplicados a bancos de dados)?
+7. Como usar o SQL para criar, ler, atualizar e excluir (CRUD)?
+8. O que é um dump de banco de dados?
 
-> Before you start, ask around and make sure that everyone has successfully installed the [MySQL Community Edition Server](https://dev.mysql.com/downloads/mysql/)
+> Antes de começar, pergunte e certifique-se de que todos tenham instalado com sucesso o [MySQL Community Edition Server](https://dev.mysql.com/downloads/mysql/)
 
-## 1. What is an information (system) ?
+## 1. O que é uma informação (sistema)?
 
-### Explanation
+### Explicação
 
-An information system (in the context of computers) consists of three components.
+Um sistema de informação (no contexto de computadores) consiste em três componentes.
 
-1. A place where information is kept.
-2. A tool(program) which can interact with this place
-3. A user interface
+1. Um local onde as informações são mantidas.
+2. Uma ferramenta (programa) que pode interagir com este local
+3. Uma interface de usuário
 
-### Example
+### Exemplo
 
-Email service. Any email server maintains the list of registered users, their messages etc (component 1).
-An email client is the program that can interact with it (component 2).
-A browser or the computer provides a user interface (component 3).
+Serviço de e-mail. Qualquer servidor de e-mail mantém a lista de usuários cadastrados, suas mensagens etc (componente 1).
+Um cliente de e-mail é o programa que pode interagir com ele (componente 2).
+Um navegador ou o computador fornece uma interface de usuário (componente 3).
 
-### Exercise
+### Exercício
 
-_Name three other information systems and explain their components._
+_Cite três outros sistemas de informação e explique seus componentes._
 
-### Essence
+### Essência
 
-Information systems process and interpret information by the means of computers and people.
+Os sistemas de informação processam e interpretam informações por meio de computadores e pessoas.
 
-## 2. What are entities?
+## 2. O que são entidades?
 
-### Explanation
+### Explicação
 
-Entity is an abstract concept as opposed to a concrete concept. It describes something that is not tangible.
-It has attributes that provide more information about it. An instance is the manifestation of the entity.
+Entidade é um conceito abstrato em oposição a um conceito concreto. Descreve algo que não é tangível.
+Possui atributos que fornecem mais informações sobre ele. Uma instância é a manifestação da entidade.
 
-### Example
+### Exemplo
 
-1. Car is a an Entity. Attributes of the car are `Manufacturer name`, `Model name`, `number`, `four wheel drive` etc.
-   Jeep model Renegade with the number NL65JY is an instance of the _car entity_.
-2. If you consider a table in an Excel sheet, then name of the table is the entity and the rows are the instances.
+1. O carro é uma Entidade. Os atributos do carro são 'Nome do fabricante', 'Nome do modelo', 'número', 'tração nas quatro rodas' etc.
+   Jeep modelo Renegade com o número NL65JY é uma instância da _car entity_.
+2. Se você considerar uma tabela em uma planilha do Excel, o nome da tabela é a entidade e as linhas são as instâncias.
 
-### Exercise
+### Exercício
 
-_Give three more examples of entities and their instances._
+_Dê mais três exemplos de entidades e suas instâncias._
 
-### Essence
+### Essência
 
-Entities are general names given to the types/classes of things.
+Entidades são nomes gerais dados aos tipos/classes de coisas.
 
-## 3. What is a database?
+## 3. O que é um banco de dados?
 
-### Explanation
+### Explicação
 
-A database is a collection of tables and users and permissions given to those users and rules for
-the access of tables. DataBase Management System (DBMS) is the term often used to describe
-the system that manages the access of database. This management involves storing the database,
-creating users, giving users appropriate permissions, supporting query language etc.
+Um banco de dados é uma coleção de tabelas e usuários e permissões concedidas a esses usuários e regras para
+o acesso das mesas. Sistema de gerenciamento de banco de dados (DBMS) é o termo frequentemente usado para descrever
+o sistema que gerencia o acesso ao banco de dados. Esse gerenciamento envolve o armazenamento do banco de dados,
+criando usuários, dando aos usuários permissões apropriadas, suportando linguagem de consulta etc.
 
-### Example
+### Exemplo
 
-Examples of DBMS implementations: MySQL, MongoDB, PostgreSQL, DynamoDB etc.
-We use MySQL for the demonstration.
+Exemplos de implementações de SGBD: MySQL, MongoDB, PostgreSQL, DynamoDB etc.
+Usamos MySQL para a demonstração.
 
-The following command shows all existing database:
-
-```
-show databases;
-```
-
-The following command creates a database:
+O comando a seguir mostra todo o banco de dados existente:
 
 ```
-CREATE DATABASE company;
+mostrar bancos de dados;
 ```
 
-The following command selects (switches to) a database:
+O comando a seguir cria um banco de dados:
 
 ```
-USE company;
+CRIAR BANCO DE DADOS da empresa;
 ```
 
-The following command shows you the current database:
+O comando a seguir seleciona (muda para) um banco de dados:
 
 ```
-select database();
+USE empresa;
 ```
 
-### Exercise
-
-_Explain how the database is an example of a client/server system._
-
-### Essence
-
-Database is used to store data in an organized manner.
-
-## 4. What is the role of a database in an application?
-
-### Explanation
-
-Many applications want to store the data outside of the program and access
-it whenever necessary. This **outside** can be really different computer
-where database is stored. In such a case, we need the ability to talk to
-this external computer and access the database. Thus, we need the external
-computer to act as a server and our application acts as a client.
-In this way, the primary role of a database is to separate the data handling
-from the business logic.
-
-### Example
-
-In a ticket reservation system, the database contains the information
-about all passengers, trains, timetables, stations etc. All this information
-can be stored in a database and the external application can query the relevant
-details per request.
+O comando a seguir mostra o banco de dados atual:
 
 ```
-Use connection-test.js file to demonstrate the database connection.
+selecione banco de dados();
 ```
 
-### Exercise
+### Exercício
 
-_Find out 2 applications on your laptop/phone that require a database and 2 applications that do not require a database._
+_Explicar como o banco de dados é um exemplo de sistema cliente/servidor._
 
-### Essence
+### Essência
 
-Role of a database is separation of data from the business logic of the application.
+Banco de dados é usado para armazenar dados de forma organizada.
 
-## 5. What is Structured Query Language (SQL)?
+## 4. Qual é a função de um banco de dados em um aplicativo?
 
-### Explanation
+### Explicação
 
-SQL is a language to interact with the database. It consists of four categories.
+Muitos aplicativos desejam armazenar os dados fora do programa e acessar
+isso sempre que necessário. Este **fora** pode ser um computador realmente diferente
+onde o banco de dados é armazenado. Nesse caso, precisamos da capacidade de falar com
+este computador externo e acessar o banco de dados. Assim, precisamos do exterior
+computador para atuar como servidor e nosso aplicativo atua como cliente.
+Desta forma, o papel principal de um banco de dados é separar a manipulação de dados
+da lógica do negócio.
 
-1. Data Definition Language (DDL)
-2. Data Query Language (DQL)
-3. Data Manipulation Language (DML)
-4. Data Control Language (DCL)
+### Exemplo
 
-### Example (in the format Language : Commands)
+Em um sistema de reserva de passagens, o banco de dados contém as informações
+sobre todos os passageiros, trens, horários, estações etc. Todas essas informações
+pode ser armazenado em um banco de dados e o aplicativo externo pode consultar os dados relevantes
+detalhes por solicitação.
 
-1. DDL : `CREATE`, `ALTER`
-2. DQL : `SELECT`
-3. DML : `INSERT`, `UPDATE`
-4. DCL : `GRANT`, `REVOKE`
+```
+Use o arquivo connection-test.js para demonstrar a conexão do banco de dados.
+```
 
-### Exercise
+### Exercício
 
-_Guess the difference between ALTER And UPDATE commands_
+_Descubra 2 aplicativos em seu laptop/telefone que exigem um banco de dados e 2 aplicativos que não exigem um banco de dados._
 
-### Essence
+### Essência
 
-SQL supports variety of command to interact with the database.
+A função de um banco de dados é a separação dos dados da lógica de negócios do aplicativo.
 
-## 6. What are data types (in the context of databases)?
+## 5. O que é Structured Query Language (SQL)?
 
-### Explanation
+### Explicação
 
-When the data is stored in a database. It must be classified appropriately.
-Numbers must be stored differently than a string of alphabets.
-Boolean values need much less space than a BLOB (Binary Large OBject) of image.
-When the tables are created in the database, all of its columns must
-have fixed data type. A column of age must have a number as a data type.
+SQL é uma linguagem para interagir com o banco de dados. É composto por quatro categorias.
 
-### Example (for MySQL 5.0.3 and higher)
+1. Linguagem de Definição de Dados (DDL)
+2. Linguagem de consulta de dados (DQL)
+3. Linguagem de Manipulação de Dados (DML)
+4. Linguagem de Controle de Dados (DCL)
 
-| Type       | Description                                   | Example Value           |
+### Exemplo (no formato Idioma: Comandos)
+
+1. DDL: `CREATE`, `ALTER`
+2. DQL: `SELECT`
+3. DML: 'INSERIR', 'ATUALIZAR'
+4. DCL: `GRANT`, `REVOKE`
+
+### Exercício
+
+_Adivinhe a diferença entre os comandos ALTER e UPDATE_
+
+### Essência
+
+SQL suporta vários comandos para interagir com o banco de dados.
+
+## 6. O que são tipos de dados (no contexto de bancos de dados)?
+
+### Explicação
+
+Quando os dados são armazenados em um banco de dados. Deve ser classificado adequadamente.
+Os números devem ser armazenados de forma diferente de uma sequência de alfabetos.
+Os valores booleanos precisam de muito menos espaço do que um BLOB (Binary Large OBject) de imagem.
+Quando as tabelas são criadas no banco de dados, todas as suas colunas devem
+têm tipo de dados fixo. Uma coluna de idade deve ter um número como tipo de dados.
+
+### Exemplo (para MySQL 5.0.3 e superior)
+
+| Tipo | Descrição | Valor de exemplo |
 | ---------- | --------------------------------------------- | ----------------------- |
-| int        | Numbers                                       | 42                      |
-| float      | Decimal numbers                               | 3.14                    |
-| varchar(N) | String with variable maximum of N characters  | "Dragon"                |
-| text       | String with fixed maximum of 65535 characters | "Positive"              |
-| datetime   | Store date and time without timezone          | 2019-01-01 22:10:23     |
-| timestamp  | Store date with timezone (e.g. last login)    | 2019-01-01 22:10:23 UTC |
-| ENUM       | Define a set of allowed values                | (MALE, FEMALE)          |
-| BLOB       | Store binary files                            | an image                |
+| int | Números | 42 |
+| flutuar | Números decimais | 3.14 |
+| varchar(N) | String com máximo variável de N caracteres | "Dragão" |
+| texto | String com máximo fixo de 65535 caracteres | "Positivo" |
+| datahora | Armazenar data e hora sem fuso horário | 01-01-2019 22:10:23 |
+| carimbo de data/hora | Armazenar data com fuso horário (por exemplo, último login) | 01-01-2019 22:10:23 UTC |
+| ENUM | Defina um conjunto de valores permitidos | (MASCULINO, MULHER) |
+| BLOB | Armazenar arquivos binários | uma imagem |
 
-### Exercise
+### Exercício
 
-_What data types should be used to store a boolean value?_
+_Quais tipos de dados devem ser usados para armazenar um valor booleano?_
 
-### Essence
+### Essência
 
-MySQL data types are used to define what types of values the columns of the tables in the database contain.
+Os tipos de dados MySQL são usados para definir quais tipos de valores as colunas das tabelas no banco de dados contêm.
 
-## 7. How to use SQL to Create, Read, Update and Delete (CRUD)
+## 7. Como usar o SQL para criar, ler, atualizar e excluir (CRUD)
 
-### Explanation
+### Explicação
 
-We will use both MySQL command line client and the JavaScript client to demonstrate the
-interaction with the SQL server.
+Usaremos o cliente de linha de comando MySQL e o cliente JavaScript para demonstrar o
+interação com o servidor SQL.
 
-`Use create-table.js, insert-values.js` files to show how the table creation, insertion etc.
-can be done via JavaScript client
+`Use os arquivos create-table.js, insert-values.js` para mostrar como a criação da tabela, inserção etc.
+pode ser feito via cliente JavaScript
 
-### Example
+### Exemplo
 
-All examples can be executed in the `MySQL command line client`.
-Remember that all these commands can also be sent via JavaScript clients.
-Please check the available `.js` files in the `Week1` folder.
+Todos os exemplos podem ser executados no `cliente de linha de comando MySQL`.
+Lembre-se que todos esses comandos também podem ser enviados via clientes JavaScript.
+Verifique os arquivos `.js` disponíveis na pasta `Week1`.
 
-#### CREATE
+#### CRIO
 
-The following command creates a table called `employees` (in the `company` database)
-with five columns:
+O comando a seguir cria uma tabela chamada `employees` (no banco de dados `company`)
+com cinco colunas:
 
-1. `employee_id` that contains integer number.
-2. `employee_name` that contains alphabetical names (of max 50 characters).
-3. `salary` that contains a decimal number.
-4. `joining_date` that contains a date time.
-5. `gender` than can either be `'m'` or `'f'`.
+1. `employee_id` que contém um número inteiro.
+2. `employee_name` que contém nomes alfabéticos (de no máximo 50 caracteres).
+3. `salário` que contém um número decimal.
+4. `joining_date` que contém uma data e hora.
+5. `gender` que pode ser `'m'` ou `'f'`.
 
 ```
-CREATE TABLE employees (
-    employee_id int,
-    employee_name varchar(50),
-    salary float,
-    joining_date datetime,
-    gender enum('m', 'f')
+CREATE TABLE funcionários (
+    funcionário_id int,
+    nome_funcionário varchar(50),
+    flutuação salarial,
+    join_date datahora,
+    gênero enum('m', 'f')
 );
 ```
 
-#### INSERT
+#### INSERIR
 
-The following command inserts a row in the table `employees`.
-Note that the sequence of columns must be followed.
-
-```
-INSERT INTO employees VALUES (101, "Dan", 5000, "2019-06-24", 'm');
-```
-
-The following command uses column name (also known as field name sometimes) syntax:
+O comando a seguir insere uma linha na tabela `employees`.
+Observe que a sequência de colunas deve ser seguida.
 
 ```
-INSERT INTO employees (employee_name , salary, employee_id, gender, joining_date) VALUES("Dany", 5000, 102, 'f', "2019-05-20");
+INSERIR NOS VALORES dos funcionários (101, "Dan", 5000, "2019-06-24", 'm');
 ```
 
-The following command uses the same syntax to add multiple rows at a time
+O comando a seguir usa a sintaxe do nome da coluna (também conhecido como nome do campo às vezes):
 
 ```
-INSERT INTO employees (employee_name , salary, employee_id, gender, joining_date) VALUES("Ben", 7000, 103, 'm', "2019-07-20"), ("Benta", 3000, 104, 'f', "2019-10-12"), ("Raj", 9000, 105, 'm', "2019-01-01");
+INSERT INTO funcionários (nome_do_funcionário, salário, id_do_funcionário, sexo, data_de entrada) VALUES("Dany", 5000, 102, 'f', "2019-05-20");
 ```
 
-The following command uses the SET syntax to insert values in a random order of columns:
+O comando a seguir usa a mesma sintaxe para adicionar várias linhas por vez
 
 ```
-INSERT INTO employees SET employee_name = "Joe", salary = 4000, joining_date = "2019-07-01", gender = 'f', employee_id = 100;
+INSERT INTO funcionários (nome_do_funcionário, salário, id_do_funcionário, sexo, data_de entrada) VALUES("Ben", 7000, 103, 'm', "2019-07-20"), ("Benta", 3000, 104, 'f', "2019-10-12"), ("Raj", 9000, 105, 'm', "2019-01-01");
 ```
 
-> If you don't remember the column names, then use describe employees; command which lists the column names and their data types.
-
-#### SELECT
-
-The following command displays the entire table. The `*` means all columns.
+O comando a seguir usa a sintaxe SET para inserir valores em uma ordem aleatória de colunas:
 
 ```
-SELECT * FROM employees;
+INSERT INTO funcionários SET funcionário_nome = "Joe", salário = 4000, data_de ingresso = "2019-07-01", gênero = 'f', funcionário_id = 100;
 ```
 
-The following command displays names of employees whose salary is greater than 3000.
-It uses the `WHERE` clause which filters out the rows based on the condition.
-The condition is applied on the column `salary` of each row.
-`SELECT employee_name` will only print the `employee_name` column of the rows
-where `salary` column has the value `>3000`.
+> Se você não se lembrar dos nomes das colunas, use descrever funcionários; comando que lista os nomes das colunas e seus tipos de dados.
+
+#### SELECIONE
+
+O comando a seguir exibe a tabela inteira. O `*` significa todas as colunas.
 
 ```
-SELECT employee_name from employees
-WHERE salary > 3000;
+SELECIONAR * DE funcionários;
 ```
 
-#### UPDATE
-
-The following command updates the salary of the employee whose `employee_id` is 102.
-Note that `=` works as an assignment operator in `SET salary = 8000`
-but works as a comparison operator in the WHERE clause `employee_id = 102`.
-
-```
-UPDATE employees
-SET salary = 8000
-WHERE employee_id = 102;
-```
-
-#### DELETE
-
-The following command deletes all (rows of) employees who joined after the 1st of July 2019.
+O comando a seguir exibe os nomes dos funcionários cujo salário é maior que 3.000.
+Ele usa a cláusula `WHERE` que filtra as linhas com base na condição.
+A condição é aplicada na coluna `salário` de cada linha.
+`SELECT employee_name` imprimirá apenas a coluna `employee_name` das linhas
+onde a coluna `salário` tem o valor `>3000`.
 
 ```
-DELETE from employees
-WHERE joining_date > "2019-07-01";
+SELECIONE o nome_do_funcionário dos funcionários
+ONDE salário > 3000;
 ```
 
-### Exercise
+#### ATUALIZAR
 
-1. Write an SQL query to find all employees who are males.
-2. Write an SQL query to insert 4 more records in the table of employees.
-3. Write an SQL query to update the salary of all female employees to 12000.
-4. Write an SQL query to delete all the employees whose name starts with a 'B'.
-5. Write an SQL query to create a table called `departments` with following columns: `dept_id`, `dept_name`, `manager`.
-
-### Essence
-
-SQL commands provide a neat and structured way to interact with the database tables.
-
-## 7.5 Miscellaneous concepts
-
-### Aliases in SELECT queries
-
-#### Explanation
-
-Aliases give nicknames to column names when displaying them. They are especially useful in case of nested queries
-when tables have long names and joins are used.
-
-#### Example (without nested query)
-
-`SELECT employee_id as "Employee Number", employee_name as "Employee Name", salary as Earnings from employees;`
-
-### NOT NULL and DEFAULT values for columns
-
-#### Explanation
-
-While creating a table, some columns may be declared as `NOT NULL` or `DEFAULT` with a value,
-or both. For example, `gender` of the employee can NOT be null. Also some columns like
-`Number of holidays` can have default values. It is a good practice to explicitly mark
-the columns as `NOT NULL` so that MySQL can do optimizations in storing/indexing.
-
-#### Example
-
-Demonstrate the difference with the live execution of the following sequence of commands:
+O comando a seguir atualiza o salário do funcionário cujo `employee_id` é 102.
+Observe que `=` funciona como um operador de atribuição em `SET salário = 8000`
+mas funciona como um operador de comparação na cláusula WHERE `employee_id = 102`.
 
 ```
-CREATE TABLE default_not_null_demo(num1 int, num2 int NOT NULL, num3 int default 5555, num4 int not null default 1111);
-DESCRIBE default_not_null_demo;
+ATUALIZAR funcionários
+Salário SET = 8000
+ONDE funcionário_id = 102;
+```
+
+#### APAGAR
+
+O comando a seguir exclui todos (linhas de) funcionários que ingressaram após 1º de julho de 2019.
+
+```
+EXCLUIR de funcionários
+ONDE join_date > "2019-07-01";
+```
+
+### Exercício
+
+1. Escreva uma consulta SQL para localizar todos os funcionários do sexo masculino.
+2. Escreva uma consulta SQL para inserir mais 4 registros na tabela de funcionários.
+3. Escreva uma consulta SQL para atualizar o salário de todas as funcionárias para 12.000.
+4. Escreva uma consulta SQL para excluir todos os funcionários cujo nome comece com 'B'.
+5. Escreva uma consulta SQL para criar uma tabela chamada `departments` com as seguintes colunas: `dept_id`, `dept_name`, `manager`.
+
+### Essência
+
+Os comandos SQL fornecem uma maneira organizada e estruturada de interagir com as tabelas do banco de dados.
+
+## 7.5 Conceitos diversos
+
+### Aliases em consultas SELECT
+
+#### Explicação
+
+Os aliases dão apelidos aos nomes das colunas ao exibi-los. Eles são especialmente úteis no caso de consultas aninhadas
+quando as tabelas têm nomes longos e junções são usadas.
+
+#### Exemplo (sem consulta aninhada)
+
+`SELECT Employee_id como "Número do Funcionário", employee_name como "Nome do Funcionário", salário como Ganhos dos funcionários;`
+
+### Valores NOT NULL e DEFAULT para colunas
+
+#### Explicação
+
+Ao criar uma tabela, algumas colunas podem ser declaradas como `NOT NULL` ou `DEFAULT` com um valor,
+ou ambos. Por exemplo, `gender` do funcionário NÃO pode ser nulo. Também algumas colunas como
+`Número de feriados` pode ter valores padrão. É uma boa prática marcar explicitamente
+as colunas como `NOT NULL` para que o MySQL possa fazer otimizações no armazenamento/indexação.
+
+#### Exemplo
+
+Demonstre a diferença com a execução ao vivo da seguinte sequência de comandos:
+
+```
+CREATE TABLE default_not_null_demo(num1 int, num2 int NOT NULL, num3 int default 5555, num4 int não null default 1111);
+DESCREVER default_not_null_demo;
 INSERT INTO default_not_null_demo set num2 = 1, num4 = default;
-SELECT * from default_not_null_demo;
+SELECT * de default_not_null_demo;
 INSERT INTO default_not_null_demo set num2 = 1, num3 = 233, num4 = default;
 ```
 
-### What is int(N) ?
+### O que é int(N) ?
 
-#### Explanation
+#### Explicação
 
-The number N represents the number of decimal spaces that may be padded when displaying the number.
-It does not indicate the highest number that can be stored in the column. E.g. The column `cost int(3)`
-can hold numbers greater than 999.
+O número N representa o número de espaços decimais que podem ser preenchidos ao exibir o número.
+Não indica o número mais alto que pode ser armazenado na coluna. Por exemplo. A coluna `cost int(3)`
+pode conter números maiores que 999.
 
-#### Example
+#### Exemplo
 
-Illustrate the difference with the live execution of the following sequence of commands:
+Ilustre a diferença com a execução ao vivo da seguinte sequência de comandos:
 
 ```
 CREATE TABLE test_int(num1 int(4) ZEROFILL, num2 int(6));
-INSERT INTO test_int values (23,34);
-INSERT INTO test_int values (3,534);
-INSERT INTO test_int values (14563,534);
-INSERT INTO test_int values (12345,98534);
-INSERT INTO test_int values (12345,1234567);
+INSERT INTO valores test_int (23,34);
+valores INSERT INTO test_int (3.534);
+valores INSERT INTO test_int (14563.534);
+valores INSERT INTO test_int (12345,98534);
+valores INSERT INTO test_int (12345,1234567);
 SELECT * FROM test_int;
 ```
 
-### Datetime vs Timestamp
+### Data e hora x carimbo de data/hora
 
-#### Explanation
+#### Explicação
 
-Both Datetime and Timestamp accept values in the format `YYYY-MM-DD HH:MM:SS`.
-However, MySQL stored the timestamp value along with the current system time zone information.
-If the time zone is changed, the value stored in the database is changed accordingly.
-Datetime may be a suitable data type for the `joining date`, while timestamp
-may be a suitable data type for `last login` where the exact time and time zone might be crucial.
+Tanto Datetime quanto Timestamp aceitam valores no formato `YYYY-MM-DD HH:MM:SS`.
+No entanto, o MySQL armazenou o valor do carimbo de data/hora junto com as informações de fuso horário do sistema atual.
+Se o fuso horário for alterado, o valor armazenado no banco de dados será alterado de acordo.
+Datetime pode ser um tipo de dados adequado para a `data de entrada`, enquanto timestamp
+pode ser um tipo de dados adequado para `último login` onde a hora exata e o fuso horário podem ser cruciais.
 
-#### Example
+#### Exemplo
 
-Demonstrate with the live execution of the following sequence of commands:
+Demonstre com a execução ao vivo da seguinte sequência de comandos:
 
 ```
 CREATE TABLE test_timestamp (dt datetime, ts timestamp);
@@ -397,51 +397,51 @@ SELECT * FROM test_timestamp;
 
 ```
 
-## 8. What is a database dump?
+## 8. O que é um dump de banco de dados?
 
-### Explanation
+### Explicação
 
-A database dump is a file. This file contains SQL commands (mostly CREATE and INSERT)
-that reflect the current state of the database.
+Um dump de banco de dados é um arquivo. Este arquivo contém comandos SQL (principalmente CREATE e INSERT)
+que refletem o estado atual do banco de dados.
 
-### Example
+### Exemplo
 
-To create the SQL dump, execute the following command from the terminal of MAC/Linux.
-
-```
-mysqldump -uhyfuser -p company > /path/to/store/dump/file/company-db-snapshot.sql
-```
-
-To create the SQL dump in Windows, you will have to
-[include the path of your MySQL installation in the `Path` environment variable](https://www.computerhope.com/issues/ch000549.htm).
-Then you can execute the following command
+Para criar o dump SQL, execute o seguinte comando no terminal do MAC/Linux.
 
 ```
-mysqldump.exe -uhyfuser -p company > /path/to/store/dump/file/company-db-snapshot.sql
+mysqldump -uhyfuser -p empresa > /path/to/store/dump/file/company-db-snapshot.sql
 ```
 
-Note that the path should be a location where the user has `write` permission (E.g. Desktop),
-otherwise, you will get permission errors.
-
-To apply the dump from mysql command prompt (`mysql>`), use the following command
-
-```
-source /path/to/the/dump/file
-```
-
-To apply the dump from the terminal(with generally a dollar prompt `$`), use the following command
+Para criar o dump SQL no Windows, você terá que
+[inclua o caminho da sua instalação do MySQL na variável de ambiente `Path`](https://www.computerhope.com/issues/ch000549.htm).
+Então você pode executar o seguinte comando
 
 ```
-mysql -uhyfuser -p [database] < /path/to/the/dump/file
+mysqldump.exe -uhyfuser -p empresa > /path/to/store/dump/file/company-db-snapshot.sql
 ```
 
-Use [this](https://john-dugan.com/dump-and-restore-mysql-databases-in-windows/) link to learn more about
-how to do it in Windows (using `cmd`).
+Observe que o caminho deve ser um local onde o usuário tenha permissão de 'gravação' (por exemplo, área de trabalho),
+caso contrário, você receberá erros de permissão.
 
-### Exercise
+Para aplicar o dump do prompt de comando mysql (`mysql>`), use o seguinte comando
 
-Take the dump of `company` database and use the dump file to re-create the database.
+```
+fonte /caminho/para/o/despejo/arquivo
+```
 
-### Essence
+Para aplicar o dump do terminal (geralmente com um prompt de dólar `$`), use o seguinte comando
 
-Dump files work as a snapshot of the database which allows going back to the previous states of the database.
+```
+mysql -uhyfuser -p [banco de dados] < /path/to/the/dump/file
+```
+
+Use [este](https://john-dugan.com/dump-and-restore-mysql-databases-in-windows/) link para saber mais sobre
+como fazer isso no Windows (usando `cmd`).
+
+### Exercício
+
+Faça o dump do banco de dados `company` e use o arquivo dump para recriar o banco de dados.
+
+### Essência
+
+Os arquivos de despejo funcionam como um instantâneo do banco de dados que permite voltar aos estados anteriores do banco de dados.

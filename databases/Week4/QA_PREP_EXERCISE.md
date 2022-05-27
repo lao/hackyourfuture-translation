@@ -1,15 +1,15 @@
-# Prep exercise week 4
+# Semana de exercícios preparatórios 4
 
-As a preparation step for the upcoming Q&A, you need to work on the following exercise, which is based on the prep exercise of the previous week.
+Como etapa de preparação para as próximas perguntas e respostas, você precisa trabalhar no exercício a seguir, baseado no exercício de preparação da semana anterior.
 
-## Exercise
+## Exercício
 
-Last week you updated your database to be normalized. Now that you have some more NoSQL knowledge, convert your database to a document-based database. Think about the following:
+Na semana passada você atualizou seu banco de dados para ser normalizado. Agora que você tem mais algum conhecimento de NoSQL, converta seu banco de dados em um banco de dados baseado em documentos. Pense no seguinte:
 
-- What are the collections?
-- What information will you embed in a document and which will you store normalised?
+- Quais são as coleções?
+- Quais informações você incorporará em um documento e quais armazenará normalizadas?
 
-## Discussion (Try to write answers to these questions in text, provide queries and commands when necessary)
+## Discussão (Tente escrever respostas para essas perguntas em texto, forneça consultas e comandos quando necessário)
 
-- What made you decide when to embed information? What assumptions did you make?
-- If you were given MySQL and MongoDB as choices to build the recipe's database at the beginning, which one would you choose and why?
+- O que fez você decidir quando incorporar informações? Que suposições você fez?
+- Se você recebesse MySQL e MongoDB como opções para construir o banco de dados da receita no início, qual você escolheria e por quê?

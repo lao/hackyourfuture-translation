@@ -1,28 +1,28 @@
-# Reading Material Databases Week 3
+# Lendo Bancos de Dados de Materiais Semana 3
 
 ## Agenda
 
-These are the topics for week 3:
+Estes são os tópicos da semana 3:
 
-- [Normalization](https://hackyourfuture.github.io/study/#/databases/sql/normalization)
-- [Transactions](https://hackyourfuture.github.io/study/#/databases/sql/transactions)
-- [SQL injection](https://hackyourfuture.github.io/study/#/databases/sql/sql-injection)
+- [Normalização](https://hackyourfuture.github.io/study/#/databases/sql/normalization)
+- [Transações](https://hackyourfuture.github.io/study/#/databases/sql/transactions)
+- [Injeção de SQL](https://hackyourfuture.github.io/study/#/databases/sql/sql-injection)
 - [NoSQL](https://hackyourfuture.github.io/study/#/databases/nosql/README.md)
   - [MongoDB](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/README.md)
-    - [Basic operations](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/basic-operations.md)
+    - [Operações básicas](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/basic-operations.md)
 
-## Week goals
+## Metas da semana
 
-This week we are looking at finalising our SQL knowledge with even more advanced topics. Let's first look at [Normalization](https://hackyourfuture.github.io/study/#/databases/sql/normalization) which is a technique you should always be using when designing your databases!
+Esta semana estamos olhando para finalizar nosso conhecimento de SQL com tópicos ainda mais avançados. Vamos primeiro olhar para [Normalização](https://hackyourfuture.github.io/study/#/databases/sql/normalization) que é uma técnica que você deve sempre usar ao projetar seus bancos de dados!
 
-Next we are going to look at [Transactions](https://hackyourfuture.github.io/study/#/databases/sql/transactions) which are ways to ensure your data stays clean. Sometimes certain updates need to either all happen or none happen and transactions allow you to do that.
+Em seguida, veremos [Transações](https://hackyourfuture.github.io/study/#/databases/sql/transactions), que são maneiras de garantir que seus dados permaneçam limpos. Às vezes, certas atualizações precisam acontecer todas ou nenhuma, e as transações permitem que você faça isso.
 
-Lastly for SQL, we will look into the topic of [SQL injection](https://hackyourfuture.github.io/study/#/databases/sql/sql-injection) which you as a backend engineer should be wary about. Not handling this could make it possible for others to delete your whole database, which I hope we don't have to tell you is a bad thing!
+Por último, para SQL, examinaremos o tópico de [SQL injection](https://hackyourfuture.github.io/study/#/databases/sql/sql-injection) sobre o qual você, como engenheiro de back-end, deve ter cuidado. Não lidar com isso pode tornar possível que outros excluam todo o seu banco de dados, o que espero não precisar dizer a você que é uma coisa ruim!
 
-Then it is time to start with the basics of NoSQL, which is an extremely broad topic as it pretty much means all other ways except for the SQL way. Have a look at the basics of NoSQL [here](https://hackyourfuture.github.io/study/#/databases/nosql/README.md).
+Então é hora de começar com o básico do NoSQL, que é um tópico extremamente amplo, pois significa praticamente todas as outras formas, exceto a forma SQL. Dê uma olhada no básico do NoSQL [aqui](https://hackyourfuture.github.io/study/#/databases/nosql/README.md).
 
-Most of NoSQL is out of the scope of our curriculum as storing data in specific ways like graphs is generally only used for very specific use cases. We will be looking at the documented-oriented way of storing data as that is the most common thing you will see in the wild. In that field we will be using `MongoDB` as our implementation, but be sure that you know that `MongoDB` is an implementation of a document-oriented database and not the only one. Kind of like `MySQL` is an implementation of an SQL database. Read up on document-oriented databases [here](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/README.md) and then have a look at how to do the basic CRUD operations with MongoDB [here](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/basic-operations.md) so that we can get our feet wet.
+A maior parte do NoSQL está fora do escopo do nosso currículo, pois armazenar dados de maneiras específicas, como gráficos, geralmente é usado apenas para casos de uso muito específicos. Estaremos analisando a maneira documentada de armazenar dados, pois essa é a coisa mais comum que você verá na natureza. Nesse campo estaremos usando `MongoDB` como nossa implementação, mas tenha certeza que você sabe que `MongoDB` é uma implementação de um banco de dados orientado a documentos e não o único. Mais ou menos como `MySQL` é uma implementação de um banco de dados SQL. Leia sobre bancos de dados orientados a documentos [aqui](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/README.md) e veja como fazer as operações básicas de CRUD com o MongoDB [aqui](https://hackyourfuture.github.io/study/#/databases/nosql/mongodb/basic-operations.md) para que possamos molhar os pés.
 
-## Finished?
+## Finalizado?
 
-Are you finished with going through the materials? High five! If you feel ready to get practical, click [here](./MAKEME.md).
+Você terminou de passar pelos materiais? Toca aqui! Se você se sentir pronto para ser prático, clique [aqui](./MAKEME.md).

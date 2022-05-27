@@ -1,45 +1,45 @@
-# SQL Cheatsheet
+# Folha de dicas SQL
 
-## Queries
+## Consultas
 
-### Specify what information to extract
+### Especifique quais informações extrair
 
 ```sql
-SELECT column
+SELECIONAR coluna
 ```
 
-## From which table
+## De qual tabela
 
 ```sql
-FROM table
+DA mesa
 ```
 
-## Only extract rows where the condition holds
+## Extraia apenas linhas onde a condição é válida
 
-(Used with an operator: `>, <, >=, <=, =, <>, BETWEEN, LIKE, IN`)
+(Usado com um operador: `>, <, >=, <=, =, <>, BETWEEN, LIKE, IN`)
 ```sql
-WHERE column = 'value'
+WHERE coluna = 'valor'
 ```
 
-## Combining `WHERE` clauses:
+## Combinando cláusulas `WHERE`:
 
-(Used with: `AND, OR`)
+(Usado com: 'AND, OR')
 ```sql
-WHERE column = 'value' OR
-      column = 'other value'
+WHERE coluna = 'valor' OU
+      coluna = 'outro valor'
 ```
 
-## Aggregating results:
+## Agregando resultados:
 
-(Used with: `SUM, COUNT, MIN, MAX, AVG`)
+(Usado com: `SUM, COUNT, MIN, MAX, AVG`)
 ```sql
-SELECT SUM(column)
-FROM table
+SELECIONAR SOMA(coluna)
+DA mesa
 ```
 
-## Aliasing tables
+## Tabelas de alias
 
 ```sql
-SELECT column AS alias
-FROM table
+SELECT coluna AS alias
+DA mesa
 ```

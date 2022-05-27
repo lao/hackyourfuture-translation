@@ -1,26 +1,26 @@
-# Prep exercise week 1
+# Semana de exercícios preparatórios 1
 
-As a preparation step for the upcoming Q&A, you will work through the following exercise. The expected result is a list of SQL `CREATE TABLE` statements representing the tables you will design.
+Como etapa de preparação para as próximas perguntas e respostas, você trabalhará no exercício a seguir. O resultado esperado é uma lista de instruções SQL `CREATE TABLE` representando as tabelas que você irá projetar.
 
-We suggest you first think of the design of the tables (names, columns, types) and then proceed to write the SQL statements. That way, you're thinking about the problem you're trying to solve (creating a database that holds data) rather than the implementation first (creating a set of SQL statements).
+Sugerimos que você primeiro pense no design das tabelas (nomes, colunas, tipos) e, em seguida, prossiga para escrever as instruções SQL. Dessa forma, você está pensando no problema que está tentando resolver (criando um banco de dados que contém dados) em vez da implementação primeiro (criando um conjunto de instruções SQL).
 
-## Exercise
+## Exercício
 
-Design the tables for a database that contains food recipes.
+Projete as tabelas para um banco de dados que contém receitas de alimentos.
 
-- Each recipe should have a name, one or more categories, a list of ingredients, and a list of steps to follow to complete the recipe.
-- Many recipes might share the same ingredients or the same list of steps (For example, "cook pasta according to the package instructions" could be a regular step seen in multiple recipes).
-- You can create your own data, focusing on Japanese, cake and vegetarian recipes. You can find some inspiration online, but keep it simple!
+- Cada receita deve ter um nome, uma ou mais categorias, uma lista de ingredientes e uma lista de passos a seguir para completar a receita.
+- Muitas receitas podem compartilhar os mesmos ingredientes ou a mesma lista de etapas (por exemplo, "cozinhar macarrão de acordo com as instruções da embalagem" pode ser uma etapa regular vista em várias receitas).
+- Você pode criar seus próprios dados, com foco em receitas japonesas, de bolo e vegetarianas. Você pode encontrar alguma inspiração online, mas mantenha-o simples!
 
-You don't need to write any specific queries now, but the design should consider that we will execute queries on the tables to extract data such as:
+Você não precisa escrever nenhuma consulta específica agora, mas o design deve considerar que executaremos consultas nas tabelas para extrair dados como:
 
-- You should be able to list all the recipes.
-- You should be able to list recipes under a single category (Salads, Mexican, etc).
+- Você deve ser capaz de listar todas as receitas.
+- Você deve ser capaz de listar receitas em uma única categoria (saladas, mexicana, etc).
 
-Some questions you can ask yourself:
+Algumas perguntas que você pode se fazer:
 
-- Which entities can you spot in the above problem ?
-- Which tables do you need to create to store the above data?
-- What are the relationships between those entities?
+- Quais entidades você consegue identificar no problema acima?
+- Quais tabelas você precisa criar para armazenar os dados acima?
+- Quais são as relações entre essas entidades?
 
-There's a [short video](https://www.youtube.com/watch?v=C3icLzBtg8I) explaining how relationships work, and you can use this for inspiration. We will expand this topic the following week.
+Há um [vídeo curto](https://www.youtube.com/watch?v=C3icLzBtg8I) explicando como os relacionamentos funcionam, e você pode usar isso como inspiração. Vamos expandir este tópico na próxima semana.

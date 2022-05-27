@@ -1,29 +1,29 @@
-# Prep exercise week 2
+# Semana de exercícios preparatórios 2
 
-As a preparation step for the upcoming Q&A, you need to work on the following exercise, which is based on the prep exercise of the previous week.
+Como etapa de preparação para as próximas perguntas e respostas, você precisa trabalhar no exercício a seguir, baseado no exercício de preparação da semana anterior.
 
-## Exercise
+## Exercício
 
-Last week you designed a database for storing food recipes. How can you improve your tables, based on what you learned this week?
+Na semana passada, você projetou um banco de dados para armazenar receitas de alimentos. Como você pode melhorar suas tabelas, com base no que aprendeu esta semana?
 
-- What changes do you need to make to include [these new recipes](recipes.md) in your database?
+- Quais mudanças você precisa fazer para incluir [estas novas receitas](recipes.md) em seu banco de dados?
 
-- Where can you add a primary key?
-- Which tables should be linked with a foreign key?
-- What type of relationships do you see between the tables?
+- Onde você pode adicionar uma chave primária?
+- Quais tabelas devem ser vinculadas com uma chave estrangeira?
+- Que tipo de relações você vê entre as tabelas?
 
-- Can you make queries to get:
-  > All the vegetarian recipes with potatoes
-  > All the cakes that do not need baking
-  > All the vegan and Japanese recipes
+- Você pode fazer consultas para obter:
+  > Todas as receitas vegetarianas com batatas
+  > Todos os bolos que não precisam de cozer
+  > Todas as receitas veganas e japonesas
 
-Since your table data might be different from the above questions, feel free to improvise.
-Make sure that your database is running locally and that your queries are reproducable in .js files.
+Como os dados da sua tabela podem ser diferentes das perguntas acima, sinta-se à vontade para improvisar.
+Certifique-se de que seu banco de dados esteja sendo executado localmente e que suas consultas sejam reproduzíveis em arquivos .js.
 
-Having learned what an ERD is, how would you design one for the database you created? The diagram must visualize:
+Tendo aprendido o que é um ERD, como você projetaria um para o banco de dados que você criou? O diagrama deve visualizar:
 
-- Your entities
-- Their attributes
-- The relationships between the tables
+- Suas entidades
+- Seus atributos
+- As relações entre as tabelas
 
-You can use [Lucidchart](lucidchart.com/pages/) or [draw.io](draw.io) for creating your diagrams.
+Você pode usar o [Lucidchart](lucidchart.com/pages/) ou [draw.io](draw.io) para criar seus diagramas.

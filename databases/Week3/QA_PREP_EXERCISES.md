@@ -1,17 +1,17 @@
-# Prep exercise week 3
+# Semana de exercícios preparatórios 3
 
-As a preparation step for the upcoming Q&A, you need to work on the following exercise, which is based on the prep exercise of the previous week.
+Como etapa de preparação para as próximas perguntas e respostas, você precisa trabalhar no exercício a seguir, baseado no exercício de preparação da semana anterior.
 
-## Exercise
+## Exercício
 
-Last week you created an ERD for the database for storing food recipes.
-How can you normalize your database based on what you learned this week?
-In particular, try answering following questions and provide table definitions from the last week
-and this week to explain the changes.
+Na semana passada, você criou um ERD para o banco de dados para armazenar receitas de alimentos.
+Como você pode normalizar seu banco de dados com base no que aprendeu esta semana?
+Em particular, tente responder às seguintes perguntas e forneça as definições de tabela da última semana
+e esta semana para explicar as mudanças.
 
-- Was your database already in 2NF / 3 NF?
-- What changes did you have to do to normalize your database?
+- Seu banco de dados já estava em 2NF/3NF?
+- Quais mudanças você teve que fazer para normalizar seu banco de dados?
 
-## Discussion (Try to write answers to these questions in text, provide queries and commands when necessary)
+## Discussão (Tente escrever respostas para essas perguntas em texto, forneça consultas e comandos quando necessário)
 
-- If you want to add thousands of recipes to your database, what challenges do you foresee?
+- Se você deseja adicionar milhares de receitas ao seu banco de dados, quais desafios você prevê?
