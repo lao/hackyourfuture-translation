@@ -1,131 +1,131 @@
-# Values
+# Valores
 
-Values are the "things" that you assign to a variable. All values have a type. In our example above, the variable `x` is assigned a value of type `number`. JavaScript supports the following types:
+Os valores são as "coisas" que você atribui a uma variável. Todos os valores têm um tipo. Em nosso exemplo acima, a variável `x` recebe um valor do tipo `number`. JavaScript suporta os seguintes tipos:
 
-* `string`, e.g. "HackYourFuture"
-* `number`, e.g. 5, or 10.6
-* `boolean`, e.g. `true` or `false`
-* `array`\*, e.g. `[1, 2, 3]` or `['what', 'is', 'your', 'name']`
-* `object`, e.g. `{name: 'John', age: 24}`, or the special object `null`
-* `function`, e.g. `function () { return 4; }`
-* `symbol`
-* `undefined`
+* `string`, por exemplo "HackYourFuture"
+* `número`, por exemplo 5 ou 10,6
+* `booleano`, por exemplo `verdadeiro` ou `falso`
+* `matriz`\*, por exemplo `[1, 2, 3]` ou `['o que', 'é', 'seu', 'nome']`
+* `objeto`, por exemplo `{name: 'John', age: 24}`, ou o objeto especial `null`
+* `função`, por exemplo `função() { return 4; }`
+* `símbolo`
+* `indefinido`
 
-If you declare a variable without specifying its value, then, by default its value is `undefined`.
+Se você declarar uma variável sem especificar seu valor, então, por padrão, seu valor será `undefined`.
 
-To get the type of a value assigned to a variable, use the following code:
+Para obter o tipo de um valor atribuído a uma variável, use o seguinte código:
 
-```js
-let x = 5;
-let typeOfX = typeof x; // -> 'number'
+``` js
+seja x = 5;
+deixe typeOfX = typeof x; // -> 'número'
 ```
 
-Note that I've put an asterisk behind 'array'. That is because in JavaScript, array is a special kind of object:
+Observe que coloquei um asterisco atrás de 'array'. Isso porque em JavaScript, array é um tipo especial de objeto:
 
-```js
-let arr = [1, 2, 3];
-let typeOfArr = typeof arr; // -> 'object'
+``` js
+deixe arr = [1, 2, 3];
+deixe typeOfArr = typeof arr; // -> 'objeto'
 ```
 
-However, in practice we will call these variables arrays.
+No entanto, na prática, chamaremos essas variáveis de arrays.
 
-## Null and undefined
+## Nulo e indefinido
 
-The values `null` and `undefined` are very similar in JavaScript, but they behave a bit differently. The difference is that `null` always has type `'object'`, and `undefined` always has type `'undefined'`.
+Os valores `null` e `undefined` são muito semelhantes em JavaScript, mas se comportam de forma um pouco diferente. A diferença é que `null` sempre tem o tipo `'object'`, e `undefined` sempre tem o tipo `'undefined'`.
 
-Whenever you declare a variable, but you don't set a value, the variable will become `undefined`. JavaScript will never make a variable `null` unless you explicitly assign it the value `null`.
+Sempre que você declarar uma variável, mas não definir um valor, a variável se tornará `undefined`. JavaScript nunca fará uma variável `null` a menos que você atribua explicitamente o valor `null`.
 
-```js
-let x;
-console.log(typeof x); // -> 'undefined'
+``` js
+deixe x;
+console.log(tipo de x); // -> 'indefinido'
 ```
 
 
-## `typeof` operator
+## operador `typeof`
 
-You can use the `typeof` operator to get the type of a certain variable as you have seen in the above section 'Value types'. As you can see in the following examples it returns the type of value that you have assigned to your variable.
+Você pode usar o operador `typeof` para obter o tipo de uma determinada variável como você viu na seção acima 'Tipos de valor'. Como você pode ver nos exemplos a seguir, ele retorna o tipo de valor que você atribuiu à sua variável.
 
-## Strings
+## Cordas
 
-In JavaScript you can assign a series of characters to a variable, you then call this a string. You can use all sorts of characters (text/numbers, spaces or phrases) in strings. By using the `''` you define that something is a string. You can also use `""` to create a string. Both are fine as long as you are consistent (just make a choice on which one you prefer and stick to it).
+Em JavaScript você pode atribuir uma série de caracteres a uma variável, então você chama isso de string. Você pode usar todos os tipos de caracteres (texto/números, espaços ou frases) em strings. Usando o `''` você define que algo é uma string. Você também pode usar `""` para criar uma string. Ambos estão bem, desde que você seja consistente (apenas escolha qual você prefere e mantenha-o).
 
-```js
-let foo = '42';
-typeof foo   //-> 'string'
+``` js
+deixe foo = '42';
+typeof foo //-> 'string'
 
-let bar = 'I\'m 99 years old ';
-typeof bar   //-> 'string'
+let bar = 'Tenho 99 anos';
+typeof bar //-> 'string'
 ```
 
-### String indexes and string properties
+### Índices de string e propriedades de string
 
-Individual characters in a string can be accessed by their position (index) within the string. The index of a string always starts at 0.
-Strings also have properties, for example `.length` you can use this to find the length of a string.
+Caracteres individuais em uma string podem ser acessados por sua posição (índice) dentro da string. O índice de uma string sempre começa em 0.
+Strings também possuem propriedades, por exemplo `.length` você pode usar isso para encontrar o comprimento de uma string.
 
-So for example:
-```js
-let baz = 'Hello World';
+Assim, por exemplo:
+``` js
+let baz = 'Olá Mundo';
 baz[0]; //-> "H"
-baz.length; //-> 11
+baz.comprimento; //-> 11
 ```
 
-### String methods
+### Métodos de string
 
-String methods are named operations that you can use on string values to create new values. For example, the `toUpperCase` method creates a new string with all uppercase letters.
+Os métodos de string são operações nomeadas que você pode usar em valores de string para criar novos valores. Por exemplo, o método `toUpperCase` cria uma nova string com todas as letras maiúsculas.
 
-```js
-let baz = 'Hello World!';
-baz.toUpperCase(); // -> 'HELLO WORLD'
+``` js
+let baz = 'Olá Mundo!';
+baz.toUpperCase(); // -> 'OLÁ MUNDO'
 ```
 
-Methods differ from properties (such as `.length`) in that you must always use them with open and close parentheses `(` and `)`.
+Métodos diferem de propriedades (como `.length`) em que você deve sempre usá-los com parênteses de abertura e fechamento `(` e `)`.
 
-Some methods need additional information, and you must supply it in the form of one or more _parameters_. For example:
+Alguns métodos precisam de informações adicionais e você deve fornecê-las na forma de um ou mais _parameters_. Por exemplo:
 
-```js
-let baz = 'Hello World!';
+``` js
+let baz = 'Olá Mundo!';
 baz.slice(3, 8) // -> 'lo Wo'
 baz.startsWith('He') // -> true
-baz.indexOf('World') // -> 6
+baz.indexOf('Mundo') // -> 6
 ```
 
-## Numbers
+## Números
 
-All numbers in JavaScript are considered numbers, either with or without a decimal.
+Todos os números em JavaScript são considerados números, com ou sem decimal.
 
-```js
-let quux = 42;
-typeof quux  //-> 'number'
+``` js
+deixe quux = 42;
+typeof quux //-> 'number'
 
-let quuux = 3.3333;
-typeof quuux //-> 'number'
+deixe quux = 3,3333;
+typeof quuux //-> 'número'
 
 ```
 
 
-## Arrays
+## Matrizes
 
-Arrays are values that contain a list of things, instead of just one thing. What's inside the array, we typically call "elements". So, the array `[1, 2, 3]` has three elements. The array `[]` has no elements and is therefore empty. The number of elements in an array is called its "length".
+Arrays são valores que contêm uma lista de coisas, em vez de apenas uma coisa. O que está dentro da matriz, normalmente chamamos de "elementos". Assim, o array `[1, 2, 3]` tem três elementos. A matriz `[]` não possui elementos e, portanto, está vazia. O número de elementos em uma matriz é chamado de "comprimento".
 
-When you want to access an element inside an array, you use an "index". This is the number that you put between brackets (`[]`).
+Quando você deseja acessar um elemento dentro de um array, você usa um "índice". Este é o número que você coloca entre colchetes (`[]`).
 
-Given the following code:
+Dado o seguinte código:
 
-```js
+``` js
 let arr = ['john', 'jane', 'jack'];
 console.log(arr[0]);
 ```
 
-The number `0` is the "index of the first element of array `arr`". Conversely, the element "at index 0 in array `arr` is `'john'`".
+O número `0` é o "índice do primeiro elemento do array `arr`". Por outro lado, o elemento "no índice 0 no array `arr` é `'john'`".
 
-Instead of a number, you can also use a variable to access elements in an array, *as long as this variable is a number*:
+Em vez de um número, você também pode usar uma variável para acessar elementos em um array, *desde que essa variável seja um número*:
 
-```js
+``` js
 let arr = ['john', 'jane', 'jack'];
-let a = 1;
+seja a = 1;
 console.log(arr[a]); // -> jane
 ```
 
-If the index you use is not an integer (a whole number), or if it's less than `0` or if it's greater than or equal to the array's length, you will get back `undefined`.
+Se o índice que você usa não for um inteiro (um número inteiro), ou se for menor que '0' ou se for maior ou igual ao tamanho do array, você receberá de volta 'undefined'.
 
-More about [arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+Mais sobre [arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)

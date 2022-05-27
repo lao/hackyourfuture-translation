@@ -1,82 +1,82 @@
-# Handing in homework
+# Entrega de trabalhos de casa
 
-Starting with  the JavaScript2 module we expect you to hand in homework by using the GitHub [Forking Workflow](https://github.com/HackYourFuture/Git/blob/master/Lecture-3.md). This involves the following steps:
+Começando com o módulo JavaScript2, esperamos que você entregue o dever de casa usando o GitHub [Forking Workflow](https://github.com/HackYourFuture/Git/blob/master/Lecture-3.md). Isso envolve as seguintes etapas:
 
-## Forking 
+## Bifurcação
 
-1. Go to the [HackYourFuture GitHub page](https://github.com/HackYourFuture) and click on the repository of the current HYF module, e.g. `JavaScript2`.
+1. Vá para a [página do GitHub do HackYourFuture](https://github.com/HackYourFuture) e clique no repositório do módulo HYF atual, por exemplo, `JavaScript2`.
 
-2. In the upper-right corner, press the [**Fork**] button.
+2. No canto superior direito, pressione o botão [**Fork**].
 
-3. On the subsequent dialog box, select your own GitHub account as the place to fork this repository to.
+3. Na caixa de diálogo subsequente, selecione sua própria conta do GitHub como o local para fazer o fork deste repositório.
 
-4. After a couple of seconds, you will be taken to your own GitHub account, in the repository just forked.
+4. Após alguns segundos, você será levado para sua própria conta do GitHub, no repositório que acabou de bifurcar.
 
-5. Now, clone this forked repository (_not the original HYF one!_) to your laptop.
+5. Agora, clone este repositório bifurcado (_não o HYF original!_) para o seu laptop.
 
-## Commit and Push
+## Confirmar e enviar
 
-For each week's homework repeat the following steps.
+Para o dever de casa de cada semana, repita os seguintes passos.
 
-1. If there are any outstanding changes from the previous week, either commit or discard them.
+1. Se houver alterações pendentes da semana anterior, confirme ou descarte-as.
 
-2. Start afresh by resetting your local repository back to the `master` branch. This ensures that the new homework is not mixed up with the homework of previous weeks. (That previous homework will still be available in their respective branches.) Use this command:
-
-    ```
-    git checkout master
-    ```
-
-3. Create a new branch for this week's homework (replace `new-branch-name` with the name of your new branch, e.g. 'homework-week1'):
+2. Comece de novo redefinindo seu repositório local de volta para o branch `master`. Isso garante que o novo dever de casa não seja misturado com o dever de casa das semanas anteriores. (Essa lição de casa anterior ainda estará disponível em suas respectivas ramificações.) Use este comando:
 
     ```
-    git checkout -b new-branch-name
+    mestre de checkout git
     ```
 
-4. Make changes to your local working directory as required by the homework assignment(s).
-
-5. Commit your changes as and when required. The recommended way to add and commit files is to keep a `.gitignore` file in the root folder of your working directory that lists all the files and directories you want to leave untracked by Git. Now, when you use a `git add .` command, all new, changed and/or deleted files, except those from `.gitignore`, are added to the staging area. 
+3. Crie um novo branch para o dever de casa desta semana (substitua `new-branch-name` pelo nome do seu novo branch, por exemplo, 'homework-week1'):
 
     ```
-    git add .
-    git commit -m "your commit message"
+    git checkout -b nome-novo-ramo
     ```
 
-    Make sure that your commit messages are meaningful and accurately describe what the commit is about. Messages such as `my changes` are not okay. If you need to go back in time to review a particular change from the past, the commit messages are the only clues to go by for finding the relevant commit. For an in-depth discussion on how to write good commit messages, see [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/).
+4. Faça alterações em seu diretório de trabalho local conforme exigido pela(s) tarefa(s) de casa.
 
-6. Push your commits to GitHub. You don't need to do this after every individual commit, but pushing often to your own repository is advisable as a safeguard against disk failure on your laptop. The first time you push your new branch you must use the following command (replace `new-branch-name` with the name of your new branch, e.g. 'homework-week1'):
+5. Confirme suas alterações conforme e quando necessário. A maneira recomendada de adicionar e enviar arquivos é manter um arquivo `.gitignore` na pasta raiz do seu diretório de trabalho que lista todos os arquivos e diretórios que você deseja deixar sem rastreamento pelo Git. Agora, quando você usa um comando `git add .`, todos os arquivos novos, alterados e/ou excluídos, exceto aqueles de `.gitignore`, são adicionados à área de teste.
+
+    ```
+    gi adicionar.
+    git commit -m "sua mensagem de commit"
+    ```
+
+    Certifique-se de que suas mensagens de commit sejam significativas e descrevam com precisão sobre o que é o commit. Mensagens como `minhas alterações` não estão corretas. Se você precisar voltar no tempo para revisar uma alteração específica do passado, as mensagens de confirmação são as únicas pistas para encontrar a confirmação relevante. Para uma discussão aprofundada sobre como escrever boas mensagens de commit, veja [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/).
+
+6. Envie seus commits para o GitHub. Você não precisa fazer isso após cada commit individual, mas é aconselhável enviar frequentemente para o seu próprio repositório como uma proteção contra falhas de disco em seu laptop. A primeira vez que você enviar seu novo branch, você deve usar o seguinte comando (substitua `new-branch-name` pelo nome do seu novo branch, por exemplo, 'homework-week1'):
 
     ```
     git push -u origin new-branch-name
     ```
 
-    Subsequent pushes can simply be done with:
+    Empurrões subsequentes podem ser feitos simplesmente com:
 
     ```
     git push
     ```
 
-## Create Pull Request
+## Criar solicitação pull
 
-When you have finished your homework and wish to hand it in, do so via a **pull request** (PR).
+Quando você terminar sua lição de casa e desejar entregá-la, faça-o por meio de um **pull request** (PR).
 
-1. Make sure that you committed and pushed your final changes in the working directory.
+1. Certifique-se de ter confirmado e enviado por push suas alterações finais no diretório de trabalho.
 
-2. Go the your GitHub account and select the repository containing your homework.
+2. Acesse sua conta do GitHub e selecione o repositório que contém sua lição de casa.
 
-3. Click the button [**New pull request**].
+3. Clique no botão [**New pull request**].
 
-4. Select the HackYourFuture repository master branch on the left side and your repository and homework branch on the right side.
+4. Selecione a ramificação mestre do repositório HackYourFuture à esquerda e a ramificação do repositório e da lição de casa à direita.
 
-5. Press the green [**Create pull request**] button to continue.
+5. Pressione o botão verde [**Create pull request**] para continuar.
 
-6. Add a title for your pull request, e.g. 'Homework Week 1'. You can optionally add comments for the pull request reviewer, e.g. known issues with your current homework.
+6. Adicione um título para sua solicitação pull, por exemplo, 'Semana de lição de casa 1'. Opcionalmente, você pode adicionar comentários para o revisor de pull request, por exemplo, problemas conhecidos com sua lição de casa atual.
 
-7. Finally, press the green [**Create pull request**] button to finish sending off the pull request.
+7. Por fim, pressione o botão verde [**Create pull request**] para finalizar o envio da pull request.
 
-## Resources
+## Recursos
 
-Take a look at [this video](https://www.youtube.com/watch?v=-o0yomUVVpU)
-made by Daan, where he explains this process in detail.
+Dê uma olhada em [este vídeo](https://www.youtube.com/watch?v=-o0yomUVVpU)
+feito por Daan, onde ele explica esse processo em detalhes.
 
-Also review the [Git workflow material](https://github.com/HackYourFuture/Git/blob/master/Lecture-3.md)
-and use it as a reference.
+Revise também o [material de fluxo de trabalho do Git](https://github.com/HackYourFuture/Git/blob/master/Lecture-3.md)
+e use-o como referência.

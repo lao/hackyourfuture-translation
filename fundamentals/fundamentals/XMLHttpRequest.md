@@ -1,62 +1,62 @@
 # XMLHttpRequest
 
-**XMLHttpRequest** is an object to interact with servers. You can retrieve data from a URL without having to do a full page refresh. XMLHttpRequest is used heavily in Ajax programming - [MDN](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest).
+**XMLHttpRequest** é um objeto para interagir com servidores. Você pode recuperar dados de uma URL sem precisar atualizar a página inteira. XMLHttpRequest é muito usado na programação Ajax - [MDN](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest).
 
-So what is Ajax?
+Então, o que é Ajax?
 
-**Ajax** is a method of exchanging data with a server, and updating parts of a web page without reloading the entire page.
+**Ajax** é um método de troca de dados com um servidor e atualização de partes de uma página da web sem recarregar a página inteira.
 
-Let's dive into the code:
+Vamos mergulhar no código:
 
-First, we need to make an instance from 'XMLHttpRequest' object.
+Primeiro, precisamos fazer uma instância do objeto 'XMLHttpRequest'.
 
-```js
-let http = new XMLHttpRequest();
+``` js
+deixe http = new XMLHttpRequest();
 ```
 
-When we are doing a request it goes through 5 states:
+Quando estamos fazendo uma requisição ela passa por 5 estados:
 
-| Value | Description                 |
+| Valor | Descrição |
 | :---: | --------------------------- |
-|   0   | request is not initialized. |
-|   1   | request has been set up.    |
-|   2   | request has been sent.      |
-|   3   | request is in process.      |
-|   4   | request is complete.        |
+| 0 | pedido não é inicializado. |
+| 1 | pedido foi configurado. |
+| 2 | pedido foi enviado. |
+| 3 | pedido está em andamento. |
+| 4 | pedido está completo. |
 
-In the code below we are checking if the request is complete or not, and we check the status === 200 just to make sure that we do not get a 404 error - Read more about it here: [HTTP Status Code](https://httpstatuses.com).
+No código abaixo, estamos verificando se a solicitação está completa ou não, e verificamos o status === 200 apenas para garantir que não recebemos um erro 404 - Leia mais sobre isso aqui: [HTTP Status Code](https ://httpstatuses.com).
 
-```js
+``` js
 http.onreadystatechange = function() {
   if (http.readyState === 4 && http.status === 200) {
-    console.log('Response from the server: ' + http.response);
+    console.log('Resposta do servidor: ' + http.response);
   }
 };
 ```
 
-There are methods to deal with a server like (GET, POST, UPDATE, DELETE…)
+Existem métodos para lidar com um servidor como (GET, POST, UPDATE, DELETE…)
 
-| Method   | Description                  |
+| Método | Descrição |
 | -------- | ---------------------------- |
-| `GET`    | retrieve data from server.   |
-| `POST`   | send data to server.         |
-| `UPDATE` | update data on the server.   |
-| `DELETE` | delete data from the server. |
+| `GET` | recuperar dados do servidor. |
+| `POST` | enviar dados para o servidor. |
+| `ATUALIZAÇÃO` | atualizar dados no servidor. |
+| `EXCLUIR` | excluir dados do servidor. |
 
-To initialize a request we use [open](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/open) method. The syntax is:
+Para inicializar uma solicitação, usamos o método [open](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/open). A sintaxe é:
 
-```js
-XMLHttpRequest.open(method, url, async, user, password);
+``` js
+XMLHttpRequest.open(método, url, assíncrono, usuário, senha);
 ```
 
-The parameters _method_ and _url_ are mandatory, _user_ and _password_ are optional. True is a default value for _async_.
+Os parâmetros _method_ e _url_ são obrigatórios, _user_ e _password_ são opcionais. True é um valor padrão para _async_.
 
-```js
-http.open('GET', URL, true / false);
+``` js
+http.open('GET', URL, true/false);
 ```
 
-At the end we have to send our request to the server through [send](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/send) method. In our situation we are retrieving a data from the server, so we do not have to pass a parameter to the send request.
+No final, temos que enviar nossa solicitação ao servidor através do método [send](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/send). Em nossa situação estamos recuperando um dado do servidor, então não precisamos passar um parâmetro para a requisição de envio.
 
-```js
+``` js
 http.send();
 ```

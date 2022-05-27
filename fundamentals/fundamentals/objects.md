@@ -1,30 +1,30 @@
-# Objects
+# Objetos
 
-Variables that are objects also contain a list of things, but instead of them being in some specific order, they can be assigned to words, called "keys". Instead of "elements" the things that are inside objects are called "properties".
+Variáveis que são objetos também contêm uma lista de coisas, mas ao invés de estarem em alguma ordem específica, elas podem ser atribuídas a palavras, chamadas "chaves". Em vez de "elementos", as coisas que estão dentro dos objetos são chamadas de "propriedades".
 
 
-```js
-let obj = {name: 'John', age: 24};
+``` js
+let obj = {nome: 'João', idade: 24};
 ```
 
-This object has two properties: `name` and `age`. The "value" of the property `name` is the string `'John'`. The "value" of the property `age` is the number `24`.
+Este objeto tem duas propriedades: `name` e `age`. O "valor" da propriedade `name` é a string `'John'`. O "valor" da propriedade `age` é o número `24`.
 
-When accessing object properties, you can use the dot-notation: `obj.name` or the bracket-notation: `obj["name"]`. Note that the latter looks a lot like the way to access array elements. However, here what's inside the bracket (called "key" for objects, instead of "index") must be a string.
+Ao acessar as propriedades do objeto, você pode usar a notação de ponto: `obj.name` ou a notação de colchetes: `obj["name"]`. Observe que o último se parece muito com a maneira de acessar os elementos do array. No entanto, aqui o que está dentro do colchete (chamado "chave" para objetos, em vez de "índice") deve ser uma string.
 
-```js
-console.log(obj.name); // -> 'John'
-console.log(obj['name']); // -> 'John'
+``` js
+console.log(obj.name); // -> 'João'
+console.log(obj['nome']); // -> 'João'
 ```
 
-Just like with arrays, you can also use a variable to access properties, as long as these variables are strings. In this case you cannot use the dot-notation!
+Assim como com os arrays, você também pode usar uma variável para acessar as propriedades, desde que essas variáveis sejam strings. Neste caso, você não pode usar a notação de ponto!
 
-```js
-const ageKey = 'age';
+``` js
+const idadeKey = 'idade';
 console.log(obj[ageKey]); // -> 24
 ```
 
-Remember that there is a very big difference between `obj[name]` and `obj["name"]`.
+Lembre-se que há uma grande diferença entre `obj[name]` e `obj["name"]`.
 
-> Note:
+> Nota:
 >
-> Thinking back of arrays, the length of an array can be retrieved by `arr.length`. So as mentioned before, arrays are just like other JavaScript objects. You could even write `arr['length']` to access the `length` property of the array. JavaScript will look: is what we put between brackets a number? Then it is an index and we'll look up the correct array element. If it's a string, it's a key and we will look up the corresponding property.
+> Pensando em arrays, o comprimento de um array pode ser recuperado por `arr.length`. Então, como mencionado anteriormente, os arrays são como outros objetos JavaScript. Você pode até escrever `arr['length']` para acessar a propriedade `length` do array. JavaScript vai olhar: o que colocamos entre colchetes é um número? Então é um índice e procuraremos o elemento correto do array. Se for uma string, é uma chave e procuraremos a propriedade correspondente.

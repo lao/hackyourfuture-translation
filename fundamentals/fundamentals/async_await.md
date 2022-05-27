@@ -1,142 +1,142 @@
-# async & await
+# assíncrono e aguardando
 
-## Revisiting promises
+## Revisitando promessas
 
-The example shown in Listing 1 below was used in the fundamental about [promises](./promises.md) to illustrate the chaining of promises with a final `.catch()` at the end of the chain to handle errors.
+O exemplo mostrado na Listagem 1 abaixo foi usado no fundamental sobre [promises](./promises.md) para ilustrar o encadeamento de promessas com um `.catch()` final no final da cadeia para lidar com erros.
 
-```js
+``` js
 function fetchAndRender(url, otherUrl) {
-  fetchJSON(url)
-    .then(data => {
-      renderData(data);
+  buscarJSON(url)
+    .then(dados => {
+      renderData(dados);
       return fetchJSON(otherUrl);
     })
     .then(otherData => {
-      renderOtherData(otherData);
+      renderOutroDados(outrosDados);
     })
-    .catch(err => {
-      renderError(err);
+    .catch(erro => {
+      renderError(erro);
     });
 }
 ```
 
-Listing 1. Chained promises.
+Listagem 1. Promessas encadeadas.
 
-In this example the `fetchJSON()` function fetches data from a remote API and returns a promise. When the promise returned by the first call to `fetchJSON()` resolves, the returned data is rendered to the DOM by means of the `renderData()` function. Subsequently, a second call is made to `fetchJSON` to fetch other data. When the promise of that second call is fulfilled, the supplemental data is rendered to the DOM.
+Neste exemplo, a função `fetchJSON()` busca dados de uma API remota e retorna uma promessa. Quando a promessa retornada pela primeira chamada para `fetchJSON()` é resolvida, os dados retornados são renderizados para o DOM por meio da função `renderData()`. Subsequentemente, uma segunda chamada é feita para `fetchJSON` para buscar outros dados. Quando a promessa dessa segunda chamada é cumprida, os dados suplementares são renderizados ao DOM.
 
-Because there is a time delay between the arrival of the first data set and the arrival of the second data set, a user looking at the web page will see the page being filled up in two separate updates. It may be a better user experience if the page updates are all done in one go. We could modify the code of Listing 1 to postpone rendering the first data set until the second data set (`otherData`) is received. This is illustrated in Figure 2.
+Como há um atraso de tempo entre a chegada do primeiro conjunto de dados e a chegada do segundo conjunto de dados, um usuário olhando para a página da Web verá a página sendo preenchida em duas atualizações separadas. Pode ser uma experiência melhor para o usuário se as atualizações da página forem feitas de uma só vez. Poderíamos modificar o código da Listagem 1 para adiar a renderização do primeiro conjunto de dados até que o segundo conjunto de dados (`otherData`) seja recebido. Isso é ilustrado na Figura 2.
 
-```js
+``` js
 function fetchAndRender(url, otherUrl) {
-  fetchJSON(url)
-    .then(data => {
+  buscarJSON(url)
+    .then(dados => {
       return fetchJSON(otherUrl)
         .then(otherData => {
-          renderData(data);
-          renderOtherData(otherData);
+          renderData(dados);
+          renderOutroDados(outrosDados);
         });
     })
-    .catch(err => {
-      renderError(err);
+    .catch(erro => {
+      renderError(erro);
     });
 }
 ```
 
-Listing 2. Nested promises.
+Listagem 2. Promessas aninhadas.
 
-Now, when the promise returned by the second call to `fetchJSON()` is fulfilled, the `.then()` method directly called on that second promise is used to render both the data from the first `fetchJSON()` call (still accessible through a _closure_) and the `otherData` from the second promise.
+Agora, quando a promessa retornada pela segunda chamada para `fetchJSON()` é cumprida, o método `.then()` chamado diretamente nessa segunda promessa é usado para renderizar ambos os dados da primeira chamada `fetchJSON()` ( ainda acessível através de um _closure_) e o `otherData` da segunda promessa.
 
-We must still return the result of the inner promise chain to ensure that any promise rejection in that inner chain is caught by the terminating `.catch()` of the outer chain. That result will in this example be a promise that is fulfilled to the value `undefined` or a rejected promise in case of an error.
+Ainda devemos retornar o resultado da cadeia de promessa interna para garantir que qualquer rejeição de promessa nessa cadeia interna seja capturada pelo `.catch()` final da cadeia externa. Esse resultado será neste exemplo uma promessa que é cumprida com o valor `undefined` ou uma promessa rejeitada em caso de erro.
 
-To achieve the goal from this example of rendering in one go, there is yet another option available to us using promises, provided that the second call to `fetchJSON()` is not dependent on data from the first call. In this example this is indeed the case. This makes it possible to use the `Promise.all()` method, as shown in Listing 3.
+Para atingir o objetivo deste exemplo de renderização de uma só vez, há ainda outra opção disponível para nós usando promessas, desde que a segunda chamada para `fetchJSON()` não dependa dos dados da primeira chamada. Neste exemplo, este é realmente o caso. Isso torna possível usar o método `Promise.all()`, conforme mostrado na Listagem 3.
 
-```js
+``` js
 function fetchAndRender(url, otherUrl) {
   Promise.all([fetchJSON(url), fetchJSON(otherUrl)])
-    .then(([data, otherData]) => {
-      renderData(data);
-      renderOtherData(otherData);
+    .then(([dados, outrosDados]) => {
+      renderData(dados);
+      renderOutroDados(outrosDados);
     })
-    .catch(err => {
-      renderError(err);
+    .catch(erro => {
+      renderError(erro);
     });
 }
 ```
 
-Listing 3. Running promises in parallel using Promise.all().
+Listagem 3. Executando promessas em paralelo usando Promise.all().
 
-The promises from the two calls to `fetchJSON()` now run in parallel. `Promise.all()` returns a new promise that is resolved if all the promises passed in the array argument are resolved or is rejected as soon as any one of the promises is rejected. Its fulfilled value is an array of the fulfilled values of the individual promises, in the same order. Because the promises run in parallel the browser can send out two simultaneous XMLHttpRequests, thereby improving overall performance.
+As promessas das duas chamadas para `fetchJSON()` agora são executadas em paralelo. `Promise.all()` retorna uma nova promessa que é resolvida se todas as promessas passadas no argumento array forem resolvidas ou rejeitadas assim que qualquer uma das promessas for rejeitada. Seu valor cumprido é uma matriz dos valores cumpridos das promessas individuais, na mesma ordem. Como as promessas são executadas em paralelo, o navegador pode enviar dois XMLHttpRequests simultâneos, melhorando assim o desempenho geral.
 
 
-### The async/await alternative
+### A alternativa assíncrona/aguardar
 
-The keywords `async` and `await` were introduced in ECMAScript 2017 as a new way to 'consume' promises. It obviates the need to use `.then()` and `.catch()` and makes it possible to write code that uses promises in a "synchronous" fashion.
+As palavras-chave `async` e `await` foram introduzidas no ECMAScript 2017 como uma nova maneira de 'consumir' promessas. Ele evita a necessidade de usar `.then()` e `.catch()` e torna possível escrever código que usa promessas de forma "síncrona".
 
-Referring back to the code snippet of Listing 1, we can now rewrite this code as shown in Listing 4 below:
+Voltando ao snippet de código da Listagem 1, agora podemos reescrever esse código conforme mostrado na Listagem 4 abaixo:
 
-```js
-async function fetchAndRender(url, otherUrl) {
-  try {
+``` js
+função assíncrona fetchAndRender(url, otherUrl) {
+  experimentar {
     const data = await fetchJSON(url);
-    renderData(data);
+    renderData(dados);
     const otherData = await fetchJSON(otherUrl);
-    renderOtherData(otherData);
+    renderOutroDados(outrosDados);
   }
-  catch (err) {
-    renderError(err);
+  pegar (errar) {
+    renderError(erro);
   }
 }
 ```
 
-Listing 4. Reimplementation of Listing 1 using async/await
+Listagem 4. Reimplementação da Listagem 1 usando async/await
 
-The `await` keyword causes the code execution to be suspended in a non-blocking manner until the promise returned by `fetchJSON()` is resolved. Once the promise is resolved the awaited expression returns the fulfilled value of the promise and execution resumes at the point where it was left off.
+A palavra-chave `await` faz com que a execução do código seja suspensa de maneira não bloqueante até que a promessa retornada por `fetchJSON()` seja resolvida. Depois que a promessa é resolvida, a expressão esperada retorna o valor cumprido da promessa e a execução é retomada no ponto em que foi interrompida.
 
-> If you forget to use the `await` keyword you will get the promise itself rather than its fulfilled value. And of course, there will be no 'waiting'.
+> Se você esquecer de usar a palavra-chave `await` você receberá a promessa em si ao invés de seu valor cumprido. E, claro, não haverá 'espera'.
 
-You can only use the `await` keyword in functions marked with the keyword `async`. The return value (if any) of that function is also a promise.
+Você só pode usar a palavra-chave `await` em funções marcadas com a palavra-chave `async`. O valor de retorno (se houver) dessa função também é uma promessa.
 
-Note that you must use a `try`-`catch` block to deal with errors. Please refer to the [try...catch](./try_catch.md) fundamental for more information.
+Note que você deve usar um bloco `try`-`catch` para lidar com erros. Consulte o fundamento [try...catch](./try_catch.md) para obter mais informações.
 
-Referring back to the nested promises of Listing 2, we can now with `async`/`await` achieve our objective of rendering in one go simply by moving the call to `renderData()` after the second `fetchJSON()` call, as shown in Listing 5. What can be easier than that?
+Voltando às promessas aninhadas da Listagem 2, agora podemos com `async`/`await` atingir nosso objetivo de renderização de uma só vez simplesmente movendo a chamada para `renderData()` após a segunda chamada `fetchJSON()`, conforme mostrado na Listagem 5. O que pode ser mais fácil do que isso?
 
-```js
-async function fetchAndRender(url, otherUrl) {
-  try {
+``` js
+função assíncrona fetchAndRender(url, otherUrl) {
+  experimentar {
     const data = await fetchJSON(url);
     const otherData = await fetchJSON(otherUrl);
-    renderData(data);
-    renderOtherData(otherData);
+    renderData(dados);
+    renderOutroDados(outrosDados);
   }
-  catch (err) {
-    renderError(err);
+  pegar (errar) {
+    renderError(erro);
   }
 }
 ```
 
-Listing 5. Reimplementation of Listing 2 using async/await
+Listagem 5. Reimplementação da Listagem 2 usando async/await
 
-With `async`/`await` we can also take advantage of running promises in parallel. In this case we must use the same `Promise.all()` method as shown in Listing 3. The version with `async`/`await` is shown in Listing 6 below.
+Com `async`/`await` também podemos aproveitar a execução de promessas em paralelo. Neste caso devemos usar o mesmo método `Promise.all()` mostrado na Listagem 3. A versão com `async`/`await` é mostrada na Listagem 6 abaixo.
 
-```js
-async function fetchAndRender(url, otherUrl) {
-  try {
+``` js
+função assíncrona fetchAndRender(url, otherUrl) {
+  experimentar {
     const [data, otherData] = await Promise.all([fetchJSON(url), fetchJSON(otherUrl)]);
-    renderData(data);
-    renderOtherData(otherData);
+    renderData(dados);
+    renderOutroDados(outrosDados);
   }
-  catch (err) {
-    renderError(err);
+  pegar (errar) {
+    renderError(erro);
   }
 }
 ```
 
-Listing 6. Reimplementation of Listing 3 using async/await
+Listagem 6. Reimplementação da Listagem 3 usando async/await
 
-More info on MDN:
+Mais informações sobre o MDN:
 
-- [async function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
-- [await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
+- [função assíncrona](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+- [aguarda](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
 
-Wes Bos video on `async`/`await`: https://youtu.be/9YkUCxvaLEk
+Vídeo de Wes Bos em `async`/`await`: https://youtu.be/9YkUCxvaLEk
 

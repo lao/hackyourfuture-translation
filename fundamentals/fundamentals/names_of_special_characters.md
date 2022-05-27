@@ -1,47 +1,47 @@
 
-# Names of special characters
+# Nomes de caracteres especiais
 
-In our coding sessions and homework we use all sorts of special characters, when you are new to coding or maybe even when you have been coding for a while, these names can be confusing. Here you can find a list of the most used special characters and their names.
+Em nossas sessões de codificação e trabalhos de casa, usamos todos os tipos de caracteres especiais, quando você é novo na codificação ou talvez até mesmo quando já está codificando há algum tempo, esses nomes podem ser confusos. Aqui você pode encontrar uma lista dos caracteres especiais mais usados e seus nomes.
 
-Do you think there is one (or more) missing? Make a PR with your additions 🙃!
+Você acha que está faltando um (ou mais)? Faça um PR com seus acréscimos 🙃!
 
 
-`(` Parentheses `)`
+`(` Parênteses `)`
 
-`{` Braces, or Curly brackets `}`
+`{` Chaves ou colchetes `}`
 
-`[` Brackets, or square brackets `]`
+`[` Colchetes ou colchetes `]`
 
-`<` Angle brackets `>`
+`<` Colchetes angulares `>`
 
-`'` Single quote `'` 
+`'` Aspas simples `'`
 
-`"` Double quote `"`
+`"` Aspas duplas `"`
 
 `` ` `` Back tick `` ` ``
 
-`/` Forward slash `/`
+`/` Barra `/`
 
-`\` Back slash `\`
+`\` barra invertida `\`
 
-`:` Colon `:`
+`:` Dois pontos `:`
 
-`;` Semicolon `;`
+`;` Ponto e vírgula `;`
 
-`&` Ampersand `&`
+`&` E comercial `&`
 
-`*` Asterisk `*`
+`*` Asterisco `*`
 
-`^` Caret or circumflex `^`
+`^` Circunflexo ou circunflexo `^`
 
-`|` Vertical bar or pipe `|`
+`|` Barra vertical ou tubo `|`
 
-`~` Tilde `~`
+`~` til `~`
 
-`#` Hash or number sign `#`
+`#` Hash ou sinal numérico `#`
 
-`_` Underscore `_`
+`_` Sublinhado `_`
 
-`-` Dash `-`
+`-` Traço `-`
 
-See also the fundamentals page on [Operators](operators.md).
+Veja também a página de fundamentos em [Operators](operators.md).

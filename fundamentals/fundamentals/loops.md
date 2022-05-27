@@ -1,201 +1,201 @@
-# Loops
+# Rotações
 
-A loop is a programming construct to perform a repetitive action. Often (but not always) the repetitive action involves accessing or manipulating the individual elements of an array.
+Um loop é uma construção de programação para executar uma ação repetitiva. Frequentemente (mas nem sempre) a ação repetitiva envolve acessar ou manipular os elementos individuais de um array.
 
-We will use the array of month names given below to illustrate the various types of loop constructs available in JavaScript. In the examples we will print out the names of the individual months using a `console.log` statement.
+Usaremos a matriz de nomes de meses fornecida abaixo para ilustrar os vários tipos de construções de loop disponíveis em JavaScript. Nos exemplos, imprimiremos os nomes dos meses individuais usando uma instrução `console.log`.
 
-```js
-const months = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December',
+``` js
+const meses = [
+  'Janeiro',
+  'Fevereiro',
+  'Marchar',
+  'Abril',
+  'Maio',
+  'Junho',
+  'Julho',
+  'Agosto',
+  'Setembro',
+  'Outubro',
+  'Novembro',
+  'Dezembro',
 ];
 ```
 
-## while
+## enquanto
 
-The `while` loop is probably the simplest one of the bunch. Its general syntax is:
+O loop `while` é provavelmente o mais simples do grupo. Sua sintaxe geral é:
 
-```js
-while (cond) {
-  // statement block to be repeated
+``` js
+enquanto (cond.) {
+  // bloco de instruções a ser repetido
 }
 ```
 
-The loop 'body' (i.e., the statement block including the curly braces) is executed while the condition `cond` holds true. In order for this while loop to execute at least once and to finish in finite time two preconditions must be fulfilled:
+O 'corpo' do loop (ou seja, o bloco de instruções incluindo as chaves) é executado enquanto a condição 'cond' for verdadeira. Para que este laço while seja executado pelo menos uma vez e termine em tempo finito, duas pré-condições devem ser cumpridas:
 
-1. The condition `cond` should initially hold true.
-2. Some code inside the code block must eventually cause the condition to become false.
+1. A condição 'cond' deve inicialmente ser verdadeira.
+2. Algum código dentro do bloco de código deve eventualmente fazer com que a condição se torne falsa.
 
-Applied to our `months` array the while loop would look like this:
+Aplicado ao nosso array `months`, o loop while ficaria assim:
 
-```js
-const months = [
+``` js
+const meses = [
   ...
 ];
 
-let index = 0;
-const len = months.length; // 12
+deixe índice = 0;
+const len = meses.comprimento; // 12
 
-while (index < len) {
-  console.log(months[index]);
-  index += 1;
+while (índice < len) {
+  console.log(meses[índice]);
+  índice += 1;
 }
 ```
 
-In this example the two preconditions mentioned earlier are met:
+Neste exemplo, as duas pré-condições mencionadas anteriormente são atendidas:
 
-1. The condition `index < len` initially holds true because `index` is initialized to `0` and we know that `len` is fixed at the value of `12` (hence the use of `const` rather than `let`).
-2. Because the value of `index` is incremented by one each time the loop body is executed there will be a point in time when the loop condition becomes false. This will happen when the value `index` has become `12` and `index < len` no longer holds true.
+1. A condição `index < len` inicialmente é verdadeira porque `index` é inicializado com `0` e sabemos que `len` é fixado no valor de `12` (daí o uso de `const` em vez de `let `).
+2. Como o valor de `index` é incrementado em um cada vez que o corpo do loop é executado, haverá um ponto no tempo em que a condição do loop se tornará falsa. Isso acontecerá quando o valor `index` se tornar `12` e `index < len` não for mais verdadeiro.
 
-If precondition 2 is **not** met then your loop will execute forever. This is what is commonly referred to as an _infinite loop_. Your code will appear to 'hang' when this happens, and you will need to somehow terminate the program and fix the problem (e.g., press Ctrl-C when running in Node).
+Se a pré-condição 2 **não** for atendida, seu loop será executado para sempre. Isso é o que é comumente chamado de _loop infinito_. Seu código parecerá 'travar' quando isso acontecer, e você precisará de alguma forma encerrar o programa e corrigir o problema (por exemplo, pressione Ctrl-C ao executar no Node).
 
-More info on MDN: [while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
+Mais informações sobre o MDN: [while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
 
-## do...while
+## fazer enquanto
 
-This is a variation of the while loop discussed above. Its general syntax is:
+Esta é uma variação do loop while discutido acima. Sua sintaxe geral é:
 
-```js
-do {
-  // statement block to be repeated
-} while (cond);
+``` js
+Faz {
+  // bloco de instruções a ser repetido
+} enquanto (cond);
 ```
 
-The do...while loop is executed at least once, because the loop condition is evaluated at the _end_ of the loop rather than at the _beginning_ as is the case with the regular `while` loop.
+O loop do...while é executado pelo menos uma vez, porque a condição do loop é avaliada no _end_ do loop e não no _início_ como é o caso do loop `while` regular.
 
-Applied to our 'months' example the code would look like this:
+Aplicado ao nosso exemplo de 'meses', o código ficaria assim:
 
-```js
-const months = [
+``` js
+const meses = [
   ...
 ];
 
-let index = 0;
-const len = months.length;
+deixe índice = 0;
+const len = meses.comprimento;
 
-do  {
-  console.log(months[index]);
-  index += 1;
-} while (index < len)
+Faz  {
+  console.log(meses[índice]);
+  índice += 1;
+} while (índice < len)
 ```
 
-We recommend that you do not use the `do...while` loop, exactly for the reason that the loop body is executed at least once without taking the loop condition into account. It is always possible to rewrite a `do...while` loop into a regular `while` loop that strictly meets the two preconditions mentioned earlier.
+Recomendamos que você não use o loop `do...while`, exatamente pelo motivo de que o corpo do loop é executado pelo menos uma vez sem levar em consideração a condição do loop. É sempre possível reescrever um loop `do...while` em um loop regular `while` que atenda estritamente às duas pré-condições mencionadas anteriormente.
 
 ![image](assets/do-while.png)
 
-More info on MDN: [do...while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while)
+Mais informações sobre o MDN: [do...while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while)
 
-## for
+## por
 
-The `for` loop is the most used loop construct that you will come across and that you are likely to use most in your own code. It exists in a number of variations in JavaScript that we will cover one by one below. The syntax of the most generic form is as follows:
+O loop `for` é a construção de loop mais usada que você encontrará e que provavelmente usará mais em seu próprio código. Existe em várias variações em JavaScript que abordaremos uma a uma abaixo. A sintaxe da forma mais genérica é a seguinte:
 
-```js
-for ([initialization]; [condition]; [final - expression]) {
-  // statement block to be repeated
+``` js
+for ([inicialização]; [condição]; [final - expressão]) {
+  // bloco de instruções a ser repetido
 }
 ```
 
-Let's first look at an example:
+Vejamos primeiro um exemplo:
 
-```js
-const months = [
+``` js
+const meses = [
   ...
 ];
 
-const len = months.length;
+const len = meses.comprimento;
 
-for (let index = 0; index < len; index++) {
-  console.log(months[index]);
+for (let índice = 0; índice < len; índice++) {
+  console.log(meses[índice]);
 }
 ```
 
-The `for` statement combines three parts of the loop construct in a single statement. Those three parts are separated by semicolons and, enclosed within parentheses, directly follow the `for` keyword.
+A instrução `for` combina três partes da construção do loop em uma única instrução. Essas três partes são separadas por ponto e vírgula e, entre parênteses, seguem diretamente a palavra-chave `for`.
 
-1. The first part is the for loop initialization of a loop 'index' variable, here called `index`. (Often you will see one letter variable names, such as `i` for the loop index.). This part is executed only once.
-2. The second part is the loop condition, and is evaluated for every loop [iteration](http://www.dictionary.com/browse/iteration). The loop body is executed while this condition holds true. Note that this condition is tested at the beginning of the loop (like `while` above) and **not** at the end (like `do...while`).
-3. The last part is where the loop index variable is updated, in this case incremented by one (`index++` is short for `index += 1`, which in itself is short for `index = index + 1`). This update is effectively done at the end of the loop (in the example, after the console.log has been executed).
+1. A primeira parte é a inicialização do loop for de uma variável 'index' do loop, aqui chamada de 'index'. (Muitas vezes você verá nomes de variáveis de uma letra, como `i` para o índice de loop.). Esta parte é executada apenas uma vez.
+2. A segunda parte é a condição do loop e é avaliada para cada loop [iteration](http://www.dictionary.com/browse/iteration). O corpo do loop é executado enquanto esta condição for verdadeira. Observe que esta condição é testada no início do loop (como `while` acima) e **not** no final (como `do...while`).
+3. A última parte é onde a variável de índice do loop é atualizada, neste caso incrementada em um (`index++` é a abreviação de `index += 1`, que em si é a abreviação de `index = index + 1`). Essa atualização é feita efetivamente no final do loop (no exemplo, após a execução do console.log).
 
-This form of the `for` loop is roughly equivalent<sup>1</sup> to the following:
+Esta forma do loop `for` é aproximadamente equivalente<sup>1</sup> ao seguinte:
 
-```js
+``` js
 // for (let index = 0; index < len; index++) {
-//          ↑A            ↑B          ↑C
+// ↑A ↑B ↑C
 
-let index = 0; // ← A
-while (index < len) {
-  // ← B
-  console.log(months[index]);
-  index++; // ← C
+deixe índice = 0; // ← A
+while (índice < len) {
+  // ←B
+  console.log(meses[índice]);
+  índice++; // ← C
 }
 ```
 
-<sup>1</sup> In this `while` loop version, the `index` variable is accessible both inside and outside of the loop body (i.e., the code block inside the curly braces). In the case of an equivalent `for` loop, the scope of the index variable depends on whether it is declared with `let` or `var`. See this [article from Web Bos](http://wesbos.com/for-of-es6/) for details.
+<sup>1</sup> Nesta versão do loop `while`, a variável `index` é acessível tanto dentro quanto fora do corpo do loop (ou seja, o bloco de código dentro das chaves). No caso de um loop `for` equivalente, o escopo da variável index depende se ela é declarada com `let` ou `var`. Veja este [artigo do Web Bos](http://wesbos.com/for-of-es6/) para detalhes.
 
-More info on MDN: [for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
+Mais informações sobre o MDN: [for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
 
-## for...of
+## para de
 
-The `for...of` loop construct is relatively new and very well suited for use with arrays. It was introduced with the ES6 variant of JavaScript. Its general syntax is:
+A construção de loop `for...of` é relativamente nova e muito adequada para uso com arrays. Foi introduzido com a variante ES6 do JavaScript. Sua sintaxe geral é:
 
-```js
-for (variable of iterable) {
-  // statement block to be repeated
+``` js
+for (variável de iterável) {
+  // bloco de instruções a ser repetido
 }
 ```
 
-Here, `iterable` can be a couple of things, but most of the time it is just an array variable. Let's again look at an example.
+Aqui, `iterable` pode ser algumas coisas, mas na maioria das vezes é apenas uma variável de array. Vejamos novamente um exemplo.
 
-```js
-const months = [
+``` js
+const meses = [
   ...
 ];
 
-for (const month of months) {
-  console.log(month);
+para (const mês de meses) {
+  console.log(mês);
 }
 ```
 
-With this `for` loop variant, the array is considered a collection of elements (you can _iterate_ through a collection: it is 'iterable'). Each time the loop body is executed the loop variable receives the next value of the array (in the example, starting with `'January'` and ending with `'December'`).
+Com esta variante de loop `for`, o array é considerado uma coleção de elementos (você pode _iterar_ através de uma coleção: é 'iterável'). Cada vez que o corpo do loop é executado a variável do loop recebe o próximo valor do array (no exemplo, começando com `'Janeiro'` e terminando com `'Dezembro'`).
 
-This now allows us to write very elegant and short code. No need to mess around with a loop index variable, array lengths etc. If you need to use a `for` loop involving arrays, this will often be your first choice.
+Isso agora nos permite escrever um código muito elegante e curto. Não há necessidade de mexer com uma variável de índice de loop, comprimentos de array, etc. Se você precisar usar um loop `for` envolvendo arrays, esta será frequentemente sua primeira escolha.
 
-More on MDN: [for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+Mais sobre MDN: [for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
 
-## for..in
+## para..em
 
-This loop variant is for use with JavaScript objects only. It existed before the `for...of` loop variant became available.
+Essa variante de loop é para uso apenas com objetos JavaScript. Ele existia antes que a variante de loop `for...of` se tornasse disponível.
 
-We will discuss the `for...in` variant in more detail the part of the curriculum where we deal with Objects. Here, we will suffice to say that the `for...in` loop construct can easily be rewritten as a `for...of` loop, as follows:
+Discutiremos a variante `for...in` com mais detalhes na parte do currículo onde lidamos com Objetos. Aqui, basta dizer que a construção do laço `for...in` pode ser facilmente reescrita como um laço `for...of`, como segue:
 
-```js
+``` js
 const obj = {
-  a: 10,
-  b: 'test',
+  um: 10,
+  b: 'teste',
 };
 
-// for...in
-for (const key in obj) {
-  console.log(obj[key]);
+// para... em
+for (chave const em obj) {
+  console.log(obj[chave]);
 }
 
-// equivalent for...of
-for (const key of Object.keys(obj)) {
-  console.log(obj[key]);
+// equivalente para... de
+for (chave const de Object.keys(obj)) {
+  console.log(obj[chave]);
 }
 ```
 
-More info on MDN: [for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
+Mais informações sobre o MDN: [for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
 
 ## Array.forEach()
 
-The `.forEach()` array method can be used to iterate over all the elements of an array in functional away. This is explained in detail in the fundamental on array methods: [Array.forEach()](https://github.com/HackYourFuture/fundamentals/blob/master/fundamentals/map_filter.md#arrayforeach). Many programmers prefer this functional way over traditional loops when working with arrays.
+O método de array `.forEach()` pode ser usado para iterar sobre todos os elementos de um array de forma funcional. Isso é explicado em detalhes nos fundamentos sobre métodos de array: [Array.forEach()](https://github.com/HackYourFuture/fundamentals/blob/master/fundamentals/map_filter.md#arrayforeach). Muitos programadores preferem essa maneira funcional aos loops tradicionais ao trabalhar com arrays.

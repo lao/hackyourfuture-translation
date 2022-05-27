@@ -1,29 +1,29 @@
 # CLI
 
-## Most used commands
+## Comandos mais usados
 
-| Command | Description |
+| Comando | Descrição |
 | ------- | ----------- |
-| `pwd` | present working directory |
-| `ls` | List files in the directory |
-| `cd` | change the directory |
-| `touch` | Create an empty file |
-| `echo` | display the string |
-| `echo -n` | Display the string without newline |
-| `echo “something” > file` | Redirect the output of echo and create file |
-| `echo “another thing” >> file` | Append the string to the file |
-| `mkdir` | make a new directory |
-| `cd ~` | home |
-| `cd -` | previous directory |
-| `cd ..` | parent directory |
-| `ls -a` | List all files including hidden files |
-| `cd /` | change to the root directory |
-| `cat` | Concatenate the file line by line and display it on the terminal |
-| `less` | Print the big file line by line |
-| `vim <file>` | open the editor with <file> {`a:` to go to the insert mode, <ESC>`:wq`  to write and quit } |
-| `for var in {START..END}; do <COMMAND1>; <COMMAND2>;..; ; done` | |
-| `head <file>` | display the first 10 lines of file |
-| `tail <file>` | display the last 10 lines of file |
-| `head -n <file>` | display first n lines of file |
-| `tail -n <file>` | display last n lines of file |
-| `man <COMMAND>` | Display manual of the COMMAND |
+| `pwd` | diretório de trabalho atual |
+| `ls` | Listar arquivos no diretório |
+| `cd` | alterar o diretório |
+| `toque` | Crie um arquivo vazio |
+| `eco` | exibir a string |
+| `eco -n` | Exibe a string sem nova linha |
+| `echo “algo” > arquivo` | Redirecione a saída do eco e crie o arquivo |
+| `echo “outra coisa” >> arquivo` | Anexe a string ao arquivo |
+| `mkdir` | fazer um novo diretório |
+| `cd ~` | casa |
+| `cd -` | diretório anterior |
+| `cd ..` | diretório pai |
+| `ls -a` | Listar todos os arquivos, incluindo arquivos ocultos |
+| `cd /` | mude para o diretório raiz |
+| `gato` | Concatenar o arquivo linha por linha e exibi-lo no terminal |
+| `menos` | Imprima o arquivo grande linha por linha |
+| `vim <arquivo>` | abra o editor com <file> {`a:` para ir para o modo de inserção, <ESC>`:wq` para escrever e sair } |
+| `para var em {START..END}; faça <COMMAND1>; <COMANDO2>;...; ; feito' | |
+| `head <arquivo>` | exibir as primeiras 10 linhas do arquivo |
+| `cauda <arquivo>` | exibir as últimas 10 linhas do arquivo |
+| `head -n <arquivo>` | exibir as primeiras n linhas do arquivo |
+| `tail -n <arquivo>` | exibir as últimas n linhas do arquivo |
+| `man <COMANDO>` | Exibir manual do COMANDO |

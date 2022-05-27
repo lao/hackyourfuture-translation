@@ -1,80 +1,80 @@
-# Scope, closures and 'this'
+# Escopo, encerramentos e 'isto'
 
-Scope, closure and 'this' are about *context*.
+Escopo, encerramento e 'isto' são sobre *contexto*.
 
-This post explains things really well: [Recommended read by Todd Motto on Scope](https://toddmotto.com/everything-you-wanted-to-know-about-javascript-scope/)
+Este post explica muito bem: [Leitura recomendada por Todd Motto on Scope](https://toddmotto.com/everything-you-wanted-to-know-about-javascript-scope/)
 
-In this review we won't go over how JavaScript implements scope. We would just be rewriting the above post by Todd Motto.
+Nesta revisão, não abordaremos como o JavaScript implementa o escopo. Estaríamos apenas reescrevendo o post acima de Todd Motto.
 
-Instead, let's focus on a couple of important **words** that are used in explaining scope. Understanding the JavaScript side of things can be difficult if we don't fully understand these words.
+Em vez disso, vamos nos concentrar em algumas **palavras** importantes que são usadas para explicar o escopo. Entender o lado JavaScript das coisas pode ser difícil se não entendermos completamente essas palavras.
 
-## How to think about context?
-Consider the following sentences:
-> Eyad is a great cook. *He* loves to make ravioli.
+## Como pensar em contexto?
+Considere as seguintes frases:
+> Eyad é um ótimo cozinheiro. *Ele* adora fazer ravióli.
 
-> Gijs is a great cook. *He* loves to make ravioli.
+> Gijs é um ótimo cozinheiro. *Ele* adora fazer ravióli.
 
-In both cases, the second sentence is the exact same. However, the word *he* refers to a completely different person. He is defined by the context.
+Em ambos os casos, a segunda frase é exatamente a mesma. No entanto, a palavra *ele* refere-se a uma pessoa completamente diferente. Ele é definido pelo contexto.
 
-A second example:
-> *He* loves to make ravioli.
+Um segundo exemplo:
+> *Ele* adora fazer ravióli.
 
-Now, when this sentence is written down without *he* being defined in the context, the sentence doesn't make any sense.
+Agora, quando esta frase é escrita sem *ele* ser definido no contexto, a frase não faz sentido.
 
-## Context in programming:
-A JavaScript example:
-```js
-function myFunction() {
+## Contexto na programação:
+Um exemplo de JavaScript:
+``` js
+função minhaFunção() {
   const a = 'ravioli';
   console.log(a);
 }
 ```
 
-```js
-function myFunction() {
+``` js
+função minhaFunção() {
   console.log(a);
 }
 ```
 
-In both cases, `console.log(a)` is the exact same. However, the context defines the value of a and whether it is defined at all.
+Em ambos os casos, `console.log(a)` é exatamente o mesmo. No entanto, o contexto define o valor de a e se ele é definido.
 
-## The Scope of the Context
-Let's first look at a definition of `scope`
-> (1) the extent of the area or subject matter that something deals with or to which it is relevant.
-> (2) the opportunity or possibility to do or deal with something.
+## O Escopo do Contexto
+Vamos primeiro olhar para uma definição de `escopo`
+> (1) a extensão da área ou assunto que algo trata ou para o qual é relevante.
+> (2) a oportunidade ou possibilidade de fazer ou lidar com algo.
 
-So in words more applicable to our situation scope means:
-> code that is within the reach of our code.
+Então, em palavras mais aplicáveis ao nosso escopo de situação, significa:
+> código que está ao alcance do nosso código.
 
-Consider two completely different JavaScript files
-```js
+Considere dois arquivos JavaScript completamente diferentes
+``` js
 // aFile.js
 const a = 10;
 ```
 
-```js
-// anotherFile.js
+``` js
+// outroArquivo.js
 console.log(a);
 ```
 
-When we run these files separately, the `console.log(a)` statement in anotherFile.js of course cannot reach `const a = 10`. Why? It is beyond the scope of our context. When we run a file in JavaScript, the program creates a new top-level context we call the global scope.
+Quando executamos esses arquivos separadamente, a instrução `console.log(a)` em outroFile.js obviamente não pode alcançar `const a = 10`. Por quê? Está além do escopo do nosso contexto. Quando executamos um arquivo em JavaScript, o programa cria um novo contexto de nível superior que chamamos de escopo global.
 
-From now on, we'll call 'scoped context' simply 'scope'.
+De agora em diante, chamaremos 'contexto com escopo' simplesmente 'escopo'.
 
-## Creating Scope within a Program
-Just like two programs have an completely different scope, we can also create different scopes within a program. We do the same in our language:
-> Eyad is a great cook. *He* loves to make ravioli. Gijs is great at finding the best ingredients. *He* has a real nose for it.
+## Criando escopo dentro de um programa
+Assim como dois programas têm escopos completamente diferentes, também podemos criar escopos diferentes dentro de um programa. Fazemos o mesmo em nossa linguagem:
+> Eyad é um ótimo cozinheiro. *Ele* adora fazer ravióli. Gijs é ótimo em encontrar os melhores ingredientes. *Ele* tem um faro de verdade para isso.
 
-At school one learns that *he* will refer to the last masculine subject introduced to the text. There are rules constraining this. In programming we rely a lot on context, and the rules are more strict than in natural language.
+Na escola se aprende que *ele* vai se referir ao último sujeito masculino introduzido no texto. Existem regras que restringem isso. Na programação, dependemos muito do contexto, e as regras são mais rígidas do que na linguagem natural.
 
-There are *five different ways* we can create a new context in JavaScript:
-- The global context (as we already saw)
-- The simple function context
-- The object construction context
-- The object method context
-- The event listener context
+Existem *cinco maneiras diferentes* de criar um novo contexto em JavaScript:
+- O contexto global (como já vimos)
+- O contexto de função simples
+- O contexto de construção do objeto
+- O contexto do método do objeto
+- O contexto do ouvinte de eventos
 
-More info on this [in this great post](https://zellwk.com/blog/this/)
+Mais informações sobre isso [neste ótimo post](https://zellwk.com/blog/this/)
 
-Another great article about `this`: [Understanding JavaScript Function Invocation and "this"](http://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/).
+Outro ótimo artigo sobre `this`: [Entendendo a invocação de funções JavaScript e "this"](http://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/).
 

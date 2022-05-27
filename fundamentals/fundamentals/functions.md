@@ -1,126 +1,126 @@
-# Functions
+# Funções
 
-Consider this **function** from [high-school math](https://www.mathplanet.com/education/algebra-2/how-to-graph-functions-and-linear-equations/functions-and-linear-equations):
+Considere esta **função** de [matemática do ensino médio](https://www.mathplanet.com/education/algebra-2/how-to-graph-functions-and-linear-equations/functions-and-linear -equações):
 
 > 𝑓(x) = x + 7
 >
-> _if x = 2 then_
+> _se x = 2 então_
 >
 > 𝑓(2) = 2 + 7 = 9
 
-The value of the function 𝑓(x) is dependent on the value you supply for its argument x. (Instead of the term 'argument', sometimes the word 'parameter' is used). 
+O valor da função 𝑓(x) depende do valor que você fornece para seu argumento x. (Em vez do termo 'argumento', às vezes a palavra 'parâmetro' é usada).
 
-Here is the equivalent JavaScript function:
+Aqui está a função JavaScript equivalente:
 
-```js
-// function definition
-function f(x) {
-    return x + 7;
+``` js
+//definição da função
+função f(x) {
+    retorna x + 7;
 }
 
-// call the function and log its value for x = 2
-console.log(f(2));  // -> 9
+// chama a função e registra seu valor para x = 2
+console.log(f(2)); // -> 9
 ```
 
-This function adds 7 to the value of its argument. Whenever we need to add 7 to some number we can reuse this same function over and over again.
+Esta função adiciona 7 ao valor de seu argumento. Sempre que precisarmos adicionar 7 a algum número, podemos reutilizar essa mesma função várias vezes.
 
-During execution, the value of x in the function body (the part between the curly braces) is substituted with the value 'passed' during the function call. 
+Durante a execução, o valor de x no corpo da função (a parte entre as chaves) é substituído pelo valor 'passado' durante a chamada da função.
 
-A function thus is a reusable piece of code (see _Why Use Functions_ below). Functions are *very* important in JavaScript, to the extent that some people call JavaScript a "function-oriented" language. As mentioned above, variables can be of type function. In fact, *every function is a variable*.
+Uma função, portanto, é um pedaço de código reutilizável (veja _Por que usar funções_ abaixo). As funções são *muito* importantes em JavaScript, na medida em que algumas pessoas chamam JavaScript de uma linguagem "orientada a funções". Como mencionado acima, as variáveis podem ser do tipo função. Na verdade, *toda função é uma variável*.
 
-The following two pieces of code have the exact same result:
+Os dois trechos de código a seguir têm exatamente o mesmo resultado:
 
-```js
-function sum(a, b) {
-  return a + b;
-}
-```
-
-and
-
-```js
-let sum = function (a, b) {
-  return a + b;
+``` js
+função soma(a, b) {
+  retornar a + b;
 }
 ```
 
-> Note
+e
+
+``` js
+deixe soma = função (a, b) {
+  retornar a + b;
+}
+```
+
+> Nota
 >
-> This is not entirely true, as in the second code, the function is "anonymous", i.e. it has no name. But in both cases, you can call the function like this: `sum(4, 5)`.
+> Isso não é totalmente verdade, pois no segundo código, a função é "anônima", ou seja, não tem nome. Mas em ambos os casos, você pode chamar a função assim: `sum(4, 5)`.
 
-## Parameters & arguments
+## Parâmetros e argumentos
 
-When writing `function sum(a, b)`, `a` and `b` are the "parameters" of the function. We say that this function has two parameters. (Sometimes, you'll see the word "arity": this function has "arity" 2, but that is something you don't have to use for now.)
+Ao escrever `função sum(a, b)`, `a` e `b` são os "parâmetros" da função. Dizemos que esta função tem dois parâmetros. (Às vezes, você verá a palavra "arity": esta função tem "arity" 2, mas isso é algo que você não precisa usar por enquanto.)
 
-Now, when *calling* function sum, e.g. `let s = sum(4, 5);`, we say that the numbers `4` and `5` are the "arguments" of the function. Arguments are "passed" to the function: "we pass `4` and `5` to the function `sum`".
+Agora, ao *chamar* a função soma, por exemplo `let s = sum(4, 5);`, dizemos que os números `4` e `5` são os "argumentos" da função. Os argumentos são "passados" para a função: "passamos `4` e `5` para a função `sum`".
 
-So remember the difference between the word "parameter" and "argument". Many people confuse them, and that's not a big problem, but understanding the difference is always nice:
+Portanto, lembre-se da diferença entre a palavra "parâmetro" e "argumento". Muitas pessoas confundem, e isso não é um grande problema, mas entender a diferença é sempre bom:
 
-* A parameter is the name you want to give to the variable that is available inside of the function.
-* An argument is the actual value you want to assign to the parameters when you call the function.
+* Um parâmetro é o nome que você deseja dar à variável que está disponível dentro da função.
+* Um argumento é o valor real que você deseja atribuir aos parâmetros ao chamar a função.
 
-A function that "has two parameters" is also said to "take/accept two arguments". But, sometimes you'll hear people say: "the function has two arguments" or "the function takes two parameters". While formally incorrect, you'll know what they mean.
+Uma função que "tem dois parâmetros" também é chamada de "aceitar/aceitar dois argumentos". Mas, às vezes você vai ouvir as pessoas dizerem: "a função tem dois argumentos" ou "a função recebe dois parâmetros". Embora formalmente incorreto, você saberá o que eles significam.
 
-## Calling a function on something
+## Chamando uma função em algo
 
-In JavaScript, you can call functions *on* something. By this, we mean that you use the dot to call the function. For instance, when we say "call method `trim` on string `s`", we mean:
+Em JavaScript, você pode chamar funções *em* algo. Com isso, queremos dizer que você usa o ponto para chamar a função. Por exemplo, quando dizemos "chamar o método `trim` na string `s`", queremos dizer:
 
-```js
-let s = " this is a string  ";
-s.trim(); // -> "this is a string"
+``` js
+let s = "isso é uma string";
+s.trim(); // -> "isto é uma string"
 ```
 
-> Note
+> Nota
 >
-> Technically, this means that the string `s` will become the `this` special variable inside of the function.
+> Tecnicamente, isso significa que a string `s` se tornará a variável especial `this` dentro da função.
 
-However, there are functions that you don't call on anything:
+No entanto, existem funções que você não chama em nada:
 
-```js
-function sum(a, b) { return a + b; }
-sum(4, 5); // -> 9
+``` js
+função soma(a, b) { return a + b; }
+soma(4, 5); // -> 9
 ```
 
-Here, you call the function `sum` on nothing.
+Aqui, você chama a função `sum` em nada.
 
-Most built-in functions in JavaScript, like math functions or logging functions, also use the dot:
+A maioria das funções integradas em JavaScript, como funções matemáticas ou funções de registro, também usam o ponto:
 
-```js
+``` js
 Math.round(4.5);
-console.log("hello");
+console.log("Olá");
 Array.from([1, 2, 3]);
 ```
 
-Indeed, these functions are also called "on" `Math`, `console`, `Array`, and so on. However, in this case, their purpose is more to group them logically, so here it's not very important to use that terminology. We'd rather say: "call the function `Math.round` with `4.5` as an argument", i.e. we include it in the full name of the methods.
+Na verdade, essas funções também são chamadas de "on" `Math`, `console`, `Array` e assim por diante. No entanto, neste caso, seu objetivo é mais agrupá-los logicamente, então aqui não é muito importante usar essa terminologia. Preferimos dizer: "chamar a função `Math.round` com `4.5` como argumento", ou seja, incluímos no nome completo dos métodos.
 
-It's more when you think about which functions you can call "on" your own variables (strings, arrays, numbers, etc):
+É mais quando você pensa em quais funções você pode chamar "em" suas próprias variáveis (strings, arrays, números, etc):
 
-```js
-myString.trim();
-myArray.slice();
-myNumber.toString();
+``` js
+minhaString.trim();
+meuArray.fatia();
+meuNúmero.toString();
 ...
 ```
 
-## Why Use Functions?
+## Por que usar funções?
 
-> The following was adapted from https://www.cs.utah.edu/~zachary/computing/lessons/uces-10/uces-10/node11.html
+> O seguinte foi adaptado de https://www.cs.utah.edu/~zachary/computing/lessons/uces-10/uces-10/node11.html
 
-The first reason is **reusability**. Once a function is defined, it can be used over and over and over again. You can invoke the same function many times in your program, which saves you work.
+A primeira razão é a **reutilização**. Uma vez que uma função é definida, ela pode ser usada repetidamente. Você pode invocar a mesma função muitas vezes em seu programa, o que economiza seu trabalho.
 
-Another aspect of reusability is that a single function can be used in several different (and separate) programs. When you need to write a new program, you can go back to your old programs, find the functions you need, and reuse those functions in your new program. You can also reuse functions that somebody else has written for you.
+Outro aspecto da reutilização é que uma única função pode ser usada em vários programas diferentes (e separados). Quando você precisa escrever um novo programa, você pode voltar aos seus programas antigos, encontrar as funções que você precisa e reutilizá-las em seu novo programa. Você também pode reutilizar funções que outra pessoa escreveu para você.
 
-The second reason is **abstraction**. In order to use a particular function you need to know the following things:
+A segunda razão é a **abstração**. Para usar uma função específica, você precisa saber o seguinte:
 
-1. The name of the function;
-2. What the function does;
-3. What arguments you must give to the function; and
-4. What kind of result the function returns.
+1. O nome da função;
+2. O que a função faz;
+3. Quais argumentos você deve dar à função; e
+4. Que tipo de resultado a função retorna.
 
-But notice: If you just want to use the function in your program, you don't have to know how it works inside! You don't have to understand anything about what goes on inside the function.
+Mas observe: se você quer apenas usar a função em seu programa, não precisa saber como ela funciona por dentro! Você não precisa entender nada sobre o que acontece dentro da função.
 
-It's sort of like driving a car or using a telephone. With an automobile, you don't need to understand every detail about the engine and drive train and wheels, if all you want to do is drive the car. Similarly, with a telephone, you don't have to understand everything about the phone system in order to make a call.
+É como dirigir um carro ou usar um telefone. Com um automóvel, você não precisa entender todos os detalhes sobre o motor, trem de força e rodas, se tudo o que você quer fazer é dirigir o carro. Da mesma forma, com um telefone, você não precisa entender tudo sobre o sistema telefônico para fazer uma chamada.
 
-The only time you need to know how a function works inside is when you need to write the function, or change how it works. (It's like a car again; you need to know how a car works in order to build one or fix one.) But once a function is written and working, you never need to look at its insides again.
+A única vez que você precisa saber como uma função funciona internamente é quando você precisa escrever a função ou alterar como ela funciona. (É como um carro novamente; você precisa saber como um carro funciona para construir um ou consertar um.) Mas uma vez que uma função está escrita e funcionando, você nunca mais precisa olhar para dentro dela.
 
-Together, these two reasons make functions extremely useful--practically essential!-for programmers who write large programs. The ability to divide a program into abstract, reusable pieces is what makes it possible to write large programs that actually work right.
+Juntas, essas duas razões tornam as funções extremamente úteis - praticamente essenciais! - para programadores que escrevem programas grandes. A capacidade de dividir um programa em partes abstratas e reutilizáveis é o que torna possível escrever grandes programas que realmente funcionam corretamente.

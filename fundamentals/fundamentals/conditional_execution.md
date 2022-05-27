@@ -1,198 +1,198 @@
-# Conditional execution
+# Execução condicional
 
-The normal order of execution of statements in a computer program is in straight-line order, from top to bottom. However, sometimes it is desirable to execute one or more statements _conditionally_, i.e. depending on whether some condition – determined by the state of your program – holds true.
+A ordem normal de execução das instruções em um programa de computador é em linha reta, de cima para baixo. No entanto, às vezes é desejável executar uma ou mais instruções _condicionalmente_, ou seja, dependendo se alguma condição – determinada pelo estado do seu programa – for verdadeira.
 
-## The `if` statement
+## A instrução `if`
 
-In its simplest form the `if` statement looks like this:
+Em sua forma mais simples, a instrução `if` se parece com isso:
 
-```js
-if (condition) {
-    // one or more statements that will be executed
-    // if, and only if the condition holds true
+``` js
+se (condição) {
+    // uma ou mais instruções que serão executadas
+    // se, e somente se a condição for verdadeira
 }
 ```
 
-Here, `condition` is a boolean expression that resolves to either `true` or `false` (or, more precisely, any expression that is 'truthy' or 'falsy', as will be explained later).
+Aqui, `condition` é uma expressão booleana que resolve para `true` ou `false` (ou, mais precisamente, qualquer expressão que seja 'truthy' ou 'falsy', como será explicado mais tarde).
 
-The statements within the curly braces `{` and `}` will be executed if the condition holds true, otherwise these statements will be skipped (i.e. ignored).
+As instruções dentro das chaves `{` e `}` serão executadas se a condição for verdadeira, caso contrário, essas instruções serão ignoradas (ou seja, ignoradas).
 
-An example:
+Um exemplo:
 
-```js
-if (distance < 10) {
-    console.log('I will take the bike.');
+``` js
+if (distância < 10) {
+    console.log('Vou levar a bicicleta.');
 }
 ```
 
-Here, the condition is the boolean expression `distance > 10`, which is either `true` or `false`.
+Aqui, a condição é a expressão booleana `distance > 10`, que é `true` ou `false`.
 
-It is also possible to add a statement block to be executed if (and only if) the condition does **not** hold true, using an `else` clause.
+Também é possível adicionar um bloco de instruções a ser executado se (e somente se) a condição **não** for verdadeira, usando uma cláusula `else`.
 
-```js
-if (distance < 10) {
-    console.log('I will take the bike.');
-} else {
-    console.log('I will go by car.');
+``` js
+if (distância < 10) {
+    console.log('Vou levar a bicicleta.');
+} senão {
+    console.log('Vou de carro.');
 }
 ```
 
-A condition can take more complex forms, using `&&` (logical AND) and `||` (logical OR) operators:
+Uma condição pode assumir formas mais complexas, usando os operadores `&&` (AND lógico) e `||` (OR lógico):
 
-```js
-if (distance < 10 && !raining) {
-    console.log('I will take the bike.');
-} else {
-    console.log('I will go by car.');
+``` js
+if (distância < 10 && !chovendo) {
+    console.log('Vou levar a bicicleta.');
+} senão {
+    console.log('Vou de carro.');
 }
 ```
 
-In the example above `raining` is a boolean variable (either `true` or `false`), and the exclamation mark is the logical NOT operator that negates the boolean value (if it was `true` the result after negation is false and vice versa).
+No exemplo acima `raining` é uma variável booleana (tanto `true` quanto `false`), e o ponto de exclamação é o operador lógico NOT que nega o valor booleano (se for `true` o resultado após a negação é false e vice-versa).
 
-For more complex decisions you can concatenate multiple conditions using `else if` clauses.
+Para decisões mais complexas, você pode concatenar várias condições usando cláusulas `else if`.
 
-```js
-if (distance < 1) {
-    console.log('I will walk.');
-} else if (distance < 10) {
-    console.log('I will take the bike.');
-} else if (distance < 50) {
-    console.log('I will go by car.');
-} else {
-    console.log('I will take the train.');
+``` js
+if (distância < 1) {
+    console.log('Eu vou andar.');
+} else if (distância < 10) {
+    console.log('Vou levar a bicicleta.');
+} else if (distância < 50) {
+    console.log('Vou de carro.');
+} senão {
+    console.log('Vou pegar o trem.');
 }
 ```
 
-The statement block inside an `if`, `else` or `else if` may itself contain nested `if` statements, as in this example:
+O bloco de instrução dentro de um `if`, `else` ou `else if` pode conter instruções `if` aninhadas, como neste exemplo:
 
-```js
-if (distance < 10) {
-    if (raining) {
-        console.log('I will go public transportation.');
-    } else {
-        console.log('I will walk.');
+``` js
+if (distância < 10) {
+    se (chovendo) {
+        console.log('Eu irei de transporte público.');
+    } senão {
+        console.log('Eu vou andar.');
     }
-} else {
-    console.log('I will go by car.');
+} senão {
+    console.log('Vou de carro.');
 }
 ```
 
-> As (nested) `if` statements can become quite complex it is very important that you indent your source code so that there can be no confusion about which statement blocks are executed for each condition, as was done in the examples.
+> Como as instruções `if` (aninhadas) podem se tornar bastante complexas, é muito importante que você indente seu código-fonte para que não haja confusão sobre quais blocos de instruções são executados para cada condição, como foi feito nos exemplos.
 
->More information on MDN: [if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
+>Mais informações sobre MDN: [if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
 
-## The conditional (ternary) operator
+## O operador condicional (ternário)
 
-This operator can be used as a shortcut for an `if` statement when dealing with expressions.
+Este operador pode ser usado como um atalho para uma instrução `if` ao lidar com expressões.
 
-The general format is:
+O formato geral é:
 
-```js
-condition ? expr1 : expr2
+``` js
+doença ? exp1: exp2
 ```
 
-('ternary' means: _composed of three parts_)
+('ternário' significa: _composto de três partes_)
 
-It is often used in combination with an assignment, as in this example:
+É frequentemente usado em combinação com uma atribuição, como neste exemplo:
 
-```js
-const conditionOfCar = age < 1 ? 'new' : 'used';
+``` js
+const conditionOfCar = idade < 1 ? 'novo': 'usado';
 ```
 
-The `conditionOfCar` variable will be assigned the string `'new'` if the `age < 1` condition holds true, otherwise it is assigned the string `'used'`.
+A variável `conditionOfCar` receberá a string `'new'` se a condição `age < 1` for verdadeira, caso contrário, será atribuída a string `'used'`.
 
-It is always possible to rewrite a ternary operator as an `if-then-else` statement, for example:
+É sempre possível reescrever um operador ternário como uma instrução `if-then-else`, por exemplo:
 
-```js
-let conditionOfCar;
-if (age < 1) {
-  conditionOfCar = 'new';
-} else {
-  conditionOfCar = 'used';
+``` js
+deixe condiçãoDeCarro;
+if (idade < 1) {
+  condiçãoDeCarro = 'novo';
+} senão {
+  condiçãoDeCarro = 'usado';
 }
 ```
 
-Note that you can't use `const` here for `conditionOfCar` because we can't combine declaration and initialization in a single statement. Therefore we must now use `let`.
+Observe que você não pode usar `const` aqui para `conditionOfCar` porque não podemos combinar declaração e inicialização em uma única instrução. Portanto, agora devemos usar `let`.
 
-It is **not** recommended to use the conditional operator if you do not intend to use its value:
+**Não** é recomendado usar o operador condicional se você não pretende usar seu valor:
 
-```js
-// Don't do this: it's yucky code
-age < 1 ? console.log('new') : console.log('used');
+``` js
+// Não faça isso: é um código nojento
+idade < 1? console.log('novo'): console.log('usado');
 ```
 
->More information on MDN: [Conditional (ternary) Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
+>Mais informações sobre MDN: [Operador condicional (ternário)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
 
-## The switch statement
+## A instrução switch
 
-The `switch` statement can sometimes be a useful alternative to a concatenation of `if` statements. This is the case when the condition is an expression that can be decomposed into a number of distinct values or _cases_, as shown in the example below.
+A instrução `switch` às vezes pode ser uma alternativa útil para uma concatenação de instruções `if`. Este é o caso quando a condição é uma expressão que pode ser decomposta em vários valores distintos ou _cases_, conforme mostrado no exemplo abaixo.
 
-```js
+``` js
 const hyfModule = 'JavaScript-1';
 
 switch (hyfModule) {
-  case 'HTML/CSS':
-    console.log('In this module you will learn HTML and CSS.');
-    break;
+  caso 'HTML/CSS':
+    console.log('Neste módulo você aprenderá HTML e CSS.');
+    pausa;
   case 'JavaScript-1':
-    console.log('In this module you will learn Git and JavaScript basics.');
-    break;
+    console.log('Neste módulo você aprenderá o básico sobre Git e JavaScript.');
+    pausa;
   case 'JavaScript-2':
-    console.log('In this module you will learn about JavaScript in the browser with HTML and CSS.');
-    break;
+    console.log('Neste módulo você aprenderá sobre JavaScript no navegador com HTML e CSS.');
+    pausa;
   case 'JavaScript-3':
-    console.log('In this module you will learn about Async and API calls.');
-    break;
-  case 'Node':
-    console.log('This module is about building server and CLI applications using Node.');
-    break;
-  case 'Database':
-    console.log('In this module is about Relational and Non-Relational Data and Database Systems.');
-    break;
-  case 'React':
-    console.log('In this module you will to build Single Page Applications using React.');
-    break;
-  case 'Project':
-    console.log('In this final module you will do your graduation project.');
-    break;
-  default:
-    console.log('This module is unknown: ' + hyfModule);
+    console.log('Neste módulo você aprenderá sobre chamadas Async e API.');
+    pausa;
+  caso 'Nó':
+    console.log('Este módulo trata da construção de aplicativos de servidor e CLI usando Node.');
+    pausa;
+  caso 'Banco de dados':
+    console.log('Neste módulo é sobre Dados Relacionais e Não Relacionais e Sistemas de Banco de Dados.');
+    pausa;
+  caso 'Reagir':
+    console.log('Neste módulo você irá construir aplicações de página única usando React.');
+    pausa;
+  caso 'Projeto':
+    console.log('Neste módulo final você fará seu projeto de graduação.');
+    pausa;
+  predefinição:
+    console.log('Este módulo é desconhecido: ' + hyfModule);
 }}
 ```
 
-Depending on the value of the expression specified in the `switch` clause, one of the `case` statement blocks is executed. Each statement block should end with a `break` statement to ensure that a `case` doesn't 'fall through' into the next `case`.
+Dependendo do valor da expressão especificada na cláusula `switch`, um dos blocos de instrução `case` é executado. Cada bloco de instrução deve terminar com uma instrução `break` para garantir que um `case` não 'caia' no próximo `case`.
 
-The `default` statement at the end is executed when none of the preceding cases hold true. The `default` statement is not strictly required, but is a best practice to always specify one.
+A instrução `default` no final é executada quando nenhum dos casos anteriores for verdadeiro. A instrução `default` não é estritamente necessária, mas é uma prática recomendada sempre especificar uma.
 
->More information on MDN: [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
+>Mais informações sobre MDN: [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
 
-## truthy, falsy
+## verdadeiro, falso
 
-**truthy**: 'sort of' `true`
-**falsy**: 'sort of' `false`
+**verdadeiro**: 'mais ou menos' 'verdadeiro'
+**falso**: 'mais ou menos' 'falso'
 
-From MDN:
+Do MDN:
 
-In JavaScript, a **truthy** value is a value that is considered  true when evaluated in a Boolean context. All values are truthy unless they are defined as **falsy**.
+Em JavaScript, um valor **truthy** é um valor considerado verdadeiro quando avaliado em um contexto booleano. Todos os valores são verdadeiros, a menos que sejam definidos como **falsos**.
 
-**falsy** values are:
+Os valores **falsos** são:
 
-- `false`
+- `falso`
 - `0`
 - `""`
 - `null`
-- `undefined`
+- `indefinido`
 - `NaN`
 
-The example below will print `x is undefined` because `undefined` is **falsy**.
+O exemplo abaixo imprimirá `x is undefined` porque `undefined` é **falsy**.
 
-```js
-let x;
-if (x) {
-    console.log('x is defined');
-} else {
-  console.log('x is undefined');
+``` js
+deixe x;
+se (x) {
+    console.log('x está definido');
+} senão {
+  console.log('x é indefinido');
 }
 ```
 
->More information on MDN: [Truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy), [Falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy)
+>Mais informações sobre MDN: [Truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy), [Falsy](https://developer.mozilla.org/en-US/docs /Glossário/Falso)

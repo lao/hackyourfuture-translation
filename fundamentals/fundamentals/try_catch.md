@@ -1,79 +1,79 @@
-# try...catch
+# tentar... pegar
 
-From MDN:
+Do MDN:
 
-> The `try...catch` statement marks a block of statements to try, and specifies a response, should an exception be thrown.
+> A instrução `try...catch` marca um bloco de instruções para tentar e especifica uma resposta, caso uma exceção seja lançada.
 
-Let's first talk about exceptions. Exceptions are used in programming to signal that an unexpected situation has arisen or an unexpected result was received, usually because of some error. In that situation, a program can throw an exception. In JavaScript this can be done as follows:
+Vamos primeiro falar sobre exceções. As exceções são usadas na programação para sinalizar que uma situação inesperada surgiu ou um resultado inesperado foi recebido, geralmente devido a algum erro. Nessa situação, um programa pode lançar uma exceção. Em JavaScript isso pode ser feito da seguinte forma:
 
-> `throw` _expression_;
+> `lançar` _expressão_;
 
-By convention, the _expression_ is expected to be a standard JavaScript [Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) object. You can state the reason for the exception by passing a message string as argument to the constructor of the `Error` object, as in this example.
+Por convenção, espera-se que a _expression_ seja um objeto JavaScript [Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) padrão. Você pode declarar o motivo da exceção passando uma string de mensagem como argumento para o construtor do objeto `Error`, como neste exemplo.
 
-```js
-throw new Error('No response from the network.');
+``` js
+throw new Error('Nenhuma resposta da rede.');
 ```
 
-When you throw an error, further execution of the current code stops immediately. The JavaScript engine will start looking for code that is specifically written to handle the error (see `try..catch` below). If there is no such code then the JavaScript engine will report it as an unhandled exception. When encountering an unhandled exception in the browser, JavaScript will clear the call stack end wait for a next event to occur. In Node the JavaScript program will be terminated abnormally.
+Quando você lança um erro, a execução adicional do código atual é interrompida imediatamente. O mecanismo JavaScript começará a procurar o código escrito especificamente para lidar com o erro (consulte `try..catch` abaixo). Se não houver esse código, o mecanismo JavaScript o reportará como uma exceção não tratada. Ao encontrar uma exceção não tratada no navegador, o JavaScript limpará a pilha de chamadas e aguardará a ocorrência de um próximo evento. No Node, o programa JavaScript será encerrado de forma anormal.
 
-## Exception handling with try...catch
+## Tratamento de exceção com try...catch
 
-If you anticipate that your code may be subjected to exceptions (either because you throw exceptions yourself or exceptions thrown by Web API or library functions*) you can handle exceptions by wrapping your code in a `try...catch` block.
+Se você antecipar que seu código pode estar sujeito a exceções (seja porque você mesmo lança exceções ou exceções lançadas pela API da Web ou funções de biblioteca*), você pode lidar com exceções envolvendo seu código em um bloco `try...catch`.
 
-Example: The `JSON.parse()` method may throw an exception if the string passed to `.parse()` is not valid JSON.
+Exemplo: O método `JSON.parse()` pode lançar uma exceção se a string passada para `.parse()` não for um JSON válido.
 
-```js
-try {
-  const obj = JSON.parse('this is invalid JSON');
+``` js
+experimentar {
+  const obj = JSON.parse('este é um JSON inválido');
   console.log(obj);
 }
-catch (err) {
-  console.error('An error occurred: ' + err.message);
+pegar (errar) {
+  console.error('Ocorreu um erro: ' + err.message);
 }
 
-// console output:
-// An error occurred: Unexpected token h in JSON at position 1
+// saída do console:
+// Ocorreu um erro: token inesperado h em JSON na posição 1
 ```
 
-Note that the `catch` block receives the `Error` object that was thrown.
+Observe que o bloco `catch` recebe o objeto `Error` que foi lançado.
 
-\* Note: You should be able to find out whether exceptions are thrown in a Web API (e.g. `JSON.parse()`) or library functions by inspecting the corresponding documentation.
+\* Nota: Você deve ser capaz de descobrir se as exceções são lançadas em uma API da Web (por exemplo, `JSON.parse()`) ou funções de biblioteca inspecionando a documentação correspondente.
 
-## try...catch with async and await
+## tente... capture com assíncrono e aguarde
 
-The `try...catch` block is also important when working with `async` and `await`. Where the default method of working with promises involves a `.catch()` method to deal with errors, there is no such method when using `async` and `await`. Rejected promises when using `async` and `await` are thrown as exceptions.
+O bloco `try...catch` também é importante ao trabalhar com `async` e `await`. Onde o método padrão de trabalhar com promessas envolve um método `.catch()` para lidar com erros, não existe tal método ao usar `async` e `await`. Promessas rejeitadas ao usar `async` e `await` são lançadas como exceções.
 
-This is an example taken from the [fundamental on promises](./promises.md):
+Este é um exemplo retirado do [fundamental on promise](./promises.md):
 
-```js
-async function fetchAndRender() {
-  try {
+``` js
+função assíncrona fetchAndRender() {
+  experimentar {
     const data = await fetchJSON(url);
     const otherData = await fetchJSON(otherUrl);
-    renderData(data);
-    renderOtherData(otherData);
+    renderData(dados);
+    renderOutroDados(outrosDados);
   }
-  catch (err) {
-    renderError(err);
+  pegar (errar) {
+    renderError(erro);
   }
 }
 
 fetchAndRender();
 ```
 
-The `fetchJSON()` function returns a promise. Should that promise be rejected an exception is thrown and caught by the `catch` block.
+A função `fetchJSON()` retorna uma promessa. Caso essa promessa seja rejeitada, uma exceção é lançada e capturada pelo bloco `catch`.
 
-## When to throw exceptions
+## Quando lançar exceções
 
-As a rule of thumb you should only throw exceptions yourself if the situation or result is truly unexpected. For instance, if you ask a user to enter a number and the user types something that is not a number you should **not** throw an exception. This is because it is in the normal course of events that you can expect a user to type something other than a number. In this case you should deal with it in the usual fashion without throwing an exception.
+Como regra geral, você só deve lançar exceções se a situação ou resultado for realmente inesperado. Por exemplo, se você pedir a um usuário para inserir um número e o usuário digitar algo que não seja um número, você **não** deve lançar uma exceção. Isso ocorre porque é no curso normal dos eventos que você pode esperar que um usuário digite algo diferente de um número. Nesse caso, você deve lidar com isso da maneira usual, sem lançar uma exceção.
 
-Examples of situations where an exception is appropriate are:
+Exemplos de situações em que uma exceção é apropriada são:
 
-- The network is unexpectedly down.
-- A database connection was dropped.
+- A rede caiu inesperadamente.
+- Uma conexão de banco de dados foi descartada.
 
-And so on.
+E assim por diante.
 
-## Further reading on MDN
+## Leitura adicional no MDN
 
 [try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)

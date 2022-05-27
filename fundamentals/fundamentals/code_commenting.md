@@ -1,46 +1,46 @@
-# Code Commenting
+# Comentário de código
 
-First the straightforward part: how do we place comments in our code?
+Primeiro a parte direta: como colocamos comentários em nosso código?
 
-## JavaScript
-Single line comments
-```js
-// Change heading:
-document.getElementById("myH").innerHTML = "My First Page";
+##Javascript
+Comentários de linha única
+``` js
+// Muda o título:
+document.getElementById("myH").innerHTML = "Minha primeira página";
 ```
 
-Single line comments at end of the line:
-```js
-const x = 5;      // Declare x, give it the value of 5
+Comentários de linha única no final da linha:
+``` js
+const x = 5; // Declara x, dá o valor de 5
 ```
 
-Coding **well** in JavaScript: [JSDoc](https://jsdoc.app/)
+Codificando **bem** em JavaScript: [JSDoc](https://jsdoc.app/)
 
 ## HTML
 [W3Schools](https://www.w3schools.com/html/html_comments.asp)
-Comments
+Comentários
 ```html
-<!-- Write
-your comments here -->
+<!-- Escrever
+seus comentários aqui -->
 
-<!-- Write your comments here -->
+<!-- Escreva seus comentários aqui -->
 ```
 
 
-## CSS
-[MDN on CSS comments](https://developer.mozilla.org/en-US/docs/Web/CSS/Comments)
-```css
-/* Comment */
+##CSS
+[MDN em comentários CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/Comments)
+``` css
+/* Comente */
 
 /*
-A comment
-which stretches
-over several
-lines
+Um comentário
+que se estende
+ao longo de vários
+linhas
 */
 ```
 
-## When to comment?
-Now for the hard part: when to comment? When you work for different companies, you will see different styles. Embrace something you like, and then learn to let go. Google on "when to comment code?" and you'll find a big bunch of different opinions.
+## Quando comentar?
+Agora a parte difícil: quando comentar? Quando você trabalha para empresas diferentes, verá estilos diferentes. Abrace algo que você gosta, e então aprenda a deixar ir. Google em "quando comentar o código?" e você encontrará um monte de opiniões diferentes.
 
-The general concept is, however, that it is there to help make the code more easy to understand. Note, however, that comments can also make code more difficult to understand when not applied properly.
+O conceito geral, no entanto, é que ele existe para ajudar a tornar o código mais fácil de entender. Observe, no entanto, que os comentários também podem tornar o código mais difícil de entender quando não aplicados corretamente.

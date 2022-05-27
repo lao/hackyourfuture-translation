@@ -1,241 +1,241 @@
-# Object-Oriented Programming & Classes
+# Programação e Classes Orientadas a Objetos
 
-### Object Literals and Imperative Programming
+### Literais de Objetos e Programação Imperativa
 
-In earlier JavaScript lectures we saw that we can create objects through object literals and use functions to access and manipulate their properties. A typical example is shown below, where we have defined an array of objects, in this case each representing the name of a month and its associated number of days.
+Em palestras anteriores sobre JavaScript vimos que podemos criar objetos por meio de literais de objetos e usar funções para acessar e manipular suas propriedades. Um exemplo típico é mostrado abaixo, onde definimos um array de objetos, neste caso cada um representando o nome de um mês e seu número de dias associado.
 
-We're looping through the months and printing an informational message to the console for each month having 31 days.
+Estamos percorrendo os meses e imprimindo uma mensagem informativa no console para cada mês com 31 dias.
 
-This style of programming is called Imperative Programming: in the code detail containing the `for` loop we instruct the computer _how to perform the task(s) at hand_.
+Este estilo de programação é chamado de Programação Imperativa: no detalhe do código que contém o loop `for`, instruímos o computador _como realizar a(s) tarefa(s) em questão_.
 
-```js
-const months = [
-  { name: 'January', days: 31 },
-  { name: 'February', days: 28 },
-  { name: 'March', days: 31 },
-  { name: 'April', days: 30 },
-  { name: 'May', days: 31 },
-  { name: 'June', days: 30 },
-  { name: 'July', days: 31 },
-  { name: 'August', days: 31 },
-  { name: 'September', days: 30 },
-  { name: 'October', days: 31 },
-  { name: 'November', days: 30 },
-  { name: 'December', days: 31 }
+``` js
+const meses = [
+  { nome: 'janeiro', dias: 31 },
+  { nome: 'fevereiro', dias: 28 },
+  { nome: 'março', dias: 31 },
+  { nome: 'abril', dias: 30},
+  { nome: 'maio', dias: 31 },
+  { nome: 'junho', dias: 30},
+  { nome: 'julho', dias: 31 },
+  { nome: 'agosto', dias: 31 },
+  { nome: 'setembro', dias: 30 },
+  { nome: 'outubro', dias: 31 },
+  { nome: 'novembro', dias: 30 },
+  { nome: 'dezembro', dias: 31 }
 ];
 
-for (const month of months) {
-  if (month.days === 31) {
-    console.log(`${month.name} has ${month.days} days.`);
+para (const mês de meses) {
+  if (mês.dias === 31) {
+    console.log(`${month.name} tem ${month.days} dias.`);
   }
 }
 ```
 
-## Functional Programming
+## Programação Funcional
 
-In the Functional Programming style (also referred to as Declarative Programming), we prefer to declare _what the computer should do_.
+No estilo de Programação Funcional (também conhecido como Programação Declarativa), preferimos declarar _o que o computador deve fazer_.
 
-In the next example we have used the `filter` method to extract a subset of months having 31 days, used the `map` method to create an informational string for each month and a `forEach` method to output those strings to the console.
+No próximo exemplo, usamos o método `filter` para extrair um subconjunto de meses com 31 dias, usamos o método `map` para criar uma string informativa para cada mês e um método `forEach` para enviar essas strings para o console.
 
-Put in other words, we state or **declare** that the computer should **filter** our array according to some predefined criterion, then **map** each filtered object to a string and print out each string to the console.
+Em outras palavras, declaramos ou **declaramos** que o computador deve **filtrar** nosso array de acordo com algum critério predefinido, então **mapear** cada objeto filtrado para uma string e imprimir cada string no console .
 
-> A prime example of a declarative language is SQL, which you will learn in the HYF Database module.
+> Um excelente exemplo de linguagem declarativa é o SQL, que você aprenderá no módulo HYF Database.
 
-In contrast to the Imperative Style we do not have to infer from looking at the code what is actually happening. Instead, the names of the functions and methods already indicate what it is we want to achieve.
+Em contraste com o estilo imperativo, não temos que inferir olhando para o código o que está realmente acontecendo. Em vez disso, os nomes das funções e métodos já indicam o que queremos alcançar.
 
-```js
-const months = [
-  { name: 'January', days: 31 },
-  { name: 'February', days: 28 },
-  { name: 'March', days: 31 },
-  { name: 'April', days: 30 },
-  { name: 'May', days: 31 },
-  { name: 'June', days: 30 },
-  { name: 'July', days: 31 },
-  { name: 'August', days: 31 },
-  { name: 'September', days: 30 },
-  { name: 'October', days: 31 },
-  { name: 'November', days: 30 },
-  { name: 'December', days: 31 }
+``` js
+const meses = [
+  { nome: 'janeiro', dias: 31 },
+  { nome: 'fevereiro', dias: 28 },
+  { nome: 'março', dias: 31 },
+  { nome: 'abril', dias: 30},
+  { nome: 'maio', dias: 31 },
+  { nome: 'junho', dias: 30},
+  { nome: 'julho', dias: 31 },
+  { nome: 'agosto', dias: 31 },
+  { nome: 'setembro', dias: 30 },
+  { nome: 'outubro', dias: 31 },
+  { nome: 'novembro', dias: 30 },
+  { nome: 'dezembro', dias: 31 }
 ];
 
-months
-  .filter(month => month.days === 31)
-  .map(month => `${month.name} has ${month.days} days.`)
+meses
+  .filter(mês => mês.dias === 31)
+  .map(month => `${month.name} tem ${month.days} dias.`)
   .forEach(string => console.log(string));
 ```
 
-### Constructor Functions (pre-ES6) and the `new` keyword
+### Funções Construtoras (pré-ES6) e a palavra-chave `new`
 
-In the example below, instead of using object literals,  we use a function in conjunction with the `new` keyword to create objects. Such a function is called a **constructor** function, and, by convention, we start its name with an uppercase letter.
+No exemplo abaixo, em vez de usar literais de objeto, usamos uma função em conjunto com a palavra-chave `new` para criar objetos. Essa função é chamada de função **construtor** e, por convenção, iniciamos seu nome com uma letra maiúscula.
 
-When a function is called and preceded by the `new` keyword, something special happens. The JavaScript engine creates a new, empty object and assigns that object to the `this` variable.
+Quando uma função é chamada e precedida pela palavra-chave `new`, algo especial acontece. O mecanismo JavaScript cria um novo objeto vazio e atribui esse objeto à variável `this`.
 
-> The `this` variable is always present in JavaScript. Its value is dependent on the current execution context. Most of the time, the value of `this` is `undefined`. However, when calling a method on an object, the `this` variable holds a reference to the object it is called on. We can use the `this` variable inside the method implementation to get at other properties and methods within the object.
+> A variável `this` está sempre presente em JavaScript. Seu valor depende do contexto de execução atual. Na maioria das vezes, o valor de `this` é `undefined`. No entanto, ao chamar um método em um objeto, a variável `this` mantém uma referência ao objeto em que é chamada. Podemos usar a variável `this` dentro da implementação do método para obter outras propriedades e métodos dentro do objeto.
 
-We can now add properties to the new object through the `this` variable, as shown below.
+Agora podemos adicionar propriedades ao novo objeto através da variável `this`, conforme mostrado abaixo.
 
-When the constructor function finishes, it returns the newly constructed object as its return value.
+Quando a função construtora termina, ela retorna o objeto recém-construído como seu valor de retorno.
 
-```js
-function Month(name, days) {
-  this.name = name;
-  this.days = days;
+``` js
+function Mês(nome, dias) {
+  este.nome = nome;
+  este.dias = dias;
 }
 
-const months = [
-  new Month('January', 31),
-  new Month('February', 28),
-  new Month('March', 31),
-  new Month('April', 30),
-  new Month('May', 31),
-  new Month('June', 30),
-  new Month('July', 31),
-  new Month('August', 31),
-  new Month('September', 30),
-  new Month('October', 31),
-  new Month('November', 30),
-  new Month('December', 31)
+const meses = [
+  new Month('Janeiro', 31),
+  new Month('Fevereiro', 28),
+  new Month('Março', 31),
+  new Month('Abril', 30),
+  new Month('Maio', 31),
+  new Month('Junho', 30),
+  new Month('Julho', 31),
+  new Month('Agosto', 31),
+  new Month('Setembro', 30),
+  new Month('Outubro', 31),
+  new Month('Novembro', 30),
+  new Month('Dezembro', 31)
 ];
 
-months
-  .filter(month => month.days === 31)
-  .map(month => `${month.name} has ${month.days} days.`)
+meses
+  .filter(mês => mês.dias === 31)
+  .map(month => `${month.name} tem ${month.days} dias.`)
   .forEach(string => console.log(string));
 ```
 
-- [Understanding JavaScript Function Invocation and "this"](http://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/), by Yehuda Katz.
+- [Compreendendo a invocação de função JavaScript e "isto"](http://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/), por Yehuda Katz.
 
-- StackOverflow: [What is the 'new' keyword in JavaScript?](https://stackoverflow.com/questions/1646698/what-is-the-new-keyword-in-javascript)
+- StackOverflow: [Qual é a palavra-chave 'nova' em JavaScript?](https://stackoverflow.com/questions/1646698/what-is-the-new-keyword-in-javascript)
 
-### Introducing Object-Oriented Programming
+### Introdução à programação orientada a objetos
 
-In the preceding example, there was not much to be gained from using a constructor function in conjunction with the `new` keyword, as compared to just using object literals. The advantages become more clear when we start to add **methods** to the object. Methods are just plain JavaScript functions that you call on an object, using dot notation. In the code snippet below, we have defined a couple of functions and assigned them to object properties through the `this` variable in the constructor function. This makes these functions into methods.
+No exemplo anterior, não havia muito a ganhar usando uma função construtora em conjunto com a palavra-chave `new`, em comparação com o uso de literais de objeto. As vantagens ficam mais claras quando começamos a adicionar **métodos** ao objeto. Métodos são apenas funções JavaScript simples que você chama em um objeto, usando a notação de ponto. No trecho de código abaixo, definimos algumas funções e as atribuímos às propriedades do objeto por meio da variável `this` na função construtora. Isso transforma essas funções em métodos.
 
-```js
-function Month(name, days) {
-  this.name = name;
-  this.days = days;
+``` js
+function Mês(nome, dias) {
+  este.nome = nome;
+  este.dias = dias;
 
-  this.hasDays = function (days) {
-    return this.days === days;
+  this.hasDays = function (dias) {
+    return this.days === dias;
   };
 
-  this.isLongMonth = function () {
+  this.isLongMonth = function() {
     return this.hasDays(31);
   };
 
-  this.toString = function () {
-    return `${this.name} has ${this.days} days.`;
+  this.toString = function() {
+    return `${this.name} tem ${this.days} dias.`;
   };
 
-  this.toConsole = function () {
+  this.toConsole = function() {
     console.log(this.toString());
   };
 }
 
-const months = [
-  new Month('January', 31),
-  new Month('February', 28),
-  new Month('March', 31),
-  new Month('April', 30),
-  new Month('May', 31),
-  new Month('June', 30),
-  new Month('July', 31),
-  new Month('August', 31),
-  new Month('September', 30),
-  new Month('October', 31),
-  new Month('November', 30),
-  new Month('December', 31)
+const meses = [
+  new Month('Janeiro', 31),
+  new Month('Fevereiro', 28),
+  new Month('Março', 31),
+  new Month('Abril', 30),
+  new Month('Maio', 31),
+  new Month('Junho', 30),
+  new Month('Julho', 31),
+  new Month('Agosto', 31),
+  new Month('Setembro', 30),
+  new Month('Outubro', 31),
+  new Month('Novembro', 30),
+  new Month('Dezembro', 31)
 ];
 
-months
-  .filter(month => month.isLongMonth())
-  .forEach(month => month.toConsole());
+meses
+  .filter(mês => mês.isLongMonth())
+  .forEach(mês => mês.toConsole());
 ```
 
-We can now call these methods using dot notation, as in:
+Agora podemos chamar esses métodos usando a notação de ponto, como em:
 
-```js
-month.isLongMonth()
-month.toConsole()
+``` js
+mês.isLongMonth()
+mês.paraConsole()
 ```
 
-We have already seen this notation when we used, for instance, `map` and `filter`.
+Já vimos essa notação quando usamos, por exemplo, `map` e `filter`.
 
-When we add methods to an object to operate on data contained in the object, we have created a more or less self-contained object. The object knows how to operate its data and external code need not know anything about its internals. This concept is known as Object-Oriented Programming. It is the default style of programming in object-oriented languages such as Java, C# and C++. In JavaScript it is optional. In the HYF React module, ES6 classes are used extensively.
+Quando adicionamos métodos a um objeto para operar nos dados contidos no objeto, criamos um objeto mais ou menos autocontido. O objeto sabe como operar seus dados e o código externo não precisa saber nada sobre seus internos. Este conceito é conhecido como Programação Orientada a Objetos. É o estilo padrão de programação em linguagens orientadas a objetos, como Java, C# e C++. Em JavaScript é opcional. No módulo HYF React, as classes ES6 são usadas extensivamente.
 
-### Prototypes
+### Protótipos
 
-The code from the previous example has a significant inefficiency: each object get its own copy of the methods (`hasDays` etc). This takes up unnecessary memory. It would be far better if the objects could share a common set of methods. This is where JavaScript's concept of a `prototype` comes in.
+O código do exemplo anterior tem uma ineficiência significativa: cada objeto obtém sua própria cópia dos métodos (`hasDays` etc). Isso ocupa memória desnecessária. Seria muito melhor se os objetos pudessem compartilhar um conjunto comum de métodos. É aqui que entra o conceito de um `protótipo` do JavaScript.
 
-Each JavaScript function has a `prototype` property that points to an, initially empty, prototype object. It only comes into play when using that function as a **constructor** function. We can assign functions to this prototype which are shared by all objects we create through calling the constructor function in combination with the `new` keyword. 
+Cada função JavaScript tem uma propriedade `prototype` que aponta para um objeto protótipo, inicialmente vazio. Ele só entra em jogo ao usar essa função como uma função **construtor**. Podemos atribuir funções a este protótipo que são compartilhadas por todos os objetos que criamos chamando a função construtora em combinação com a palavra-chave `new`.
 
-```js
-function Month(name, days) {
-  this.name = name;
-  this.days = days;
+``` js
+function Mês(nome, dias) {
+  este.nome = nome;
+  este.dias = dias;
 }
 
-Month.prototype.hasDays = function (days) {
-  return this.days === days;
+Mês.prototipo.hasDias = function (dias) {
+  return this.days === dias;
 };
 
-Month.prototype.isLongMonth = function () {
+Mês.prototype.isLongMonth = function () {
   return this.hasDays(31);
 };
 
-Month.prototype.toString = function () {
-  return `${this.name} has ${this.days} days.`;
+Mês.protótipo.toString = function () {
+  return `${this.name} tem ${this.days} dias.`;
 };
 
-Month.prototype.toConsole = function () {
+Mês.prototype.toConsole = function () {
   console.log(this.toString());
 }
 
-const months = [
-  new Month('January', 31),
-  new Month('February', 28),
-  new Month('March', 31),
-  new Month('April', 30),
-  new Month('May', 31),
-  new Month('June', 30),
-  new Month('July', 31),
-  new Month('August', 31),
-  new Month('September', 30),
-  new Month('October', 31),
-  new Month('November', 30),
-  new Month('December', 31)
+const meses = [
+  new Month('Janeiro', 31),
+  new Month('Fevereiro', 28),
+  new Month('Março', 31),
+  new Month('Abril', 30),
+  new Month('Maio', 31),
+  new Month('Junho', 30),
+  new Month('Julho', 31),
+  new Month('Agosto', 31),
+  new Month('Setembro', 30),
+  new Month('Outubro', 31),
+  new Month('Novembro', 30),
+  new Month('Dezembro', 31)
 ];
 
-months
-  .filter(month => month.isLongMonth())
-  .forEach(month => month.toConsole());
+meses
+  .filter(mês => mês.isLongMonth())
+  .forEach(mês => mês.toConsole());
 ```
 
 
 ![prototypes-fundamental](assets/prototypes-fundamental.png)
-Figure 1: All objects instantiated with the Model constructor function share a common prototype.
+Figura 1: Todos os objetos instanciados com a função construtora Model compartilham um protótipo comum.
 
-### Prototype vs \_\_prototype\_\_
+### Protótipo vs \_\_protótipo\_\_
 
-The above diagram depicts how this sharing works out.
+O diagrama acima mostra como esse compartilhamento funciona.
 
-The `prototype` property exists on all functions but is only relevant when that function is used as a **constructor function**. By assigning methods to the  `prototype` property you are basically defining a ‘prototype’ object that will be shared by all objects created through the constructor function when called in conjunction with the `new` keyword.
+A propriedade `prototype` existe em todas as funções, mas só é relevante quando essa função é usada como uma **função construtora**. Ao atribuir métodos à propriedade `prototype` você está basicamente definindo um objeto 'prototype' que será compartilhado por todos os objetos criados através da função construtora quando chamados em conjunto com a palavra-chave `new`.
 
-In contrast to `prototype`, the `__proto__` property (in documentation sometimes denoted as `[[proto]]`) is a property that exist on objects created through the constructor function. This `__proto__` property points to the shared ‘prototype’ object, as defined on the constructor function’s `prototype` property.
+Em contraste com `prototype`, a propriedade `__proto__` (na documentação às vezes denotada como `[[proto]]`) é uma propriedade que existe em objetos criados através da função construtora. Esta propriedade `__proto__` aponta para o objeto 'prototype' compartilhado, conforme definido na propriedade `prototype` da função construtora.
 
-The prototype object itself also has a `__proto__` property. In most cases this property points to the prototype of the standard JavaScript `Object` prototype. This is because, ultimately, all objects in JavaScript are prototype-linked to the `Object` prototype. In OOP terms one would say that all JavaScript objects ultimately derive from `Object`.
+O próprio objeto protótipo também possui uma propriedade `__proto__`. Na maioria dos casos, esta propriedade aponta para o protótipo do protótipo padrão JavaScript `Object`. Isso ocorre porque, em última análise, todos os objetos em JavaScript são vinculados ao protótipo `Object`. Em termos de POO, pode-se dizer que todos os objetos JavaScript derivam de `Object`.
 
-There is no `__proto__` property on the `Object` prototype itself. This is where the prototype chain ends.
+Não há propriedade `__proto__` no protótipo `Object` em si. É aqui que a cadeia de protótipos termina.
 
-When you call a method on an object that does not exist on the object itself, the JavaScript engine will 'walk' down the prototype chain until it finds the requested method _or_ until it reaches the end of the chain.
+Quando você chama um método em um objeto que não existe no próprio objeto, o mecanismo JavaScript 'caminha' pela cadeia de protótipos até encontrar o método solicitado _ou_ até atingir o final da cadeia.
 
-If the method is found, JavaScript calls the method, setting its `this` value to the object the method was called on. This happens behind the scenes without requiring intervention from the programmer.
+Se o método for encontrado, o JavaScript chama o método, definindo seu valor `this` para o objeto no qual o método foi chamado. Isso acontece nos bastidores sem exigir intervenção do programador.
 
-If the method was not found by walking the prototype chain, a run-time error is produced, e.g:
+Se o método não foi encontrado percorrendo a cadeia de protótipos, um erro em tempo de execução é produzido, por exemplo:
 
-```js
+``` js
 myObj.someNonExistingMethod();
 
 ```
@@ -244,102 +244,102 @@ myObj.someNonExistingMethod();
 myObj.someNonExistingMethod();
       ^
 
-TypeError: myObj.someNonExistingMethod is not a function
+TypeError: myObj.someNonExistingMethod não é uma função
 ```
 
-### ES6 Classes
+### Aulas de ES6
 
-In ES6 a new way of defining objects and its methods was introduced. It uses the same `prototype` mechanism behind the scenes, but its syntax is closer to that of other object-oriented languages, such as Java, etc. Because it is only new syntax, hiding the intricacies of the `prototype`, it is often designated as 'syntactic sugaring'.
+No ES6 foi introduzida uma nova forma de definir objetos e seus métodos. Ele usa o mesmo mecanismo `prototype` nos bastidores, mas sua sintaxe é mais próxima de outras linguagens orientadas a objetos, como Java, etc. muitas vezes designado como 'açúcar sintático'.
 
-In ES6 classes we use the `class` keyword to define a class. The `constructor` method takes the place of the constructor function of the previous examples.
+Nas classes ES6 usamos a palavra-chave `class` para definir uma classe. O método `constructor` substitui a função construtora dos exemplos anteriores.
 
-We define methods by creating functions inside the class body, however without the `function` keyword. As previously, the `this` keyword refers to the object that a method is called upon.
+Definimos métodos criando funções dentro do corpo da classe, porém sem a palavra-chave `function`. Como anteriormente, a palavra-chave `this` se refere ao objeto que um método é chamado.
 
-```js
-class Month {
-  constructor(name, days) {
-    this.name = name;
-    this.days = days;
+``` js
+aula Mês {
+  construtor(nome, dias) {
+    este.nome = nome;
+    este.dias = dias;
   }
 
-  hasDays(days) {
-    return this.days === days;
+  temDias(dias) {
+    return this.days === dias;
   }
 
   isLongMonth() {
     return this.hasDays(31);
   }
 
-  toString() {
-    return `${this.name} has ${this.days} days.`;
+  para sequenciar() {
+    return `${this.name} tem ${this.days} dias.`;
   }
 
-  toConsole() {
+  consolar() {
     console.log(this.toString());
   }
 }
 
-const months = [
-  new Month('January', 31),
-  new Month('February', 28),
-  new Month('March', 31),
-  new Month('April', 30),
-  new Month('May', 31),
-  new Month('June', 30),
-  new Month('July', 31),
-  new Month('August', 31),
-  new Month('September', 30),
-  new Month('October', 31),
-  new Month('November', 30),
-  new Month('December', 31)
+const meses = [
+  new Month('Janeiro', 31),
+  new Month('Fevereiro', 28),
+  new Month('Março', 31),
+  new Month('Abril', 30),
+  new Month('Maio', 31),
+  new Month('Junho', 30),
+  new Month('Julho', 31),
+  new Month('Agosto', 31),
+  new Month('Setembro', 30),
+  new Month('Outubro', 31),
+  new Month('Novembro', 30),
+  new Month('Dezembro', 31)
 ];
 
-months
-  .filter(month => month.isLongMonth())
-  .forEach(month => month.toConsole());
+meses
+  .filter(mês => mês.isLongMonth())
+  .forEach(mês => mês.toConsole());
 ```
 
 
-### Bonus: Array.prototype.map & Array.prototype.filter Implementations
+### Bônus: Implementações Array.prototype.map & Array.prototype.filter
 
-Now that we know a bit more about objects, prototypes and the `this` variable, it might be useful to revisit the `map` and `filter` methods we used before and examine how they might be implemented internally.
+Agora que sabemos um pouco mais sobre objetos, protótipos e a variável `this`, pode ser útil revisitar os métodos `map` e `filter` que usamos antes e examinar como eles podem ser implementados internamente.
 
-In the examples below, we have defined alternative implementations for `map` and `filter` and named them `myMap` and `myFilter`. If we run this code we are actually adding these methods to the existing `Array` constructor function (in general, it is a bad idea to modify standard JavaScript objects, but we use it here for illustrative purposes).
+Nos exemplos abaixo, definimos implementações alternativas para `map` e `filter` e as nomeamos `myMap` e `myFilter`. Se executarmos esse código, estamos na verdade adicionando esses métodos à função construtora `Array` existente (em geral, é uma má ideia modificar objetos JavaScript padrão, mas o usamos aqui para fins ilustrativos).
 
-The `this` variable inside the method implementations refer to the array (which is technically an object: `typeof arr === 'object'`) on which the method is called.
+A variável `this` dentro das implementações do método se refere ao array (que tecnicamente é um objeto: `typeof arr === 'object'`) no qual o método é chamado.
 
-As you can see, both methods use a `for` loop internally, saving us the trouble of writing a `for` loop ourselves. Both methods call a callback that was passed as a parameter. The callback, in its turn, is called for every loop iteration with three parameters, viz:
+Como você pode ver, ambos os métodos usam um loop `for` internamente, poupando-nos o trabalho de escrever um loop `for` nós mesmos. Ambos os métodos chamam um retorno de chamada que foi passado como parâmetro. O retorno de chamada, por sua vez, é chamado para cada iteração de loop com três parâmetros, a saber:
 
-1. The current array element
-2. The current loop index value
-3. The complete array itself
+1. O elemento da matriz atual
+2. O valor do índice de loop atual
+3. A matriz completa em si
 
-For the `map` method, the value that we return from our callback is pushed onto a new, initially empty array.
+Para o método `map`, o valor que retornamos de nosso retorno de chamada é enviado para um novo array inicialmente vazio.
 
-For the `filter` method, the current element is pushed unmodified to a new, initially empty array if, and only if our callback returns a 'truthy' value.
+Para o método `filter`, o elemento atual é enviado sem modificações para um novo array inicialmente vazio se, e somente se nosso retorno de chamada retornar um valor 'verdadeiro'.
 
-Finally, both methods return the newly constructed array as their return value.
+Finalmente, ambos os métodos retornam o array recém-construído como seu valor de retorno.
 
-```js
-Array.prototype.myMap = function (callback) {
+``` js
+Array.prototype.myMap = function (retorno de chamada) {
   const arr = [];
-  for (let i = 0; i < this.length; i++) {
+  for (deixe i = 0; i < this.length; i++) {
     arr.push(callback(this[i], i, this));
   }
-  return arr;
+  retornar ar;
 };
 ```
 
 
-```js
-Array.prototype.myFilter = function (callback) {
+``` js
+Array.prototype.myFilter = function (retorno de chamada) {
   const arr = [];
-  for (let i = 0; i < this.length; i++) {
+  for (deixe i = 0; i < this.length; i++) {
     if (callback(this[i], i, this)) {
       arr.push(this[i]);
     }
   }
-  return arr;
+  retornar ar;
 };
 ```
 
