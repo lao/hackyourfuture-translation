@@ -1,54 +1,54 @@
-## Homework HTML/CSS/GIT Week 2
+## Trabalho de casa HTML/CSS/GIT Semana 2
 
-> Create a directory "week2" inside your `HYF-Module-HTMLCSSGIT` directory on GitHub. There should already be a "week1" folder that contains your homework from the last week.
+> Crie um diretório "week2" dentro do seu diretório `HYF-Module-HTMLCSSGIT` no GitHub. Já deve haver uma pasta "week1" que contém sua lição de casa da semana passada.
 
-## Todo list
+## Lista de afazeres
 
-1. Prep exercises
-2. GIT exercises
-3. Responsive design challenges
-4. Code along
-5. PROJECT: Responsive website
-6. Optional: Flexbox games
+1. Exercícios de preparação
+2. Exercícios GIT
+3. Desafios de design responsivo
+4. Codifique junto
+5. PROJETO: Site responsivo
+6. Opcional: jogos Flexbox
 
-### 1. Prep exercises
+### 1. Exercícios de preparação
 
-> Prep exercises are exercises that you should work on _before_ the session on Sunday. These are a little more difficult or show an important concept and as such are a great exercise to talk about with your mentor. Have a solution ready by Sunday as you may be asked to show what you did.
+> Exercícios de preparação são exercícios que você deve trabalhar _antes_ da sessão de domingo. Estes são um pouco mais difíceis ou mostram um conceito importante e, como tal, são um ótimo exercício para conversar com seu mentor. Tenha uma solução pronta até domingo, pois pode ser solicitado que você mostre o que fez.
 
-Inside your `HTML-CSS` fork, go to the folder `week2`. Inside of that folder, navigate to `/prep-exercises`. For each exercise, you will find a separate folder. The `README` explains what needs to be done. There will also be some questions at the bottom to think about. Go through them _before_ the session on Sunday as it will be covered then.
+Dentro do seu fork `HTML-CSS`, vá para a pasta `week2`. Dentro dessa pasta, navegue até `/prep-exercises`. Para cada exercício, você encontrará uma pasta separada. O `README` explica o que precisa ser feito. Haverá também algumas perguntas na parte inferior para pensar. Passe por eles _antes_ da sessão no domingo, pois será coberto então.
 
-### 2. GIT exercise
+### 2. Exercício de GIT
 
-1.  Create a repository on Github called favorite-cmd-commands, make sure to check the checkmark about including a README file
-2.  Clone that repository (Google how to clone a repository).
-3.  Edit the `README.md` markdown file.
-4.  Add bash commands that you like (at least 3) and style them as headers.
-5.  Provide a short description (20 characters~) for each.
-6.  Then `git add`, `git commit` and `git push` the file to your GitHub repository.
+1. Crie um repositório no Github chamado favorite-cmd-commands, certifique-se de marcar a marca de seleção sobre a inclusão de um arquivo README
+2. Clone esse repositório (Google como clonar um repositório).
+3. Edite o arquivo de remarcação `README.md`.
+4. Adicione comandos bash que você gosta (pelo menos 3) e estilize-os como cabeçalhos.
+5. Forneça uma breve descrição (20 caracteres~) para cada um.
+6. Em seguida, `git add`, `git commit` e `git push` o arquivo para o seu repositório GitHub.
 
-### 3. Responsive design challenges
+### 3. Desafios de design responsivo
 
-Making websites that are `responsive` to a variety of device sizes (in other words, that still "look good" on any device), has become the standard way of building websites. You have to learn how to do this too. It's not as intimating as it might seem; you're **not** going to build a separate page for literally every device size out there.
+Fazer sites que são 'responsivos' a uma variedade de tamanhos de dispositivos (em outras palavras, que ainda "parecem bem" em qualquer dispositivo), tornou-se a forma padrão de construir sites. Você tem que aprender a fazer isso também. Não é tão intimista quanto pode parecer; você **não** vai criar uma página separada para literalmente cada tamanho de dispositivo disponível.
 
-Instead, you'll be applying certain CSS rules only to certain device sizes: the average desktop (1024px and more), the average tablet (between 600px and 1024px) and the average mobile device (600px and below).
+Em vez disso, você aplicará certas regras de CSS apenas a determinados tamanhos de dispositivos: o desktop médio (1024px e mais), o tablet médio (entre 600px e 1024px) e o dispositivo móvel médio (600px e abaixo).
 
-In the following mini-course you'll get some practice in doing this:
+No mini-curso a seguir, você terá alguma prática em fazer isso:
 
-- [Responsive Web Design Challenges](https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles/)
+- [Desafios de Web Design Responsivo](https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles/)
 
-### 4. Code along
+### 4. Codifique junto
 
-In the following video you'll be rebuilding a responsive HTML5 website. Put your focus on how the structure of the page is built: First HTML to provide structure & content, and then the CSS. Look at the HTML tags used and the names given to classes.
+No vídeo a seguir, você estará reconstruindo um site HTML5 responsivo. Coloque seu foco em como a estrutura da página é construída: primeiro HTML para fornecer estrutura e conteúdo e depois o CSS. Veja as tags HTML usadas e os nomes dados às classes.
 
-- [Build A Responsive Website With HTML & CSS Tutorial](https://www.youtube.com/watch?v=ZeDP-rzOnAA)
+- [Crie um site responsivo com tutorial de HTML e CSS](https://www.youtube.com/watch?v=ZeDP-rzOnAA)
 
-### 5. PROJECT: Responsive website
+### 5. PROJETO: Site responsivo
 
-> Before you start this exercises, make sure to create a folder inside the `hyf-html-exercises` folder. Create a `week2` folder and put this exercise files inside.
+> Antes de iniciar estes exercícios, certifique-se de criar uma pasta dentro da pasta `hyf-html-exercises`. Crie uma pasta `week2` e coloque os arquivos do exercício dentro dela.
 
-> Tip: Use GIT and GitHub along the way, you can easily use this project as part of your portfolio!
+> Dica: Use GIT e GitHub ao longo do caminho, você pode facilmente usar este projeto como parte de seu portfólio!
 
-In this project you're going to rebuild `the homepage` of an existing responsive website. Choose one of the following:
+Neste projeto, você reconstruirá a página inicial de um site responsivo existente. Escolha um dos seguintes?
 
 - [Codecademy](https://www.codecademy.com/)
 - [Uber](https://www.uber.com/nl/nl/)
@@ -57,29 +57,29 @@ In this project you're going to rebuild `the homepage` of an existing responsive
 - [Coursera](https://www.coursera.org/)
 - [Triodos](https://www.triodos.nl/)
 
-You don't have to build everything, but include the following requirements:
+Você não precisa construir tudo, mas inclua os seguintes requisitos:
 
-- Only rebuild the homepage (which should include a navigation bar, footer, the landing section and at least 2 other sections)
-- Write your CSS in an external stylesheet
-- You are **allowed** to use a CSS framework, but you do not have to. It is up to you!
-- Make use of `flexbox`
-- Download the assets (images, other forms of media) through the original webpage, or use your own!
-- Use media queries for both tablet and mobile (This might be same for the website you're making)
-- **Make use of GIT and GitHub** to keep track of your work. The name of the repository should web _WEBSITENAME-clone_
+- Apenas reconstrua a página inicial (que deve incluir uma barra de navegação, rodapé, a seção de destino e pelo menos 2 outras seções)
+- Escreva seu CSS em uma folha de estilo externa
+- Você está **permitido** a usar um framework CSS, mas não é obrigatório. É com você!
+- Faça uso de `flexbox`
+- Baixe os ativos (imagens, outras formas de mídia) através da página original ou use a sua própria!
+- Use consultas de mídia para tablet e celular (isso pode ser o mesmo para o site que você está criando)
+- **Faça uso do GIT e do GitHub** para acompanhar seu trabalho. O nome do repositório deve ser web _WEBSITENAME-clone_
 
-### 6. Optional: Flexbox games
+### 6. Opcional: jogos Flexbox
 
-If you like learning in a fun way there are quite a few games on the internet that teach you the way flexbox works:
+Se você gosta de aprender de forma divertida, existem alguns jogos na internet que ensinam como o flexbox funciona:
 
 - [Flexbox Froggy](https://flexboxfroggy.com/)
 - [Flexbox Defense](http://www.flexboxdefense.com/)
 - [Flexbox Adventure](https://codingfantasy.com/games/flexboxadventure)
 
-## SUBMIT YOUR HOMEWORK!
+## ENVIE SUA LIÇÃO DE CASA!
 
-After you've finished your todo list it's time to show us what you got! The homework you have to submit this week is the following:
+Depois de terminar sua lista de tarefas, é hora de nos mostrar o que você tem! A lição de casa que você deve enviar esta semana é a seguinte:
 
-1. GIT exercise (the URL of the remote `favorite-cmd-commands` repository)
-2. The responsive website
+1. Exercício GIT (o URL do repositório remoto `favorite-cmd-commands`)
+2. O site responsivo
 
-Go through the [guide](../hand-in-homework-guide.md) to learn how to submit your homework.
+Acesse o [guia](../hand-in-homework-guide.md) para saber como enviar sua lição de casa.
